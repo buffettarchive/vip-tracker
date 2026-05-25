@@ -1,8 +1,93 @@
 {
-  "updated_at": "2026-05-26T04:29+09:00",
+  "updated_at": "2026-05-26T05:06+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용"
   ],
-  "disclosures": []
+  "disclosures": [
+    {
+      "rcept_no": "20260521000461",
+      "rcept_dt": "2026-05-21",
+      "firm": "브이아이피자산운용",
+      "corp_name": "프로텍",
+      "stock_code": "053610",
+      "stkrt": "6.55",
+      "stkrt_prev": "",
+      "stkrt_irds": "1.71",
+      "report_resn": " 5% 이상 신규취득",
+      "report_nm": "주식등의대량보유상황보고서(약식)"
+    },
+    {
+      "rcept_no": "20260518000285",
+      "rcept_dt": "2026-05-18",
+      "firm": "브이아이피자산운용",
+      "corp_name": "한라IMS",
+      "stock_code": "092460",
+      "stkrt": "6.74",
+      "stkrt_prev": "",
+      "stkrt_irds": "1.86",
+      "report_resn": " 5% 이상 신규취득",
+      "report_nm": "주식등의대량보유상황보고서(약식)"
+    },
+    {
+      "rcept_no": "20260512000546",
+      "rcept_dt": "2026-05-12",
+      "firm": "브이아이피자산운용",
+      "corp_name": "유성티엔에스",
+      "stock_code": "024800",
+      "stkrt": "5.89",
+      "stkrt_prev": "",
+      "stkrt_irds": "1.01",
+      "report_resn": " 5% 이상 신규취득",
+      "report_nm": "주식등의대량보유상황보고서(약식)"
+    },
+    {
+      "rcept_no": "20260511000502",
+      "rcept_dt": "2026-05-11",
+      "firm": "브이아이피자산운용",
+      "corp_name": "오로라",
+      "stock_code": "039830",
+      "stkrt": "5.47",
+      "stkrt_prev": "",
+      "stkrt_irds": "0.80",
+      "report_resn": " 5% 이상 신규취득",
+      "report_nm": "주식등의대량보유상황보고서(약식)"
+    },
+    {
+      "rcept_no": "20260511000065",
+      "rcept_dt": "2026-05-11",
+      "firm": "브이아이피자산운용",
+      "corp_name": "토비스",
+      "stock_code": "051360",
+      "stkrt": "6.25",
+      "stkrt_prev": "",
+      "stkrt_irds": "1.23",
+      "report_resn": "1% 이상 변동",
+      "report_nm": "주식등의대량보유상황보고서(약식)"
+    },
+    {
+      "rcept_no": "20260511000060",
+      "rcept_dt": "2026-05-11",
+      "firm": "브이아이피자산운용",
+      "corp_name": "LF",
+      "stock_code": "093050",
+      "stkrt": "6.86",
+      "stkrt_prev": "",
+      "stkrt_irds": "1.37",
+      "report_resn": "1% 이상 변동",
+      "report_nm": "주식등의대량보유상황보고서(약식)"
+    },
+    {
+      "rcept_no": "20260508001019",
+      "rcept_dt": "2026-05-08",
+      "firm": "브이아이피자산운용",
+      "corp_name": "아세아시멘트",
+      "stock_code": "183190",
+      "stkrt": "4.74",
+      "stkrt_prev": "",
+      "stkrt_irds": "-0.66",
+      "report_resn": "5%미만 보유",
+      "report_nm": "주식등의대량보유상황보고서(약식)"
+    }
+  ]
 }
