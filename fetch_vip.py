@@ -28,7 +28,7 @@ WATCH_FIRMS = [
     # "머스트자산운용",
 ]
 
-LOOKBACK_DAYS = 80
+LOOKBACK_DAYS = 20
 OUT_PATH = "docs/data.json"
 
 s = requests.Session()
