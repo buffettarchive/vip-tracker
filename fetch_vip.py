@@ -28,7 +28,7 @@ WATCH_FIRMS = [
     # "머스트자산운용",
 ]
 
-LOOKBACK_DAYS = 90          # 최근 90일 공시를 매번 다시 스캔(중복은 rcept_no로 제거)
+LOOKBACK_DAYS = 80          # 최근 90일 공시를 매번 다시 스캔(중복은 rcept_no로 제거)
 OUT_PATH = "docs/data.json"
 
 s = requests.Session()
