@@ -1,13 +1,10 @@
 """
-fetch_vip.py  (v2)
+fetch_vip.py  (v3)
 ─────────────────────────────────────────────────────────────
-브이아이피자산운용 등 추적 대상 운용사가 '보고자'로 들어간
-대량보유(5%) 공시만 골라 docs/data.json 을 갱신한다.
-
-v1과의 차이:
-- 시장 전체 지분공시를 다 받지 않고, 운용사명으로 직접 검색해
-  해당 운용사가 제출한 공시만 받아온다. → 빠르고 가볍다.
-- 검색기간 3개월 제한을 피하려고 80일로 잡는다.
+핵심 교훈: DART list.json은 '제출인 이름'으로 필터링을 지원하지 않는다.
+그래서 기간 내 대량보유(5%) 공시를 받아온 뒤, 응답의 flr_nm(제출인) 칸을
+코드에서 직접 검사해 추적 대상 운용사 것만 골라낸다.
+골라낸 소수 건에 대해서만 majorstock(보유비율 상세)을 호출하므로 빠르다.
 """
 
 import os
@@ -28,11 +25,11 @@ WATCH_FIRMS = [
     # "머스트자산운용",
 ]
 
-LOOKBACK_DAYS = 20
+LOOKBACK_DAYS = 20          # corp 미지정 시 최대 3개월(약 90일)까지만 허용됨
 OUT_PATH = "docs/data.json"
 
 s = requests.Session()
-s.headers.update({"User-Agent": "vip-tracker/0.2"})
+s.headers.update({"User-Agent": "vip-tracker/0.3"})
 
 
 def get(endpoint, **params):
@@ -47,29 +44,34 @@ def get(endpoint, **params):
     return {"status": "999", "list": []}
 
 
-def fetch_by_filer(firm, bgn, end):
-    """
-    공시 제출인명(flr_nm)으로 직접 검색 → 그 운용사가 제출한 공시만.
-    list.json은 flr_nm 파라미터로 제출인 검색을 지원한다.
-    """
+def fetch_list(bgn, end):
+    """기간 내 지분공시(pblntf_ty='D') 전체. 제출인 필터는 코드에서 따로."""
     out, page = [], 1
     while True:
-        d = get("list.json", flr_nm=firm, bgn_de=bgn, end_de=end,
-                pblntf_ty="D", page_no=page, page_count=100,
-                sort="date", sort_mth="desc")
+        d = get("list.json", bgn_de=bgn, end_de=end, pblntf_ty="D",
+                page_no=page, page_count=100, sort="date", sort_mth="desc")
         st = d.get("status")
-        if st == "013":          # 해당 조건 데이터 없음
+        if st == "013":
             break
         if st != "000":
-            print(f"[warn] {firm} status={st} msg={d.get('message')}", file=sys.stderr)
+            print(f"[warn] list status={st} msg={d.get('message')}", file=sys.stderr)
             break
         out.extend(d.get("list", []) or [])
         tp = int(d.get("total_page", 1) or 1)
         if page >= tp:
             break
         page += 1
-        time.sleep(0.3)
+        time.sleep(0.2)
     return out
+
+
+def firm_in(name):
+    if not name:
+        return None
+    for f in WATCH_FIRMS:
+        if f in name:
+            return f
+    return None
 
 
 def major_detail(corp_code, rcept_no):
@@ -86,36 +88,35 @@ def main():
     bgn = (today - dt.timedelta(days=LOOKBACK_DAYS)).strftime("%Y%m%d")
     end = today.strftime("%Y%m%d")
 
+    rows = fetch_list(bgn, end)
+    print(f"[info] 지분공시 {len(rows)}건 스캔")
+
     items, seen = [], set()
-    total_scanned = 0
+    for row in rows:
+        if "대량보유상황보고서" not in row.get("report_nm", ""):
+            continue
+        firm = firm_in(row.get("flr_nm", ""))   # ← 제출인 칸을 코드에서 직접 검사
+        if not firm:
+            continue
+        rcept_no = row["rcept_no"]
+        if rcept_no in seen:
+            continue
+        seen.add(rcept_no)
 
-    for firm in WATCH_FIRMS:
-        rows = fetch_by_filer(firm, bgn, end)
-        total_scanned += len(rows)
-        print(f"[info] '{firm}' 제출 공시 {len(rows)}건")
-
-        for row in rows:
-            if "대량보유상황보고서" not in row.get("report_nm", ""):
-                continue
-            rcept_no = row["rcept_no"]
-            if rcept_no in seen:
-                continue
-            seen.add(rcept_no)
-
-            detail = major_detail(row.get("corp_code", ""), rcept_no) if row.get("corp_code") else {}
-            rdt = row.get("rcept_dt", "")
-            items.append({
-                "rcept_no": rcept_no,
-                "rcept_dt": f"{rdt[:4]}-{rdt[4:6]}-{rdt[6:]}" if len(rdt) == 8 else rdt,
-                "firm": firm,
-                "corp_name": row.get("corp_name", ""),
-                "stock_code": row.get("stock_code", ""),
-                "stkrt": detail.get("stkrt", ""),
-                "stkrt_prev": "",
-                "stkrt_irds": detail.get("stkrt_irds", ""),
-                "report_resn": detail.get("report_resn", ""),
-                "report_nm": row.get("report_nm", ""),
-            })
+        detail = major_detail(row.get("corp_code", ""), rcept_no) if row.get("corp_code") else {}
+        rdt = row.get("rcept_dt", "")
+        items.append({
+            "rcept_no": rcept_no,
+            "rcept_dt": f"{rdt[:4]}-{rdt[4:6]}-{rdt[6:]}" if len(rdt) == 8 else rdt,
+            "firm": firm,
+            "corp_name": row.get("corp_name", ""),
+            "stock_code": row.get("stock_code", ""),
+            "stkrt": detail.get("stkrt", ""),
+            "stkrt_prev": "",
+            "stkrt_irds": detail.get("stkrt_irds", ""),
+            "report_resn": detail.get("report_resn", ""),
+            "report_nm": row.get("report_nm", ""),
+        })
 
     payload = {
         "updated_at": dt.datetime.now(dt.timezone(dt.timedelta(hours=9))).isoformat(timespec="minutes"),
@@ -126,8 +127,6 @@ def main():
     os.makedirs(os.path.dirname(OUT_PATH), exist_ok=True)
     with open(OUT_PATH, "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=2)
-
-    print(f"[info] 제출공시 {total_scanned}건 스캔")
     print(f"[info] {len(items)}건 기록 → {OUT_PATH}")
 
 
