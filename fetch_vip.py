@@ -25,7 +25,7 @@ WATCH_FIRMS = [
     # "머스트자산운용",
 ]
 
-LOOKBACK_DAYS = 20          # corp 미지정 시 최대 3개월(약 90일)까지만 허용됨
+LOOKBACK_DAYS = 80          # corp 미지정 시 최대 3개월(약 90일)까지만 허용됨
 OUT_PATH = "docs/data.json"
 
 s = requests.Session()
