@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>지분의 흔적 — 한국 가치투자 운용사 5% 공시 추적</title>
+<title>BUFFETT ARCHIVE — 국내 가치투자 운용사 지분공시 추적</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
 <style>
   :root{
-    --paper:#f4efe6;        /* 아이보리 지면 */
-    --paper-2:#ece5d8;
-    --ink:#1c1a17;          /* 잉크 */
-    --ink-soft:#5a544a;
-    --line:#cabfa9;
-    --accent:#8a2b1e;       /* 낭만주의적 적갈색 */
+    --paper:#ffffff;
+    --paper-2:#f5f4f2;
+    --ink:#16140f;
+    --ink-soft:#6b665d;
+    --line:#e4e1da;
+    --accent:#1a1a1a;
     --up:#1f5c3d;
-    --down:#8a2b1e;
+    --down:#a02b1c;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{-webkit-text-size-adjust:100%}
@@ -27,46 +27,35 @@
     font-family:"Pretendard Variable",Pretendard,sans-serif;
     line-height:1.5;
     -webkit-font-smoothing:antialiased;
-    background-image:
-      radial-gradient(circle at 100% 0,rgba(138,43,30,.04),transparent 40%),
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.025'/%3E%3C/svg%3E");
   }
   .wrap{max-width:880px;margin:0 auto;padding:0 20px}
 
-  /* ── 마스트헤드 ── */
   header.mast{
     border-bottom:2px solid var(--ink);
-    padding:40px 0 18px;
-    margin-bottom:4px;
+    padding:44px 0 18px;
   }
   .kicker{
-    font-size:11px;letter-spacing:.22em;text-transform:uppercase;
-    color:var(--accent);font-weight:600;margin-bottom:14px;
+    font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--ink-soft);font-weight:600;margin-bottom:16px;
   }
   h1.title{
     font-family:"Fraunces",serif;
     font-weight:600;
-    font-size:clamp(34px,7vw,58px);
-    line-height:1.02;
-    letter-spacing:-.01em;
-  }
-  h1.title .ko{display:block;font-size:clamp(20px,4.5vw,30px);font-weight:600;margin-top:8px;letter-spacing:-.02em;font-family:"Pretendard Variable",Pretendard,sans-serif}
-  .dek{
-    margin-top:16px;color:var(--ink-soft);font-size:15px;max-width:620px;
-    border-top:1px solid var(--line);padding-top:14px;
+    font-size:clamp(32px,6.5vw,52px);
+    line-height:1.0;
+    letter-spacing:.01em;
   }
   .meta-row{
     display:flex;flex-wrap:wrap;gap:14px;align-items:baseline;
-    margin-top:16px;font-size:12.5px;color:var(--ink-soft);
+    margin-top:20px;font-size:12.5px;color:var(--ink-soft);
   }
   .meta-row b{color:var(--ink);font-weight:600}
   .seed-flag{
-    display:inline-block;background:var(--accent);color:#fff;
+    display:inline-block;background:var(--down);color:#fff;
     font-size:11px;font-weight:600;letter-spacing:.04em;
     padding:3px 9px;border-radius:2px;
   }
 
-  /* ── 필터 바 ── */
   .controls{
     display:flex;justify-content:space-between;align-items:center;
     padding:18px 0 10px;flex-wrap:wrap;gap:12px;
@@ -78,11 +67,10 @@
     padding:7px 14px;border-radius:999px;cursor:pointer;transition:.15s;
   }
   .firm-tabs button[aria-selected="true"]{
-    background:var(--ink);color:var(--paper);border-color:var(--ink);
+    background:var(--ink);color:#fff;border-color:var(--ink);
   }
   .count{font-size:12.5px;color:var(--ink-soft)}
 
-  /* ── 공시 리스트 ── */
   .feed{list-style:none;border-top:1px solid var(--ink)}
   .row{
     display:grid;
@@ -102,13 +90,13 @@
   .corp .name{font-size:19px;font-weight:600;letter-spacing:-.01em}
   .corp .name .code{font-size:12px;color:var(--ink-soft);font-weight:500;margin-left:7px;font-family:"Fraunces",serif}
   .corp .sub{font-size:12.5px;color:var(--ink-soft);margin-top:3px}
-  .corp .sub .firm{color:var(--accent);font-weight:600}
+  .corp .sub .firm{color:var(--ink);font-weight:600}
   .stake{text-align:right;white-space:nowrap}
   .stake .pct{font-family:"Fraunces",serif;font-size:24px;font-weight:600;line-height:1}
   .stake .delta{font-size:12px;margin-top:4px;font-weight:600}
   .delta.up{color:var(--up)}
   .delta.down{color:var(--down)}
-  .delta.new{color:var(--accent)}
+  .delta.new{color:var(--ink)}
 
   .empty{padding:60px 0;text-align:center;color:var(--ink-soft);font-size:15px}
 
@@ -116,8 +104,7 @@
     margin:40px 0 60px;padding-top:18px;border-top:1px solid var(--line);
     font-size:12px;color:var(--ink-soft);line-height:1.7;
   }
-  footer a{color:var(--accent)}
-  .disclaim{margin-top:10px;font-size:11.5px;opacity:.85}
+  .disclaim{margin-top:10px;font-size:11.5px;opacity:.9}
 
   @media(max-width:560px){
     .row{grid-template-columns:64px 1fr auto;gap:12px}
@@ -130,13 +117,9 @@
 <div class="wrap">
 
   <header class="mast">
-    <div class="kicker">한국 가치투자 운용사 지분공시 추적</div>
-    <h1 class="title">Footprints
-      <span class="ko">지분의 흔적</span>
-    </h1>
-    <p class="dek">한국에는 미국의 13F 같은 전체 보유 공시 제도가 없습니다. 운용사의 확신은 오직 5% 대량보유보고에서 드러납니다. 그 흔적만을 모읍니다.</p>
+    <div class="kicker">국내 가치투자 운용사 지분공시 추적 사이트</div>
+    <h1 class="title">BUFFETT ARCHIVE</h1>
     <div class="meta-row">
-      <span>출처 <b>금융감독원 DART</b></span>
       <span>갱신 <b id="updated">—</b></span>
       <span id="seedFlag"></span>
     </div>
