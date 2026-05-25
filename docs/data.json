@@ -1,0 +1,31 @@
+{
+  "updated_at": "2025-09-22T16:30:00+09:00",
+  "is_seed": true,
+  "firms": ["브이아이피자산운용"],
+  "disclosures": [
+    {
+      "rcept_no": "00000000000000",
+      "rcept_dt": "2025-09-22",
+      "firm": "브이아이피자산운용",
+      "corp_name": "달바글로벌",
+      "stock_code": "",
+      "stkrt": "5.12",
+      "stkrt_prev": "4.96",
+      "stkrt_irds": "+0.16",
+      "report_resn": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(일반)"
+    },
+    {
+      "rcept_no": "00000000000001",
+      "rcept_dt": "2025-09-10",
+      "firm": "브이아이피자산운용",
+      "corp_name": "넥센타이어",
+      "stock_code": "002350",
+      "stkrt": "5.03",
+      "stkrt_prev": "4.99",
+      "stkrt_irds": "+0.04",
+      "report_resn": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(일반)"
+    }
+  ]
+}

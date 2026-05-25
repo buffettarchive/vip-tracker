@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>지분의 흔적 — 한국 가치투자 운용사 5% 공시 추적</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+<style>
+  :root{
+    --paper:#f4efe6;        /* 아이보리 지면 */
+    --paper-2:#ece5d8;
+    --ink:#1c1a17;          /* 잉크 */
+    --ink-soft:#5a544a;
+    --line:#cabfa9;
+    --accent:#8a2b1e;       /* 낭만주의적 적갈색 */
+    --up:#1f5c3d;
+    --down:#8a2b1e;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Pretendard Variable",Pretendard,sans-serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    background-image:
+      radial-gradient(circle at 100% 0,rgba(138,43,30,.04),transparent 40%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.025'/%3E%3C/svg%3E");
+  }
+  .wrap{max-width:880px;margin:0 auto;padding:0 20px}
+
+  /* ── 마스트헤드 ── */
+  header.mast{
+    border-bottom:2px solid var(--ink);
+    padding:40px 0 18px;
+    margin-bottom:4px;
+  }
+  .kicker{
+    font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--accent);font-weight:600;margin-bottom:14px;
+  }
+  h1.title{
+    font-family:"Fraunces",serif;
+    font-weight:600;
+    font-size:clamp(34px,7vw,58px);
+    line-height:1.02;
+    letter-spacing:-.01em;
+  }
+  h1.title .ko{display:block;font-size:clamp(20px,4.5vw,30px);font-weight:600;margin-top:8px;letter-spacing:-.02em;font-family:"Pretendard Variable",Pretendard,sans-serif}
+  .dek{
+    margin-top:16px;color:var(--ink-soft);font-size:15px;max-width:620px;
+    border-top:1px solid var(--line);padding-top:14px;
+  }
+  .meta-row{
+    display:flex;flex-wrap:wrap;gap:14px;align-items:baseline;
+    margin-top:16px;font-size:12.5px;color:var(--ink-soft);
+  }
+  .meta-row b{color:var(--ink);font-weight:600}
+  .seed-flag{
+    display:inline-block;background:var(--accent);color:#fff;
+    font-size:11px;font-weight:600;letter-spacing:.04em;
+    padding:3px 9px;border-radius:2px;
+  }
+
+  /* ── 필터 바 ── */
+  .controls{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:18px 0 10px;flex-wrap:wrap;gap:12px;
+  }
+  .firm-tabs{display:flex;gap:6px;flex-wrap:wrap}
+  .firm-tabs button{
+    font-family:inherit;font-size:13px;font-weight:600;
+    background:transparent;border:1px solid var(--line);color:var(--ink-soft);
+    padding:7px 14px;border-radius:999px;cursor:pointer;transition:.15s;
+  }
+  .firm-tabs button[aria-selected="true"]{
+    background:var(--ink);color:var(--paper);border-color:var(--ink);
+  }
+  .count{font-size:12.5px;color:var(--ink-soft)}
+
+  /* ── 공시 리스트 ── */
+  .feed{list-style:none;border-top:1px solid var(--ink)}
+  .row{
+    display:grid;
+    grid-template-columns:88px 1fr auto;
+    gap:18px;align-items:center;
+    padding:20px 4px;border-bottom:1px solid var(--line);
+    text-decoration:none;color:inherit;
+    transition:background .15s,padding-left .15s;
+  }
+  .row:hover{background:var(--paper-2);padding-left:10px}
+  .date{
+    font-family:"Fraunces",serif;font-size:13px;color:var(--ink-soft);
+    line-height:1.25;
+  }
+  .date .y{display:block;font-size:11px;opacity:.7}
+  .corp{min-width:0}
+  .corp .name{font-size:19px;font-weight:600;letter-spacing:-.01em}
+  .corp .name .code{font-size:12px;color:var(--ink-soft);font-weight:500;margin-left:7px;font-family:"Fraunces",serif}
+  .corp .sub{font-size:12.5px;color:var(--ink-soft);margin-top:3px}
+  .corp .sub .firm{color:var(--accent);font-weight:600}
+  .stake{text-align:right;white-space:nowrap}
+  .stake .pct{font-family:"Fraunces",serif;font-size:24px;font-weight:600;line-height:1}
+  .stake .delta{font-size:12px;margin-top:4px;font-weight:600}
+  .delta.up{color:var(--up)}
+  .delta.down{color:var(--down)}
+  .delta.new{color:var(--accent)}
+
+  .empty{padding:60px 0;text-align:center;color:var(--ink-soft);font-size:15px}
+
+  footer{
+    margin:40px 0 60px;padding-top:18px;border-top:1px solid var(--line);
+    font-size:12px;color:var(--ink-soft);line-height:1.7;
+  }
+  footer a{color:var(--accent)}
+  .disclaim{margin-top:10px;font-size:11.5px;opacity:.85}
+
+  @media(max-width:560px){
+    .row{grid-template-columns:64px 1fr auto;gap:12px}
+    .corp .name{font-size:17px}
+    .stake .pct{font-size:20px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="mast">
+    <div class="kicker">한국 가치투자 운용사 지분공시 추적</div>
+    <h1 class="title">Footprints
+      <span class="ko">지분의 흔적</span>
+    </h1>
+    <p class="dek">한국에는 미국의 13F 같은 전체 보유 공시 제도가 없습니다. 운용사의 확신은 오직 5% 대량보유보고에서 드러납니다. 그 흔적만을 모읍니다.</p>
+    <div class="meta-row">
+      <span>출처 <b>금융감독원 DART</b></span>
+      <span>갱신 <b id="updated">—</b></span>
+      <span id="seedFlag"></span>
+    </div>
+  </header>
+
+  <div class="controls">
+    <div class="firm-tabs" id="firmTabs" role="tablist"></div>
+    <div class="count" id="count"></div>
+  </div>
+
+  <ul class="feed" id="feed"></ul>
+
+  <footer>
+    데이터는 DART 전자공시 원자료를 기반으로 합니다. 5% 대량보유보고는 변동일로부터 5영업일 이내 제출되므로, 표시된 내용은 실제 매매 시점보다 늦을 수 있습니다. 보유비율이 5% 미만으로 내려가면 추적이 종료됩니다.
+    <div class="disclaim">본 사이트는 공시 사실을 정리해 전달할 뿐이며, 특정 종목의 매수·매도를 권유하지 않습니다. 투자 판단과 그 책임은 이용자 본인에게 있습니다.</div>
+  </footer>
+
+</div>
+
+<script>
+const $ = s => document.querySelector(s);
+
+function fmtDate(iso){
+  if(!iso) return {d:"—",y:""};
+  const [y,m,d] = iso.split("-");
+  const mon = ["1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"][parseInt(m)-1] || "";
+  return {d:`${parseInt(d)}일`, m:mon, y};
+}
+
+function dartLink(rcept_no){
+  if(!rcept_no || /^0+$/.test(rcept_no)) return null;
+  return `https://dart.fss.or.kr/dsaf001/main.do?rcpNo=${rcept_no}`;
+}
+
+function deltaTag(item){
+  const prev = parseFloat(item.stkrt_prev);
+  const now  = parseFloat(item.stkrt);
+  if(isNaN(prev) || prev < 5) return {cls:"new", txt:"신규 5% 진입"};
+  const d = (now - prev);
+  const sign = d >= 0 ? "▲" : "▼";
+  return {cls: d>=0?"up":"down", txt:`${sign} ${Math.abs(d).toFixed(2)}%p`};
+}
+
+let DATA = {disclosures:[], firms:[]};
+let activeFirm = "전체";
+
+function render(){
+  const list = DATA.disclosures
+    .filter(x => activeFirm==="전체" || x.firm===activeFirm)
+    .sort((a,b)=> (b.rcept_dt||"").localeCompare(a.rcept_dt||""));
+
+  $("#count").textContent = `${list.length}건의 공시`;
+
+  const feed = $("#feed");
+  if(!list.length){ feed.innerHTML = `<li class="empty">표시할 공시가 없습니다.</li>`; return; }
+
+  feed.innerHTML = list.map(item => {
+    const dt = fmtDate(item.rcept_dt);
+    const dl = dartLink(item.rcept_no);
+    const tag = deltaTag(item);
+    const code = item.stock_code ? `<span class="code">${item.stock_code}</span>` : "";
+    const inner = `
+      <div class="date">${dt.m} ${dt.d}<span class="y">${dt.y}</span></div>
+      <div class="corp">
+        <div class="name">${item.corp_name}${code}</div>
+        <div class="sub"><span class="firm">${item.firm}</span> · ${item.report_resn||"—"}</div>
+      </div>
+      <div class="stake">
+        <div class="pct">${item.stkrt}%</div>
+        <div class="delta ${tag.cls}">${tag.txt}</div>
+      </div>`;
+    return dl
+      ? `<a class="row" href="${dl}" target="_blank" rel="noopener">${inner}</a>`
+      : `<div class="row" title="라이브 연결 전 예시 데이터">${inner}</div>`;
+  }).join("");
+}
+
+function buildTabs(){
+  const firms = ["전체", ...DATA.firms];
+  $("#firmTabs").innerHTML = firms.map(f =>
+    `<button role="tab" aria-selected="${f===activeFirm}" data-firm="${f}">${f}</button>`
+  ).join("");
+  $("#firmTabs").querySelectorAll("button").forEach(b=>{
+    b.onclick = () => { activeFirm = b.dataset.firm; buildTabs(); render(); };
+  });
+}
+
+fetch("data.json?ts=" + Date.now())
+  .then(r => r.json())
+  .then(d => {
+    DATA = d;
+    const u = new Date(d.updated_at);
+    $("#updated").textContent = isNaN(u) ? "—"
+      : `${u.getFullYear()}.${String(u.getMonth()+1).padStart(2,"0")}.${String(u.getDate()).padStart(2,"0")} ${String(u.getHours()).padStart(2,"0")}:${String(u.getMinutes()).padStart(2,"0")}`;
+    if(d.is_seed){
+      $("#seedFlag").innerHTML = `<span class="seed-flag">예시 데이터 · 라이브 연결 전</span>`;
+    }
+    buildTabs();
+    render();
+  })
+  .catch(e => {
+    $("#feed").innerHTML = `<li class="empty">데이터를 불러오지 못했습니다.<br>${e}</li>`;
+  });
+</script>
+</body>
+</html>
