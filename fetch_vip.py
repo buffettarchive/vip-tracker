@@ -36,6 +36,9 @@ GH_API = "https://api.github.com"
 WATCH_FIRMS = [
     "브이아이피자산운용",
     "얼라인파트너스자산운용",
+    "라이프자산운용",
+    "에셋플러스자산운용",
+    "트러스톤자산운용",
 ]
 
 SCAN_DAYS = 3
