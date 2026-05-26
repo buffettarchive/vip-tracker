@@ -152,20 +152,20 @@ function dartLink(rcept_no){
   return `https://dart.fss.or.kr/dsaf001/main.do?rcpNo=${rcept_no}`;
 }
 
-const NON_TRADE = ["담보","질권","계약","특별관계자","특수관계자","합병","상속","증여","신탁"];
 function tagFor(item){
-  // 사유와 증감 부호를 직접 보고 매수/매도/기타를 판정 (옛·새 데이터 모두 일관 처리)
-  const resn = item.report_resn || "";
-  const irds = parseFloat(String(item.stkrt_irds).replace(/[+,%]/g,""));
-  const nonTrade = NON_TRADE.some(k => resn.includes(k));
-  const hasTrade = /매매|취득|매수|매도|장내/.test(resn);
+  // kind(매수·매도·기타)와 직전 대비 증감으로 라벨 생성
+  const cur  = parseFloat(item.stkrt);
+  const prev = parseFloat(item.stkrt_prev);
+  const diff = (!isNaN(cur) && !isNaN(prev)) ? (cur - prev) : null;
+  const kind = item.kind || "";
 
-  if(resn.includes("신규")) return {cls:"buy", txt:"매수 · 신규"};
-  if(!isNaN(irds) && (hasTrade || !nonTrade)){
-    if(irds > 0) return {cls:"buy",  txt:`매수 ▲${Math.abs(irds).toFixed(2)}%p`};
-    if(irds < 0) return {cls:"sell", txt:`매도 ▼${Math.abs(irds).toFixed(2)}%p`};
+  if(kind.includes("신규")) return {cls:"buy",  txt:"매수 · 신규"};
+  if(kind === "매수"){
+    return {cls:"buy",  txt: diff!=null ? `매수 ▲${Math.abs(diff).toFixed(2)}%p` : "매수"};
   }
-  if(nonTrade) return {cls:"etc", txt:"기타 (담보·계약 등)"};
+  if(kind === "매도"){
+    return {cls:"sell", txt: diff!=null ? `매도 ▼${Math.abs(diff).toFixed(2)}%p` : "매도"};
+  }
   return {cls:"etc", txt:"기타"};
 }
 
