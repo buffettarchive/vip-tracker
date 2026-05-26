@@ -1,26 +1,37 @@
 """
-fetch_vip.py  (v5 · 마지막 본 지점까지만 확인)
+fetch_vip.py  (v6 · Render에서 실행, 결과를 GitHub로 푸시)
 ─────────────────────────────────────────────────────────────
-DART 공시는 접수번호(rcept_no)가 시간순으로 커진다.
-지난번에 본 가장 큰 번호(high-water mark)를 기억해두고,
-최신부터 훑다가 그 번호 이하를 만나면 즉시 멈춘다.
-→ 새 공시가 없으면 목록 한두 페이지만 보고 끝. 매우 빠름.
+Render의 Cron Job이 5분마다 이 파일을 실행한다.
+1) 기존 data.json을 GitHub에서 읽어오고
+2) 마지막 본 지점 이후의 새 공시만 확인해 추가하고
+3) 변경이 있으면 GitHub 창고로 다시 push 한다.
+→ 사용자가 아무것도 안 해도 사이트가 자동 갱신된다.
 
-기존 누적/정리 기능은 그대로:
-- 이전 데이터는 모아두고 새 것만 추가
-- 5% 미만(지분 축소) 제외, 신규/변동 구분
+필요한 환경변수(Render에 등록):
+  DART_API_KEY : opendart 인증키
+  GH_TOKEN     : github personal access token (repo 권한)
 """
 
 import os
 import sys
 import json
 import time
+import base64
 import datetime as dt
 
 import requests
 
 DART_KEY = os.environ["DART_API_KEY"]
+GH_TOKEN = os.environ["GH_TOKEN"]
+
+# ── 본인 창고 정보 (필요시 수정) ──
+GH_OWNER = "buffettarchive"
+GH_REPO = "vip-tracker"
+GH_PATH = "docs/data.json"      # 사이트가 읽는 파일
+GH_BRANCH = "main"
+
 DART = "https://opendart.fss.or.kr/api"
+GH_API = "https://api.github.com"
 
 WATCH_FIRMS = [
     "브이아이피자산운용",
@@ -28,15 +39,20 @@ WATCH_FIRMS = [
     # "머스트자산운용",
 ]
 
-# 새 공시가 없을 때도 안전하게 살펴볼 최소 기간(짧게).
 SCAN_DAYS = 3
-OUT_PATH = "docs/data.json"
 
 s = requests.Session()
-s.headers.update({"User-Agent": "vip-tracker/0.5"})
+s.headers.update({"User-Agent": "vip-tracker/0.6"})
+
+GH_HEADERS = {
+    "Authorization": f"Bearer {GH_TOKEN}",
+    "Accept": "application/vnd.github+json",
+    "X-GitHub-Api-Version": "2022-11-28",
+}
 
 
-def get(endpoint, **params):
+# ── DART ──────────────────────────────────────────────
+def dart(endpoint, **params):
     params["crtfc_key"] = DART_KEY
     for i in range(3):
         try:
@@ -46,23 +62,6 @@ def get(endpoint, **params):
             print(f"[retry {i}] {endpoint}: {e}", file=sys.stderr)
             time.sleep(1.5 * (i + 1))
     return {"status": "999", "list": []}
-
-
-def load_existing():
-    """기존 데이터와, 지금까지 본 가장 큰 접수번호를 함께 반환."""
-    if not os.path.exists(OUT_PATH):
-        return {}, ""
-    try:
-        with open(OUT_PATH, encoding="utf-8") as f:
-            data = json.load(f)
-        items = {d["rcept_no"]: d for d in data.get("disclosures", [])}
-        last_seen = data.get("last_seen", "")
-        if not last_seen and items:
-            last_seen = max(items.keys())   # 옛 파일 대비
-        return items, last_seen
-    except Exception as e:  # noqa
-        print(f"[warn] 기존 데이터 읽기 실패: {e}", file=sys.stderr)
-        return {}, ""
 
 
 def firm_in(name):
@@ -75,7 +74,7 @@ def firm_in(name):
 
 
 def major_detail(corp_code, rcept_no):
-    d = get("majorstock.json", corp_code=corp_code)
+    d = dart("majorstock.json", corp_code=corp_code)
     rows = d.get("list", []) or []
     for row in rows:
         if row.get("rcept_no") == rcept_no:
@@ -104,22 +103,52 @@ def classify(report_resn, stkrt):
     return "기타"
 
 
+# ── GitHub 읽기/쓰기 ──────────────────────────────────
+def gh_get_file():
+    """현재 data.json 내용과 sha를 가져온다. 없으면 (빈 데이터, None)."""
+    url = f"{GH_API}/repos/{GH_OWNER}/{GH_REPO}/contents/{GH_PATH}?ref={GH_BRANCH}"
+    r = s.get(url, headers=GH_HEADERS, timeout=20)
+    if r.status_code == 200:
+        j = r.json()
+        content = base64.b64decode(j["content"]).decode("utf-8")
+        return json.loads(content), j["sha"]
+    return {"disclosures": [], "last_seen": ""}, None
+
+
+def gh_put_file(payload, sha):
+    """data.json을 새 내용으로 commit."""
+    url = f"{GH_API}/repos/{GH_OWNER}/{GH_REPO}/contents/{GH_PATH}"
+    body = {
+        "message": f"data: auto update {payload['updated_at']}",
+        "content": base64.b64encode(
+            json.dumps(payload, ensure_ascii=False, indent=2).encode("utf-8")
+        ).decode("ascii"),
+        "branch": GH_BRANCH,
+    }
+    if sha:
+        body["sha"] = sha
+    r = s.put(url, headers=GH_HEADERS, data=json.dumps(body), timeout=20)
+    if r.status_code not in (200, 201):
+        print(f"[ERR] github push {r.status_code}: {r.text}", file=sys.stderr)
+        return False
+    return True
+
+
+# ── 메인 ──────────────────────────────────────────────
 def main():
-    existing, last_seen = load_existing()
+    data, sha = gh_get_file()
+    existing = {d["rcept_no"]: d for d in data.get("disclosures", [])}
+    last_seen = data.get("last_seen", "") or (max(existing) if existing else "")
     print(f"[info] 기존 {len(existing)}건, 마지막 본 번호={last_seen or '없음'}")
 
     today = dt.date.today()
     bgn = (today - dt.timedelta(days=SCAN_DAYS)).strftime("%Y%m%d")
     end = today.strftime("%Y%m%d")
 
-    added = 0
-    max_seen = last_seen
-    stop = False
-    page = 1
-
+    added, max_seen, stop, page = 0, last_seen, False, 1
     while not stop:
-        d = get("list.json", bgn_de=bgn, end_de=end, pblntf_ty="D",
-                page_no=page, page_count=100, sort="date", sort_mth="desc")
+        d = dart("list.json", bgn_de=bgn, end_de=end, pblntf_ty="D",
+                 page_no=page, page_count=100, sort="date", sort_mth="desc")
         st = d.get("status")
         if st == "013":
             break
@@ -127,29 +156,22 @@ def main():
             print(f"[warn] list status={st} msg={d.get('message')}", file=sys.stderr)
             break
 
-        rows = d.get("list", []) or []
-        for row in rows:
+        for row in d.get("list", []) or []:
             rcept_no = row["rcept_no"]
-            # 최신순으로 훑다가 '이미 본 지점'에 닿으면 멈춤
             if last_seen and rcept_no <= last_seen:
                 stop = True
                 break
             if rcept_no > max_seen:
                 max_seen = rcept_no
-
             if "대량보유상황보고서" not in row.get("report_nm", ""):
                 continue
             firm = firm_in(row.get("flr_nm", ""))
-            if not firm:
+            if not firm or rcept_no in existing:
                 continue
-            if rcept_no in existing:
-                continue
-
             detail = major_detail(row.get("corp_code", ""), rcept_no) if row.get("corp_code") else {}
             kind = classify(detail.get("report_resn", ""), detail.get("stkrt", ""))
             if kind is None:
                 continue
-
             rdt = row.get("rcept_dt", "")
             existing[rcept_no] = {
                 "rcept_no": rcept_no,
@@ -171,6 +193,11 @@ def main():
         page += 1
         time.sleep(0.2)
 
+    # 변경 없으면 푸시 생략(불필요한 커밋 방지)
+    if added == 0 and max_seen == last_seen:
+        print("[info] 새 공시 없음 — 변경 없이 종료")
+        return
+
     merged = sorted(existing.values(), key=lambda x: x.get("rcept_dt", ""), reverse=True)
     payload = {
         "updated_at": dt.datetime.now(dt.timezone(dt.timedelta(hours=9))).isoformat(timespec="minutes"),
@@ -179,11 +206,8 @@ def main():
         "last_seen": max_seen,
         "disclosures": merged,
     }
-    os.makedirs(os.path.dirname(OUT_PATH), exist_ok=True)
-    with open(OUT_PATH, "w", encoding="utf-8") as f:
-        json.dump(payload, f, ensure_ascii=False, indent=2)
-
-    print(f"[info] 신규 {added}건 추가 → 총 {len(merged)}건 (살핀 페이지 {page})")
+    if gh_put_file(payload, sha):
+        print(f"[info] 신규 {added}건 추가 → 총 {len(merged)}건, GitHub 반영 완료")
 
 
 if __name__ == "__main__":
