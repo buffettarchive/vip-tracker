@@ -1,23 +1,23 @@
 """
-backfill.py  (과거 채우기 · 일회용)
+backfill.py  (v2 · 본문 파싱 + 기존 데이터 초기화 후 재구축)
 ─────────────────────────────────────────────────────────────
-추적 대상 운용사의 최근 80일치 대량보유(5%) 공시를 한 번에 긁어
-기존 data.json에 합쳐 넣고 GitHub에 push 한다.
-평소 자동 로봇(fetch_vip.py)은 그대로 두고, 이건 필요할 때만 손으로 1회 실행.
-
-Render에서 Command를 'python backfill.py'로 잠깐 바꿔 1회 실행하면 된다.
+80일치 대량보유 공시를 본문에서 직접 읽어 정확한 본인 몫으로 다시 채운다.
+기존 data.json은 무시하고 처음부터 새로 만든다(틀린 옛 데이터 청소).
+Render에서 Command를 'python backfill.py'로 잠깐 바꿔 1회 실행.
 """
 
 import os
+import io
+import re
 import sys
 import json
 import time
+import zipfile
 import base64
 import datetime as dt
 
 import requests
 
-# Render에 이미 등록된 환경변수를 그대로 사용 (별도 입력 불필요)
 DART_KEY = os.environ["DART_API_KEY"]
 GH_TOKEN = os.environ["GH_TOKEN"]
 
@@ -34,10 +34,10 @@ WATCH_FIRMS = [
     "얼라인파트너스자산운용",
 ]
 
-BACKFILL_DAYS = 80   # 최대 약 90일(3개월)까지. 80이 안전.
+BACKFILL_DAYS = 80
 
 s = requests.Session()
-s.headers.update({"User-Agent": "vip-tracker-backfill/1.0"})
+s.headers.update({"User-Agent": "vip-tracker-backfill/2.0"})
 GH_HEADERS = {
     "Authorization": f"Bearer {GH_TOKEN}",
     "Accept": "application/vnd.github+json",
@@ -65,15 +65,6 @@ def firm_in(name):
     return None
 
 
-def major_detail(corp_code, rcept_no):
-    d = dart("majorstock.json", corp_code=corp_code)
-    rows = d.get("list", []) or []
-    for row in rows:
-        if row.get("rcept_no") == rcept_no:
-            return row
-    return rows[0] if rows else {}
-
-
 def to_float(v):
     try:
         return float(str(v).replace(",", "").replace("%", "").strip())
@@ -81,38 +72,74 @@ def to_float(v):
         return None
 
 
-NON_TRADE_KW = ["담보", "질권", "계약", "특별관계자", "특수관계자", "합병", "상속", "증여", "신탁"]
+def parse_document(rcept_no):
+    try:
+        r = s.get(f"{DART}/document.xml",
+                  params={"crtfc_key": DART_KEY, "rcept_no": rcept_no}, timeout=30)
+        if r.headers.get("content-type", "").startswith("application/json"):
+            print(f"[warn] document {rcept_no}: {r.text[:120]}", file=sys.stderr)
+            return {}
+        z = zipfile.ZipFile(io.BytesIO(r.content))
+        name = max(z.namelist(), key=lambda n: z.getinfo(n).file_size)
+        raw = z.read(name)
+        text = None
+        for enc in ("utf-8", "euc-kr", "cp949"):
+            try:
+                text = raw.decode(enc)
+                break
+            except UnicodeDecodeError:
+                continue
+        if text is None:
+            text = raw.decode("utf-8", errors="ignore")
+        plain = re.sub(r"<[^>]+>", " ", text)
+        plain = re.sub(r"&[a-zA-Z#0-9]+;", " ", plain)
+        plain = re.sub(r"\s+", " ", plain)
+        out = {}
+        cur = re.search(r"이번\s*보고서\s*([\d,]+)\s+([\d]+(?:\.\d+)?)", plain)
+        prev = re.search(r"직전\s*보고서\s*([\d,]+)\s+([\d]+(?:\.\d+)?)", plain)
+        if cur:
+            out["stkqy"] = cur.group(1).replace(",", "")
+            out["stkrt"] = cur.group(2)
+        if prev:
+            out["stkrt_prev"] = prev.group(2)
+        resn = re.search(r"보고사유\s*(.+?)\s*보유목적", plain)
+        if resn:
+            out["report_resn"] = resn.group(1).strip()[:60]
+        purpose = re.search(r"보유목적\s*([가-힣A-Za-z]+투자)", plain)
+        if purpose:
+            out["purpose"] = purpose.group(1).strip()
+        return out
+    except Exception as e:  # noqa
+        print(f"[warn] 원문 파싱 실패 {rcept_no}: {e}", file=sys.stderr)
+        return {}
 
-def classify(report_resn, stkrt_irds):
-    resn = report_resn or ""
-    irds = to_float(stkrt_irds)
-    is_non_trade = any(k in resn for k in NON_TRADE_KW)
-    has_trade = ("매매" in resn) or ("취득" in resn) or ("매수" in resn) or ("매도" in resn) or ("장내" in resn)
-    if "신규" in resn or "신규취득" in resn:
-        return "매수(신규)"
-    if irds is not None and (has_trade or not is_non_trade):
-        if irds > 0:
-            return "매수"
-        if irds < 0:
-            return "매도"
-    if is_non_trade:
+
+def classify(stkrt, stkrt_prev):
+    cur = to_float(stkrt)
+    prev = to_float(stkrt_prev)
+    if cur is None:
         return "기타"
+    if prev is None:
+        return "매수(신규)"
+    if cur > prev:
+        return "매수"
+    if cur < prev:
+        return "매도"
     return "기타"
 
 
-def gh_get():
+def gh_get_sha():
     url = f"{GH_API}/repos/{GH_OWNER}/{GH_REPO}/contents/{GH_PATH}?ref={GH_BRANCH}"
     r = s.get(url, headers=GH_HEADERS, timeout=20)
     if r.status_code == 200:
-        j = r.json()
-        return json.loads(base64.b64decode(j["content"]).decode("utf-8")), j["sha"]
-    return {"disclosures": [], "last_seen": ""}, None
+        return r.json()["sha"]
+    return None
 
 
 def gh_put(payload, sha):
     url = f"{GH_API}/repos/{GH_OWNER}/{GH_REPO}/contents/{GH_PATH}"
     body = {
-        "message": f"data: backfill {payload['updated_at']}",
+        "message": f"data: backfill rebuild {payload['updated_at']}",
         "content": base64.b64encode(
             json.dumps(payload, ensure_ascii=False, indent=2).encode("utf-8")
         ).decode("ascii"),
@@ -128,16 +155,15 @@ def gh_put(payload, sha):
 
 
 def main():
-    data, sha = gh_get()
-    existing = {d["rcept_no"]: d for d in data.get("disclosures", [])}
-    prev_last = data.get("last_seen", "") or (max(existing) if existing else "")
-    print(f"[info] 기존 {len(existing)}건에서 시작")
+    sha = gh_get_sha()   # 기존 파일은 덮어쓴다(초기화)
+    print("[info] 기존 데이터 무시하고 새로 구축")
 
     today = dt.date.today()
     bgn = (today - dt.timedelta(days=BACKFILL_DAYS)).strftime("%Y%m%d")
     end = today.strftime("%Y%m%d")
 
-    added, max_seen, page = 0, prev_last, 1
+    items, seen = {}, set()
+    max_seen, page = "", 1
     while True:
         d = dart("list.json", bgn_de=bgn, end_de=end, pblntf_ty="D",
                  page_no=page, page_count=100, sort="date", sort_mth="desc")
@@ -154,32 +180,36 @@ def main():
             if "대량보유상황보고서" not in row.get("report_nm", ""):
                 continue
             firm = firm_in(row.get("flr_nm", ""))
-            if not firm or rcept_no in existing:
+            if not firm or rcept_no in seen:
                 continue
-            detail = major_detail(row.get("corp_code", ""), rcept_no) if row.get("corp_code") else {}
-            kind = classify(detail.get("report_resn", ""), detail.get("stkrt_irds", ""))
+            seen.add(rcept_no)
+            doc = parse_document(rcept_no)
+            time.sleep(0.3)
+            kind = classify(doc.get("stkrt"), doc.get("stkrt_prev"))
             rdt = row.get("rcept_dt", "")
-            existing[rcept_no] = {
+            items[rcept_no] = {
                 "rcept_no": rcept_no,
                 "rcept_dt": f"{rdt[:4]}-{rdt[4:6]}-{rdt[6:]}" if len(rdt) == 8 else rdt,
                 "firm": firm,
                 "corp_name": row.get("corp_name", ""),
                 "stock_code": row.get("stock_code", ""),
-                "stkrt": detail.get("stkrt", ""),
-                "stkrt_irds": detail.get("stkrt_irds", ""),
-                "report_resn": detail.get("report_resn", ""),
+                "corp_code": row.get("corp_code", ""),
+                "stkrt": doc.get("stkrt", ""),
+                "stkrt_prev": doc.get("stkrt_prev", ""),
+                "stkqy": doc.get("stkqy", ""),
+                "report_resn": doc.get("report_resn", ""),
+                "purpose": doc.get("purpose", ""),
                 "report_nm": row.get("report_nm", ""),
                 "kind": kind,
             }
-            added += 1
         tp = int(d.get("total_page", 1) or 1)
-        print(f"  ...페이지 {page}/{tp} 처리")
+        print(f"  ...페이지 {page}/{tp}, 누적 {len(items)}건")
         if page >= tp:
             break
         page += 1
         time.sleep(0.2)
 
-    merged = sorted(existing.values(), key=lambda x: x.get("rcept_no", ""), reverse=True)
+    merged = sorted(items.values(), key=lambda x: x.get("rcept_no", ""), reverse=True)
     payload = {
         "updated_at": dt.datetime.now(dt.timezone(dt.timedelta(hours=9))).isoformat(timespec="minutes"),
         "is_seed": False,
@@ -188,7 +218,7 @@ def main():
         "disclosures": merged,
     }
     if gh_put(payload, sha):
-        print(f"[info] 신규 {added}건 추가 → 총 {len(merged)}건, GitHub 반영 완료")
+        print(f"[info] 재구축 완료 → 총 {len(merged)}건, GitHub 반영")
 
 
 if __name__ == "__main__":
