@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-05-26T14:25+09:00",
+  "updated_at": "2026-05-26T14:28+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
     "얼라인파트너스자산운용"
   ],
-  "last_seen": "20260526000237",
+  "last_seen": "20260526000239",
   "disclosures": [
     {
       "rcept_no": "20260526000063",
@@ -13,11 +13,14 @@
       "firm": "브이아이피자산운용",
       "corp_name": "롯데렌탈",
       "stock_code": "089860",
-      "stkrt": "61.21",
-      "stkrt_irds": "0.58",
-      "report_resn": "특별관계자 변동\n\n보유주식등에 대한 주요 계약 체결",
+      "corp_code": "00545716",
+      "stkrt": "7.33",
+      "stkrt_prev": "6.20",
+      "stkqy": "2662920",
+      "report_resn": "1% 이상 변동",
+      "purpose": "일반투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "변동"
+      "kind": "매수"
     },
     {
       "rcept_no": "20260521000461",
@@ -25,11 +28,14 @@
       "firm": "브이아이피자산운용",
       "corp_name": "프로텍",
       "stock_code": "053610",
+      "corp_code": "00325112",
       "stkrt": "6.55",
       "stkrt_prev": "",
-      "stkrt_irds": "1.71",
-      "report_resn": " 5% 이상 신규취득",
-      "report_nm": "주식등의대량보유상황보고서(약식)"
+      "stkqy": "589668",
+      "report_resn": "5% 이상 신규취득",
+      "purpose": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매수(신규)"
     },
     {
       "rcept_no": "20260518000285",
@@ -37,11 +43,14 @@
       "firm": "브이아이피자산운용",
       "corp_name": "한라IMS",
       "stock_code": "092460",
+      "corp_code": "00528515",
       "stkrt": "6.74",
       "stkrt_prev": "",
-      "stkrt_irds": "1.86",
-      "report_resn": " 5% 이상 신규취득",
-      "report_nm": "주식등의대량보유상황보고서(약식)"
+      "stkqy": "1153227",
+      "report_resn": "5% 이상 신규취득",
+      "purpose": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매수(신규)"
     },
     {
       "rcept_no": "20260512000546",
@@ -49,11 +58,14 @@
       "firm": "브이아이피자산운용",
       "corp_name": "유성티엔에스",
       "stock_code": "024800",
+      "corp_code": "00173999",
       "stkrt": "5.89",
       "stkrt_prev": "",
-      "stkrt_irds": "1.01",
-      "report_resn": " 5% 이상 신규취득",
-      "report_nm": "주식등의대량보유상황보고서(약식)"
+      "stkqy": "2180527",
+      "report_resn": "5% 이상 신규취득",
+      "purpose": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매수(신규)"
     },
     {
       "rcept_no": "20260511000502",
@@ -61,11 +73,14 @@
       "firm": "브이아이피자산운용",
       "corp_name": "오로라",
       "stock_code": "039830",
+      "corp_code": "00141556",
       "stkrt": "5.47",
       "stkrt_prev": "",
-      "stkrt_irds": "0.80",
-      "report_resn": " 5% 이상 신규취득",
-      "report_nm": "주식등의대량보유상황보고서(약식)"
+      "stkqy": "589030",
+      "report_resn": "5% 이상 신규취득",
+      "purpose": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매수(신규)"
     },
     {
       "rcept_no": "20260511000065",
@@ -73,11 +88,14 @@
       "firm": "브이아이피자산운용",
       "corp_name": "토비스",
       "stock_code": "051360",
+      "corp_code": "00390365",
       "stkrt": "6.25",
-      "stkrt_prev": "",
-      "stkrt_irds": "1.23",
+      "stkrt_prev": "5.02",
+      "stkqy": "932403",
       "report_resn": "1% 이상 변동",
-      "report_nm": "주식등의대량보유상황보고서(약식)"
+      "purpose": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매수"
     },
     {
       "rcept_no": "20260511000060",
@@ -85,11 +103,14 @@
       "firm": "브이아이피자산운용",
       "corp_name": "LF",
       "stock_code": "093050",
+      "corp_code": "00593032",
       "stkrt": "6.86",
-      "stkrt_prev": "",
-      "stkrt_irds": "1.37",
+      "stkrt_prev": "5.49",
+      "stkqy": "2005025",
       "report_resn": "1% 이상 변동",
-      "report_nm": "주식등의대량보유상황보고서(약식)"
+      "purpose": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매수"
     },
     {
       "rcept_no": "20260508001019",
@@ -97,11 +118,14 @@
       "firm": "브이아이피자산운용",
       "corp_name": "아세아시멘트",
       "stock_code": "183190",
+      "corp_code": "00990165",
       "stkrt": "4.74",
-      "stkrt_prev": "",
-      "stkrt_irds": "-0.66",
+      "stkrt_prev": "5.40",
+      "stkqy": "1731480",
       "report_resn": "5%미만 보유",
-      "report_nm": "주식등의대량보유상황보고서(약식)"
+      "purpose": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매도"
     },
     {
       "rcept_no": "20260424000783",
@@ -109,11 +133,14 @@
       "firm": "얼라인파트너스자산운용",
       "corp_name": "코웨이",
       "stock_code": "021240",
+      "corp_code": "00170558",
       "stkrt": "5.30",
-      "stkrt_irds": "0.23",
-      "report_resn": "장내매매, 시간외대량매매로 인한 변동보고 및\n주요계약대상 주식 수 변경, 주식담보해제",
+      "stkrt_prev": "5.07",
+      "stkqy": "3750764",
+      "report_resn": "장내매매, 시간외대량매매로 인한 변동보고 및주요계약대상 주식 수 변경, 주식담보해제 ※ 보고자 본인은 보고서",
+      "purpose": "",
       "report_nm": "주식등의대량보유상황보고서(일반)",
-      "kind": "변동"
+      "kind": "매수"
     },
     {
       "rcept_no": "20260424000651",
@@ -121,11 +148,14 @@
       "firm": "얼라인파트너스자산운용",
       "corp_name": "솔루엠",
       "stock_code": "248070",
+      "corp_code": "01159233",
       "stkrt": "23.11",
-      "stkrt_irds": "0.09",
-      "report_resn": "보유주식에 관한 질권 담보 설정",
+      "stkrt_prev": "23.02",
+      "stkqy": "12666959",
+      "report_resn": "보유주식에 관한 질권 담보 설정 ※ 보고자 본인은 보고서작성기준일 현재 본인과 특별관계자의 주식등의 보유상황",
+      "purpose": "",
       "report_nm": "주식등의대량보유상황보고서(일반)",
-      "kind": "기타"
+      "kind": "매수"
     },
     {
       "rcept_no": "20260421000365",
@@ -133,11 +163,14 @@
       "firm": "브이아이피자산운용",
       "corp_name": "오로라",
       "stock_code": "039830",
+      "corp_code": "00141556",
       "stkrt": "4.95",
       "stkrt_prev": "",
-      "stkrt_irds": "-0.02",
-      "report_resn": " 5% 이상 신규취득",
-      "report_nm": "주식등의대량보유상황보고서(약식)"
+      "stkqy": "532704",
+      "report_resn": "5% 이상 신규취득",
+      "purpose": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매수(신규)"
     },
     {
       "rcept_no": "20260413002729",
@@ -145,11 +178,14 @@
       "firm": "얼라인파트너스자산운용",
       "corp_name": "솔루엠",
       "stock_code": "248070",
+      "corp_code": "01159233",
       "stkrt": "23.02",
-      "stkrt_irds": "0",
-      "report_resn": "시간외대량매매에 따른 보유비율 변동,\n주요계약대상 주식 수 변경",
+      "stkrt_prev": "23.02",
+      "stkqy": "12616959",
+      "report_resn": "시간외대량매매에 따른 보유비율 변동,주요계약대상 주식 수 변경 ※ 보고자 본인은 보고서작성기준일 현재 본인과",
+      "purpose": "",
       "report_nm": "주식등의대량보유상황보고서(일반)",
-      "kind": "변동"
+      "kind": "기타"
     },
     {
       "rcept_no": "20260413002662",
@@ -157,11 +193,14 @@
       "firm": "얼라인파트너스자산운용",
       "corp_name": "에이플러스에셋",
       "stock_code": "244920",
+      "corp_code": "00684802",
       "stkrt": "18.05",
-      "stkrt_irds": "0",
-      "report_resn": "시간외대량매매에 따른 보유비율 변동, \n주요계약대상 주식 수 변경",
+      "stkrt_prev": "18.05",
+      "stkqy": "4080940",
+      "report_resn": "시간외대량매매에 따른 보유비율 변동, 주요계약대상 주식 수 변경 ※ 보고자 본인은 보고서작성기준일 현재 본인",
+      "purpose": "",
       "report_nm": "주식등의대량보유상황보고서(일반)",
-      "kind": "변동"
+      "kind": "기타"
     },
     {
       "rcept_no": "20260410003522",
@@ -169,11 +208,14 @@
       "firm": "브이아이피자산운용",
       "corp_name": "풍산홀딩스",
       "stock_code": "005810",
+      "corp_code": "00155531",
       "stkrt": "4.70",
-      "stkrt_prev": "",
-      "stkrt_irds": "-5.61",
+      "stkrt_prev": "10.31",
+      "stkqy": "677459",
       "report_resn": "1% 이상 변동",
-      "report_nm": "주식등의대량보유상황보고서(약식)"
+      "purpose": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매도"
     },
     {
       "rcept_no": "20260410002970",
@@ -181,11 +223,14 @@
       "firm": "브이아이피자산운용",
       "corp_name": "유니테스트",
       "stock_code": "086390",
+      "corp_code": "00540447",
       "stkrt": "8.26",
-      "stkrt_prev": "",
-      "stkrt_irds": "0.50",
+      "stkrt_prev": "7.76",
+      "stkqy": "1744639",
       "report_resn": "1% 이상 변동",
-      "report_nm": "주식등의대량보유상황보고서(약식)"
+      "purpose": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매수"
     },
     {
       "rcept_no": "20260410002953",
@@ -193,11 +238,14 @@
       "firm": "브이아이피자산운용",
       "corp_name": "글로벌텍스프리",
       "stock_code": "204620",
+      "corp_code": "01042711",
       "stkrt": "9.93",
-      "stkrt_prev": "",
-      "stkrt_irds": "2.98",
+      "stkrt_prev": "6.95",
+      "stkqy": "6978597",
       "report_resn": "1% 이상 변동",
-      "report_nm": "주식등의대량보유상황보고서(약식)"
+      "purpose": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매수"
     },
     {
       "rcept_no": "20260410002929",
@@ -205,11 +253,14 @@
       "firm": "브이아이피자산운용",
       "corp_name": "티쓰리",
       "stock_code": "204610",
+      "corp_code": "00609661",
       "stkrt": "18.47",
-      "stkrt_prev": "",
-      "stkrt_irds": "2.88",
+      "stkrt_prev": "15.59",
+      "stkqy": "10158560",
       "report_resn": "1% 이상 변동",
-      "report_nm": "주식등의대량보유상황보고서(약식)"
+      "purpose": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매수"
     },
     {
       "rcept_no": "20260408003297",
@@ -217,11 +268,14 @@
       "firm": "얼라인파트너스자산운용",
       "corp_name": "덴티움",
       "stock_code": "145720",
+      "corp_code": "00526599",
       "stkrt": "10.47",
-      "stkrt_irds": "2.31",
-      "report_resn": "시간외대량매매, 발행회사 이익소각에 따른 보유비율 변동, 주요계약대상 주식 수 변경",
+      "stkrt_prev": "8.16",
+      "stkqy": "903083",
+      "report_resn": "시간외대량매매, 발행회사 이익소각에 따른 보유비율 변동, 주요계약대상 주식 수 변경 ※ 보고자 본인은 보고서",
+      "purpose": "",
       "report_nm": "주식등의대량보유상황보고서(일반)",
-      "kind": "변동"
+      "kind": "매수"
     },
     {
       "rcept_no": "20260407003414",
@@ -229,11 +283,14 @@
       "firm": "브이아이피자산운용",
       "corp_name": "아세아시멘트",
       "stock_code": "183190",
+      "corp_code": "00990165",
       "stkrt": "5.40",
-      "stkrt_prev": "",
-      "stkrt_irds": "-2.26",
-      "report_resn": "1% 이상 변동 및 보유목적 변경",
-      "report_nm": "주식등의대량보유상황보고서(약식)"
+      "stkrt_prev": "7.66",
+      "stkqy": "1993964",
+      "report_resn": "1% 이상 변동 및",
+      "purpose": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매도"
     },
     {
       "rcept_no": "20260406003608",
@@ -241,11 +298,14 @@
       "firm": "브이아이피자산운용",
       "corp_name": "삼양패키징",
       "stock_code": "272550",
+      "corp_code": "01060814",
       "stkrt": "1.12",
-      "stkrt_prev": "",
-      "stkrt_irds": "-5.98",
+      "stkrt_prev": "7.10",
+      "stkqy": "169492",
       "report_resn": "1% 이상 변동",
-      "report_nm": "주식등의대량보유상황보고서(약식)"
+      "purpose": "일반투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매도"
     },
     {
       "rcept_no": "20260401000721",
@@ -253,11 +313,14 @@
       "firm": "브이아이피자산운용",
       "corp_name": "피에이치에이",
       "stock_code": "043370",
+      "corp_code": "00155151",
       "stkrt": "8.72",
-      "stkrt_prev": "",
-      "stkrt_irds": "1.27",
+      "stkrt_prev": "7.45",
+      "stkqy": "1831698",
       "report_resn": "1% 이상 변동",
-      "report_nm": "주식등의대량보유상황보고서(약식)"
+      "purpose": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매수"
     },
     {
       "rcept_no": "20260330001316",
@@ -265,11 +328,14 @@
       "firm": "브이아이피자산운용",
       "corp_name": "LF",
       "stock_code": "093050",
+      "corp_code": "00593032",
       "stkrt": "5.49",
       "stkrt_prev": "",
-      "stkrt_irds": "0.55",
-      "report_resn": " 5% 이상 신규취득",
-      "report_nm": "주식등의대량보유상황보고서(약식)"
+      "stkqy": "1606070",
+      "report_resn": "5% 이상 신규취득",
+      "purpose": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매수(신규)"
     },
     {
       "rcept_no": "20260327001265",
@@ -277,11 +343,14 @@
       "firm": "브이아이피자산운용",
       "corp_name": "백산",
       "stock_code": "035150",
+      "corp_code": "00122551",
       "stkrt": "15.16",
-      "stkrt_prev": "",
-      "stkrt_irds": "1.01",
+      "stkrt_prev": "14.15",
+      "stkqy": "3079064",
       "report_resn": "1% 이상 변동",
-      "report_nm": "주식등의대량보유상황보고서(약식)"
+      "purpose": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매수"
     },
     {
       "rcept_no": "20260326000909",
@@ -289,11 +358,14 @@
       "firm": "브이아이피자산운용",
       "corp_name": "글로벌텍스프리",
       "stock_code": "204620",
+      "corp_code": "01042711",
       "stkrt": "6.95",
       "stkrt_prev": "",
-      "stkrt_irds": "2.05",
-      "report_resn": " 5% 이상 신규취득",
-      "report_nm": "주식등의대량보유상황보고서(약식)"
+      "stkqy": "4882969",
+      "report_resn": "5% 이상 신규취득",
+      "purpose": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매수(신규)"
     },
     {
       "rcept_no": "20260324000701",
@@ -301,11 +373,14 @@
       "firm": "브이아이피자산운용",
       "corp_name": "코리아에프티",
       "stock_code": "123410",
+      "corp_code": "00803425",
       "stkrt": "13.17",
-      "stkrt_prev": "",
-      "stkrt_irds": "1.08",
+      "stkrt_prev": "12.09",
+      "stkqy": "3665429",
       "report_resn": "1% 이상 변동",
-      "report_nm": "주식등의대량보유상황보고서(약식)"
+      "purpose": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매수"
     },
     {
       "rcept_no": "20260320001008",
@@ -313,11 +388,14 @@
       "firm": "얼라인파트너스자산운용",
       "corp_name": "솔루엠",
       "stock_code": "248070",
+      "corp_code": "01159233",
       "stkrt": "23.02",
-      "stkrt_irds": "14.98",
-      "report_resn": "보유주식 등에 관한 주요계약 체결 및 특수관계자 추가에 따른 변경 및 변동 보고",
+      "stkrt_prev": "8.04",
+      "stkqy": "12616959",
+      "report_resn": "보유주식 등에 관한 주요계약 체결 및 특수관계자 추가에 따른 변경 및 변동 보고 ※ 보고자 본인은 보고서작성",
+      "purpose": "",
       "report_nm": "주식등의대량보유상황보고서(일반)",
-      "kind": "변동"
+      "kind": "매수"
     },
     {
       "rcept_no": "20260316001230",
@@ -325,11 +403,14 @@
       "firm": "브이아이피자산운용",
       "corp_name": "삼지전자",
       "stock_code": "037460",
+      "corp_code": "00128315",
       "stkrt": "5.22",
       "stkrt_prev": "",
-      "stkrt_irds": "0.30",
-      "report_resn": " 5% 이상 신규취득",
-      "report_nm": "주식등의대량보유상황보고서(약식)"
+      "stkqy": "852140",
+      "report_resn": "5% 이상 신규취득",
+      "purpose": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매수(신규)"
     },
     {
       "rcept_no": "20260316000006",
@@ -337,11 +418,14 @@
       "firm": "얼라인파트너스자산운용",
       "corp_name": "코웨이",
       "stock_code": "021240",
+      "corp_code": "00170558",
       "stkrt": "5.07",
-      "stkrt_irds": "0.08",
-      "report_resn": "장내매매로 인한 5% 신규보고",
+      "stkrt_prev": "",
+      "stkqy": "3590395",
+      "report_resn": "장내매매로 인한 5% 신규보고 ※ 보고자 본인은 보고서작성기준일 현재 본인과 특별관계자의 주식등의 보유상황을",
+      "purpose": "",
       "report_nm": "[기재정정]주식등의대량보유상황보고서(일반)",
-      "kind": "신규"
+      "kind": "매수(신규)"
     },
     {
       "rcept_no": "20260312001409",
@@ -349,11 +433,14 @@
       "firm": "얼라인파트너스자산운용",
       "corp_name": "코웨이",
       "stock_code": "021240",
-      "stkrt": "25.09",
-      "stkrt_irds": "0",
-      "report_resn": "보유주식 관련 담보계약 만료",
+      "corp_code": "00170558",
+      "stkrt": "5.07",
+      "stkrt_prev": "",
+      "stkqy": "3590395",
+      "report_resn": "장내매매로 인한 5% 신규보고 ※ 보고자 본인은 보고서작성기준일 현재 본인과 특별관계자의 주식등의 보유상황을",
+      "purpose": "",
       "report_nm": "주식등의대량보유상황보고서(일반)",
-      "kind": "기타"
+      "kind": "매수(신규)"
     },
     {
       "rcept_no": "20260310002927",
@@ -361,11 +448,14 @@
       "firm": "브이아이피자산운용",
       "corp_name": "영원무역홀딩스",
       "stock_code": "009970",
+      "corp_code": "00140964",
       "stkrt": "4.78",
-      "stkrt_prev": "",
-      "stkrt_irds": "-1.31",
+      "stkrt_prev": "6.09",
+      "stkqy": "645915",
       "report_resn": "1% 이상 변동",
-      "report_nm": "주식등의대량보유상황보고서(약식)"
+      "purpose": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매도"
     },
     {
       "rcept_no": "20260310002720",
@@ -373,11 +463,14 @@
       "firm": "브이아이피자산운용",
       "corp_name": "티쓰리",
       "stock_code": "204610",
+      "corp_code": "00609661",
       "stkrt": "15.59",
-      "stkrt_prev": "",
-      "stkrt_irds": "1.90",
+      "stkrt_prev": "13.69",
+      "stkqy": "9149350",
       "report_resn": "1% 이상 변동",
-      "report_nm": "주식등의대량보유상황보고서(약식)"
+      "purpose": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매수"
     },
     {
       "rcept_no": "20260310002711",
@@ -385,11 +478,14 @@
       "firm": "브이아이피자산운용",
       "corp_name": "롯데칠성음료",
       "stock_code": "005300",
+      "corp_code": "00120571",
       "stkrt": "6.89",
-      "stkrt_prev": "",
-      "stkrt_irds": "-0.91",
+      "stkrt_prev": "7.80",
+      "stkqy": "639676",
       "report_resn": "1% 이상 변동",
-      "report_nm": "주식등의대량보유상황보고서(약식)"
+      "purpose": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매도"
     },
     {
       "rcept_no": "20260310002700",
@@ -397,11 +493,14 @@
       "firm": "브이아이피자산운용",
       "corp_name": "넥스틴",
       "stock_code": "348210",
+      "corp_code": "01080252",
       "stkrt": "5.24",
       "stkrt_prev": "",
-      "stkrt_irds": "0.31",
-      "report_resn": " 5% 이상 신규취득",
-      "report_nm": "주식등의대량보유상황보고서(약식)"
+      "stkqy": "548666",
+      "report_resn": "5% 이상 신규취득",
+      "purpose": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매수(신규)"
     },
     {
       "rcept_no": "20260310002087",
@@ -409,11 +508,14 @@
       "firm": "브이아이피자산운용",
       "corp_name": "월덱스",
       "stock_code": "101160",
+      "corp_code": "00580065",
       "stkrt": "15.49",
-      "stkrt_prev": "",
-      "stkrt_irds": "1.03",
+      "stkrt_prev": "14.46",
+      "stkqy": "2557121",
       "report_resn": "1% 이상 변동",
-      "report_nm": "주식등의대량보유상황보고서(약식)"
+      "purpose": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매수"
     },
     {
       "rcept_no": "20260309001411",
@@ -421,11 +523,14 @@
       "firm": "브이아이피자산운용",
       "corp_name": "코리아에프티",
       "stock_code": "123410",
+      "corp_code": "00803425",
       "stkrt": "12.09",
-      "stkrt_prev": "",
-      "stkrt_irds": "1.38",
+      "stkrt_prev": "10.71",
+      "stkqy": "3367206",
       "report_resn": "1% 이상 변동",
-      "report_nm": "주식등의대량보유상황보고서(약식)"
+      "purpose": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매수"
     }
   ]
 }
