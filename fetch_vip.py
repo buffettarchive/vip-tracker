@@ -90,17 +90,27 @@ def to_float(v):
         return None
 
 
-def classify(report_resn, stkrt):
+# 매매가 아닌(보유 숫자만 바뀌는) 사유 키워드
+NON_TRADE_KW = ["담보", "질권", "계약", "특별관계자", "특수관계자", "합병", "상속", "증여", "신탁"]
+
+def classify(report_resn, stkrt_irds):
+    """실제 매매인지 보고, 증감 부호로 매수/매도 구분. 매매가 아니면 '기타'."""
     resn = report_resn or ""
-    rt = to_float(stkrt)
-    if "5%미만" in resn or "5% 미만" in resn or (rt is not None and rt < 5):
-        return None
-    if "신규" in resn:
-        return "신규"
-    if "변동" in resn:
-        return "변동"
-    if "변경" in resn:
-        return "변경"
+    irds = to_float(stkrt_irds)
+    is_non_trade = any(k in resn for k in NON_TRADE_KW)
+    has_trade = ("매매" in resn) or ("취득" in resn) or ("매수" in resn) or ("매도" in resn) or ("장내" in resn)
+    # 신규 취득은 명백한 매수
+    if "신규" in resn or "신규취득" in resn:
+        return "매수(신규)"
+    # 매매 성격이 분명하고 증감 부호가 있으면 그걸로 판정
+    if irds is not None and (has_trade or not is_non_trade):
+        if irds > 0:
+            return "매수"
+        if irds < 0:
+            return "매도"
+    # 담보/계약 등 매매가 아닌 변동
+    if is_non_trade:
+        return "기타"
     return "기타"
 
 
@@ -170,9 +180,7 @@ def main():
             if not firm or rcept_no in existing:
                 continue
             detail = major_detail(row.get("corp_code", ""), rcept_no) if row.get("corp_code") else {}
-            kind = classify(detail.get("report_resn", ""), detail.get("stkrt", ""))
-            if kind is None:
-                continue
+            kind = classify(detail.get("report_resn", ""), detail.get("stkrt_irds", ""))
             rdt = row.get("rcept_dt", "")
             existing[rcept_no] = {
                 "rcept_no": rcept_no,
@@ -199,7 +207,7 @@ def main():
         print("[info] 새 공시 없음 — 변경 없이 종료")
         return
 
-    merged = sorted(existing.values(), key=lambda x: x.get("rcept_dt", ""), reverse=True)
+    merged = sorted(existing.values(), key=lambda x: x.get("rcept_no", ""), reverse=True)
     payload = {
         "updated_at": dt.datetime.now(dt.timezone(dt.timedelta(hours=9))).isoformat(timespec="minutes"),
         "is_seed": False,
