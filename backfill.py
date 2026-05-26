@@ -81,17 +81,22 @@ def to_float(v):
         return None
 
 
-def classify(report_resn, stkrt):
+NON_TRADE_KW = ["담보", "질권", "계약", "특별관계자", "특수관계자", "합병", "상속", "증여", "신탁"]
+
+def classify(report_resn, stkrt_irds):
     resn = report_resn or ""
-    rt = to_float(stkrt)
-    if "5%미만" in resn or "5% 미만" in resn or (rt is not None and rt < 5):
-        return None
-    if "신규" in resn:
-        return "신규"
-    if "변동" in resn:
-        return "변동"
-    if "변경" in resn:
-        return "변경"
+    irds = to_float(stkrt_irds)
+    is_non_trade = any(k in resn for k in NON_TRADE_KW)
+    has_trade = ("매매" in resn) or ("취득" in resn) or ("매수" in resn) or ("매도" in resn) or ("장내" in resn)
+    if "신규" in resn or "신규취득" in resn:
+        return "매수(신규)"
+    if irds is not None and (has_trade or not is_non_trade):
+        if irds > 0:
+            return "매수"
+        if irds < 0:
+            return "매도"
+    if is_non_trade:
+        return "기타"
     return "기타"
 
 
@@ -152,9 +157,7 @@ def main():
             if not firm or rcept_no in existing:
                 continue
             detail = major_detail(row.get("corp_code", ""), rcept_no) if row.get("corp_code") else {}
-            kind = classify(detail.get("report_resn", ""), detail.get("stkrt", ""))
-            if kind is None:
-                continue
+            kind = classify(detail.get("report_resn", ""), detail.get("stkrt_irds", ""))
             rdt = row.get("rcept_dt", "")
             existing[rcept_no] = {
                 "rcept_no": rcept_no,
@@ -176,7 +179,7 @@ def main():
         page += 1
         time.sleep(0.2)
 
-    merged = sorted(existing.values(), key=lambda x: x.get("rcept_dt", ""), reverse=True)
+    merged = sorted(existing.values(), key=lambda x: x.get("rcept_no", ""), reverse=True)
     payload = {
         "updated_at": dt.datetime.now(dt.timezone(dt.timedelta(hours=9))).isoformat(timespec="minutes"),
         "is_seed": False,
