@@ -91,9 +91,10 @@
   .stake{text-align:right;white-space:nowrap}
   .stake .pct{font-family:"Pretendard Variable",Pretendard,sans-serif;font-size:24px;font-weight:600;line-height:1}
   .stake .delta{font-size:12px;margin-top:4px;font-weight:600}
-  .delta.up{color:var(--up)}
-  .delta.down{color:var(--down)}
-  .delta.new{color:var(--ink)}
+  .delta.buy{color:var(--up)}
+  .delta.sell{color:var(--down)}
+  .delta.etc{color:var(--ink-soft)}
+  .stake .held{font-size:10px;color:var(--ink-soft);letter-spacing:.04em;margin-top:2px}
 
   .empty{padding:60px 0;text-align:center;color:var(--ink-soft);font-size:15px}
 
@@ -151,28 +152,21 @@ function dartLink(rcept_no){
   return `https://dart.fss.or.kr/dsaf001/main.do?rcpNo=${rcept_no}`;
 }
 
+const NON_TRADE = ["담보","질권","계약","특별관계자","특수관계자","합병","상속","증여","신탁"];
 function tagFor(item){
-  // kind가 있으면 그대로, 없으면 사유로 추론
-  let kind = item.kind;
+  // 사유와 증감 부호를 직접 보고 매수/매도/기타를 판정 (옛·새 데이터 모두 일관 처리)
   const resn = item.report_resn || "";
-  if(!kind){
-    if(resn.includes("신규")) kind = "신규";
-    else if(resn.includes("변동")) kind = "변동";
-    else if(resn.includes("변경")) kind = "변경";
-    else kind = "기타";
+  const irds = parseFloat(String(item.stkrt_irds).replace(/[+,%]/g,""));
+  const nonTrade = NON_TRADE.some(k => resn.includes(k));
+  const hasTrade = /매매|취득|매수|매도|장내/.test(resn);
+
+  if(resn.includes("신규")) return {cls:"buy", txt:"매수 · 신규"};
+  if(!isNaN(irds) && (hasTrade || !nonTrade)){
+    if(irds > 0) return {cls:"buy",  txt:`매수 ▲${Math.abs(irds).toFixed(2)}%p`};
+    if(irds < 0) return {cls:"sell", txt:`매도 ▼${Math.abs(irds).toFixed(2)}%p`};
   }
-  if(kind==="신규") return {cls:"new", txt:"신규 5% 진입"};
-  if(kind==="변동") return {cls:"up",  txt:"지분 변동"};
-  if(kind==="변경") return {cls:"new", txt:"보유목적 변경"};
-  return {cls:"new", txt:"대량보유 보고"};
-}
-function isShrink(item){
-  // 5% 미만으로 떨어진(축소) 보고는 화면에서 숨김
-  const rt = parseFloat(item.stkrt);
-  const resn = item.report_resn || "";
-  if(resn.includes("5%미만") || resn.includes("5% 미만")) return true;
-  if(!isNaN(rt) && rt < 5) return true;
-  return false;
+  if(nonTrade) return {cls:"etc", txt:"기타 (담보·계약 등)"};
+  return {cls:"etc", txt:"기타"};
 }
 
 let DATA = {disclosures:[], firms:[]};
@@ -181,8 +175,7 @@ let activeFirm = "전체";
 function render(){
   const list = DATA.disclosures
     .filter(x => activeFirm==="전체" || x.firm===activeFirm)
-    .filter(x => !isShrink(x))
-    .sort((a,b)=> (b.rcept_dt||"").localeCompare(a.rcept_dt||""));
+    .sort((a,b)=> (b.rcept_no||"").localeCompare(a.rcept_no||""));
 
   $("#count").textContent = `${list.length}건의 공시`;
 
@@ -202,6 +195,7 @@ function render(){
       </div>
       <div class="stake">
         <div class="pct">${item.stkrt}%</div>
+        <div class="held">보유 지분</div>
         <div class="delta ${tag.cls}">${tag.txt}</div>
       </div>`;
     return dl
