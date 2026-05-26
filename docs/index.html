@@ -47,6 +47,9 @@
     margin-top:20px;font-size:12.5px;color:var(--ink-soft);
   }
   .meta-row b{color:var(--ink);font-weight:600}
+  .live{display:inline-flex;align-items:center;gap:6px;color:#d63a2e;font-weight:600}
+  .live .dot{width:7px;height:7px;border-radius:50%;background:#d63a2e;display:inline-block;box-shadow:0 0 0 0 rgba(214,58,46,.5);animation:pulse 1.5s ease-in-out infinite}
+  @keyframes pulse{0%{opacity:1;box-shadow:0 0 0 0 rgba(214,58,46,.5)}70%{opacity:.6;box-shadow:0 0 0 5px rgba(214,58,46,0)}100%{opacity:1;box-shadow:0 0 0 0 rgba(214,58,46,0)}}
   .seed-flag{
     display:inline-block;background:var(--down);color:#fff;
     font-size:11px;font-weight:600;letter-spacing:.04em;
@@ -118,7 +121,7 @@
     <div class="kicker">국내 가치투자 운용사 지분공시 추적 사이트</div>
     <h1 class="title">BUFFETT ARCHIVE</h1>
     <div class="meta-row">
-      <span>갱신 <b id="updated">—</b></span>
+      <span class="live"><span class="dot"></span>실시간 자동 추적 중</span>
       <span id="seedFlag"></span>
     </div>
   </header>
@@ -218,9 +221,6 @@ fetch("data.json?ts=" + Date.now())
   .then(r => r.json())
   .then(d => {
     DATA = d;
-    const u = new Date(d.updated_at);
-    $("#updated").textContent = isNaN(u) ? "—"
-      : `${u.getFullYear()}.${String(u.getMonth()+1).padStart(2,"0")}.${String(u.getDate()).padStart(2,"0")} ${String(u.getHours()).padStart(2,"0")}:${String(u.getMinutes()).padStart(2,"0")}`;
     if(d.is_seed){
       $("#seedFlag").innerHTML = `<span class="seed-flag">예시 데이터 · 라이브 연결 전</span>`;
     }
