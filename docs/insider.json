@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-05-27T13:17+09:00",
+  "updated_at": "2026-05-27T13:22+09:00",
   "market": "KOSDAQ",
-  "last_seen": "20260527000186",
+  "last_seen": "20260527000193",
   "disclosures": [
     {
       "rcept_no": "20260527000162",
@@ -17,9 +17,7 @@
       "total_cnt": "100,000",
       "irds_rate": "0.17",
       "hold_rate": "0.25",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260527000124",
@@ -35,9 +33,7 @@
       "total_cnt": "600,000",
       "irds_rate": "0.49",
       "hold_rate": "2.06",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260527000070",
@@ -53,9 +49,7 @@
       "total_cnt": "33,998,291",
       "irds_rate": "0",
       "hold_rate": "63.29",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260527000051",
@@ -71,9 +65,7 @@
       "total_cnt": "26,231,061",
       "irds_rate": "0.09",
       "hold_rate": "37.11",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260527000031",
@@ -89,9 +81,7 @@
       "total_cnt": "22,000,000",
       "irds_rate": "0.06",
       "hold_rate": "24.31",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260527000016",
@@ -107,9 +97,7 @@
       "total_cnt": "2,000",
       "irds_rate": "0.01",
       "hold_rate": "0.01",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260527000013",
@@ -125,9 +113,7 @@
       "total_cnt": "1,975",
       "irds_rate": "0.01",
       "hold_rate": "0.01",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260526000531",
@@ -143,9 +129,7 @@
       "total_cnt": "9,838",
       "irds_rate": "0.02",
       "hold_rate": "0.10",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260526000515",
@@ -161,9 +145,7 @@
       "total_cnt": "20,000",
       "irds_rate": "0.02",
       "hold_rate": "0.02",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260526000496",
@@ -179,9 +161,7 @@
       "total_cnt": "56,394",
       "irds_rate": "0.39",
       "hold_rate": "1.11",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260526000488",
@@ -197,9 +177,7 @@
       "total_cnt": "17,405",
       "irds_rate": "0.04",
       "hold_rate": "0.04",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260526000483",
@@ -215,9 +193,7 @@
       "total_cnt": "45,000",
       "irds_rate": "0.11",
       "hold_rate": "0.11",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260526000477",
@@ -233,9 +209,7 @@
       "total_cnt": "3,186,823",
       "irds_rate": "3.91",
       "hold_rate": "21.13",
-      "method": "시간외매매",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "시간외매매"
     },
     {
       "rcept_no": "20260526000476",
@@ -251,9 +225,7 @@
       "total_cnt": "50,000",
       "irds_rate": "0.13",
       "hold_rate": "0.13",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260526000470",
@@ -269,9 +241,7 @@
       "total_cnt": "80,000",
       "irds_rate": "0.2",
       "hold_rate": "0.2",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260526000445",
@@ -287,9 +257,7 @@
       "total_cnt": "5,926,028",
       "irds_rate": "39.26",
       "hold_rate": "39.26",
-      "method": "장외매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장외매수"
     },
     {
       "rcept_no": "20260526000441",
@@ -305,9 +273,7 @@
       "total_cnt": "70,056",
       "irds_rate": "0.06",
       "hold_rate": "1.74",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260526000435",
@@ -323,9 +289,7 @@
       "total_cnt": "40,384",
       "irds_rate": "0.12",
       "hold_rate": "1.00",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260526000417",
@@ -341,9 +305,7 @@
       "total_cnt": "2,360,000",
       "irds_rate": "0.57",
       "hold_rate": "16.44",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260526000402",
@@ -359,9 +321,7 @@
       "total_cnt": "27,284,015",
       "irds_rate": "0.02",
       "hold_rate": "38.47",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260526000389",
@@ -377,9 +337,7 @@
       "total_cnt": "1",
       "irds_rate": "0.00",
       "hold_rate": "0.00",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260526000381",
@@ -395,9 +353,7 @@
       "total_cnt": "2,437,627",
       "irds_rate": "-0.07",
       "hold_rate": "19.89",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260526000361",
@@ -413,9 +369,7 @@
       "total_cnt": "5,000",
       "irds_rate": "0.02",
       "hold_rate": "0.02",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260526000358",
@@ -431,9 +385,7 @@
       "total_cnt": "1,200",
       "irds_rate": "0.01",
       "hold_rate": "0.01",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260526000345",
@@ -449,9 +401,7 @@
       "total_cnt": "7,167,509",
       "irds_rate": "1.22",
       "hold_rate": "36.85",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260526000306",
@@ -467,9 +417,7 @@
       "total_cnt": "1,178,199",
       "irds_rate": "0.29",
       "hold_rate": "8.21",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260526000289",
@@ -485,9 +433,7 @@
       "total_cnt": "3,235,000",
       "irds_rate": "0.47",
       "hold_rate": "27.89",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260526000274",
@@ -503,9 +449,7 @@
       "total_cnt": "1,267,500",
       "irds_rate": "0.04",
       "hold_rate": "6.80",
-      "method": "장내매수",
-      "avg_price": 8000,
-      "buy_amount": 64000000
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260526000191",
@@ -521,9 +465,7 @@
       "total_cnt": "1,287,472",
       "irds_rate": "0.10",
       "hold_rate": "5.23",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260526000176",
@@ -539,9 +481,7 @@
       "total_cnt": "13,579,312",
       "irds_rate": "0.50",
       "hold_rate": "49.87",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260526000150",
@@ -557,9 +497,7 @@
       "total_cnt": "29,239",
       "irds_rate": "0.08",
       "hold_rate": "0.77",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260526000126",
@@ -575,9 +513,7 @@
       "total_cnt": "1,639,000",
       "irds_rate": "0.45",
       "hold_rate": "4.27",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260526000111",
@@ -593,9 +529,7 @@
       "total_cnt": "53,000",
       "irds_rate": "0.10",
       "hold_rate": "0.18",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260526000086",
@@ -611,9 +545,7 @@
       "total_cnt": "4,200",
       "irds_rate": "0.03",
       "hold_rate": "0.03",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260526000062",
@@ -629,9 +561,7 @@
       "total_cnt": "790,482",
       "irds_rate": "0.22",
       "hold_rate": "16.20",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260522000648",
@@ -647,9 +577,7 @@
       "total_cnt": "28,400",
       "irds_rate": "0.01",
       "hold_rate": "0.09",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260522000616",
@@ -665,9 +593,7 @@
       "total_cnt": "20,892,408",
       "irds_rate": "0.14",
       "hold_rate": "18.65",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260522000544",
@@ -683,9 +609,7 @@
       "total_cnt": "1,604,264",
       "irds_rate": "1.74",
       "hold_rate": "6.50",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260522000541",
@@ -701,9 +625,7 @@
       "total_cnt": "1,725,338",
       "irds_rate": "0.02",
       "hold_rate": "16.07",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260522000475",
@@ -719,9 +641,7 @@
       "total_cnt": "8,394,707",
       "irds_rate": "0.10",
       "hold_rate": "43.63",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260522000419",
@@ -737,9 +657,7 @@
       "total_cnt": "2,000",
       "irds_rate": "0.01",
       "hold_rate": "0.01",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260522000416",
@@ -755,9 +673,7 @@
       "total_cnt": "3,623,623",
       "irds_rate": "0.26",
       "hold_rate": "18.76",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260522000410",
@@ -773,9 +689,7 @@
       "total_cnt": "1,479,404",
       "irds_rate": "0.02",
       "hold_rate": "24.66",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260522000400",
@@ -791,9 +705,7 @@
       "total_cnt": "321,400",
       "irds_rate": "-0.04",
       "hold_rate": "1.79",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260522000268",
@@ -809,9 +721,7 @@
       "total_cnt": "26,090",
       "irds_rate": "0.15",
       "hold_rate": "0.69",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260522000235",
@@ -827,9 +737,7 @@
       "total_cnt": "24,970",
       "irds_rate": "0.19",
       "hold_rate": "0.19",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260522000226",
@@ -845,9 +753,7 @@
       "total_cnt": "232,809",
       "irds_rate": "0.02",
       "hold_rate": "0.86",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260522000203",
@@ -863,9 +769,7 @@
       "total_cnt": "215,015",
       "irds_rate": "0.06",
       "hold_rate": "1.29",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260522000177",
@@ -881,9 +785,7 @@
       "total_cnt": "467,055",
       "irds_rate": "0.08",
       "hold_rate": "3.05",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260522000159",
@@ -899,9 +801,7 @@
       "total_cnt": "4,133,899",
       "irds_rate": "0.07",
       "hold_rate": "24.87",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260522000111",
@@ -917,9 +817,7 @@
       "total_cnt": "20,614",
       "irds_rate": "0.25",
       "hold_rate": "0.54",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260522000073",
@@ -935,9 +833,7 @@
       "total_cnt": "636,780",
       "irds_rate": "0.23",
       "hold_rate": "14.59",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260522000063",
@@ -953,9 +849,7 @@
       "total_cnt": "91,456",
       "irds_rate": "0.01",
       "hold_rate": "2.10",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260522000061",
@@ -971,9 +865,7 @@
       "total_cnt": "24,500",
       "irds_rate": "0.01",
       "hold_rate": "0.21",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260522000045",
@@ -989,9 +881,7 @@
       "total_cnt": "1,000",
       "irds_rate": "0.02",
       "hold_rate": "0.02",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260522000042",
@@ -1007,9 +897,7 @@
       "total_cnt": "288,832",
       "irds_rate": "0.02",
       "hold_rate": "0.56",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260522000034",
@@ -1025,9 +913,7 @@
       "total_cnt": "53,000",
       "irds_rate": "0.03",
       "hold_rate": "0.57",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260522000017",
@@ -1043,9 +929,7 @@
       "total_cnt": "152,514",
       "irds_rate": "0.02",
       "hold_rate": "1.56",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260521000785",
@@ -1061,9 +945,7 @@
       "total_cnt": "15,000",
       "irds_rate": "0.03",
       "hold_rate": "0.14",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260521000693",
@@ -1079,9 +961,7 @@
       "total_cnt": "330",
       "irds_rate": "0.00",
       "hold_rate": "0.00",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260521000575",
@@ -1097,9 +977,7 @@
       "total_cnt": "2,478,356",
       "irds_rate": "0.17",
       "hold_rate": "47.17",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260521000571",
@@ -1115,9 +993,7 @@
       "total_cnt": "239,875",
       "irds_rate": "0.24",
       "hold_rate": "1.43",
-      "method": "장외매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장외매수"
     },
     {
       "rcept_no": "20260521000492",
@@ -1133,9 +1009,7 @@
       "total_cnt": "1,301",
       "irds_rate": "0.00",
       "hold_rate": "0.02",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260521000421",
@@ -1151,9 +1025,7 @@
       "total_cnt": "5,005,546",
       "irds_rate": "0.03",
       "hold_rate": "30.43",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260521000416",
@@ -1169,9 +1041,7 @@
       "total_cnt": "9,555,632",
       "irds_rate": "0.04",
       "hold_rate": "56.58",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260521000377",
@@ -1187,9 +1057,7 @@
       "total_cnt": "2,938,355",
       "irds_rate": "0.42",
       "hold_rate": "35.79",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260521000249",
@@ -1205,9 +1073,7 @@
       "total_cnt": "45,000",
       "irds_rate": "0.20",
       "hold_rate": "0.42",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260521000243",
@@ -1223,9 +1089,7 @@
       "total_cnt": "47,000",
       "irds_rate": "0.20",
       "hold_rate": "0.44",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260521000238",
@@ -1241,9 +1105,7 @@
       "total_cnt": "23,324",
       "irds_rate": "0.10",
       "hold_rate": "0.22",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260521000217",
@@ -1259,9 +1121,7 @@
       "total_cnt": "1,000",
       "irds_rate": "0.00",
       "hold_rate": "0.00",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260521000182",
@@ -1277,9 +1137,7 @@
       "total_cnt": "818,574",
       "irds_rate": "0.40",
       "hold_rate": "3.09",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260521000139",
@@ -1295,9 +1153,7 @@
       "total_cnt": "2,712,154",
       "irds_rate": "0.34",
       "hold_rate": "21.46",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260521000081",
@@ -1313,9 +1169,7 @@
       "total_cnt": "11,000",
       "irds_rate": "0.21",
       "hold_rate": "0.29",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260521000078",
@@ -1331,9 +1185,7 @@
       "total_cnt": "1,763,376",
       "irds_rate": "0",
       "hold_rate": "12.65",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260521000020",
@@ -1349,9 +1201,7 @@
       "total_cnt": "324,829",
       "irds_rate": "-0.02",
       "hold_rate": "1.81",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260520000383",
@@ -1367,9 +1217,7 @@
       "total_cnt": "1,171,263",
       "irds_rate": "0.02",
       "hold_rate": "2.43",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260520000290",
@@ -1385,9 +1233,7 @@
       "total_cnt": "1,000",
       "irds_rate": "0.01",
       "hold_rate": "0.01",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260520000282",
@@ -1403,9 +1249,7 @@
       "total_cnt": "2,505,207",
       "irds_rate": "0.30",
       "hold_rate": "40.30",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260520000254",
@@ -1421,9 +1265,7 @@
       "total_cnt": "38,545",
       "irds_rate": "0.00",
       "hold_rate": "0.50",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260520000253",
@@ -1439,9 +1281,7 @@
       "total_cnt": "10,199",
       "irds_rate": "0.01",
       "hold_rate": "0.02",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260520000189",
@@ -1457,9 +1297,7 @@
       "total_cnt": "2,220,456",
       "irds_rate": "0.29",
       "hold_rate": "31.55",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260520000152",
@@ -1475,9 +1313,7 @@
       "total_cnt": "3,236,521",
       "irds_rate": "0.13",
       "hold_rate": "34.65",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260520000151",
@@ -1493,9 +1329,7 @@
       "total_cnt": "3,224,118",
       "irds_rate": "0.08",
       "hold_rate": "34.52",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260520000150",
@@ -1511,9 +1345,7 @@
       "total_cnt": "9,500",
       "irds_rate": "0.03",
       "hold_rate": "0.06",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260520000129",
@@ -1529,9 +1361,7 @@
       "total_cnt": "4,344,144",
       "irds_rate": "0.18",
       "hold_rate": "15.11",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260520000050",
@@ -1547,9 +1377,7 @@
       "total_cnt": "59,681",
       "irds_rate": "0.06",
       "hold_rate": "0.18",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260520000029",
@@ -1565,9 +1393,7 @@
       "total_cnt": "2,440,311",
       "irds_rate": "0.02",
       "hold_rate": "8.27",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260520000018",
@@ -1583,9 +1409,7 @@
       "total_cnt": "1,000",
       "irds_rate": "0.01",
       "hold_rate": "0.01",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     },
     {
       "rcept_no": "20260520000016",
@@ -1601,9 +1425,7 @@
       "total_cnt": "22,470",
       "irds_rate": "0.02",
       "hold_rate": "0.24",
-      "method": "장내매수",
-      "avg_price": null,
-      "buy_amount": null
+      "method": "장내매수"
     }
   ]
 }
