@@ -67,6 +67,13 @@
   .empty{padding:60px 0;text-align:center;color:var(--ink-soft);font-size:15px}
   footer{margin:40px 0 60px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--ink-soft);line-height:1.7;}
   .disclaim{margin-top:10px;font-size:11.5px;opacity:.9}
+  .dtitle{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;margin-bottom:10px}
+  .dlist{list-style:none;display:flex;flex-direction:column;gap:7px}
+  .dlist li{position:relative;padding-left:14px;font-size:12px;color:var(--ink-soft);line-height:1.65}
+  .dlist li::before{content:"•";position:absolute;left:0;color:var(--ink-soft)}
+  .contact{margin:0 0 60px;font-size:12px;color:var(--ink-soft);letter-spacing:.02em}
+  .contact a{color:var(--ink);text-decoration:none;font-weight:600;border-bottom:1px solid var(--line)}
+  .contact a:hover{border-bottom-color:var(--ink)}
   @media(max-width:560px){.row{grid-template-columns:58px 1fr auto;gap:12px}.corp .name{font-size:16px}.stake .pct{font-size:19px}.maintabs button{font-size:14px;margin-right:18px}}
 </style>
 </head>
@@ -94,6 +101,8 @@
   <ul class="feed" id="feed"></ul>
 
   <footer id="footer"></footer>
+
+  <div class="contact">Business · <a href="mailto:harold08@naver.com">harold08@naver.com</a></div>
 
 </div>
 
@@ -198,11 +207,12 @@ function buildFirmTabs(){
 }
 
 function setFooter(){
-  $("#footer").innerHTML = view==="firm"
-    ? `데이터는 DART 전자공시 원자료 기반입니다. 5% 대량보유보고는 변동일로부터 5영업일 이내 제출되므로 표시 내용은 실제 매매 시점보다 늦을 수 있습니다.
-       <div class="disclaim">본 사이트는 공시 사실을 정리해 전달할 뿐이며 특정 종목의 매수·매도를 권유하지 않습니다. 투자 판단과 책임은 이용자 본인에게 있습니다.</div>`
-    : `코스닥 임원·주요주주의 특정증권등 소유상황보고서 중 장내·장외 매수만 추립니다. 장내·장외 등 취득방법을 함께 표시합니다.
-       <div class="disclaim">본 사이트는 공시 사실을 정리해 전달할 뿐이며 특정 종목의 매수·매도를 권유하지 않습니다. 투자 판단과 책임은 이용자 본인에게 있습니다.</div>`;
+  $("#footer").innerHTML = `
+    <div class="dtitle">면책조항</div>
+    <ul class="dlist">
+      <li>5% 대량보유보고서 및 임원·주요주주 특정증권등 소유상황보고서는 보고의무발생일로부터 5영업일 이내 제출되므로, 표시내용은 실제 매매 시점보다 늦을 수 있습니다.</li>
+      <li>본 사이트는 공시 사실을 정리해 전달할 뿐이며, 특정 종목의 매수 및 매도를 권유하지 않습니다. 투자판단과 책임은 이용자 본인에게 있습니다.</li>
+    </ul>`;
 }
 
 function switchView(v){
