@@ -101,16 +101,7 @@ def parse_insider_doc(rcept_no):
         # 세부변동내역에 장내/장외 매수가 한 번이라도 등장하는지
         has_buy = any(k in plain for k in BUY_KEYWORDS)
         method = next((k for k in BUY_KEYWORDS if k in plain), "")
-
-        # 평균 취득단가 추정: '장내매수' 줄들의 단가 숫자를 평균
-        prices = []
-        for m in re.finditer(r"(장내매수|장외매수|시간외매매)\D{0,40}?([\d,]{3,})\s+([\d,]{2,})", plain):
-            p = to_int(m.group(3))
-            if 0 < p < 10_000_000:
-                prices.append(p)
-        avg_price = round(sum(prices) / len(prices)) if prices else None
-
-        return {"is_buy": has_buy, "avg_price": avg_price, "method": method}
+        return {"is_buy": has_buy, "method": method}
     except Exception as e:  # noqa
         print(f"[warn] 내부자 본문 파싱 실패 {rcept_no}: {e}", file=sys.stderr)
         return {}
@@ -208,8 +199,6 @@ def main():
             time.sleep(0.25)
             if not doc.get("is_buy"):
                 continue  # 장내/장외 매수가 아니면 제외(증여·상속·인수성 등)
-            avg_price = doc.get("avg_price")
-            buy_amount = (avg_price * irds) if avg_price else None
             corp_name, stock_code = meta.get(rcept_no, (item.get("corp_name", ""), ""))
             existing[rcept_no] = {
                 "rcept_no": rcept_no,
@@ -226,8 +215,6 @@ def main():
                 "irds_rate": item.get("sp_stock_lmp_irds_rate", ""),
                 "hold_rate": item.get("sp_stock_lmp_rate", ""),
                 "method": doc.get("method", ""),
-                "avg_price": avg_price,
-                "buy_amount": buy_amount,
             }
             added += 1
         time.sleep(0.15)
