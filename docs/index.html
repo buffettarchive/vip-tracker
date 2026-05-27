@@ -161,31 +161,27 @@ function renderInsider(){
   feed.innerHTML=list.map(item=>{
     const dt=fmtDate(item.rcept_dt), dl=dartLink(item.rcept_no);
     const code=item.stock_code?`<span class="code">${item.stock_code}</span>`:"";
-    const hold=parseFloat(item.hold_rate);
     // 취득방법 배지
     const m=item.method||"";
     let mb="";
     if(m.includes("장내")) mb=`<span class="badge in">장내매수</span>`;
     else if(m.includes("장외")) mb=`<span class="badge out">장외매수</span>`;
     else if(m.includes("시간외")) mb=`<span class="badge out">시간외</span>`;
-    // 지분 30%↑ = 지배주주/인수성 추정 → 흐리게 + 배지
-    const isBig = !isNaN(hold) && hold>=30;
-    const bigBadge = isBig?`<span class="badge big">대량·지배주주</span>`:"";
     // 직위/주요주주 표시
     const pos=[item.ofcps,item.main_shrholdr&&item.main_shrholdr!=="-"?item.main_shrholdr:""].filter(Boolean).join(" · ");
     const inner=`
       <div class="date">${dt.m} ${dt.d}<span class="y">${dt.y}</span></div>
       <div class="corp">
         <div class="name">${item.corp_name}${code}</div>
-        <div class="sub"><span class="who">${item.repror}</span> · ${pos||"—"} ${mb}${bigBadge}</div>
+        <div class="sub"><span class="who">${item.repror}</span> · ${pos||"—"} ${mb}</div>
       </div>
       <div class="stake">
         <div class="pct">+${item.irds_cnt}</div>
         <div class="held">매수 주식수</div>
         <div class="delta buy">보유 ${item.hold_rate}%</div>
       </div>`;
-    return dl?`<a class="row ${isBig?'dim':''}" href="${dl}" target="_blank" rel="noopener">${inner}</a>`
-             :`<div class="row ${isBig?'dim':''}">${inner}</div>`;
+    return dl?`<a class="row" href="${dl}" target="_blank" rel="noopener">${inner}</a>`
+             :`<div class="row">${inner}</div>`;
   }).join("");
 }
 
@@ -205,7 +201,7 @@ function setFooter(){
   $("#footer").innerHTML = view==="firm"
     ? `데이터는 DART 전자공시 원자료 기반입니다. 5% 대량보유보고는 변동일로부터 5영업일 이내 제출되므로 표시 내용은 실제 매매 시점보다 늦을 수 있습니다.
        <div class="disclaim">본 사이트는 공시 사실을 정리해 전달할 뿐이며 특정 종목의 매수·매도를 권유하지 않습니다. 투자 판단과 책임은 이용자 본인에게 있습니다.</div>`
-    : `코스닥 임원·주요주주의 특정증권등 소유상황보고서 중 장내·장외 매수만 추립니다. 보유비율 30% 이상(흐리게 표시)은 지배주주의 대량거래로 인수성일 수 있습니다.
+    : `코스닥 임원·주요주주의 특정증권등 소유상황보고서 중 장내·장외 매수만 추립니다. 장내·장외 등 취득방법을 함께 표시합니다.
        <div class="disclaim">본 사이트는 공시 사실을 정리해 전달할 뿐이며 특정 종목의 매수·매도를 권유하지 않습니다. 투자 판단과 책임은 이용자 본인에게 있습니다.</div>`;
 }
 
