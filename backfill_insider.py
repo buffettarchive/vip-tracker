@@ -31,6 +31,7 @@ GH_API = "https://api.github.com"
 
 BACKFILL_DAYS = 7
 INSIDER_REPORT = "임원ㆍ주요주주특정증권등소유상황보고서"
+MARKETS = [("Y", "KOSPI"), ("K", "KOSDAQ")]  # 코스피, 코스닥
 
 s = requests.Session()
 s.headers.update({"User-Agent": "vip-tracker-insider/1.0"})
@@ -75,7 +76,7 @@ def parse_insider_doc(rcept_no):
         r = s.get(f"{DART}/document.xml",
                   params={"crtfc_key": DART_KEY, "rcept_no": rcept_no}, timeout=30)
         if r.headers.get("content-type", "").startswith("application/json"):
-            return {}
+            return {"doc_status": "nodoc"}
         z = zipfile.ZipFile(io.BytesIO(r.content))
         name = max(z.namelist(), key=lambda n: z.getinfo(n).file_size)
         raw = z.read(name)
@@ -96,10 +97,11 @@ def parse_insider_doc(rcept_no):
         # 세부변동내역에 장내/장외 매수가 한 번이라도 등장하는지
         has_buy = any(k in plain for k in BUY_KEYWORDS)
         method = next((k for k in BUY_KEYWORDS if k in plain), "")
-        return {"is_buy": has_buy, "method": method}
+        return {"doc_status": "buy" if has_buy else "notbuy",
+                "is_buy": has_buy, "method": method}
     except Exception as e:  # noqa
         print(f"[warn] 내부자 본문 파싱 실패 {rcept_no}: {e}", file=sys.stderr)
-        return {}
+        return {"doc_status": "nodoc"}
 
 
 def gh_get():
@@ -139,41 +141,43 @@ def main():
     bgn = (today - dt.timedelta(days=BACKFILL_DAYS)).strftime("%Y%m%d")
     end = today.strftime("%Y%m%d")
 
-    # 1) 코스닥 내부자 보고만 list로 훑어 (회사,접수번호) 후보 수집
+    # 1) 코스피·코스닥 내부자 보고 list로 훑어 (회사,접수번호) 후보 수집
     targets = {}        # corp_code -> set(rcept_no)
-    meta = {}           # rcept_no -> (corp_name, stock_code)
-    max_seen, stop, page = last_seen, False, 1
-    while not stop:
-        d = dart("list.json", bgn_de=bgn, end_de=end,
-                 pblntf_ty="D", corp_cls="K",
-                 page_no=page, page_count=100, sort="date", sort_mth="desc")
-        st = d.get("status")
-        if st == "013":
-            break
-        if st != "000":
-            print(f"[warn] list status={st} msg={d.get('message')}", file=sys.stderr)
-            break
-        for row in d.get("list", []) or []:
-            rcept_no = row["rcept_no"]
-            if INSIDER_REPORT not in row.get("report_nm", ""):
-                continue
-            if last_seen and rcept_no <= last_seen:
-                stop = True
+    meta = {}           # rcept_no -> (corp_name, stock_code, market)
+    max_seen = last_seen
+    for cls_code, cls_name in MARKETS:
+        stop, page = False, 1
+        while not stop:
+            d = dart("list.json", bgn_de=bgn, end_de=end,
+                     pblntf_ty="D", corp_cls=cls_code,
+                     page_no=page, page_count=100, sort="date", sort_mth="desc")
+            st = d.get("status")
+            if st == "013":
                 break
-            if rcept_no > max_seen:
-                max_seen = rcept_no
-            cc = row.get("corp_code", "")
-            if not cc:
-                continue
-            targets.setdefault(cc, set()).add(rcept_no)
-            meta[rcept_no] = (row.get("corp_name", ""), row.get("stock_code", ""))
-        tp = int(d.get("total_page", 1) or 1)
-        if page >= tp:
-            break
-        page += 1
-        time.sleep(0.2)
+            if st != "000":
+                print(f"[warn] list({cls_name}) status={st} msg={d.get('message')}", file=sys.stderr)
+                break
+            for row in d.get("list", []) or []:
+                rcept_no = row["rcept_no"]
+                if INSIDER_REPORT not in row.get("report_nm", ""):
+                    continue
+                if last_seen and rcept_no <= last_seen:
+                    stop = True
+                    break
+                if rcept_no > max_seen:
+                    max_seen = rcept_no
+                cc = row.get("corp_code", "")
+                if not cc:
+                    continue
+                targets.setdefault(cc, set()).add(rcept_no)
+                meta[rcept_no] = (row.get("corp_name", ""), row.get("stock_code", ""), cls_name)
+            tp = int(d.get("total_page", 1) or 1)
+            if page >= tp:
+                break
+            page += 1
+            time.sleep(0.2)
 
-    print(f"[info] 코스닥 내부자 보고 후보 회사 {len(targets)}곳")
+    print(f"[info] 내부자 보고 후보 회사 {len(targets)}곳 (코스피+코스닥)")
 
     # 2) 회사별 elestock 한 번씩 → 해당 접수번호의 '매수(증가)'만 기록
     added = 0
@@ -193,12 +197,13 @@ def main():
             time.sleep(0.25)
             if not doc.get("is_buy"):
                 continue  # 장내/장외 매수가 아니면 제외(증여·상속·인수성 등)
-            corp_name, stock_code = meta.get(rcept_no, (item.get("corp_name", ""), ""))
+            corp_name, stock_code, market = meta.get(rcept_no, (item.get("corp_name", ""), "", ""))
             existing[rcept_no] = {
                 "rcept_no": rcept_no,
                 "rcept_dt": item.get("rcept_dt", ""),
                 "corp_name": corp_name or item.get("corp_name", ""),
                 "stock_code": stock_code,
+                "market": market,
                 "corp_code": cc,
                 "repror": item.get("repror", ""),
                 "ofcps": item.get("isu_exctv_ofcps", ""),
@@ -220,7 +225,7 @@ def main():
     merged = sorted(existing.values(), key=lambda x: x.get("rcept_no", ""), reverse=True)
     payload = {
         "updated_at": dt.datetime.now(dt.timezone(dt.timedelta(hours=9))).isoformat(timespec="minutes"),
-        "market": "KOSDAQ",
+        "market": "KOSPI+KOSDAQ",
         "last_seen": max_seen,
         "disclosures": merged,
     }
