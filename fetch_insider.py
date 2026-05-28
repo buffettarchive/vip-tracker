@@ -183,16 +183,20 @@ def main():
     # 2) 회사별 elestock 호출 → 매칭된 접수번호만 처리
     #    elestock 응답에 아직 없는 후보는 "미처리"로 남겨 last_seen 갱신에서 제외
     added = 0
-    matched_rcepts = set()   # elestock에서 실제로 발견된 접수번호 모음
-    for cc, rcept_set in targets.items():
+    matched_rcepts = set()
+
+    def process_company(cc, rcept_set):
+        """elestock 호출 후 매칭된 매수 건을 existing에 반영. 반환: 추가 건수."""
+        nonlocal added
         d = dart("elestock.json", corp_code=cc)
         if d.get("status") != "000":
-            continue
+            return 0
+        local_added = 0
         for item in d.get("list", []) or []:
             rcept_no = item.get("rcept_no", "")
             if rcept_no not in rcept_set:
                 continue
-            matched_rcepts.add(rcept_no)   # elestock에 존재함을 확인
+            matched_rcepts.add(rcept_no)
             if rcept_no in existing:
                 continue
             irds = to_int(item.get("sp_stock_lmp_irds_cnt"))
@@ -220,14 +224,35 @@ def main():
                 "method": doc.get("method", ""),
             }
             added += 1
+            local_added += 1
+        return local_added
+
+    # 1차 시도
+    for cc, rcept_set in targets.items():
+        process_company(cc, rcept_set)
         time.sleep(0.15)
+
+    # 1차에서 매칭 실패한 후보가 있으면 잠깐 대기 후 그 회사들만 재시도 (elestock 반영 지연 보강)
+    unmatched_after_first = [r for r in candidates if r not in matched_rcepts]
+    if unmatched_after_first:
+        retry_targets = {}
+        for r in unmatched_after_first:
+            for cc, rs in targets.items():
+                if r in rs:
+                    retry_targets.setdefault(cc, set()).add(r)
+                    break
+        print(f"[info] elestock 미반영 후보 {len(unmatched_after_first)}건 — 15초 대기 후 1회 재시도")
+        time.sleep(15)
+        for cc, rcept_set in retry_targets.items():
+            process_company(cc, rcept_set)
+            time.sleep(0.15)
 
     # 3) last_seen 안전 갱신:
     #    elestock에서 확인된(matched) 접수번호 중 가장 큰 것만 last_seen으로.
     #    아직 elestock에 안 올라온 후보는 last_seen에 반영하지 않아 다음 실행에서 재시도됨.
     unmatched = [r for r in candidates if r not in matched_rcepts]
     if unmatched:
-        print(f"[info] elestock 미반영 후보 {len(unmatched)}건 — 다음 실행에서 재시도")
+        print(f"[info] 재시도 후에도 elestock 미반영 {len(unmatched)}건 — 다음 실행에서 또 시도")
     matched_max = max(matched_rcepts) if matched_rcepts else ""
     # last_seen은 (a) matched 중 최대, (b) 기존 last_seen 중 더 큰 값
     # 단 unmatched가 있으면 그 최솟값보다는 작아야 다음 실행에서 다시 볼 수 있음
