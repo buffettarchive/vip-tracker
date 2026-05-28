@@ -228,16 +228,24 @@ $("#mainTabs").querySelectorAll("button").forEach(b=>{
   b.onclick=()=>switchView(b.dataset.view);
 });
 
-// 두 데이터 동시 로드
-Promise.all([
-  fetch("data.json?ts="+Date.now()).then(r=>r.json()).catch(()=>({disclosures:[],firms:[]})),
-  fetch("insider.json?ts="+Date.now()).then(r=>r.json()).catch(()=>({disclosures:[]})),
-]).then(([f,i])=>{
-  FIRM=f||{disclosures:[],firms:[]};
-  INSIDER=i||{disclosures:[]};
-  if(FIRM.is_seed) $("#seedFlag").innerHTML=`<span class="badge big">예시 데이터</span>`;
-  buildFirmTabs(); setFooter(); render();
-});
+// 두 데이터 동시 로드 (5분마다 자동 갱신)
+function loadData(isFirstLoad){
+  Promise.all([
+    fetch("data.json?ts="+Date.now()).then(r=>r.json()).catch(()=>null),
+    fetch("insider.json?ts="+Date.now()).then(r=>r.json()).catch(()=>null),
+  ]).then(([f,i])=>{
+    if(f) FIRM=f;
+    if(i) INSIDER=i;
+    if(isFirstLoad){
+      if(FIRM.is_seed) $("#seedFlag").innerHTML=`<span class="badge big">예시 데이터</span>`;
+      buildFirmTabs(); setFooter();
+    }
+    render();
+  });
+}
+loadData(true);
+// 5분(300초)마다 자동으로 새 데이터 받아오기
+setInterval(()=>loadData(false), 300000);
 </script>
 </body>
 </html>
