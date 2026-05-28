@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-05-28T14:06+09:00",
+  "updated_at": "2026-05-28T14:51+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260526000274",
   "disclosures": [
+    {
+      "rcept_no": "20260528000482",
+      "rcept_dt": "2026-05-28",
+      "corp_name": "금호에이치티",
+      "stock_code": "214330",
+      "market": "KOSPI",
+      "corp_code": "00105606",
+      "repror": "김두인",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "20,000",
+      "total_cnt": "60,000",
+      "irds_rate": "0.11",
+      "hold_rate": "0.29",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260528000407",
       "rcept_dt": "2026-05-28",
