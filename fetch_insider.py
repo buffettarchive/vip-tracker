@@ -272,16 +272,23 @@ def main():
     pending = [r for r in candidates if r not in resolved_rcepts]
     if pending:
         print(f"[info] 본문/elestock 대기 {len(pending)}건 — 다음 실행에서 또 시도")
-        # 미완료 최솟값보다 하나라도 작은 지점까지만 last_seen 허용
+        # 핵심 규칙: last_seen은 '대기 중 가장 작은 건'보다 반드시 작아야 한다.
+        #   기존 last_seen이 이미 그보다 크면(과거 오염), 무시하고 끌어내린다.
         min_pending = min(pending)
-        # resolved 중 min_pending보다 작은 것들만 안전하게 last_seen 후보
         safe = [r for r in resolved_rcepts if r < min_pending]
-        safe.append(last_seen)
-        new_last_seen = max(safe)
+        if last_seen and last_seen < min_pending:
+            safe.append(last_seen)
+        if safe:
+            new_last_seen = max(safe)
+        elif last_seen and last_seen < min_pending:
+            new_last_seen = last_seen
+        else:
+            # 안전 후보 없음 + 기존 last_seen도 오염 → SCAN 범위 직전으로 리셋(다 다시 봄)
+            new_last_seen = ""
     else:
         # 모두 처리됨 → 후보 중 최대까지 last_seen 올림
-        all_seen = list(resolved_rcepts) + [last_seen]
-        new_last_seen = max(all_seen)
+        all_seen = list(resolved_rcepts) + ([last_seen] if last_seen else [])
+        new_last_seen = max(all_seen) if all_seen else last_seen
 
     if added == 0 and new_last_seen == last_seen:
         print("[info] 새 내부자 매수 없음 — 변경 없이 종료")
