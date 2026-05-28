@@ -17,10 +17,15 @@
 <meta name="twitter:image" content="https://www.buffettarchive.co.kr/og-image.png" />
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
 <style>
+  @font-face{
+    font-family:"Old English Text MT";
+    src:url("oldenglish.woff2") format("woff2");
+    font-weight:normal; font-style:normal; font-display:swap;
+  }
   :root{
-    --paper:#ffffff; --paper-2:#f5f4f2;
-    --ink:#16140f; --ink-soft:#6b665d; --line:#e4e1da;
-    --up:#1f5c3d; --down:#a02b1c; --live:#d63a2e;
+    --paper:#0e0e10; --paper-2:#1a1a1d;
+    --ink:#f2f0ea; --ink-soft:#9b958a; --line:#2c2c30;
+    --up:#4caf7e; --down:#e06458; --live:#ff5247;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{-webkit-text-size-adjust:100%}
@@ -30,7 +35,7 @@
 
   header.mast{border-bottom:2px solid var(--ink);padding:44px 0 0;}
   .kicker{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;margin-bottom:16px;}
-  h1.title{font-weight:600;font-size:clamp(32px,6.5vw,52px);line-height:1.0;letter-spacing:.01em;}
+  h1.title{font-family:"Old English Text MT",serif;font-weight:400;font-size:clamp(40px,8vw,68px);line-height:1.1;letter-spacing:.02em;}
   .meta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:baseline;margin-top:20px;font-size:12.5px;color:var(--ink-soft);}
   .live{display:inline-flex;align-items:center;gap:6px;color:var(--live);font-weight:600}
   .live .dot{width:7px;height:7px;border-radius:50%;background:var(--live);display:inline-block;animation:pulse 1.5s ease-in-out infinite}
@@ -71,11 +76,11 @@
   .stake .delta{font-size:12px;margin-top:4px;font-weight:600}
   .delta.buy{color:var(--up)} .delta.sell{color:var(--down)} .delta.etc{color:var(--ink-soft)}
   .badge{display:inline-block;font-size:10.5px;font-weight:600;padding:1px 6px;border-radius:3px;margin-left:6px;vertical-align:middle;}
-  .badge.in{background:#e8f0eb;color:var(--up)}
-  .badge.out{background:#f0ece6;color:#8a6d3b}
-  .badge.big{background:#f4e4e2;color:var(--down)}
-  .badge.mkt-y{background:#e7eef6;color:#1f4b8a}
-  .badge.mkt-k{background:#f0ece0;color:#7a5b1a}
+  .badge.in{background:#163a28;color:#5fd197}
+  .badge.out{background:#3a3320;color:#d4b876}
+  .badge.big{background:#3d2420;color:#e89086}
+  .badge.mkt-y{background:#1a2c44;color:#7fb0e8}
+  .badge.mkt-k{background:#3a3320;color:#d4b876}
 
   .empty{padding:60px 0;text-align:center;color:var(--ink-soft);font-size:15px}
   footer{margin:36px 0 0;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--ink-soft);line-height:1.7;}
@@ -107,8 +112,8 @@
       <span id="seedFlag"></span>
     </div>
     <div class="maintabs" id="mainTabs" role="tablist">
-      <button role="tab" data-view="firm" aria-selected="true">운용사 지분공시</button>
-      <button role="tab" data-view="insider" aria-selected="false">내부자 매수</button>
+      <button role="tab" data-view="insider" aria-selected="true">내부자 매수</button>
+      <button role="tab" data-view="firm" aria-selected="false">운용사 지분공시</button>
     </div>
   </header>
 
@@ -151,7 +156,7 @@ function firmTag(item){
 }
 
 let FIRM={disclosures:[],firms:[]}, INSIDER={disclosures:[]};
-let view="firm", activeFirm="전체";
+let view="insider", activeFirm="전체";
 
 function renderFirm(){
   const list=FIRM.disclosures
