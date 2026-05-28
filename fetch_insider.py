@@ -36,6 +36,7 @@ GH_API = "https://api.github.com"
 
 SCAN_DAYS = 3
 INSIDER_REPORT = "임원ㆍ주요주주특정증권등소유상황보고서"
+MARKETS = [("Y", "KOSPI"), ("K", "KOSDAQ")]  # 코스피, 코스닥
 
 s = requests.Session()
 s.headers.update({"User-Agent": "vip-tracker-insider/1.0"})
@@ -48,9 +49,12 @@ GH_HEADERS = {
 
 def dart(endpoint, **params):
     params["crtfc_key"] = DART_KEY
+    # 캐시 우회: nocache 쿼리 + 헤더
+    params["_nc"] = str(time.time())
+    headers = {"Cache-Control": "no-cache", "Pragma": "no-cache"}
     for i in range(3):
         try:
-            return s.get(f"{DART}/{endpoint}", params=params, timeout=20).json()
+            return s.get(f"{DART}/{endpoint}", params=params, headers=headers, timeout=20).json()
         except Exception as e:  # noqa
             print(f"[retry {i}] {endpoint}: {e}", file=sys.stderr)
             time.sleep(1.5 * (i + 1))
@@ -144,41 +148,42 @@ def main():
     bgn = (today - dt.timedelta(days=SCAN_DAYS)).strftime("%Y%m%d")
     end = today.strftime("%Y%m%d")
 
-    # 1) 코스닥 내부자 보고 후보 수집 (last_seen 비교만, max_seen 갱신은 elestock 매칭 후에)
+    # 1) 코스피·코스닥 내부자 보고 후보 수집 (last_seen 비교만, max_seen 갱신은 elestock 매칭 후에)
     targets = {}        # corp_code -> set(rcept_no)
-    meta = {}           # rcept_no -> (corp_name, stock_code)
-    candidates = []     # list of rcept_no (순서 보존, 검증에 사용)
-    stop, page = False, 1
-    while not stop:
-        d = dart("list.json", bgn_de=bgn, end_de=end,
-                 pblntf_ty="D", corp_cls="K",   # 코스닥 지분공시 (D002 필터는 작동 안해서 제외)
-                 page_no=page, page_count=100, sort="date", sort_mth="desc")
-        st = d.get("status")
-        if st == "013":
-            break
-        if st != "000":
-            print(f"[warn] list status={st} msg={d.get('message')}", file=sys.stderr)
-            break
-        for row in d.get("list", []) or []:
-            rcept_no = row["rcept_no"]
-            if INSIDER_REPORT not in row.get("report_nm", ""):
-                continue
-            if last_seen and rcept_no <= last_seen:
-                stop = True
+    meta = {}           # rcept_no -> (corp_name, stock_code, market)
+    candidates = []     # list of rcept_no
+    for cls_code, cls_name in MARKETS:
+        stop, page = False, 1
+        while not stop:
+            d = dart("list.json", bgn_de=bgn, end_de=end,
+                     pblntf_ty="D", corp_cls=cls_code,
+                     page_no=page, page_count=100, sort="date", sort_mth="desc")
+            st = d.get("status")
+            if st == "013":
                 break
-            cc = row.get("corp_code", "")
-            if not cc:
-                continue
-            targets.setdefault(cc, set()).add(rcept_no)
-            candidates.append(rcept_no)
-            meta[rcept_no] = (row.get("corp_name", ""), row.get("stock_code", ""))
-        tp = int(d.get("total_page", 1) or 1)
-        if page >= tp:
-            break
-        page += 1
-        time.sleep(0.2)
+            if st != "000":
+                print(f"[warn] list({cls_name}) status={st} msg={d.get('message')}", file=sys.stderr)
+                break
+            for row in d.get("list", []) or []:
+                rcept_no = row["rcept_no"]
+                if INSIDER_REPORT not in row.get("report_nm", ""):
+                    continue
+                if last_seen and rcept_no <= last_seen:
+                    stop = True
+                    break
+                cc = row.get("corp_code", "")
+                if not cc:
+                    continue
+                targets.setdefault(cc, set()).add(rcept_no)
+                candidates.append(rcept_no)
+                meta[rcept_no] = (row.get("corp_name", ""), row.get("stock_code", ""), cls_name)
+            tp = int(d.get("total_page", 1) or 1)
+            if page >= tp:
+                break
+            page += 1
+            time.sleep(0.2)
 
-    print(f"[info] 코스닥 내부자 보고 후보 회사 {len(targets)}곳, 접수 {len(candidates)}건")
+    print(f"[info] 내부자 보고 후보 회사 {len(targets)}곳, 접수 {len(candidates)}건 (코스피+코스닥)")
 
     # 2) 회사별 elestock 호출 → 매칭된 접수번호만 처리
     #    elestock 응답에 아직 없는 후보는 "미처리"로 남겨 last_seen 갱신에서 제외
@@ -190,7 +195,14 @@ def main():
         nonlocal added
         d = dart("elestock.json", corp_code=cc)
         if d.get("status") != "000":
+            print(f"[debug] elestock {cc} status={d.get('status')} (찾던 rcept={list(rcept_set)})")
             return 0
+        elestock_rcepts = [it.get("rcept_no","") for it in (d.get("list") or [])]
+        # 디버그: elestock 응답이 찾던 rcept를 포함하는지
+        found = [r for r in rcept_set if r in elestock_rcepts]
+        missing = [r for r in rcept_set if r not in elestock_rcepts]
+        if missing:
+            print(f"[debug] elestock {cc} 응답 {len(elestock_rcepts)}건, 찾는중={list(rcept_set)} → 발견={found}, 미발견={missing}")
         local_added = 0
         for item in d.get("list", []) or []:
             rcept_no = item.get("rcept_no", "")
@@ -206,12 +218,13 @@ def main():
             time.sleep(0.25)
             if not doc.get("is_buy"):
                 continue
-            corp_name, stock_code = meta.get(rcept_no, (item.get("corp_name", ""), ""))
+            corp_name, stock_code, market = meta.get(rcept_no, (item.get("corp_name", ""), "", ""))
             existing[rcept_no] = {
                 "rcept_no": rcept_no,
                 "rcept_dt": item.get("rcept_dt", ""),
                 "corp_name": corp_name or item.get("corp_name", ""),
                 "stock_code": stock_code,
+                "market": market,
                 "corp_code": cc,
                 "repror": item.get("repror", ""),
                 "ofcps": item.get("isu_exctv_ofcps", ""),
@@ -274,7 +287,7 @@ def main():
     merged = sorted(existing.values(), key=lambda x: x.get("rcept_no", ""), reverse=True)
     payload = {
         "updated_at": dt.datetime.now(dt.timezone(dt.timedelta(hours=9))).isoformat(timespec="minutes"),
-        "market": "KOSDAQ",
+        "market": "KOSPI+KOSDAQ",
         "last_seen": max_seen,
         "disclosures": merged,
     }
