@@ -181,22 +181,34 @@ def main():
 
     # 2) 회사별 elestock 한 번씩 → 해당 접수번호의 '매수(증가)'만 기록
     added = 0
+    pending_min = None   # 본문이 아직 없어 미처리된 건의 최솟값
     for cc, rcept_set in targets.items():
         d = dart("elestock.json", corp_code=cc)
         if d.get("status") != "000":
             continue
-        for item in d.get("list", []) or []:
-            rcept_no = item.get("rcept_no", "")
-            if rcept_no not in rcept_set or rcept_no in existing:
+        elestock_map = {it.get("rcept_no",""): it for it in (d.get("list") or [])}
+        for rcept_no in rcept_set:
+            if rcept_no in existing:
+                continue
+            item = elestock_map.get(rcept_no)
+            if item is None:
+                # elestock에 아직 없음 → 미처리
+                if pending_min is None or rcept_no < pending_min:
+                    pending_min = rcept_no
                 continue
             irds = to_int(item.get("sp_stock_lmp_irds_cnt"))
-            if irds <= 0:        # 1차: 소유 증가(매수 후보)만
+            if irds <= 0:        # 소유 증가(매수 후보)만, 매도/변동없음은 확정 제외
                 continue
-            # 2차: 본문에서 장내/장외 매수인지 확인 (정확한 매수 시그널만)
             doc = parse_insider_doc(rcept_no)
             time.sleep(0.25)
-            if not doc.get("is_buy"):
-                continue  # 장내/장외 매수가 아니면 제외(증여·상속·인수성 등)
+            ds = doc.get("doc_status")
+            if ds == "nodoc":
+                # 본문 아직 없음 → 미처리
+                if pending_min is None or rcept_no < pending_min:
+                    pending_min = rcept_no
+                continue
+            if ds == "notbuy":
+                continue  # 본문 있고 매수 아님 = 확정 제외
             corp_name, stock_code, market = meta.get(rcept_no, (item.get("corp_name", ""), "", ""))
             existing[rcept_no] = {
                 "rcept_no": rcept_no,
@@ -217,6 +229,12 @@ def main():
             }
             added += 1
         time.sleep(0.15)
+
+    # 미처리(본문 대기) 건이 있으면 last_seen을 그 직전으로 제한
+    if pending_min is not None and max_seen >= pending_min:
+        # max_seen을 pending_min보다 작은 값으로 끌어내림
+        smaller = [r for r in existing if r < pending_min]
+        max_seen = max(smaller) if smaller else ""
 
     if added == 0 and max_seen == last_seen:
         print("[info] 새 내부자 매수 없음 — 변경 없이 종료")
