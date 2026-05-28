@@ -63,6 +63,8 @@
   .badge.in{background:#e8f0eb;color:var(--up)}
   .badge.out{background:#f0ece6;color:#8a6d3b}
   .badge.big{background:#f4e4e2;color:var(--down)}
+  .badge.mkt-y{background:#e7eef6;color:#1f4b8a}
+  .badge.mkt-k{background:#f0ece0;color:#7a5b1a}
 
   .empty{padding:60px 0;text-align:center;color:var(--ink-soft);font-size:15px}
   footer{margin:36px 0 0;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--ink-soft);line-height:1.7;}
@@ -95,7 +97,7 @@
     </div>
     <div class="maintabs" id="mainTabs" role="tablist">
       <button role="tab" data-view="firm" aria-selected="true">운용사 지분공시</button>
-      <button role="tab" data-view="insider" aria-selected="false">코스닥 내부자 매수</button>
+      <button role="tab" data-view="insider" aria-selected="false">내부자 매수</button>
     </div>
   </header>
 
@@ -176,6 +178,11 @@ function renderInsider(){
   feed.innerHTML=list.map(item=>{
     const dt=fmtDate(item.rcept_dt), dl=dartLink(item.rcept_no);
     const code=item.stock_code?`<span class="code">${item.stock_code}</span>`:"";
+    // 시장 배지(코스피/코스닥)
+    const mk=item.market||"";
+    let mkb="";
+    if(mk==="KOSPI") mkb=`<span class="badge mkt-y">KOSPI</span> `;
+    else if(mk==="KOSDAQ") mkb=`<span class="badge mkt-k">KOSDAQ</span> `;
     // 취득방법 배지
     const m=item.method||"";
     let mb="";
@@ -188,7 +195,7 @@ function renderInsider(){
       <div class="date">${dt.m} ${dt.d}<span class="y">${dt.y}</span></div>
       <div class="corp">
         <div class="name">${item.corp_name}${code}</div>
-        <div class="sub"><span class="who">${item.repror}</span> · ${pos||"—"} ${mb}</div>
+        <div class="sub">${mkb}<span class="who">${item.repror}</span> · ${pos||"—"} ${mb}</div>
       </div>
       <div class="stake">
         <div class="pct">+${item.irds_cnt}</div>
