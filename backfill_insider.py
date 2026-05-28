@@ -75,7 +75,8 @@ def parse_insider_doc(rcept_no):
     try:
         r = s.get(f"{DART}/document.xml",
                   params={"crtfc_key": DART_KEY, "rcept_no": rcept_no}, timeout=30)
-        if r.headers.get("content-type", "").startswith("application/json"):
+        ctype = r.headers.get("content-type", "")
+        if ctype.startswith("application/json") or not r.content[:2] == b"PK":
             return {"doc_status": "nodoc"}
         z = zipfile.ZipFile(io.BytesIO(r.content))
         name = max(z.namelist(), key=lambda n: z.getinfo(n).file_size)
