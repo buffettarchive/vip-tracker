@@ -145,8 +145,7 @@ def main():
     max_seen, stop, page = last_seen, False, 1
     while not stop:
         d = dart("list.json", bgn_de=bgn, end_de=end,
-                 pblntf_ty="D", pblntf_detail_ty="D002",  # 내부자 소유보고만
-                 corp_cls="K",                            # 코스닥만
+                 pblntf_ty="D", corp_cls="K",
                  page_no=page, page_count=100, sort="date", sort_mth="desc")
         st = d.get("status")
         if st == "013":
@@ -156,13 +155,13 @@ def main():
             break
         for row in d.get("list", []) or []:
             rcept_no = row["rcept_no"]
+            if INSIDER_REPORT not in row.get("report_nm", ""):
+                continue
             if last_seen and rcept_no <= last_seen:
                 stop = True
                 break
             if rcept_no > max_seen:
                 max_seen = rcept_no
-            if INSIDER_REPORT not in row.get("report_nm", ""):
-                continue
             cc = row.get("corp_code", "")
             if not cc:
                 continue
