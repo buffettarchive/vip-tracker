@@ -144,10 +144,11 @@ def main():
     bgn = (today - dt.timedelta(days=SCAN_DAYS)).strftime("%Y%m%d")
     end = today.strftime("%Y%m%d")
 
-    # 1) 코스닥 내부자 보고만 list로 훑어 (회사,접수번호) 후보 수집
+    # 1) 코스닥 내부자 보고 후보 수집 (last_seen 비교만, max_seen 갱신은 elestock 매칭 후에)
     targets = {}        # corp_code -> set(rcept_no)
     meta = {}           # rcept_no -> (corp_name, stock_code)
-    max_seen, stop, page = last_seen, False, 1
+    candidates = []     # list of rcept_no (순서 보존, 검증에 사용)
+    stop, page = False, 1
     while not stop:
         d = dart("list.json", bgn_de=bgn, end_de=end,
                  pblntf_ty="D", corp_cls="K",   # 코스닥 지분공시 (D002 필터는 작동 안해서 제외)
@@ -160,19 +161,16 @@ def main():
             break
         for row in d.get("list", []) or []:
             rcept_no = row["rcept_no"]
-            # 내부자 보고가 아닌 항목은 그냥 패스 (last_seen 비교·갱신 모두 제외)
             if INSIDER_REPORT not in row.get("report_nm", ""):
                 continue
-            # 내부자 보고 중 이미 처리한 지점 이하면 중단(내림차순이므로 그 이후도 다 옛것)
             if last_seen and rcept_no <= last_seen:
                 stop = True
                 break
-            if rcept_no > max_seen:
-                max_seen = rcept_no
             cc = row.get("corp_code", "")
             if not cc:
                 continue
             targets.setdefault(cc, set()).add(rcept_no)
+            candidates.append(rcept_no)
             meta[rcept_no] = (row.get("corp_name", ""), row.get("stock_code", ""))
         tp = int(d.get("total_page", 1) or 1)
         if page >= tp:
@@ -180,26 +178,30 @@ def main():
         page += 1
         time.sleep(0.2)
 
-    print(f"[info] 코스닥 내부자 보고 후보 회사 {len(targets)}곳")
+    print(f"[info] 코스닥 내부자 보고 후보 회사 {len(targets)}곳, 접수 {len(candidates)}건")
 
-    # 2) 회사별 elestock 한 번씩 → 해당 접수번호의 '매수(증가)'만 기록
+    # 2) 회사별 elestock 호출 → 매칭된 접수번호만 처리
+    #    elestock 응답에 아직 없는 후보는 "미처리"로 남겨 last_seen 갱신에서 제외
     added = 0
+    matched_rcepts = set()   # elestock에서 실제로 발견된 접수번호 모음
     for cc, rcept_set in targets.items():
         d = dart("elestock.json", corp_code=cc)
         if d.get("status") != "000":
             continue
         for item in d.get("list", []) or []:
             rcept_no = item.get("rcept_no", "")
-            if rcept_no not in rcept_set or rcept_no in existing:
+            if rcept_no not in rcept_set:
+                continue
+            matched_rcepts.add(rcept_no)   # elestock에 존재함을 확인
+            if rcept_no in existing:
                 continue
             irds = to_int(item.get("sp_stock_lmp_irds_cnt"))
-            if irds <= 0:        # 1차: 소유 증가(매수 후보)만
+            if irds <= 0:
                 continue
-            # 2차: 본문에서 장내/장외 매수인지 확인 (정확한 매수 시그널만)
             doc = parse_insider_doc(rcept_no)
             time.sleep(0.25)
             if not doc.get("is_buy"):
-                continue  # 장내/장외 매수가 아니면 제외(증여·상속·인수성 등)
+                continue
             corp_name, stock_code = meta.get(rcept_no, (item.get("corp_name", ""), ""))
             existing[rcept_no] = {
                 "rcept_no": rcept_no,
@@ -220,9 +222,29 @@ def main():
             added += 1
         time.sleep(0.15)
 
-    if added == 0 and max_seen == last_seen:
+    # 3) last_seen 안전 갱신:
+    #    elestock에서 확인된(matched) 접수번호 중 가장 큰 것만 last_seen으로.
+    #    아직 elestock에 안 올라온 후보는 last_seen에 반영하지 않아 다음 실행에서 재시도됨.
+    unmatched = [r for r in candidates if r not in matched_rcepts]
+    if unmatched:
+        print(f"[info] elestock 미반영 후보 {len(unmatched)}건 — 다음 실행에서 재시도")
+    matched_max = max(matched_rcepts) if matched_rcepts else ""
+    # last_seen은 (a) matched 중 최대, (b) 기존 last_seen 중 더 큰 값
+    # 단 unmatched가 있으면 그 최솟값보다는 작아야 다음 실행에서 다시 볼 수 있음
+    new_last_seen = max(matched_max, last_seen) if matched_max else last_seen
+    if unmatched:
+        min_unmatched = min(unmatched)
+        # 미처리 건의 바로 직전(문자열 비교 기준)까지만 last_seen으로 올림
+        # 가장 안전: min_unmatched 자체를 넘지 않게
+        if new_last_seen >= min_unmatched:
+            # min_unmatched-1 효과: 미처리 건은 last_seen <= 처리범위 보장 위해
+            # 문자열 비교는 < 비교만 안전, last_seen=이전 그대로 두는 게 가장 안전
+            new_last_seen = last_seen  # 안전하게 기존 유지
+
+    if added == 0 and new_last_seen == last_seen:
         print("[info] 새 내부자 매수 없음 — 변경 없이 종료")
         return
+    max_seen = new_last_seen
 
     merged = sorted(existing.values(), key=lambda x: x.get("rcept_no", ""), reverse=True)
     payload = {
