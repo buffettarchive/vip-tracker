@@ -49,12 +49,9 @@ GH_HEADERS = {
 
 def dart(endpoint, **params):
     params["crtfc_key"] = DART_KEY
-    # 캐시 우회: nocache 쿼리 + 헤더
-    params["_nc"] = str(time.time())
-    headers = {"Cache-Control": "no-cache", "Pragma": "no-cache"}
     for i in range(3):
         try:
-            return s.get(f"{DART}/{endpoint}", params=params, headers=headers, timeout=20).json()
+            return s.get(f"{DART}/{endpoint}", params=params, timeout=20).json()
         except Exception as e:  # noqa
             print(f"[retry {i}] {endpoint}: {e}", file=sys.stderr)
             time.sleep(1.5 * (i + 1))
@@ -83,8 +80,9 @@ def parse_insider_doc(rcept_no):
     try:
         r = s.get(f"{DART}/document.xml",
                   params={"crtfc_key": DART_KEY, "rcept_no": rcept_no}, timeout=30)
+        # 본문이 아직 안 올라왔으면 JSON으로 '파일 없음'(status 014)이 옴 → nodoc
         if r.headers.get("content-type", "").startswith("application/json"):
-            return {}
+            return {"doc_status": "nodoc"}
         z = zipfile.ZipFile(io.BytesIO(r.content))
         name = max(z.namelist(), key=lambda n: z.getinfo(n).file_size)
         raw = z.read(name)
@@ -102,13 +100,15 @@ def parse_insider_doc(rcept_no):
         plain = re.sub(r"&[a-zA-Z#0-9]+;", " ", plain)
         plain = re.sub(r"\s+", " ", plain)
 
-        # 세부변동내역에 장내/장외 매수가 한 번이라도 등장하는지
         has_buy = any(k in plain for k in BUY_KEYWORDS)
         method = next((k for k in BUY_KEYWORDS if k in plain), "")
-        return {"is_buy": has_buy, "method": method}
+        # 본문은 있는데 매수 키워드가 없으면 notbuy (증여·상속·인수성 등) → 확정 제외
+        return {"doc_status": "buy" if has_buy else "notbuy",
+                "is_buy": has_buy, "method": method}
     except Exception as e:  # noqa
         print(f"[warn] 내부자 본문 파싱 실패 {rcept_no}: {e}", file=sys.stderr)
-        return {}
+        # 파싱 실패는 일시적일 수 있으니 nodoc 취급(다음 실행 재시도)
+        return {"doc_status": "nodoc"}
 
 
 def gh_get():
@@ -188,36 +188,40 @@ def main():
     # 2) 회사별 elestock 호출 → 매칭된 접수번호만 처리
     #    elestock 응답에 아직 없는 후보는 "미처리"로 남겨 last_seen 갱신에서 제외
     added = 0
-    matched_rcepts = set()
+    resolved_rcepts = set()   # 완전히 처리(수집 or 확정 제외)된 접수번호
 
     def process_company(cc, rcept_set):
-        """elestock 호출 후 매칭된 매수 건을 existing에 반영. 반환: 추가 건수."""
+        """elestock 호출 후 매칭된 건을 처리.
+        - elestock+본문 모두 확인돼 매수면 → existing 추가, '완료'(resolved) 표시
+        - elestock 있고 본문상 매수 아니면 → 제외하되 '완료' 표시(다시 안 봄)
+        - elestock에 없거나 본문이 아직 없으면 → '미완료'(보류) → last_seen 안 올림
+        """
         nonlocal added
         d = dart("elestock.json", corp_code=cc)
         if d.get("status") != "000":
-            print(f"[debug] elestock {cc} status={d.get('status')} (찾던 rcept={list(rcept_set)})")
-            return 0
-        elestock_rcepts = [it.get("rcept_no","") for it in (d.get("list") or [])]
-        # 디버그: elestock 응답이 찾던 rcept를 포함하는지
-        found = [r for r in rcept_set if r in elestock_rcepts]
-        missing = [r for r in rcept_set if r not in elestock_rcepts]
-        if missing:
-            print(f"[debug] elestock {cc} 응답 {len(elestock_rcepts)}건, 찾는중={list(rcept_set)} → 발견={found}, 미발견={missing}")
+            return 0   # elestock 호출 실패 → 전부 미완료(보류)
+        elestock_map = {it.get("rcept_no",""): it for it in (d.get("list") or [])}
         local_added = 0
-        for item in d.get("list", []) or []:
-            rcept_no = item.get("rcept_no", "")
-            if rcept_no not in rcept_set:
-                continue
-            matched_rcepts.add(rcept_no)
+        for rcept_no in rcept_set:
             if rcept_no in existing:
+                resolved_rcepts.add(rcept_no)   # 이미 수집됨 = 완료
                 continue
+            item = elestock_map.get(rcept_no)
+            if item is None:
+                continue   # elestock에 아직 없음 → 미완료(보류)
             irds = to_int(item.get("sp_stock_lmp_irds_cnt"))
             if irds <= 0:
+                resolved_rcepts.add(rcept_no)   # 매도/변동없음 = 확정 제외(완료)
                 continue
             doc = parse_insider_doc(rcept_no)
             time.sleep(0.25)
-            if not doc.get("is_buy"):
+            ds = doc.get("doc_status")
+            if ds == "nodoc":
+                continue   # 본문 아직 없음 → 미완료(보류), 다음 실행 재시도
+            if ds == "notbuy":
+                resolved_rcepts.add(rcept_no)   # 본문 있고 매수 아님 = 확정 제외(완료)
                 continue
+            # ds == "buy" → 매수 확정
             corp_name, stock_code, market = meta.get(rcept_no, (item.get("corp_name", ""), "", ""))
             existing[rcept_no] = {
                 "rcept_no": rcept_no,
@@ -236,6 +240,7 @@ def main():
                 "hold_rate": item.get("sp_stock_lmp_rate", ""),
                 "method": doc.get("method", ""),
             }
+            resolved_rcepts.add(rcept_no)   # 매수 수집 완료
             added += 1
             local_added += 1
         return local_added
@@ -245,39 +250,38 @@ def main():
         process_company(cc, rcept_set)
         time.sleep(0.15)
 
-    # 1차에서 매칭 실패한 후보가 있으면 잠깐 대기 후 그 회사들만 재시도 (elestock 반영 지연 보강)
-    unmatched_after_first = [r for r in candidates if r not in matched_rcepts]
-    if unmatched_after_first:
+    # 1차에서 처리 못한(미완료) 후보가 있으면 잠깐 대기 후 그 회사들만 재시도
+    pending_after_first = [r for r in candidates if r not in resolved_rcepts]
+    if pending_after_first:
         retry_targets = {}
-        for r in unmatched_after_first:
+        for r in pending_after_first:
             for cc, rs in targets.items():
                 if r in rs:
                     retry_targets.setdefault(cc, set()).add(r)
                     break
-        print(f"[info] elestock 미반영 후보 {len(unmatched_after_first)}건 — 15초 대기 후 1회 재시도")
+        print(f"[info] 미반영(본문/elestock 대기) 후보 {len(pending_after_first)}건 — 15초 대기 후 1회 재시도")
         time.sleep(15)
         for cc, rcept_set in retry_targets.items():
             process_company(cc, rcept_set)
             time.sleep(0.15)
 
-    # 3) last_seen 안전 갱신:
-    #    elestock에서 확인된(matched) 접수번호 중 가장 큰 것만 last_seen으로.
-    #    아직 elestock에 안 올라온 후보는 last_seen에 반영하지 않아 다음 실행에서 재시도됨.
-    unmatched = [r for r in candidates if r not in matched_rcepts]
-    if unmatched:
-        print(f"[info] 재시도 후에도 elestock 미반영 {len(unmatched)}건 — 다음 실행에서 또 시도")
-    matched_max = max(matched_rcepts) if matched_rcepts else ""
-    # last_seen은 (a) matched 중 최대, (b) 기존 last_seen 중 더 큰 값
-    # 단 unmatched가 있으면 그 최솟값보다는 작아야 다음 실행에서 다시 볼 수 있음
-    new_last_seen = max(matched_max, last_seen) if matched_max else last_seen
-    if unmatched:
-        min_unmatched = min(unmatched)
-        # 미처리 건의 바로 직전(문자열 비교 기준)까지만 last_seen으로 올림
-        # 가장 안전: min_unmatched 자체를 넘지 않게
-        if new_last_seen >= min_unmatched:
-            # min_unmatched-1 효과: 미처리 건은 last_seen <= 처리범위 보장 위해
-            # 문자열 비교는 < 비교만 안전, last_seen=이전 그대로 두는 게 가장 안전
-            new_last_seen = last_seen  # 안전하게 기존 유지
+    # 3) last_seen 안전 갱신 (핵심):
+    #    "완전히 처리(resolved)된 건"만 기준으로 올린다.
+    #    아직 본문/elestock가 안 올라온 미완료 건이 있으면, 그 최솟값을 절대 넘지 않게 해서
+    #    다음 실행에서 반드시 다시 보도록 한다. (elestock엔 있지만 본문이 없는 경우 누락 방지)
+    pending = [r for r in candidates if r not in resolved_rcepts]
+    if pending:
+        print(f"[info] 본문/elestock 대기 {len(pending)}건 — 다음 실행에서 또 시도")
+        # 미완료 최솟값보다 하나라도 작은 지점까지만 last_seen 허용
+        min_pending = min(pending)
+        # resolved 중 min_pending보다 작은 것들만 안전하게 last_seen 후보
+        safe = [r for r in resolved_rcepts if r < min_pending]
+        safe.append(last_seen)
+        new_last_seen = max(safe)
+    else:
+        # 모두 처리됨 → 후보 중 최대까지 last_seen 올림
+        all_seen = list(resolved_rcepts) + [last_seen]
+        new_last_seen = max(all_seen)
 
     if added == 0 and new_last_seen == last_seen:
         print("[info] 새 내부자 매수 없음 — 변경 없이 종료")
