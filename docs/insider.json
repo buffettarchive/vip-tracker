@@ -1,8 +1,42 @@
 {
-  "updated_at": "2026-05-28T16:11+09:00",
+  "updated_at": "2026-05-28T16:32+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260526000274",
   "disclosures": [
+    {
+      "rcept_no": "20260528000665",
+      "rcept_dt": "2026-05-28",
+      "corp_name": "삼익악기",
+      "stock_code": "002450",
+      "market": "KOSPI",
+      "corp_code": "00127857",
+      "repror": "재단법인 삼익문화재단",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "1,570,060",
+      "total_cnt": "3,940,060",
+      "irds_rate": "1.73",
+      "hold_rate": "4.35",
+      "method": "장내매수"
+    },
+    {
+      "rcept_no": "20260528000654",
+      "rcept_dt": "2026-05-28",
+      "corp_name": "코웨이",
+      "stock_code": "021240",
+      "market": "KOSPI",
+      "corp_code": "00170558",
+      "repror": "방준혁",
+      "ofcps": "이사회 의장",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "34,000",
+      "total_cnt": "76,000",
+      "irds_rate": "0.05",
+      "hold_rate": "0.11",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260528000618",
       "rcept_dt": "2026-05-28",
