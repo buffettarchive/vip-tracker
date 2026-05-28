@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-05-28T11:21+09:00",
+  "updated_at": "2026-05-28T11:25+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260528000215",
+  "last_seen": "20260528000239",
   "disclosures": [
+    {
+      "rcept_no": "20260528000239",
+      "rcept_dt": "2026-05-28",
+      "corp_name": "BNK금융지주",
+      "stock_code": "138930",
+      "market": "KOSPI",
+      "corp_code": "00858364",
+      "repror": "빈대인",
+      "ofcps": "회 장",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "5,000",
+      "total_cnt": "66,885",
+      "irds_rate": "0.00",
+      "hold_rate": "0.02",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260528000209",
       "rcept_dt": "2026-05-28",
