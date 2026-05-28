@@ -1,8 +1,42 @@
 {
-  "updated_at": "2026-05-28T13:56+09:00",
+  "updated_at": "2026-05-28T14:06+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260526000274",
   "disclosures": [
+    {
+      "rcept_no": "20260528000407",
+      "rcept_dt": "2026-05-28",
+      "corp_name": "아진전자부품",
+      "stock_code": "009320",
+      "market": "KOSPI",
+      "corp_code": "00111689",
+      "repror": "이석호",
+      "ofcps": "상무이사",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "20,401",
+      "total_cnt": "20,401",
+      "irds_rate": "0.04",
+      "hold_rate": "0.04",
+      "method": "장내매수"
+    },
+    {
+      "rcept_no": "20260528000394",
+      "rcept_dt": "2026-05-28",
+      "corp_name": "그리드위즈",
+      "stock_code": "453450",
+      "market": "KOSDAQ",
+      "corp_code": "01299203",
+      "repror": "류준우",
+      "ofcps": "사장",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "4,700",
+      "total_cnt": "342,200",
+      "irds_rate": "0.06",
+      "hold_rate": "4.31",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260528000376",
       "rcept_dt": "2026-05-28",
