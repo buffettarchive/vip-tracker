@@ -1,8 +1,42 @@
 {
-  "updated_at": "2026-05-28T15:46+09:00",
+  "updated_at": "2026-05-28T16:11+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260526000274",
   "disclosures": [
+    {
+      "rcept_no": "20260528000618",
+      "rcept_dt": "2026-05-28",
+      "corp_name": "미원상사",
+      "stock_code": "002840",
+      "market": "KOSPI",
+      "corp_code": "00121932",
+      "repror": "가제순",
+      "ofcps": "전무",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "450",
+      "total_cnt": "3,000",
+      "irds_rate": "0.01",
+      "hold_rate": "0.06",
+      "method": "장내매수"
+    },
+    {
+      "rcept_no": "20260528000614",
+      "rcept_dt": "2026-05-28",
+      "corp_name": "코웨이",
+      "stock_code": "021240",
+      "market": "KOSPI",
+      "corp_code": "00170558",
+      "repror": "넷마블",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "145,000",
+      "total_cnt": "18,824,446",
+      "irds_rate": "0.20",
+      "hold_rate": "26.60",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260528000589",
       "rcept_dt": "2026-05-28",
