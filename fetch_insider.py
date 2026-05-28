@@ -80,8 +80,10 @@ def parse_insider_doc(rcept_no):
     try:
         r = s.get(f"{DART}/document.xml",
                   params={"crtfc_key": DART_KEY, "rcept_no": rcept_no}, timeout=30)
-        # 본문이 아직 안 올라왔으면 JSON으로 '파일 없음'(status 014)이 옴 → nodoc
-        if r.headers.get("content-type", "").startswith("application/json"):
+        # 본문이 아직 안 올라왔으면 JSON '파일 없음'이 옴 → nodoc
+        ctype = r.headers.get("content-type", "")
+        if ctype.startswith("application/json") or not r.content[:2] == b"PK":
+            # ZIP 매직넘버(PK)가 아니면 본문이 아직 없는 것 → nodoc
             return {"doc_status": "nodoc"}
         z = zipfile.ZipFile(io.BytesIO(r.content))
         name = max(z.namelist(), key=lambda n: z.getinfo(n).file_size)
