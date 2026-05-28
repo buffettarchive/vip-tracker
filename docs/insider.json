@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-05-28T18:21+09:00",
+  "updated_at": "2026-05-28T19:01+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260526000274",
   "disclosures": [
+    {
+      "rcept_no": "20260528001021",
+      "rcept_dt": "2026-05-28",
+      "corp_name": "하림지주",
+      "stock_code": "003380",
+      "market": "KOSDAQ",
+      "corp_code": "00148364",
+      "repror": "한국바이오텍",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "63,892",
+      "total_cnt": "20,956,300",
+      "irds_rate": "0.06",
+      "hold_rate": "18.71",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260528000963",
       "rcept_dt": "2026-05-28",
