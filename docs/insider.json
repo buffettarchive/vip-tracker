@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-05-29T12:11+09:00",
+  "updated_at": "2026-05-29T14:52+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260526000274",
   "disclosures": [
+    {
+      "rcept_no": "20260529000788",
+      "rcept_dt": "2026-05-29",
+      "corp_name": "SM Life Design",
+      "stock_code": "063440",
+      "market": "KOSDAQ",
+      "corp_code": "00367604",
+      "repror": "남화민",
+      "ofcps": "공동대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "69,854",
+      "total_cnt": "300,000",
+      "irds_rate": "0.16",
+      "hold_rate": "0.66",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260529000502",
       "rcept_dt": "2026-05-29",
