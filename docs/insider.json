@@ -1,8 +1,42 @@
 {
-  "updated_at": "2026-05-29T10:56+09:00",
+  "updated_at": "2026-05-29T11:11+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260526000274",
   "disclosures": [
+    {
+      "rcept_no": "20260529000291",
+      "rcept_dt": "2026-05-29",
+      "corp_name": "위세아이텍",
+      "stock_code": "065370",
+      "market": "KOSDAQ",
+      "corp_code": "00374738",
+      "repror": "이제동",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "2,333",
+      "total_cnt": "87,000",
+      "irds_rate": "0.03",
+      "hold_rate": "1.18",
+      "method": "장내매수"
+    },
+    {
+      "rcept_no": "20260529000288",
+      "rcept_dt": "2026-05-29",
+      "corp_name": "우리엔터프라이즈",
+      "stock_code": "037400",
+      "market": "KOSDAQ",
+      "corp_code": "00155692",
+      "repror": "윤철주",
+      "ofcps": "회장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "250,000",
+      "total_cnt": "534,760",
+      "irds_rate": "0.95",
+      "hold_rate": "2.03",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260529000261",
       "rcept_dt": "2026-05-29",
