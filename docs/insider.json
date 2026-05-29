@@ -1,8 +1,42 @@
 {
-  "updated_at": "2026-05-29T11:11+09:00",
+  "updated_at": "2026-05-29T11:46+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260526000274",
   "disclosures": [
+    {
+      "rcept_no": "20260529000433",
+      "rcept_dt": "2026-05-29",
+      "corp_name": "신흥",
+      "stock_code": "004080",
+      "market": "KOSPI",
+      "corp_code": "00173795",
+      "repror": "류정근",
+      "ofcps": "이사",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,040",
+      "total_cnt": "4,190",
+      "irds_rate": "0.01",
+      "hold_rate": "0.04",
+      "method": "시간외매매"
+    },
+    {
+      "rcept_no": "20260529000421",
+      "rcept_dt": "2026-05-29",
+      "corp_name": "신흥",
+      "stock_code": "004080",
+      "market": "KOSPI",
+      "corp_code": "00173795",
+      "repror": "최천수",
+      "ofcps": "전무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,780",
+      "total_cnt": "35,594",
+      "irds_rate": "0.02",
+      "hold_rate": "0.38",
+      "method": "시간외매매"
+    },
     {
       "rcept_no": "20260529000291",
       "rcept_dt": "2026-05-29",
