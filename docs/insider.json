@@ -1,8 +1,42 @@
 {
-  "updated_at": "2026-05-29T12:06+09:00",
+  "updated_at": "2026-05-29T12:11+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260526000274",
   "disclosures": [
+    {
+      "rcept_no": "20260529000502",
+      "rcept_dt": "2026-05-29",
+      "corp_name": "케이옥션",
+      "stock_code": "102370",
+      "market": "KOSDAQ",
+      "corp_code": "00668600",
+      "repror": "티에이어드바이저",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "91,226",
+      "total_cnt": "13,670,538",
+      "irds_rate": "0.34",
+      "hold_rate": "50.21",
+      "method": "장내매수"
+    },
+    {
+      "rcept_no": "20260529000488",
+      "rcept_dt": "2026-05-29",
+      "corp_name": "오비고",
+      "stock_code": "352910",
+      "market": "KOSDAQ",
+      "corp_code": "00494546",
+      "repror": "장영준",
+      "ofcps": "기타비상무이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "82,009",
+      "total_cnt": "2,794,163",
+      "irds_rate": "0.65",
+      "hold_rate": "22.11",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260529000450",
       "rcept_dt": "2026-05-29",
