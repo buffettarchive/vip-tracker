@@ -1,8 +1,42 @@
 {
-  "updated_at": "2026-05-29T15:47+09:00",
+  "updated_at": "2026-05-29T15:52+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260526000274",
   "disclosures": [
+    {
+      "rcept_no": "20260529001126",
+      "rcept_dt": "2026-05-29",
+      "corp_name": "대성미생물",
+      "stock_code": "036480",
+      "market": "KOSDAQ",
+      "corp_code": "00177320",
+      "repror": "인실리코",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "9,086",
+      "total_cnt": "1,475,826",
+      "irds_rate": "0.24",
+      "hold_rate": "38.84",
+      "method": "장내매수"
+    },
+    {
+      "rcept_no": "20260529001096",
+      "rcept_dt": "2026-05-29",
+      "corp_name": "일진전기",
+      "stock_code": "103590",
+      "market": "KOSPI",
+      "corp_code": "00683469",
+      "repror": "유상석",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "300",
+      "total_cnt": "300",
+      "irds_rate": "0.01",
+      "hold_rate": "0.01",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260529001008",
       "rcept_dt": "2026-05-29",
