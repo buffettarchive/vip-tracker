@@ -1,8 +1,42 @@
 {
-  "updated_at": "2026-05-29T14:52+09:00",
+  "updated_at": "2026-05-29T14:57+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260526000274",
   "disclosures": [
+    {
+      "rcept_no": "20260529000900",
+      "rcept_dt": "2026-05-29",
+      "corp_name": "하이트진로",
+      "stock_code": "000080",
+      "market": "KOSPI",
+      "corp_code": "00150244",
+      "repror": "박연규",
+      "ofcps": "상무보",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "800",
+      "total_cnt": "2,500",
+      "irds_rate": "0.00",
+      "hold_rate": "0.00",
+      "method": "장내매수"
+    },
+    {
+      "rcept_no": "20260529000890",
+      "rcept_dt": "2026-05-29",
+      "corp_name": "하이트진로",
+      "stock_code": "000080",
+      "market": "KOSPI",
+      "corp_code": "00150244",
+      "repror": "신민철",
+      "ofcps": "상무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "3,000",
+      "total_cnt": "3,000",
+      "irds_rate": "0.00",
+      "hold_rate": "0.00",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260529000788",
       "rcept_dt": "2026-05-29",
