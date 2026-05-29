@@ -1,8 +1,42 @@
 {
-  "updated_at": "2026-05-29T09:16+09:00",
+  "updated_at": "2026-05-29T09:26+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260526000274",
   "disclosures": [
+    {
+      "rcept_no": "20260529000043",
+      "rcept_dt": "2026-05-29",
+      "corp_name": "드림어스컴퍼니",
+      "stock_code": "060570",
+      "market": "KOSDAQ",
+      "corp_code": "00364467",
+      "repror": "이새롬",
+      "ofcps": "성장사업그룹장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "10,000",
+      "total_cnt": "10,000",
+      "irds_rate": "0.01",
+      "hold_rate": "0.01",
+      "method": "장내매수"
+    },
+    {
+      "rcept_no": "20260529000041",
+      "rcept_dt": "2026-05-29",
+      "corp_name": "바이오노트",
+      "stock_code": "377740",
+      "market": "KOSPI",
+      "corp_code": "00622787",
+      "repror": "박철세",
+      "ofcps": "사외이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,950",
+      "total_cnt": "7,950",
+      "irds_rate": "0.01",
+      "hold_rate": "0.01",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260529000038",
       "rcept_dt": "2026-05-29",
