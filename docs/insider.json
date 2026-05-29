@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-05-29T09:26+09:00",
+  "updated_at": "2026-05-29T09:36+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260526000274",
   "disclosures": [
+    {
+      "rcept_no": "20260529000062",
+      "rcept_dt": "2026-05-29",
+      "corp_name": "대한뉴팜",
+      "stock_code": "054670",
+      "market": "KOSDAQ",
+      "corp_code": "00207375",
+      "repror": "이원석",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "9,166",
+      "total_cnt": "1,187,365",
+      "irds_rate": "0.06",
+      "hold_rate": "8.27",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260529000043",
       "rcept_dt": "2026-05-29",
