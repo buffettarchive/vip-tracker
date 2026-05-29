@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-05-29T10:01+09:00",
+  "updated_at": "2026-05-29T10:56+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260526000274",
   "disclosures": [
+    {
+      "rcept_no": "20260529000261",
+      "rcept_dt": "2026-05-29",
+      "corp_name": "멀티캠퍼스",
+      "stock_code": "067280",
+      "market": "KOSDAQ",
+      "corp_code": "00425351",
+      "repror": "안재우",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "2,000",
+      "total_cnt": "2,000",
+      "irds_rate": "0.03",
+      "hold_rate": "0.03",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260529000103",
       "rcept_dt": "2026-05-29",
