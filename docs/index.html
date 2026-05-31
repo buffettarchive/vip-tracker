@@ -51,10 +51,17 @@
   }
   .maintabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--ink);}
 
+  .topbar{display:flex;justify-content:flex-end;margin-top:-6px;margin-bottom:8px}
+  .langtoggle{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;font-size:11px;font-weight:600;letter-spacing:.05em}
+  .langtoggle button{font-family:inherit;background:transparent;border:0;color:var(--ink-soft);padding:4px 10px;cursor:pointer;transition:.15s;}
+  .langtoggle button[aria-selected="true"]{background:var(--ink);color:var(--paper)}
+  .market-filter{display:flex;gap:6px;margin:8px 0 0}
+  .market-filter button{font-family:inherit;font-size:12px;font-weight:600;background:transparent;border:1px solid var(--line);color:var(--ink-soft);padding:5px 12px;border-radius:999px;cursor:pointer;transition:.15s;}
+  .market-filter button[aria-selected="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink);}
   .controls{display:flex;justify-content:space-between;align-items:center;padding:18px 0 10px;flex-wrap:wrap;gap:12px;}
   .firm-tabs{display:flex;gap:6px;flex-wrap:wrap}
   .firm-tabs button{font-family:inherit;font-size:13px;font-weight:600;background:transparent;border:1px solid var(--line);color:var(--ink-soft);padding:7px 14px;border-radius:999px;cursor:pointer;transition:.15s;}
-  .firm-tabs button[aria-selected="true"]{background:var(--ink);color:#fff;border-color:var(--ink);}
+  .firm-tabs button[aria-selected="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink);}
   .count{font-size:12.5px;color:var(--ink-soft)}
 
   .feed{list-style:none;border-top:1px solid var(--ink)}
@@ -104,20 +111,28 @@
 <body>
 <div class="wrap">
 
+  <div class="topbar">
+    <div class="langtoggle" id="langToggle" role="tablist">
+      <button data-lang="ko" aria-selected="true">KO</button>
+      <button data-lang="en" aria-selected="false">EN</button>
+    </div>
+  </div>
+
   <header class="mast">
     <h1 class="title">Buffett Archive</h1>
     <div class="meta-row">
-      <span class="live"><span class="dot"></span>실시간 트래킹</span>
+      <span class="live"><span class="dot"></span><span id="liveText">실시간 트래킹</span></span>
       <span id="seedFlag"></span>
     </div>
     <div class="maintabs" id="mainTabs" role="tablist">
-      <button role="tab" data-view="insider" aria-selected="true">내부자 매수</button>
-      <button role="tab" data-view="firm" aria-selected="false">운용사 지분공시</button>
+      <button role="tab" data-view="insider" aria-selected="true" id="tabInsider">내부자 매수</button>
+      <button role="tab" data-view="firm" aria-selected="false" id="tabFirm">운용사 지분공시</button>
     </div>
   </header>
 
   <div class="controls">
     <div class="firm-tabs" id="firmTabs" role="tablist"></div>
+    <div class="market-filter" id="marketFilter"></div>
     <div class="count" id="count"></div>
   </div>
 
@@ -125,18 +140,149 @@
 
   <footer id="footer"></footer>
 
-  <div class="contact"><a href="mailto:harold08@naver.com">Business : harold08@naver.com</a></div>
+  <div class="contact"><a href="mailto:harold08@naver.com"><span id="businessLabel">Business</span> : harold08@naver.com</a></div>
 
 </div>
 
 <script>
 const $ = s => document.querySelector(s);
 
+// ── i18n 사전 ──────────────────────────────────────────────
+const I18N = {
+  ko: {
+    title_html: "버핏아카이브 자산운용사 및 내부자매수 트래킹 사이트",
+    live: "실시간 트래킹",
+    tab_insider: "내부자 매수",
+    tab_firm: "운용사 지분공시",
+    all: "전체",
+    market_all: "전체",
+    count_insider: n => `${n}건의 내부자 매수`,
+    count_firm: n => `${n}건의 공시`,
+    empty_insider: "표시할 내부자 매수가 없습니다.",
+    empty_firm: "표시할 공시가 없습니다.",
+    held_stake: "보유 지분",
+    bought: "매수 주식수",
+    hold: "보유",
+    badge_in: "장내매수",
+    badge_out: "장외매수",
+    badge_aft: "시간외",
+    seed: "예시 데이터",
+    disclaim_title: "면책조항",
+    disclaim_1: "5% 대량보유보고서 및 임원·주요주주 특정증권등 소유상황보고서는 보고의무발생일로부터 5영업일 이내 제출되므로, 표시내용은 실제 매매 시점보다 늦을 수 있습니다.",
+    disclaim_2: "본 사이트는 공시 사실을 정리해 전달할 뿐이며, 특정 종목의 매수 및 매도를 권유하지 않습니다. 투자판단과 책임은 이용자 본인에게 있습니다.",
+    business: "Business",
+    kind_new: "매수 · 신규",
+    kind_buy: "매수",
+    kind_sell: "매도",
+    kind_etc: "기타",
+  },
+  en: {
+    title_html: "Buffett Archive — Korean Asset Managers & Insider Buying Tracker",
+    live: "Live tracking",
+    tab_insider: "Insider Buying",
+    tab_firm: "Asset Manager Filings",
+    all: "All",
+    market_all: "All",
+    count_insider: n => `${n} insider purchases`,
+    count_firm: n => `${n} filings`,
+    empty_insider: "No insider purchases to display.",
+    empty_firm: "No filings to display.",
+    held_stake: "Held",
+    bought: "Shares Bought",
+    hold: "Hold",
+    badge_in: "Open Market",
+    badge_out: "Off-Market",
+    badge_aft: "After-Hours",
+    seed: "Sample Data",
+    disclaim_title: "Disclaimer",
+    disclaim_1: "5% block-holding reports and insider ownership reports are filed within 5 business days of the trigger event, so the displayed data may lag the actual transaction.",
+    disclaim_2: "This site aggregates and presents public DART filings only. It does not solicit purchases or sales of any security. Investment decisions and consequences are the user's sole responsibility.",
+    business: "Business",
+    kind_new: "Buy · New",
+    kind_buy: "Buy",
+    kind_sell: "Sell",
+    kind_etc: "Other",
+  }
+};
+
+// ── 한글 운용사명 → 영문 ──
+const FIRM_EN = {
+  "브이아이피자산운용": "VIP Asset Management",
+  "얼라인파트너스자산운용": "Align Partners Capital Management",
+  "라이프자산운용": "Life Asset Management",
+  "에셋플러스자산운용": "Asset Plus Investment Management",
+  "트러스톤자산운용": "Truston Asset Management",
+};
+
+// ── 한글 직위 → 영문 (부분일치 우선) ──
+const ROLE_EN = [
+  ["대표이사 회장","Chairman & CEO"],
+  ["대표이사 사장","President & CEO"],
+  ["대표이사","CEO"],
+  ["부회장","Vice Chairman"],
+  ["회장","Chairman"],
+  ["사장","President"],
+  ["부사장","Executive Vice President"],
+  ["전무이사","Senior Managing Director"],
+  ["전무","Senior Managing Director"],
+  ["상무이사","Managing Director"],
+  ["상무대우","Managing Director"],
+  ["상무","Managing Director"],
+  ["사내이사","Inside Director"],
+  ["사외이사","Independent Director"],
+  ["기타비상무이사","Non-Executive Director"],
+  ["등기임원","Registered Officer"],
+  ["비등기임원","Unregistered Officer"],
+  ["사실상지배주주","De Facto Controlling Shareholder"],
+  ["10%이상주주","10%+ Shareholder"],
+  ["기획관리부문장","Head of Planning & Mgmt"],
+  ["이사","Director"],
+];
+
+// ── 공시 사유(report_resn) 한글 → 영문 ──
+const RESN_EN = [
+  ["5%이상 보유 신규보고","New 5%+ Filing"],
+  ["5% 이상 보유 신규보고","New 5%+ Filing"],
+  ["1% 이상 변동","1%+ Change"],
+  ["1%이상 변동","1%+ Change"],
+  ["보유 목적 변경","Purpose Change"],
+  ["보유목적변경","Purpose Change"],
+];
+
+function localizeFirm(name){ return LANG==="en" ? (FIRM_EN[name]||name) : name; }
+function localizeRole(text){
+  if(!text||text==="-") return text;
+  if(LANG==="ko") return text;
+  for(const [k,v] of ROLE_EN){ if(text.includes(k)) return text.replace(k,v); }
+  return text;
+}
+function localizeResn(text){
+  if(!text) return text;
+  if(LANG==="ko") return text;
+  for(const [k,v] of RESN_EN){ if(text===k||text.includes(k)) return v; }
+  return text;
+}
+function t(key, ...args){
+  const v = I18N[LANG][key];
+  return typeof v==="function" ? v(...args) : v;
+}
+
+// 언어: 저장값 우선, 없으면 브라우저 언어가 ko면 한국어, 아니면 영어
+let LANG = localStorage.getItem("ba_lang");
+if(!LANG){
+  const nav=(navigator.language||"").toLowerCase();
+  LANG = nav.startsWith("ko") ? "ko" : "en";
+}
+
 function fmtDate(iso){
   if(!iso) return {d:"—",m:"",y:""};
   const [y,m,d] = iso.split("-");
-  const mon = ["1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"][parseInt(m)-1] || "";
-  return {d:`${parseInt(d)}일`, m:mon, y};
+  const months = LANG==="en"
+    ? ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+    : ["1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"];
+  const mon = months[parseInt(m)-1] || "";
+  const dd = LANG==="en" ? `${parseInt(d)}` : `${parseInt(d)}일`;
+  return {d:dd, m:mon, y};
 }
 function dartLink(rcept_no){
   if(!rcept_no || /^0+$/.test(rcept_no)) return null;
@@ -148,34 +294,39 @@ function firmTag(item){
   const cur=parseFloat(item.stkrt), prev=parseFloat(item.stkrt_prev);
   const diff=(!isNaN(cur)&&!isNaN(prev))?(cur-prev):null;
   const kind=item.kind||"";
-  if(kind.includes("신규")) return {cls:"buy",txt:"매수 · 신규"};
-  if(kind==="매수") return {cls:"buy",txt:diff!=null?`매수 ▲${Math.abs(diff).toFixed(2)}%p`:"매수"};
-  if(kind==="매도") return {cls:"sell",txt:diff!=null?`매도 ▼${Math.abs(diff).toFixed(2)}%p`:"매도"};
-  return {cls:"etc",txt:"기타"};
+  if(kind.includes("신규")) return {cls:"buy",txt:t("kind_new")};
+  if(kind==="매수") return {cls:"buy",txt:diff!=null?`${t("kind_buy")} ▲${Math.abs(diff).toFixed(2)}%p`:t("kind_buy")};
+  if(kind==="매도") return {cls:"sell",txt:diff!=null?`${t("kind_sell")} ▼${Math.abs(diff).toFixed(2)}%p`:t("kind_sell")};
+  return {cls:"etc",txt:t("kind_etc")};
 }
 
 let FIRM={disclosures:[],firms:[]}, INSIDER={disclosures:[]};
-let view="insider", activeFirm="전체";
+let view="insider", activeFirm="전체", activeMarket="ALL";
 
 function renderFirm(){
   const list=FIRM.disclosures
     .filter(x=>activeFirm==="전체"||x.firm===activeFirm)
     .sort((a,b)=>(b.rcept_no||"").localeCompare(a.rcept_no||""));
-  $("#count").textContent=`${list.length}건의 공시`;
+  $("#count").textContent=t("count_firm", list.length);
   const feed=$("#feed");
-  if(!list.length){feed.innerHTML=`<li class="empty">표시할 공시가 없습니다.</li>`;return;}
+  if(!list.length){feed.innerHTML=`<li class="empty">${t("empty_firm")}</li>`;return;}
   feed.innerHTML=list.map(item=>{
     const dt=fmtDate(item.rcept_dt), dl=dartLink(item.rcept_no), tag=firmTag(item);
     const code=item.stock_code?`<span class="code">${item.stock_code}</span>`:"";
+    const firmName=localizeFirm(item.firm);
+    const resn=localizeResn(item.report_resn||"")||"—";
+    const dateBlock = LANG==="en"
+      ? `<div class="date">${dt.m} ${dt.d}<span class="y">${dt.y}</span></div>`
+      : `<div class="date">${dt.m} ${dt.d}<span class="y">${dt.y}</span></div>`;
     const inner=`
-      <div class="date">${dt.m} ${dt.d}<span class="y">${dt.y}</span></div>
+      ${dateBlock}
       <div class="corp">
         <div class="name">${item.corp_name}${code}</div>
-        <div class="sub"><span class="who">${item.firm}</span> · ${item.report_resn||"—"}</div>
+        <div class="sub"><span class="who">${firmName}</span> · ${resn}</div>
       </div>
       <div class="stake">
         <div class="pct">${item.stkrt}%</div>
-        <div class="held">보유 지분</div>
+        <div class="held">${t("held_stake")}</div>
         <div class="delta ${tag.cls}">${tag.txt}</div>
       </div>`;
     return dl?`<a class="row" href="${dl}" target="_blank" rel="noopener">${inner}</a>`
@@ -185,11 +336,11 @@ function renderFirm(){
 
 function renderInsider(){
   const list=INSIDER.disclosures
-    .slice()
+    .filter(x => activeMarket==="ALL" || (x.market||"")===activeMarket)
     .sort((a,b)=>(b.rcept_no||"").localeCompare(a.rcept_no||""));
-  $("#count").textContent=`${list.length}건의 내부자 매수`;
+  $("#count").textContent=t("count_insider", list.length);
   const feed=$("#feed");
-  if(!list.length){feed.innerHTML=`<li class="empty">표시할 내부자 매수가 없습니다.</li>`;return;}
+  if(!list.length){feed.innerHTML=`<li class="empty">${t("empty_insider")}</li>`;return;}
   feed.innerHTML=list.map(item=>{
     const dt=fmtDate(item.rcept_dt), dl=dartLink(item.rcept_no);
     const code=item.stock_code?`<span class="code">${item.stock_code}</span>`:"";
@@ -201,11 +352,14 @@ function renderInsider(){
     // 취득방법 배지
     const m=item.method||"";
     let mb="";
-    if(m.includes("장내")) mb=`<span class="badge in">장내매수</span>`;
-    else if(m.includes("장외")) mb=`<span class="badge out">장외매수</span>`;
-    else if(m.includes("시간외")) mb=`<span class="badge out">시간외</span>`;
-    // 직위/주요주주 표시
-    const pos=[item.ofcps,item.main_shrholdr&&item.main_shrholdr!=="-"?item.main_shrholdr:""].filter(Boolean).join(" · ");
+    if(m.includes("장내")) mb=`<span class="badge in">${t("badge_in")}</span>`;
+    else if(m.includes("장외")) mb=`<span class="badge out">${t("badge_out")}</span>`;
+    else if(m.includes("시간외")) mb=`<span class="badge out">${t("badge_aft")}</span>`;
+    // 직위/주요주주 표시 (영문화)
+    const ofcpsLoc = localizeRole(item.ofcps||"");
+    const mainLoc = (item.main_shrholdr && item.main_shrholdr!=="-")
+                    ? localizeRole(item.main_shrholdr) : "";
+    const pos=[ofcpsLoc, mainLoc].filter(Boolean).join(" · ");
     const inner=`
       <div class="date">${dt.m} ${dt.d}<span class="y">${dt.y}</span></div>
       <div class="corp">
@@ -214,8 +368,8 @@ function renderInsider(){
       </div>
       <div class="stake">
         <div class="pct">+${item.irds_cnt}</div>
-        <div class="held">매수 주식수</div>
-        <div class="delta buy">보유 ${item.hold_rate}%</div>
+        <div class="held">${t("bought")}</div>
+        <div class="delta buy">${t("hold")} ${item.hold_rate}%</div>
       </div>`;
     return dl?`<a class="row" href="${dl}" target="_blank" rel="noopener">${inner}</a>`
              :`<div class="row">${inner}</div>`;
@@ -227,24 +381,56 @@ function render(){ view==="firm"?renderFirm():renderInsider(); }
 function buildFirmTabs(){
   if(view!=="firm"){ $("#firmTabs").innerHTML=""; return; }
   const firms=["전체",...(FIRM.firms||[])];
-  $("#firmTabs").innerHTML=firms.map(f=>
-    `<button role="tab" aria-selected="${f===activeFirm}" data-firm="${f}">${f}</button>`).join("");
+  $("#firmTabs").innerHTML=firms.map(f=>{
+    const label = f==="전체" ? t("all") : localizeFirm(f);
+    return `<button role="tab" aria-selected="${f===activeFirm}" data-firm="${f}">${label}</button>`;
+  }).join("");
   $("#firmTabs").querySelectorAll("button").forEach(b=>{
     b.onclick=()=>{activeFirm=b.dataset.firm;buildFirmTabs();render();};
   });
 }
 
+function buildMarketFilter(){
+  if(view!=="insider"){ $("#marketFilter").innerHTML=""; return; }
+  const opts=[["ALL",t("market_all")],["KOSPI","KOSPI"],["KOSDAQ","KOSDAQ"]];
+  $("#marketFilter").innerHTML=opts.map(([k,label])=>
+    `<button aria-selected="${k===activeMarket}" data-mk="${k}">${label}</button>`).join("");
+  $("#marketFilter").querySelectorAll("button").forEach(b=>{
+    b.onclick=()=>{activeMarket=b.dataset.mk;buildMarketFilter();render();};
+  });
+}
+
 function setFooter(){
   $("#footer").innerHTML = `
-    <div class="dtitle">면책조항</div>
-    <p class="dline">5% 대량보유보고서 및 임원·주요주주 특정증권등 소유상황보고서는 보고의무발생일로부터 5영업일 이내 제출되므로, 표시내용은 실제 매매 시점보다 늦을 수 있습니다.</p>
-    <p class="dline">본 사이트는 공시 사실을 정리해 전달할 뿐이며, 특정 종목의 매수 및 매도를 권유하지 않습니다. 투자판단과 책임은 이용자 본인에게 있습니다.</p>`;
+    <div class="dtitle">${t("disclaim_title")}</div>
+    <p class="dline">${t("disclaim_1")}</p>
+    <p class="dline">${t("disclaim_2")}</p>`;
 }
+
+function applyStaticTexts(){
+  document.documentElement.lang = LANG;
+  document.title = t("title_html");
+  $("#tabInsider").textContent = t("tab_insider");
+  $("#tabFirm").textContent = t("tab_firm");
+  $("#liveText").textContent = t("live");
+  $("#businessLabel").textContent = t("business");
+  $("#langToggle").querySelectorAll("button").forEach(b=>
+    b.setAttribute("aria-selected", b.dataset.lang===LANG));
+}
+
+function switchLang(lang){
+  LANG = lang;
+  localStorage.setItem("ba_lang", lang);
+  applyStaticTexts(); buildFirmTabs(); buildMarketFilter(); setFooter(); render();
+}
+$("#langToggle").querySelectorAll("button").forEach(b=>{
+  b.onclick=()=>switchLang(b.dataset.lang);
+});
 
 function switchView(v){
   view=v;
   $("#mainTabs").querySelectorAll("button").forEach(b=>b.setAttribute("aria-selected", b.dataset.view===v));
-  buildFirmTabs(); setFooter(); render();
+  buildFirmTabs(); buildMarketFilter(); setFooter(); render();
 }
 $("#mainTabs").querySelectorAll("button").forEach(b=>{
   b.onclick=()=>switchView(b.dataset.view);
@@ -259,8 +445,8 @@ function loadData(isFirstLoad){
     if(f) FIRM=f;
     if(i) INSIDER=i;
     if(isFirstLoad){
-      if(FIRM.is_seed) $("#seedFlag").innerHTML=`<span class="badge big">예시 데이터</span>`;
-      buildFirmTabs(); setFooter();
+      if(FIRM.is_seed) $("#seedFlag").innerHTML=`<span class="badge big">${t("seed")}</span>`;
+      applyStaticTexts(); buildFirmTabs(); buildMarketFilter(); setFooter();
     }
     render();
   });
