@@ -88,6 +88,8 @@
   .badge.big{background:#3d2420;color:#e89086}
   .badge.mkt-y{background:#1a2c44;color:#7fb0e8}
   .badge.mkt-k{background:#3a3320;color:#d4b876}
+  .badge.bb-acq{background:#163a28;color:#5fd197}
+  .badge.bb-cancel{background:#2a1a3a;color:#c89bef}
 
   .empty{padding:60px 0;text-align:center;color:var(--ink-soft);font-size:15px}
   footer{margin:36px 0 0;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--ink-soft);line-height:1.7;}
@@ -124,6 +126,7 @@
     <div class="maintabs" id="mainTabs" role="tablist">
       <button role="tab" data-view="insider" aria-selected="true" id="tabInsider">내부자 매수</button>
       <button role="tab" data-view="firm" aria-selected="false" id="tabFirm">운용사 지분공시</button>
+      <button role="tab" data-view="buyback" aria-selected="false" id="tabBuyback">자사주 매입·소각</button>
     </div>
   </header>
 
@@ -151,12 +154,15 @@ const I18N = {
     live: "실시간 트래킹",
     tab_insider: "내부자 매수",
     tab_firm: "운용사 지분공시",
+    tab_buyback: "자사주 매입·소각",
     all: "전체",
     market_all: "전체",
     count_insider: n => `${n}건의 내부자 매수`,
     count_firm: n => `${n}건의 공시`,
+    count_buyback: n => `${n}건의 자사주 공시`,
     empty_insider: "표시할 내부자 매수가 없습니다.",
     empty_firm: "표시할 공시가 없습니다.",
+    empty_buyback: "표시할 자사주 매입·소각 공시가 없습니다.",
     held_stake: "보유 지분",
     bought: "매수 주식수",
     hold: "보유",
@@ -172,18 +178,26 @@ const I18N = {
     kind_buy: "매수",
     kind_sell: "매도",
     kind_etc: "기타",
+    bb_acq: "취득",
+    bb_cancel: "소각",
+    bb_shares: "취득 주식수",
+    bb_shares_cancel: "소각 주식수",
+    bb_amount: "취득 금액",
   },
   en: {
     title_html: "Buffett Archive — Korean Asset Managers & Insider Buying Tracker",
     live: "Live tracking",
     tab_insider: "Insider Buying",
     tab_firm: "Asset Manager Filings",
+    tab_buyback: "Treasury Buybacks",
     all: "All",
     market_all: "All",
     count_insider: n => `${n} insider purchases`,
     count_firm: n => `${n} filings`,
+    count_buyback: n => `${n} treasury stock filings`,
     empty_insider: "No insider purchases to display.",
     empty_firm: "No filings to display.",
+    empty_buyback: "No treasury buyback or cancellation filings to display.",
     held_stake: "Held",
     bought: "Shares Bought",
     hold: "Hold",
@@ -199,6 +213,11 @@ const I18N = {
     kind_buy: "Buy",
     kind_sell: "Sell",
     kind_etc: "Other",
+    bb_acq: "Buyback",
+    bb_cancel: "Cancellation",
+    bb_shares: "Shares to acquire",
+    bb_shares_cancel: "Shares to cancel",
+    bb_amount: "Amount",
   }
 };
 
@@ -297,8 +316,8 @@ function firmTag(item){
   return {cls:"etc",txt:t("kind_etc")};
 }
 
-let FIRM={disclosures:[],firms:[]}, INSIDER={disclosures:[]};
-let view="insider", activeFirm="전체", activeMarket="ALL";
+let FIRM={disclosures:[],firms:[]}, INSIDER={disclosures:[]}, BUYBACK={entries:[]};
+let view="insider", activeFirm="전체", activeMarket="ALL", activeBBType="ALL";
 
 function renderFirm(){
   const list=FIRM.disclosures
@@ -373,7 +392,68 @@ function renderInsider(){
   }).join("");
 }
 
-function render(){ view==="firm"?renderFirm():renderInsider(); }
+function renderBuyback(){
+  let list=BUYBACK.entries||[];
+  // 시장 필터
+  if(activeMarket!=="ALL"){
+    const cls = activeMarket==="KOSPI"?"Y":"K";
+    list = list.filter(x => x.corp_cls===cls);
+  }
+  // 유형 필터(취득/소각)
+  if(activeBBType!=="ALL"){
+    list = list.filter(x => x.type===activeBBType);
+  }
+  list.sort((a,b)=>(b.rcept_no||"").localeCompare(a.rcept_no||""));
+  $("#count").textContent=t("count_buyback", list.length);
+  const feed=$("#feed");
+  if(!list.length){feed.innerHTML=`<li class="empty">${t("empty_buyback")}</li>`;return;}
+  feed.innerHTML=list.map(item=>{
+    const dt=fmtDate(item.rcept_dt), dl=dartLink(item.rcept_no);
+    const isAcq = item.type==="취득";
+    // 유형 배지
+    const typeBadge = isAcq
+      ? `<span class="badge bb-acq">${t("bb_acq")}</span>`
+      : `<span class="badge bb-cancel">${t("bb_cancel")}</span>`;
+    // 시장 배지
+    let mkb="";
+    if(item.corp_cls==="Y") mkb=`<span class="badge mkt-y">KOSPI</span> `;
+    else if(item.corp_cls==="K") mkb=`<span class="badge mkt-k">KOSDAQ</span> `;
+    // 취득목적/방법 서브라인
+    const purpose = item.acq_purpose || "";
+    const method = item.acq_method || "";
+    let subParts = [purpose, method].filter(Boolean);
+    const sub = subParts.length ? subParts.join(" · ") : "—";
+    // 주식수
+    const shares = item.shares_common ? item.shares_common.toLocaleString() : "—";
+    // 금액 (억 단위 변환)
+    let amtLabel = "";
+    if(item.amount_common){
+      const billions = item.amount_common / 100000000;
+      amtLabel = billions >= 1
+        ? `${billions.toFixed(1)}${LANG==="en"?"B KRW":"억원"}`
+        : `${(item.amount_common/10000).toFixed(0)}${LANG==="en"?"M KRW":"만원"}`;
+    }
+    const inner=`
+      <div class="date">${dt.m} ${dt.d}<span class="y">${dt.y}</span></div>
+      <div class="corp">
+        <div class="name">${item.corp_name||"—"} ${typeBadge}</div>
+        <div class="sub">${mkb}${sub}</div>
+      </div>
+      <div class="stake">
+        <div class="pct">${shares}</div>
+        <div class="held">${isAcq ? t("bb_shares") : t("bb_shares_cancel")}</div>
+        ${amtLabel ? `<div class="delta buy">${amtLabel}</div>` : ""}
+      </div>`;
+    return dl?`<a class="row" href="${dl}" target="_blank" rel="noopener">${inner}</a>`
+             :`<div class="row">${inner}</div>`;
+  }).join("");
+}
+
+function render(){
+  if(view==="firm") renderFirm();
+  else if(view==="buyback") renderBuyback();
+  else renderInsider();
+}
 
 function buildFirmTabs(){
   if(view!=="firm"){ $("#firmTabs").innerHTML=""; return; }
@@ -388,12 +468,24 @@ function buildFirmTabs(){
 }
 
 function buildMarketFilter(){
-  if(view!=="insider"){ $("#marketFilter").innerHTML=""; return; }
+  if(view==="firm"){ $("#marketFilter").innerHTML=""; return; }
+  // 내부자 + 자사주 모두 시장 필터 사용
   const opts=[["ALL",t("market_all")],["KOSPI","KOSPI"],["KOSDAQ","KOSDAQ"]];
-  $("#marketFilter").innerHTML=opts.map(([k,label])=>
+  let html = opts.map(([k,label])=>
     `<button aria-selected="${k===activeMarket}" data-mk="${k}">${label}</button>`).join("");
-  $("#marketFilter").querySelectorAll("button").forEach(b=>{
+  // 자사주 탭에서는 유형 필터도 추가
+  if(view==="buyback"){
+    const bbOpts=[["ALL",t("all")],["취득",t("bb_acq")],["소각",t("bb_cancel")]];
+    html += `<span style="display:inline-block;width:12px"></span>`;
+    html += bbOpts.map(([k,label])=>
+      `<button aria-selected="${k===activeBBType}" data-bbtype="${k}" style="border-color:${k===activeBBType?"var(--ink)":"var(--line)"}; ${k===activeBBType?"background:var(--ink);color:var(--paper);":""}">${label}</button>`).join("");
+  }
+  $("#marketFilter").innerHTML = html;
+  $("#marketFilter").querySelectorAll("button[data-mk]").forEach(b=>{
     b.onclick=()=>{activeMarket=b.dataset.mk;buildMarketFilter();render();};
+  });
+  $("#marketFilter").querySelectorAll("button[data-bbtype]").forEach(b=>{
+    b.onclick=()=>{activeBBType=b.dataset.bbtype;buildMarketFilter();render();};
   });
 }
 
@@ -409,6 +501,7 @@ function applyStaticTexts(){
   document.title = t("title_html");
   $("#tabInsider").textContent = t("tab_insider");
   $("#tabFirm").textContent = t("tab_firm");
+  $("#tabBuyback").textContent = t("tab_buyback");
   $("#liveText").textContent = t("live");
   $("#businessLabel").textContent = t("business");
   $("#langToggle").querySelectorAll("button").forEach(b=>
@@ -433,14 +526,16 @@ $("#mainTabs").querySelectorAll("button").forEach(b=>{
   b.onclick=()=>switchView(b.dataset.view);
 });
 
-// 두 데이터 동시 로드 (5분마다 자동 갱신)
+// 세 데이터 동시 로드 (5분마다 자동 갱신)
 function loadData(isFirstLoad){
   Promise.all([
     fetch("data.json?ts="+Date.now()).then(r=>r.json()).catch(()=>null),
     fetch("insider.json?ts="+Date.now()).then(r=>r.json()).catch(()=>null),
-  ]).then(([f,i])=>{
+    fetch("buyback.json?ts="+Date.now()).then(r=>r.json()).catch(()=>null),
+  ]).then(([f,i,b])=>{
     if(f) FIRM=f;
     if(i) INSIDER=i;
+    if(b) BUYBACK=b;
     if(isFirstLoad){
       if(FIRM.is_seed) $("#seedFlag").innerHTML=`<span class="badge big">${t("seed")}</span>`;
       applyStaticTexts(); buildFirmTabs(); buildMarketFilter(); setFooter();
