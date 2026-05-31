@@ -36,7 +36,8 @@
   header.mast{border-bottom:2px solid var(--ink);padding:44px 0 0;}
   .kicker{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;margin-bottom:16px;}
   h1.title{font-family:"Chomsky",serif;font-weight:400;font-size:clamp(44px,9vw,76px);line-height:1.08;letter-spacing:.06em;color:#d8d5cc;-webkit-text-stroke:0.6px var(--paper);text-stroke:0.6px var(--paper);}
-  .meta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:baseline;margin-top:20px;font-size:12.5px;color:var(--ink-soft);}
+  .meta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:20px;font-size:12.5px;color:var(--ink-soft);}
+  .meta-row .langtoggle{margin-left:auto;}
   .live{display:inline-flex;align-items:center;gap:6px;color:var(--live);font-weight:600}
   .live .dot{width:7px;height:7px;border-radius:50%;background:var(--live);display:inline-block;animation:pulse 1.5s ease-in-out infinite}
   @keyframes pulse{0%{opacity:1;box-shadow:0 0 0 0 rgba(214,58,46,.5)}70%{opacity:.55;box-shadow:0 0 0 5px rgba(214,58,46,0)}100%{opacity:1;box-shadow:0 0 0 0 rgba(214,58,46,0)}}
@@ -51,7 +52,6 @@
   }
   .maintabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--ink);}
 
-  .topbar{display:flex;justify-content:flex-end;margin-top:-6px;margin-bottom:8px}
   .langtoggle{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;font-size:11px;font-weight:600;letter-spacing:.05em}
   .langtoggle button{font-family:inherit;background:transparent;border:0;color:var(--ink-soft);padding:4px 10px;cursor:pointer;transition:.15s;}
   .langtoggle button[aria-selected="true"]{background:var(--ink);color:var(--paper)}
@@ -111,18 +111,15 @@
 <body>
 <div class="wrap">
 
-  <div class="topbar">
-    <div class="langtoggle" id="langToggle" role="tablist">
-      <button data-lang="ko" aria-selected="true">KO</button>
-      <button data-lang="en" aria-selected="false">EN</button>
-    </div>
-  </div>
-
   <header class="mast">
     <h1 class="title">Buffett Archive</h1>
     <div class="meta-row">
       <span class="live"><span class="dot"></span><span id="liveText">실시간 트래킹</span></span>
       <span id="seedFlag"></span>
+      <div class="langtoggle" id="langToggle" role="tablist">
+        <button data-lang="ko" aria-selected="true">KO</button>
+        <button data-lang="en" aria-selected="false">EN</button>
+      </div>
     </div>
     <div class="maintabs" id="mainTabs" role="tablist">
       <button role="tab" data-view="insider" aria-selected="true" id="tabInsider">내부자 매수</button>
@@ -140,7 +137,7 @@
 
   <footer id="footer"></footer>
 
-  <div class="contact"><a href="mailto:harold08@naver.com"><span id="businessLabel">Business</span> : buffettarchive1@gmail.com</a></div>
+  <div class="contact"><a href="mailto:buffettarchive1@gmail.com"><span id="businessLabel">Business</span> : buffettarchive1@gmail.com</a></div>
 
 </div>
 
