@@ -297,7 +297,10 @@ if(!LANG){
 
 function fmtDate(iso){
   if(!iso) return {d:"—",m:"",y:""};
-  const [y,m,d] = iso.split("-");
+  let y,m,d;
+  if(iso.includes("-")){[y,m,d]=iso.split("-");}
+  else if(iso.length===8){y=iso.slice(0,4);m=iso.slice(4,6);d=iso.slice(6,8);}
+  else return {d:"—",m:"",y:""};
   const months = LANG==="en"
     ? ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
     : ["1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"];
