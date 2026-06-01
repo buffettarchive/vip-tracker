@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-01T16:01+09:00",
+  "updated_at": "2026-06-01T16:06+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260601000964",
+  "last_seen": "20260601001083",
   "disclosures": [
+    {
+      "rcept_no": "20260601001051",
+      "rcept_dt": "2026-06-01",
+      "corp_name": "가온전선",
+      "stock_code": "000500",
+      "market": "KOSPI",
+      "corp_code": "00104768",
+      "repror": "정현",
+      "ofcps": "부사장\n(대표이사)",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "48",
+      "total_cnt": "2,778",
+      "irds_rate": "0.00",
+      "hold_rate": "0.01",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260601000964",
       "rcept_dt": "2026-06-01",
