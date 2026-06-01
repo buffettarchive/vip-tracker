@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-01T09:35+09:00",
+  "updated_at": "2026-06-01T10:30+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260601000073",
+  "last_seen": "20260601000195",
   "disclosures": [
+    {
+      "rcept_no": "20260601000195",
+      "rcept_dt": "2026-06-01",
+      "corp_name": "에어레인",
+      "stock_code": "163280",
+      "market": "KOSDAQ",
+      "corp_code": "01663116",
+      "repror": "하성용",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "9,884",
+      "total_cnt": "2,285,724",
+      "irds_rate": "0.07",
+      "hold_rate": "16.80",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260601000073",
       "rcept_dt": "2026-06-01",
