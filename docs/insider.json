@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-01T14:55+09:00",
+  "updated_at": "2026-06-01T15:00+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260601000812",
+  "last_seen": "20260601000849",
   "disclosures": [
+    {
+      "rcept_no": "20260601000828",
+      "rcept_dt": "2026-06-01",
+      "corp_name": "에이치와이티씨",
+      "stock_code": "148930",
+      "market": "KOSDAQ",
+      "corp_code": "00885906",
+      "repror": "김승준",
+      "ofcps": "상무이사",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "691",
+      "total_cnt": "691",
+      "irds_rate": "0.01",
+      "hold_rate": "0.01",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260601000695",
       "rcept_dt": "2026-06-01",
