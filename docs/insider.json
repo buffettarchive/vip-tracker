@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-01T13:08+09:00",
+  "updated_at": "2026-06-01T14:10+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260601000469",
+  "last_seen": "20260601000584",
   "disclosures": [
+    {
+      "rcept_no": "20260601000584",
+      "rcept_dt": "2026-06-01",
+      "corp_name": "KB금융",
+      "stock_code": "105560",
+      "market": "KOSPI",
+      "corp_code": "00688996",
+      "repror": "박선현",
+      "ofcps": "담당",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "300",
+      "total_cnt": "1,293",
+      "irds_rate": "0.000",
+      "hold_rate": "0.000",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260601000469",
       "rcept_dt": "2026-06-01",
