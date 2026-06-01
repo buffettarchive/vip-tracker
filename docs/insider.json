@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-01T17:21+09:00",
+  "updated_at": "2026-06-01T17:31+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260601001225",
+  "last_seen": "20260601001412",
   "disclosures": [
+    {
+      "rcept_no": "20260601001398",
+      "rcept_dt": "2026-06-01",
+      "corp_name": "서연탑메탈",
+      "stock_code": "019770",
+      "market": "KOSDAQ",
+      "corp_code": "00153278",
+      "repror": "유경내",
+      "ofcps": "사장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "25,000",
+      "total_cnt": "1,100,000",
+      "irds_rate": "0.21",
+      "hold_rate": "9.44",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260601001225",
       "rcept_dt": "2026-06-01",
