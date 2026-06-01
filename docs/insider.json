@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-01T11:15+09:00",
+  "updated_at": "2026-06-01T11:45+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260601000269",
+  "last_seen": "20260601000356",
   "disclosures": [
+    {
+      "rcept_no": "20260601000356",
+      "rcept_dt": "2026-06-01",
+      "corp_name": "부스타",
+      "stock_code": "008470",
+      "market": "KOSDAQ",
+      "corp_code": "00124276",
+      "repror": "유덕기",
+      "ofcps": "상무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,459",
+      "total_cnt": "3,213",
+      "irds_rate": "0.02",
+      "hold_rate": "0.04",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260601000269",
       "rcept_dt": "2026-06-01",
