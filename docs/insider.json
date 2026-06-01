@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-01T10:30+09:00",
+  "updated_at": "2026-06-01T11:15+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260601000195",
+  "last_seen": "20260601000269",
   "disclosures": [
+    {
+      "rcept_no": "20260601000269",
+      "rcept_dt": "2026-06-01",
+      "corp_name": "삼일제약",
+      "stock_code": "000520",
+      "market": "KOSPI",
+      "corp_code": "00128032",
+      "repror": "유담향",
+      "ofcps": "전무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,000",
+      "total_cnt": "12,000",
+      "irds_rate": "-0.01",
+      "hold_rate": "0.06",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260601000195",
       "rcept_dt": "2026-06-01",
