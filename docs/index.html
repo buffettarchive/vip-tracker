@@ -456,7 +456,8 @@ function render(){
 }
 
 function buildFirmTabs(){
-  if(view!=="firm"){ $("#firmTabs").innerHTML=""; return; }
+  if(view!=="firm"){ $("#firmTabs").innerHTML=""; $("#firmTabs").style.display="none"; return; }
+  $("#firmTabs").style.display="flex";
   const firms=["전체",...(FIRM.firms||[])];
   $("#firmTabs").innerHTML=firms.map(f=>{
     const label = f==="전체" ? t("all") : localizeFirm(f);
@@ -468,7 +469,8 @@ function buildFirmTabs(){
 }
 
 function buildMarketFilter(){
-  if(view==="firm"){ $("#marketFilter").innerHTML=""; return; }
+  if(view==="firm"){ $("#marketFilter").innerHTML=""; $("#marketFilter").style.display="none"; return; }
+  $("#marketFilter").style.display="flex";
   // 내부자 + 자사주 모두 시장 필터 사용
   const opts=[["ALL",t("market_all")],["KOSPI","KOSPI"],["KOSDAQ","KOSDAQ"]];
   let html = opts.map(([k,label])=>
