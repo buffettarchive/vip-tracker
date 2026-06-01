@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-01T12:05+09:00",
+  "updated_at": "2026-06-01T12:10+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260601000369",
+  "last_seen": "20260601000427",
   "disclosures": [
+    {
+      "rcept_no": "20260601000385",
+      "rcept_dt": "2026-06-01",
+      "corp_name": "대성미생물",
+      "stock_code": "036480",
+      "market": "KOSDAQ",
+      "corp_code": "00177320",
+      "repror": "최승훈",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "4,027",
+      "total_cnt": "37,900",
+      "irds_rate": "0.11",
+      "hold_rate": "1.00",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260601000369",
       "rcept_dt": "2026-06-01",
