@@ -1,22 +1,36 @@
 """
 backfill_buyback.py — 자기주식 취득·소각 과거 데이터 재구축
 ──────────────────────────────────────────────────────────
-로컬에서 1회 실행. 결과를 buyback.json으로 저장.
+Render에서 1회 실행. GitHub의 buyback.json을 읽고 결과를 push.
 사용법: python backfill_buyback.py [시작일 YYYYMMDD] [종료일 YYYYMMDD]
 기본: 최근 365일
 
-환경변수: DART_API_KEY
+환경변수: DART_API_KEY, GH_TOKEN
 """
 
-import os, sys, json, time, re, io, zipfile
+import os, sys, json, time, re, io, zipfile, base64
 import datetime as dt
 import requests
 
 DART_KEY = os.environ["DART_API_KEY"]
+GH_TOKEN = os.environ["GH_TOKEN"]
+
+GH_OWNER   = "buffettarchive"
+GH_REPO    = "vip-tracker"
+GH_PATH    = "docs/buyback.json"
+GH_BRANCH  = "main"
+
 DART = "https://opendart.fss.or.kr/api"
+GH_API = "https://api.github.com"
 
 s = requests.Session()
 s.headers.update({"User-Agent": "buyback-backfill/1.0"})
+
+GH_HEADERS = {
+    "Authorization": f"Bearer {GH_TOKEN}",
+    "Accept": "application/vnd.github+json",
+    "X-GitHub-Api-Version": "2022-11-28",
+}
 
 
 def dart(endpoint, **params):
@@ -93,6 +107,35 @@ def parse_cancellation_doc(text):
     return result
 
 
+# ── GitHub 읽기/쓰기 ──────────────────────────────────
+
+def gh_get_file():
+    url = f"{GH_API}/repos/{GH_OWNER}/{GH_REPO}/contents/{GH_PATH}?ref={GH_BRANCH}"
+    r = s.get(url, headers=GH_HEADERS, timeout=15)
+    if r.status_code == 200:
+        j = r.json()
+        content = base64.b64decode(j["content"]).decode("utf-8")
+        return json.loads(content), j["sha"]
+    return {"entries": [], "last_seen": ""}, None
+
+
+def gh_put_file(data, sha):
+    url = f"{GH_API}/repos/{GH_OWNER}/{GH_REPO}/contents/{GH_PATH}"
+    blob = json.dumps(data, ensure_ascii=False, indent=2)
+    body = {
+        "message": f"backfill-buyback: {dt.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')}",
+        "content": base64.b64encode(blob.encode("utf-8")).decode("ascii"),
+        "branch": GH_BRANCH,
+    }
+    if sha:
+        body["sha"] = sha
+    r = s.put(url, headers=GH_HEADERS, json=body, timeout=15)
+    if r.status_code in (200, 201):
+        print(f"[ok] GitHub push 완료 ({len(data['entries'])}건)")
+    else:
+        print(f"[err] GitHub push 실패: {r.status_code} {r.text[:300]}", file=sys.stderr)
+
+
 def main():
     today = dt.date.today()
     if len(sys.argv) >= 3:
@@ -103,18 +146,10 @@ def main():
 
     print(f"[backfill] 기간: {bgn_str} ~ {end_str}")
 
-    # 기존 파일이 있으면 로드
-    out_path = "buyback.json"
-    if os.path.exists(out_path):
-        data = json.load(open(out_path, encoding="utf-8"))
-    else:
-        data = {"entries": [], "last_seen": ""}
-
+    data, sha = gh_get_file()
     existing = {e["rcept_no"] for e in data.get("entries", [])}
     added = 0
 
-    # DART list.json은 한 번에 최대 100건, 최대 3개월 권장
-    # 긴 기간은 30일 단위로 분할
     bgn_date = dt.datetime.strptime(bgn_str, "%Y%m%d").date()
     end_date = dt.datetime.strptime(end_str, "%Y%m%d").date()
 
@@ -225,10 +260,12 @@ def main():
     if all_rcepts:
         data["last_seen"] = max(all_rcepts)
 
-    with open(out_path, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
+    if added == 0:
+        print("\n[info] 새 데이터 없음")
+        return
 
-    print(f"\n[done] 총 {added}건 추가, 전체 {len(data['entries'])}건 → {out_path}")
+    gh_put_file(data, sha)
+    print(f"\n[done] 총 {added}건 추가, 전체 {len(data['entries'])}건")
 
 
 if __name__ == "__main__":
