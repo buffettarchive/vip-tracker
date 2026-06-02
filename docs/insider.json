@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-02T16:35+09:00",
+  "updated_at": "2026-06-02T16:56+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260602000373",
+  "last_seen": "20260602000389",
   "disclosures": [
+    {
+      "rcept_no": "20260602000381",
+      "rcept_dt": "2026-06-02",
+      "corp_name": "메가터치",
+      "stock_code": "446540",
+      "market": "KOSDAQ",
+      "corp_code": "00923516",
+      "repror": "최우용",
+      "ofcps": "상무이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,267",
+      "total_cnt": "16,003",
+      "irds_rate": "0.01",
+      "hold_rate": "0.06",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260602000351",
       "rcept_dt": "2026-06-02",
