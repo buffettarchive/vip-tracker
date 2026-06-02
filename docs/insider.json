@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-02T09:35+09:00",
+  "updated_at": "2026-06-02T10:05+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260602000042",
+  "last_seen": "20260602000065",
   "disclosures": [
+    {
+      "rcept_no": "20260602000065",
+      "rcept_dt": "2026-06-02",
+      "corp_name": "웨이버스",
+      "stock_code": "336060",
+      "market": "KOSDAQ",
+      "corp_code": "01408999",
+      "repror": "김학성",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "152,387",
+      "total_cnt": "12,155,411",
+      "irds_rate": "0.31",
+      "hold_rate": "25.24",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260602000042",
       "rcept_dt": "2026-06-02",
