@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-02T15:35+09:00",
+  "updated_at": "2026-06-02T15:50+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260602000259",
+  "last_seen": "20260602000283",
   "disclosures": [
+    {
+      "rcept_no": "20260602000266",
+      "rcept_dt": "2026-06-02",
+      "corp_name": "라파스",
+      "stock_code": "214260",
+      "market": "KOSDAQ",
+      "corp_code": "01058101",
+      "repror": "하기완",
+      "ofcps": "의약품사업본부장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,136",
+      "total_cnt": "1,136",
+      "irds_rate": "0.01",
+      "hold_rate": "0.01",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260602000259",
       "rcept_dt": "2026-06-02",
