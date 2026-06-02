@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-02T09:25+09:00",
+  "updated_at": "2026-06-02T09:35+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260602000026",
+  "last_seen": "20260602000042",
   "disclosures": [
+    {
+      "rcept_no": "20260602000042",
+      "rcept_dt": "2026-06-02",
+      "corp_name": "DS단석",
+      "stock_code": "017860",
+      "market": "KOSPI",
+      "corp_code": "00108612",
+      "repror": "한수현",
+      "ofcps": "부사장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "95,500",
+      "total_cnt": "709,767",
+      "irds_rate": "0.54",
+      "hold_rate": "4.00",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260601001932",
       "rcept_dt": "2026-06-01",
