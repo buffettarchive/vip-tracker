@@ -212,8 +212,10 @@ def main():
             if rcept_no <= last_seen:
                 continue
 
-            # "자기주식처분" 제외, "자기주식취득" 또는 "자기주식소각" 포함
+            # "자기주식처분" 및 "신탁계약" 제외, "자기주식취득" 또는 "자기주식소각" 포함
             if "자기주식처분" in report_nm:
+                continue
+            if "신탁계약" in report_nm:
                 continue
             is_acq = "자기주식취득" in report_nm
             is_cancel = "자기주식소각" in report_nm
