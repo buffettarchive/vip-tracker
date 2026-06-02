@@ -401,7 +401,7 @@ function renderInsider(){
 }
 
 function renderBuyback(){
-  let list=BUYBACK.entries||[];
+  let list=(BUYBACK.entries||[]).filter(x => !(x.report_nm||"").includes("신탁계약"));
   // 시장 필터
   if(activeMarket!=="ALL"){
     const cls = activeMarket==="KOSPI"?"Y":"K";
