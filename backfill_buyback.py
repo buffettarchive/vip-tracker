@@ -184,6 +184,8 @@ def main():
                         continue
                     if "자기주식처분" in report_nm:
                         continue
+                    if "신탁계약" in report_nm:
+                        continue
                     is_acq = "자기주식취득" in report_nm
                     is_cancel = "자기주식소각" in report_nm
                     if not (is_acq or is_cancel):
