@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-04T14:16+09:00",
+  "updated_at": "2026-06-04T14:20+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260604000208",
+  "last_seen": "20260604000212",
   "disclosures": [
+    {
+      "rcept_no": "20260604000212",
+      "rcept_dt": "2026-06-04",
+      "corp_name": "HD현대마린엔진",
+      "stock_code": "071970",
+      "market": "KOSPI",
+      "corp_code": "00406046",
+      "repror": "이용화",
+      "ofcps": "상무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "800",
+      "total_cnt": "800",
+      "irds_rate": "0.00",
+      "hold_rate": "0.00",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260604000199",
       "rcept_dt": "2026-06-04",
