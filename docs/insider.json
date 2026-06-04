@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-04T16:15+09:00",
+  "updated_at": "2026-06-04T16:25+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260604000431",
+  "last_seen": "20260604000448",
   "disclosures": [
+    {
+      "rcept_no": "20260604000433",
+      "rcept_dt": "2026-06-04",
+      "corp_name": "슈피겐코리아",
+      "stock_code": "192440",
+      "market": "KOSDAQ",
+      "corp_code": "00917861",
+      "repror": "김대영",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "12,054",
+      "total_cnt": "2,523,526",
+      "irds_rate": "0.19",
+      "hold_rate": "40.59",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260604000402",
       "rcept_dt": "2026-06-04",
