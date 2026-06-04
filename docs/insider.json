@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-04T13:25+09:00",
+  "updated_at": "2026-06-04T13:35+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260604000164",
+  "last_seen": "20260604000170",
   "disclosures": [
+    {
+      "rcept_no": "20260604000170",
+      "rcept_dt": "2026-06-04",
+      "corp_name": "나라셀라",
+      "stock_code": "405920",
+      "market": "KOSDAQ",
+      "corp_code": "01021639",
+      "repror": "송재영",
+      "ofcps": "상무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "4,243",
+      "total_cnt": "19,897",
+      "irds_rate": "0.03",
+      "hold_rate": "0.15",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260604000164",
       "rcept_dt": "2026-06-04",
