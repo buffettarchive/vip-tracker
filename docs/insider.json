@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-04T13:15+09:00",
+  "updated_at": "2026-06-04T13:25+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260604000155",
+  "last_seen": "20260604000164",
   "disclosures": [
+    {
+      "rcept_no": "20260604000164",
+      "rcept_dt": "2026-06-04",
+      "corp_name": "팬오션",
+      "stock_code": "028670",
+      "market": "KOSPI",
+      "corp_code": "00122737",
+      "repror": "안중호",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "9,600",
+      "total_cnt": "25,720",
+      "irds_rate": "0.00",
+      "hold_rate": "0.00",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260604000150",
       "rcept_dt": "2026-06-04",
