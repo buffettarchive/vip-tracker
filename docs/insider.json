@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-04T14:55+09:00",
+  "updated_at": "2026-06-04T15:00+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260604000261",
+  "last_seen": "20260604000271",
   "disclosures": [
+    {
+      "rcept_no": "20260604000264",
+      "rcept_dt": "2026-06-04",
+      "corp_name": "에이치엔에스하이텍",
+      "stock_code": "044990",
+      "market": "KOSDAQ",
+      "corp_code": "00311216",
+      "repror": "배의호",
+      "ofcps": "부회장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "500",
+      "total_cnt": "39,545",
+      "irds_rate": "0.00",
+      "hold_rate": "0.51",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260604000239",
       "rcept_dt": "2026-06-04",
