@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-04T14:20+09:00",
+  "updated_at": "2026-06-04T14:40+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260604000212",
+  "last_seen": "20260604000231",
   "disclosures": [
+    {
+      "rcept_no": "20260604000231",
+      "rcept_dt": "2026-06-04",
+      "corp_name": "케이티스카이라이프",
+      "stock_code": "053210",
+      "market": "KOSPI",
+      "corp_code": "00349097",
+      "repror": "김상균",
+      "ofcps": "경영기획총괄",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "5,000",
+      "total_cnt": "5,000",
+      "irds_rate": "0.01",
+      "hold_rate": "0.01",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260604000212",
       "rcept_dt": "2026-06-04",
