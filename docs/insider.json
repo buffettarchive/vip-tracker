@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-04T15:20+09:00",
+  "updated_at": "2026-06-04T15:36+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260604000296",
+  "last_seen": "20260604000304",
   "disclosures": [
+    {
+      "rcept_no": "20260604000304",
+      "rcept_dt": "2026-06-04",
+      "corp_name": "한독",
+      "stock_code": "002390",
+      "market": "KOSPI",
+      "corp_code": "00161046",
+      "repror": "와이앤에스인터내셔날",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "56,676",
+      "total_cnt": "2,491,966",
+      "irds_rate": "0.42",
+      "hold_rate": "18.11",
+      "method": "시간외매매"
+    },
     {
       "rcept_no": "20260604000296",
       "rcept_dt": "2026-06-04",
