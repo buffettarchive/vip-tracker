@@ -1,6 +1,27 @@
 {
   "entries": [
     {
+      "rcept_no": "20260605000222",
+      "rcept_dt": "20260605",
+      "corp_code": "00173795",
+      "corp_name": "신흥",
+      "corp_cls": "Y",
+      "report_nm": "주요사항보고서(자기주식취득결정)",
+      "type": "취득",
+      "shares_common": null,
+      "shares_other": null,
+      "amount_common": null,
+      "amount_other": null,
+      "acq_purpose": null,
+      "acq_method": null,
+      "acq_period_start": null,
+      "acq_period_end": null,
+      "acq_decision_date": null,
+      "total_shares": null,
+      "ratio_pct": null,
+      "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260605000222"
+    },
+    {
       "rcept_no": "20260605000102",
       "rcept_dt": "20260605",
       "corp_code": "00349732",
@@ -14407,5 +14428,5 @@
       "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250602000876"
     }
   ],
-  "last_seen": "20260605000102"
+  "last_seen": "20260605000222"
 }
