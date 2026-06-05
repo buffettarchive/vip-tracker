@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-05T16:37+09:00",
+  "updated_at": "2026-06-05T16:55+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260605000486",
+  "last_seen": "20260605000518",
   "disclosures": [
+    {
+      "rcept_no": "20260605000496",
+      "rcept_dt": "2026-06-05",
+      "corp_name": "휴마시스",
+      "stock_code": "205470",
+      "market": "KOSDAQ",
+      "corp_code": "01042979",
+      "repror": "인콘",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "28,251",
+      "total_cnt": "1,777,100",
+      "irds_rate": "0.11",
+      "hold_rate": "7.20",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260605000458",
       "rcept_dt": "2026-06-05",
