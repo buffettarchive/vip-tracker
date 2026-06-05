@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-05T13:55+09:00",
+  "updated_at": "2026-06-05T14:05+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260605000239",
+  "last_seen": "20260605000257",
   "disclosures": [
+    {
+      "rcept_no": "20260605000257",
+      "rcept_dt": "2026-06-05",
+      "corp_name": "인터로조",
+      "stock_code": "119610",
+      "market": "KOSDAQ",
+      "corp_code": "00604426",
+      "repror": "김용직",
+      "ofcps": "감사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,000",
+      "total_cnt": "1,000",
+      "irds_rate": "0.00",
+      "hold_rate": "0.00",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260605000239",
       "rcept_dt": "2026-06-05",
