@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-05T14:05+09:00",
+  "updated_at": "2026-06-05T14:30+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260605000257",
+  "last_seen": "20260605000289",
   "disclosures": [
+    {
+      "rcept_no": "20260605000289",
+      "rcept_dt": "2026-06-05",
+      "corp_name": "코렌텍",
+      "stock_code": "104540",
+      "market": "KOSDAQ",
+      "corp_code": "00541437",
+      "repror": "박형철",
+      "ofcps": "부사장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,000",
+      "total_cnt": "8,550",
+      "irds_rate": "0.01",
+      "hold_rate": "0.06",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260605000257",
       "rcept_dt": "2026-06-05",
