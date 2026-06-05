@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-05T11:25+09:00",
+  "updated_at": "2026-06-05T11:35+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260605000155",
+  "last_seen": "20260605000168",
   "disclosures": [
+    {
+      "rcept_no": "20260605000168",
+      "rcept_dt": "2026-06-05",
+      "corp_name": "그리티",
+      "stock_code": "204020",
+      "market": "KOSDAQ",
+      "corp_code": "00671978",
+      "repror": "문영우",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "26,763",
+      "total_cnt": "7,194,272",
+      "irds_rate": "0.14",
+      "hold_rate": "36.99",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260605000155",
       "rcept_dt": "2026-06-05",
