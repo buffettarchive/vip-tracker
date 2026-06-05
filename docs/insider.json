@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-04T18:00+09:00",
+  "updated_at": "2026-06-05T09:00+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260604000624",
+  "last_seen": "20260604000667",
   "disclosures": [
+    {
+      "rcept_no": "20260604000652",
+      "rcept_dt": "2026-06-05",
+      "corp_name": "HL홀딩스",
+      "stock_code": "060980",
+      "market": "KOSPI",
+      "corp_code": "00299002",
+      "repror": "정지연",
+      "ofcps": "상무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "9,060",
+      "total_cnt": "227,000",
+      "irds_rate": "0.10",
+      "hold_rate": "2.50",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260604000624",
       "rcept_dt": "2026-06-04",
