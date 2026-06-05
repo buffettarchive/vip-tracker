@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-05T12:10+09:00",
+  "updated_at": "2026-06-05T12:31+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260605000188",
+  "last_seen": "20260605000190",
   "disclosures": [
+    {
+      "rcept_no": "20260605000190",
+      "rcept_dt": "2026-06-05",
+      "corp_name": "엔피케이",
+      "stock_code": "048830",
+      "market": "KOSDAQ",
+      "corp_code": "00108490",
+      "repror": "최상건",
+      "ofcps": "회장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "20,000",
+      "total_cnt": "235,000",
+      "irds_rate": "0.11",
+      "hold_rate": "1.26",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260605000179",
       "rcept_dt": "2026-06-05",
