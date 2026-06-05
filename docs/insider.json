@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-05T09:00+09:00",
+  "updated_at": "2026-06-05T09:25+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260604000667",
+  "last_seen": "20260605000015",
   "disclosures": [
+    {
+      "rcept_no": "20260605000015",
+      "rcept_dt": "2026-06-05",
+      "corp_name": "동국산업",
+      "stock_code": "005160",
+      "market": "KOSDAQ",
+      "corp_code": "00172680",
+      "repror": "이원휘",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "15,481",
+      "total_cnt": "86,060",
+      "irds_rate": "0.03",
+      "hold_rate": "0.16",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260604000652",
       "rcept_dt": "2026-06-05",
