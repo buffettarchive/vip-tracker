@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-08T12:35+09:00",
+  "updated_at": "2026-06-08T13:15+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260608000099",
+  "last_seen": "20260608000108",
   "disclosures": [
+    {
+      "rcept_no": "20260608000108",
+      "rcept_dt": "2026-06-08",
+      "corp_name": "에스켐",
+      "stock_code": "475660",
+      "market": "KOSDAQ",
+      "corp_code": "01383779",
+      "repror": "이대원",
+      "ofcps": "사내이사 (부사장)",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,000",
+      "total_cnt": "27,000",
+      "irds_rate": "0.01",
+      "hold_rate": "0.34",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260608000097",
       "rcept_dt": "2026-06-08",
