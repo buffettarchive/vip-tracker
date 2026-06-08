@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-08T17:20+09:00",
+  "updated_at": "2026-06-08T17:25+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260608000388",
+  "last_seen": "20260608000404",
   "disclosures": [
+    {
+      "rcept_no": "20260608000399",
+      "rcept_dt": "2026-06-08",
+      "corp_name": "미래에셋생명",
+      "stock_code": "085620",
+      "market": "KOSPI",
+      "corp_code": "00112332",
+      "repror": "미래에셋자산운용",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "196,866",
+      "total_cnt": "32,898,464",
+      "irds_rate": "0.15",
+      "hold_rate": "24.34",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260608000380",
       "rcept_dt": "2026-06-08",
