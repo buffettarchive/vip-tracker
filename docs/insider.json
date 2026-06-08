@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-08T15:35+09:00",
+  "updated_at": "2026-06-08T15:45+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260608000234",
+  "last_seen": "20260608000245",
   "disclosures": [
+    {
+      "rcept_no": "20260608000245",
+      "rcept_dt": "2026-06-08",
+      "corp_name": "누보",
+      "stock_code": "332290",
+      "market": "KOSDAQ",
+      "corp_code": "01394669",
+      "repror": "배형욱",
+      "ofcps": "상무이사",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "2,060",
+      "total_cnt": "141,395",
+      "irds_rate": "0",
+      "hold_rate": "0.35",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260608000234",
       "rcept_dt": "2026-06-08",
