@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-08T14:35+09:00",
+  "updated_at": "2026-06-08T14:40+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260608000172",
+  "last_seen": "20260608000176",
   "disclosures": [
+    {
+      "rcept_no": "20260608000176",
+      "rcept_dt": "2026-06-08",
+      "corp_name": "바이오인프라",
+      "stock_code": "199730",
+      "market": "KOSDAQ",
+      "corp_code": "01110058",
+      "repror": "이영국",
+      "ofcps": "전무",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "3,000",
+      "total_cnt": "3,000",
+      "irds_rate": "0.06",
+      "hold_rate": "0.06",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260608000149",
       "rcept_dt": "2026-06-08",
