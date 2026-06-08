@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-08T11:55+09:00",
+  "updated_at": "2026-06-08T12:05+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260608000095",
+  "last_seen": "20260608000097",
   "disclosures": [
+    {
+      "rcept_no": "20260608000097",
+      "rcept_dt": "2026-06-08",
+      "corp_name": "씨티케이",
+      "stock_code": "260930",
+      "market": "KOSDAQ",
+      "corp_code": "01144028",
+      "repror": "이종호",
+      "ofcps": "부사장",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "10,500",
+      "total_cnt": "12,000",
+      "irds_rate": "0.05",
+      "hold_rate": "0.06",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260608000095",
       "rcept_dt": "2026-06-08",
