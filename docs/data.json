@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-08T16:00+09:00",
+  "updated_at": "2026-06-08T16:05+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -8,8 +8,23 @@
     "에셋플러스자산운용",
     "트러스톤자산운용"
   ],
-  "last_seen": "20260608000287",
+  "last_seen": "20260608000301",
   "disclosures": [
+    {
+      "rcept_no": "20260608000288",
+      "rcept_dt": "2026-06-08",
+      "firm": "브이아이피자산운용",
+      "corp_name": "이지바이오",
+      "stock_code": "353810",
+      "corp_code": "01480568",
+      "stkrt": "",
+      "stkrt_prev": "",
+      "stkqy": "",
+      "report_resn": "",
+      "purpose": "",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "기타"
+    },
     {
       "rcept_no": "20260529001641",
       "rcept_dt": "2026-05-29",
