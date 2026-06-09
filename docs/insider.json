@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-09T10:40+09:00",
+  "updated_at": "2026-06-09T10:45+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260609000087",
+  "last_seen": "20260609000089",
   "disclosures": [
+    {
+      "rcept_no": "20260609000089",
+      "rcept_dt": "2026-06-09",
+      "corp_name": "에스엔시스",
+      "stock_code": "0008Z0",
+      "market": "KOSDAQ",
+      "corp_code": "01294110",
+      "repror": "정수형",
+      "ofcps": "전무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,200",
+      "total_cnt": "70,200",
+      "irds_rate": "0.01",
+      "hold_rate": "0.74",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260609000087",
       "rcept_dt": "2026-06-09",
