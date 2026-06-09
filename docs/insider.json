@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-09T10:15+09:00",
+  "updated_at": "2026-06-09T10:25+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260609000065",
+  "last_seen": "20260609000077",
   "disclosures": [
+    {
+      "rcept_no": "20260609000077",
+      "rcept_dt": "2026-06-09",
+      "corp_name": "엠게임",
+      "stock_code": "058630",
+      "market": "KOSDAQ",
+      "corp_code": "00397058",
+      "repror": "홍등호",
+      "ofcps": "부사장",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "11,360",
+      "total_cnt": "61,360",
+      "irds_rate": "0.06",
+      "hold_rate": "0.32",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260609000065",
       "rcept_dt": "2026-06-09",
