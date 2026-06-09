@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-09T13:20+09:00",
+  "updated_at": "2026-06-09T13:40+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260609000157",
+  "last_seen": "20260609000168",
   "disclosures": [
+    {
+      "rcept_no": "20260609000168",
+      "rcept_dt": "2026-06-09",
+      "corp_name": "한미사이언스",
+      "stock_code": "008930",
+      "market": "KOSPI",
+      "corp_code": "00161426",
+      "repror": "김재교",
+      "ofcps": "부회장",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,000",
+      "total_cnt": "9,494",
+      "irds_rate": "0.00",
+      "hold_rate": "0.01",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260609000157",
       "rcept_dt": "2026-06-09",
