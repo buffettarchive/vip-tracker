@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-09T09:00+09:00",
+  "updated_at": "2026-06-09T09:15+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260608000476",
+  "last_seen": "20260609000012",
   "disclosures": [
+    {
+      "rcept_no": "20260609000012",
+      "rcept_dt": "2026-06-09",
+      "corp_name": "모비데이즈",
+      "stock_code": "363260",
+      "market": "KOSDAQ",
+      "corp_code": "01493535",
+      "repror": "유범령",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "145,281",
+      "total_cnt": "16,068,286",
+      "irds_rate": "0.45",
+      "hold_rate": "49.96",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260608000448",
       "rcept_dt": "2026-06-08",
