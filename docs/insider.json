@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-09T12:25+09:00",
+  "updated_at": "2026-06-09T12:40+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260609000140",
+  "last_seen": "20260609000142",
   "disclosures": [
+    {
+      "rcept_no": "20260609000142",
+      "rcept_dt": "2026-06-09",
+      "corp_name": "한화에어로스페이스",
+      "stock_code": "012450",
+      "market": "KOSPI",
+      "corp_code": "00126566",
+      "repror": "박장우",
+      "ofcps": "담당임원",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "44",
+      "total_cnt": "260",
+      "irds_rate": "0.00",
+      "hold_rate": "0.00",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260609000140",
       "rcept_dt": "2026-06-09",
