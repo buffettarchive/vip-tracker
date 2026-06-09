@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-09T12:40+09:00",
+  "updated_at": "2026-06-09T13:20+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260609000142",
+  "last_seen": "20260609000157",
   "disclosures": [
+    {
+      "rcept_no": "20260609000157",
+      "rcept_dt": "2026-06-09",
+      "corp_name": "제이아이테크",
+      "stock_code": "417500",
+      "market": "KOSDAQ",
+      "corp_code": "01367586",
+      "repror": "함석헌",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "132,671",
+      "total_cnt": "17,419,706",
+      "irds_rate": "0.40",
+      "hold_rate": "53.13",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260609000142",
       "rcept_dt": "2026-06-09",
