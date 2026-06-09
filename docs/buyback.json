@@ -1,6 +1,27 @@
 {
   "entries": [
     {
+      "rcept_no": "20260609000108",
+      "rcept_dt": "20260609",
+      "corp_code": "00580199",
+      "corp_name": "메디톡스",
+      "corp_cls": "K",
+      "report_nm": "주요사항보고서(자기주식취득결정)",
+      "type": "취득",
+      "shares_common": null,
+      "shares_other": null,
+      "amount_common": null,
+      "amount_other": null,
+      "acq_purpose": null,
+      "acq_method": null,
+      "acq_period_start": null,
+      "acq_period_end": null,
+      "acq_decision_date": null,
+      "total_shares": null,
+      "ratio_pct": null,
+      "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260609000108"
+    },
+    {
       "rcept_no": "20260608000267",
       "rcept_dt": "20260608",
       "corp_code": "00438036",
@@ -14491,5 +14512,5 @@
       "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250602000876"
     }
   ],
-  "last_seen": "20260608000267"
+  "last_seen": "20260609000108"
 }
