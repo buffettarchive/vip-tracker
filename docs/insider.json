@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-09T11:55+09:00",
+  "updated_at": "2026-06-09T12:25+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260609000130",
+  "last_seen": "20260609000140",
   "disclosures": [
+    {
+      "rcept_no": "20260609000140",
+      "rcept_dt": "2026-06-09",
+      "corp_name": "엔젯",
+      "stock_code": "419080",
+      "market": "KOSDAQ",
+      "corp_code": "01587056",
+      "repror": "변도영",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "30,000",
+      "total_cnt": "2,340,000",
+      "irds_rate": "-0.06",
+      "hold_rate": "21.90",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260609000130",
       "rcept_dt": "2026-06-09",
