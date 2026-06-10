@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-10T13:25+09:00",
+  "updated_at": "2026-06-10T13:35+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260610000208",
+  "last_seen": "20260610000220",
   "disclosures": [
+    {
+      "rcept_no": "20260610000212",
+      "rcept_dt": "2026-06-10",
+      "corp_name": "피엔에이치테크",
+      "stock_code": "239890",
+      "market": "KOSDAQ",
+      "corp_code": "01112889",
+      "repror": "현서용",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "20,000",
+      "total_cnt": "2,970,000",
+      "irds_rate": "0.20",
+      "hold_rate": "29.89",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260610000193",
       "rcept_dt": "2026-06-10",
