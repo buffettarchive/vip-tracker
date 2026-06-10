@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-10T17:00+09:00",
+  "updated_at": "2026-06-10T17:05+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -8,8 +8,38 @@
     "에셋플러스자산운용",
     "트러스톤자산운용"
   ],
-  "last_seen": "20260610000593",
+  "last_seen": "20260610000612",
   "disclosures": [
+    {
+      "rcept_no": "20260610000608",
+      "rcept_dt": "2026-06-10",
+      "firm": "브이아이피자산운용",
+      "corp_name": "솔루엠",
+      "stock_code": "248070",
+      "corp_code": "01159233",
+      "stkrt": "",
+      "stkrt_prev": "",
+      "stkqy": "",
+      "report_resn": "",
+      "purpose": "",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "기타"
+    },
+    {
+      "rcept_no": "20260610000597",
+      "rcept_dt": "2026-06-10",
+      "firm": "브이아이피자산운용",
+      "corp_name": "아세아",
+      "stock_code": "002030",
+      "corp_code": "00138701",
+      "stkrt": "",
+      "stkrt_prev": "",
+      "stkqy": "",
+      "report_resn": "",
+      "purpose": "",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "기타"
+    },
     {
       "rcept_no": "20260610000587",
       "rcept_dt": "2026-06-10",
