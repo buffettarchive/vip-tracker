@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-10T10:25+09:00",
+  "updated_at": "2026-06-10T10:36+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260610000062",
+  "last_seen": "20260610000068",
   "disclosures": [
+    {
+      "rcept_no": "20260610000068",
+      "rcept_dt": "2026-06-10",
+      "corp_name": "풀무원",
+      "stock_code": "017810",
+      "market": "KOSPI",
+      "corp_code": "00155355",
+      "repror": "김종헌",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "1,902",
+      "total_cnt": "6,000",
+      "irds_rate": "0.01",
+      "hold_rate": "0.02",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260610000039",
       "rcept_dt": "2026-06-10",
