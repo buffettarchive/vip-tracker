@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-10T17:00+09:00",
+  "updated_at": "2026-06-10T17:05+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260610000525",
+  "last_seen": "20260610000561",
   "disclosures": [
+    {
+      "rcept_no": "20260610000526",
+      "rcept_dt": "2026-06-10",
+      "corp_name": "KTis",
+      "stock_code": "058860",
+      "market": "KOSPI",
+      "corp_code": "00372873",
+      "repror": "조일택",
+      "ofcps": "상무보",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,083",
+      "total_cnt": "1,631",
+      "irds_rate": "0.00",
+      "hold_rate": "0.00",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260610000493",
       "rcept_dt": "2026-06-10",
