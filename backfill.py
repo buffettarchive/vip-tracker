@@ -26,8 +26,8 @@ WATCH_FIRMS = [
     "라이프자산운용",
     "에셋플러스자산운용",
     "트러스톤자산운용",
-    "Fidelity",
-    "Miri Capital Management",
+    "피델리티",
+    "Miri",
 ]
 
 BACKFILL_DAYS = 80
@@ -55,9 +55,9 @@ def dart(endpoint, **params):
 def firm_in(name):
     if not name:
         return None
-    low = name.lower()
+    low = name.lower().replace(" ", "")
     for f in WATCH_FIRMS:
-        if f.lower() in low:
+        if f.lower().replace(" ", "") in low:
             return f
     return None
 
