@@ -119,6 +119,7 @@
 <div class="wrap">
 
   <header class="mast">
+    <p class="kicker">버핏아카이브</p>
     <h1 class="title">Buffett Archive</h1>
     <div class="meta-row">
       <span class="live"><span class="dot"></span><span id="liveText">실시간 트래킹</span></span>
@@ -183,6 +184,7 @@ const I18N = {
     kind_buy: "매수",
     kind_sell: "매도",
     kind_etc: "기타",
+    kind_pending: "공시접수",
     bb_acq: "취득",
     bb_cancel: "소각",
     bb_shares: "취득 주식수",
@@ -218,6 +220,7 @@ const I18N = {
     kind_buy: "Buy",
     kind_sell: "Sell",
     kind_etc: "Other",
+    kind_pending: "Pending",
     bb_acq: "Buyback",
     bb_cancel: "Cancellation",
     bb_shares: "Shares to acquire",
@@ -318,6 +321,7 @@ function firmTag(item){
   const cur=parseFloat(item.stkrt), prev=parseFloat(item.stkrt_prev);
   const diff=(!isNaN(cur)&&!isNaN(prev))?(cur-prev):null;
   const kind=item.kind||"";
+  if(!kind) return {cls:"etc",txt:t("kind_pending")};
   if(kind.includes("신규")) return {cls:"buy",txt:t("kind_new")};
   if(kind==="매수") return {cls:"buy",txt:diff!=null?`${t("kind_buy")} ▲${Math.abs(diff).toFixed(2)}%p`:t("kind_buy")};
   if(kind==="매도") return {cls:"sell",txt:diff!=null?`${t("kind_sell")} ▼${Math.abs(diff).toFixed(2)}%p`:t("kind_sell")};
@@ -349,12 +353,12 @@ function renderFirm(){
         <div class="sub"><span class="who">${firmName}</span> · ${resn}</div>
       </div>
       <div class="stake">
-        <div class="pct">${item.stkrt}%</div>
+        <div class="pct">${item.stkrt ? item.stkrt+"%" : "—"}</div>
         <div class="held">${t("held_stake")}</div>
         <div class="delta ${tag.cls}">${tag.txt}</div>
       </div>`;
-    return dl?`<a class="row" href="${dl}" target="_blank" rel="noopener">${inner}</a>`
-             :`<div class="row">${inner}</div>`;
+    return dl?`<a class="row${item.stkrt?'':' dim'}" href="${dl}" target="_blank" rel="noopener">${inner}</a>`
+             :`<div class="row${item.stkrt?'':' dim'}">${inner}</div>`;
   }).join("");
 }
 
@@ -432,7 +436,8 @@ function renderBuyback(){
     let subParts = [purpose, method].filter(Boolean);
     const sub = subParts.length ? subParts.join(" · ") : "—";
     // 주식수
-    const shares = item.shares_common ? item.shares_common.toLocaleString() : "—";
+    const hasData = !!item.shares_common;
+    const shares = hasData ? item.shares_common.toLocaleString() : "—";
     // 금액 (억 단위 변환)
     let amtLabel = "";
     if(item.amount_common){
@@ -441,6 +446,7 @@ function renderBuyback(){
         ? `${billions.toFixed(1)}${LANG==="en"?"B KRW":"억원"}`
         : `${(item.amount_common/10000).toFixed(0)}${LANG==="en"?"M KRW":"만원"}`;
     }
+    const dimCls = hasData ? "" : " dim";
     const inner=`
       <div class="date">${dt.m} ${dt.d}<span class="y">${dt.y}</span></div>
       <div class="corp">
@@ -449,11 +455,11 @@ function renderBuyback(){
       </div>
       <div class="stake">
         <div class="pct">${shares}</div>
-        <div class="held">${isAcq ? t("bb_shares") : t("bb_shares_cancel")}</div>
+        <div class="held">${hasData ? (isAcq ? t("bb_shares") : t("bb_shares_cancel")) : t("kind_pending")}</div>
         ${amtLabel ? `<div class="delta buy">${amtLabel}</div>` : ""}
       </div>`;
-    return dl?`<a class="row" href="${dl}" target="_blank" rel="noopener">${inner}</a>`
-             :`<div class="row">${inner}</div>`;
+    return dl?`<a class="row${dimCls}" href="${dl}" target="_blank" rel="noopener">${inner}</a>`
+             :`<div class="row${dimCls}">${inner}</div>`;
   }).join("");
 }
 
