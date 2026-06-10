@@ -29,6 +29,8 @@ WATCH_FIRMS = [
     "라이프자산운용",
     "에셋플러스자산운용",
     "트러스톤자산운용",
+    "Fidelity",
+    "Miri Capital Management",
 ]
 
 SCAN_DAYS = 3
@@ -56,8 +58,9 @@ def dart(endpoint, **params):
 def firm_in(name):
     if not name:
         return None
+    low = name.lower()
     for f in WATCH_FIRMS:
-        if f in name:
+        if f.lower() in low:
             return f
     return None
 
