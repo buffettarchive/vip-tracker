@@ -167,9 +167,11 @@ def _parse_plain(plain):
     return out
 
 
-def classify(stkrt, stkrt_prev):
+def classify(stkrt, stkrt_prev, report_resn=""):
     cur = to_float(stkrt)
     prev = to_float(stkrt_prev)
+    if "신규" in (report_resn or ""):
+        return "매수(신규)"
     if cur is None:
         return "기타"
     if prev is None:
@@ -238,7 +240,7 @@ def main():
             seen.add(rcept_no)
             doc = parse_document(rcept_no)
             time.sleep(0.3)
-            kind = classify(doc.get("stkrt"), doc.get("stkrt_prev"))
+            kind = classify(doc.get("stkrt"), doc.get("stkrt_prev"), doc.get("report_resn", ""))
             rdt = row.get("rcept_dt", "")
 
             ok = "✓" if doc.get("stkrt") else "✗"
