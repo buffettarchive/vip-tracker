@@ -324,7 +324,7 @@ function firmTag(item){
   const diff=(!isNaN(cur)&&!isNaN(prev))?(cur-prev):null;
   const kind=item.kind||"";
   if(!kind) return {cls:"etc",txt:t("kind_pending")};
-  if(kind.includes("신규")) return {cls:"buy",txt:t("kind_new")};
+  if(kind.includes("신규")) return {cls:"buy",txt:cur!=null?`${t("kind_new")} +${cur.toFixed(2)}%p`:t("kind_new")};
   if(kind==="매수") return {cls:"buy",txt:diff!=null?`${t("kind_buy")} ▲${Math.abs(diff).toFixed(2)}%p`:t("kind_buy")};
   if(kind==="매도") return {cls:"sell",txt:diff!=null?`${t("kind_sell")} ▼${Math.abs(diff).toFixed(2)}%p`:t("kind_sell")};
   return {cls:"etc",txt:t("kind_etc")};
