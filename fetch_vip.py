@@ -1,25 +1,15 @@
 """
-fetch_vip.py  (v7 · 공시 본문에서 보고자 본인 몫 직접 파싱)
+fetch_vip.py  (v8 · 본문 파싱 패턴 대폭 강화)
 ─────────────────────────────────────────────────────────────
-majorstock API는 약식보고를 못 줘서 엉뚱한 값을 가져오는 문제가 있었다.
-대신 공시 원문(document.xml)을 받아 '요약정보' 표에서
-'이번 보고서 / 직전 보고서'의 보유주식수·보유비율을 직접 읽는다.
-
-이로써:
-- 보고자 본인 몫(예: 7.33%)을 정확히 가져온다
-- 직전 대비 비율 차이로 매수/매도를 정확히 판정한다
+v7 대비 변경:
+- parse_document를 블록 기반 파싱으로 교체 (다양한 본문 형식 대응)
+- "이번 보고서"~"직전 보고서" 블록에서 숫자 추출 → 비율/주식수 자동 판별
+- 보고사유·보유목적 패턴 확장
+- fallback으로 v7 단순 패턴도 유지
 """
 
-import os
-import io
-import re
-import sys
-import json
-import time
-import zipfile
-import base64
+import os, io, re, sys, json, time, zipfile, base64
 import datetime as dt
-
 import requests
 
 DART_KEY = os.environ["DART_API_KEY"]
@@ -44,7 +34,7 @@ WATCH_FIRMS = [
 SCAN_DAYS = 3
 
 s = requests.Session()
-s.headers.update({"User-Agent": "vip-tracker/0.7"})
+s.headers.update({"User-Agent": "vip-tracker/0.8"})
 GH_HEADERS = {
     "Authorization": f"Bearer {GH_TOKEN}",
     "Accept": "application/vnd.github+json",
@@ -57,7 +47,7 @@ def dart(endpoint, **params):
     for i in range(3):
         try:
             return s.get(f"{DART}/{endpoint}", params=params, timeout=20).json()
-        except Exception as e:  # noqa
+        except Exception as e:
             print(f"[retry {i}] {endpoint}: {e}", file=sys.stderr)
             time.sleep(1.5 * (i + 1))
     return {"status": "999", "list": []}
@@ -82,15 +72,16 @@ def to_float(v):
 def parse_document(rcept_no):
     """
     공시 원문(document.xml=zip)을 받아 요약정보 표에서
-    이번/직전 보고서의 보유비율과 주식수, 보고사유, 보유목적을 추출.
-    반환: dict 또는 {} (실패 시)
+    이번/직전 보고서의 보유주식수·보유비율, 보고사유, 보유목적을 추출.
     """
     try:
         r = s.get(f"{DART}/document.xml",
                   params={"crtfc_key": DART_KEY, "rcept_no": rcept_no}, timeout=30)
         if r.headers.get("content-type", "").startswith("application/json"):
-            # 키 오류 등 → JSON 에러
             print(f"[warn] document {rcept_no}: {r.text[:120]}", file=sys.stderr)
+            return {}
+        if not r.content[:2] == b"PK":
+            print(f"[warn] document {rcept_no}: not a zip", file=sys.stderr)
             return {}
         z = zipfile.ZipFile(io.BytesIO(r.content))
         name = max(z.namelist(), key=lambda n: z.getinfo(n).file_size)
@@ -105,35 +96,90 @@ def parse_document(rcept_no):
         if text is None:
             text = raw.decode("utf-8", errors="ignore")
 
-        # 태그 제거 후 공백 정리
         plain = re.sub(r"<[^>]+>", " ", text)
         plain = re.sub(r"&[a-zA-Z#0-9]+;", " ", plain)
         plain = re.sub(r"\s+", " ", plain)
 
-        out = {}
-        # 이번/직전 보고서: 보유주식수, 보유비율
-        cur = re.search(r"이번\s*보고서\s*([\d,]+)\s+([\d]+(?:\.\d+)?)", plain)
-        prev = re.search(r"직전\s*보고서\s*([\d,]+)\s+([\d]+(?:\.\d+)?)", plain)
-        if cur:
-            out["stkqy"] = cur.group(1).replace(",", "")
-            out["stkrt"] = cur.group(2)
-        if prev:
-            out["stkrt_prev"] = prev.group(2)
-        # 보고사유 / 보유목적 (best-effort)
-        resn = re.search(r"보고사유\s*(.+?)\s*보유목적", plain)
-        if resn:
-            out["report_resn"] = resn.group(1).strip()[:60]
-        purpose = re.search(r"보유목적\s*([가-힣A-Za-z]+투자)", plain)
-        if purpose:
-            out["purpose"] = purpose.group(1).strip()
-        return out
-    except Exception as e:  # noqa
+        return _parse_plain(plain)
+
+    except Exception as e:
         print(f"[warn] 원문 파싱 실패 {rcept_no}: {e}", file=sys.stderr)
         return {}
 
 
+def _parse_plain(plain):
+    """태그 제거된 본문 텍스트에서 데이터 추출."""
+    out = {}
+
+    # ── 블록 기반 파싱: "이번 보고서" ~ "직전 보고서" 사이 ──
+    cur_block = re.search(r"이번\s*보고서(.{5,300}?)직전\s*보고서", plain, re.DOTALL)
+    if cur_block:
+        block = cur_block.group(1)
+        nums = re.findall(r"([\d,]+(?:\.\d+)?)", block)
+        float_nums = [(n, to_float(n)) for n in nums if to_float(n) is not None]
+        shares, ratio = None, None
+        for raw, v in float_nums:
+            if "." in raw and v < 100:
+                if ratio is None:
+                    ratio = raw
+            elif v > 100:
+                if shares is None:
+                    shares = raw.replace(",", "")
+        if ratio:
+            out["stkrt"] = ratio
+        if shares:
+            out["stkqy"] = shares
+
+    # ── "직전 보고서" ~ 다음 섹션 사이 ──
+    prev_block = re.search(
+        r"직전\s*보고서(.{5,300}?)(?:보고사유|변동사유|보유목적|증감|변동내역)", plain, re.DOTALL)
+    if not prev_block:
+        prev_block = re.search(r"직전\s*보고서(.{5,200})", plain, re.DOTALL)
+    if prev_block:
+        block = prev_block.group(1)
+        for raw_n in re.findall(r"([\d,]+(?:\.\d+)?)", block):
+            v = to_float(raw_n)
+            if v is not None and "." in raw_n and v < 100:
+                out["stkrt_prev"] = raw_n
+                break
+
+    # ── fallback: v7 단순 패턴 ──
+    if "stkrt" not in out:
+        cur = re.search(r"이번\s*보고서\s*([\d,]+)\s+([\d]+(?:\.\d+)?)", plain)
+        if cur:
+            out["stkqy"] = cur.group(1).replace(",", "")
+            out["stkrt"] = cur.group(2)
+    if "stkrt_prev" not in out:
+        prev = re.search(r"직전\s*보고서\s*([\d,]+)\s+([\d]+(?:\.\d+)?)", plain)
+        if prev:
+            out["stkrt_prev"] = prev.group(2)
+
+    # ── 보고사유 ──
+    for pat in [
+        r"보고사유\s*(.+?)\s*(?:보유목적|변동사유|비고)",
+        r"보고사유\s*(.{3,60})",
+    ]:
+        resn = re.search(pat, plain)
+        if resn:
+            val = resn.group(1).strip()[:60]
+            if val:
+                out["report_resn"] = val
+                break
+
+    # ── 보유목적 ──
+    for pat in [
+        r"보유목적\s*([가-힣A-Za-z]+투자)",
+        r"보유목적\s*([가-힣A-Za-z]{2,20})",
+    ]:
+        purpose = re.search(pat, plain)
+        if purpose:
+            out["purpose"] = purpose.group(1).strip()
+            break
+
+    return out
+
+
 def classify(stkrt, stkrt_prev):
-    """이번/직전 보유비율로 매수·매도·기타 판정."""
     cur = to_float(stkrt)
     prev = to_float(stkrt_prev)
     if cur is None:
@@ -144,7 +190,7 @@ def classify(stkrt, stkrt_prev):
         return "매수"
     if cur < prev:
         return "매도"
-    return "기타"  # 비율 변동 없음(담보·계약 등)
+    return "기타"
 
 
 def gh_get():
@@ -211,6 +257,10 @@ def main():
             time.sleep(0.3)
             kind = classify(doc.get("stkrt"), doc.get("stkrt_prev"))
             rdt = row.get("rcept_dt", "")
+
+            ok = "✓" if doc.get("stkrt") else "✗"
+            print(f"  [{ok}] {row.get('corp_name','')} / {firm} / stkrt={doc.get('stkrt','?')} / {kind}")
+
             existing[rcept_no] = {
                 "rcept_no": rcept_no,
                 "rcept_dt": f"{rdt[:4]}-{rdt[4:6]}-{rdt[6:]}" if len(rdt) == 8 else rdt,
