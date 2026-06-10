@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-10T09:25+09:00",
+  "updated_at": "2026-06-10T09:35+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260610000011",
+  "last_seen": "20260610000014",
   "disclosures": [
+    {
+      "rcept_no": "20260610000014",
+      "rcept_dt": "2026-06-10",
+      "corp_name": "SDN",
+      "stock_code": "099220",
+      "market": "KOSDAQ",
+      "corp_code": "00574611",
+      "repror": "최기혁",
+      "ofcps": "사내이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "91,328",
+      "total_cnt": "3,911,328",
+      "irds_rate": "-0.78",
+      "hold_rate": "6.02",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260610000011",
       "rcept_dt": "2026-06-10",
