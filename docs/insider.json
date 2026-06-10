@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-10T15:40+09:00",
+  "updated_at": "2026-06-10T15:50+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260610000352",
+  "last_seen": "20260610000373",
   "disclosures": [
+    {
+      "rcept_no": "20260610000373",
+      "rcept_dt": "2026-06-10",
+      "corp_name": "TP",
+      "stock_code": "007980",
+      "market": "KOSPI",
+      "corp_code": "00154329",
+      "repror": "박성흠",
+      "ofcps": "전무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "18,057",
+      "total_cnt": "19,310",
+      "irds_rate": "0.04",
+      "hold_rate": "0.04",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260610000320",
       "rcept_dt": "2026-06-10",
