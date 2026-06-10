@@ -1,0 +1,57 @@
+name: Backfill (수동 실행)
+
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        description: '어떤 backfill을 돌릴지 선택'
+        required: true
+        type: choice
+        options:
+          - 운용사 지분공시 (backfill.py)
+          - 내부자 매수 (backfill_insider.py)
+          - 자사주 매입/소각 (backfill_buyback.py)
+          - 전부 다
+
+jobs:
+  backfill-vip:
+    if: contains(github.event.inputs.target, 'backfill.py') || contains(github.event.inputs.target, '전부')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests
+      - run: python backfill.py
+        env:
+          DART_API_KEY: ${{ secrets.DART_API_KEY }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
+  backfill-insider:
+    if: contains(github.event.inputs.target, 'backfill_insider') || contains(github.event.inputs.target, '전부')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests
+      - run: python backfill_insider.py
+        env:
+          DART_API_KEY: ${{ secrets.DART_API_KEY }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
+  backfill-buyback:
+    if: contains(github.event.inputs.target, 'backfill_buyback') || contains(github.event.inputs.target, '전부')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests
+      - run: python backfill_buyback.py
+        env:
+          DART_API_KEY: ${{ secrets.DART_API_KEY }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
