@@ -1,22 +1,12 @@
-# v2 deploy
 """
-backfill.py  (v2 · 본문 파싱 + 기존 데이터 초기화 후 재구축)
+backfill.py  (v3 · v8 블록 기반 파싱 적용)
 ─────────────────────────────────────────────────────────────
-80일치 대량보유 공시를 본문에서 직접 읽어 정확한 본인 몫으로 다시 채운다.
-기존 data.json은 무시하고 처음부터 새로 만든다(틀린 옛 데이터 청소).
-Render에서 Command를 'python backfill.py'로 잠깐 바꿔 1회 실행.
+기존 data.json 초기화 후 80일치 재구축.
+Render에서 Command를 'python backfill.py'로 바꿔 1회 실행.
 """
 
-import os
-import io
-import re
-import sys
-import json
-import time
-import zipfile
-import base64
+import os, io, re, sys, json, time, zipfile, base64
 import datetime as dt
-
 import requests
 
 DART_KEY = os.environ["DART_API_KEY"]
@@ -41,7 +31,7 @@ WATCH_FIRMS = [
 BACKFILL_DAYS = 80
 
 s = requests.Session()
-s.headers.update({"User-Agent": "vip-tracker-backfill/2.0"})
+s.headers.update({"User-Agent": "vip-tracker-backfill/3.0"})
 GH_HEADERS = {
     "Authorization": f"Bearer {GH_TOKEN}",
     "Accept": "application/vnd.github+json",
@@ -54,7 +44,7 @@ def dart(endpoint, **params):
     for i in range(3):
         try:
             return s.get(f"{DART}/{endpoint}", params=params, timeout=20).json()
-        except Exception as e:  # noqa
+        except Exception as e:
             print(f"[retry {i}] {endpoint}: {e}", file=sys.stderr)
             time.sleep(1.5 * (i + 1))
     return {"status": "999", "list": []}
@@ -81,7 +71,10 @@ def parse_document(rcept_no):
         r = s.get(f"{DART}/document.xml",
                   params={"crtfc_key": DART_KEY, "rcept_no": rcept_no}, timeout=30)
         if r.headers.get("content-type", "").startswith("application/json"):
-            print(f"[warn] document {rcept_no}: {r.text[:120]}", file=sys.stderr)
+            print(f"    [warn] document {rcept_no}: {r.text[:120]}", file=sys.stderr)
+            return {}
+        if not r.content[:2] == b"PK":
+            print(f"    [warn] document {rcept_no}: not a zip", file=sys.stderr)
             return {}
         z = zipfile.ZipFile(io.BytesIO(r.content))
         name = max(z.namelist(), key=lambda n: z.getinfo(n).file_size)
@@ -98,24 +91,77 @@ def parse_document(rcept_no):
         plain = re.sub(r"<[^>]+>", " ", text)
         plain = re.sub(r"&[a-zA-Z#0-9]+;", " ", plain)
         plain = re.sub(r"\s+", " ", plain)
-        out = {}
+        return _parse_plain(plain)
+    except Exception as e:
+        print(f"    [warn] 원문 파싱 실패 {rcept_no}: {e}", file=sys.stderr)
+        return {}
+
+
+def _parse_plain(plain):
+    out = {}
+
+    # 블록 기반: "이번 보고서" ~ "직전 보고서" 사이
+    cur_block = re.search(r"이번\s*보고서(.{5,300}?)직전\s*보고서", plain, re.DOTALL)
+    if cur_block:
+        block = cur_block.group(1)
+        nums = re.findall(r"([\d,]+(?:\.\d+)?)", block)
+        float_nums = [(n, to_float(n)) for n in nums if to_float(n) is not None]
+        shares, ratio = None, None
+        for raw, v in float_nums:
+            if "." in raw and v < 100:
+                if ratio is None:
+                    ratio = raw
+            elif v > 100:
+                if shares is None:
+                    shares = raw.replace(",", "")
+        if ratio:
+            out["stkrt"] = ratio
+        if shares:
+            out["stkqy"] = shares
+
+    # "직전 보고서" ~ 다음 섹션 사이
+    prev_block = re.search(
+        r"직전\s*보고서(.{5,300}?)(?:보고사유|변동사유|보유목적|증감|변동내역)", plain, re.DOTALL)
+    if not prev_block:
+        prev_block = re.search(r"직전\s*보고서(.{5,200})", plain, re.DOTALL)
+    if prev_block:
+        block = prev_block.group(1)
+        for raw_n in re.findall(r"([\d,]+(?:\.\d+)?)", block):
+            v = to_float(raw_n)
+            if v is not None and "." in raw_n and v < 100:
+                out["stkrt_prev"] = raw_n
+                break
+
+    # fallback
+    if "stkrt" not in out:
         cur = re.search(r"이번\s*보고서\s*([\d,]+)\s+([\d]+(?:\.\d+)?)", plain)
-        prev = re.search(r"직전\s*보고서\s*([\d,]+)\s+([\d]+(?:\.\d+)?)", plain)
         if cur:
             out["stkqy"] = cur.group(1).replace(",", "")
             out["stkrt"] = cur.group(2)
+    if "stkrt_prev" not in out:
+        prev = re.search(r"직전\s*보고서\s*([\d,]+)\s+([\d]+(?:\.\d+)?)", plain)
         if prev:
             out["stkrt_prev"] = prev.group(2)
-        resn = re.search(r"보고사유\s*(.+?)\s*보유목적", plain)
+
+    for pat in [
+        r"보고사유\s*(.+?)\s*(?:보유목적|변동사유|비고)",
+        r"보고사유\s*(.{3,60})",
+    ]:
+        resn = re.search(pat, plain)
         if resn:
             out["report_resn"] = resn.group(1).strip()[:60]
-        purpose = re.search(r"보유목적\s*([가-힣A-Za-z]+투자)", plain)
+            break
+
+    for pat in [
+        r"보유목적\s*([가-힣A-Za-z]+투자)",
+        r"보유목적\s*([가-힣A-Za-z]{2,20})",
+    ]:
+        purpose = re.search(pat, plain)
         if purpose:
             out["purpose"] = purpose.group(1).strip()
-        return out
-    except Exception as e:  # noqa
-        print(f"[warn] 원문 파싱 실패 {rcept_no}: {e}", file=sys.stderr)
-        return {}
+            break
+
+    return out
 
 
 def classify(stkrt, stkrt_prev):
@@ -159,7 +205,7 @@ def gh_put(payload, sha):
 
 
 def main():
-    sha = gh_get_sha()   # 기존 파일은 덮어쓴다(초기화)
+    sha = gh_get_sha()
     print("[info] 기존 데이터 무시하고 새로 구축")
 
     today = dt.date.today()
@@ -191,6 +237,10 @@ def main():
             time.sleep(0.3)
             kind = classify(doc.get("stkrt"), doc.get("stkrt_prev"))
             rdt = row.get("rcept_dt", "")
+
+            ok = "✓" if doc.get("stkrt") else "✗"
+            print(f"  [{ok}] {row.get('corp_name','')} / {firm} / stkrt={doc.get('stkrt','?')} / {kind}")
+
             items[rcept_no] = {
                 "rcept_no": rcept_no,
                 "rcept_dt": f"{rdt[:4]}-{rdt[4:6]}-{rdt[6:]}" if len(rdt) == 8 else rdt,
