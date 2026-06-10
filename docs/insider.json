@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-10T11:45+09:00",
+  "updated_at": "2026-06-10T11:50+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260610000165",
+  "last_seen": "20260610000168",
   "disclosures": [
+    {
+      "rcept_no": "20260610000168",
+      "rcept_dt": "2026-06-10",
+      "corp_name": "유라클",
+      "stock_code": "088340",
+      "market": "KOSDAQ",
+      "corp_code": "00407294",
+      "repror": "조준희",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "4,000",
+      "total_cnt": "646,780",
+      "irds_rate": "0.09",
+      "hold_rate": "14.82",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260610000165",
       "rcept_dt": "2026-06-10",
