@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-10T16:05+09:00",
+  "updated_at": "2026-06-10T16:10+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -8,8 +8,38 @@
     "에셋플러스자산운용",
     "트러스톤자산운용"
   ],
-  "last_seen": "20260610000455",
+  "last_seen": "20260610000471",
   "disclosures": [
+    {
+      "rcept_no": "20260610000471",
+      "rcept_dt": "2026-06-10",
+      "firm": "브이아이피자산운용",
+      "corp_name": "달바글로벌",
+      "stock_code": "483650",
+      "corp_code": "01649204",
+      "stkrt": "",
+      "stkrt_prev": "",
+      "stkqy": "",
+      "report_resn": "",
+      "purpose": "",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "기타"
+    },
+    {
+      "rcept_no": "20260610000460",
+      "rcept_dt": "2026-06-10",
+      "firm": "브이아이피자산운용",
+      "corp_name": "롯데칠성음료",
+      "stock_code": "005300",
+      "corp_code": "00120571",
+      "stkrt": "",
+      "stkrt_prev": "",
+      "stkqy": "",
+      "report_resn": "",
+      "purpose": "",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "기타"
+    },
     {
       "rcept_no": "20260610000451",
       "rcept_dt": "2026-06-10",
