@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-10T12:45+09:00",
+  "updated_at": "2026-06-10T13:05+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260610000182",
+  "last_seen": "20260610000189",
   "disclosures": [
+    {
+      "rcept_no": "20260610000189",
+      "rcept_dt": "2026-06-10",
+      "corp_name": "웰크론한텍",
+      "stock_code": "076080",
+      "market": "KOSDAQ",
+      "corp_code": "00487546",
+      "repror": "웰크론",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "42,000",
+      "total_cnt": "5,971,532",
+      "irds_rate": "0.19",
+      "hold_rate": "26.43",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260610000168",
       "rcept_dt": "2026-06-10",
