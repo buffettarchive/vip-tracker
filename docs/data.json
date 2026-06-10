@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-10T16:10+09:00",
+  "updated_at": "2026-06-10T16:15+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -8,8 +8,38 @@
     "에셋플러스자산운용",
     "트러스톤자산운용"
   ],
-  "last_seen": "20260610000471",
+  "last_seen": "20260610000483",
   "disclosures": [
+    {
+      "rcept_no": "20260610000482",
+      "rcept_dt": "2026-06-10",
+      "firm": "브이아이피자산운용",
+      "corp_name": "오로라",
+      "stock_code": "039830",
+      "corp_code": "00141556",
+      "stkrt": "",
+      "stkrt_prev": "",
+      "stkqy": "",
+      "report_resn": "",
+      "purpose": "",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "기타"
+    },
+    {
+      "rcept_no": "20260610000475",
+      "rcept_dt": "2026-06-10",
+      "firm": "브이아이피자산운용",
+      "corp_name": "엘앤씨바이오",
+      "stock_code": "290650",
+      "corp_code": "01181515",
+      "stkrt": "",
+      "stkrt_prev": "",
+      "stkqy": "",
+      "report_resn": "",
+      "purpose": "",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "기타"
+    },
     {
       "rcept_no": "20260610000471",
       "rcept_dt": "2026-06-10",
