@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-10T13:55+09:00",
+  "updated_at": "2026-06-10T14:00+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260610000235",
+  "last_seen": "20260610000238",
   "disclosures": [
+    {
+      "rcept_no": "20260610000238",
+      "rcept_dt": "2026-06-10",
+      "corp_name": "큐라클",
+      "stock_code": "365270",
+      "market": "KOSDAQ",
+      "corp_code": "01397772",
+      "repror": "김정한",
+      "ofcps": "상무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "8,608",
+      "total_cnt": "8,608",
+      "irds_rate": "0.04",
+      "hold_rate": "0.04",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260610000212",
       "rcept_dt": "2026-06-10",
