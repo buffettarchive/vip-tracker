@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-10T13:05+09:00",
+  "updated_at": "2026-06-10T13:10+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260610000189",
+  "last_seen": "20260610000193",
   "disclosures": [
+    {
+      "rcept_no": "20260610000193",
+      "rcept_dt": "2026-06-10",
+      "corp_name": "웰크론한텍",
+      "stock_code": "076080",
+      "market": "KOSDAQ",
+      "corp_code": "00487546",
+      "repror": "정성식",
+      "ofcps": "부사장",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "26,648",
+      "total_cnt": "244,067",
+      "irds_rate": "0.12",
+      "hold_rate": "1.08",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260610000189",
       "rcept_dt": "2026-06-10",
