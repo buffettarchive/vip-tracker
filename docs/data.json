@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-10T16:00+09:00",
+  "updated_at": "2026-06-10T16:05+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -8,8 +8,38 @@
     "에셋플러스자산운용",
     "트러스톤자산운용"
   ],
-  "last_seen": "20260610000440",
+  "last_seen": "20260610000455",
   "disclosures": [
+    {
+      "rcept_no": "20260610000451",
+      "rcept_dt": "2026-06-10",
+      "firm": "브이아이피자산운용",
+      "corp_name": "삼지전자",
+      "stock_code": "037460",
+      "corp_code": "00128315",
+      "stkrt": "",
+      "stkrt_prev": "",
+      "stkqy": "",
+      "report_resn": "",
+      "purpose": "",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "기타"
+    },
+    {
+      "rcept_no": "20260610000443",
+      "rcept_dt": "2026-06-10",
+      "firm": "브이아이피자산운용",
+      "corp_name": "F&F",
+      "stock_code": "383220",
+      "corp_code": "01568413",
+      "stkrt": "",
+      "stkrt_prev": "",
+      "stkqy": "",
+      "report_resn": "",
+      "purpose": "",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "기타"
+    },
     {
       "rcept_no": "20260609000008",
       "rcept_dt": "2026-06-09",
