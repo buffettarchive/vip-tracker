@@ -1,5 +1,5 @@
 """
-backfill_buyback.py — 자기주식 취득·소각 과거 데이터 재구축
+backfill_buyback.py — 자기주식 취득·소각 과거 데이터 재구축 (v3)
 ──────────────────────────────────────────────────────────
 Render에서 1회 실행. GitHub의 buyback.json을 읽고 결과를 push.
 사용법: python backfill_buyback.py [시작일 YYYYMMDD] [종료일 YYYYMMDD]
@@ -24,7 +24,7 @@ DART = "https://opendart.fss.or.kr/api"
 GH_API = "https://api.github.com"
 
 s = requests.Session()
-s.headers.update({"User-Agent": "buyback-backfill/1.0"})
+s.headers.update({"User-Agent": "buyback-backfill/3.0"})
 
 GH_HEADERS = {
     "Authorization": f"Bearer {GH_TOKEN}",
@@ -49,18 +49,10 @@ def to_int(v):
     if v is None:
         return None
     try:
-        return int(str(v).replace(",", "").replace(" ", "").strip())
+        return int(str(v).replace(",", "").replace(" ", "")
+                   .replace("주", "").replace("원", "").strip())
     except (ValueError, TypeError):
         return None
-
-
-def fetch_buyback_detail(corp_code, rcept_dt):
-    base = dt.datetime.strptime(rcept_dt, "%Y%m%d")
-    bgn = (base - dt.timedelta(days=7)).strftime("%Y%m%d")
-    end = (base + dt.timedelta(days=7)).strftime("%Y%m%d")
-    d = dart("tsstkAqDecsn.json", corp_code=corp_code, bgn_de=bgn, end_de=end)
-    rows = d.get("list") or []
-    return rows[0] if rows else {}
 
 
 def fetch_document_text(rcept_no):
@@ -82,24 +74,71 @@ def fetch_document_text(rcept_no):
                 except (UnicodeDecodeError, LookupError):
                     continue
     except Exception as e:
-        print(f"[err] document.xml {rcept_no}: {e}", file=sys.stderr)
+        print(f"    [err] doc {rcept_no}: {e}", file=sys.stderr)
     return ""
 
 
-def parse_cancellation_doc(text):
+def parse_acq_doc(text):
     if not text:
         return {}
     result = {}
-    patterns = [
-        r"소각[하할]{0,2}\s*(?:주식|주권)[^0-9]*?([0-9,]+)\s*주",
-        r"소각\s*(?:예정\s*)?주식[^0-9]*?보통주[식권]?\s*([0-9,]+)",
-        r"보통주[식권]?\s*([0-9,]+)\s*주.*?소각",
-        r"소각\s*주식\s*수[^0-9]*?([0-9,]+)",
-    ]
-    for pat in patterns:
+    for pat in [
+        r"보통주[식권]?\s*[:\s]*([0-9][0-9,]*)",
+        r"취득\s*예정\s*주식[^0-9]*?([0-9][0-9,]+)",
+        r"취득\s*(?:할\s*)?주식[의]?\s*수[^0-9]*?([0-9][0-9,]+)",
+    ]:
         m = re.search(pat, text)
         if m:
-            result["shares"] = to_int(m.group(1))
+            val = to_int(m.group(1))
+            if val and val > 0:
+                result["shares_common"] = val
+                break
+    for pat in [
+        r"취득\s*예정\s*금액[^보]*보통주[식]?\s*([0-9][0-9,]+)",
+        r"취득\s*예정\s*금액[^0-9]*?([0-9][0-9,]+)",
+        r"취득\s*(?:할\s*)?금액[^0-9]*?([0-9][0-9,]+)",
+    ]:
+        m = re.search(pat, text)
+        if m:
+            val = to_int(m.group(1))
+            if val and val > 1000:
+                result["amount_common"] = val
+                break
+    for pat in [
+        r"취득\s*목적\s*[:\s]*([^\n\r]{5,100}?)(?:\s*\d+\.|\s*취득\s*방법|\s*취득\s*예상|\s*비고)",
+        r"취득\s*목적\s*[:\s]*(.{5,100}?)(?:취득방법|취득예상|예상기간|이사회)",
+    ]:
+        m = re.search(pat, text)
+        if m:
+            val = m.group(1).strip().rstrip(".")
+            if val and len(val) >= 3:
+                result["acq_purpose"] = val
+                break
+    for pat in [
+        r"취득\s*방법\s*[:\s]*([^\n\r]{3,100}?)(?:\s*\d+\.|\s*취득\s*예상|\s*취득\s*기간|\s*비고)",
+        r"취득\s*방법\s*[:\s]*(.{3,100}?)(?:취득예상|예상기간|이사회|비고|기타)",
+    ]:
+        m = re.search(pat, text)
+        if m:
+            val = m.group(1).strip().rstrip(".")
+            if val and len(val) >= 2:
+                result["acq_method"] = val
+                break
+    return result
+
+
+def parse_cancel_doc(text):
+    if not text:
+        return {}
+    result = {}
+    for pat in [
+        r"소각[하할]{0,2}\s*(?:주식|주권)[^0-9]*?([0-9,]+)\s*주",
+        r"보통주[식권]?\s*([0-9,]+)\s*주.*?소각",
+        r"소각\s*주식\s*수[^0-9]*?([0-9,]+)",
+    ]:
+        m = re.search(pat, text)
+        if m:
+            result["shares_common"] = to_int(m.group(1))
             break
     m2 = re.search(r"발행주식\s*총수[^0-9]*?([0-9,]+)", text)
     if m2:
@@ -107,7 +146,20 @@ def parse_cancellation_doc(text):
     return result
 
 
-# ── GitHub 읽기/쓰기 ──────────────────────────────────
+def fetch_api_detail(corp_code, rcept_dt):
+    try:
+        base = dt.datetime.strptime(rcept_dt, "%Y%m%d")
+    except ValueError:
+        try:
+            base = dt.datetime.strptime(rcept_dt, "%Y-%m-%d")
+        except ValueError:
+            return {}
+    bgn = (base - dt.timedelta(days=14)).strftime("%Y%m%d")
+    end = (base + dt.timedelta(days=14)).strftime("%Y%m%d")
+    d = dart("tsstkAqDecsn.json", corp_code=corp_code, bgn_de=bgn, end_de=end)
+    rows = d.get("list") or []
+    return rows[0] if rows else {}
+
 
 def gh_get_file():
     url = f"{GH_API}/repos/{GH_OWNER}/{GH_REPO}/contents/{GH_PATH}?ref={GH_BRANCH}"
@@ -123,7 +175,7 @@ def gh_put_file(data, sha):
     url = f"{GH_API}/repos/{GH_OWNER}/{GH_REPO}/contents/{GH_PATH}"
     blob = json.dumps(data, ensure_ascii=False, indent=2)
     body = {
-        "message": f"backfill-buyback: {dt.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')}",
+        "message": f"backfill-buyback: {dt.datetime.now(dt.UTC).strftime('%Y-%m-%dT%H:%M:%SZ')}",
         "content": base64.b64encode(blob.encode("utf-8")).decode("ascii"),
         "branch": GH_BRANCH,
     }
@@ -191,8 +243,6 @@ def main():
                     if not (is_acq or is_cancel):
                         continue
 
-                    print(f"  [hit] {corp_name} / {report_nm} / {rcept_no}")
-
                     entry = {
                         "rcept_no": rcept_no,
                         "rcept_dt": rcept_dt,
@@ -215,33 +265,52 @@ def main():
                         "dart_url": f"https://dart.fss.or.kr/dsaf001/main.do?rcpNo={rcept_no}",
                     }
 
-                    if is_acq:
-                        detail = fetch_buyback_detail(corp_code, rcept_dt)
-                        time.sleep(0.5)
-                        if detail:
-                            entry["shares_common"] = to_int(detail.get("aqpln_stk_ostk"))
-                            entry["shares_other"]  = to_int(detail.get("aqpln_stk_estk"))
-                            entry["amount_common"] = to_int(detail.get("aqpln_prc_ostk"))
-                            entry["amount_other"]  = to_int(detail.get("aqpln_prc_estk"))
-                            entry["acq_purpose"]   = (detail.get("aq_pp") or "").strip() or None
-                            entry["acq_method"]    = (detail.get("aq_mth") or "").strip() or None
-                            entry["acq_period_start"] = (detail.get("aqexpd_bgd") or "").strip() or None
-                            entry["acq_period_end"]   = (detail.get("aqexpd_edd") or "").strip() or None
-                            entry["acq_decision_date"] = (detail.get("aq_dd") or "").strip() or None
+                    # ① 본문 파싱 (주력)
+                    text = fetch_document_text(rcept_no)
+                    time.sleep(0.5)
 
-                    elif is_cancel:
-                        text = fetch_document_text(rcept_no)
-                        time.sleep(0.5)
-                        parsed = parse_cancellation_doc(text)
-                        if parsed.get("shares"):
-                            entry["shares_common"] = parsed["shares"]
+                    if is_acq and text:
+                        parsed = parse_acq_doc(text)
+                        if parsed.get("shares_common"):
+                            entry["shares_common"] = parsed["shares_common"]
+                        if parsed.get("amount_common"):
+                            entry["amount_common"] = parsed["amount_common"]
+                        if parsed.get("acq_purpose"):
+                            entry["acq_purpose"] = parsed["acq_purpose"]
+                        if parsed.get("acq_method"):
+                            entry["acq_method"] = parsed["acq_method"]
+
+                    elif is_cancel and text:
+                        parsed = parse_cancel_doc(text)
+                        if parsed.get("shares_common"):
+                            entry["shares_common"] = parsed["shares_common"]
                         if parsed.get("total_shares"):
                             entry["total_shares"] = parsed["total_shares"]
+
+                    # ② 구조화 API (보조)
+                    if is_acq and (not entry["shares_common"] or not entry["acq_period_start"]):
+                        detail = fetch_api_detail(corp_code, rcept_dt)
+                        time.sleep(0.3)
+                        if detail:
+                            if not entry["shares_common"]:
+                                entry["shares_common"] = to_int(detail.get("aqpln_stk_ostk"))
+                            if not entry["amount_common"]:
+                                entry["amount_common"] = to_int(detail.get("aqpln_prc_ostk"))
+                            if not entry["acq_purpose"]:
+                                entry["acq_purpose"] = (detail.get("aq_pp") or "").strip() or None
+                            if not entry["acq_method"]:
+                                entry["acq_method"] = (detail.get("aq_mth") or "").strip() or None
+                            entry["acq_period_start"] = (detail.get("aqexpd_bgd") or "").strip() or None
+                            entry["acq_period_end"] = (detail.get("aqexpd_edd") or "").strip() or None
+                            entry["acq_decision_date"] = (detail.get("aq_dd") or "").strip() or None
 
                     if entry["shares_common"] and entry["total_shares"]:
                         entry["ratio_pct"] = round(
                             entry["shares_common"] / entry["total_shares"] * 100, 2
                         )
+
+                    ok = "✓" if entry["shares_common"] else "✗"
+                    print(f"  [{ok}] {corp_name} / {report_nm}")
 
                     data["entries"].append(entry)
                     existing.add(rcept_no)
