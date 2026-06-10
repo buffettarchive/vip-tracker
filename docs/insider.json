@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-10T11:35+09:00",
+  "updated_at": "2026-06-10T11:45+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260610000160",
+  "last_seen": "20260610000165",
   "disclosures": [
+    {
+      "rcept_no": "20260610000165",
+      "rcept_dt": "2026-06-10",
+      "corp_name": "마이크로디지탈",
+      "stock_code": "305090",
+      "market": "KOSDAQ",
+      "corp_code": "01267967",
+      "repror": "김경남",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "34,843",
+      "total_cnt": "3,731,108",
+      "irds_rate": "-0.32",
+      "hold_rate": "19.83",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260610000127",
       "rcept_dt": "2026-06-10",
