@@ -1,12 +1,14 @@
 {
-  "updated_at": "2026-06-10T21:33+09:00",
+  "updated_at": "2026-06-11T04:34+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
     "얼라인파트너스자산운용",
     "라이프자산운용",
     "에셋플러스자산운용",
-    "트러스톤자산운용"
+    "트러스톤자산운용",
+    "Fidelity",
+    "Miri Capital Management"
   ],
   "last_seen": "20260610000688",
   "disclosures": [
@@ -198,12 +200,12 @@
       "stock_code": "353810",
       "corp_code": "01480568",
       "stkrt": "5.30",
-      "stkrt_prev": "",
+      "stkrt_prev": "5.30",
       "stkqy": "1752374",
       "report_resn": "5% 이상 신규취득",
       "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "매수(신규)"
+      "kind": "기타"
     },
     {
       "rcept_no": "20260529001641",
@@ -213,12 +215,12 @@
       "stock_code": "069960",
       "corp_code": "00428251",
       "stkrt": "5.23",
-      "stkrt_prev": "",
+      "stkrt_prev": "5.23",
       "stkqy": "1128042",
       "report_resn": "5% 이상 신규취득",
       "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "매수(신규)"
+      "kind": "기타"
     },
     {
       "rcept_no": "20260528000890",
@@ -228,12 +230,12 @@
       "stock_code": "005810",
       "corp_code": "00155531",
       "stkrt": "5.05",
-      "stkrt_prev": "",
+      "stkrt_prev": "5.05",
       "stkqy": "728174",
       "report_resn": "5% 이상 신규취득",
       "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "매수(신규)"
+      "kind": "기타"
     },
     {
       "rcept_no": "20260526000493",
@@ -243,12 +245,12 @@
       "stock_code": "419080",
       "corp_code": "01587056",
       "stkrt": "5.89",
-      "stkrt_prev": "",
+      "stkrt_prev": "5.89",
       "stkqy": "668850",
       "report_resn": "5%이상 보유 신규보고",
       "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "매수(신규)"
+      "kind": "기타"
     },
     {
       "rcept_no": "20260526000063",
@@ -273,12 +275,12 @@
       "stock_code": "053610",
       "corp_code": "00325112",
       "stkrt": "6.55",
-      "stkrt_prev": "",
+      "stkrt_prev": "6.55",
       "stkqy": "589668",
       "report_resn": "5% 이상 신규취득",
       "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "매수(신규)"
+      "kind": "기타"
     },
     {
       "rcept_no": "20260518000285",
@@ -288,12 +290,12 @@
       "stock_code": "092460",
       "corp_code": "00528515",
       "stkrt": "6.74",
-      "stkrt_prev": "",
+      "stkrt_prev": "6.74",
       "stkqy": "1153227",
       "report_resn": "5% 이상 신규취득",
       "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "매수(신규)"
+      "kind": "기타"
     },
     {
       "rcept_no": "20260512000546",
@@ -303,12 +305,12 @@
       "stock_code": "024800",
       "corp_code": "00173999",
       "stkrt": "5.89",
-      "stkrt_prev": "",
+      "stkrt_prev": "5.89",
       "stkqy": "2180527",
       "report_resn": "5% 이상 신규취득",
       "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "매수(신규)"
+      "kind": "기타"
     },
     {
       "rcept_no": "20260511000502",
@@ -318,12 +320,12 @@
       "stock_code": "039830",
       "corp_code": "00141556",
       "stkrt": "5.47",
-      "stkrt_prev": "",
+      "stkrt_prev": "5.47",
       "stkqy": "589030",
       "report_resn": "5% 이상 신규취득",
       "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "매수(신규)"
+      "kind": "기타"
     },
     {
       "rcept_no": "20260511000065",
@@ -381,7 +383,7 @@
       "stkrt_prev": "5.07",
       "stkqy": "3750764",
       "report_resn": "장내매매, 시간외대량매매로 인한 변동보고 및주요계약대상 주식 수 변경, 주식담보해제 ※ 보고자 본인은 보고서",
-      "purpose": "",
+      "purpose": "경영권",
       "report_nm": "주식등의대량보유상황보고서(일반)",
       "kind": "매수"
     },
@@ -396,7 +398,7 @@
       "stkrt_prev": "23.02",
       "stkqy": "12666959",
       "report_resn": "보유주식에 관한 질권 담보 설정 ※ 보고자 본인은 보고서작성기준일 현재 본인과 특별관계자의 주식등의 보유상황",
-      "purpose": "",
+      "purpose": "경영권",
       "report_nm": "주식등의대량보유상황보고서(일반)",
       "kind": "매수"
     },
@@ -408,12 +410,12 @@
       "stock_code": "039830",
       "corp_code": "00141556",
       "stkrt": "4.95",
-      "stkrt_prev": "",
+      "stkrt_prev": "4.95",
       "stkqy": "532704",
       "report_resn": "5% 이상 신규취득",
       "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "매수(신규)"
+      "kind": "기타"
     },
     {
       "rcept_no": "20260413002729",
@@ -426,7 +428,7 @@
       "stkrt_prev": "23.02",
       "stkqy": "12616959",
       "report_resn": "시간외대량매매에 따른 보유비율 변동,주요계약대상 주식 수 변경 ※ 보고자 본인은 보고서작성기준일 현재 본인과",
-      "purpose": "",
+      "purpose": "경영권",
       "report_nm": "주식등의대량보유상황보고서(일반)",
       "kind": "기타"
     },
@@ -441,7 +443,7 @@
       "stkrt_prev": "18.05",
       "stkqy": "4080940",
       "report_resn": "시간외대량매매에 따른 보유비율 변동, 주요계약대상 주식 수 변경 ※ 보고자 본인은 보고서작성기준일 현재 본인",
-      "purpose": "",
+      "purpose": "경영권",
       "report_nm": "주식등의대량보유상황보고서(일반)",
       "kind": "기타"
     },
@@ -546,7 +548,7 @@
       "stkrt_prev": "8.16",
       "stkqy": "903083",
       "report_resn": "시간외대량매매, 발행회사 이익소각에 따른 보유비율 변동, 주요계약대상 주식 수 변경 ※ 보고자 본인은 보고서",
-      "purpose": "",
+      "purpose": "경영권",
       "report_nm": "주식등의대량보유상황보고서(일반)",
       "kind": "매수"
     },
@@ -603,12 +605,12 @@
       "stock_code": "093050",
       "corp_code": "00593032",
       "stkrt": "5.49",
-      "stkrt_prev": "",
+      "stkrt_prev": "5.49",
       "stkqy": "1606070",
       "report_resn": "5% 이상 신규취득",
       "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "매수(신규)"
+      "kind": "기타"
     },
     {
       "rcept_no": "20260327001682",
@@ -618,12 +620,12 @@
       "stock_code": "180060",
       "corp_code": "00874937",
       "stkrt": "47.09",
-      "stkrt_prev": "",
+      "stkrt_prev": "47.09",
       "stkqy": "6681737",
       "report_resn": "주식매매계약 및 전환사채매매계약 체결에 따른신규보고 ※ 상기 보유주식등의 수 및 보유비율은 금번 주식매매계약",
-      "purpose": "",
+      "purpose": "경영권",
       "report_nm": "주식등의대량보유상황보고서(일반)",
-      "kind": "매수(신규)"
+      "kind": "기타"
     },
     {
       "rcept_no": "20260327001265",
@@ -648,12 +650,12 @@
       "stock_code": "204620",
       "corp_code": "01042711",
       "stkrt": "6.95",
-      "stkrt_prev": "",
+      "stkrt_prev": "6.95",
       "stkqy": "4882969",
       "report_resn": "5% 이상 신규취득",
       "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "매수(신규)"
+      "kind": "기타"
     },
     {
       "rcept_no": "20260324000701",
