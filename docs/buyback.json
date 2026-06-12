@@ -1,6 +1,48 @@
 {
   "entries": [
     {
+      "rcept_no": "20260612000606",
+      "rcept_dt": "20260612",
+      "corp_code": "00123143",
+      "corp_name": "보령",
+      "corp_cls": "Y",
+      "report_nm": "주요사항보고서(자기주식취득결정)",
+      "type": "취득",
+      "shares_common": 2380952,
+      "shares_other": null,
+      "amount_common": 20000000000,
+      "amount_other": null,
+      "acq_purpose": "임직원 보상 재원 활용",
+      "acq_method": "유가증권 시장을 통한 직접 취득",
+      "acq_period_start": "2026년 06월 15일",
+      "acq_period_end": "2026년 09월 14일",
+      "acq_decision_date": "2026년 06월 12일",
+      "total_shares": null,
+      "ratio_pct": null,
+      "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260612000606"
+    },
+    {
+      "rcept_no": "20260612000592",
+      "rcept_dt": "20260612",
+      "corp_code": "00265005",
+      "corp_name": "옴니시스템",
+      "corp_cls": "K",
+      "report_nm": "주요사항보고서(자기주식취득결정)",
+      "type": "취득",
+      "shares_common": 3194888,
+      "shares_other": null,
+      "amount_common": 2000000000,
+      "amount_other": null,
+      "acq_purpose": "주가안정 및 주주가치 제고",
+      "acq_method": "코스닥시장을 통한 장내 직접취득",
+      "acq_period_start": "2026년 06월 15일",
+      "acq_period_end": "2026년 09월 14일",
+      "acq_decision_date": "2026년 06월 12일",
+      "total_shares": null,
+      "ratio_pct": null,
+      "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260612000592"
+    },
+    {
       "rcept_no": "20260610000586",
       "rcept_dt": "20260610",
       "corp_code": "01703849",
@@ -5167,5 +5209,5 @@
       "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250610000225"
     }
   ],
-  "last_seen": "20260610000586"
+  "last_seen": "20260612000606"
 }
