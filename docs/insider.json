@@ -1,8 +1,42 @@
 {
-  "updated_at": "2026-06-16T11:19+09:00",
+  "updated_at": "2026-06-16T11:49+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260615000324",
   "disclosures": [
+    {
+      "rcept_no": "20260616000053",
+      "rcept_dt": "2026-06-16",
+      "corp_name": "푸드웰",
+      "stock_code": "005670",
+      "market": "KOSDAQ",
+      "corp_code": "00165103",
+      "repror": "최영길",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "5,000",
+      "total_cnt": "20,000",
+      "irds_rate": "0.05",
+      "hold_rate": "0.20",
+      "method": "장내매수"
+    },
+    {
+      "rcept_no": "20260616000052",
+      "rcept_dt": "2026-06-16",
+      "corp_name": "아나패스",
+      "stock_code": "123860",
+      "market": "KOSDAQ",
+      "corp_code": "00761952",
+      "repror": "김도완",
+      "ofcps": "이사",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "200",
+      "total_cnt": "2,700",
+      "irds_rate": "0.00",
+      "hold_rate": "0.02",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260616000044",
       "rcept_dt": "2026-06-16",
