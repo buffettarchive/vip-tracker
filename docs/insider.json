@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-16T10:29+09:00",
+  "updated_at": "2026-06-16T10:59+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260615000324",
   "disclosures": [
+    {
+      "rcept_no": "20260616000039",
+      "rcept_dt": "2026-06-16",
+      "corp_name": "대림통상",
+      "stock_code": "006570",
+      "market": "KOSPI",
+      "corp_code": "00109824",
+      "repror": "디앤디파트너스",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "9,500",
+      "total_cnt": "5,998,169",
+      "irds_rate": "0.06",
+      "hold_rate": "39.39",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260616000029",
       "rcept_dt": "2026-06-16",
