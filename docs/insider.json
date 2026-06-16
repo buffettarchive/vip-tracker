@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-16T10:09+09:00",
+  "updated_at": "2026-06-16T10:29+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260615000324",
   "disclosures": [
+    {
+      "rcept_no": "20260616000029",
+      "rcept_dt": "2026-06-16",
+      "corp_name": "이지스밸류플러스리츠",
+      "stock_code": "334890",
+      "market": "KOSPI",
+      "corp_code": "01394377",
+      "repror": "코람코주택도시기금위탁관리부동산투자회사",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "18,833",
+      "total_cnt": "7,084,631",
+      "irds_rate": "0.03",
+      "hold_rate": "10.20",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260616000021",
       "rcept_dt": "2026-06-16",
