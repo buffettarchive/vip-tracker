@@ -1,8 +1,42 @@
 {
-  "updated_at": "2026-06-16T15:30+09:00",
+  "updated_at": "2026-06-16T15:49+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260615000324",
   "disclosures": [
+    {
+      "rcept_no": "20260616000203",
+      "rcept_dt": "2026-06-16",
+      "corp_name": "제이스로보틱스",
+      "stock_code": "090470",
+      "market": "KOSDAQ",
+      "corp_code": "00493185",
+      "repror": "정대흠",
+      "ofcps": "부사장",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "2,928",
+      "total_cnt": "172,928",
+      "irds_rate": "0.02",
+      "hold_rate": "0.99",
+      "method": "장내매수"
+    },
+    {
+      "rcept_no": "20260616000197",
+      "rcept_dt": "2026-06-16",
+      "corp_name": "성신양회",
+      "stock_code": "004980",
+      "market": "KOSPI",
+      "corp_code": "00132804",
+      "repror": "김석현",
+      "ofcps": "사장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "31,102",
+      "total_cnt": "1,220,664",
+      "irds_rate": "0.12",
+      "hold_rate": "4.83",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260616000163",
       "rcept_dt": "2026-06-16",
