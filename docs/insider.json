@@ -1,8 +1,42 @@
 {
-  "updated_at": "2026-06-16T14:49+09:00",
+  "updated_at": "2026-06-16T15:30+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260615000324",
   "disclosures": [
+    {
+      "rcept_no": "20260616000163",
+      "rcept_dt": "2026-06-16",
+      "corp_name": "탑엔지니어링",
+      "stock_code": "065130",
+      "market": "KOSDAQ",
+      "corp_code": "00366845",
+      "repror": "서용규",
+      "ofcps": "전무이사",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,000",
+      "total_cnt": "2,000",
+      "irds_rate": "0.00",
+      "hold_rate": "0.01",
+      "method": "장내매수"
+    },
+    {
+      "rcept_no": "20260616000162",
+      "rcept_dt": "2026-06-16",
+      "corp_name": "한창제지",
+      "stock_code": "009460",
+      "market": "KOSPI",
+      "corp_code": "00163761",
+      "repror": "이상무",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "9,153",
+      "total_cnt": "9,153",
+      "irds_rate": "0.07",
+      "hold_rate": "0.07",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260616000134",
       "rcept_dt": "2026-06-16",
