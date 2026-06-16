@@ -1,8 +1,42 @@
 {
-  "updated_at": "2026-06-16T13:49+09:00",
+  "updated_at": "2026-06-16T13:59+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260615000324",
   "disclosures": [
+    {
+      "rcept_no": "20260616000095",
+      "rcept_dt": "2026-06-16",
+      "corp_name": "한화손해보험",
+      "stock_code": "000370",
+      "market": "KOSPI",
+      "corp_code": "00135917",
+      "repror": "서지훈",
+      "ofcps": "부사장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "2,000",
+      "total_cnt": "42,472",
+      "irds_rate": "0.00",
+      "hold_rate": "0.03",
+      "method": "장내매수"
+    },
+    {
+      "rcept_no": "20260616000089",
+      "rcept_dt": "2026-06-16",
+      "corp_name": "한화손해보험",
+      "stock_code": "000370",
+      "market": "KOSPI",
+      "corp_code": "00135917",
+      "repror": "하헌용",
+      "ofcps": "전무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "8,000",
+      "total_cnt": "46,000",
+      "irds_rate": "0.01",
+      "hold_rate": "0.03",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260616000087",
       "rcept_dt": "2026-06-16",
