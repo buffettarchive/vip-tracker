@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-17T16:57+09:00",
+  "updated_at": "2026-06-17T17:16+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260615000324",
   "disclosures": [
+    {
+      "rcept_no": "20260617000449",
+      "rcept_dt": "2026-06-17",
+      "corp_name": "티사이언티픽",
+      "stock_code": "057680",
+      "market": "KOSDAQ",
+      "corp_code": "00372688",
+      "repror": "제이에스아이홀딩스",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "1,810,676",
+      "total_cnt": "1,810,676",
+      "irds_rate": "11.47",
+      "hold_rate": "11.47",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260617000422",
       "rcept_dt": "2026-06-17",
