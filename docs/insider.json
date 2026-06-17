@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-17T17:31+09:00",
+  "updated_at": "2026-06-17T17:51+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260615000324",
   "disclosures": [
+    {
+      "rcept_no": "20260617000489",
+      "rcept_dt": "2026-06-17",
+      "corp_name": "에피소드컴퍼니",
+      "stock_code": "317530",
+      "market": "KOSDAQ",
+      "corp_code": "01267222",
+      "repror": "김동하",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "10,000",
+      "total_cnt": "10,000",
+      "irds_rate": "0.06",
+      "hold_rate": "0.06",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260617000477",
       "rcept_dt": "2026-06-17",
