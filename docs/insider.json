@@ -1,8 +1,42 @@
 {
-  "updated_at": "2026-06-17T10:10+09:00",
+  "updated_at": "2026-06-17T10:25+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260615000324",
   "disclosures": [
+    {
+      "rcept_no": "20260617000091",
+      "rcept_dt": "2026-06-17",
+      "corp_name": "천보",
+      "stock_code": "278280",
+      "market": "KOSDAQ",
+      "corp_code": "00897752",
+      "repror": "이근필",
+      "ofcps": "상무이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "301",
+      "total_cnt": "301",
+      "irds_rate": "0.00",
+      "hold_rate": "0.00",
+      "method": "장내매수"
+    },
+    {
+      "rcept_no": "20260617000087",
+      "rcept_dt": "2026-06-17",
+      "corp_name": "일진파워",
+      "stock_code": "094820",
+      "market": "KOSDAQ",
+      "corp_code": "00485177",
+      "repror": "이상업",
+      "ofcps": "회장",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "800",
+      "total_cnt": "165,433",
+      "irds_rate": "0.01",
+      "hold_rate": "1.10",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260617000068",
       "rcept_dt": "2026-06-17",
