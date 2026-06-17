@@ -1,8 +1,42 @@
 {
-  "updated_at": "2026-06-17T17:16+09:00",
+  "updated_at": "2026-06-17T17:31+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260615000324",
   "disclosures": [
+    {
+      "rcept_no": "20260617000477",
+      "rcept_dt": "2026-06-17",
+      "corp_name": "한일홀딩스",
+      "stock_code": "003300",
+      "market": "KOSPI",
+      "corp_code": "00162993",
+      "repror": "박지훈",
+      "ofcps": "부사장",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "2,101",
+      "total_cnt": "2,101",
+      "irds_rate": "0.01",
+      "hold_rate": "0.01",
+      "method": "장내매수"
+    },
+    {
+      "rcept_no": "20260617000471",
+      "rcept_dt": "2026-06-17",
+      "corp_name": "삼진제약",
+      "stock_code": "005500",
+      "market": "KOSPI",
+      "corp_code": "00128412",
+      "repror": "박창익",
+      "ofcps": "상무이사",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,310",
+      "total_cnt": "8,310",
+      "irds_rate": "0.01",
+      "hold_rate": "0.06",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260617000449",
       "rcept_dt": "2026-06-17",
