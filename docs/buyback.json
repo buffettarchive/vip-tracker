@@ -1,6 +1,27 @@
 {
   "entries": [
     {
+      "rcept_no": "20260617000364",
+      "rcept_dt": "20260617",
+      "corp_code": "01095722",
+      "corp_name": "심텍",
+      "corp_cls": "K",
+      "report_nm": "주요사항보고서(자기주식취득결정)",
+      "type": "취득",
+      "shares_common": null,
+      "shares_other": null,
+      "amount_common": null,
+      "amount_other": null,
+      "acq_purpose": null,
+      "acq_method": null,
+      "acq_period_start": null,
+      "acq_period_end": null,
+      "acq_decision_date": null,
+      "total_shares": null,
+      "ratio_pct": null,
+      "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260617000364"
+    },
+    {
       "rcept_no": "20260617000328",
       "rcept_dt": "20260617",
       "corp_code": "01042085",
@@ -5356,5 +5377,5 @@
       "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250610000225"
     }
   ],
-  "last_seen": "20260617000328"
+  "last_seen": "20260617000364"
 }
