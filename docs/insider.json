@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-17T15:40+09:00",
+  "updated_at": "2026-06-17T15:50+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260615000324",
   "disclosures": [
+    {
+      "rcept_no": "20260617000354",
+      "rcept_dt": "2026-06-17",
+      "corp_name": "이녹스첨단소재",
+      "stock_code": "272290",
+      "market": "KOSDAQ",
+      "corp_code": "01237540",
+      "repror": "이녹스",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "37,954",
+      "total_cnt": "5,283,684",
+      "irds_rate": "0.57",
+      "hold_rate": "26.50",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260617000346",
       "rcept_dt": "2026-06-17",
