@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-18T09:55+09:00",
+  "updated_at": "2026-06-18T10:01+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260615000324",
   "disclosures": [
+    {
+      "rcept_no": "20260618000033",
+      "rcept_dt": "2026-06-18",
+      "corp_name": "태림포장",
+      "stock_code": "011280",
+      "market": "KOSPI",
+      "corp_code": "00153524",
+      "repror": "태림페이퍼",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "20,490",
+      "total_cnt": "48,989,754",
+      "irds_rate": "0.03",
+      "hold_rate": "69.19",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260618000031",
       "rcept_dt": "2026-06-18",
