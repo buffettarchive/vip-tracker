@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-18T11:16+09:00",
+  "updated_at": "2026-06-18T12:15+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260615000324",
   "disclosures": [
+    {
+      "rcept_no": "20260618000112",
+      "rcept_dt": "2026-06-18",
+      "corp_name": "티디에스팜",
+      "stock_code": "464280",
+      "market": "KOSDAQ",
+      "corp_code": "01232192",
+      "repror": "김철준",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "750",
+      "total_cnt": "2,539,847",
+      "irds_rate": "0.02",
+      "hold_rate": "45.93",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260618000093",
       "rcept_dt": "2026-06-18",
