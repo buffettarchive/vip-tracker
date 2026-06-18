@@ -1,8 +1,42 @@
 {
-  "updated_at": "2026-06-18T10:26+09:00",
+  "updated_at": "2026-06-18T11:16+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260615000324",
   "disclosures": [
+    {
+      "rcept_no": "20260618000093",
+      "rcept_dt": "2026-06-18",
+      "corp_name": "드림어스컴퍼니",
+      "stock_code": "060570",
+      "market": "KOSDAQ",
+      "corp_code": "00364467",
+      "repror": "이기영",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "28,000",
+      "total_cnt": "100,000",
+      "irds_rate": "0.03",
+      "hold_rate": "0.13",
+      "method": "장내매수"
+    },
+    {
+      "rcept_no": "20260618000083",
+      "rcept_dt": "2026-06-18",
+      "corp_name": "대림통상",
+      "stock_code": "006570",
+      "market": "KOSPI",
+      "corp_code": "00109824",
+      "repror": "디앤디파트너스",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "1,000",
+      "total_cnt": "6,012,474",
+      "irds_rate": "0.00",
+      "hold_rate": "39.48",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260618000054",
       "rcept_dt": "2026-06-18",
