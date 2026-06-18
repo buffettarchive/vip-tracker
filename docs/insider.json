@@ -1,8 +1,42 @@
 {
-  "updated_at": "2026-06-17T18:12+09:00",
+  "updated_at": "2026-06-18T09:26+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260615000324",
   "disclosures": [
+    {
+      "rcept_no": "20260618000015",
+      "rcept_dt": "2026-06-18",
+      "corp_name": "영림원소프트랩",
+      "stock_code": "060850",
+      "market": "KOSDAQ",
+      "corp_code": "00532129",
+      "repror": "주덕중",
+      "ofcps": "상무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "164",
+      "total_cnt": "8,844",
+      "irds_rate": "0.00",
+      "hold_rate": "0.11",
+      "method": "장내매수"
+    },
+    {
+      "rcept_no": "20260618000014",
+      "rcept_dt": "2026-06-18",
+      "corp_name": "브이씨",
+      "stock_code": "365900",
+      "market": "KOSDAQ",
+      "corp_code": "01354740",
+      "repror": "김준오",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "8,099",
+      "total_cnt": "2,239,882",
+      "irds_rate": "0.11",
+      "hold_rate": "30.64",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260617000498",
       "rcept_dt": "2026-06-17",
