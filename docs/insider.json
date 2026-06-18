@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-18T17:08+09:00",
+  "updated_at": "2026-06-18T17:52+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260615000324",
   "disclosures": [
+    {
+      "rcept_no": "20260618000385",
+      "rcept_dt": "2026-06-18",
+      "corp_name": "자연과환경",
+      "stock_code": "043910",
+      "market": "KOSDAQ",
+      "corp_code": "00418379",
+      "repror": "이병용",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "9,615",
+      "total_cnt": "369,158",
+      "irds_rate": "0.08",
+      "hold_rate": "3.25",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260618000355",
       "rcept_dt": "2026-06-18",
