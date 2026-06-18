@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-18T14:56+09:00",
+  "updated_at": "2026-06-18T15:06+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260615000324",
   "disclosures": [
+    {
+      "rcept_no": "20260618000194",
+      "rcept_dt": "2026-06-18",
+      "corp_name": "아이엠비디엑스",
+      "stock_code": "461030",
+      "market": "KOSDAQ",
+      "corp_code": "01497373",
+      "repror": "송상현",
+      "ofcps": "상무",
+      "rgist": "등기임원",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "20,001",
+      "total_cnt": "20,001",
+      "irds_rate": "0.14",
+      "hold_rate": "0.14",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260618000187",
       "rcept_dt": "2026-06-18",
