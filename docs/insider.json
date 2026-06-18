@@ -1,8 +1,42 @@
 {
-  "updated_at": "2026-06-18T16:17+09:00",
+  "updated_at": "2026-06-18T16:32+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260615000324",
   "disclosures": [
+    {
+      "rcept_no": "20260618000272",
+      "rcept_dt": "2026-06-18",
+      "corp_name": "대동",
+      "stock_code": "000490",
+      "market": "KOSPI",
+      "corp_code": "00109286",
+      "repror": "조성우",
+      "ofcps": "부사장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "5,000",
+      "total_cnt": "5,000",
+      "irds_rate": "0.02",
+      "hold_rate": "0.02",
+      "method": "장내매수"
+    },
+    {
+      "rcept_no": "20260618000269",
+      "rcept_dt": "2026-06-18",
+      "corp_name": "대동",
+      "stock_code": "000490",
+      "market": "KOSPI",
+      "corp_code": "00109286",
+      "repror": "나영중",
+      "ofcps": "부사장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "5,000",
+      "total_cnt": "6,241",
+      "irds_rate": "0.02",
+      "hold_rate": "0.02",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260618000268",
       "rcept_dt": "2026-06-18",
