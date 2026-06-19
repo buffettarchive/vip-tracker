@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-19T13:54+09:00",
+  "updated_at": "2026-06-19T13:59+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260619000217",
+  "last_seen": "20260619000223",
   "disclosures": [
+    {
+      "rcept_no": "20260619000223",
+      "rcept_dt": "2026-06-19",
+      "corp_name": "탑엔지니어링",
+      "stock_code": "065130",
+      "market": "KOSDAQ",
+      "corp_code": "00366845",
+      "repror": "서용규",
+      "ofcps": "전무이사",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "500",
+      "total_cnt": "2,500",
+      "irds_rate": "0.01",
+      "hold_rate": "0.02",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260619000217",
       "rcept_dt": "2026-06-19",
