@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-19T14:36+09:00",
+  "updated_at": "2026-06-19T14:50+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260619000282",
+  "last_seen": "20260619000296",
   "disclosures": [
+    {
+      "rcept_no": "20260619000296",
+      "rcept_dt": "2026-06-19",
+      "corp_name": "케이지에이",
+      "stock_code": "455180",
+      "market": "KOSDAQ",
+      "corp_code": "01638387",
+      "repror": "김옥태",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "38,067",
+      "total_cnt": "2,578,994",
+      "irds_rate": "0.28",
+      "hold_rate": "18.48",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260619000223",
       "rcept_dt": "2026-06-19",
