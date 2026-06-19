@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-19T09:54+09:00",
+  "updated_at": "2026-06-19T09:59+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -10,8 +10,23 @@
     "피델리티",
     "Miri"
   ],
-  "last_seen": "20260619000078",
+  "last_seen": "20260619000082",
   "disclosures": [
+    {
+      "rcept_no": "20260619000082",
+      "rcept_dt": "2026-06-19",
+      "firm": "Miri",
+      "corp_name": "스틱인베스트먼트",
+      "stock_code": "026890",
+      "corp_code": "00117498",
+      "stkrt": "",
+      "stkrt_prev": "",
+      "stkqy": "",
+      "report_resn": "",
+      "purpose": "",
+      "report_nm": "주식등의대량보유상황보고서(일반)",
+      "kind": "기타"
+    },
     {
       "rcept_no": "20260616000180",
       "rcept_dt": "2026-06-16",
