@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-19T13:49+09:00",
+  "updated_at": "2026-06-19T13:54+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260619000210",
+  "last_seen": "20260619000217",
   "disclosures": [
+    {
+      "rcept_no": "20260619000217",
+      "rcept_dt": "2026-06-19",
+      "corp_name": "제우스",
+      "stock_code": "079370",
+      "market": "KOSDAQ",
+      "corp_code": "00442570",
+      "repror": "조윤근",
+      "ofcps": "인사부문 담당",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "870",
+      "total_cnt": "3,620",
+      "irds_rate": "0.00",
+      "hold_rate": "0.01",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260619000210",
       "rcept_dt": "2026-06-19",
