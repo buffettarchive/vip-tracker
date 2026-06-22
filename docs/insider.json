@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-22T13:29+09:00",
+  "updated_at": "2026-06-22T14:24+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260622000115",
+  "last_seen": "20260622000142",
   "disclosures": [
+    {
+      "rcept_no": "20260622000142",
+      "rcept_dt": "2026-06-22",
+      "corp_name": "원텍",
+      "stock_code": "336570",
+      "market": "KOSDAQ",
+      "corp_code": "01407909",
+      "repror": "김종원",
+      "ofcps": "대표이사 회장",
+      "rgist": "등기임원",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "33,156",
+      "total_cnt": "28,599,214",
+      "irds_rate": "0.18",
+      "hold_rate": "31.93",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260622000111",
       "rcept_dt": "2026-06-22",
