@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-22T17:59+09:00",
+  "updated_at": "2026-06-22T18:24+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260622000402",
+  "last_seen": "20260622000409",
   "disclosures": [
+    {
+      "rcept_no": "20260622000409",
+      "rcept_dt": "2026-06-22",
+      "corp_name": "핑거",
+      "stock_code": "163730",
+      "market": "KOSDAQ",
+      "corp_code": "01142075",
+      "repror": "서룡전자",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "45,000",
+      "total_cnt": "5,971,028",
+      "irds_rate": "0.30",
+      "hold_rate": "39.56",
+      "method": "장외매수"
+    },
     {
       "rcept_no": "20260622000351",
       "rcept_dt": "2026-06-22",
