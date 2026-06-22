@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-22T14:24+09:00",
+  "updated_at": "2026-06-22T14:49+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260622000142",
+  "last_seen": "20260622000167",
   "disclosures": [
+    {
+      "rcept_no": "20260622000167",
+      "rcept_dt": "2026-06-22",
+      "corp_name": "천보",
+      "stock_code": "278280",
+      "market": "KOSDAQ",
+      "corp_code": "00897752",
+      "repror": "이상율",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "39,720",
+      "total_cnt": "4,297,964",
+      "irds_rate": "-5.01",
+      "hold_rate": "29.34",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260622000142",
       "rcept_dt": "2026-06-22",
