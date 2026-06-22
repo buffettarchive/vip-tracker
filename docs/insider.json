@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-22T17:04+09:00",
+  "updated_at": "2026-06-22T17:26+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260622000338",
+  "last_seen": "20260622000356",
   "disclosures": [
+    {
+      "rcept_no": "20260622000351",
+      "rcept_dt": "2026-06-22",
+      "corp_name": "THE CUBE&",
+      "stock_code": "013720",
+      "market": "KOSDAQ",
+      "corp_code": "00151605",
+      "repror": "배진한",
+      "ofcps": "등기이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "20,000",
+      "total_cnt": "3,938,042",
+      "irds_rate": "0.03",
+      "hold_rate": "6.47",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260622000331",
       "rcept_dt": "2026-06-22",
