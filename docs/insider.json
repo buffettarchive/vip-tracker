@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-22T10:24+09:00",
+  "updated_at": "2026-06-22T10:59+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260622000040",
+  "last_seen": "20260622000073",
   "disclosures": [
+    {
+      "rcept_no": "20260622000071",
+      "rcept_dt": "2026-06-22",
+      "corp_name": "HLB글로벌",
+      "stock_code": "003580",
+      "market": "KOSPI",
+      "corp_code": "00169048",
+      "repror": "김광재",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "15,000",
+      "total_cnt": "22,000",
+      "irds_rate": "0.03",
+      "hold_rate": "0.04",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260622000040",
       "rcept_dt": "2026-06-22",
