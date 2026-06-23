@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-23T10:29+09:00",
+  "updated_at": "2026-06-23T11:24+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260623000045",
+  "last_seen": "20260623000065",
   "disclosures": [
+    {
+      "rcept_no": "20260623000065",
+      "rcept_dt": "2026-06-23",
+      "corp_name": "로체시스템즈",
+      "stock_code": "071280",
+      "market": "KOSDAQ",
+      "corp_code": "00363486",
+      "repror": "박기환",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "17,326",
+      "total_cnt": "484,381",
+      "irds_rate": "0.11",
+      "hold_rate": "3.16",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260623000045",
       "rcept_dt": "2026-06-23",
