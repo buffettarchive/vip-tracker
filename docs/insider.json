@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-23T09:09+09:00",
+  "updated_at": "2026-06-23T09:39+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260623000002",
+  "last_seen": "20260623000013",
   "disclosures": [
+    {
+      "rcept_no": "20260623000013",
+      "rcept_dt": "2026-06-23",
+      "corp_name": "디알텍",
+      "stock_code": "214680",
+      "market": "KOSDAQ",
+      "corp_code": "01062867",
+      "repror": "이길수",
+      "ofcps": "부사장\n(CFO)",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "80,000",
+      "total_cnt": "785,276",
+      "irds_rate": "-0.01",
+      "hold_rate": "0.89",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260623000002",
       "rcept_dt": "2026-06-23",
