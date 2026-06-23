@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-23T10:09+09:00",
+  "updated_at": "2026-06-23T10:29+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260623000033",
+  "last_seen": "20260623000045",
   "disclosures": [
+    {
+      "rcept_no": "20260623000045",
+      "rcept_dt": "2026-06-23",
+      "corp_name": "스틱인베스트먼트",
+      "stock_code": "026890",
+      "market": "KOSPI",
+      "corp_code": "00117498",
+      "repror": "TheMiriStrategicEmergingMarketsFundLP",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "15,100",
+      "total_cnt": "10,421,487",
+      "irds_rate": "1.91",
+      "hold_rate": "26.88",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260623000033",
       "rcept_dt": "2026-06-23",
