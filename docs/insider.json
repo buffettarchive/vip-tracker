@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-23T09:39+09:00",
+  "updated_at": "2026-06-23T10:09+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260623000013",
+  "last_seen": "20260623000033",
   "disclosures": [
+    {
+      "rcept_no": "20260623000033",
+      "rcept_dt": "2026-06-23",
+      "corp_name": "iM금융지주",
+      "stock_code": "139130",
+      "market": "KOSPI",
+      "corp_code": "00878915",
+      "repror": "천병규",
+      "ofcps": "부사장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,000",
+      "total_cnt": "19,000",
+      "irds_rate": "0.00",
+      "hold_rate": "0.01",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260623000013",
       "rcept_dt": "2026-06-23",
