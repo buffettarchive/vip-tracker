@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-23T17:44+09:00",
+  "updated_at": "2026-06-23T18:04+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260623000396",
+  "last_seen": "20260623000406",
   "disclosures": [
+    {
+      "rcept_no": "20260623000406",
+      "rcept_dt": "2026-06-23",
+      "corp_name": "동원금속",
+      "stock_code": "018500",
+      "market": "KOSPI",
+      "corp_code": "00118008",
+      "repror": "이승재",
+      "ofcps": "부사장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "818,938",
+      "total_cnt": "5,237,065",
+      "irds_rate": "1.75",
+      "hold_rate": "11.20",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260623000363",
       "rcept_dt": "2026-06-23",
