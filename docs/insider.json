@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-23T13:59+09:00",
+  "updated_at": "2026-06-23T14:19+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260623000140",
+  "last_seen": "20260623000162",
   "disclosures": [
+    {
+      "rcept_no": "20260623000162",
+      "rcept_dt": "2026-06-23",
+      "corp_name": "일월지엠엘",
+      "stock_code": "178780",
+      "market": "KOSDAQ",
+      "corp_code": "00923826",
+      "repror": "김영동",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "22,652",
+      "total_cnt": "1,103,452",
+      "irds_rate": "-0.31",
+      "hold_rate": "5.92",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260623000140",
       "rcept_dt": "2026-06-23",
