@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-24T14:39+09:00",
+  "updated_at": "2026-06-24T14:49+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260624000193",
+  "last_seen": "20260624000203",
   "disclosures": [
+    {
+      "rcept_no": "20260624000199",
+      "rcept_dt": "2026-06-24",
+      "corp_name": "CS",
+      "stock_code": "065770",
+      "market": "KOSDAQ",
+      "corp_code": "00303703",
+      "repror": "김태연",
+      "ofcps": "대표이사(각자)",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "7,000",
+      "total_cnt": "13,551",
+      "irds_rate": "0.07",
+      "hold_rate": "0.14",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260624000189",
       "rcept_dt": "2026-06-24",
