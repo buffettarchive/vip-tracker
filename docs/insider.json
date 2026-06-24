@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-24T09:09+09:00",
+  "updated_at": "2026-06-24T09:29+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260624000004",
+  "last_seen": "20260624000016",
   "disclosures": [
+    {
+      "rcept_no": "20260624000015",
+      "rcept_dt": "2026-06-24",
+      "corp_name": "라온시큐어",
+      "stock_code": "042510",
+      "market": "KOSDAQ",
+      "corp_code": "00255433",
+      "repror": "이순형",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "25,800",
+      "total_cnt": "1,960,000",
+      "irds_rate": "0.38",
+      "hold_rate": "17.64",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260624000004",
       "rcept_dt": "2026-06-24",
