@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-24T09:29+09:00",
+  "updated_at": "2026-06-24T09:49+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260624000016",
+  "last_seen": "20260624000030",
   "disclosures": [
+    {
+      "rcept_no": "20260624000030",
+      "rcept_dt": "2026-06-24",
+      "corp_name": "세아메카닉스",
+      "stock_code": "396300",
+      "market": "KOSDAQ",
+      "corp_code": "00534701",
+      "repror": "조창현",
+      "ofcps": "사내이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "7,388",
+      "total_cnt": "84,861",
+      "irds_rate": "0.03",
+      "hold_rate": "0.32",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260624000015",
       "rcept_dt": "2026-06-24",
