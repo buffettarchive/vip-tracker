@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-24T13:59+09:00",
+  "updated_at": "2026-06-24T14:29+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260624000156",
+  "last_seen": "20260624000183",
   "disclosures": [
+    {
+      "rcept_no": "20260624000183",
+      "rcept_dt": "2026-06-24",
+      "corp_name": "아즈텍WB",
+      "stock_code": "032080",
+      "market": "KOSDAQ",
+      "corp_code": "00201131",
+      "repror": "유송코퍼레이션",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "28,538",
+      "total_cnt": "121,735",
+      "irds_rate": "0.14",
+      "hold_rate": "0.57",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260624000156",
       "rcept_dt": "2026-06-24",
