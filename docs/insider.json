@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-24T16:39+09:00",
+  "updated_at": "2026-06-24T16:59+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260624000345",
+  "last_seen": "20260624000393",
   "disclosures": [
+    {
+      "rcept_no": "20260624000393",
+      "rcept_dt": "2026-06-24",
+      "corp_name": "스맥",
+      "stock_code": "099440",
+      "market": "KOSDAQ",
+      "corp_code": "00580056",
+      "repror": "최영섭",
+      "ofcps": "회장",
+      "rgist": "-",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "127,603",
+      "total_cnt": "7,729,594",
+      "irds_rate": "0.19",
+      "hold_rate": "11.33",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260624000338",
       "rcept_dt": "2026-06-24",
