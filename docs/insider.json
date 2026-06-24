@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-24T10:19+09:00",
+  "updated_at": "2026-06-24T10:29+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260624000045",
+  "last_seen": "20260624000054",
   "disclosures": [
+    {
+      "rcept_no": "20260624000054",
+      "rcept_dt": "2026-06-24",
+      "corp_name": "삼현",
+      "stock_code": "437730",
+      "market": "KOSDAQ",
+      "corp_code": "00262266",
+      "repror": "서재복",
+      "ofcps": "부사장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,000",
+      "total_cnt": "2,000",
+      "irds_rate": "0.01",
+      "hold_rate": "0.01",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260624000045",
       "rcept_dt": "2026-06-24",
