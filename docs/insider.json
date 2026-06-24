@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-24T10:09+09:00",
+  "updated_at": "2026-06-24T10:19+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260624000040",
+  "last_seen": "20260624000045",
   "disclosures": [
+    {
+      "rcept_no": "20260624000045",
+      "rcept_dt": "2026-06-24",
+      "corp_name": "제테마",
+      "stock_code": "216080",
+      "market": "KOSDAQ",
+      "corp_code": "01222867",
+      "repror": "조상준",
+      "ofcps": "상무이사",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "55",
+      "total_cnt": "830",
+      "irds_rate": "0",
+      "hold_rate": "0.00",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260624000040",
       "rcept_dt": "2026-06-24",
