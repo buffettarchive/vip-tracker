@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-24T11:19+09:00",
+  "updated_at": "2026-06-24T11:29+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260624000089",
+  "last_seen": "20260624000096",
   "disclosures": [
+    {
+      "rcept_no": "20260624000096",
+      "rcept_dt": "2026-06-24",
+      "corp_name": "동운아나텍",
+      "stock_code": "094170",
+      "market": "KOSDAQ",
+      "corp_code": "00695969",
+      "repror": "김동철",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "68,349",
+      "total_cnt": "2,789,051",
+      "irds_rate": "0.33",
+      "hold_rate": "13.34",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260624000089",
       "rcept_dt": "2026-06-24",
