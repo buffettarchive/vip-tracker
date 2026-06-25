@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-25T10:19+09:00",
+  "updated_at": "2026-06-25T10:28+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260625000099",
+  "last_seen": "20260625000106",
   "disclosures": [
+    {
+      "rcept_no": "20260625000103",
+      "rcept_dt": "2026-06-25",
+      "corp_name": "엔알비",
+      "stock_code": "475230",
+      "market": "KOSDAQ",
+      "corp_code": "01708163",
+      "repror": "김춘식",
+      "ofcps": "전무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,075",
+      "total_cnt": "13,747",
+      "irds_rate": "0.01",
+      "hold_rate": "0.13",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260625000099",
       "rcept_dt": "2026-06-25",
