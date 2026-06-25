@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-25T11:39+09:00",
+  "updated_at": "2026-06-25T11:59+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260625000180",
+  "last_seen": "20260625000186",
   "disclosures": [
+    {
+      "rcept_no": "20260625000186",
+      "rcept_dt": "2026-06-25",
+      "corp_name": "이엔셀",
+      "stock_code": "456070",
+      "market": "KOSDAQ",
+      "corp_code": "01544468",
+      "repror": "김주열",
+      "ofcps": "전무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "2,500",
+      "total_cnt": "6,900",
+      "irds_rate": "0.02",
+      "hold_rate": "0.06",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260625000160",
       "rcept_dt": "2026-06-25",
