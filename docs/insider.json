@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-24T18:24+09:00",
+  "updated_at": "2026-06-25T09:39+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260624000499",
+  "last_seen": "20260625000060",
   "disclosures": [
+    {
+      "rcept_no": "20260625000060",
+      "rcept_dt": "2026-06-25",
+      "corp_name": "더블유에스아이",
+      "stock_code": "299170",
+      "market": "KOSDAQ",
+      "corp_code": "01318261",
+      "repror": "안진수",
+      "ofcps": "상무이사",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "37,890",
+      "total_cnt": "69,290",
+      "irds_rate": "0.09",
+      "hold_rate": "0.17",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260624000499",
       "rcept_dt": "2026-06-24",
