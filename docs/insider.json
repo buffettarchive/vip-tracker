@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-25T14:34+09:00",
+  "updated_at": "2026-06-25T15:14+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260625000285",
+  "last_seen": "20260625000356",
   "disclosures": [
+    {
+      "rcept_no": "20260625000330",
+      "rcept_dt": "2026-06-25",
+      "corp_name": "제이피아이헬스케어",
+      "stock_code": "0010V0",
+      "market": "KOSDAQ",
+      "corp_code": "00185301",
+      "repror": "이승혜",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "2,130",
+      "total_cnt": "562,130",
+      "irds_rate": "0.04",
+      "hold_rate": "11.01",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260625000285",
       "rcept_dt": "2026-06-25",
