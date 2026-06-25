@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-25T09:39+09:00",
+  "updated_at": "2026-06-25T09:49+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260625000060",
+  "last_seen": "20260625000068",
   "disclosures": [
+    {
+      "rcept_no": "20260625000068",
+      "rcept_dt": "2026-06-25",
+      "corp_name": "대원전선",
+      "stock_code": "006340",
+      "market": "KOSPI",
+      "corp_code": "00260392",
+      "repror": "갑도물산",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "50,000",
+      "total_cnt": "16,917,805",
+      "irds_rate": "-0.49",
+      "hold_rate": "20.87",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260625000060",
       "rcept_dt": "2026-06-25",
