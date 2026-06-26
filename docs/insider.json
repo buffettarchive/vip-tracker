@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-26T18:29+09:00",
+  "updated_at": "2026-06-26T18:34+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260626000745",
+  "last_seen": "20260626000764",
   "disclosures": [
+    {
+      "rcept_no": "20260626000756",
+      "rcept_dt": "2026-06-26",
+      "corp_name": "클리오",
+      "stock_code": "237880",
+      "market": "KOSDAQ",
+      "corp_code": "00957735",
+      "repror": "홍명하",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "37,933",
+      "total_cnt": "2,377,970",
+      "irds_rate": "0.21",
+      "hold_rate": "13.16",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260626000745",
       "rcept_dt": "2026-06-26",
