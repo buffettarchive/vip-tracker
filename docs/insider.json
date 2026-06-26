@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-25T18:14+09:00",
+  "updated_at": "2026-06-26T09:29+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260625000615",
+  "last_seen": "20260626000029",
   "disclosures": [
+    {
+      "rcept_no": "20260626000029",
+      "rcept_dt": "2026-06-26",
+      "corp_name": "화성밸브",
+      "stock_code": "039610",
+      "market": "KOSDAQ",
+      "corp_code": "00217743",
+      "repror": "장원규",
+      "ofcps": "회장",
+      "rgist": "등기임원",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "20,000",
+      "total_cnt": "1,584,508",
+      "irds_rate": "0.19",
+      "hold_rate": "15.22",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260625000600",
       "rcept_dt": "2026-06-25",
