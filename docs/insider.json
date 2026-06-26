@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-26T10:59+09:00",
+  "updated_at": "2026-06-26T11:09+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260626000200",
+  "last_seen": "20260626000204",
   "disclosures": [
+    {
+      "rcept_no": "20260626000204",
+      "rcept_dt": "2026-06-26",
+      "corp_name": "디케이락",
+      "stock_code": "105740",
+      "market": "KOSDAQ",
+      "corp_code": "00533003",
+      "repror": "노은식",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "100,000",
+      "total_cnt": "3,146,900",
+      "irds_rate": "-5.11",
+      "hold_rate": "30.95",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260626000200",
       "rcept_dt": "2026-06-26",
