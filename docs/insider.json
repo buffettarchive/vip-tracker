@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-26T13:49+09:00",
+  "updated_at": "2026-06-26T13:59+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260626000301",
+  "last_seen": "20260626000313",
   "disclosures": [
+    {
+      "rcept_no": "20260626000313",
+      "rcept_dt": "2026-06-26",
+      "corp_name": "디와이피엔에프",
+      "stock_code": "104460",
+      "market": "KOSDAQ",
+      "corp_code": "00602136",
+      "repror": "유병욱",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,000",
+      "total_cnt": "3,500",
+      "irds_rate": "0.01",
+      "hold_rate": "0.03",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260626000301",
       "rcept_dt": "2026-06-26",
