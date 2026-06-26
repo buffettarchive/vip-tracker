@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-26T17:12+09:00",
+  "updated_at": "2026-06-26T17:16+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260626000637",
+  "last_seen": "20260626000660",
   "disclosures": [
+    {
+      "rcept_no": "20260626000656",
+      "rcept_dt": "2026-06-26",
+      "corp_name": "메리츠금융지주",
+      "stock_code": "138040",
+      "market": "KOSPI",
+      "corp_code": "00860332",
+      "repror": "권동찬",
+      "ofcps": "전무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "13",
+      "total_cnt": "4,212",
+      "irds_rate": "0.00",
+      "hold_rate": "0.00",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260626000637",
       "rcept_dt": "2026-06-26",
