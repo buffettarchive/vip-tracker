@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-26T16:10+09:00",
+  "updated_at": "2026-06-26T16:14+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260626000476",
+  "last_seen": "20260626000479",
   "disclosures": [
+    {
+      "rcept_no": "20260626000479",
+      "rcept_dt": "2026-06-26",
+      "corp_name": "코리아에프티",
+      "stock_code": "123410",
+      "market": "KOSDAQ",
+      "corp_code": "00803425",
+      "repror": "임호균",
+      "ofcps": "부사장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,300",
+      "total_cnt": "200,000",
+      "irds_rate": "0.01",
+      "hold_rate": "0.72",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260626000464",
       "rcept_dt": "2026-06-26",
