@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-26T14:29+09:00",
+  "updated_at": "2026-06-26T14:44+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260626000339",
+  "last_seen": "20260626000355",
   "disclosures": [
+    {
+      "rcept_no": "20260626000355",
+      "rcept_dt": "2026-06-26",
+      "corp_name": "한양증권",
+      "stock_code": "001750",
+      "market": "KOSPI",
+      "corp_code": "00162416",
+      "repror": "김태연",
+      "ofcps": "상무대우",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "976",
+      "total_cnt": "976",
+      "irds_rate": "0.01",
+      "hold_rate": "0.01",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260626000339",
       "rcept_dt": "2026-06-26",
