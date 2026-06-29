@@ -1,6 +1,27 @@
 {
   "entries": [
     {
+      "rcept_no": "20260629000176",
+      "rcept_dt": "20260629",
+      "corp_code": "00397058",
+      "corp_name": "엠게임",
+      "corp_cls": "K",
+      "report_nm": "[기재정정]주요사항보고서(자기주식취득결정)",
+      "type": "취득",
+      "shares_common": null,
+      "shares_other": null,
+      "amount_common": null,
+      "amount_other": null,
+      "acq_purpose": null,
+      "acq_method": null,
+      "acq_period_start": null,
+      "acq_period_end": null,
+      "acq_decision_date": null,
+      "total_shares": null,
+      "ratio_pct": null,
+      "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260629000176"
+    },
+    {
       "rcept_no": "20260626000697",
       "rcept_dt": "20260626",
       "corp_code": "00349732",
@@ -5692,5 +5713,5 @@
       "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250610000225"
     }
   ],
-  "last_seen": "20260626000697"
+  "last_seen": "20260629000176"
 }
