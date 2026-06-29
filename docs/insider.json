@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-29T17:25+09:00",
+  "updated_at": "2026-06-29T17:49+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260629000496",
+  "last_seen": "20260629000509",
   "disclosures": [
+    {
+      "rcept_no": "20260629000509",
+      "rcept_dt": "2026-06-29",
+      "corp_name": "셀트리온",
+      "stock_code": "068270",
+      "market": "KOSPI",
+      "corp_code": "00413046",
+      "repror": "셀트리온홀딩스",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "3,042,135",
+      "total_cnt": "60,090,135",
+      "irds_rate": "1.14",
+      "hold_rate": "25.84",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260629000496",
       "rcept_dt": "2026-06-29",
