@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-29T09:19+09:00",
+  "updated_at": "2026-06-29T09:29+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260629000014",
+  "last_seen": "20260629000018",
   "disclosures": [
+    {
+      "rcept_no": "20260629000018",
+      "rcept_dt": "2026-06-29",
+      "corp_name": "신성이엔지",
+      "stock_code": "011930",
+      "market": "KOSPI",
+      "corp_code": "00136271",
+      "repror": "이지선",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "2,000",
+      "total_cnt": "1,673,021",
+      "irds_rate": "0.01",
+      "hold_rate": "8.24",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260629000014",
       "rcept_dt": "2026-06-29",
