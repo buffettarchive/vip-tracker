@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-29T11:59+09:00",
+  "updated_at": "2026-06-29T12:49+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260629000135",
+  "last_seen": "20260629000149",
   "disclosures": [
+    {
+      "rcept_no": "20260629000145",
+      "rcept_dt": "2026-06-29",
+      "corp_name": "샤페론",
+      "stock_code": "378800",
+      "market": "KOSDAQ",
+      "corp_code": "01387164",
+      "repror": "성승용",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "157,670",
+      "total_cnt": "5,247,670",
+      "irds_rate": "0.34",
+      "hold_rate": "11.35",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260629000135",
       "rcept_dt": "2026-06-29",
