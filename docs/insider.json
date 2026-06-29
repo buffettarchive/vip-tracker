@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-29T11:09+09:00",
+  "updated_at": "2026-06-29T11:19+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260629000097",
+  "last_seen": "20260629000116",
   "disclosures": [
+    {
+      "rcept_no": "20260629000116",
+      "rcept_dt": "2026-06-29",
+      "corp_name": "유비벨록스",
+      "stock_code": "089850",
+      "market": "KOSDAQ",
+      "corp_code": "00592653",
+      "repror": "강정규",
+      "ofcps": "전무이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "19,669",
+      "total_cnt": "35,808",
+      "irds_rate": "0.13",
+      "hold_rate": "0.24",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260629000097",
       "rcept_dt": "2026-06-29",
