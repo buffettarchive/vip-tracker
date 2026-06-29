@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-29T15:39+09:00",
+  "updated_at": "2026-06-29T15:54+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260629000343",
+  "last_seen": "20260629000352",
   "disclosures": [
+    {
+      "rcept_no": "20260629000348",
+      "rcept_dt": "2026-06-29",
+      "corp_name": "인벤티지랩",
+      "stock_code": "389470",
+      "market": "KOSDAQ",
+      "corp_code": "01516456",
+      "repror": "진세호",
+      "ofcps": "상무이사",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,000",
+      "total_cnt": "1,000",
+      "irds_rate": "0.01",
+      "hold_rate": "0.01",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260629000286",
       "rcept_dt": "2026-06-29",
