@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-30T12:44+09:00",
+  "updated_at": "2026-06-30T13:04+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260630000278",
+  "last_seen": "20260630000286",
   "disclosures": [
+    {
+      "rcept_no": "20260630000286",
+      "rcept_dt": "2026-06-30",
+      "corp_name": "옵트론텍",
+      "stock_code": "082210",
+      "market": "KOSDAQ",
+      "corp_code": "00327396",
+      "repror": "CHOISANGHO,CORP.",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "67,000",
+      "total_cnt": "11,402,480",
+      "irds_rate": "0.16",
+      "hold_rate": "28.14",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260630000278",
       "rcept_dt": "2026-06-30",
