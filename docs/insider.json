@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-30T11:09+09:00",
+  "updated_at": "2026-06-30T11:24+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260630000179",
+  "last_seen": "20260630000190",
   "disclosures": [
+    {
+      "rcept_no": "20260630000190",
+      "rcept_dt": "2026-06-30",
+      "corp_name": "덕산테코피아",
+      "stock_code": "317330",
+      "market": "KOSDAQ",
+      "corp_code": "01021666",
+      "repror": "이수완",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "59,594",
+      "total_cnt": "1,895,010",
+      "irds_rate": "0.29",
+      "hold_rate": "9.25",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260630000158",
       "rcept_dt": "2026-06-30",
