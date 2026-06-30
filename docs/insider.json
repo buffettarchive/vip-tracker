@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-06-29T18:24+09:00",
+  "updated_at": "2026-06-30T09:19+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260629000559",
+  "last_seen": "20260630000021",
   "disclosures": [
+    {
+      "rcept_no": "20260630000021",
+      "rcept_dt": "2026-06-30",
+      "corp_name": "셀리드",
+      "stock_code": "299660",
+      "market": "KOSDAQ",
+      "corp_code": "01235296",
+      "repror": "강창율",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "6,000",
+      "total_cnt": "2,446,311",
+      "irds_rate": "0.02",
+      "hold_rate": "8.29",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260629000559",
       "rcept_dt": "2026-06-29",
