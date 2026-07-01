@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-01T11:29+09:00",
+  "updated_at": "2026-07-01T11:39+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260701000133",
+  "last_seen": "20260701000144",
   "disclosures": [
+    {
+      "rcept_no": "20260701000144",
+      "rcept_dt": "2026-07-01",
+      "corp_name": "티에스아이",
+      "stock_code": "277880",
+      "market": "KOSDAQ",
+      "corp_code": "01139035",
+      "repror": "이창원",
+      "ofcps": "부사장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "8,100",
+      "total_cnt": "26,200",
+      "irds_rate": "0.04",
+      "hold_rate": "0.11",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260701000133",
       "rcept_dt": "2026-07-01",
