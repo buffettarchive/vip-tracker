@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-01T10:29+09:00",
+  "updated_at": "2026-07-01T10:39+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260701000089",
+  "last_seen": "20260701000101",
   "disclosures": [
+    {
+      "rcept_no": "20260701000101",
+      "rcept_dt": "2026-07-01",
+      "corp_name": "HLB바이오스텝",
+      "stock_code": "278650",
+      "market": "KOSDAQ",
+      "corp_code": "01189438",
+      "repror": "백성진",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "4,000",
+      "total_cnt": "14,000",
+      "irds_rate": "0.02",
+      "hold_rate": "0.08",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260701000089",
       "rcept_dt": "2026-07-01",
