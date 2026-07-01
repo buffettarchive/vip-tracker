@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-01T11:49+09:00",
+  "updated_at": "2026-07-01T12:09+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260701000153",
+  "last_seen": "20260701000169",
   "disclosures": [
+    {
+      "rcept_no": "20260701000169",
+      "rcept_dt": "2026-07-01",
+      "corp_name": "체시스",
+      "stock_code": "033250",
+      "market": "KOSPI",
+      "corp_code": "00125576",
+      "repror": "엠에스에이치씨",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "42,000",
+      "total_cnt": "1,589,640",
+      "irds_rate": "0.66",
+      "hold_rate": "24.84",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260701000153",
       "rcept_dt": "2026-07-01",
