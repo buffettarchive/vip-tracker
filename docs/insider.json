@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-01T11:39+09:00",
+  "updated_at": "2026-07-01T11:49+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260701000144",
+  "last_seen": "20260701000153",
   "disclosures": [
+    {
+      "rcept_no": "20260701000153",
+      "rcept_dt": "2026-07-01",
+      "corp_name": "하이즈항공",
+      "stock_code": "221840",
+      "market": "KOSDAQ",
+      "corp_code": "00688358",
+      "repror": "김병부",
+      "ofcps": "본부장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "3,384",
+      "total_cnt": "46,996",
+      "irds_rate": "0.02",
+      "hold_rate": "0.25",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260701000144",
       "rcept_dt": "2026-07-01",
