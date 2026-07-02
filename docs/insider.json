@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-02T17:49+09:00",
+  "updated_at": "2026-07-02T17:54+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260702000551",
+  "last_seen": "20260702000553",
   "disclosures": [
+    {
+      "rcept_no": "20260702000553",
+      "rcept_dt": "2026-07-02",
+      "corp_name": "삼성에스디에스",
+      "stock_code": "018260",
+      "market": "KOSPI",
+      "corp_code": "00126186",
+      "repror": "김태호",
+      "ofcps": "부사장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "520",
+      "total_cnt": "520",
+      "irds_rate": "0.00",
+      "hold_rate": "0.00",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260702000551",
       "rcept_dt": "2026-07-02",
