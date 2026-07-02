@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-02T11:49+09:00",
+  "updated_at": "2026-07-02T11:59+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260702000173",
+  "last_seen": "20260702000176",
   "disclosures": [
+    {
+      "rcept_no": "20260702000176",
+      "rcept_dt": "2026-07-02",
+      "corp_name": "대화제약",
+      "stock_code": "067080",
+      "market": "KOSDAQ",
+      "corp_code": "00210740",
+      "repror": "김은석",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "4,600",
+      "total_cnt": "229,200",
+      "irds_rate": "0.02",
+      "hold_rate": "1.23",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260702000173",
       "rcept_dt": "2026-07-02",
