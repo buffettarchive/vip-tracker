@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-02T11:09+09:00",
+  "updated_at": "2026-07-02T11:14+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260702000125",
+  "last_seen": "20260702000126",
   "disclosures": [
+    {
+      "rcept_no": "20260702000126",
+      "rcept_dt": "2026-07-02",
+      "corp_name": "코리아써키트",
+      "stock_code": "007810",
+      "market": "KOSPI",
+      "corp_code": "00152686",
+      "repror": "국민연금공단",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "102,439",
+      "total_cnt": "2,521,629",
+      "irds_rate": "0.37",
+      "hold_rate": "9.09",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260702000125",
       "rcept_dt": "2026-07-02",
