@@ -1,6 +1,27 @@
 {
   "entries": [
     {
+      "rcept_no": "20260702000345",
+      "rcept_dt": "20260702",
+      "corp_code": "00668600",
+      "corp_name": "케이옥션",
+      "corp_cls": "K",
+      "report_nm": "주요사항보고서(자기주식취득결정)",
+      "type": "취득",
+      "shares_common": null,
+      "shares_other": null,
+      "amount_common": null,
+      "amount_other": null,
+      "acq_purpose": null,
+      "acq_method": null,
+      "acq_period_start": null,
+      "acq_period_end": null,
+      "acq_decision_date": null,
+      "total_shares": null,
+      "ratio_pct": null,
+      "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260702000345"
+    },
+    {
       "rcept_no": "20260701000529",
       "rcept_dt": "20260701",
       "corp_code": "00155373",
@@ -5776,5 +5797,5 @@
       "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250610000225"
     }
   ],
-  "last_seen": "20260701000529"
+  "last_seen": "20260702000345"
 }
