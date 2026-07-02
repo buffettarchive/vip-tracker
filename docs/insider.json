@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-02T17:29+09:00",
+  "updated_at": "2026-07-02T17:49+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260702000550",
+  "last_seen": "20260702000551",
   "disclosures": [
+    {
+      "rcept_no": "20260702000551",
+      "rcept_dt": "2026-07-02",
+      "corp_name": "유한양행",
+      "stock_code": "000100",
+      "market": "KOSPI",
+      "corp_code": "00145109",
+      "repror": "최영기",
+      "ofcps": "전무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "300",
+      "total_cnt": "300",
+      "irds_rate": "0.00",
+      "hold_rate": "0.00",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260702000550",
       "rcept_dt": "2026-07-02",
