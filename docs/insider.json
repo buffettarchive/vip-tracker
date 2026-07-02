@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-02T13:29+09:00",
+  "updated_at": "2026-07-02T13:39+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260702000210",
+  "last_seen": "20260702000222",
   "disclosures": [
+    {
+      "rcept_no": "20260702000212",
+      "rcept_dt": "2026-07-02",
+      "corp_name": "엔케이",
+      "stock_code": "085310",
+      "market": "KOSPI",
+      "corp_code": "00172228",
+      "repror": "더세이프티",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "8,447",
+      "total_cnt": "1,600,951",
+      "irds_rate": "0.11",
+      "hold_rate": "21.58",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260702000185",
       "rcept_dt": "2026-07-02",
