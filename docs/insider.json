@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-02T14:24+09:00",
+  "updated_at": "2026-07-02T14:30+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260702000258",
+  "last_seen": "20260702000265",
   "disclosures": [
+    {
+      "rcept_no": "20260702000260",
+      "rcept_dt": "2026-07-02",
+      "corp_name": "진성티이씨",
+      "stock_code": "036890",
+      "market": "KOSDAQ",
+      "corp_code": "00174208",
+      "repror": "국민연금공단",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "37,571",
+      "total_cnt": "2,266,594",
+      "irds_rate": "0.17",
+      "hold_rate": "10.29",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260702000258",
       "rcept_dt": "2026-07-02",
