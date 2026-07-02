@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-02T13:49+09:00",
+  "updated_at": "2026-07-02T13:59+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260702000225",
+  "last_seen": "20260702000233",
   "disclosures": [
+    {
+      "rcept_no": "20260702000233",
+      "rcept_dt": "2026-07-02",
+      "corp_name": "아크릴",
+      "stock_code": "0007C0",
+      "market": "KOSDAQ",
+      "corp_code": "01829819",
+      "repror": "노상익",
+      "ofcps": "전무이사",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "2,350",
+      "total_cnt": "3,350",
+      "irds_rate": "0.03",
+      "hold_rate": "0.04",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260702000212",
       "rcept_dt": "2026-07-02",
