@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-02T09:04+09:00",
+  "updated_at": "2026-07-02T09:19+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260702000015",
+  "last_seen": "20260702000039",
   "disclosures": [
+    {
+      "rcept_no": "20260702000039",
+      "rcept_dt": "2026-07-02",
+      "corp_name": "코스맥스엔비티",
+      "stock_code": "222040",
+      "market": "KOSDAQ",
+      "corp_code": "00656289",
+      "repror": "윤원일",
+      "ofcps": "사장\n(호주 법인장)",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "3,000",
+      "total_cnt": "9,214",
+      "irds_rate": "0.01",
+      "hold_rate": "0.04",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260702000015",
       "rcept_dt": "2026-07-02",
