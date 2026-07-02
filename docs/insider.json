@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-02T14:44+09:00",
+  "updated_at": "2026-07-02T14:49+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260702000286",
+  "last_seen": "20260702000293",
   "disclosures": [
+    {
+      "rcept_no": "20260702000293",
+      "rcept_dt": "2026-07-02",
+      "corp_name": "영원무역",
+      "stock_code": "111770",
+      "market": "KOSPI",
+      "corp_code": "00776820",
+      "repror": "국민연금공단",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "168,344",
+      "total_cnt": "4,682,722",
+      "irds_rate": "0.38",
+      "hold_rate": "10.57",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260702000286",
       "rcept_dt": "2026-07-02",
