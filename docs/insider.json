@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-03T11:34+09:00",
+  "updated_at": "2026-07-03T13:19+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260703000150",
+  "last_seen": "20260703000185",
   "disclosures": [
+    {
+      "rcept_no": "20260703000185",
+      "rcept_dt": "2026-07-03",
+      "corp_name": "삼일",
+      "stock_code": "032280",
+      "market": "KOSDAQ",
+      "corp_code": "00127909",
+      "repror": "티디",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "1,712,319",
+      "total_cnt": "1,712,319",
+      "irds_rate": "10.56",
+      "hold_rate": "10.56",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260703000139",
       "rcept_dt": "2026-07-03",
