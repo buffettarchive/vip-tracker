@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-03T16:11+09:00",
+  "updated_at": "2026-07-03T16:14+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260703000423",
+  "last_seen": "20260703000445",
   "disclosures": [
+    {
+      "rcept_no": "20260703000439",
+      "rcept_dt": "2026-07-03",
+      "corp_name": "노루홀딩스",
+      "stock_code": "000320",
+      "market": "KOSPI",
+      "corp_code": "00113508",
+      "repror": "디아이티",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "120,000",
+      "total_cnt": "1,470,000",
+      "irds_rate": "0.89",
+      "hold_rate": "10.87",
+      "method": "시간외매매"
+    },
     {
       "rcept_no": "20260703000411",
       "rcept_dt": "2026-07-03",
