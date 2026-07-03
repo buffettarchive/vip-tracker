@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-03T09:04+09:00",
+  "updated_at": "2026-07-03T09:09+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260703000005",
+  "last_seen": "20260703000007",
   "disclosures": [
+    {
+      "rcept_no": "20260703000006",
+      "rcept_dt": "2026-07-03",
+      "corp_name": "대모",
+      "stock_code": "317850",
+      "market": "KOSDAQ",
+      "corp_code": "00450995",
+      "repror": "이원해",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "15,920",
+      "total_cnt": "2,421,300",
+      "irds_rate": "0.19",
+      "hold_rate": "29.09",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260703000005",
       "rcept_dt": "2026-07-03",
