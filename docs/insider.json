@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-03T14:44+09:00",
+  "updated_at": "2026-07-03T15:24+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260703000269",
+  "last_seen": "20260703000316",
   "disclosures": [
+    {
+      "rcept_no": "20260703000316",
+      "rcept_dt": "2026-07-03",
+      "corp_name": "리더스코스메틱",
+      "stock_code": "016100",
+      "market": "KOSDAQ",
+      "corp_code": "00180263",
+      "repror": "이덕원",
+      "ofcps": "전무이사",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "4,964",
+      "total_cnt": "96,054",
+      "irds_rate": "0.02",
+      "hold_rate": "0.50",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260703000255",
       "rcept_dt": "2026-07-03",
