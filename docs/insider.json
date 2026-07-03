@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-03T14:24+09:00",
+  "updated_at": "2026-07-03T14:34+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260703000251",
+  "last_seen": "20260703000265",
   "disclosures": [
+    {
+      "rcept_no": "20260703000255",
+      "rcept_dt": "2026-07-03",
+      "corp_name": "신테카바이오",
+      "stock_code": "226330",
+      "market": "KOSDAQ",
+      "corp_code": "01344336",
+      "repror": "홍종희",
+      "ofcps": "이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "44,693",
+      "total_cnt": "130,396",
+      "irds_rate": "0.19",
+      "hold_rate": "0.54",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260703000249",
       "rcept_dt": "2026-07-03",
