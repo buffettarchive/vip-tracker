@@ -2,9 +2,8 @@ name: Buffett Archive Cron
 
 on:
   schedule:
-    # 매 5분마다 (GitHub Actions는 정확히 5분은 아니고 약간 지연될 수 있음)
     - cron: '*/5 * * * *'
-  workflow_dispatch:  # 수동 실행 가능
+  workflow_dispatch:
 
 jobs:
   fetch-insider:
@@ -44,4 +43,16 @@ jobs:
       - run: python fetch_buyback.py
         env:
           DART_API_KEY: ${{ secrets.DART_API_KEY }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
+  fetch-market:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests
+      - run: python fetch_market.py
+        env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
