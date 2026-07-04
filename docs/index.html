@@ -48,7 +48,6 @@
   .live .dot{width:7px;height:7px;border-radius:50%;background:var(--live);display:inline-block;animation:pulse 1.5s ease-in-out infinite}
   @keyframes pulse{0%{opacity:1;box-shadow:0 0 0 0 rgba(214,58,46,.5)}70%{opacity:.55;box-shadow:0 0 0 5px rgba(214,58,46,0)}100%{opacity:1;box-shadow:0 0 0 0 rgba(214,58,46,0)}}
 
-  /* 상단 큰 탭 */
   .maintabs{display:flex;gap:0;margin-top:26px;}
   .maintabs button{
     font-family:inherit;font-size:15px;font-weight:600;
@@ -57,6 +56,17 @@
     transform:translateY(2px);transition:.15s;
   }
   .maintabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--ink);}
+
+  /* 시장 지표 티커바 */
+  .ticker{display:flex;gap:28px;padding:14px 0;border-bottom:1px solid var(--line);overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+  .ticker::-webkit-scrollbar{display:none}
+  .ticker-item{display:flex;align-items:baseline;gap:6px;}
+  .ticker-name{color:var(--ink-soft);font-weight:600;font-size:11px;letter-spacing:.04em;}
+  .ticker-price{color:var(--ink);font-weight:600;font-size:13px;}
+  .ticker-chg{font-size:12px;font-weight:600;}
+  .ticker-chg.up{color:var(--up)}
+  .ticker-chg.down{color:var(--down)}
+  .ticker-chg.flat{color:var(--ink-soft)}
 
   .langtoggle{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;font-size:11px;font-weight:600;letter-spacing:.05em}
   .langtoggle button{font-family:inherit;background:transparent;border:0;color:var(--ink-soft);padding:4px 10px;cursor:pointer;transition:.15s;}
@@ -105,9 +115,8 @@
   .contact{margin:14px 0 50px;font-size:12.5px;letter-spacing:.02em}
   .contact a{color:var(--ink);text-decoration:none;font-weight:700}
   .contact a:hover{border-bottom:1px solid var(--ink)}
-  @media(max-width:560px){.row{grid-template-columns:58px 1fr auto;gap:12px}.corp .name{font-size:16px}.stake .pct{font-size:19px}.maintabs button{font-size:14px;margin-right:18px}}
+  @media(max-width:560px){.row{grid-template-columns:58px 1fr auto;gap:12px}.corp .name{font-size:16px}.stake .pct{font-size:19px}.maintabs button{font-size:14px;margin-right:18px}.ticker{gap:18px}}
 </style>
-<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6B17RZ2E78"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -137,6 +146,8 @@
     </div>
   </header>
 
+  <div class="ticker" id="ticker"></div>
+
   <div class="controls">
     <div class="firm-tabs" id="firmTabs" role="tablist"></div>
     <div class="market-filter" id="marketFilter"></div>
@@ -154,7 +165,6 @@
 <script>
 const $ = s => document.querySelector(s);
 
-// ── i18n 사전 ──────────────────────────────────────────────
 const I18N = {
   ko: {
     title_html: "버핏아카이브",
@@ -230,7 +240,6 @@ const I18N = {
   }
 };
 
-// ── 한글 운용사명 → 영문 ──
 const FIRM_EN = {
   "브이아이피자산운용": "VIP Asset Management",
   "얼라인파트너스자산운용": "Align Partners Capital Management",
@@ -241,39 +250,22 @@ const FIRM_EN = {
   "Miri": "Miri Capital Management",
 };
 
-// ── 한글 직위 → 영문 (부분일치 우선) ──
 const ROLE_EN = [
-  ["대표이사 회장","Chairman & CEO"],
-  ["대표이사 사장","President & CEO"],
-  ["대표이사","CEO"],
-  ["부회장","Vice Chairman"],
-  ["회장","Chairman"],
-  ["사장","President"],
-  ["부사장","Executive Vice President"],
-  ["전무이사","Senior Managing Director"],
-  ["전무","Senior Managing Director"],
-  ["상무이사","Managing Director"],
-  ["상무대우","Managing Director"],
-  ["상무","Managing Director"],
-  ["사내이사","Inside Director"],
-  ["사외이사","Independent Director"],
-  ["기타비상무이사","Non-Executive Director"],
-  ["등기임원","Registered Officer"],
-  ["비등기임원","Unregistered Officer"],
-  ["사실상지배주주","De Facto Controlling Shareholder"],
-  ["10%이상주주","10%+ Shareholder"],
-  ["기획관리부문장","Head of Planning & Mgmt"],
-  ["이사","Director"],
+  ["대표이사 회장","Chairman & CEO"],["대표이사 사장","President & CEO"],["대표이사","CEO"],
+  ["부회장","Vice Chairman"],["회장","Chairman"],["사장","President"],
+  ["부사장","Executive Vice President"],["전무이사","Senior Managing Director"],
+  ["전무","Senior Managing Director"],["상무이사","Managing Director"],
+  ["상무대우","Managing Director"],["상무","Managing Director"],
+  ["사내이사","Inside Director"],["사외이사","Independent Director"],
+  ["기타비상무이사","Non-Executive Director"],["등기임원","Registered Officer"],
+  ["비등기임원","Unregistered Officer"],["사실상지배주주","De Facto Controlling Shareholder"],
+  ["10%이상주주","10%+ Shareholder"],["기획관리부문장","Head of Planning & Mgmt"],["이사","Director"],
 ];
 
-// ── 공시 사유(report_resn) 한글 → 영문 ──
 const RESN_EN = [
-  ["5%이상 보유 신규보고","New 5%+ Filing"],
-  ["5% 이상 보유 신규보고","New 5%+ Filing"],
-  ["1% 이상 변동","1%+ Change"],
-  ["1%이상 변동","1%+ Change"],
-  ["보유 목적 변경","Purpose Change"],
-  ["보유목적변경","Purpose Change"],
+  ["5%이상 보유 신규보고","New 5%+ Filing"],["5% 이상 보유 신규보고","New 5%+ Filing"],
+  ["1% 이상 변동","1%+ Change"],["1%이상 변동","1%+ Change"],
+  ["보유 목적 변경","Purpose Change"],["보유목적변경","Purpose Change"],
 ];
 
 function localizeFirm(name){ return LANG==="en" ? (FIRM_EN[name]||name) : name; }
@@ -294,7 +286,6 @@ function t(key, ...args){
   return typeof v==="function" ? v(...args) : v;
 }
 
-// 언어: 저장값 우선, 없으면 브라우저 언어가 ko면 한국어, 아니면 영어
 let LANG = localStorage.getItem("ba_lang");
 if(!LANG){
   const nav=(navigator.language||"").toLowerCase();
@@ -319,7 +310,6 @@ function dartLink(rcept_no){
   return `https://dart.fss.or.kr/dsaf001/main.do?rcpNo=${rcept_no}`;
 }
 
-/* ── 운용사(지분공시) 라벨 ── */
 function firmTag(item){
   const cur=parseFloat(item.stkrt), prev=parseFloat(item.stkrt_prev);
   const diff=(!isNaN(cur)&&!isNaN(prev))?(cur-prev):null;
@@ -334,6 +324,25 @@ function firmTag(item){
 let FIRM={disclosures:[],firms:[]}, INSIDER={disclosures:[]}, BUYBACK={entries:[]};
 let view="insider", activeFirm="전체", activeMarket="ALL", activeBBType="ALL";
 
+// ── 시장 지표 티커 ──
+function renderTicker(mk){
+  const el=document.getElementById("ticker");
+  if(!el||!mk||!mk.quotes) return;
+  const order=["KOSPI","KOSDAQ","S&P 500","USD/KRW","야간선물"];
+  el.innerHTML=order.map(name=>{
+    const q=mk.quotes[name];
+    if(!q) return "";
+    const cls=q.change_pct>0?"up":q.change_pct<0?"down":"flat";
+    const sign=q.change_pct>0?"+":"";
+    const price=name==="USD/KRW"?q.price.toFixed(2):q.price.toLocaleString();
+    return `<div class="ticker-item">
+      <span class="ticker-name">${name}</span>
+      <span class="ticker-price">${price}</span>
+      <span class="ticker-chg ${cls}">${sign}${q.change_pct.toFixed(2)}%</span>
+    </div>`;
+  }).join("");
+}
+
 function renderFirm(){
   const list=FIRM.disclosures
     .filter(x=>activeFirm==="전체"||x.firm===activeFirm)
@@ -346,11 +355,8 @@ function renderFirm(){
     const code=item.stock_code?`<span class="code">${item.stock_code}</span>`:"";
     const firmName=localizeFirm(item.firm);
     const resn=localizeResn(item.report_resn||"")||"—";
-    const dateBlock = LANG==="en"
-      ? `<div class="date">${dt.m} ${dt.d}<span class="y">${dt.y}</span></div>`
-      : `<div class="date">${dt.m} ${dt.d}<span class="y">${dt.y}</span></div>`;
     const inner=`
-      ${dateBlock}
+      <div class="date">${dt.m} ${dt.d}<span class="y">${dt.y}</span></div>
       <div class="corp">
         <div class="name">${item.corp_name}${code}</div>
         <div class="sub"><span class="who">${firmName}</span> · ${resn}</div>
@@ -375,18 +381,15 @@ function renderInsider(){
   feed.innerHTML=list.map(item=>{
     const dt=fmtDate(item.rcept_dt), dl=dartLink(item.rcept_no);
     const code=item.stock_code?`<span class="code">${item.stock_code}</span>`:"";
-    // 시장 배지(코스피/코스닥)
     const mk=item.market||"";
     let mkb="";
     if(mk==="KOSPI") mkb=`<span class="badge mkt-y">KOSPI</span> `;
     else if(mk==="KOSDAQ") mkb=`<span class="badge mkt-k">KOSDAQ</span> `;
-    // 취득방법 배지
     const m=item.method||"";
     let mb="";
     if(m.includes("장내")) mb=`<span class="badge in">${t("badge_in")}</span>`;
     else if(m.includes("장외")) mb=`<span class="badge out">${t("badge_out")}</span>`;
     else if(m.includes("시간외")) mb=`<span class="badge out">${t("badge_aft")}</span>`;
-    // 직위/주요주주 표시 (영문화)
     const ofcpsLoc = localizeRole(item.ofcps||"");
     const mainLoc = (item.main_shrholdr && item.main_shrholdr!=="-")
                     ? localizeRole(item.main_shrholdr) : "";
@@ -409,12 +412,10 @@ function renderInsider(){
 
 function renderBuyback(){
   let list=(BUYBACK.entries||[]).filter(x => !(x.report_nm||"").includes("신탁계약"));
-  // 시장 필터
   if(activeMarket!=="ALL"){
     const cls = activeMarket==="KOSPI"?"Y":"K";
     list = list.filter(x => x.corp_cls===cls);
   }
-  // 유형 필터(취득/소각)
   if(activeBBType!=="ALL"){
     list = list.filter(x => x.type===activeBBType);
   }
@@ -425,23 +426,18 @@ function renderBuyback(){
   feed.innerHTML=list.map(item=>{
     const dt=fmtDate(item.rcept_dt), dl=dartLink(item.rcept_no);
     const isAcq = item.type==="취득";
-    // 유형 배지
     const typeBadge = isAcq
       ? `<span class="badge bb-acq">${t("bb_acq")}</span>`
       : `<span class="badge bb-cancel">${t("bb_cancel")}</span>`;
-    // 시장 배지
     let mkb="";
     if(item.corp_cls==="Y") mkb=`<span class="badge mkt-y">KOSPI</span> `;
     else if(item.corp_cls==="K") mkb=`<span class="badge mkt-k">KOSDAQ</span> `;
-    // 취득목적/방법 서브라인
     const purpose = item.acq_purpose || "";
     const method = item.acq_method || "";
     let subParts = [purpose, method].filter(Boolean);
     const sub = subParts.length ? subParts.join(" · ") : "—";
-    // 주식수
     const hasData = !!item.shares_common;
     const shares = hasData ? item.shares_common.toLocaleString() : "—";
-    // 금액 (억 단위 변환)
     let amtLabel = "";
     if(item.amount_common){
       const billions = item.amount_common / 100000000;
@@ -488,11 +484,9 @@ function buildFirmTabs(){
 function buildMarketFilter(){
   if(view==="firm"){ $("#marketFilter").innerHTML=""; $("#marketFilter").style.display="none"; return; }
   $("#marketFilter").style.display="flex";
-  // 내부자 + 자사주 모두 시장 필터 사용
   const opts=[["ALL",t("market_all")],["KOSPI","KOSPI"],["KOSDAQ","KOSDAQ"]];
   let html = opts.map(([k,label])=>
     `<button aria-selected="${k===activeMarket}" data-mk="${k}">${label}</button>`).join("");
-  // 자사주 탭에서는 유형 필터도 추가
   if(view==="buyback"){
     const bbOpts=[["ALL",t("all")],["취득",t("bb_acq")],["소각",t("bb_cancel")]];
     html += `<span style="display:inline-block;width:12px"></span>`;
@@ -545,16 +539,17 @@ $("#mainTabs").querySelectorAll("button").forEach(b=>{
   b.onclick=()=>switchView(b.dataset.view);
 });
 
-// 세 데이터 동시 로드 (5분마다 자동 갱신)
 function loadData(isFirstLoad){
   Promise.all([
     fetch("data.json?ts="+Date.now()).then(r=>r.json()).catch(()=>null),
     fetch("insider.json?ts="+Date.now()).then(r=>r.json()).catch(()=>null),
     fetch("buyback.json?ts="+Date.now()).then(r=>r.json()).catch(()=>null),
-  ]).then(([f,i,b])=>{
+    fetch("market.json?ts="+Date.now()).then(r=>r.json()).catch(()=>null),
+  ]).then(([f,i,b,mk])=>{
     if(f) FIRM=f;
     if(i) INSIDER=i;
     if(b) BUYBACK=b;
+    if(mk) renderTicker(mk);
     if(isFirstLoad){
       if(FIRM.is_seed) $("#seedFlag").innerHTML=`<span class="badge big">${t("seed")}</span>`;
       applyStaticTexts(); buildFirmTabs(); buildMarketFilter(); setFooter();
@@ -563,7 +558,6 @@ function loadData(isFirstLoad){
   });
 }
 loadData(true);
-// 5분(300초)마다 자동으로 새 데이터 받아오기
 setInterval(()=>loadData(false), 300000);
 </script>
 </body>
