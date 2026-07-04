@@ -43,6 +43,27 @@
       "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260701000529"
     },
     {
+      "rcept_no": "20260701000524",
+      "rcept_dt": "20260701",
+      "corp_code": "00152260",
+      "corp_name": "카스",
+      "corp_cls": "K",
+      "report_nm": "주요사항보고서(자기주식취득결정)",
+      "type": "취득",
+      "shares_common": 752688,
+      "shares_other": null,
+      "amount_common": 699999840,
+      "amount_other": null,
+      "acq_purpose": "주가안정 및 주주가치 제고",
+      "acq_method": "장내 직접취득",
+      "acq_period_start": "2026년 07월 02일",
+      "acq_period_end": "2026년 10월 01일",
+      "acq_decision_date": "2026년 07월 01일",
+      "total_shares": null,
+      "ratio_pct": null,
+      "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260701000524"
+    },
+    {
       "rcept_no": "20260630001092",
       "rcept_dt": "20260630",
       "corp_code": "00132202",
