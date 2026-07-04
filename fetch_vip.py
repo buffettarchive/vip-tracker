@@ -55,10 +55,16 @@ def dart(endpoint, **params):
     return {"status": "999", "list": []}
 
 
+# FIL Limited, FIL Investment Management 등은 피델리티 계열
+FIRM_ALIAS = {"FIL": "피델리티"}
+
 def firm_in(name):
     if not name:
         return None
     low = name.lower().replace(" ", "")
+    for alias, canonical in FIRM_ALIAS.items():
+        if alias.lower() in low:
+            return canonical
     for f in WATCH_FIRMS:
         if f.lower().replace(" ", "") in low:
             return f
@@ -114,39 +120,29 @@ def _parse_plain(plain):
     """태그 제거된 본문 텍스트에서 데이터 추출."""
     out = {}
 
-    # ── 블록 기반 파싱: "이번 보고서" ~ "직전 보고서" 사이 ──
-    cur_block = re.search(r"이번\s*보고서(.{5,300}?)직전\s*보고서", plain, re.DOTALL)
-    if cur_block:
-        block = cur_block.group(1)
+    # ── 이번 보고서: 바로 뒤의 숫자들에서 주식수·비율 추출 ──
+    cur_match = re.search(r"이번\s*보고서(.{3,200}?)(?:의결권|보고사유|변동사유|보유목적|$)", plain, re.DOTALL)
+    if cur_match:
+        block = cur_match.group(1)
         nums = re.findall(r"([\d,]+(?:\.\d+)?)", block)
         float_nums = [(n, to_float(n)) for n in nums if to_float(n) is not None]
-        shares, ratio = None, None
         for raw, v in float_nums:
-            if "." in raw and v < 100:
-                if ratio is None:
-                    ratio = raw
-            elif v > 100:
-                if shares is None:
-                    shares = raw.replace(",", "")
-        if ratio:
-            out["stkrt"] = ratio
-        if shares:
-            out["stkqy"] = shares
+            if "." in raw and v < 100 and "stkrt" not in out:
+                out["stkrt"] = raw
+            elif v > 100 and "stkqy" not in out:
+                out["stkqy"] = raw.replace(",", "")
 
-    # ── "직전 보고서" ~ 다음 섹션 사이 ──
-    prev_block = re.search(
-        r"직전\s*보고서(.{5,300}?)(?:보고사유|변동사유|보유목적|증감|변동내역)", plain, re.DOTALL)
-    if not prev_block:
-        prev_block = re.search(r"직전\s*보고서(.{5,200})", plain, re.DOTALL)
-    if prev_block:
-        block = prev_block.group(1)
+    # ── 직전 보고서: 바로 뒤의 숫자들에서 비율 추출 ──
+    prev_match = re.search(r"직전\s*보고서(.{3,200}?)(?:이번\s*보고서|의결권|보고사유|변동사유|보유목적|$)", plain, re.DOTALL)
+    if prev_match:
+        block = prev_match.group(1)
         for raw_n in re.findall(r"([\d,]+(?:\.\d+)?)", block):
             v = to_float(raw_n)
             if v is not None and "." in raw_n and v < 100:
                 out["stkrt_prev"] = raw_n
                 break
 
-    # ── fallback: v7 단순 패턴 ──
+    # ── fallback: 단순 패턴 ──
     if "stkrt" not in out:
         cur = re.search(r"이번\s*보고서\s*([\d,]+)\s+([\d]+(?:\.\d+)?)", plain)
         if cur:
@@ -289,7 +285,37 @@ def main():
         page += 1
         time.sleep(0.2)
 
-    if added == 0 and max_seen == last_seen:
+    # ── 불완전 항목 재시도 (stkrt 비어있는 최근 항목) ──
+    retried = 0
+    for rcept_no, entry in list(existing.items()):
+        if entry.get("stkrt"):
+            continue  # 이미 데이터 있음
+        # 최근 7일 이내 항목만 재시도
+        rdt = entry.get("rcept_dt", "")
+        if not rdt:
+            continue
+        try:
+            entry_date = dt.datetime.strptime(rdt, "%Y-%m-%d").date()
+        except ValueError:
+            continue
+        if (today - entry_date).days > 7:
+            continue
+        doc = parse_document(rcept_no)
+        time.sleep(0.3)
+        if doc.get("stkrt"):
+            entry["stkrt"] = doc["stkrt"]
+            entry["stkrt_prev"] = doc.get("stkrt_prev", "")
+            entry["stkqy"] = doc.get("stkqy", "")
+            entry["report_resn"] = doc.get("report_resn", "")
+            entry["purpose"] = doc.get("purpose", "")
+            entry["kind"] = classify(doc.get("stkrt"), doc.get("stkrt_prev"), doc.get("report_resn", ""))
+            existing[rcept_no] = entry
+            retried += 1
+            print(f"  [재시도✓] {entry.get('corp_name','')} / stkrt={doc['stkrt']} / {entry['kind']}")
+    if retried:
+        print(f"[info] {retried}건 재시도 성공")
+
+    if added == 0 and retried == 0 and max_seen == last_seen:
         print("[info] 새 공시 없음 — 변경 없이 종료")
         return
 
