@@ -99,11 +99,12 @@ def parse_acq_doc(text):
         r"보통주[식권]?\s*[:\s]*([0-9][0-9,]*)",
         r"취득\s*예정\s*주식[^0-9]*?([0-9][0-9,]+)",
         r"취득\s*(?:할\s*)?주식[의]?\s*수[^0-9]*?([0-9][0-9,]+)",
+        r"취득\s*수량[^0-9]*?([0-9][0-9,]+)",
     ]:
         m = re.search(pat, text)
         if m:
             val = to_int(m.group(1))
-            if val and val > 0:
+            if val and val >= 100:
                 result["shares_common"] = val
                 break
 
@@ -338,7 +339,41 @@ def main():
     if all_rcepts:
         data["last_seen"] = max(all_rcepts)
 
-    if added == 0:
+    # ── 불완전 항목 재시도 (shares_common 비어있는 최근 항목) ──
+    retried = 0
+    for entry in data.get("entries", []):
+        if entry.get("shares_common"):
+            continue
+        rdt = entry.get("rcept_dt", "")
+        if not rdt:
+            continue
+        try:
+            if "-" in rdt:
+                entry_date = dt.datetime.strptime(rdt, "%Y-%m-%d").date()
+            elif len(rdt) == 8:
+                entry_date = dt.datetime.strptime(rdt, "%Y%m%d").date()
+            else:
+                continue
+        except ValueError:
+            continue
+        if (today - entry_date).days > 14:
+            continue
+        rcept_no = entry.get("rcept_no", "")
+        text = fetch_document_text(rcept_no)
+        time.sleep(0.3)
+        if text:
+            parsed = parse_acq_doc(text)
+            if parsed.get("shares_common"):
+                entry["shares_common"] = parsed["shares_common"]
+                entry["amount_common"] = parsed.get("amount_common")
+                entry["acq_purpose"] = parsed.get("acq_purpose")
+                entry["acq_method"] = parsed.get("acq_method")
+                retried += 1
+                print(f"  [재시도✓] {entry.get('corp_name','')} / shares={parsed['shares_common']}")
+    if retried:
+        print(f"[info] {retried}건 재시도 성공")
+
+    if added == 0 and retried == 0:
         print("[info] 새 자사주 공시 없음")
         return
 
