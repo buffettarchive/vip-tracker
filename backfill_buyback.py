@@ -86,11 +86,12 @@ def parse_acq_doc(text):
         r"보통주[식권]?\s*[:\s]*([0-9][0-9,]*)",
         r"취득\s*예정\s*주식[^0-9]*?([0-9][0-9,]+)",
         r"취득\s*(?:할\s*)?주식[의]?\s*수[^0-9]*?([0-9][0-9,]+)",
+        r"취득\s*수량[^0-9]*?([0-9][0-9,]+)",
     ]:
         m = re.search(pat, text)
         if m:
             val = to_int(m.group(1))
-            if val and val > 0:
+            if val and val >= 100:
                 result["shares_common"] = val
                 break
     for pat in [
