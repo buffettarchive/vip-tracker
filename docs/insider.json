@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-06T10:59+09:00",
+  "updated_at": "2026-07-06T11:09+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260706000066",
+  "last_seen": "20260706000071",
   "disclosures": [
+    {
+      "rcept_no": "20260706000071",
+      "rcept_dt": "2026-07-06",
+      "corp_name": "유바이오로직스",
+      "stock_code": "206650",
+      "market": "KOSDAQ",
+      "corp_code": "00927558",
+      "repror": "허태영",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "9,000",
+      "total_cnt": "11,000",
+      "irds_rate": "0.02",
+      "hold_rate": "0.03",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260706000066",
       "rcept_dt": "2026-07-06",
