@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-06T09:04+09:00",
+  "updated_at": "2026-07-06T09:29+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260706000005",
+  "last_seen": "20260706000015",
   "disclosures": [
+    {
+      "rcept_no": "20260706000015",
+      "rcept_dt": "2026-07-06",
+      "corp_name": "바이오다인",
+      "stock_code": "314930",
+      "market": "KOSDAQ",
+      "corp_code": "01117413",
+      "repror": "임욱빈",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "19,617",
+      "total_cnt": "12,119,888",
+      "irds_rate": "0.07",
+      "hold_rate": "40.72",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260706000005",
       "rcept_dt": "2026-07-06",
