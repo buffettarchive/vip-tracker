@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-07-06T04:29:23Z",
+  "updated_at": "2026-07-06T04:34:17Z",
   "quotes": {
     "KOSPI": {
-      "price": 7898.03,
+      "price": 7944.06,
       "prev_close": 7648.09,
-      "change": 249.94,
-      "change_pct": 3.27
+      "change": 295.97,
+      "change_pct": 3.87
     },
     "KOSDAQ": {
-      "price": 832.42,
+      "price": 834.44,
       "prev_close": 866.72,
-      "change": -34.3,
-      "change_pct": -3.96
+      "change": -32.28,
+      "change_pct": -3.72
     },
     "S&P 500": {
       "price": 7483.24,
