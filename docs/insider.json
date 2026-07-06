@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-06T14:59+09:00",
+  "updated_at": "2026-07-06T15:14+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260706000204",
+  "last_seen": "20260706000222",
   "disclosures": [
+    {
+      "rcept_no": "20260706000213",
+      "rcept_dt": "2026-07-06",
+      "corp_name": "금비",
+      "stock_code": "008870",
+      "market": "KOSPI",
+      "corp_code": "00168401",
+      "repror": "고기영",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "95",
+      "total_cnt": "117,881",
+      "irds_rate": "0.01",
+      "hold_rate": "11.79",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260706000160",
       "rcept_dt": "2026-07-06",
