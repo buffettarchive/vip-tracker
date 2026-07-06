@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-06T22:58:14Z",
+  "updated_at": "2026-07-06T22:59:17Z",
   "quotes": {
     "KOSPI": {
       "price": 8051.33,
@@ -20,9 +20,9 @@
       "change_pct": 0.72
     },
     "USD/KRW": {
-      "price": 1529.86,
+      "price": 1529.82,
       "prev_close": 1542.13,
-      "change": -12.27,
+      "change": -12.31,
       "change_pct": -0.8
     }
   }
