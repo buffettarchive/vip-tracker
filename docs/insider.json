@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-06T16:04+09:00",
+  "updated_at": "2026-07-06T16:09+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260706000270",
+  "last_seen": "20260706000272",
   "disclosures": [
+    {
+      "rcept_no": "20260706000272",
+      "rcept_dt": "2026-07-06",
+      "corp_name": "에이루트",
+      "stock_code": "096690",
+      "market": "KOSDAQ",
+      "corp_code": "00608839",
+      "repror": "서문동군",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,877",
+      "total_cnt": "108,050",
+      "irds_rate": "0.05",
+      "hold_rate": "2.67",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260706000270",
       "rcept_dt": "2026-07-06",
