@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-06T16:34+09:00",
+  "updated_at": "2026-07-06T16:39+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260706000304",
+  "last_seen": "20260706000325",
   "disclosures": [
+    {
+      "rcept_no": "20260706000322",
+      "rcept_dt": "2026-07-06",
+      "corp_name": "소프트센",
+      "stock_code": "032680",
+      "market": "KOSDAQ",
+      "corp_code": "00204226",
+      "repror": "홍콩셩다국제유한공사",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "247,944",
+      "total_cnt": "4,572,744",
+      "irds_rate": "1.19",
+      "hold_rate": "21.85",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260706000284",
       "rcept_dt": "2026-07-06",
