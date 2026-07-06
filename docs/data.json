@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-06T09:54+09:00",
+  "updated_at": "2026-07-06T10:04+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -10,8 +10,38 @@
     "피델리티",
     "Miri"
   ],
-  "last_seen": "20260706000027",
+  "last_seen": "20260706000038",
   "disclosures": [
+    {
+      "rcept_no": "20260706000038",
+      "rcept_dt": "2026-07-06",
+      "firm": "Miri",
+      "corp_name": "현대이지웰",
+      "stock_code": "090850",
+      "corp_code": "00656951",
+      "stkrt": "",
+      "stkrt_prev": "",
+      "stkqy": "",
+      "report_resn": "",
+      "purpose": "",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "기타"
+    },
+    {
+      "rcept_no": "20260706000036",
+      "rcept_dt": "2026-07-06",
+      "firm": "브이아이피자산운용",
+      "corp_name": "신도리코",
+      "stock_code": "029530",
+      "corp_code": "00135795",
+      "stkrt": "",
+      "stkrt_prev": "",
+      "stkqy": "",
+      "report_resn": "",
+      "purpose": "",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "기타"
+    },
     {
       "rcept_no": "20260703000468",
       "rcept_dt": "2026-07-03",
