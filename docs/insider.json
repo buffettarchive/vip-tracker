@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-07T14:49+09:00",
+  "updated_at": "2026-07-07T15:04+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260707000202",
+  "last_seen": "20260707000214",
   "disclosures": [
+    {
+      "rcept_no": "20260707000214",
+      "rcept_dt": "2026-07-07",
+      "corp_name": "와이랩",
+      "stock_code": "432430",
+      "market": "KOSDAQ",
+      "corp_code": "01406265",
+      "repror": "윤지영",
+      "ofcps": "COO",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "2,300",
+      "total_cnt": "204,764",
+      "irds_rate": "0.01",
+      "hold_rate": "1.24",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260707000202",
       "rcept_dt": "2026-07-07",
