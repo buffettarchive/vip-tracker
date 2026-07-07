@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-07T17:54+09:00",
+  "updated_at": "2026-07-07T17:59+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -19,13 +19,13 @@
       "corp_name": "코웨이",
       "stock_code": "021240",
       "corp_code": "00170558",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkrt": "6.21",
+      "stkrt_prev": "5.30",
+      "stkqy": "4397819",
+      "report_resn": "장내매매 및 시간외매매로 인한 보유주식수 변동 및주요계약대상 주식 수 변경 주) 보유비율과 주요계약체결 비율",
+      "purpose": "경영권",
       "report_nm": "주식등의대량보유상황보고서(일반)",
-      "kind": "기타"
+      "kind": "매수"
     },
     {
       "rcept_no": "20260706000038",
