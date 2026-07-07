@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-07T09:19+09:00",
+  "updated_at": "2026-07-07T09:34+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260707000008",
+  "last_seen": "20260707000012",
   "disclosures": [
+    {
+      "rcept_no": "20260707000012",
+      "rcept_dt": "2026-07-07",
+      "corp_name": "힘스",
+      "stock_code": "238490",
+      "market": "KOSDAQ",
+      "corp_code": "00556712",
+      "repror": "김주환",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "13,300",
+      "total_cnt": "1,190,000",
+      "irds_rate": "0.12",
+      "hold_rate": "10.52",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260706000498",
       "rcept_dt": "2026-07-06",
