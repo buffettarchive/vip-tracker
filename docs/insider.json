@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-08T15:04+09:00",
+  "updated_at": "2026-07-08T15:14+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260708000288",
+  "last_seen": "20260708000299",
   "disclosures": [
+    {
+      "rcept_no": "20260708000298",
+      "rcept_dt": "2026-07-08",
+      "corp_name": "스틱인베스트먼트",
+      "stock_code": "026890",
+      "market": "KOSPI",
+      "corp_code": "00117498",
+      "repror": "이한주",
+      "ofcps": "파트너",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "3,000",
+      "total_cnt": "22,235",
+      "irds_rate": "0.01",
+      "hold_rate": "0.06",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260708000193",
       "rcept_dt": "2026-07-08",
