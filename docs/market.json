@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-07-08T01:04:18Z",
+  "updated_at": "2026-07-08T01:09:18Z",
   "quotes": {
     "KOSPI": {
-      "price": 7697.35,
+      "price": 7689.5,
       "prev_close": 8051.33,
-      "change": -353.98,
-      "change_pct": -4.4
+      "change": -361.83,
+      "change_pct": -4.49
     },
     "KOSDAQ": {
-      "price": 820.89,
+      "price": 819.45,
       "prev_close": 847.07,
-      "change": -26.18,
-      "change_pct": -3.09
+      "change": -27.62,
+      "change_pct": -3.26
     },
     "S&P 500": {
       "price": 7503.85,
@@ -20,9 +20,9 @@
       "change_pct": 0.28
     },
     "USD/KRW": {
-      "price": 1516.49,
+      "price": 1516.58,
       "prev_close": 1528.76,
-      "change": -12.27,
+      "change": -12.18,
       "change_pct": -0.8
     }
   }
