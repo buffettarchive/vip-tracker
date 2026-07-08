@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-08T16:59+09:00",
+  "updated_at": "2026-07-08T17:24+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260708000460",
+  "last_seen": "20260708000484",
   "disclosures": [
+    {
+      "rcept_no": "20260708000469",
+      "rcept_dt": "2026-07-08",
+      "corp_name": "케이엠제약",
+      "stock_code": "225430",
+      "market": "KOSDAQ",
+      "corp_code": "01095704",
+      "repror": "강일모",
+      "ofcps": "회장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "1,200",
+      "total_cnt": "2,115,163",
+      "irds_rate": "0.02",
+      "hold_rate": "37.92",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260708000453",
       "rcept_dt": "2026-07-08",
