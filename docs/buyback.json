@@ -1,6 +1,48 @@
 {
   "entries": [
     {
+      "rcept_no": "20260708000542",
+      "rcept_dt": "20260708",
+      "corp_code": "01526806",
+      "corp_name": "삼기에너지솔루션즈",
+      "corp_cls": "K",
+      "report_nm": "주요사항보고서(자기주식취득결정)",
+      "type": "취득",
+      "shares_common": null,
+      "shares_other": null,
+      "amount_common": null,
+      "amount_other": null,
+      "acq_purpose": null,
+      "acq_method": null,
+      "acq_period_start": null,
+      "acq_period_end": null,
+      "acq_decision_date": null,
+      "total_shares": null,
+      "ratio_pct": null,
+      "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260708000542"
+    },
+    {
+      "rcept_no": "20260708000520",
+      "rcept_dt": "20260708",
+      "corp_code": "01491607",
+      "corp_name": "오에스피",
+      "corp_cls": "K",
+      "report_nm": "주요사항보고서(자기주식취득결정)",
+      "type": "취득",
+      "shares_common": null,
+      "shares_other": null,
+      "amount_common": null,
+      "amount_other": null,
+      "acq_purpose": null,
+      "acq_method": null,
+      "acq_period_start": null,
+      "acq_period_end": null,
+      "acq_decision_date": null,
+      "total_shares": null,
+      "ratio_pct": null,
+      "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260708000520"
+    },
+    {
       "rcept_no": "20260708000159",
       "rcept_dt": "20260708",
       "corp_code": "00363927",
@@ -5965,5 +6007,5 @@
       "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250610000225"
     }
   ],
-  "last_seen": "20260708000159"
+  "last_seen": "20260708000542"
 }
