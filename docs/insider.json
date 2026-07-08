@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-08T12:59+09:00",
+  "updated_at": "2026-07-08T13:39+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260708000167",
+  "last_seen": "20260708000186",
   "disclosures": [
+    {
+      "rcept_no": "20260708000186",
+      "rcept_dt": "2026-07-08",
+      "corp_name": "케이쓰리아이",
+      "stock_code": "431190",
+      "market": "KOSDAQ",
+      "corp_code": "01689266",
+      "repror": "이현석",
+      "ofcps": "이사",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "4,156",
+      "total_cnt": "11,224",
+      "irds_rate": "0.06",
+      "hold_rate": "0.15",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260708000167",
       "rcept_dt": "2026-07-08",
