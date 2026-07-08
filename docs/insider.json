@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-08T13:39+09:00",
+  "updated_at": "2026-07-08T13:54+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260708000186",
+  "last_seen": "20260708000193",
   "disclosures": [
+    {
+      "rcept_no": "20260708000193",
+      "rcept_dt": "2026-07-08",
+      "corp_name": "케이옥션",
+      "stock_code": "102370",
+      "market": "KOSDAQ",
+      "corp_code": "00668600",
+      "repror": "티에이어드바이저",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "148,943",
+      "total_cnt": "14,040,339",
+      "irds_rate": "0.57",
+      "hold_rate": "54.23",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260708000186",
       "rcept_dt": "2026-07-08",
