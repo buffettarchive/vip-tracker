@@ -60,6 +60,41 @@ def fetch_quote(symbol):
         return None
 
 
+def fetch_history(symbol):
+    """Yahoo Finance에서 최근 3개월 일봉 OHLC를 가져와 캔들차트용 배열로 반환."""
+    try:
+        url = f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}"
+        params = {"interval": "1d", "range": "3mo"}
+        r = s.get(url, params=params, timeout=10)
+        data = r.json()
+        result = data["chart"]["result"][0]
+        ts = result.get("timestamp") or []
+        q = result["indicators"]["quote"][0]
+        opens = q.get("open", [])
+        highs = q.get("high", [])
+        lows = q.get("low", [])
+        closes = q.get("close", [])
+        candles = []
+        for i, t in enumerate(ts):
+            o, h, l, c = opens[i], highs[i], lows[i], closes[i]
+            # null 값(휴장 등)은 건너뜀
+            if None in (o, h, l, c):
+                continue
+            # Lightweight Charts는 time을 YYYY-MM-DD 문자열로 받음
+            day = dt.datetime.fromtimestamp(t, dt.timezone.utc).strftime("%Y-%m-%d")
+            candles.append({
+                "time": day,
+                "open": round(o, 2),
+                "high": round(h, 2),
+                "low": round(l, 2),
+                "close": round(c, 2),
+            })
+        return candles
+    except Exception as e:
+        print(f"[warn] history {symbol}: {e}", file=sys.stderr)
+        return None
+
+
 def gh_get_file():
     url = f"{GH_API}/repos/{GH_OWNER}/{GH_REPO}/contents/{GH_PATH}?ref={GH_BRANCH}"
     r = s.get(url, headers=GH_HEADERS, timeout=15)
@@ -88,11 +123,17 @@ def gh_put_file(data, sha):
 def main():
     sha = gh_get_file()
     quotes = {}
+    history = {}
     for name, symbol in TICKERS.items():
         q = fetch_quote(symbol)
         if q:
             quotes[name] = q
             print(f"  {name}: {q['price']} ({q['change_pct']:+.2f}%)")
+        # 캔들차트용 과거 시세도 수집
+        hist = fetch_history(symbol)
+        if hist:
+            history[name] = hist
+            print(f"    history {name}: {len(hist)}개 캔들")
         time.sleep(0.3)
 
     if not quotes:
@@ -102,6 +143,7 @@ def main():
     payload = {
         "updated_at": dt.datetime.now(dt.UTC).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "quotes": quotes,
+        "history": history,
     }
     gh_put_file(payload, sha)
 
