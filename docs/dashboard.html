@@ -16,6 +16,9 @@
 <!-- 폰트: Spoqa Han Sans Neo v3.3.0 고정 -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/spoqa-han-sans@3.3.0/css/SpoqaHanSansNeo.css" />
 
+<!-- Lightweight Charts v4.2.0 (TradingView 오픈소스, 무료) -->
+<script src="https://unpkg.com/lightweight-charts@4.2.0/dist/lightweight-charts.standalone.production.js"></script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6B17RZ2E78"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -197,7 +200,7 @@ footer#footer{margin:40px 0 0;padding-top:24px;border-top:1px solid var(--line)}
       <span class="chart-title" id="chartTitle">KOSPI</span>
       <span class="chart-hint" id="chartHint">티커를 눌러 지수를 바꿀 수 있습니다</span>
     </div>
-    <div id="tvChart" class="tv-chart"></div>
+    <div id="marketChart" class="tv-chart"></div>
   </div>
 
   <div class="maintabs" id="mainTabs" role="tablist">
@@ -378,61 +381,53 @@ function firmTag(item){
 
 let FIRM={disclosures:[],firms:[]}, INSIDER={disclosures:[]}, BUYBACK={entries:[]};
 let view="insider", activeFirm="전체", activeMarket="ALL", activeBBType="ALL";
-let currentTvName="KOSPI", tvWidgetLoaded=false;
+let currentChartName="KOSPI";
 let LAST_MARKET=null;
+let lwChart=null, lwSeries=null;
 
-// ── TradingView 차트 ──
-function loadTvChart(name){
-  currentTvName = name;
-  const symbol = TV_SYMBOLS[name] || "KRX:KOSPI";
+// ── Lightweight Charts (내 데이터 기반 캔들차트) ──
+function initChart(){
+  const container = document.getElementById("marketChart");
+  if(!container || !window.LightweightCharts || lwChart) return;
+  lwChart = LightweightCharts.createChart(container, {
+    layout: { background:{ type:'solid', color:'#ffffff' }, textColor:'#74767c', fontFamily:"'Spoqa Han Sans Neo', sans-serif" },
+    grid: { vertLines:{ color:'#f3f3ef' }, horzLines:{ color:'#f3f3ef' } },
+    rightPriceScale: { borderColor:'#ecebe5' },
+    timeScale: { borderColor:'#ecebe5', timeVisible:false },
+    crosshair: { mode: LightweightCharts.CrosshairMode.Normal },
+    autoSize: true,
+  });
+  lwSeries = lwChart.addCandlestickSeries({
+    upColor:'#e0473b', downColor:'#0047FF',
+    wickUpColor:'#e0473b', wickDownColor:'#0047FF',
+    borderVisible:false,
+  });
+}
+
+function drawChart(name){
+  currentChartName = name;
   const titleEl = document.getElementById("chartTitle");
   if(titleEl) titleEl.textContent = name;
-  const container = document.getElementById("tvChart");
-  if(!container) return;
-  container.innerHTML = "";
-  const div = document.createElement("div");
-  div.className = "tradingview-widget-container";
-  div.style.height = "100%";
-  const inner = document.createElement("div");
-  inner.className = "tradingview-widget-container__widget";
-  inner.style.height = "100%";
-  div.appendChild(inner);
-  const script = document.createElement("script");
-  script.type = "text/javascript";
-  script.src = "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
-  script.async = true;
-  script.innerHTML = JSON.stringify({
-    autosize: true,
-    symbol: symbol,
-    interval: "D",
-    timezone: "Asia/Seoul",
-    theme: "light",
-    style: "3",
-    locale: LANG==="en" ? "en" : "kr",
-    hide_top_toolbar: true,
-    hide_legend: false,
-    allow_symbol_change: false,
-    save_image: false,
-    backgroundColor: "rgba(255,255,255,1)",
-    gridColor: "rgba(240,239,235,1)",
-    support_host: "https://www.tradingview.com"
-  });
-  div.appendChild(script);
-  container.appendChild(div);
   // 티커 active 표시 갱신
   document.querySelectorAll(".ticker-item").forEach(it=>{
     it.classList.toggle("active", it.dataset.tvname===name);
   });
+  initChart();
+  if(!lwSeries) return;
+  const hist = (LAST_MARKET && LAST_MARKET.history) ? LAST_MARKET.history[name] : null;
+  const hintEl = document.getElementById("chartHint");
+  if(!hist || !hist.length){
+    lwSeries.setData([]);
+    if(hintEl) hintEl.textContent = "차트 데이터를 불러오는 중입니다";
+    return;
+  }
+  if(hintEl) hintEl.textContent = "최근 3개월 · 일봉";
+  lwSeries.setData(hist);
+  if(lwChart) lwChart.timeScale().fitContent();
 }
 
 // ── 시장 지표 티커 ──
-const TV_SYMBOLS = {
-  "KOSPI": "KRX:KOSPI",
-  "KOSDAQ": "KRX:KOSDAQ",
-  "S&P 500": "SP:SPX",
-  "USD/KRW": "FX_IDC:USDKRW",
-  "야간선물": "KRX:KOSPI200FUT",
-};
+const CHART_NAMES = ["KOSPI","KOSDAQ","S&P 500","USD/KRW","야간선물"];
 
 function renderTicker(mk){
   const el=document.getElementById("ticker");
@@ -446,7 +441,7 @@ function renderTicker(mk){
     const cls=pct>0?"up":pct<0?"down":"flat";
     const sign=pct>0?"+":"";
     const price=name==="USD/KRW"?q.price.toFixed(2):q.price.toLocaleString();
-    const active = (name===currentTvName) ? " active" : "";
+    const active = (name===currentChartName) ? " active" : "";
     return `<div class="ticker-item${active}" data-tvname="${name}">
       <span class="ticker-name">${name}</span>
       <span class="ticker-price">${price}</span>
@@ -458,7 +453,7 @@ function renderTicker(mk){
   el.querySelectorAll(".ticker-item").forEach(item=>{
     item.onclick = ()=>{
       const name = item.dataset.tvname;
-      if(TV_SYMBOLS[name]) loadTvChart(name);
+      if(CHART_NAMES.includes(name)) drawChart(name);
     };
   });
 }
@@ -670,6 +665,7 @@ function loadData(isFirstLoad){
     if(b) BUYBACK=b;
     if(mk){ LAST_MARKET=mk; }
     renderTicker(LAST_MARKET);
+    if(mk) drawChart(currentChartName);
     if(isFirstLoad){
       if(FIRM.is_seed) $("#seedFlag").innerHTML=`<span class="badge big">${t("seed")}</span>`;
       applyStaticTexts(); buildFirmTabs(); buildMarketFilter(); setFooter();
@@ -684,13 +680,13 @@ setInterval(()=>loadData(false), 300000);
 function refreshTicker(){
   fetch("market.json?ts="+Date.now())
     .then(r=>r.json())
-    .then(mk=>{ if(mk){ LAST_MARKET=mk; renderTicker(mk); } })
+    .then(mk=>{ if(mk){ LAST_MARKET=mk; renderTicker(mk); drawChart(currentChartName); } })
     .catch(()=>{});
 }
 refreshTicker();
 
 // 초기 차트 로드 (KOSPI)
-loadTvChart("KOSPI");
+drawChart("KOSPI");
 </script>
 </body>
 </html>
