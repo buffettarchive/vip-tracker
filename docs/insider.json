@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-09T11:39+09:00",
+  "updated_at": "2026-07-09T12:29+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260709000156",
+  "last_seen": "20260709000163",
   "disclosures": [
+    {
+      "rcept_no": "20260709000163",
+      "rcept_dt": "2026-07-09",
+      "corp_name": "씨앤투스",
+      "stock_code": "352700",
+      "market": "KOSDAQ",
+      "corp_code": "00875237",
+      "repror": "하춘욱",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "9,656",
+      "total_cnt": "11,094,443",
+      "irds_rate": "0.04",
+      "hold_rate": "42.22",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260709000156",
       "rcept_dt": "2026-07-09",
