@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-09T14:44+09:00",
+  "updated_at": "2026-07-09T14:55+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260709000331",
+  "last_seen": "20260709000354",
   "disclosures": [
+    {
+      "rcept_no": "20260709000354",
+      "rcept_dt": "2026-07-09",
+      "corp_name": "쏘카",
+      "stock_code": "403550",
+      "market": "KOSPI",
+      "corp_code": "01026157",
+      "repror": "박재욱",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "11,652",
+      "total_cnt": "989,173",
+      "irds_rate": "-0.37",
+      "hold_rate": "2.61",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260709000331",
       "rcept_dt": "2026-07-09",
