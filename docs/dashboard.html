@@ -379,6 +379,7 @@ function firmTag(item){
 let FIRM={disclosures:[],firms:[]}, INSIDER={disclosures:[]}, BUYBACK={entries:[]};
 let view="insider", activeFirm="전체", activeMarket="ALL", activeBBType="ALL";
 let currentTvName="KOSPI", tvWidgetLoaded=false;
+let LAST_MARKET=null;
 
 // ── TradingView 차트 ──
 function loadTvChart(name){
@@ -435,21 +436,25 @@ const TV_SYMBOLS = {
 
 function renderTicker(mk){
   const el=document.getElementById("ticker");
-  if(!el||!mk||!mk.quotes) return;
+  if(!el) return;
+  if(!mk||!mk.quotes){ return; }
   const order=["KOSPI","KOSDAQ","S&P 500","USD/KRW","야간선물"];
-  el.innerHTML=order.map(name=>{
+  const html = order.map(name=>{
     const q=mk.quotes[name];
-    if(!q) return "";
-    const cls=q.change_pct>0?"up":q.change_pct<0?"down":"flat";
-    const sign=q.change_pct>0?"+":"";
+    if(!q || typeof q.price!=="number") return "";
+    const pct = (typeof q.change_pct==="number") ? q.change_pct : 0;
+    const cls=pct>0?"up":pct<0?"down":"flat";
+    const sign=pct>0?"+":"";
     const price=name==="USD/KRW"?q.price.toFixed(2):q.price.toLocaleString();
     const active = (name===currentTvName) ? " active" : "";
     return `<div class="ticker-item${active}" data-tvname="${name}">
       <span class="ticker-name">${name}</span>
       <span class="ticker-price">${price}</span>
-      <span class="ticker-chg ${cls}">${sign}${q.change_pct.toFixed(2)}%</span>
+      <span class="ticker-chg ${cls}">${sign}${pct.toFixed(2)}%</span>
     </div>`;
   }).join("");
+  if(!html) return;
+  el.innerHTML = html;
   el.querySelectorAll(".ticker-item").forEach(item=>{
     item.onclick = ()=>{
       const name = item.dataset.tvname;
@@ -663,7 +668,8 @@ function loadData(isFirstLoad){
     if(f) FIRM=f;
     if(i) INSIDER=i;
     if(b) BUYBACK=b;
-    if(mk) renderTicker(mk);
+    if(mk){ LAST_MARKET=mk; }
+    renderTicker(LAST_MARKET);
     if(isFirstLoad){
       if(FIRM.is_seed) $("#seedFlag").innerHTML=`<span class="badge big">${t("seed")}</span>`;
       applyStaticTexts(); buildFirmTabs(); buildMarketFilter(); setFooter();
@@ -673,6 +679,15 @@ function loadData(isFirstLoad){
 }
 loadData(true);
 setInterval(()=>loadData(false), 300000);
+
+// market.json 단독 재시도 (티커가 비어있을 때 대비)
+function refreshTicker(){
+  fetch("market.json?ts="+Date.now())
+    .then(r=>r.json())
+    .then(mk=>{ if(mk){ LAST_MARKET=mk; renderTicker(mk); } })
+    .catch(()=>{});
+}
+refreshTicker();
 
 // 초기 차트 로드 (KOSPI)
 loadTvChart("KOSPI");
