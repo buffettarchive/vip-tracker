@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-09T09:19+09:00",
+  "updated_at": "2026-07-09T09:29+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260709000017",
+  "last_seen": "20260709000025",
   "disclosures": [
+    {
+      "rcept_no": "20260709000025",
+      "rcept_dt": "2026-07-09",
+      "corp_name": "와토스코리아",
+      "stock_code": "079000",
+      "market": "KOSDAQ",
+      "corp_code": "00455875",
+      "repror": "송태양",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "110,353",
+      "total_cnt": "1,716,002",
+      "irds_rate": "1.53",
+      "hold_rate": "23.83",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260709000017",
       "rcept_dt": "2026-07-09",
