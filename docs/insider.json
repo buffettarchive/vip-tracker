@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-09T15:59+09:00",
+  "updated_at": "2026-07-09T16:19+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260709000466",
+  "last_seen": "20260709000488",
   "disclosures": [
+    {
+      "rcept_no": "20260709000481",
+      "rcept_dt": "2026-07-09",
+      "corp_name": "대한약품",
+      "stock_code": "023910",
+      "market": "KOSDAQ",
+      "corp_code": "00113128",
+      "repror": "이윤우",
+      "ofcps": "회장",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "2,019",
+      "total_cnt": "1,495,213",
+      "irds_rate": "0.03",
+      "hold_rate": "24.92",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260709000457",
       "rcept_dt": "2026-07-09",
