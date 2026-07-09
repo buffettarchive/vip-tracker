@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-09T15:54+09:00",
+  "updated_at": "2026-07-09T15:59+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260709000453",
+  "last_seen": "20260709000466",
   "disclosures": [
+    {
+      "rcept_no": "20260709000457",
+      "rcept_dt": "2026-07-09",
+      "corp_name": "링크드",
+      "stock_code": "193250",
+      "market": "KOSDAQ",
+      "corp_code": "01035678",
+      "repror": "곽동석",
+      "ofcps": "사외이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "41,562",
+      "total_cnt": "66,532",
+      "irds_rate": "0.31",
+      "hold_rate": "0.50",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260709000446",
       "rcept_dt": "2026-07-09",
