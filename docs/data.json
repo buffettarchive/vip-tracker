@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-09T13:04+09:00",
+  "updated_at": "2026-07-09T13:09+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -10,15 +10,15 @@
     "피델리티",
     "Miri"
   ],
-  "last_seen": "20260709000169",
+  "last_seen": "20260709000173",
   "disclosures": [
     {
-      "rcept_no": "20260709000169",
+      "rcept_no": "20260709000173",
       "rcept_dt": "2026-07-09",
       "firm": "피델리티",
-      "corp_name": "미창석유공업",
-      "stock_code": "003650",
-      "corp_code": "00122056",
+      "corp_name": "한국항공우주",
+      "stock_code": "047810",
+      "corp_code": "00309503",
       "stkrt": "",
       "stkrt_prev": "",
       "stkqy": "",
@@ -26,6 +26,21 @@
       "purpose": "",
       "report_nm": "주식등의대량보유상황보고서(약식)",
       "kind": "기타"
+    },
+    {
+      "rcept_no": "20260709000169",
+      "rcept_dt": "2026-07-09",
+      "firm": "피델리티",
+      "corp_name": "미창석유공업",
+      "stock_code": "003650",
+      "corp_code": "00122056",
+      "stkrt": "7.92",
+      "stkrt_prev": "8.98",
+      "stkqy": "137799",
+      "report_resn": "단순 주식 처분에 의한 변동 보고",
+      "purpose": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매도"
     },
     {
       "rcept_no": "20260708000048",
