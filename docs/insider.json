@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-09T17:37+09:00",
+  "updated_at": "2026-07-09T17:59+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260709000645",
+  "last_seen": "20260709000673",
   "disclosures": [
+    {
+      "rcept_no": "20260709000658",
+      "rcept_dt": "2026-07-09",
+      "corp_name": "디에스엠",
+      "stock_code": "104040",
+      "market": "KOSDAQ",
+      "corp_code": "00442905",
+      "repror": "김나영",
+      "ofcps": "사내이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "155,039",
+      "total_cnt": "677,877",
+      "irds_rate": "0.58",
+      "hold_rate": "2.53",
+      "method": "장외매수"
+    },
     {
       "rcept_no": "20260709000584",
       "rcept_dt": "2026-07-09",
