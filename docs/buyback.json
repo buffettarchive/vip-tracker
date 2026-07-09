@@ -1,6 +1,27 @@
 {
   "entries": [
     {
+      "rcept_no": "20260708000588",
+      "rcept_dt": "20260709",
+      "corp_code": "01379129",
+      "corp_name": "매드업",
+      "corp_cls": "K",
+      "report_nm": "주요사항보고서(자기주식취득결정)",
+      "type": "취득",
+      "shares_common": 210000,
+      "shares_other": null,
+      "amount_common": 1564500000,
+      "amount_other": null,
+      "acq_purpose": "주주가치 제고 및 임직원 주식 보상",
+      "acq_method": "코스닥시장을 통한 장내 직접취득",
+      "acq_period_start": "2026년 07월 09일",
+      "acq_period_end": "2026년 09월 20일",
+      "acq_decision_date": "2026년 07월 08일",
+      "total_shares": null,
+      "ratio_pct": null,
+      "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260708000588"
+    },
+    {
       "rcept_no": "20260708000542",
       "rcept_dt": "20260708",
       "corp_code": "01526806",
@@ -6007,5 +6028,5 @@
       "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250610000225"
     }
   ],
-  "last_seen": "20260708000542"
+  "last_seen": "20260708000588"
 }
