@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-09T13:09+09:00",
+  "updated_at": "2026-07-09T13:19+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -19,13 +19,13 @@
       "corp_name": "한국항공우주",
       "stock_code": "047810",
       "corp_code": "00309503",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkrt": "6.63",
+      "stkrt_prev": "6.92",
+      "stkqy": "6460009",
+      "report_resn": "운용펀드 해소에 의한 변동보고",
+      "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "기타"
+      "kind": "매도"
     },
     {
       "rcept_no": "20260709000169",
