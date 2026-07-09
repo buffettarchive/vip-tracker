@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-09T16:34+09:00",
+  "updated_at": "2026-07-09T16:55+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260709000533",
+  "last_seen": "20260709000564",
   "disclosures": [
+    {
+      "rcept_no": "20260709000564",
+      "rcept_dt": "2026-07-09",
+      "corp_name": "프레스티지바이오파마",
+      "stock_code": "950210",
+      "market": "KOSPI",
+      "corp_code": "01510489",
+      "repror": "김 마이클 진우",
+      "ofcps": "부회장",
+      "rgist": "등기임원",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "2,000",
+      "total_cnt": "1,807,620",
+      "irds_rate": "0.02",
+      "hold_rate": "15.04",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260709000533",
       "rcept_dt": "2026-07-09",
