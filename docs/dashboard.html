@@ -4,119 +4,18 @@
 <meta name="naver-site-verification" content="6a07b5913b5ed5318875354c39e3d21ce086e524" />
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>버핏아카이브</title>
-<meta name="description" content="국내 자산운용사 및 내부자매수 트래킹 사이트" />
+<title>버핏아카이브 — 대시보드</title>
+<meta name="description" content="국내 가치투자 운용사 지분공시와 내부자 매수 트래킹 사이트" />
 <link rel="icon" href="favicon.ico" />
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","name":"버핏아카이브","url":"https://www.buffettarchive.co.kr/"}
-</script>
 <meta property="og:type" content="website" />
 <meta property="og:title" content="버핏아카이브" />
-<meta property="og:description" content="자산운용사 및 내부자매수 트래킹 사이트" />
+<meta property="og:description" content="가치투자 운용사 및 내부자 매수 트래킹 사이트" />
 <meta property="og:image" content="https://www.buffettarchive.co.kr/og-image-v2.png" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://www.buffettarchive.co.kr/" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="버핏아카이브" />
-<meta name="twitter:description" content="자산운용사 및 내부자매수 트래킹 사이트" />
-<meta name="twitter:image" content="https://www.buffettarchive.co.kr/og-image-v2.png" />
-<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
-<style>
-  @font-face{
-    font-family:"Chomsky";
-    src:url("Chomsky.woff2") format("woff2");
-    font-weight:normal; font-style:normal; font-display:swap;
-  }
-  :root{
-    --paper:#0e0e10; --paper-2:#1a1a1d;
-    --ink:#f2f0ea; --ink-soft:#9b958a; --line:#2c2c30;
-    --up:#4caf7e; --down:#e06458; --live:#ff5247;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{-webkit-text-size-adjust:100%}
-  body{background:var(--paper);color:var(--ink);
-    font-family:"Pretendard Variable",Pretendard,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased;}
-  .wrap{max-width:880px;margin:0 auto;padding:0 20px}
+<meta property="og:url" content="https://www.buffettarchive.co.kr/dashboard.html" />
 
-  header.mast{border-bottom:2px solid var(--ink);padding:44px 0 0;}
-  .kicker{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;margin-bottom:16px;}
-  h1.title{font-family:"Chomsky",serif;font-weight:400;font-size:clamp(44px,9vw,76px);line-height:1.08;letter-spacing:.06em;color:#d8d5cc;-webkit-text-stroke:0.6px var(--paper);text-stroke:0.6px var(--paper);}
-  .meta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:20px;font-size:12.5px;color:var(--ink-soft);}
-  .meta-row .langtoggle{margin-left:auto;}
-  .live{display:inline-flex;align-items:center;gap:6px;color:var(--live);font-weight:600}
-  .live .dot{width:7px;height:7px;border-radius:50%;background:var(--live);display:inline-block;animation:pulse 1.5s ease-in-out infinite}
-  @keyframes pulse{0%{opacity:1;box-shadow:0 0 0 0 rgba(214,58,46,.5)}70%{opacity:.55;box-shadow:0 0 0 5px rgba(214,58,46,0)}100%{opacity:1;box-shadow:0 0 0 0 rgba(214,58,46,0)}}
+<!-- 폰트: Spoqa Han Sans Neo v3.3.0 고정 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/spoqa-han-sans@3.3.0/css/SpoqaHanSansNeo.css" />
 
-  .maintabs{display:flex;gap:0;margin-top:26px;}
-  .maintabs button{
-    font-family:inherit;font-size:15px;font-weight:600;
-    background:transparent;border:none;border-bottom:2px solid transparent;
-    color:var(--ink-soft);padding:12px 4px;margin-right:28px;cursor:pointer;
-    transform:translateY(2px);transition:.15s;
-  }
-  .maintabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--ink);}
-
-  /* 시장 지표 티커바 */
-  .ticker{display:flex;gap:28px;padding:14px 0;border-bottom:1px solid var(--line);overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
-  .ticker::-webkit-scrollbar{display:none}
-  .ticker-item{display:flex;align-items:baseline;gap:6px;}
-  .ticker-name{color:var(--ink-soft);font-weight:600;font-size:11px;letter-spacing:.04em;}
-  .ticker-price{color:var(--ink);font-weight:600;font-size:13px;}
-  .ticker-chg{font-size:12px;font-weight:600;}
-  .ticker-chg.up{color:var(--up)}
-  .ticker-chg.down{color:var(--down)}
-  .ticker-chg.flat{color:var(--ink-soft)}
-
-  .langtoggle{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;font-size:11px;font-weight:600;letter-spacing:.05em}
-  .langtoggle button{font-family:inherit;background:transparent;border:0;color:var(--ink-soft);padding:4px 10px;cursor:pointer;transition:.15s;}
-  .langtoggle button[aria-selected="true"]{background:var(--ink);color:var(--paper)}
-  .market-filter{display:flex;gap:6px}
-  .market-filter button{font-family:inherit;font-size:13px;font-weight:600;background:transparent;border:1px solid var(--line);color:var(--ink-soft);padding:7px 14px;border-radius:999px;cursor:pointer;transition:.15s;}
-  .market-filter button[aria-selected="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink);}
-  .controls{display:flex;align-items:center;padding:20px 0;flex-wrap:wrap;gap:12px;}
-  .firm-tabs{display:flex;gap:6px;flex-wrap:wrap}
-  .firm-tabs button{font-family:inherit;font-size:13px;font-weight:600;background:transparent;border:1px solid var(--line);color:var(--ink-soft);padding:7px 14px;border-radius:999px;cursor:pointer;transition:.15s;}
-  .firm-tabs button[aria-selected="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink);}
-  .count{font-size:12.5px;color:var(--ink-soft);margin-left:auto}
-
-  .feed{list-style:none;border-top:1px solid var(--ink)}
-  .row{display:grid;grid-template-columns:88px 1fr auto;gap:18px;align-items:center;
-    padding:20px 4px;border-bottom:1px solid var(--line);text-decoration:none;color:inherit;
-    transition:background .15s,padding-left .15s;}
-  .row:hover{background:var(--paper-2);padding-left:10px}
-  .row.dim{opacity:.4}
-  .date{font-size:13px;color:var(--ink-soft);line-height:1.25;}
-  .date .y{display:block;font-size:11px;opacity:.7}
-  .corp{min-width:0}
-  .corp .name{font-size:19px;font-weight:600;letter-spacing:-.01em}
-  .corp .name .code{font-size:12px;color:var(--ink-soft);font-weight:500;margin-left:7px}
-  .corp .sub{font-size:12.5px;color:var(--ink-soft);margin-top:3px}
-  .corp .sub .who{color:var(--ink);font-weight:600}
-  .stake{text-align:right;white-space:nowrap}
-  .stake .pct{font-size:24px;font-weight:600;line-height:1}
-  .stake .held{font-size:10px;color:var(--ink-soft);letter-spacing:.04em;margin-top:2px}
-  .stake .delta{font-size:12px;margin-top:4px;font-weight:600}
-  .delta.buy{color:var(--up)} .delta.sell{color:var(--down)} .delta.etc{color:var(--ink-soft)}
-  .badge{display:inline-block;font-size:10.5px;font-weight:600;padding:1px 6px;border-radius:3px;margin-left:6px;vertical-align:middle;}
-  .badge.in{background:#163a28;color:#5fd197}
-  .badge.out{background:#3a3320;color:#d4b876}
-  .badge.big{background:#3d2420;color:#e89086}
-  .badge.mkt-y{background:#1a2c44;color:#7fb0e8}
-  .badge.mkt-k{background:#3a3320;color:#d4b876}
-  .badge.bb-acq{background:#163a28;color:#5fd197}
-  .badge.bb-cancel{background:#2a1a3a;color:#c89bef}
-
-  .empty{padding:60px 0;text-align:center;color:var(--ink-soft);font-size:15px}
-  footer{margin:36px 0 0;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--ink-soft);line-height:1.7;}
-  .disclaim{margin-top:10px;font-size:11.5px;opacity:.9}
-  .dtitle{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;margin-bottom:10px}
-  .dline{font-size:12px;color:var(--ink-soft);line-height:1.65;margin-bottom:7px}
-  .contact{margin:14px 0 50px;font-size:12.5px;letter-spacing:.02em}
-  .contact a{color:var(--ink);text-decoration:none;font-weight:700}
-  .contact a:hover{border-bottom:1px solid var(--ink)}
-  @media(max-width:560px){.row{grid-template-columns:58px 1fr auto;gap:12px}.corp .name{font-size:16px}.stake .pct{font-size:19px}.maintabs button{font-size:14px;margin-right:18px}.ticker{gap:18px}}
-</style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6B17RZ2E78"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -124,29 +23,174 @@
   gtag('js', new Date());
   gtag('config', 'G-6B17RZ2E78');
 </script>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cobalt:#0047FF; --cobalt-d:#0034c2;
+  --bg:#F8F7F4; --card:#ffffff; --ink:#16181d; --muted:#74767c;
+  --line:#ecebe5; --line-2:#f3f3ef; --chip:#e9eeff;
+  --up:#0047FF; --down:#e0473b;
+}
+html{-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:'Spoqa Han Sans Neo', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight:400; line-height:1.5; -webkit-font-smoothing:antialiased;
+  min-height:100vh;
+}
+a{color:inherit;text-decoration:none}
+::selection{background:rgba(0,71,255,.16)}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+
+/* ── 상단 네비게이션 ── */
+.topnav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(248,247,244,.86);backdrop-filter:saturate(180%) blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.topnav-inner{max-width:960px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:16px}
+.topnav .logo{height:22px;width:auto}
+.topnav .home{font-size:13px;font-weight:600;color:var(--muted);display:inline-flex;align-items:center;gap:5px;padding:7px 12px;border-radius:10px;transition:.15s}
+.topnav .home:hover{background:#efeee8;color:var(--ink)}
+.topnav .spacer{margin-left:auto}
+.topnav .live{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--cobalt)}
+.topnav .live .dot{width:7px;height:7px;border-radius:50%;background:var(--cobalt);animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{0%{opacity:1;box-shadow:0 0 0 0 rgba(0,71,255,.45)}70%{opacity:.5;box-shadow:0 0 0 5px rgba(0,71,255,0)}100%{opacity:1;box-shadow:0 0 0 0 rgba(0,71,255,0)}}
+.langtoggle{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;font-size:11px;font-weight:700;letter-spacing:.04em;background:#fff}
+.langtoggle button{font-family:inherit;background:transparent;border:0;color:var(--muted);padding:5px 11px;cursor:pointer;transition:.15s}
+.langtoggle button[aria-selected="true"]{background:var(--cobalt);color:#fff}
+
+#seedFlag{display:inline-block}
+
+/* ── 시장 지표 티커 ── */
+.ticker{
+  display:flex;gap:10px;margin:32px 0 4px;overflow-x:auto;white-space:nowrap;
+  -webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:2px;
+}
+.ticker::-webkit-scrollbar{display:none}
+.ticker-item{
+  display:inline-flex;align-items:baseline;gap:8px;flex:0 0 auto;
+  background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:12px 16px;box-shadow:0 1px 2px rgba(22,24,29,.03);
+}
+.ticker-name{color:var(--muted);font-weight:700;font-size:11px;letter-spacing:.03em}
+.ticker-price{color:var(--ink);font-weight:700;font-size:14px}
+.ticker-chg{font-size:12.5px;font-weight:700}
+.ticker-chg.up{color:var(--up)} .ticker-chg.down{color:var(--down)} .ticker-chg.flat{color:var(--muted)}
+
+/* ── 메인 탭 (3D 버튼 스타일) ── */
+.maintabs{display:flex;gap:9px;margin:24px 0 0;flex-wrap:wrap}
+.maintabs button{
+  font-family:inherit;font-size:15px;font-weight:700;cursor:pointer;
+  padding:11px 20px;border-radius:9999px;border:none;
+  background:var(--card);color:#4b4d55;box-shadow:0 3px 0 #e4e2db;
+  transition:transform .12s,box-shadow .12s;
+}
+.maintabs button:active{transform:translateY(3px);box-shadow:0 0 0 #e4e2db}
+.maintabs button[aria-selected="true"]{
+  background:var(--cobalt);color:#fff;
+  box-shadow:0 4px 0 var(--cobalt-d),0 8px 16px rgba(0,71,255,.24);
+}
+
+/* ── 필터 컨트롤 ── */
+.controls{display:flex;align-items:center;padding:22px 0 6px;flex-wrap:wrap;gap:10px}
+.firm-tabs,.market-filter{display:flex;gap:6px;flex-wrap:wrap}
+.firm-tabs button,.market-filter button{
+  font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;
+  background:var(--card);border:1px solid var(--line);color:var(--muted);
+  padding:7px 14px;border-radius:999px;transition:.15s;
+}
+.firm-tabs button:hover,.market-filter button:hover{border-color:#d9d8d1;color:var(--ink)}
+.firm-tabs button[aria-selected="true"],.market-filter button[aria-selected="true"]{
+  background:var(--cobalt);color:#fff;border-color:var(--cobalt);
+}
+.count{font-size:13px;color:var(--muted);margin-left:auto;font-weight:600}
+
+/* ── 피드 리스트 (카드 컨테이너) ── */
+.feed{list-style:none;background:var(--card);border:1px solid var(--line);border-radius:20px;margin-top:14px;overflow:hidden;box-shadow:0 4px 20px rgba(22,24,29,.04)}
+.row{
+  display:grid;grid-template-columns:52px 1fr auto;gap:16px;align-items:center;
+  padding:18px 22px;border-bottom:1px solid var(--line-2);
+  transition:background .12s;
+}
+.row:last-child{border-bottom:none}
+.row:hover{background:#faf9f6}
+a.row{cursor:pointer}
+.row.dim{opacity:.5}
+
+/* 이니셜 동그라미 */
+.avatar{
+  width:52px;height:52px;border-radius:16px;background:#f1f2f6;
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;font-weight:700;color:#5a6270;letter-spacing:-.5px;
+}
+
+.corp{min-width:0}
+.corp .name{font-size:17px;font-weight:700;letter-spacing:-.3px;color:var(--ink);display:flex;align-items:center;flex-wrap:wrap;gap:2px}
+.corp .name .code{font-size:12px;color:var(--muted);font-weight:500;margin-left:5px}
+.corp .sub{font-size:13px;color:var(--muted);margin-top:5px}
+.corp .sub .who{color:var(--ink);font-weight:600}
+
+.stake{text-align:right;white-space:nowrap}
+.stake .pct{font-size:22px;font-weight:700;line-height:1;color:var(--cobalt);letter-spacing:-.5px}
+.stake .held{font-size:11px;color:var(--muted);letter-spacing:.02em;margin-top:5px}
+.stake .delta{font-size:12.5px;margin-top:4px;font-weight:700}
+.delta.buy{color:var(--muted)} .delta.sell{color:var(--down)} .delta.etc{color:var(--muted)}
+
+/* ── 배지 ── */
+.badge{display:inline-block;font-size:10.5px;font-weight:700;padding:2px 7px;border-radius:6px;margin-left:6px;vertical-align:middle;letter-spacing:.01em}
+.badge.in{background:#e3ecff;color:#0047FF}
+.badge.out{background:#fff0dd;color:#c67c1e}
+.badge.big{background:#ffe3df;color:#d0402f}
+.badge.mkt-y{background:#e3ecff;color:#2f6fe0}
+.badge.mkt-k{background:#fdf0d9;color:#c0912b}
+.badge.bb-acq{background:#e3ecff;color:#0047FF}
+.badge.bb-cancel{background:#efe3fb;color:#8a4fd0}
+
+.empty{padding:64px 0;text-align:center;color:var(--muted);font-size:15px}
+
+/* ── 면책조항 / 푸터 ── */
+footer#footer{margin:40px 0 0;padding-top:24px;border-top:1px solid var(--line)}
+.dtitle{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:10px}
+.dline{font-size:12.5px;color:var(--muted);line-height:1.7;margin-bottom:7px}
+.contact{margin:18px 0 56px;font-size:13px}
+.contact a{color:var(--ink);font-weight:700}
+.contact a:hover{color:var(--cobalt)}
+
+@media(max-width:560px){
+  .row{grid-template-columns:52px 1fr auto;gap:12px;padding:16px 16px}
+  .corp .name{font-size:15px}
+  .stake .pct{font-size:18px}
+  .maintabs button{font-size:14px;padding:10px 16px}
+}
+</style>
 </head>
 <body>
+
+<nav class="topnav">
+  <div class="topnav-inner">
+    <a href="index.html"><img src="logo.png" alt="Buffett Archive" class="logo"></a>
+    <a href="index.html" class="home">← 홈으로</a>
+    <span class="spacer"></span>
+    <span class="live"><span class="dot"></span><span id="liveText">실시간 트래킹</span></span>
+    <div class="langtoggle" id="langToggle" role="tablist">
+      <button data-lang="ko" aria-selected="true">KO</button>
+      <button data-lang="en" aria-selected="false">EN</button>
+    </div>
+  </div>
+</nav>
+
 <div class="wrap">
 
-  <header class="mast">
-    <p class="kicker">버핏아카이브</p>
-    <h1 class="title">Buffett Archive</h1>
-    <div class="meta-row">
-      <span class="live"><span class="dot"></span><span id="liveText">실시간 트래킹</span></span>
-      <span id="seedFlag"></span>
-      <div class="langtoggle" id="langToggle" role="tablist">
-        <button data-lang="ko" aria-selected="true">KO</button>
-        <button data-lang="en" aria-selected="false">EN</button>
-      </div>
-    </div>
-    <div class="maintabs" id="mainTabs" role="tablist">
-      <button role="tab" data-view="insider" aria-selected="true" id="tabInsider">내부자 매수</button>
-      <button role="tab" data-view="firm" aria-selected="false" id="tabFirm">운용사 지분공시</button>
-      <button role="tab" data-view="buyback" aria-selected="false" id="tabBuyback">자사주 매입/소각</button>
-    </div>
-  </header>
-
   <div class="ticker" id="ticker"></div>
+  <span id="seedFlag"></span>
+
+  <div class="maintabs" id="mainTabs" role="tablist">
+    <button role="tab" data-view="insider" aria-selected="true" id="tabInsider">내부자 매수</button>
+    <button role="tab" data-view="firm" aria-selected="false" id="tabFirm">운용사 지분공시</button>
+    <button role="tab" data-view="buyback" aria-selected="false" id="tabBuyback">자사주 매입/소각</button>
+  </div>
 
   <div class="controls">
     <div class="firm-tabs" id="firmTabs" role="tablist"></div>
@@ -161,7 +205,6 @@
   <div class="contact"><a href="mailto:buffettarchive1@gmail.com"><span id="businessLabel">Business</span> : buffettarchive1@gmail.com</a></div>
 
 </div>
-
 <script>
 const $ = s => document.querySelector(s);
 
@@ -356,14 +399,14 @@ function renderFirm(){
     const firmName=localizeFirm(item.firm);
     const resn=localizeResn(item.report_resn||"")||"—";
     const inner=`
-      <div class="date">${dt.m} ${dt.d}<span class="y">${dt.y}</span></div>
+      <div class="avatar">${(item.corp_name||"·").trim().charAt(0)}</div>
       <div class="corp">
         <div class="name">${item.corp_name}${code}</div>
         <div class="sub"><span class="who">${firmName}</span> · ${resn}</div>
       </div>
       <div class="stake">
         <div class="pct">${item.stkrt ? item.stkrt+"%" : "—"}</div>
-        <div class="held">${t("held_stake")}</div>
+        <div class="held">${t("held_stake")} · ${dt.m} ${dt.d}</div>
         <div class="delta ${tag.cls}">${tag.txt}</div>
       </div>`;
     return dl?`<a class="row${item.stkrt?'':' dim'}" href="${dl}" target="_blank" rel="noopener">${inner}</a>`
@@ -395,14 +438,14 @@ function renderInsider(){
                     ? localizeRole(item.main_shrholdr) : "";
     const pos=[ofcpsLoc, mainLoc].filter(Boolean).join(" · ");
     const inner=`
-      <div class="date">${dt.m} ${dt.d}<span class="y">${dt.y}</span></div>
+      <div class="avatar">${(item.corp_name||"·").trim().charAt(0)}</div>
       <div class="corp">
         <div class="name">${item.corp_name}${code}</div>
         <div class="sub">${mkb}<span class="who">${item.repror}</span> · ${pos||"—"} ${mb}</div>
       </div>
       <div class="stake">
         <div class="pct">+${item.irds_cnt}</div>
-        <div class="held">${t("bought")}</div>
+        <div class="held">${t("bought")} · ${dt.m} ${dt.d}</div>
         <div class="delta buy">${t("hold")} ${item.hold_rate}%</div>
       </div>`;
     return dl?`<a class="row" href="${dl}" target="_blank" rel="noopener">${inner}</a>`
@@ -447,14 +490,14 @@ function renderBuyback(){
     }
     const dimCls = hasData ? "" : " dim";
     const inner=`
-      <div class="date">${dt.m} ${dt.d}<span class="y">${dt.y}</span></div>
+      <div class="avatar">${(item.corp_name||"·").trim().charAt(0)}</div>
       <div class="corp">
         <div class="name">${item.corp_name||"—"} ${typeBadge}</div>
         <div class="sub">${mkb}${sub}</div>
       </div>
       <div class="stake">
         <div class="pct">${shares}</div>
-        <div class="held">${hasData ? (isAcq ? t("bb_shares") : t("bb_shares_cancel")) : t("kind_pending")}</div>
+        <div class="held">${(hasData ? (isAcq ? t("bb_shares") : t("bb_shares_cancel")) : t("kind_pending"))} · ${dt.m} ${dt.d}</div>
         ${amtLabel ? `<div class="delta buy">${amtLabel}</div>` : ""}
       </div>`;
     return dl?`<a class="row${dimCls}" href="${dl}" target="_blank" rel="noopener">${inner}</a>`
@@ -511,7 +554,7 @@ function setFooter(){
 
 function applyStaticTexts(){
   document.documentElement.lang = LANG;
-  document.title = t("title_html");
+  document.title = LANG==="en" ? "Buffett Archive" : "버핏아카이브";
   $("#tabInsider").textContent = t("tab_insider");
   $("#tabFirm").textContent = t("tab_firm");
   $("#tabBuyback").textContent = t("tab_buyback");
