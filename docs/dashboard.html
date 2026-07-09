@@ -3,7 +3,7 @@
 <head>
 <meta name="naver-site-verification" content="6a07b5913b5ed5318875354c39e3d21ce086e524" />
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=1000" />
 <title>버핏아카이브 — 대시보드</title>
 <meta name="description" content="국내 가치투자 운용사 지분공시와 내부자 매수 트래킹 사이트" />
 <link rel="icon" href="favicon.ico" />
@@ -57,9 +57,11 @@ a{color:inherit;text-decoration:none}
 .topnav .live{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--cobalt)}
 .topnav .live .dot{width:7px;height:7px;border-radius:50%;background:var(--cobalt);animation:pulse 1.6s ease-in-out infinite}
 @keyframes pulse{0%{opacity:1;box-shadow:0 0 0 0 rgba(0,71,255,.45)}70%{opacity:.5;box-shadow:0 0 0 5px rgba(0,71,255,0)}100%{opacity:1;box-shadow:0 0 0 0 rgba(0,71,255,0)}}
-.langtoggle{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;font-size:11px;font-weight:700;letter-spacing:.04em;background:#fff}
-.langtoggle button{font-family:inherit;background:transparent;border:0;color:var(--muted);padding:5px 11px;cursor:pointer;transition:.15s}
-.langtoggle button[aria-selected="true"]{background:var(--cobalt);color:#fff}
+.langtoggle{display:inline-flex;align-items:center;gap:2px;font-size:13px;font-weight:600}
+.langtoggle button{font-family:inherit;background:transparent;border:0;color:#b7b6ae;padding:5px 7px;cursor:pointer;transition:color .15s;border-radius:8px}
+.langtoggle button:hover{color:var(--muted)}
+.langtoggle button[aria-selected="true"]{color:var(--ink);font-weight:700}
+.langtoggle .divider{color:#dcdbd3;font-weight:400}
 
 #seedFlag{display:inline-block}
 
@@ -69,6 +71,15 @@ a{color:inherit;text-decoration:none}
   -webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:2px;
 }
 .ticker::-webkit-scrollbar{display:none}
+
+/* ── TradingView 차트 ── */
+.chart-wrap{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px 18px 8px;margin-top:14px;box-shadow:0 4px 20px rgba(22,24,29,.04)}
+.chart-head{display:flex;align-items:baseline;gap:12px;margin-bottom:12px;padding:0 4px;flex-wrap:wrap}
+.chart-title{font-size:17px;font-weight:700;color:var(--ink);letter-spacing:-.3px}
+.chart-hint{font-size:12px;color:var(--muted)}
+.tv-chart{height:340px;width:100%;border-radius:12px;overflow:hidden}
+.ticker-item{cursor:pointer}
+.ticker-item.active{border-color:var(--cobalt);box-shadow:0 0 0 1px var(--cobalt)}
 .ticker-item{
   display:inline-flex;align-items:baseline;gap:8px;flex:0 0 auto;
   background:var(--card);border:1px solid var(--line);border-radius:14px;
@@ -136,7 +147,7 @@ a.row{cursor:pointer}
 .stake .pct{font-size:22px;font-weight:700;line-height:1;color:var(--cobalt);letter-spacing:-.5px}
 .stake .held{font-size:11px;color:var(--muted);letter-spacing:.02em;margin-top:5px}
 .stake .delta{font-size:12.5px;margin-top:4px;font-weight:700}
-.delta.buy{color:var(--muted)} .delta.sell{color:var(--down)} .delta.etc{color:var(--muted)}
+.delta.buy{color:#12a55a} .delta.sell{color:var(--down)} .delta.etc{color:var(--muted)}
 
 /* ── 배지 ── */
 .badge{display:inline-block;font-size:10.5px;font-weight:700;padding:2px 7px;border-radius:6px;margin-left:6px;vertical-align:middle;letter-spacing:.01em}
@@ -158,12 +169,7 @@ footer#footer{margin:40px 0 0;padding-top:24px;border-top:1px solid var(--line)}
 .contact a{color:var(--ink);font-weight:700}
 .contact a:hover{color:var(--cobalt)}
 
-@media(max-width:560px){
-  .row{grid-template-columns:52px 1fr auto;gap:12px;padding:16px 16px}
-  .corp .name{font-size:15px}
-  .stake .pct{font-size:18px}
-  .maintabs button{font-size:14px;padding:10px 16px}
-}
+
 </style>
 </head>
 <body>
@@ -173,9 +179,9 @@ footer#footer{margin:40px 0 0;padding-top:24px;border-top:1px solid var(--line)}
     <a href="index.html"><img src="logo.png" alt="Buffett Archive" class="logo"></a>
     <a href="index.html" class="home">← 홈으로</a>
     <span class="spacer"></span>
-    <span class="live"><span class="dot"></span><span id="liveText">실시간 트래킹</span></span>
     <div class="langtoggle" id="langToggle" role="tablist">
       <button data-lang="ko" aria-selected="true">KO</button>
+      <span class="divider">·</span>
       <button data-lang="en" aria-selected="false">EN</button>
     </div>
   </div>
@@ -185,6 +191,14 @@ footer#footer{margin:40px 0 0;padding-top:24px;border-top:1px solid var(--line)}
 
   <div class="ticker" id="ticker"></div>
   <span id="seedFlag"></span>
+
+  <div class="chart-wrap">
+    <div class="chart-head">
+      <span class="chart-title" id="chartTitle">KOSPI</span>
+      <span class="chart-hint" id="chartHint">티커를 눌러 지수를 바꿀 수 있습니다</span>
+    </div>
+    <div id="tvChart" class="tv-chart"></div>
+  </div>
 
   <div class="maintabs" id="mainTabs" role="tablist">
     <button role="tab" data-view="insider" aria-selected="true" id="tabInsider">내부자 매수</button>
@@ -211,7 +225,6 @@ const $ = s => document.querySelector(s);
 const I18N = {
   ko: {
     title_html: "버핏아카이브",
-    live: "실시간 트래킹",
     tab_insider: "내부자 매수",
     tab_firm: "운용사 지분공시",
     tab_buyback: "자사주 매입/소각",
@@ -247,7 +260,6 @@ const I18N = {
   },
   en: {
     title_html: "버핏아카이브",
-    live: "Live tracking",
     tab_insider: "Insider Buying",
     tab_firm: "Asset Manager Filings",
     tab_buyback: "Treasury Buybacks",
@@ -366,8 +378,61 @@ function firmTag(item){
 
 let FIRM={disclosures:[],firms:[]}, INSIDER={disclosures:[]}, BUYBACK={entries:[]};
 let view="insider", activeFirm="전체", activeMarket="ALL", activeBBType="ALL";
+let currentTvName="KOSPI", tvWidgetLoaded=false;
+
+// ── TradingView 차트 ──
+function loadTvChart(name){
+  currentTvName = name;
+  const symbol = TV_SYMBOLS[name] || "KRX:KOSPI";
+  const titleEl = document.getElementById("chartTitle");
+  if(titleEl) titleEl.textContent = name;
+  const container = document.getElementById("tvChart");
+  if(!container) return;
+  container.innerHTML = "";
+  const div = document.createElement("div");
+  div.className = "tradingview-widget-container";
+  div.style.height = "100%";
+  const inner = document.createElement("div");
+  inner.className = "tradingview-widget-container__widget";
+  inner.style.height = "100%";
+  div.appendChild(inner);
+  const script = document.createElement("script");
+  script.type = "text/javascript";
+  script.src = "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
+  script.async = true;
+  script.innerHTML = JSON.stringify({
+    autosize: true,
+    symbol: symbol,
+    interval: "D",
+    timezone: "Asia/Seoul",
+    theme: "light",
+    style: "3",
+    locale: LANG==="en" ? "en" : "kr",
+    hide_top_toolbar: true,
+    hide_legend: false,
+    allow_symbol_change: false,
+    save_image: false,
+    backgroundColor: "rgba(255,255,255,1)",
+    gridColor: "rgba(240,239,235,1)",
+    support_host: "https://www.tradingview.com"
+  });
+  div.appendChild(script);
+  container.appendChild(div);
+  // 티커 active 표시 갱신
+  document.querySelectorAll(".ticker-item").forEach(it=>{
+    it.classList.toggle("active", it.dataset.tvname===name);
+  });
+}
 
 // ── 시장 지표 티커 ──
+const TV_SYMBOLS = {
+  "KOSPI": "KRX:KOSPI",
+  "KOSDAQ": "KRX:KOSDAQ",
+  "S&P 500": "SP:SPX",
+  "USD/KRW": "FX_IDC:USDKRW",
+  "야간선물": "KRX:KOSPI200FUT",
+};
+
 function renderTicker(mk){
   const el=document.getElementById("ticker");
   if(!el||!mk||!mk.quotes) return;
@@ -378,12 +443,19 @@ function renderTicker(mk){
     const cls=q.change_pct>0?"up":q.change_pct<0?"down":"flat";
     const sign=q.change_pct>0?"+":"";
     const price=name==="USD/KRW"?q.price.toFixed(2):q.price.toLocaleString();
-    return `<div class="ticker-item">
+    const active = (name===currentTvName) ? " active" : "";
+    return `<div class="ticker-item${active}" data-tvname="${name}">
       <span class="ticker-name">${name}</span>
       <span class="ticker-price">${price}</span>
       <span class="ticker-chg ${cls}">${sign}${q.change_pct.toFixed(2)}%</span>
     </div>`;
   }).join("");
+  el.querySelectorAll(".ticker-item").forEach(item=>{
+    item.onclick = ()=>{
+      const name = item.dataset.tvname;
+      if(TV_SYMBOLS[name]) loadTvChart(name);
+    };
+  });
 }
 
 function renderFirm(){
@@ -558,7 +630,6 @@ function applyStaticTexts(){
   $("#tabInsider").textContent = t("tab_insider");
   $("#tabFirm").textContent = t("tab_firm");
   $("#tabBuyback").textContent = t("tab_buyback");
-  $("#liveText").textContent = t("live");
   $("#businessLabel").textContent = t("business");
   $("#langToggle").querySelectorAll("button").forEach(b=>
     b.setAttribute("aria-selected", b.dataset.lang===LANG));
@@ -602,6 +673,9 @@ function loadData(isFirstLoad){
 }
 loadData(true);
 setInterval(()=>loadData(false), 300000);
+
+// 초기 차트 로드 (KOSPI)
+loadTvChart("KOSPI");
 </script>
 </body>
 </html>
