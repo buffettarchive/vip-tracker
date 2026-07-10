@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-10T14:34+09:00",
+  "updated_at": "2026-07-10T14:44+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260710000304",
+  "last_seen": "20260710000315",
   "disclosures": [
+    {
+      "rcept_no": "20260710000315",
+      "rcept_dt": "2026-07-10",
+      "corp_name": "국제약품",
+      "stock_code": "002720",
+      "market": "KOSPI",
+      "corp_code": "00104722",
+      "repror": "김영관",
+      "ofcps": "부사장",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "2,000",
+      "total_cnt": "37,000",
+      "irds_rate": "0.00",
+      "hold_rate": "0.17",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260710000304",
       "rcept_dt": "2026-07-10",
