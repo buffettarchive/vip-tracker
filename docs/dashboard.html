@@ -220,6 +220,7 @@ footer#footer{margin:40px 0 0;padding-top:24px;border-top:1px solid var(--line)}
       <span class="chart-hint" id="chartHint"></span>
       <div class="chart-tf" id="chartTf">
         <button data-tf="daily" aria-selected="true">일봉</button>
+        <button data-tf="weekly" aria-selected="false">주봉</button>
         <button data-tf="monthly" aria-selected="false">월봉</button>
       </div>
     </div>
@@ -495,10 +496,10 @@ function drawChart(name){
   if(!lwSeries) return;
   const raw = (LAST_MARKET && LAST_MARKET.history) ? LAST_MARKET.history[name] : null;
   const hintEl = document.getElementById("chartHint");
-  // 데이터 구조: {daily:[...], monthly:[...]} (신규) 또는 [...] (구버전)
+  // 데이터 구조: {daily:[...], weekly:[...], monthly:[...]} (신규) 또는 [...] (구버전)
   let series = null;
   if(Array.isArray(raw)) series = raw;               // 구버전 호환
-  else if(raw) series = raw[currentTimeframe] || raw.daily || raw.monthly;
+  else if(raw) series = raw[currentTimeframe] || raw.daily || raw.weekly || raw.monthly;
   if(!series || !series.length){
     lwSeries.setData([]);
     lastCandle = null;
@@ -506,11 +507,23 @@ function drawChart(name){
     if(hintEl) hintEl.textContent = "차트 데이터를 불러오는 중입니다";
     return;
   }
-  if(hintEl) hintEl.textContent = currentTimeframe==="monthly" ? "전체 기간 · 월봉" : "최근 1년 · 일봉";
+  const tfLabel = {daily:"일봉", weekly:"주봉", monthly:"월봉"}[currentTimeframe] || "일봉";
+  if(hintEl) hintEl.textContent = `전체 기간 · ${tfLabel} · 스크롤로 과거 탐색`;
   lwSeries.setData(series);
   lastCandle = series[series.length-1];   // 최근 캔들 (마우스 벗어났을 때 기본 표시)
   updateOhlcBar(lastCandle);
-  if(lwChart) lwChart.timeScale().fitContent();
+  // 초기 뷰: 최근 1년 구간만 보이게 (드래그/줌으로 전체 기간 탐색 가능)
+  if(lwChart){
+    const lastTime = series[series.length-1].time;
+    const end = new Date(lastTime);
+    const start = new Date(end); start.setFullYear(start.getFullYear()-1);
+    const fmt = d => d.toISOString().slice(0,10);
+    // 데이터에 1년 전 시점이 있으면 그 구간, 없으면 전체
+    const firstTime = series[0].time;
+    const from = (fmt(start) > firstTime) ? fmt(start) : firstTime;
+    try { lwChart.timeScale().setVisibleRange({ from, to: lastTime }); }
+    catch(e){ lwChart.timeScale().fitContent(); }
+  }
 }
 
 // ── 시장 지표 티커 ──
