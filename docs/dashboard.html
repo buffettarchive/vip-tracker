@@ -78,11 +78,15 @@ a{color:inherit;text-decoration:none}
 /* ── TradingView 차트 ── */
 .chart-wrap{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px 18px 8px;margin-top:14px;box-shadow:0 4px 20px rgba(22,24,29,.04)}
 .chart-head{display:flex;align-items:baseline;gap:12px;margin-bottom:12px;padding:0 4px;flex-wrap:wrap}
+.chart-tf{margin-left:auto;display:inline-flex;gap:2px;background:#f1f2f6;border-radius:10px;padding:3px}
+.chart-tf button{font-family:inherit;font-size:12.5px;font-weight:700;color:var(--muted);background:transparent;border:none;padding:5px 12px;border-radius:8px;cursor:pointer;transition:.15s}
+.chart-tf button[aria-selected="true"]{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(22,24,29,.1)}
 .chart-title{font-size:17px;font-weight:700;color:var(--ink);letter-spacing:-.3px}
 .chart-hint{font-size:12px;color:var(--muted)}
 .tv-chart{height:340px;width:100%;border-radius:12px;overflow:hidden}
 .ticker-item{cursor:pointer}
-.ticker-item.active{border-color:var(--cobalt);box-shadow:0 0 0 1px var(--cobalt)}
+.ticker-item.active{background:var(--chip);border-color:var(--chip)}
+.ticker-item.active .ticker-name{color:var(--cobalt)}
 .ticker-item{
   display:inline-flex;align-items:baseline;gap:8px;flex:0 0 auto;
   background:var(--card);border:1px solid var(--line);border-radius:14px;
@@ -164,6 +168,15 @@ a.row{cursor:pointer}
 
 .empty{padding:64px 0;text-align:center;color:var(--muted);font-size:15px}
 
+/* ── 운용사 포트폴리오 뷰 ── */
+.firm-row{cursor:pointer}
+.firm-avatar{background:var(--chip);color:var(--cobalt)}
+.pf-header{list-style:none;padding:20px 22px 22px;border-bottom:2px solid var(--ink)}
+.pf-back{font-family:inherit;font-size:13px;font-weight:600;color:var(--muted);background:transparent;border:none;cursor:pointer;padding:0;margin-bottom:14px;transition:color .15s}
+.pf-back:hover{color:var(--cobalt)}
+.pf-title{font-size:24px;font-weight:700;letter-spacing:-.6px;color:var(--ink)}
+.pf-meta{font-size:12.5px;color:var(--muted);margin-top:6px}
+
 /* ── 면책조항 / 푸터 ── */
 footer#footer{margin:40px 0 0;padding-top:24px;border-top:1px solid var(--line)}
 .dtitle{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:10px}
@@ -198,7 +211,11 @@ footer#footer{margin:40px 0 0;padding-top:24px;border-top:1px solid var(--line)}
   <div class="chart-wrap">
     <div class="chart-head">
       <span class="chart-title" id="chartTitle">KOSPI</span>
-      <span class="chart-hint" id="chartHint">티커를 눌러 지수를 바꿀 수 있습니다</span>
+      <span class="chart-hint" id="chartHint"></span>
+      <div class="chart-tf" id="chartTf">
+        <button data-tf="daily" aria-selected="true">일봉</button>
+        <button data-tf="monthly" aria-selected="false">월봉</button>
+      </div>
     </div>
     <div id="marketChart" class="tv-chart"></div>
   </div>
@@ -240,6 +257,15 @@ const I18N = {
     empty_firm: "표시할 공시가 없습니다.",
     empty_buyback: "표시할 자사주 매입/소각 공시가 없습니다.",
     held_stake: "보유 지분",
+    count_firm_list: n => `${n}개 운용사`,
+    count_portfolio: n => `보유 종목 ${n}개`,
+    holdings_label: "보유",
+    stocks_unit: "종목",
+    top_holding: "최대 보유",
+    recent_label: "최근 공시",
+    firm_list_back: "운용사 목록",
+    "pf-disclaimer": "5% 이상 지분공시 기준",
+    shares_held: "보유 주식",
     bought: "매수 주식수",
     hold: "보유",
     badge_in: "장내매수",
@@ -275,6 +301,15 @@ const I18N = {
     empty_firm: "No filings to display.",
     empty_buyback: "No treasury buyback or cancellation filings to display.",
     held_stake: "Held",
+    count_firm_list: n => `${n} firms`,
+    count_portfolio: n => `${n} holdings`,
+    holdings_label: "Holds",
+    stocks_unit: " stocks",
+    top_holding: "Top",
+    recent_label: "Latest",
+    firm_list_back: "Firms",
+    "pf-disclaimer": "Based on 5%+ ownership filings",
+    shares_held: "Shares",
     bought: "Shares Bought",
     hold: "Hold",
     badge_in: "Open Market",
@@ -381,7 +416,9 @@ function firmTag(item){
 
 let FIRM={disclosures:[],firms:[]}, INSIDER={disclosures:[]}, BUYBACK={entries:[]};
 let view="insider", activeFirm="전체", activeMarket="ALL", activeBBType="ALL";
+let selectedFirm=null; // null이면 운용사 목록, 값이 있으면 그 운용사 포트폴리오
 let currentChartName="KOSPI";
+let currentTimeframe="daily";
 let LAST_MARKET=null;
 let lwChart=null, lwSeries=null;
 
@@ -414,15 +451,19 @@ function drawChart(name){
   });
   initChart();
   if(!lwSeries) return;
-  const hist = (LAST_MARKET && LAST_MARKET.history) ? LAST_MARKET.history[name] : null;
+  const raw = (LAST_MARKET && LAST_MARKET.history) ? LAST_MARKET.history[name] : null;
   const hintEl = document.getElementById("chartHint");
-  if(!hist || !hist.length){
+  // 데이터 구조: {daily:[...], monthly:[...]} (신규) 또는 [...] (구버전)
+  let series = null;
+  if(Array.isArray(raw)) series = raw;               // 구버전 호환
+  else if(raw) series = raw[currentTimeframe] || raw.daily || raw.monthly;
+  if(!series || !series.length){
     lwSeries.setData([]);
     if(hintEl) hintEl.textContent = "차트 데이터를 불러오는 중입니다";
     return;
   }
-  if(hintEl) hintEl.textContent = "최근 3개월 · 일봉";
-  lwSeries.setData(hist);
+  if(hintEl) hintEl.textContent = currentTimeframe==="monthly" ? "전체 기간 · 월봉" : "최근 1년 · 일봉";
+  lwSeries.setData(series);
   if(lwChart) lwChart.timeScale().fitContent();
 }
 
@@ -458,32 +499,95 @@ function renderTicker(mk){
   });
 }
 
+// 운용사별 포트폴리오 집계 (종목별 최신 공시만)
+function buildFirmPortfolio(firmName){
+  const items = FIRM.disclosures.filter(x=>x.firm===firmName);
+  const byCorp = {};
+  items.forEach(x=>{
+    const key = x.corp_name;
+    if(!byCorp[key] || (x.rcept_no||"") > (byCorp[key].rcept_no||"")) byCorp[key]=x;
+  });
+  // 지분율 높은 순
+  return Object.values(byCorp).sort((a,b)=>(parseFloat(b.stkrt)||0)-(parseFloat(a.stkrt)||0));
+}
+
 function renderFirm(){
-  const list=FIRM.disclosures
-    .filter(x=>activeFirm==="전체"||x.firm===activeFirm)
-    .sort((a,b)=>(b.rcept_no||"").localeCompare(a.rcept_no||""));
-  $("#count").textContent=t("count_firm", list.length);
+  if(selectedFirm){ renderFirmPortfolio(); return; }
+  renderFirmList();
+}
+
+// ── 1단계: 운용사 목록 ──
+function renderFirmList(){
+  const firms = FIRM.firms || [];
+  $("#count").textContent = t("count_firm_list", firms.length);
   const feed=$("#feed");
-  if(!list.length){feed.innerHTML=`<li class="empty">${t("empty_firm")}</li>`;return;}
-  feed.innerHTML=list.map(item=>{
+  if(!firms.length){feed.innerHTML=`<li class="empty">${t("empty_firm")}</li>`;return;}
+  feed.innerHTML = firms.map(firm=>{
+    const pf = buildFirmPortfolio(firm);
+    const name = localizeFirm(firm);
+    // 최근 활동일
+    const latest = FIRM.disclosures.filter(x=>x.firm===firm)
+      .sort((a,b)=>(b.rcept_no||"").localeCompare(a.rcept_no||""))[0];
+    const dt = latest ? fmtDate(latest.rcept_dt) : {m:"",d:""};
+    // 최고 지분 종목
+    const top = pf[0];
+    const topLabel = top ? `${top.corp_name} ${top.stkrt}%` : "—";
+    return `<div class="row firm-row" data-firm-select="${firm}">
+      <div class="avatar firm-avatar">${name.trim().charAt(0)}</div>
+      <div class="corp">
+        <div class="name">${name}</div>
+        <div class="sub">${t("holdings_label")} <span class="who">${pf.length}${t("stocks_unit")}</span> · ${t("top_holding")} ${topLabel}</div>
+      </div>
+      <div class="stake">
+        <div class="pct" style="font-size:16px">${pf.length}<span style="font-size:12px;color:var(--muted);font-weight:600">${t("stocks_unit")}</span></div>
+        <div class="held">${t("recent_label")} · ${dt.m} ${dt.d}</div>
+      </div>
+    </div>`;
+  }).join("");
+  feed.querySelectorAll("[data-firm-select]").forEach(el=>{
+    el.onclick=()=>{ selectedFirm=el.dataset.firmSelect; render(); window.scrollTo({top:0,behavior:"smooth"}); };
+  });
+}
+
+// ── 2단계: 선택된 운용사의 포트폴리오 ──
+function renderFirmPortfolio(){
+  const pf = buildFirmPortfolio(selectedFirm);
+  const name = localizeFirm(selectedFirm);
+  $("#count").textContent = t("count_portfolio", pf.length);
+  const feed=$("#feed");
+  // 상단 뒤로가기 + 운용사명 헤더
+  const header = `<li class="pf-header">
+    <button class="pf-back" id="pfBack">← ${t("firm_list_back")}</button>
+    <div class="pf-title">${name}</div>
+    <div class="pf-meta">${t("holdings_label")} ${pf.length}${t("stocks_unit")} · ${t("pf-disclaimer")}</div>
+  </li>`;
+  if(!pf.length){ feed.innerHTML=header+`<li class="empty">${t("empty_firm")}</li>`; bindPfBack(); return; }
+  const rows = pf.map(item=>{
     const dt=fmtDate(item.rcept_dt), dl=dartLink(item.rcept_no), tag=firmTag(item);
     const code=item.stock_code?`<span class="code">${item.stock_code}</span>`:"";
-    const firmName=localizeFirm(item.firm);
-    const resn=localizeResn(item.report_resn||"")||"—";
+    const shares = item.stkqy ? Number(item.stkqy).toLocaleString() : "—";
+    const isSold = (item.kind||"")==="매도" && (parseFloat(item.stkrt)||0) < 5;
     const inner=`
       <div class="avatar">${(item.corp_name||"·").trim().charAt(0)}</div>
       <div class="corp">
         <div class="name">${item.corp_name}${code}</div>
-        <div class="sub"><span class="who">${firmName}</span> · ${resn}</div>
+        <div class="sub">${t("shares_held")} ${shares} · ${dt.m} ${dt.d}</div>
       </div>
       <div class="stake">
         <div class="pct">${item.stkrt ? item.stkrt+"%" : "—"}</div>
-        <div class="held">${t("held_stake")} · ${dt.m} ${dt.d}</div>
+        <div class="held">${t("held_stake")}</div>
         <div class="delta ${tag.cls}">${tag.txt}</div>
       </div>`;
-    return dl?`<a class="row${item.stkrt?'':' dim'}" href="${dl}" target="_blank" rel="noopener">${inner}</a>`
-             :`<div class="row${item.stkrt?'':' dim'}">${inner}</div>`;
+    return dl?`<a class="row${isSold?' dim':''}" href="${dl}" target="_blank" rel="noopener">${inner}</a>`
+             :`<div class="row${isSold?' dim':''}">${inner}</div>`;
   }).join("");
+  feed.innerHTML = header + rows;
+  bindPfBack();
+}
+
+function bindPfBack(){
+  const b=document.getElementById("pfBack");
+  if(b) b.onclick=()=>{ selectedFirm=null; render(); window.scrollTo({top:0,behavior:"smooth"}); };
 }
 
 function renderInsider(){
@@ -584,16 +688,8 @@ function render(){
 }
 
 function buildFirmTabs(){
-  if(view!=="firm"){ $("#firmTabs").innerHTML=""; $("#firmTabs").style.display="none"; return; }
-  $("#firmTabs").style.display="flex";
-  const firms=["전체",...(FIRM.firms||[])];
-  $("#firmTabs").innerHTML=firms.map(f=>{
-    const label = f==="전체" ? t("all") : localizeFirm(f);
-    return `<button role="tab" aria-selected="${f===activeFirm}" data-firm="${f}">${label}</button>`;
-  }).join("");
-  $("#firmTabs").querySelectorAll("button").forEach(b=>{
-    b.onclick=()=>{activeFirm=b.dataset.firm;buildFirmTabs();render();};
-  });
+  // 운용사 목록이 피드에 카드로 표시되므로 상단 필터 버튼은 사용하지 않음
+  $("#firmTabs").innerHTML=""; $("#firmTabs").style.display="none";
 }
 
 function buildMarketFilter(){
@@ -646,6 +742,7 @@ $("#langToggle").querySelectorAll("button").forEach(b=>{
 
 function switchView(v){
   view=v;
+  if(v==="firm") selectedFirm=null; // 운용사 탭 진입 시 항상 목록부터
   $("#mainTabs").querySelectorAll("button").forEach(b=>b.setAttribute("aria-selected", b.dataset.view===v));
   buildFirmTabs(); buildMarketFilter(); setFooter(); render();
 }
@@ -684,6 +781,17 @@ function refreshTicker(){
     .catch(()=>{});
 }
 refreshTicker();
+
+// 초기 차트 로드 (KOSPI)
+// 일봉/월봉 토글
+document.querySelectorAll("#chartTf button").forEach(b=>{
+  b.onclick=()=>{
+    currentTimeframe = b.dataset.tf;
+    document.querySelectorAll("#chartTf button").forEach(x=>
+      x.setAttribute("aria-selected", x.dataset.tf===currentTimeframe));
+    drawChart(currentChartName);
+  };
+});
 
 // 초기 차트 로드 (KOSPI)
 drawChart("KOSPI");
