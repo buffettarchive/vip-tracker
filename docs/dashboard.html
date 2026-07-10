@@ -58,14 +58,14 @@ a{color:inherit;text-decoration:none}
 .topnav .logo{height:32px;width:auto;transition:opacity .15s}
 .topnav a:hover .logo{opacity:.7}
 
-/* 메뉴 이동 링크 (우측 끝 배치, 파란색 테마) */
+/* 메뉴 이동 링크 (우측 끝 배치, 연회색 -> 파란색 통일) */
 .nav-links{
   margin-left:auto;
   display:flex; gap:28px; font-size:16px; font-weight:700; align-items:center;
 }
-.nav-links a{color:var(--cobalt); transition:0.2s;}
-.nav-links a:hover{color:var(--cobalt-d);}
-.nav-links a.active{color:var(--cobalt-d); text-decoration:underline; text-underline-offset:6px;}
+.nav-links a{color:var(--muted); transition:0.2s;}
+.nav-links a:hover{color:var(--ink);}
+.nav-links a.active{color:var(--cobalt); text-decoration:none;}
 
 .langtoggle{display:inline-flex;align-items:center;gap:2px;font-size:13px;font-weight:600;margin-left:32px;}
 .langtoggle button{font-family:inherit;background:transparent;border:0;color:#b7b6ae;padding:5px 7px;cursor:pointer;transition:color .15s;border-radius:8px}
@@ -207,10 +207,12 @@ footer#footer{margin:40px 0 0;padding-top:24px;border-top:1px solid var(--line)}
   <div class="topnav-inner">
     <a href="index.html" title="홈으로"><img src="logo.png" alt="Buffett Archive" class="logo"></a>
     
-    <!-- 우측 끝 메뉴 영역 -->
+    <!-- 4개 메뉴 영역 -->
     <div class="nav-links">
-      <a href="dashboard.html" class="active">국내 가치투자</a>
-      <a href="guru.html">미국 투자거장 (13F)</a>
+      <a href="dashboard.html?view=insider" id="nav-insider">내부자매수</a>
+      <a href="dashboard.html?view=firm" id="nav-firm">국내 지분공시</a>
+      <a href="dashboard.html?view=buyback" id="nav-buyback">자사주매입</a>
+      <a href="guru.html" id="nav-guru">구루 포트폴리오</a>
     </div>
 
     <div class="langtoggle" id="langToggle" role="tablist">
@@ -462,7 +464,13 @@ function firmTag(item){
 }
 
 let FIRM={disclosures:[],firms:[]}, INSIDER={disclosures:[]}, BUYBACK={entries:[]}, ARCHIVE={disclosures:[],firms:[]};
-let view="insider", activeFirm="전체", activeMarket="ALL", activeBBType="ALL";
+
+// URL 파라미터에서 초기 뷰 로드
+const params = new URLSearchParams(window.location.search);
+let view = params.get("view") || "insider";
+if(!["insider", "firm", "buyback"].includes(view)) view = "insider";
+
+let activeFirm="전체", activeMarket="ALL", activeBBType="ALL";
 let selectedFirm=null; 
 let selectedStock=null;
 let currentChartName="KOSPI";
@@ -470,6 +478,23 @@ let currentTimeframe="daily";
 let LAST_MARKET=null;
 let lwChart=null, lwSeries=null;
 let lastCandle=null;
+
+// ── 상단 네비게이션 활성화 로직 ──
+function updateNavLinks() {
+  document.querySelectorAll(".nav-links a").forEach(a => a.classList.remove("active"));
+  const activeNav = document.getElementById("nav-" + view);
+  if(activeNav) activeNav.classList.add("active");
+}
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.onclick = (e) => {
+    const href = link.getAttribute("href");
+    if(href.startsWith("dashboard.html?view=")){
+      e.preventDefault();
+      switchView(href.split("view=")[1]);
+    }
+  };
+});
 
 // ── Lightweight Charts ──
 function fmtOhlc(v){
@@ -602,7 +627,6 @@ function renderFirm(){
   renderFirmList();
 }
 
-// ── 1단계: 운용사 목록 ──
 function renderFirmList(){
   const firms = ARCHIVE.firms || FIRM.firms || [];
   $("#count").textContent = t("count_firm_list", firms.length);
@@ -629,7 +653,6 @@ function renderFirmList(){
   });
 }
 
-// ── 2단계: 거래 종목 목록 ──
 function renderFirmPortfolio(){
   const pf = buildFirmPortfolio(selectedFirm);
   const name = localizeFirm(selectedFirm);
@@ -672,7 +695,6 @@ function bindPfBack(){
   if(b) b.onclick=()=>{ selectedFirm=null; render(); window.scrollTo({top:0,behavior:"smooth"}); };
 }
 
-// ── 3단계: 종목별 매매 타임라인 ──
 function renderStockHistory(){
   const items = (ARCHIVE.disclosures || [])
     .filter(x=>x.firm===selectedFirm && x.corp_name===selectedStock)
@@ -852,6 +874,10 @@ function applyStaticTexts(){
   $("#businessLabel").textContent = t("business");
   $("#langToggle").querySelectorAll("button").forEach(b=>
     b.setAttribute("aria-selected", b.dataset.lang===LANG));
+  
+  // 영문 네비게이션 텍스트
+  const navGuru = document.getElementById("nav-guru");
+  if(navGuru) navGuru.textContent = LANG==="en" ? "Guru Portfolio" : "구루 포트폴리오";
 }
 
 function switchLang(lang){
@@ -863,15 +889,21 @@ $("#langToggle").querySelectorAll("button").forEach(b=>{
   b.onclick=()=>switchLang(b.dataset.lang);
 });
 
-function switchView(v){
+function switchView(v, updateUrl=true){
   view=v;
   if(v==="firm") { selectedFirm=null; selectedStock=null; } 
   $("#mainTabs").querySelectorAll("button").forEach(b=>b.setAttribute("aria-selected", b.dataset.view===v));
+  updateNavLinks();
+  if(updateUrl) window.history.replaceState(null, "", "?view="+v);
   buildFirmTabs(); buildMarketFilter(); setFooter(); render();
 }
 $("#mainTabs").querySelectorAll("button").forEach(b=>{
   b.onclick=()=>switchView(b.dataset.view);
 });
+
+// 화면 초기화 셋업
+updateNavLinks();
+$("#mainTabs").querySelectorAll("button").forEach(b=>b.setAttribute("aria-selected", b.dataset.view===view));
 
 function loadData(isFirstLoad){
   Promise.all([
