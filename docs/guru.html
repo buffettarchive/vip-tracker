@@ -41,14 +41,14 @@ a{color:inherit;text-decoration:none}
 .topnav .logo{height:32px;width:auto;transition:opacity .15s}
 .topnav a:hover .logo{opacity:.7}
 
-/* 메뉴 이동 링크 (우측 끝 배치, 파란색 테마) */
+/* 메뉴 이동 링크 (우측 끝 배치, 연회색 -> 파란색 통일) */
 .nav-links{
   margin-left:auto;
   display:flex; gap:28px; font-size:16px; font-weight:700; align-items:center;
 }
-.nav-links a{color:var(--cobalt); transition:0.2s;}
-.nav-links a:hover{color:var(--cobalt-d);}
-.nav-links a.active{color:var(--cobalt-d); text-decoration:underline; text-underline-offset:6px;}
+.nav-links a{color:var(--muted); transition:0.2s;}
+.nav-links a:hover{color:var(--ink);}
+.nav-links a.active{color:var(--cobalt); text-decoration:none;}
 
 /* ── 거장 선택 드롭다운 ── */
 .guru-selector-wrap {
@@ -122,10 +122,12 @@ a{color:inherit;text-decoration:none}
   <div class="topnav-inner">
     <a href="index.html" title="홈으로"><img src="logo.png" alt="Buffett Archive" class="logo"></a>
     
-    <!-- 우측 끝 메뉴 영역 -->
+    <!-- 분리된 4개 메뉴 영역 -->
     <div class="nav-links">
-      <a href="dashboard.html">국내 가치투자</a>
-      <a href="guru.html" class="active">미국 투자거장 (13F)</a>
+      <a href="dashboard.html?view=insider">내부자매수</a>
+      <a href="dashboard.html?view=firm">국내 지분공시</a>
+      <a href="dashboard.html?view=buyback">자사주매입</a>
+      <a href="guru.html" class="active">구루 포트폴리오</a>
     </div>
   </div>
 </nav>
