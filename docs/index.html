@@ -37,12 +37,17 @@ body, button, input, select, textarea, blockquote, p, span, div, a, h1, h2, h3 {
 a{color:var(--cobalt);text-decoration:none}
 a:hover{opacity:.82}
 ::selection{background:rgba(0,71,255,.16)}
-/* 3D 버튼 press 인터랙션 (원본 DCLogic.bindPress 대체) */
+/* 3D 버튼 press 인터랙션 */
 .ba-btn3d:active,.ba-btn3d-lt:active,.ba-btn3d-w:active,.ba-tab:active{transform:translateY(3px)}
-/* 반응형: 모바일에서 그리드 1열로 */
-@media(max-width:860px){
-  nav > div:last-child a:not(.ba-btn3d){display:none !important}
+
+/* 상단 정중앙 내비게이션 스타일 */
+.nav-links{
+  position:absolute; left:50%; transform:translateX(-50%);
+  display:flex; gap:32px; font-size:16px; font-weight:700;
 }
+.nav-links a{color:var(--muted); transition:0.2s;}
+.nav-links a:hover{color:var(--ink);}
+.nav-links a.active{color:var(--cobalt);}
 </style>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6B17RZ2E78"></script>
@@ -57,14 +62,17 @@ a:hover{opacity:.82}
 <div id="ba-root" style="background:var(--bg);color:var(--ink);font-weight:400;min-height:100vh;overflow-x:hidden">
 
   <header data-screen-label="Nav" style="position:sticky;top:0;z-index:100;background:rgba(248,247,244,.82);backdrop-filter:saturate(160%) blur(16px);-webkit-backdrop-filter:saturate(160%) blur(16px)">
-    <nav style="max-width:1200px;margin:0 auto;height:74px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;gap:20px">
+    <nav style="max-width:1200px;margin:0 auto;height:74px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;position:relative;">
       <a href="#top" style="display:flex;align-items:center"><img src="logo.png" alt="Buffett Archive" style="height:32px;width:auto"></a>
-      <div style="display:flex;align-items:center;gap:30px">
-        <a href="#features" style="font-size:15px;color:#40424a;font-weight:500">Value Investing</a>
-        <a href="#data" style="font-size:15px;color:#40424a;font-weight:500">Data</a>
-        <a href="#philosophy" style="font-size:15px;color:#40424a;font-weight:500">Article</a>
-        <a href="dashboard.html" class="ba-btn3d" style="display:inline-block;background:var(--cobalt);color:#fff;font-family:inherit;font-size:15px;font-weight:700;padding:11px 20px;border:none;border-radius:13px;cursor:pointer;box-shadow:0 4px 0 var(--cobalt-d),0 9px 18px rgba(0,71,255,.28);transition:transform .12s,box-shadow .12s">대시보드 열기</a>
+      
+      <!-- 정중앙 메뉴 영역 -->
+      <div class="nav-links">
+        <a href="dashboard.html">국내 가치투자</a>
+        <a href="guru.html">미국 투자거장 (13F)</a>
       </div>
+      
+      <!-- 우측 여백 -->
+      <div style="width:32px;"></div>
     </nav>
   </header>
 
@@ -74,8 +82,8 @@ a:hover{opacity:.82}
       <h1 id="ba-h1" style="font-size:52px;line-height:1.18;letter-spacing:-1.8px;font-weight:700;margin:0 0 22px;white-space:nowrap">가치투자 운용사의 지분공시를<br>한눈에 간편하게</h1>
       <p style="font-size:19px;line-height:1.65;color:#4b4d55;font-weight:400;margin:0 0 36px;max-width:490px">VIP, 얼라인, 라이프. 국내 가치투자 운용사가 어떤 종목을 보유하는지 운용사별로 정리합니다. 내부자 매수와 자사주 소각까지 한곳에서 확인합니다.</p>
       <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">
-        <a href="dashboard.html" class="ba-btn3d" style="display:inline-block;background:var(--cobalt);color:#fff;font-family:inherit;font-size:18px;font-weight:700;padding:18px 32px;border:none;border-radius:16px;cursor:pointer;box-shadow:0 6px 0 var(--cobalt-d),0 15px 30px rgba(0,71,255,.32);transition:transform .12s,box-shadow .12s">대시보드 열기</a>
-        <a href="#data" class="ba-btn3d-lt" style="display:inline-block;background:#fff;color:var(--ink);font-family:inherit;font-size:18px;font-weight:700;padding:18px 28px;border:none;border-radius:16px;cursor:pointer;box-shadow:0 5px 0 #e4e2db,0 12px 22px rgba(22,24,29,.08);transition:transform .12s,box-shadow .12s">서비스 둘러보기</a>
+        <a href="dashboard.html" class="ba-btn3d" style="display:inline-block;background:var(--cobalt);color:#fff;font-family:inherit;font-size:18px;font-weight:700;padding:18px 32px;border:none;border-radius:16px;cursor:pointer;box-shadow:0 6px 0 var(--cobalt-d),0 15px 30px rgba(0,71,255,.32);transition:transform .12s,box-shadow .12s">국내 가치투자 열기</a>
+        <a href="guru.html" class="ba-btn3d-lt" style="display:inline-block;background:#fff;color:var(--ink);font-family:inherit;font-size:18px;font-weight:700;padding:18px 28px;border:none;border-radius:16px;cursor:pointer;box-shadow:0 5px 0 #e4e2db,0 12px 22px rgba(22,24,29,.08);transition:transform .12s,box-shadow .12s">미국 13F 열기</a>
       </div>
       <div style="display:flex;align-items:center;gap:12px;margin-top:28px;color:var(--muted);font-size:14px"><div style="display:flex">
         <span style="width:30px;height:30px;border-radius:50%;background:#dfe6ff;border:2px solid var(--bg);display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--cobalt)">브</span>
@@ -198,7 +206,7 @@ a:hover{opacity:.82}
 </div>
 
 <script>
-// ── 데이터 미리보기 탭 전환 (원본 DCLogic.setTab 대체) ──
+// ── 데이터 미리보기 탭 전환 ──
 (function(){
   const titles = { insider:"최근 내부자 매수", fund:"최근 운용사 지분공시", buyback:"최근 자사주 매입·소각" };
   function setTab(t){
@@ -228,7 +236,6 @@ function marketBadge(mk){
   return `<span style="font-size:12px;font-weight:500;color:#a7a9b0;background:#f3f4f7;padding:2px 7px;border-radius:6px;margin-left:4px">${mk}</span>`;
 }
 
-// 카드 한 줄 렌더 (Hero 미리보기 + 데이터 미리보기 공용)
 function rowHtml({init, name, mk, sub, big, small, bigColor}){
   return `<div style="display:flex;justify-content:space-between;align-items:center;padding:18px 0;border-top:1px solid #f3f3ef">
     <div style="display:flex;align-items:center;gap:14px">
@@ -243,7 +250,6 @@ function rowHtml({init, name, mk, sub, big, small, bigColor}){
   </div>`;
 }
 
-// Hero 미리보기용 (조금 더 작은 padding/폰트)
 function heroRowHtml({init, name, sub, big, small}){
   return `<div style="display:flex;justify-content:space-between;align-items:center;padding:15px 4px;border-top:1px solid #f3f3ef">
     <div style="display:flex;align-items:center;gap:12px">
@@ -268,23 +274,21 @@ return Promise.all([
   fetch("data.json?ts="+Date.now()).then(r=>r.json()).catch(()=>null),
   fetch("buyback.json?ts="+Date.now()).then(r=>r.json()).catch(()=>null),
 ]).then(([insider, data, buyback])=>{
-  // ── 통계 숫자 자동연동 ──
   const setText = (id,val)=>{ const el=document.getElementById(id); if(el) el.textContent=val; };
   if(insider && insider.disclosures){
     const di = insider.disclosures;
     setText("stat-hero-count", di.length.toLocaleString());
-    setText("feat-insider", di.length.toLocaleString());   // Features 카드
+    setText("feat-insider", di.length.toLocaleString());
   }
   if(data && data.firms){
     setText("stat-firms", data.firms.length);
-    setText("feat-firms", data.firms.length);              // Features 카드
+    setText("feat-firms", data.firms.length);
   }
   if(buyback && buyback.entries){
     setText("stat-buyback", buyback.entries.length.toLocaleString());
-    setText("feat-buyback", buyback.entries.length.toLocaleString()); // Features 카드
+    setText("feat-buyback", buyback.entries.length.toLocaleString());
   }
 
-  // ── Hero 미리보기 카드 (운용사 지분공시 최신 3건) ──
   if(data && data.disclosures){
     const top = sortByRcept(data.disclosures).slice(0,3);
     const el = document.getElementById("hero-preview");
@@ -309,7 +313,6 @@ return Promise.all([
     }).join("");
   }
 
-  // ── 데이터 미리보기: insider ──
   if(insider && insider.disclosures){
     const top = sortByRcept(insider.disclosures).slice(0,4);
     const panel = document.querySelector('[data-panel="insider"]');
@@ -325,28 +328,9 @@ return Promise.all([
     }).join("");
   }
 
-  // ── 데이터 미리보기: fund (운용사) ──
   if(data && data.disclosures){
     const top = sortByRcept(data.disclosures).slice(0,4);
     const panel = document.querySelector('[data-panel="fund"]');
-    if(panel) panel.innerHTML = top.map(x=>{
-      const cur = parseFloat(x.stkrt), prev = parseFloat(x.stkrt_prev);
-      const diff = (!isNaN(cur)&&!isNaN(prev)) ? (cur-prev) : null;
-      let deltaTxt="", deltaColor="var(--muted)";
-      if(diff!=null){
-        const sign = diff>=0?"+":"-";
-        deltaColor = diff>=0?"var(--cobalt)":"#e0473b";
-        deltaTxt = `이전 ${prev.toFixed(2)}% · ${sign}${Math.abs(diff).toFixed(2)}%p`;
-      }
-      const mk = x.stock_code ? "" : "";
-      return rowHtml({
-        init: initial(x.corp_name), name: x.corp_name, mk:"",
-        sub: `${x.firm||""} · ${x.report_resn||"지분변동"}`,
-        big: (x.stkrt?x.stkrt+"%":"—"), small: deltaTxt,
-        bigColor: "var(--ink)"
-      });
-    }).join("");
-    // fund는 delta를 small에 넣으므로 색 반영 위해 재작성
     if(panel){
       panel.innerHTML = top.map(x=>{
         const cur = parseFloat(x.stkrt), prev = parseFloat(x.stkrt_prev);
@@ -372,7 +356,6 @@ return Promise.all([
     }
   }
 
-  // ── 데이터 미리보기: buyback (자사주) ──
   if(buyback && buyback.entries){
     const list = buyback.entries.filter(x=>!(x.report_nm||"").includes("신탁계약"));
     const top = sortByRcept(list).slice(0,4);
@@ -391,7 +374,6 @@ return Promise.all([
 });
 }
 
-// 최초 1회 로드 + 5분마다 자동 새로고침 (대시보드와 동일 주기)
 loadLandingData();
 setInterval(loadLandingData, 300000);
 </script>
