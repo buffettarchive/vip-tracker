@@ -60,11 +60,12 @@ def fetch_quote(symbol):
         return None
 
 
-def fetch_history(symbol):
-    """Yahoo Finance에서 최근 3개월 일봉 OHLC를 가져와 캔들차트용 배열로 반환."""
+def fetch_history(symbol, interval="1d", rng="1y"):
+    """Yahoo Finance에서 OHLC를 가져와 캔들차트용 배열로 반환.
+    interval: '1d'(일봉), '1mo'(월봉) 등. rng: '1y', 'max' 등."""
     try:
         url = f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}"
-        params = {"interval": "1d", "range": "3mo"}
+        params = {"interval": interval, "range": rng}
         r = s.get(url, params=params, timeout=10)
         data = r.json()
         result = data["chart"]["result"][0]
@@ -91,7 +92,7 @@ def fetch_history(symbol):
             })
         return candles
     except Exception as e:
-        print(f"[warn] history {symbol}: {e}", file=sys.stderr)
+        print(f"[warn] history {symbol} {interval}/{rng}: {e}", file=sys.stderr)
         return None
 
 
@@ -129,11 +130,17 @@ def main():
         if q:
             quotes[name] = q
             print(f"  {name}: {q['price']} ({q['change_pct']:+.2f}%)")
-        # 캔들차트용 과거 시세도 수집
-        hist = fetch_history(symbol)
-        if hist:
-            history[name] = hist
-            print(f"    history {name}: {len(hist)}개 캔들")
+        # 캔들차트용 과거 시세 수집 (일봉 1년 + 월봉 최대)
+        daily = fetch_history(symbol, interval="1d", rng="1y")
+        monthly = fetch_history(symbol, interval="1mo", rng="max")
+        entry = {}
+        if daily:
+            entry["daily"] = daily
+        if monthly:
+            entry["monthly"] = monthly
+        if entry:
+            history[name] = entry
+            print(f"    history {name}: 일봉 {len(daily or [])} / 월봉 {len(monthly or [])}")
         time.sleep(0.3)
 
     if not quotes:
