@@ -1,5 +1,5 @@
 """
-fetch_13f.py — 미국 가치투자 거장 13F 공시 수집 (한국판 데이터로마)
+fetch_13f.py — 미국 가치투자 거장 13F 공시 수집 (한국판 데이터로마 - 풀버전)
 """
 
 import os, sys, json, time, re, base64
@@ -14,6 +14,7 @@ GH_PATH    = "docs/us_vips.json"
 GH_BRANCH  = "main"
 GH_API     = "https://api.github.com"
 
+# SEC API는 User-Agent에 고유 이메일을 포함할 것을 강력히 요구합니다.
 s = requests.Session()
 s.headers.update({"User-Agent": "BuffettArchive buffettarchive1@gmail.com"})
 
@@ -24,23 +25,56 @@ GH_HEADERS = {
 }
 
 # ─────────────────────────────────────────────────────────
-# 추적할 거장 리스트 (Dataroma 인기 랭킹 기준 15명)
+# 데이터로마(Dataroma) 슈퍼 인베스터 48인 CIK 총망라
 GURUS = {
-    "버크셔 해서웨이 (워런 버핏)": "0001067983",
-    "사이언 에셋 매니지먼트 (마이클 버리)": "0001649339",
-    "히말라야 캐피탈 (리 루)": "0001569205",
-    "파브라이 인베스트먼츠 (모니시 파브라이)": "0001548760",
-    "아팔루사 매니지먼트 (데이비드 테퍼)": "0001006438",
-    "듀케인 패밀리 (스탠리 드러켄밀러)": "0001525287",
-    "퍼싱 스퀘어 (빌 애크먼)": "0001336528",
-    "바우포스트 그룹 (세스 클라만)": "0001061768",
-    "그린라이트 캐피탈 (데이비드 아인혼)": "0001072971",
-    "오크트리 캐피탈 (하워드 막스)": "0000940517",
-    "타이거 글로벌 (체이스 콜먼)": "0001136363",
+    "워런 버핏 (버크셔 해서웨이)": "0001067983",
+    "마이클 버리 (사이언 에셋)": "0001649339",
+    "리 루 (히말라야 캐피탈)": "0001569205",
+    "모니시 파브라이 (파브라이 인베스트먼츠)": "0001548760",
+    "빌 애크먼 (퍼싱 스퀘어)": "0001336528",
+    "데이비드 테퍼 (아팔루사)": "0001006438",
+    "스탠리 드러켄밀러 (듀케인)": "0001525287",
+    "세스 클라만 (바우포스트 그룹)": "0001061768",
+    "하워드 막스 (오크트리 캐피탈)": "0000940517",
+    "데이비드 아인혼 (그린라이트)": "0001072971",
+    "가이 스피어 (아쿠아마린 캐피탈)": "0001569420",
+    "척 아크레 (아크레 캐피탈)": "0001158172",
+    "칼 아이칸 (아이칸 캐피탈)": "0000921669",
+    "단 롭 (서드 포인트)": "0001040273",
+    "체이스 콜먼 (타이거 글로벌)": "0001136363",
+    "넬슨 펠츠 (트리안 펀드)": "0001345471",
+    "브루스 버코위츠 (페어홈 캐피탈)": "0001083622",
+    "스티븐 맨델 (론 파인 캐피탈)": "0001041693",
     "빌 & 멀린다 게이츠 재단": "0001320414",
-    "아이칸 캐피탈 (칼 아이칸)": "0000921669",
+    "메이슨 호킨스 (사우스이스턴)": "0000868148",
+    "리 애인슬리 (매버릭 캐피탈)": "0000939016",
+    "크리스 혼 (TCI 펀드)": "0001603508",
+    "토마스 루소 (가드너 루소)": "0000862022",
     "도지 앤 콕스": "0000029669",
-    "아크레 캐피탈 (척 아크레)": "0001158172"
+    "트위디 브라운": "0001009309",
+    "루안 커니프 (세쿼이아 펀드)": "0000311471",
+    "퍼스트 이글 인베스트먼트": "0001318060",
+    "얙트먼 에셋 매니지먼트": "0000906473",
+    "테리 스미스 (펀드스미스)": "0001567330",
+    "데이비드 에이브럼스 (아브람스 캐피탈)": "0001386403",
+    "빌 니그렌 (오크마크 / 해리스)": "0000870233",
+    "프렘 왓사 (페어팩스 파이낸셜)": "0000915191",
+    "칸 브라더스 그룹": "0001026003",
+    "토마스 게이너 (마켈 그룹)": "0001096343",
+    "리차드 제나 (제나 인베스트먼트)": "0001390777",
+    "존 로저스 (아리엘 인베스트먼트)": "0000881855",
+    "아놀드 반 덴 버그 (센추리 매니지먼트)": "0001053150",
+    "그린헤이븐 어소시에이츠": "0001062660",
+    "써드 애비뉴 매니지먼트": "0000898567",
+    "단 용핑 (H&H 인베스트먼트)": "0001763131",
+    "노버트 루 (펀치 카드 매니지먼트)": "0001509993",
+    "팻 도시 (도시 애셋 매니지먼트)": "0001605634",
+    "크리스토퍼 블룸스트란 (셈퍼 아우구스투스)": "0001452932",
+    "프란시스 추 (추 어소시에이츠)": "0001222472",
+    "프랑수아 로숑 (지베르니 캐피탈)": "0001518428",
+    "로버트 비날 (RV 캐피탈)": "0001607519",
+    "조쉬 타라소프 (그린리아 레인)": "0001567332",
+    "밸류액트 캐피탈": "0001130626"
 }
 # ─────────────────────────────────────────────────────────
 
@@ -81,6 +115,7 @@ def get_latest_13f_xml_url(cik):
     r = s.get(sub_url, timeout=15)
     
     if r.status_code != 200:
+        print(f"  [경고] SEC API 거부 (응답코드: {r.status_code})")
         return None, None
     
     recent = r.json().get("filings", {}).get("recent", {})
@@ -106,25 +141,29 @@ def get_latest_13f_xml_url(cik):
 
 def parse_13f_xml(xml_content):
     text = xml_content.decode('utf-8', errors='ignore')
-    info_blocks = re.findall(r'<[a-zA-Z0-9:]*infoTable\b[^>]*>(.*?)</[a-zA-Z0-9:]*infoTable>', text, re.DOTALL | re.IGNORECASE)
+    text = re.sub(r'\sxmlns(?::[a-zA-Z0-9\-]+)?="[^"]+"', '', text)
+    text = re.sub(r'<(/?)[a-zA-Z0-9\-]+:', r'<\1', text)
     
+    try:
+        root = ET.fromstring(text)
+    except ET.ParseError as e:
+        print(f"  [오류] XML 파싱 실패: {e}")
+        return [], 0
+
     holdings = {}
     total_val = 0
     
-    for block in info_blocks:
-        issuer_m = re.search(r'<[a-zA-Z0-9:]*nameOfIssuer[^>]*>(.*?)</[a-zA-Z0-9:]*nameOfIssuer>', block, re.IGNORECASE)
-        if not issuer_m: continue
-        issuer = issuer_m.group(1).strip()
-        
-        val_m = re.search(r'<[a-zA-Z0-9:]*value[^>]*>(.*?)</[a-zA-Z0-9:]*value>', block, re.IGNORECASE)
-        val_str = val_m.group(1).strip() if val_m else "0"
-        val = int(float(val_str)) * 1000
-        
-        shares_m = re.search(r'<[a-zA-Z0-9:]*sshPrnamt[^>]*>(.*?)</[a-zA-Z0-9:]*sshPrnamt>', block, re.IGNORECASE)
-        shares_str = shares_m.group(1).strip() if shares_m else "0"
-        shares = int(float(shares_str))
+    for info in root.findall('.//infoTable'):
+        issuer = info.findtext('nameOfIssuer')
+        if not issuer: continue
         
         name = clean_issuer_name(issuer)
+        val_str = info.findtext('value') or "0"
+        val = int(float(val_str)) * 1000
+        
+        shrs_el = info.find('.//shrsOrPrnAmt/sshPrnamt')
+        shares = int(float(shrs_el.text)) if (shrs_el is not None and shrs_el.text) else 0
+        
         if name in holdings:
             holdings[name]['value'] += val
             holdings[name]['shares'] += shares
@@ -173,14 +212,15 @@ def main():
                 r = s.get(xml_url, timeout=20)
                 if r.status_code == 200:
                     holdings, total_val = parse_13f_xml(r.content)
-                    if holdings:
-                        portfolios[guru_name] = {
-                            "report_date": report_date,
-                            "total_value_usd": total_val,
-                            "holdings": holdings
-                        }
-                        print(f"  → 성공: {len(holdings)}개 종목 확인 (보고일: {report_date})")
-                time.sleep(1)
+                    portfolios[guru_name] = {
+                        "report_date": report_date,
+                        "total_value_usd": total_val,
+                        "holdings": holdings
+                    }
+                    print(f"  → 성공: {len(holdings)}개 종목 확인 (보고일: {report_date})")
+                
+                # SEC 서버 차단을 막기 위해 한 번 조회 후 반드시 1초씩 휴식
+                time.sleep(1) 
                 
         payload = {
             "updated_at": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
@@ -189,7 +229,9 @@ def main():
         
         if portfolios:
             gh_put_file(payload, sha)
-            print("[완료] us_vips.json 갱신 및 업로드 성공!")
+            print(f"\n[완료] 총 {len(portfolios)}명의 거장 포트폴리오 갱신 및 업로드 성공!")
+        else:
+            print("\n[실패] 수집된 포트폴리오 데이터가 없습니다.")
             
     except Exception as e:
         print(f"[치명적 오류 발생] {str(e)}")
