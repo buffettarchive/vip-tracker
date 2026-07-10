@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-10T12:54+09:00",
+  "updated_at": "2026-07-10T12:59+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -34,13 +34,13 @@
       "corp_name": "JW생명과학",
       "stock_code": "234080",
       "corp_code": "00225706",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkrt": "9.72",
+      "stkrt_prev": "7.99",
+      "stkqy": "1538950",
+      "report_resn": "단순 주식 취득에 의한 변동 보고",
+      "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "기타"
+      "kind": "매수"
     },
     {
       "rcept_no": "20260710000218",
