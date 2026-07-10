@@ -1,0 +1,377 @@
+{
+  "updated_at": "2026-07-10T17:41:42Z",
+  "portfolios": {
+    "버크셔 해서웨이 (워런 버핏)": {
+      "report_date": "2026-03-31",
+      "total_value_usd": 263095703570000,
+      "holdings": [
+        {
+          "name": "애플 (AAPL)",
+          "value": 57843260493000,
+          "shares": 227917808,
+          "weight": 21.99
+        },
+        {
+          "name": "아메리칸 익스프레스 (AXP)",
+          "value": 45859204536000,
+          "shares": 151610700,
+          "weight": 17.43
+        },
+        {
+          "name": "코카콜라 (KO)",
+          "value": 30420000000000,
+          "shares": 400000000,
+          "weight": 11.56
+        },
+        {
+          "name": "뱅크오브아메리카 (BAC)",
+          "value": 25039178044000,
+          "shares": 513624165,
+          "weight": 9.52
+        },
+        {
+          "name": "CHEVRON CORPORATION",
+          "value": 17457364606000,
+          "shares": 84375856,
+          "weight": 6.64
+        },
+        {
+          "name": "옥시덴탈 석유 (OXY)",
+          "value": 17221193015000,
+          "shares": 264941431,
+          "weight": 6.55
+        },
+        {
+          "name": "알파벳 (GOOGL)",
+          "value": 16628526688000,
+          "shares": 57835013,
+          "weight": 6.32
+        },
+        {
+          "name": "CHUBB LTD SWITZ",
+          "value": 11162836215000,
+          "shares": 34249183,
+          "weight": 4.24
+        },
+        {
+          "name": "무디스 (MCO)",
+          "value": 10762190653000,
+          "shares": 24669778,
+          "weight": 4.09
+        },
+        {
+          "name": "크래프트 하인즈 (KHC)",
+          "value": 7323527057000,
+          "shares": 325634818,
+          "weight": 2.78
+        },
+        {
+          "name": "DAVITA INC",
+          "value": 4626158909000,
+          "shares": 30100585,
+          "weight": 1.76
+        },
+        {
+          "name": "KROGER CO",
+          "value": 3618000000000,
+          "shares": 50000000,
+          "weight": 1.38
+        },
+        {
+          "name": "SIRIUSXM HOLDINGS INC",
+          "value": 2880548260000,
+          "shares": 124807117,
+          "weight": 1.09
+        },
+        {
+          "name": "DELTA AIR LINES INC",
+          "value": 2646532635000,
+          "shares": 39809456,
+          "weight": 1.01
+        },
+        {
+          "name": "VERISIGN INC",
+          "value": 2232726597000,
+          "shares": 8989880,
+          "weight": 0.85
+        },
+        {
+          "name": "LIBERTY LIVE HOLDINGS INC",
+          "value": 1453326953000,
+          "shares": 15573731,
+          "weight": 0.55
+        },
+        {
+          "name": "CAPITAL ONE FINL CORP",
+          "value": 1304374500000,
+          "shares": 7150000,
+          "weight": 0.5
+        },
+        {
+          "name": "NEW YORK TIMES CO MTN BE",
+          "value": 1268219376000,
+          "shares": 15146535,
+          "weight": 0.48
+        },
+        {
+          "name": "ALLY FINL INC",
+          "value": 1137670000000,
+          "shares": 29000000,
+          "weight": 0.43
+        },
+        {
+          "name": "LENNAR CORP",
+          "value": 897048487000,
+          "shares": 10337345,
+          "weight": 0.34
+        },
+        {
+          "name": "NUCOR CORP",
+          "value": 660686383000,
+          "shares": 3907075,
+          "weight": 0.25
+        },
+        {
+          "name": "LOUISIANA PAC CORP",
+          "value": 412113691000,
+          "shares": 5664793,
+          "weight": 0.16
+        },
+        {
+          "name": "CONSTELLATION BRANDS INC",
+          "value": 94933500000,
+          "shares": 632890,
+          "weight": 0.04
+        },
+        {
+          "name": "NVR INC",
+          "value": 73226191000,
+          "shares": 11112,
+          "weight": 0.03
+        },
+        {
+          "name": "MACYS INC",
+          "value": 54963842000,
+          "shares": 3038355,
+          "weight": 0.02
+        },
+        {
+          "name": "JEFFERIES FINANCIAL GROUP IN",
+          "value": 17892939000,
+          "shares": 433558,
+          "weight": 0.01
+        }
+      ]
+    },
+    "히말라야 캐피탈 (리 루)": {
+      "report_date": "2026-03-31",
+      "total_value_usd": 12827766987000,
+      "holdings": [
+        {
+          "name": "MARRIOTT INTL INC NEW",
+          "value": 1102511105000,
+          "shares": 3370872,
+          "weight": 8.59
+        },
+        {
+          "name": "STRYKER CORPORATION",
+          "value": 1005950683000,
+          "shares": 3061416,
+          "weight": 7.84
+        },
+        {
+          "name": "WATERS CORP",
+          "value": 956555935000,
+          "shares": 3212075,
+          "weight": 7.46
+        },
+        {
+          "name": "비자 (V)",
+          "value": 938180162000,
+          "shares": 3104090,
+          "weight": 7.31
+        },
+        {
+          "name": "알파벳 (GOOGL)",
+          "value": 850084297000,
+          "shares": 2956198,
+          "weight": 6.63
+        },
+        {
+          "name": "PHILIP MORRIS INTL INC",
+          "value": 845410370000,
+          "shares": 5113163,
+          "weight": 6.59
+        },
+        {
+          "name": "IDEXX LABS INC",
+          "value": 823610496000,
+          "shares": 1465786,
+          "weight": 6.42
+        },
+        {
+          "name": "AUTOMATIC DATA PROCESSING IN",
+          "value": 783280234000,
+          "shares": 3855105,
+          "weight": 6.11
+        },
+        {
+          "name": "MICROSOFT CORP",
+          "value": 769856245000,
+          "shares": 2079737,
+          "weight": 6.0
+        },
+        {
+          "name": "META PLATFORMS INC",
+          "value": 755998279000,
+          "shares": 1321375,
+          "weight": 5.89
+        },
+        {
+          "name": "METTLER TOLEDO INTERNATIONAL",
+          "value": 717012379000,
+          "shares": 568516,
+          "weight": 5.59
+        },
+        {
+          "name": "CHURCH & DWIGHT CO INC",
+          "value": 619785527000,
+          "shares": 6641508,
+          "weight": 4.83
+        },
+        {
+          "name": "PROCTER & GAMBLE CO",
+          "value": 606635578000,
+          "shares": 4199914,
+          "weight": 4.73
+        },
+        {
+          "name": "TEXAS INSTRS INC",
+          "value": 509253293000,
+          "shares": 2623124,
+          "weight": 3.97
+        },
+        {
+          "name": "FORTINET INC",
+          "value": 503123481000,
+          "shares": 6156675,
+          "weight": 3.92
+        },
+        {
+          "name": "ZOETIS INC",
+          "value": 458366249000,
+          "shares": 3877559,
+          "weight": 3.57
+        },
+        {
+          "name": "OTIS WORLDWIDE CORP",
+          "value": 210554426000,
+          "shares": 2731635,
+          "weight": 1.64
+        },
+        {
+          "name": "MSCI INC",
+          "value": 34921380000,
+          "shares": 64788,
+          "weight": 0.27
+        },
+        {
+          "name": "ROLLINS INC",
+          "value": 33110728000,
+          "shares": 619935,
+          "weight": 0.26
+        },
+        {
+          "name": "MEDPACE HLDGS INC",
+          "value": 30092547000,
+          "shares": 62668,
+          "weight": 0.23
+        },
+        {
+          "name": "VERISIGN INC",
+          "value": 28180664000,
+          "shares": 113467,
+          "weight": 0.22
+        },
+        {
+          "name": "PAYCOM SOFTWARE INC",
+          "value": 26672804000,
+          "shares": 219457,
+          "weight": 0.21
+        },
+        {
+          "name": "CLOROX CO DEL",
+          "value": 26655398000,
+          "shares": 257217,
+          "weight": 0.21
+        },
+        {
+          "name": "VERTIV HOLDINGS CO",
+          "value": 22866427000,
+          "shares": 91254,
+          "weight": 0.18
+        },
+        {
+          "name": "NUTANIX INC",
+          "value": 21946670000,
+          "shares": 577392,
+          "weight": 0.17
+        },
+        {
+          "name": "BADGER METER INC",
+          "value": 21708504000,
+          "shares": 142491,
+          "weight": 0.17
+        },
+        {
+          "name": "CATALYST PHARMACEUTICALS INC",
+          "value": 20919402000,
+          "shares": 844887,
+          "weight": 0.16
+        },
+        {
+          "name": "QUALYS INC",
+          "value": 19860864000,
+          "shares": 226077,
+          "weight": 0.15
+        },
+        {
+          "name": "DOXIMITY INC",
+          "value": 16118614000,
+          "shares": 691786,
+          "weight": 0.13
+        },
+        {
+          "name": "MANHATTAN ASSOCIATES INC",
+          "value": 16092611000,
+          "shares": 120888,
+          "weight": 0.13
+        },
+        {
+          "name": "NAPCO SEC TECHNOLOGIES INC",
+          "value": 15109846000,
+          "shares": 383596,
+          "weight": 0.12
+        },
+        {
+          "name": "ADMA BIOLOGICS INC",
+          "value": 14861932000,
+          "shares": 1649493,
+          "weight": 0.12
+        },
+        {
+          "name": "SABRE CORP",
+          "value": 13069985000,
+          "shares": 9013783,
+          "weight": 0.1
+        },
+        {
+          "name": "HOME DEPOT INC",
+          "value": 9409872000,
+          "shares": 28611,
+          "weight": 0.07
+        }
+      ]
+    }
+  }
+}
