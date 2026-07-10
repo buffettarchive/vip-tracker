@@ -34,16 +34,21 @@ a{color:inherit;text-decoration:none}
   position:sticky;top:0;z-index:50;
   background:rgba(248,247,244,.86);backdrop-filter:saturate(180%) blur(12px);
 }
-.topnav-inner{max-width:960px;margin:0 auto;padding:16px 20px;display:flex;align-items:center;gap:16px}
+.topnav-inner{
+  max-width:960px;margin:0 auto;padding:16px 20px;
+  display:flex;align-items:center;
+}
 .topnav .logo{height:32px;width:auto;transition:opacity .15s}
 .topnav a:hover .logo{opacity:.7}
 
-/* 메뉴 이동 링크 */
-.nav-links{display:flex; gap:24px; margin-left:32px; font-size:15px; font-weight:700;}
-.nav-links a{color:var(--muted); transition:0.2s;}
-.nav-links a:hover{color:var(--ink);}
-.nav-links a.active{color:var(--cobalt);}
-.spacer{margin-left:auto}
+/* 메뉴 이동 링크 (우측 끝 배치, 파란색 테마) */
+.nav-links{
+  margin-left:auto;
+  display:flex; gap:28px; font-size:16px; font-weight:700; align-items:center;
+}
+.nav-links a{color:var(--cobalt); transition:0.2s;}
+.nav-links a:hover{color:var(--cobalt-d);}
+.nav-links a.active{color:var(--cobalt-d); text-decoration:underline; text-underline-offset:6px;}
 
 /* ── 거장 선택 드롭다운 ── */
 .guru-selector-wrap {
@@ -116,11 +121,12 @@ a{color:inherit;text-decoration:none}
 <nav class="topnav">
   <div class="topnav-inner">
     <a href="index.html" title="홈으로"><img src="logo.png" alt="Buffett Archive" class="logo"></a>
+    
+    <!-- 우측 끝 메뉴 영역 -->
     <div class="nav-links">
       <a href="dashboard.html">국내 가치투자</a>
       <a href="guru.html" class="active">미국 투자거장 (13F)</a>
     </div>
-    <span class="spacer"></span>
   </div>
 </nav>
 
