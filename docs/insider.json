@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-09T18:09+09:00",
+  "updated_at": "2026-07-10T09:05+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260709000691",
+  "last_seen": "20260710000026",
   "disclosures": [
+    {
+      "rcept_no": "20260710000026",
+      "rcept_dt": "2026-07-10",
+      "corp_name": "누리플랜",
+      "stock_code": "069140",
+      "market": "KOSDAQ",
+      "corp_code": "00410997",
+      "repror": "이상우",
+      "ofcps": "회장",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "48,658",
+      "total_cnt": "3,800,762",
+      "irds_rate": "-0.87",
+      "hold_rate": "25.18",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260709000658",
       "rcept_dt": "2026-07-09",
