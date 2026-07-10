@@ -1,5 +1,5 @@
 """
-backfill_buyback.py — 자기주식 취득·소각 과거 데이터 재구축 (v3)
+backfill_buyback.py — 자기주식 취득·소각 과거 데이터 재구축 (v3.1 - 정밀파싱 적용)
 ──────────────────────────────────────────────────────────
 Render에서 1회 실행. GitHub의 buyback.json을 읽고 결과를 push.
 사용법: python backfill_buyback.py [시작일 YYYYMMDD] [종료일 YYYYMMDD]
@@ -24,7 +24,7 @@ DART = "https://opendart.fss.or.kr/api"
 GH_API = "https://api.github.com"
 
 s = requests.Session()
-s.headers.update({"User-Agent": "buyback-backfill/3.0"})
+s.headers.update({"User-Agent": "buyback-backfill/3.1"})
 
 GH_HEADERS = {
     "Authorization": f"Bearer {GH_TOKEN}",
@@ -77,16 +77,19 @@ def fetch_document_text(rcept_no):
         print(f"    [err] doc {rcept_no}: {e}", file=sys.stderr)
     return ""
 
-
+# ── 업그레이드된 취득 공시 파싱 엔진 (v3.1) ──
 def parse_acq_doc(text):
     if not text:
         return {}
     result = {}
+
     for pat in [
-        r"보통주[식권]?\s*[:\s]*([0-9][0-9,]*)",
-        r"취득\s*예정\s*주식[^0-9]*?([0-9][0-9,]+)",
-        r"취득\s*(?:할\s*)?주식[의]?\s*수[^0-9]*?([0-9][0-9,]+)",
-        r"취득\s*수량[^0-9]*?([0-9][0-9,]+)",
+        r"1\.\s*취득예정주식.*?보통주[식]?\s*([0-9, ]{3,})",
+        r"취득\s*예정\s*주식.*?보통주[식]?\s*([0-9, ]{3,})",
+        r"보통주[식]?\s*\(?주\)?\s*([0-9, ]{3,})",
+        r"보통주[식]?\s*[:\s]*([0-9, ]{3,})",
+        r"취득\s*(?:할\s*)?주식[의]?\s*수[^0-9]*?([0-9, ]{3,})",
+        r"취득\s*수량[^0-9]*?([0-9, ]{3,})"
     ]:
         m = re.search(pat, text)
         if m:
@@ -94,10 +97,11 @@ def parse_acq_doc(text):
             if val and val >= 100:
                 result["shares_common"] = val
                 break
+
     for pat in [
-        r"취득\s*예정\s*금액[^보]*보통주[식]?\s*([0-9][0-9,]+)",
-        r"취득\s*예정\s*금액[^0-9]*?([0-9][0-9,]+)",
-        r"취득\s*(?:할\s*)?금액[^0-9]*?([0-9][0-9,]+)",
+        r"3\.\s*취득예정금액.*?보통주[식]?\s*([0-9, ]{4,})",
+        r"취득\s*예정\s*금액.*?보통주[식]?\s*([0-9, ]{4,})",
+        r"취득\s*(?:할\s*)?금액[^0-9]*?([0-9, ]{4,})"
     ]:
         m = re.search(pat, text)
         if m:
@@ -105,19 +109,23 @@ def parse_acq_doc(text):
             if val and val > 1000:
                 result["amount_common"] = val
                 break
+
     for pat in [
-        r"취득\s*목적\s*[:\s]*([^\n\r]{5,100}?)(?:\s*\d+\.|\s*취득\s*방법|\s*취득\s*예상|\s*비고)",
-        r"취득\s*목적\s*[:\s]*(.{5,100}?)(?:취득방법|취득예상|예상기간|이사회)",
+        r"4\.\s*취득목적\s*([^0-9]{2,100}?)\s*5\.",
+        r"취득\s*목적\s*[:\s]*([^\n\r]{2,100}?)(?:\s*\d+\.|\s*취득\s*방법|\s*취득\s*예상|\s*비고)",
+        r"취득\s*목적\s*[:\s]*(.{2,100}?)(?:취득방법|취득예상|예상기간|이사회)"
     ]:
         m = re.search(pat, text)
         if m:
             val = m.group(1).strip().rstrip(".")
-            if val and len(val) >= 3:
+            if val and len(val) >= 2:
                 result["acq_purpose"] = val
                 break
+
     for pat in [
-        r"취득\s*방법\s*[:\s]*([^\n\r]{3,100}?)(?:\s*\d+\.|\s*취득\s*예상|\s*취득\s*기간|\s*비고)",
-        r"취득\s*방법\s*[:\s]*(.{3,100}?)(?:취득예상|예상기간|이사회|비고|기타)",
+        r"5\.\s*취득방법\s*([^0-9]{2,100}?)\s*6\.",
+        r"취득\s*방법\s*[:\s]*([^\n\r]{2,100}?)(?:\s*\d+\.|\s*취득\s*예상|\s*취득\s*기간|\s*비고)",
+        r"취득\s*방법\s*[:\s]*(.{2,100}?)(?:취득예상|예상기간|이사회|비고|기타)"
     ]:
         m = re.search(pat, text)
         if m:
@@ -127,20 +135,23 @@ def parse_acq_doc(text):
                 break
     return result
 
-
+# ── 업그레이드된 소각 공시 파싱 엔진 (v3.1) ──
 def parse_cancel_doc(text):
     if not text:
         return {}
     result = {}
     for pat in [
-        r"소각[하할]{0,2}\s*(?:주식|주권)[^0-9]*?([0-9,]+)\s*주",
-        r"보통주[식권]?\s*([0-9,]+)\s*주.*?소각",
-        r"소각\s*주식\s*수[^0-9]*?([0-9,]+)",
+        r"1\.\s*소각할\s*주식.*?보통주[식]?\s*([0-9, ]{3,})",
+        r"소각[하할]{0,2}\s*(?:주식|주권)[^0-9]*?([0-9, ]{3,})\s*주",
+        r"보통주[식권]?\s*([0-9, ]{3,})\s*주.*?소각",
+        r"소각\s*주식\s*수[^0-9]*?([0-9, ]{3,})"
     ]:
         m = re.search(pat, text)
         if m:
-            result["shares_common"] = to_int(m.group(1))
-            break
+            val = to_int(m.group(1))
+            if val and val >= 10:
+                result["shares_common"] = val
+                break
     m2 = re.search(r"발행주식\s*총수[^0-9]*?([0-9,]+)", text)
     if m2:
         result["total_shares"] = to_int(m2.group(1))
