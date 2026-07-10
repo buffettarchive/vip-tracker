@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="naver-site-verification" content="6a07b5913b5ed5318875354c39e3d21ce086e524" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1000" />
+<title>버핏아카이브 — 미국 투자거장</title>
+<meta name="description" content="미국 가치투자 거장들의 13F 포트폴리오 트래킹" />
+<link rel="icon" href="favicon.ico" />
+
+<!-- 폰트 및 라이브러리 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/spoqa-han-sans@3.3.0/css/SpoqaHanSansNeo.css" />
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cobalt:#0047FF; --cobalt-d:#0034c2;
+  --bg:#F8F7F4; --card:#ffffff; --ink:#16181d; --muted:#74767c;
+  --line:#ecebe5; --line-2:#f3f3ef; --chip:#e9eeff;
+}
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:'Spoqa Han Sans Neo', sans-serif;
+  font-weight:400; line-height:1.5; -webkit-font-smoothing:antialiased;
+  min-height:100vh;
+}
+a{color:inherit;text-decoration:none}
+::selection{background:rgba(0,71,255,.16)}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px 60px}
+
+/* ── 상단 네비게이션 ── */
+.topnav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(248,247,244,.86);backdrop-filter:saturate(180%) blur(12px);
+}
+.topnav-inner{max-width:960px;margin:0 auto;padding:16px 20px;display:flex;align-items:center;gap:16px}
+.topnav .logo{height:32px;width:auto;transition:opacity .15s}
+.topnav a:hover .logo{opacity:.7}
+
+/* 메뉴 이동 링크 */
+.nav-links{display:flex; gap:24px; margin-left:32px; font-size:15px; font-weight:700;}
+.nav-links a{color:var(--muted); transition:0.2s;}
+.nav-links a:hover{color:var(--ink);}
+.nav-links a.active{color:var(--cobalt);}
+
+.spacer{margin-left:auto}
+
+/* ── 거장 선택 탭 ── */
+.maintabs{display:flex;gap:9px;margin:32px 0 24px;flex-wrap:wrap}
+.maintabs button{
+  font-family:inherit;font-size:15px;font-weight:700;cursor:pointer;
+  padding:11px 20px;border-radius:9999px;border:none;
+  background:var(--card);color:#4b4d55;box-shadow:0 3px 0 #e4e2db;
+  transition:transform .12s,box-shadow .12s;
+}
+.maintabs button:active{transform:translateY(3px);box-shadow:0 0 0 #e4e2db}
+.maintabs button.active{
+  background:var(--cobalt);color:#fff;
+  box-shadow:0 4px 0 var(--cobalt-d),0 8px 16px rgba(0,71,255,.24);
+}
+
+/* ── 대시보드 상단 요약 & 차트 ── */
+.summary-box{
+  background:var(--card);border:1px solid var(--line);border-radius:20px;
+  padding:32px;box-shadow:0 4px 20px rgba(22,24,29,.04);
+  display:grid; grid-template-columns: 1fr 340px; gap:40px; align-items:center;
+  margin-bottom:20px;
+}
+.guru-title{font-size:32px; font-weight:700; letter-spacing:-1px; margin-bottom:8px;}
+.guru-meta{font-size:15px; color:var(--muted); font-weight:500; margin-bottom:24px;}
+.val-title{font-size:13px; color:var(--muted); font-weight:600; margin-bottom:4px;}
+.val-amount{font-size:36px; font-weight:700; color:var(--ink); letter-spacing:-0.5px;}
+
+.chart-container{position:relative; height:240px; width:100%; display:flex; justify-content:center;}
+
+/* ── 종목 리스트 ── */
+.feed{list-style:none;background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 4px 20px rgba(22,24,29,.04)}
+.row{
+  display:grid;grid-template-columns:40px 1fr auto;gap:16px;align-items:center;
+  padding:18px 22px;border-bottom:1px solid var(--line-2);
+}
+.row:last-child{border-bottom:none}
+.row:hover{background:#faf9f6}
+
+.rank{font-size:16px; font-weight:700; color:var(--muted); text-align:center;}
+.corp .name{font-size:17px;font-weight:700;letter-spacing:-.3px;color:var(--ink);}
+.corp .sub{font-size:13px;color:var(--muted);margin-top:4px;}
+
+.stake{text-align:right;}
+.stake .pct{font-size:20px;font-weight:700;color:var(--cobalt);letter-spacing:-.5px}
+.stake .val{font-size:13px;color:var(--muted);margin-top:4px;font-weight:600}
+
+.empty{padding:64px 0;text-align:center;color:var(--muted);font-size:15px}
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="topnav-inner">
+    <a href="index.html" title="홈으로"><img src="logo.png" alt="Buffett Archive" class="logo"></a>
+    <div class="nav-links">
+      <a href="dashboard.html">국내 가치투자</a>
+      <a href="guru.html" class="active">미국 투자거장 (13F)</a>
+    </div>
+    <span class="spacer"></span>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div class="maintabs" id="guruTabs">
+    <!-- 거장 버튼들이 여기에 렌더링됩니다 -->
+  </div>
+
+  <div class="summary-box">
+    <div>
+      <div class="guru-title" id="guruName">로딩 중...</div>
+      <div class="guru-meta" id="guruMeta">SEC 13F 공시 기준</div>
+      <div class="val-title">포트폴리오 총 운용 자산 (USD)</div>
+      <div class="val-amount" id="guruTotalVal">$0</div>
+    </div>
+    <div class="chart-container">
+      <canvas id="portfolioChart"></canvas>
+    </div>
+  </div>
+
+  <ul class="feed" id="holdingsFeed">
+    <!-- 종목 리스트가 여기에 렌더링됩니다 -->
+  </ul>
+</div>
+
+<script>
+const $ = s => document.querySelector(s);
+let VIPS = {};
+let activeGuru = "";
+let chartInstance = null;
+
+// 숫자 포맷팅 (달러 변환)
+function formatUSD(val) {
+  if (val >= 1e9) return "$" + (val / 1e9).toFixed(2) + "B"; // Billion (십억 달러)
+  if (val >= 1e6) return "$" + (val / 1e6).toFixed(2) + "M"; // Million (백만 달러)
+  return "$" + val.toLocaleString();
+}
+
+function initData() {
+  fetch("us_vips.json?ts=" + Date.now())
+    .then(r => r.json())
+    .then(data => {
+      if (data && data.portfolios) {
+        VIPS = data.portfolios;
+        const gurus = Object.keys(VIPS);
+        if (gurus.length > 0) {
+          activeGuru = gurus[0]; // 첫 번째 거장을 기본값으로
+          renderTabs(gurus);
+          renderGuru();
+        }
+      }
+    })
+    .catch(err => {
+      $("#holdingsFeed").innerHTML = `<li class="empty">데이터를 불러오지 못했습니다.</li>`;
+    });
+}
+
+function renderTabs(gurus) {
+  const html = gurus.map(name => 
+    `<button class="${name === activeGuru ? 'active' : ''}" data-guru="${name}">${name}</button>`
+  ).join("");
+  $("#guruTabs").innerHTML = html;
+
+  $("#guruTabs").querySelectorAll("button").forEach(btn => {
+    btn.onclick = () => {
+      activeGuru = btn.dataset.guru;
+      renderTabs(gurus);
+      renderGuru();
+    };
+  });
+}
+
+function renderGuru() {
+  const data = VIPS[activeGuru];
+  if (!data) return;
+
+  // 상단 요약 업데이트
+  $("#guruName").textContent = activeGuru;
+  $("#guruMeta").textContent = `최근 SEC 공시 보고일: ${data.report_date}`;
+  $("#guruTotalVal").textContent = formatUSD(data.total_value_usd);
+
+  renderChart(data.holdings);
+  renderList(data.holdings);
+}
+
+function renderChart(holdings) {
+  const ctx = document.getElementById('portfolioChart').getContext('2d');
+  if (chartInstance) chartInstance.destroy();
+
+  // 상위 7개 종목만 차트에 표시하고, 나머지는 '기타'로 묶음 (차트 가독성)
+  let labels = [];
+  let dataPoints = [];
+  let otherWeight = 0;
+
+  holdings.forEach((h, index) => {
+    if (index < 7) {
+      labels.push(h.name.split(" ")[0]); // 이름이 길면 첫 단어만
+      dataPoints.push(h.weight);
+    } else {
+      otherWeight += h.weight;
+    }
+  });
+
+  if (otherWeight > 0) {
+    labels.push("기타");
+    dataPoints.push(parseFloat(otherWeight.toFixed(2)));
+  }
+
+  chartInstance = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: labels,
+      datasets: [{
+        data: dataPoints,
+        backgroundColor: [
+          '#0047FF', '#336CFF', '#6691FF', '#99B6FF', '#CCDFFF', '#E6EEFF', '#F3F7FF', '#e4e2db'
+        ],
+        borderWidth: 2,
+        borderColor: '#ffffff'
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { position: 'right', labels: { font: { family: "'Spoqa Han Sans Neo', sans-serif" }, boxWidth: 12 } },
+        tooltip: { callbacks: { label: function(context) { return context.label + ': ' + context.raw + '%'; } } }
+      },
+      cutout: '65%'
+    }
+  });
+}
+
+function renderList(holdings) {
+  const feed = $("#holdingsFeed");
+  if (!holdings || holdings.length === 0) {
+    feed.innerHTML = `<li class="empty">포트폴리오 정보가 없습니다.</li>`;
+    return;
+  }
+
+  feed.innerHTML = holdings.map((h, i) => `
+    <div class="row">
+      <div class="rank">${i + 1}</div>
+      <div class="corp">
+        <div class="name">${h.name}</div>
+        <div class="sub">보유 주식수: ${h.shares.toLocaleString()}주</div>
+      </div>
+      <div class="stake">
+        <div class="pct">${h.weight.toFixed(2)}%</div>
+        <div class="val">${formatUSD(h.value)}</div>
+      </div>
+    </div>
+  `).join("");
+}
+
+initData();
+</script>
+</body>
+</html>
