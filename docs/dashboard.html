@@ -81,6 +81,12 @@ a{color:inherit;text-decoration:none}
 .chart-tf{margin-left:auto;display:inline-flex;gap:2px;background:#f1f2f6;border-radius:10px;padding:3px}
 .chart-tf button{font-family:inherit;font-size:12.5px;font-weight:700;color:var(--muted);background:transparent;border:none;padding:5px 12px;border-radius:8px;cursor:pointer;transition:.15s}
 .chart-tf button[aria-selected="true"]{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(22,24,29,.1)}
+.ohlc-bar{display:flex;gap:16px;flex-wrap:wrap;padding:0 4px 12px;font-size:12.5px;min-height:20px}
+.ohlc-bar .ohlc-date{color:var(--ink);font-weight:700}
+.ohlc-bar .ohlc-item{color:var(--muted)}
+.ohlc-bar .ohlc-item b{font-weight:700;margin-left:3px}
+.ohlc-bar .up{color:var(--down)} /* 상승=빨강(한국식) */
+.ohlc-bar .down{color:var(--cobalt)} /* 하락=파랑 */
 .chart-title{font-size:17px;font-weight:700;color:var(--ink);letter-spacing:-.3px}
 .chart-hint{font-size:12px;color:var(--muted)}
 .tv-chart{height:340px;width:100%;border-radius:12px;overflow:hidden}
@@ -217,6 +223,7 @@ footer#footer{margin:40px 0 0;padding-top:24px;border-top:1px solid var(--line)}
         <button data-tf="monthly" aria-selected="false">월봉</button>
       </div>
     </div>
+    <div class="ohlc-bar" id="ohlcBar"></div>
     <div id="marketChart" class="tv-chart"></div>
   </div>
 
@@ -361,7 +368,13 @@ const RESN_EN = [
   ["보유 목적 변경","Purpose Change"],["보유목적변경","Purpose Change"],
 ];
 
-function localizeFirm(name){ return LANG==="en" ? (FIRM_EN[name]||name) : name; }
+const FIRM_KO = {
+  "브이아이피자산운용": "VIP자산운용",
+};
+function localizeFirm(name){
+  if(LANG==="en") return FIRM_EN[name]||name;
+  return FIRM_KO[name]||name;
+}
 function localizeRole(text){
   if(!text||text==="-") return text;
   if(LANG==="ko") return text;
@@ -421,8 +434,28 @@ let currentChartName="KOSPI";
 let currentTimeframe="daily";
 let LAST_MARKET=null;
 let lwChart=null, lwSeries=null;
+let lastCandle=null;
 
 // ── Lightweight Charts (내 데이터 기반 캔들차트) ──
+function fmtOhlc(v){
+  if(v==null || isNaN(v)) return "—";
+  // USD/KRW 등 소수 필요한 경우 대비: 1만 미만이면 소수 2자리
+  return Math.abs(v) < 10000 ? v.toLocaleString(undefined,{minimumFractionDigits:2, maximumFractionDigits:2}) : Math.round(v).toLocaleString();
+}
+function updateOhlcBar(candle){
+  const bar = document.getElementById("ohlcBar");
+  if(!bar) return;
+  if(!candle){ bar.innerHTML=""; return; }
+  const up = candle.close >= candle.open;
+  const cls = up ? "up" : "down";
+  bar.innerHTML = `
+    <span class="ohlc-date">${candle.time}</span>
+    <span class="ohlc-item">시<b class="${cls}">${fmtOhlc(candle.open)}</b></span>
+    <span class="ohlc-item">고<b class="${cls}">${fmtOhlc(candle.high)}</b></span>
+    <span class="ohlc-item">저<b class="${cls}">${fmtOhlc(candle.low)}</b></span>
+    <span class="ohlc-item">종<b class="${cls}">${fmtOhlc(candle.close)}</b></span>`;
+}
+
 function initChart(){
   const container = document.getElementById("marketChart");
   if(!container || !window.LightweightCharts || lwChart) return;
@@ -438,6 +471,15 @@ function initChart(){
     upColor:'#e0473b', downColor:'#0047FF',
     wickUpColor:'#e0473b', wickDownColor:'#0047FF',
     borderVisible:false,
+  });
+  // 마우스를 캔들에 올리면 그 날의 OHLC 표시
+  lwChart.subscribeCrosshairMove(param=>{
+    if(!param || !param.time || !param.seriesData || !lwSeries){
+      updateOhlcBar(lastCandle); // 마우스 벗어나면 최근 캔들 표시
+      return;
+    }
+    const d = param.seriesData.get(lwSeries);
+    if(d) updateOhlcBar({ time: param.time, open:d.open, high:d.high, low:d.low, close:d.close });
   });
 }
 
@@ -459,11 +501,15 @@ function drawChart(name){
   else if(raw) series = raw[currentTimeframe] || raw.daily || raw.monthly;
   if(!series || !series.length){
     lwSeries.setData([]);
+    lastCandle = null;
+    updateOhlcBar(null);
     if(hintEl) hintEl.textContent = "차트 데이터를 불러오는 중입니다";
     return;
   }
   if(hintEl) hintEl.textContent = currentTimeframe==="monthly" ? "전체 기간 · 월봉" : "최근 1년 · 일봉";
   lwSeries.setData(series);
+  lastCandle = series[series.length-1];   // 최근 캔들 (마우스 벗어났을 때 기본 표시)
+  updateOhlcBar(lastCandle);
   if(lwChart) lwChart.timeScale().fitContent();
 }
 
