@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-10T12:49+09:00",
+  "updated_at": "2026-07-10T12:54+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -10,8 +10,23 @@
     "피델리티",
     "Miri"
   ],
-  "last_seen": "20260710000223",
+  "last_seen": "20260710000224",
   "disclosures": [
+    {
+      "rcept_no": "20260710000224",
+      "rcept_dt": "2026-07-10",
+      "firm": "피델리티",
+      "corp_name": "메가스터디교육",
+      "stock_code": "215200",
+      "corp_code": "01074862",
+      "stkrt": "",
+      "stkrt_prev": "",
+      "stkqy": "",
+      "report_resn": "",
+      "purpose": "",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "기타"
+    },
     {
       "rcept_no": "20260710000222",
       "rcept_dt": "2026-07-10",
