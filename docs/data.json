@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-10T12:59+09:00",
+  "updated_at": "2026-07-10T13:04+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -19,13 +19,13 @@
       "corp_name": "메가스터디교육",
       "stock_code": "215200",
       "corp_code": "01074862",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkrt": "4.81",
+      "stkrt_prev": "6.17",
+      "stkqy": "498906",
+      "report_resn": "단순 주식 처분에 의한 변동 보고",
+      "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "기타"
+      "kind": "매도"
     },
     {
       "rcept_no": "20260710000222",
