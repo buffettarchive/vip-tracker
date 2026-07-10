@@ -40,14 +40,14 @@ a:hover{opacity:.82}
 /* 3D 버튼 press 인터랙션 */
 .ba-btn3d:active,.ba-btn3d-lt:active,.ba-btn3d-w:active,.ba-tab:active{transform:translateY(3px)}
 
-/* 상단 우측 내비게이션 스타일 */
+/* 상단 우측 내비게이션 스타일 (연회색 -> 파란색 통일) */
 .nav-links{
-  margin-left:auto; /* 우측 끝으로 밀기 */
-  display:flex; gap:32px; font-size:16px; font-weight:700; align-items:center;
+  margin-left:auto;
+  display:flex; gap:28px; font-size:16px; font-weight:700; align-items:center;
 }
-.nav-links a{color:var(--cobalt); transition:0.2s;}
-.nav-links a:hover{color:var(--cobalt-d);}
-.nav-links a.active{color:var(--cobalt-d); text-decoration:underline; text-underline-offset:6px;}
+.nav-links a{color:var(--muted); transition:0.2s;}
+.nav-links a:hover{color:var(--ink);}
+.nav-links a.active{color:var(--cobalt);}
 </style>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6B17RZ2E78"></script>
@@ -63,12 +63,14 @@ a:hover{opacity:.82}
 
   <header data-screen-label="Nav" style="position:sticky;top:0;z-index:100;background:rgba(248,247,244,.82);backdrop-filter:saturate(160%) blur(16px);-webkit-backdrop-filter:saturate(160%) blur(16px)">
     <nav style="max-width:1200px;margin:0 auto;height:74px;display:flex;align-items:center;padding:0 28px;">
-      <a href="#top" style="display:flex;align-items:center"><img src="logo.png" alt="Buffett Archive" style="height:32px;width:auto"></a>
+      <a href="index.html" style="display:flex;align-items:center"><img src="logo.png" alt="Buffett Archive" style="height:32px;width:auto"></a>
       
-      <!-- 우측 끝 메뉴 영역 -->
+      <!-- 분리된 4개 메뉴 영역 -->
       <div class="nav-links">
-        <a href="dashboard.html">국내 가치투자</a>
-        <a href="guru.html">미국 투자거장 (13F)</a>
+        <a href="dashboard.html?view=insider">내부자매수</a>
+        <a href="dashboard.html?view=firm">국내 지분공시</a>
+        <a href="dashboard.html?view=buyback">자사주매입</a>
+        <a href="guru.html">구루 포트폴리오</a>
       </div>
     </nav>
   </header>
@@ -80,7 +82,7 @@ a:hover{opacity:.82}
       <p style="font-size:19px;line-height:1.65;color:#4b4d55;font-weight:400;margin:0 0 36px;max-width:490px">VIP, 얼라인, 라이프. 국내 가치투자 운용사가 어떤 종목을 보유하는지 운용사별로 정리합니다. 내부자 매수와 자사주 소각까지 한곳에서 확인합니다.</p>
       <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">
         <a href="dashboard.html" class="ba-btn3d" style="display:inline-block;background:var(--cobalt);color:#fff;font-family:inherit;font-size:18px;font-weight:700;padding:18px 32px;border:none;border-radius:16px;cursor:pointer;box-shadow:0 6px 0 var(--cobalt-d),0 15px 30px rgba(0,71,255,.32);transition:transform .12s,box-shadow .12s">국내 가치투자 열기</a>
-        <a href="guru.html" class="ba-btn3d-lt" style="display:inline-block;background:#fff;color:var(--ink);font-family:inherit;font-size:18px;font-weight:700;padding:18px 28px;border:none;border-radius:16px;cursor:pointer;box-shadow:0 5px 0 #e4e2db,0 12px 22px rgba(22,24,29,.08);transition:transform .12s,box-shadow .12s">미국 13F 열기</a>
+        <a href="guru.html" class="ba-btn3d-lt" style="display:inline-block;background:#fff;color:var(--ink);font-family:inherit;font-size:18px;font-weight:700;padding:18px 28px;border:none;border-radius:16px;cursor:pointer;box-shadow:0 5px 0 #e4e2db,0 12px 22px rgba(22,24,29,.08);transition:transform .12s,box-shadow .12s">구루 포트폴리오 열기</a>
       </div>
       <div style="display:flex;align-items:center;gap:12px;margin-top:28px;color:var(--muted);font-size:14px"><div style="display:flex">
         <span style="width:30px;height:30px;border-radius:50%;background:#dfe6ff;border:2px solid var(--bg);display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--cobalt)">브</span>
