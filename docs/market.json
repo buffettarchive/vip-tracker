@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-07-09T23:59:21Z",
+  "updated_at": "2026-07-10T00:04:18Z",
   "quotes": {
     "KOSPI": {
       "price": 7291.91,
-      "prev_close": 7656.31,
-      "change": -364.4,
-      "change_pct": -4.76
+      "prev_close": 7246.79,
+      "change": 45.12,
+      "change_pct": 0.62
     },
     "KOSDAQ": {
       "price": 794.0,
-      "prev_close": 831.23,
-      "change": -37.23,
-      "change_pct": -4.48
+      "prev_close": 785.0,
+      "change": 9.0,
+      "change_pct": 1.15
     },
     "S&P 500": {
       "price": 7543.64,
@@ -20,21 +20,14 @@
       "change_pct": 0.53
     },
     "USD/KRW": {
-      "price": 1505.67,
+      "price": 1506.18,
       "prev_close": 1503.35,
-      "change": 2.32,
-      "change_pct": 0.15
+      "change": 2.83,
+      "change_pct": 0.19
     }
   },
   "history": {
     "KOSPI": [
-      {
-        "time": "2026-04-09",
-        "open": 5826.45,
-        "high": 5862.41,
-        "low": 5757.49,
-        "close": 5778.01
-      },
       {
         "time": "2026-04-10",
         "open": 5876.12,
@@ -457,13 +450,6 @@
       }
     ],
     "KOSDAQ": [
-      {
-        "time": "2026-04-09",
-        "open": 1083.4,
-        "high": 1091.38,
-        "low": 1068.82,
-        "close": 1076.0
-      },
       {
         "time": "2026-04-10",
         "open": 1089.14,
@@ -1778,11 +1764,11 @@
         "close": 1503.35
       },
       {
-        "time": "2026-07-09",
+        "time": "2026-07-10",
         "open": 1506.23,
-        "high": 1507.51,
+        "high": 1507.58,
         "low": 1504.88,
-        "close": 1505.67
+        "close": 1506.18
       }
     ]
   }
