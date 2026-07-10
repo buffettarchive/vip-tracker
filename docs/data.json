@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-10T16:04+09:00",
+  "updated_at": "2026-07-10T16:09+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -10,8 +10,38 @@
     "피델리티",
     "Miri"
   ],
-  "last_seen": "20260710000480",
+  "last_seen": "20260710000504",
   "disclosures": [
+    {
+      "rcept_no": "20260710000503",
+      "rcept_dt": "2026-07-10",
+      "firm": "브이아이피자산운용",
+      "corp_name": "이엔에프테크놀로지",
+      "stock_code": "102710",
+      "corp_code": "00530185",
+      "stkrt": "",
+      "stkrt_prev": "",
+      "stkqy": "",
+      "report_resn": "",
+      "purpose": "",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "기타"
+    },
+    {
+      "rcept_no": "20260710000487",
+      "rcept_dt": "2026-07-10",
+      "firm": "브이아이피자산운용",
+      "corp_name": "원익머트리얼즈",
+      "stock_code": "104830",
+      "corp_code": "00623661",
+      "stkrt": "",
+      "stkrt_prev": "",
+      "stkqy": "",
+      "report_resn": "",
+      "purpose": "",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "기타"
+    },
     {
       "rcept_no": "20260710000468",
       "rcept_dt": "2026-07-10",
