@@ -51,10 +51,22 @@ a{color:inherit;text-decoration:none}
   position:sticky;top:0;z-index:50;
   background:rgba(248,247,244,.86);backdrop-filter:saturate(180%) blur(12px);
 }
-.topnav-inner{max-width:960px;margin:0 auto;padding:16px 20px;display:flex;align-items:center;gap:16px}
+.topnav-inner{
+  max-width:960px;margin:0 auto;padding:16px 20px;
+  display:flex;align-items:center;justify-content:space-between; position:relative;
+}
 .topnav .logo{height:32px;width:auto;transition:opacity .15s}
 .topnav a:hover .logo{opacity:.7}
-.topnav .spacer{margin-left:auto}
+
+/* 메뉴 이동 링크 (정중앙 배치) */
+.nav-links{
+  position:absolute; left:50%; transform:translateX(-50%);
+  display:flex; gap:32px; font-size:16px; font-weight:700;
+}
+.nav-links a{color:var(--muted); transition:0.2s;}
+.nav-links a:hover{color:var(--ink);}
+.nav-links a.active{color:var(--cobalt);}
+
 .langtoggle{display:inline-flex;align-items:center;gap:2px;font-size:13px;font-weight:600}
 .langtoggle button{font-family:inherit;background:transparent;border:0;color:#b7b6ae;padding:5px 7px;cursor:pointer;transition:color .15s;border-radius:8px}
 .langtoggle button:hover{color:var(--muted)}
@@ -186,7 +198,6 @@ footer#footer{margin:40px 0 0;padding-top:24px;border-top:1px solid var(--line)}
 .contact{margin:18px 0 56px;font-size:13px}
 .contact a{color:var(--ink);font-weight:700}
 .contact a:hover{color:var(--cobalt)}
-
 </style>
 </head>
 <body>
@@ -194,7 +205,13 @@ footer#footer{margin:40px 0 0;padding-top:24px;border-top:1px solid var(--line)}
 <nav class="topnav">
   <div class="topnav-inner">
     <a href="index.html" title="홈으로"><img src="logo.png" alt="Buffett Archive" class="logo"></a>
-    <span class="spacer"></span>
+    
+    <!-- 정중앙 메뉴 영역 -->
+    <div class="nav-links">
+      <a href="dashboard.html" class="active">국내 가치투자</a>
+      <a href="guru.html">미국 투자거장 (13F)</a>
+    </div>
+
     <div class="langtoggle" id="langToggle" role="tablist">
       <button data-lang="ko" aria-selected="true">KO</button>
       <span class="divider">·</span>
@@ -575,7 +592,6 @@ function buildFirmPortfolio(firmName){
     const key = x.corp_name;
     if(!byCorp[key] || (x.rcept_no||"") > (byCorp[key].rcept_no||"")) byCorp[key]=x;
   });
-  // 최신 공시일(접수번호) 기준 내림차순 정렬 적용
   return Object.values(byCorp).sort((a,b)=>(b.rcept_no||"").localeCompare(a.rcept_no||""));
 }
 
