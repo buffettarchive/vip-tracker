@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-10T17:34+09:00",
+  "updated_at": "2026-07-10T17:44+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -10,7 +10,7 @@
     "피델리티",
     "Miri"
   ],
-  "last_seen": "20260710000699",
+  "last_seen": "20260710000706",
   "disclosures": [
     {
       "rcept_no": "20260710000644",
@@ -19,13 +19,13 @@
       "corp_name": "디와이피엔에프",
       "stock_code": "104460",
       "corp_code": "00602136",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkrt": "7.42",
+      "stkrt_prev": "8.61",
+      "stkqy": "780941",
+      "report_resn": "1% 이상 변동",
+      "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "기타"
+      "kind": "매도"
     },
     {
       "rcept_no": "20260710000522",
