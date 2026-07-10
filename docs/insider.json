@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-10T10:29+09:00",
+  "updated_at": "2026-07-10T10:39+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260710000106",
+  "last_seen": "20260710000123",
   "disclosures": [
+    {
+      "rcept_no": "20260710000122",
+      "rcept_dt": "2026-07-10",
+      "corp_name": "넥스틴",
+      "stock_code": "348210",
+      "market": "KOSDAQ",
+      "corp_code": "01080252",
+      "repror": "박태훈",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,000",
+      "total_cnt": "838,368",
+      "irds_rate": "0.01",
+      "hold_rate": "8.00",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260710000068",
       "rcept_dt": "2026-07-10",
