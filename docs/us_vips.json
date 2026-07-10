@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-10T18:17:30Z",
+  "updated_at": "2026-07-10T18:37:18Z",
   "portfolios": {
     "워런 버핏 (버크셔 해서웨이)": {
       "report_date": "2026-03-31",
@@ -162,11 +162,6 @@
           "weight": 0.01
         }
       ]
-    },
-    "마이클 버리 (사이언 에셋)": {
-      "report_date": "2025-09-30",
-      "total_value_usd": 0,
-      "holdings": []
     },
     "리 루 (히말라야 캐피탈)": {
       "report_date": "2026-03-31",
@@ -377,11 +372,6 @@
           "weight": 0.07
         }
       ]
-    },
-    "빌 애크먼 (퍼싱 스퀘어)": {
-      "report_date": "2026-03-31",
-      "total_value_usd": 0,
-      "holdings": []
     },
     "데이비드 테퍼 (아팔루사)": {
       "report_date": "2015-12-31",
@@ -809,11 +799,6 @@
         }
       ]
     },
-    "칼 아이칸 (아이칸 캐피탈)": {
-      "report_date": "2026-03-31",
-      "total_value_usd": 0,
-      "holdings": []
-    },
     "단 롭 (서드 포인트)": {
       "report_date": "2026-03-31",
       "total_value_usd": 2082795760000,
@@ -1059,11 +1044,6 @@
           "weight": 0.01
         }
       ]
-    },
-    "프렘 왓사 (페어팩스 파이낸셜)": {
-      "report_date": "2026-03-31",
-      "total_value_usd": 0,
-      "holdings": []
     },
     "토마스 게이너 (마켈 그룹)": {
       "report_date": "2026-03-31",
@@ -26490,6 +26470,720 @@
           "value": 3927000,
           "shares": 11218,
           "weight": 0.0
+        }
+      ]
+    },
+    "바이킹 글로벌 (안드레아스 할보센)": {
+      "report_date": "2026-03-31",
+      "total_value_usd": 35748670967000,
+      "holdings": [
+        {
+          "name": "비자 (V)",
+          "value": 1912630634000,
+          "shares": 6328185,
+          "weight": 5.35
+        },
+        {
+          "name": "TAIWAN SEMICONDUCTOR MANUFAC",
+          "value": 1508989670000,
+          "shares": 4465127,
+          "weight": 4.22
+        },
+        {
+          "name": "SCHWAB CHARLES CORP",
+          "value": 1378212377000,
+          "shares": 14664954,
+          "weight": 3.86
+        },
+        {
+          "name": "DISNEY WALT CO",
+          "value": 1281705768000,
+          "shares": 13298462,
+          "weight": 3.59
+        },
+        {
+          "name": "FORTIVE CORP",
+          "value": 1242660569000,
+          "shares": 22479388,
+          "weight": 3.48
+        },
+        {
+          "name": "AIR PRODUCTS AND CHEMICALS I",
+          "value": 1192198557000,
+          "shares": 4104095,
+          "weight": 3.33
+        },
+        {
+          "name": "MCDONALDS CORP",
+          "value": 1126622763000,
+          "shares": 3625029,
+          "weight": 3.15
+        },
+        {
+          "name": "SHERWIN WILLIAMS CO",
+          "value": 997797462000,
+          "shares": 3112767,
+          "weight": 2.79
+        },
+        {
+          "name": "TESLA INC",
+          "value": 926981302000,
+          "shares": 2493561,
+          "weight": 2.59
+        },
+        {
+          "name": "애플 (AAPL)",
+          "value": 911881936000,
+          "shares": 3593057,
+          "weight": 2.55
+        },
+        {
+          "name": "BRIDGEBIO PHARMA INC",
+          "value": 879419149000,
+          "shares": 11842434,
+          "weight": 2.46
+        },
+        {
+          "name": "CARVANA CO",
+          "value": 873987403000,
+          "shares": 2780035,
+          "weight": 2.44
+        },
+        {
+          "name": "마이크로소프트 (MSFT)",
+          "value": 854887626000,
+          "shares": 2309446,
+          "weight": 2.39
+        },
+        {
+          "name": "THERMO FISHER SCIENTIFIC INC",
+          "value": 819884328000,
+          "shares": 1668025,
+          "weight": 2.29
+        },
+        {
+          "name": "JPMORGAN CHASE & CO",
+          "value": 795413935000,
+          "shares": 2704018,
+          "weight": 2.23
+        },
+        {
+          "name": "CSX CORP",
+          "value": 766734035000,
+          "shares": 18678052,
+          "weight": 2.14
+        },
+        {
+          "name": "INTERCONTINENTAL EXCHANGE IN",
+          "value": 760747003000,
+          "shares": 4836896,
+          "weight": 2.13
+        },
+        {
+          "name": "LENNOX INTL INC",
+          "value": 729806830000,
+          "shares": 1572419,
+          "weight": 2.04
+        },
+        {
+          "name": "알파벳 (GOOGL)",
+          "value": 688954939000,
+          "shares": 2395865,
+          "weight": 1.93
+        },
+        {
+          "name": "FEDEX CORP",
+          "value": 688198530000,
+          "shares": 1932165,
+          "weight": 1.93
+        },
+        {
+          "name": "GENERAL MTRS CO",
+          "value": 683682254000,
+          "shares": 9176943,
+          "weight": 1.91
+        },
+        {
+          "name": "BOEING CO",
+          "value": 636108040000,
+          "shares": 3196041,
+          "weight": 1.78
+        },
+        {
+          "name": "PNC FINL SVCS GROUP INC",
+          "value": 629907574000,
+          "shares": 3027092,
+          "weight": 1.76
+        },
+        {
+          "name": "T-MOBILE US INC",
+          "value": 623237561000,
+          "shares": 2967374,
+          "weight": 1.74
+        },
+        {
+          "name": "메타 (META)",
+          "value": 607931035000,
+          "shares": 1062575,
+          "weight": 1.7
+        },
+        {
+          "name": "REGAL REXNORD CORPORATION",
+          "value": 588530278000,
+          "shares": 3142851,
+          "weight": 1.65
+        },
+        {
+          "name": "MID-AMER APT CMNTYS INC",
+          "value": 585981096000,
+          "shares": 4798404,
+          "weight": 1.64
+        },
+        {
+          "name": "JOHNSON CONTROLS INTERNATION",
+          "value": 578788917000,
+          "shares": 4419923,
+          "weight": 1.62
+        },
+        {
+          "name": "MEDLINE INC",
+          "value": 508812644000,
+          "shares": 11433992,
+          "weight": 1.42
+        },
+        {
+          "name": "HCA HEALTHCARE INC",
+          "value": 508795941000,
+          "shares": 1075133,
+          "weight": 1.42
+        },
+        {
+          "name": "ATI INC",
+          "value": 484795343000,
+          "shares": 3332843,
+          "weight": 1.36
+        },
+        {
+          "name": "CELESTICA INC",
+          "value": 466177302000,
+          "shares": 1654989,
+          "weight": 1.3
+        },
+        {
+          "name": "CAMDEN PPTY TR",
+          "value": 460505378000,
+          "shares": 4715394,
+          "weight": 1.29
+        },
+        {
+          "name": "CHUBB LTD SWITZ",
+          "value": 422082935000,
+          "shares": 1295011,
+          "weight": 1.18
+        },
+        {
+          "name": "ADAPTIVE BIOTECHNOLOGIES COR",
+          "value": 416312667000,
+          "shares": 29993708,
+          "weight": 1.16
+        },
+        {
+          "name": "BIOMARIN PHARMACEUTICAL INC",
+          "value": 398936730000,
+          "shares": 7062077,
+          "weight": 1.12
+        },
+        {
+          "name": "SEA LTD",
+          "value": 392287201000,
+          "shares": 4737196,
+          "weight": 1.1
+        },
+        {
+          "name": "WATERS CORP",
+          "value": 374174384000,
+          "shares": 1256462,
+          "weight": 1.05
+        },
+        {
+          "name": "CARNIVAL CORP",
+          "value": 355108486000,
+          "shares": 13721348,
+          "weight": 0.99
+        },
+        {
+          "name": "AON PLC",
+          "value": 350898657000,
+          "shares": 1087114,
+          "weight": 0.98
+        },
+        {
+          "name": "HASBRO INC",
+          "value": 349961227000,
+          "shares": 3738902,
+          "weight": 0.98
+        },
+        {
+          "name": "REDDIT INC",
+          "value": 343575229000,
+          "shares": 2551617,
+          "weight": 0.96
+        },
+        {
+          "name": "PROGRESSIVE CORP",
+          "value": 320466656000,
+          "shares": 1616559,
+          "weight": 0.9
+        },
+        {
+          "name": "AMERICAN INTL GROUP INC",
+          "value": 317647031000,
+          "shares": 4221223,
+          "weight": 0.89
+        },
+        {
+          "name": "CAPITAL ONE FINL CORP",
+          "value": 294145389000,
+          "shares": 1612374,
+          "weight": 0.82
+        },
+        {
+          "name": "DICKS SPORTING GOODS INC",
+          "value": 250672269000,
+          "shares": 1264170,
+          "weight": 0.7
+        },
+        {
+          "name": "아마존 (AMZN)",
+          "value": 248971790000,
+          "shares": 1195428,
+          "weight": 0.7
+        },
+        {
+          "name": "AMER SPORTS INC",
+          "value": 239344070000,
+          "shares": 7270476,
+          "weight": 0.67
+        },
+        {
+          "name": "API GROUP CORP",
+          "value": 236515240000,
+          "shares": 5837000,
+          "weight": 0.66
+        },
+        {
+          "name": "TIC SOLUTIONS INC",
+          "value": 235725618000,
+          "shares": 35824562,
+          "weight": 0.66
+        },
+        {
+          "name": "CBOE GLOBAL MKTS INC",
+          "value": 193493366000,
+          "shares": 688417,
+          "weight": 0.54
+        },
+        {
+          "name": "ROIVANT SCIENCES LTD",
+          "value": 184272810000,
+          "shares": 6652448,
+          "weight": 0.52
+        },
+        {
+          "name": "HOME DEPOT INC",
+          "value": 165845085000,
+          "shares": 504257,
+          "weight": 0.46
+        },
+        {
+          "name": "GALLAGHER ARTHUR J & CO",
+          "value": 157549172000,
+          "shares": 727441,
+          "weight": 0.44
+        },
+        {
+          "name": "LULULEMON ATHLETICA INC",
+          "value": 150124961000,
+          "shares": 980568,
+          "weight": 0.42
+        },
+        {
+          "name": "NEWAMSTERDAM PHARMA COMPANY",
+          "value": 134556180000,
+          "shares": 4203567,
+          "weight": 0.38
+        },
+        {
+          "name": "ORUKA THERAPEUTICS INC",
+          "value": 130801145000,
+          "shares": 2666690,
+          "weight": 0.37
+        },
+        {
+          "name": "SIONNA THERAPEUTICS INC",
+          "value": 128094806000,
+          "shares": 3195181,
+          "weight": 0.36
+        },
+        {
+          "name": "STELLANTIS NV",
+          "value": 111914533000,
+          "shares": 15980268,
+          "weight": 0.31
+        },
+        {
+          "name": "COREWEAVE INC",
+          "value": 108259522000,
+          "shares": 1397438,
+          "weight": 0.3
+        },
+        {
+          "name": "VERADERMICS INC",
+          "value": 106758548000,
+          "shares": 1690555,
+          "weight": 0.3
+        },
+        {
+          "name": "WEST PHARMACEUTICAL SVSC INC",
+          "value": 104503847000,
+          "shares": 416948,
+          "weight": 0.29
+        },
+        {
+          "name": "PHARVARIS N V",
+          "value": 103206008000,
+          "shares": 3653310,
+          "weight": 0.29
+        },
+        {
+          "name": "INHIBRX BIOSCIENCES INC",
+          "value": 96656907000,
+          "shares": 1437705,
+          "weight": 0.27
+        },
+        {
+          "name": "INTERACTIVE BROKERS GROUP IN",
+          "value": 93517646000,
+          "shares": 1394329,
+          "weight": 0.26
+        },
+        {
+          "name": "RALLIANT CORP",
+          "value": 88790449000,
+          "shares": 2134899,
+          "weight": 0.25
+        },
+        {
+          "name": "EDWARDS LIFESCIENCES CORP",
+          "value": 87894046000,
+          "shares": 1097578,
+          "weight": 0.25
+        },
+        {
+          "name": "ORIC PHARMACEUTICALS INC",
+          "value": 73796833000,
+          "shares": 5824533,
+          "weight": 0.21
+        },
+        {
+          "name": "DAMORA THERAPEUTICS INC",
+          "value": 59857024000,
+          "shares": 2311082,
+          "weight": 0.17
+        },
+        {
+          "name": "TWILIO INC",
+          "value": 56715881000,
+          "shares": 450770,
+          "weight": 0.16
+        },
+        {
+          "name": "STANDARD BIOTOOLS INC",
+          "value": 53918021000,
+          "shares": 58651170,
+          "weight": 0.15
+        },
+        {
+          "name": "TREVI THERAPEUTICS INC",
+          "value": 38159823000,
+          "shares": 3198644,
+          "weight": 0.11
+        },
+        {
+          "name": "GINKGO BIOWORKS HOLDINGS INC",
+          "value": 21927795000,
+          "shares": 3577128,
+          "weight": 0.06
+        },
+        {
+          "name": "EQUIPMENTSHARE COM INC",
+          "value": 20370000000,
+          "shares": 1000000,
+          "weight": 0.06
+        },
+        {
+          "name": "FORGENT POWER SOLUTIONS INC",
+          "value": 19025500000,
+          "shares": 650000,
+          "weight": 0.05
+        },
+        {
+          "name": "PEPGEN INC",
+          "value": 6163908000,
+          "shares": 3482434,
+          "weight": 0.02
+        },
+        {
+          "name": "RALLYBIO CORP",
+          "value": 4703393000,
+          "shares": 524347,
+          "weight": 0.01
+        }
+      ]
+    },
+    "빌 밀러 (밀러 밸류 파트너스)": {
+      "report_date": "2026-03-31",
+      "total_value_usd": 2984059912000,
+      "holdings": [
+        {
+          "name": "TEVA PHARMACEUTICAL INDUSTRIES LTD - ADR",
+          "value": 117036772000,
+          "shares": 3885683,
+          "weight": 3.92
+        },
+        {
+          "name": "REGENERON PHARMACEUTICALS INC",
+          "value": 116637734000,
+          "shares": 150960,
+          "weight": 3.91
+        },
+        {
+          "name": "MARVELL TECHNOLOGY INC",
+          "value": 113767840000,
+          "shares": 1148590,
+          "weight": 3.81
+        },
+        {
+          "name": "BANK OF AMERICA CORPORATION",
+          "value": 100697123000,
+          "shares": 2065582,
+          "weight": 3.37
+        },
+        {
+          "name": "BERKSHIRE HATHAWAY INC - CLASS B",
+          "value": 95593212000,
+          "shares": 199485,
+          "weight": 3.2
+        },
+        {
+          "name": "ZIMMER BIOMET HOLDINGS INC",
+          "value": 95140105000,
+          "shares": 1052202,
+          "weight": 3.19
+        },
+        {
+          "name": "THE WALT DISNEY COMPANY",
+          "value": 93530622000,
+          "shares": 970436,
+          "weight": 3.13
+        },
+        {
+          "name": "CITIGROUP INC",
+          "value": 87733863000,
+          "shares": 773599,
+          "weight": 2.94
+        },
+        {
+          "name": "GE HEALTHCARE TECHNOLOGIES INC",
+          "value": 84899304000,
+          "shares": 1192741,
+          "weight": 2.85
+        },
+        {
+          "name": "CSX CORPORATION",
+          "value": 82188627000,
+          "shares": 2002159,
+          "weight": 2.75
+        },
+        {
+          "name": "NXP SEMICONDUCTORS NV",
+          "value": 80841150000,
+          "shares": 410653,
+          "weight": 2.71
+        },
+        {
+          "name": "PFIZER INC",
+          "value": 80601422000,
+          "shares": 2870421,
+          "weight": 2.7
+        },
+        {
+          "name": "PUBLIC SERVICE ENTERPRISE GROUP INCORPORATED",
+          "value": 79708065000,
+          "shares": 984658,
+          "weight": 2.67
+        },
+        {
+          "name": "AMAZONCOM INC",
+          "value": 78908296000,
+          "shares": 378875,
+          "weight": 2.64
+        },
+        {
+          "name": "EQT CORPORATION",
+          "value": 78631357000,
+          "shares": 1235565,
+          "weight": 2.64
+        },
+        {
+          "name": "BP PLC SPONSORED ADR",
+          "value": 78569101000,
+          "shares": 1671683,
+          "weight": 2.63
+        },
+        {
+          "name": "GENERAL MOTORS COMPANY",
+          "value": 77283469000,
+          "shares": 1037362,
+          "weight": 2.59
+        },
+        {
+          "name": "QXO INC",
+          "value": 76316910000,
+          "shares": 3929810,
+          "weight": 2.56
+        },
+        {
+          "name": "SOUTHWEST AIRLINES CO",
+          "value": 75214276000,
+          "shares": 2001977,
+          "weight": 2.52
+        },
+        {
+          "name": "COTERRA ENERGY INC",
+          "value": 74808422000,
+          "shares": 2128868,
+          "weight": 2.51
+        },
+        {
+          "name": "CHECK POINT SOFTWARE TECHNOLOGIES LTD",
+          "value": 74071868000,
+          "shares": 518529,
+          "weight": 2.48
+        },
+        {
+          "name": "알파벳 (GOOGL)",
+          "value": 73520753000,
+          "shares": 255671,
+          "weight": 2.46
+        },
+        {
+          "name": "INCYTE CORPORATION",
+          "value": 72268065000,
+          "shares": 767829,
+          "weight": 2.42
+        },
+        {
+          "name": "VISTRA CORP",
+          "value": 72122621000,
+          "shares": 479762,
+          "weight": 2.42
+        },
+        {
+          "name": "WELLS FARGO & COMPANY",
+          "value": 71842452000,
+          "shares": 902430,
+          "weight": 2.41
+        },
+        {
+          "name": "UNITED PARCEL SERVICE INC CL B",
+          "value": 71627133000,
+          "shares": 728066,
+          "weight": 2.4
+        },
+        {
+          "name": "MEDTRONIC PLC",
+          "value": 71506959000,
+          "shares": 825239,
+          "weight": 2.4
+        },
+        {
+          "name": "THE BOEING COMPANY",
+          "value": 70657441000,
+          "shares": 355009,
+          "weight": 2.37
+        },
+        {
+          "name": "ALBERTSONS COMPANIES INC",
+          "value": 70449494000,
+          "shares": 4134360,
+          "weight": 2.36
+        },
+        {
+          "name": "ICON PLC",
+          "value": 69379172000,
+          "shares": 626958,
+          "weight": 2.32
+        },
+        {
+          "name": "KINDER MORGAN INC",
+          "value": 64190000000,
+          "shares": 1914405,
+          "weight": 2.15
+        },
+        {
+          "name": "OWENS CORNING",
+          "value": 64101953000,
+          "shares": 592330,
+          "weight": 2.15
+        },
+        {
+          "name": "OMNICOM GROUP INC",
+          "value": 63483468000,
+          "shares": 842962,
+          "weight": 2.13
+        },
+        {
+          "name": "MOHAWK INDUSTRIES INC",
+          "value": 63264193000,
+          "shares": 642537,
+          "weight": 2.12
+        },
+        {
+          "name": "FLEX LTD",
+          "value": 60542776000,
+          "shares": 924882,
+          "weight": 2.03
+        },
+        {
+          "name": "SMURFIT WESTROCK PUBLIC LIMITED COMPANY",
+          "value": 60139070000,
+          "shares": 1509136,
+          "weight": 2.02
+        },
+        {
+          "name": "QUALCOMM INCORPORATED",
+          "value": 54705229000,
+          "shares": 424796,
+          "weight": 1.83
+        },
+        {
+          "name": "KYNDRYL HOLDINGS INC",
+          "value": 54421550000,
+          "shares": 4147984,
+          "weight": 1.82
+        },
+        {
+          "name": "PACKAGING CORPORATION OF AMERICA",
+          "value": 11619045000,
+          "shares": 54750,
+          "weight": 0.39
+        },
+        {
+          "name": "CHEVRON CORPORATION",
+          "value": 2039000000,
+          "shares": 9855,
+          "weight": 0.07
         }
       ]
     }
