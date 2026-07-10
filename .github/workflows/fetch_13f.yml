@@ -1,0 +1,25 @@
+name: 미국 투자거장 13F 포트폴리오 갱신
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # 매일 자정 (UTC 기준) 실행
+  workflow_dispatch: # 수동 실행 버튼 활성화
+
+jobs:
+  run-13f-fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          
+      - name: Install requests
+        run: pip install requests
+        
+      - name: 13F 데이터 수집 및 커밋
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: python fetch_13f.py
