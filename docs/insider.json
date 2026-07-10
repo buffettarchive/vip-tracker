@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-10T12:05+09:00",
+  "updated_at": "2026-07-10T14:14+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260710000212",
+  "last_seen": "20260710000284",
   "disclosures": [
+    {
+      "rcept_no": "20260710000284",
+      "rcept_dt": "2026-07-10",
+      "corp_name": "디와이",
+      "stock_code": "013570",
+      "market": "KOSPI",
+      "corp_code": "00117179",
+      "repror": "김진호",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "40,912",
+      "total_cnt": "70,912",
+      "irds_rate": "0.15",
+      "hold_rate": "0.27",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260710000212",
       "rcept_dt": "2026-07-10",
