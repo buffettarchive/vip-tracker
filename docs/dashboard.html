@@ -171,6 +171,7 @@ a.row{cursor:pointer}
 
 /* ── 운용사 포트폴리오 뷰 ── */
 .firm-row{cursor:pointer}
+.stock-row{cursor:pointer}
 .firm-avatar{background:var(--chip);color:var(--cobalt)}
 .pf-header{list-style:none;padding:20px 22px 22px;border-bottom:2px solid var(--ink)}
 .pf-back{font-family:inherit;font-size:13px;font-weight:600;color:var(--muted);background:transparent;border:none;cursor:pointer;padding:0;margin-bottom:14px;transition:color .15s}
@@ -185,7 +186,6 @@ footer#footer{margin:40px 0 0;padding-top:24px;border-top:1px solid var(--line)}
 .contact{margin:18px 0 56px;font-size:13px}
 .contact a{color:var(--ink);font-weight:700}
 .contact a:hover{color:var(--cobalt)}
-
 
 </style>
 </head>
@@ -288,6 +288,15 @@ const I18N = {
     bb_shares: "취득 주식수",
     bb_shares_cancel: "소각 주식수",
     bb_amount: "취득 금액",
+    traded_stocks: "거래 종목",
+    total_filings: "총 공시",
+    filings_unit: "건",
+    count_traded: n => `${n}개 종목 거래`,
+    trade_count: n => `${n}건`,
+    latest_stake: "최근 지분",
+    count_history: n => `매매 이력 ${n}건`,
+    trade_history: "매매 이력",
+    firm_pf_back: "거래 종목 목록",
   },
   en: {
     title_html: "버핏아카이브",
@@ -332,6 +341,15 @@ const I18N = {
     bb_shares: "Shares to acquire",
     bb_shares_cancel: "Shares to cancel",
     bb_amount: "Amount",
+    traded_stocks: "Traded Stocks",
+    total_filings: "Total Filings",
+    filings_unit: "",
+    count_traded: n => `${n} stocks traded`,
+    trade_count: n => `${n} filings`,
+    latest_stake: "Latest Stake",
+    count_history: n => `${n} history records`,
+    trade_history: "History",
+    firm_pf_back: "Traded Stocks",
   }
 };
 
@@ -366,6 +384,7 @@ const RESN_EN = [
 const FIRM_KO = {
   "브이아이피자산운용": "VIP자산운용",
 };
+
 function localizeFirm(name){
   if(LANG==="en") return FIRM_EN[name]||name;
   return FIRM_KO[name]||name;
@@ -406,6 +425,7 @@ function fmtDate(iso){
   const dd = LANG==="en" ? `${parseInt(d)}` : `${parseInt(d)}일`;
   return {d:dd, m:mon, y};
 }
+
 function dartLink(rcept_no){
   if(!rcept_no || /^0+$/.test(rcept_no)) return null;
   return `https://dart.fss.or.kr/dsaf001/main.do?rcpNo=${rcept_no}`;
@@ -422,19 +442,19 @@ function firmTag(item){
   return {cls:"etc",txt:t("kind_etc")};
 }
 
-let FIRM={disclosures:[],firms:[]}, INSIDER={disclosures:[]}, BUYBACK={entries:[]};
+let FIRM={disclosures:[],firms:[]}, INSIDER={disclosures:[]}, BUYBACK={entries:[]}, ARCHIVE={disclosures:[],firms:[]};
 let view="insider", activeFirm="전체", activeMarket="ALL", activeBBType="ALL";
-let selectedFirm=null; // null이면 운용사 목록, 값이 있으면 그 운용사 포트폴리오
+let selectedFirm=null; 
+let selectedStock=null;
 let currentChartName="KOSPI";
 let currentTimeframe="daily";
 let LAST_MARKET=null;
 let lwChart=null, lwSeries=null;
 let lastCandle=null;
 
-// ── Lightweight Charts (내 데이터 기반 캔들차트) ──
+// ── Lightweight Charts ──
 function fmtOhlc(v){
   if(v==null || isNaN(v)) return "—";
-  // USD/KRW 등 소수 필요한 경우 대비: 1만 미만이면 소수 2자리
   return Math.abs(v) < 10000 ? v.toLocaleString(undefined,{minimumFractionDigits:2, maximumFractionDigits:2}) : Math.round(v).toLocaleString();
 }
 function updateOhlcBar(candle){
@@ -467,10 +487,9 @@ function initChart(){
     wickUpColor:'#e0473b', wickDownColor:'#0047FF',
     borderVisible:false,
   });
-  // 마우스를 캔들에 올리면 그 날의 OHLC 표시
   lwChart.subscribeCrosshairMove(param=>{
     if(!param || !param.time || !param.seriesData || !lwSeries){
-      updateOhlcBar(lastCandle); // 마우스 벗어나면 최근 캔들 표시
+      updateOhlcBar(lastCandle);
       return;
     }
     const d = param.seriesData.get(lwSeries);
@@ -482,7 +501,6 @@ function drawChart(name){
   currentChartName = name;
   const titleEl = document.getElementById("chartTitle");
   if(titleEl) titleEl.textContent = name;
-  // 티커 active 표시 갱신
   document.querySelectorAll(".ticker-item").forEach(it=>{
     it.classList.toggle("active", it.dataset.tvname===name);
   });
@@ -490,9 +508,8 @@ function drawChart(name){
   if(!lwSeries) return;
   const raw = (LAST_MARKET && LAST_MARKET.history) ? LAST_MARKET.history[name] : null;
   const hintEl = document.getElementById("chartHint");
-  // 데이터 구조: {daily:[...], weekly:[...], monthly:[...]} (신규) 또는 [...] (구버전)
   let series = null;
-  if(Array.isArray(raw)) series = raw;               // 구버전 호환
+  if(Array.isArray(raw)) series = raw;               
   else if(raw) series = raw[currentTimeframe] || raw.daily || raw.weekly || raw.monthly;
   if(!series || !series.length){
     lwSeries.setData([]);
@@ -504,15 +521,13 @@ function drawChart(name){
   const tfLabel = {daily:"일봉", weekly:"주봉", monthly:"월봉"}[currentTimeframe] || "일봉";
   if(hintEl) hintEl.textContent = `전체 기간 · ${tfLabel} · 스크롤로 과거 탐색`;
   lwSeries.setData(series);
-  lastCandle = series[series.length-1];   // 최근 캔들 (마우스 벗어났을 때 기본 표시)
+  lastCandle = series[series.length-1];   
   updateOhlcBar(lastCandle);
-  // 초기 뷰: 최근 1년 구간만 보이게 (드래그/줌으로 전체 기간 탐색 가능)
   if(lwChart){
     const lastTime = series[series.length-1].time;
     const end = new Date(lastTime);
     const start = new Date(end); start.setFullYear(start.getFullYear()-1);
     const fmt = d => d.toISOString().slice(0,10);
-    // 데이터에 1년 전 시점이 있으면 그 구간, 없으면 전체
     const firstTime = series[0].time;
     const from = (fmt(start) > firstTime) ? fmt(start) : firstTime;
     try { lwChart.timeScale().setVisibleRange({ from, to: lastTime }); }
@@ -552,95 +567,134 @@ function renderTicker(mk){
   });
 }
 
-// 운용사별 포트폴리오 집계 (종목별 최신 공시만)
 function buildFirmPortfolio(firmName){
-  const items = FIRM.disclosures.filter(x=>x.firm===firmName);
+  const items = (ARCHIVE.disclosures || []).filter(x=>x.firm===firmName);
   const byCorp = {};
   items.forEach(x=>{
     const key = x.corp_name;
     if(!byCorp[key] || (x.rcept_no||"") > (byCorp[key].rcept_no||"")) byCorp[key]=x;
   });
-  // 지분율 높은 순
   return Object.values(byCorp).sort((a,b)=>(parseFloat(b.stkrt)||0)-(parseFloat(a.stkrt)||0));
 }
 
 function renderFirm(){
+  if(selectedStock){ renderStockHistory(); return; }
   if(selectedFirm){ renderFirmPortfolio(); return; }
   renderFirmList();
 }
 
 // ── 1단계: 운용사 목록 ──
 function renderFirmList(){
-  const firms = FIRM.firms || [];
+  const firms = ARCHIVE.firms || FIRM.firms || [];
   $("#count").textContent = t("count_firm_list", firms.length);
   const feed=$("#feed");
   if(!firms.length){feed.innerHTML=`<li class="empty">${t("empty_firm")}</li>`;return;}
   feed.innerHTML = firms.map(firm=>{
     const pf = buildFirmPortfolio(firm);
     const name = localizeFirm(firm);
-    // 최근 활동일
-    const latest = FIRM.disclosures.filter(x=>x.firm===firm)
-      .sort((a,b)=>(b.rcept_no||"").localeCompare(a.rcept_no||""))[0];
-    const dt = latest ? fmtDate(latest.rcept_dt) : {m:"",d:""};
-    // 최고 지분 종목
-    const top = pf[0];
-    const topLabel = top ? `${top.corp_name} ${top.stkrt}%` : "—";
+    const totalFilings = (ARCHIVE.disclosures || []).filter(x=>x.firm===firm).length;
     return `<div class="row firm-row" data-firm-select="${firm}">
       <div class="avatar firm-avatar">${name.trim().charAt(0)}</div>
       <div class="corp">
         <div class="name">${name}</div>
-        <div class="sub">${t("holdings_label")} <span class="who">${pf.length}${t("stocks_unit")}</span> · ${t("top_holding")} ${topLabel}</div>
+        <div class="sub">${t("traded_stocks")} <span class="who">${pf.length}${t("stocks_unit")}</span> · ${t("total_filings")} ${totalFilings}${t("filings_unit")}</div>
       </div>
       <div class="stake">
         <div class="pct" style="font-size:16px">${pf.length}<span style="font-size:12px;color:var(--muted);font-weight:600">${t("stocks_unit")}</span></div>
-        <div class="held">${t("recent_label")} · ${dt.m} ${dt.d}</div>
+        <div class="held">5년 누적 데이터</div>
       </div>
     </div>`;
   }).join("");
   feed.querySelectorAll("[data-firm-select]").forEach(el=>{
-    el.onclick=()=>{ selectedFirm=el.dataset.firmSelect; render(); window.scrollTo({top:0,behavior:"smooth"}); };
+    el.onclick=()=>{ selectedFirm=el.dataset.firmSelect; selectedStock=null; render(); window.scrollTo({top:0,behavior:"smooth"}); };
   });
 }
 
-// ── 2단계: 선택된 운용사의 포트폴리오 ──
+// ── 2단계: 거래 종목 목록 ──
 function renderFirmPortfolio(){
   const pf = buildFirmPortfolio(selectedFirm);
   const name = localizeFirm(selectedFirm);
-  $("#count").textContent = t("count_portfolio", pf.length);
+  $("#count").textContent = t("count_traded", pf.length);
   const feed=$("#feed");
-  // 상단 뒤로가기 + 운용사명 헤더
   const header = `<li class="pf-header">
     <button class="pf-back" id="pfBack">← ${t("firm_list_back")}</button>
     <div class="pf-title">${name}</div>
-    <div class="pf-meta">${t("holdings_label")} ${pf.length}${t("stocks_unit")} · ${t("pf-disclaimer")}</div>
+    <div class="pf-meta">${t("count_traded", pf.length)} · 5년 전체 내역</div>
   </li>`;
   if(!pf.length){ feed.innerHTML=header+`<li class="empty">${t("empty_firm")}</li>`; bindPfBack(); return; }
   const rows = pf.map(item=>{
-    const dt=fmtDate(item.rcept_dt), dl=dartLink(item.rcept_no), tag=firmTag(item);
+    const dt=fmtDate(item.rcept_dt);
     const code=item.stock_code?`<span class="code">${item.stock_code}</span>`:"";
-    const shares = item.stkqy ? Number(item.stkqy).toLocaleString() : "—";
-    const isSold = (item.kind||"")==="매도" && (parseFloat(item.stkrt)||0) < 5;
+    const historyCount = (ARCHIVE.disclosures || []).filter(x=>x.firm===selectedFirm && x.corp_name===item.corp_name).length;
+    
+    // 날짜 띄어쓰기 픽스
+    const dateStr = LANG==="en" ? `${dt.m} ${dt.d}, ${dt.y}` : `${dt.y}년 ${dt.m} ${dt.d}`;
+    
     const inner=`
       <div class="avatar">${(item.corp_name||"·").trim().charAt(0)}</div>
       <div class="corp">
         <div class="name">${item.corp_name}${code}</div>
-        <div class="sub">${t("shares_held")} ${shares} · ${dt.m} ${dt.d}</div>
+        <div class="sub">${t("trade_count", historyCount)} · ${t("recent_label")} ${dateStr}</div>
       </div>
       <div class="stake">
         <div class="pct">${item.stkrt ? item.stkrt+"%" : "—"}</div>
-        <div class="held">${t("held_stake")}</div>
-        <div class="delta ${tag.cls}">${tag.txt}</div>
+        <div class="held">${t("latest_stake")}</div>
       </div>`;
-    return dl?`<a class="row${isSold?' dim':''}" href="${dl}" target="_blank" rel="noopener">${inner}</a>`
-             :`<div class="row${isSold?' dim':''}">${inner}</div>`;
+    return `<div class="row stock-row" data-stock-select="${item.corp_name}">${inner}</div>`;
   }).join("");
   feed.innerHTML = header + rows;
   bindPfBack();
+  feed.querySelectorAll("[data-stock-select]").forEach(el=>{
+    el.onclick=()=>{ selectedStock=el.dataset.stockSelect; render(); window.scrollTo({top:0,behavior:"smooth"}); };
+  });
 }
 
 function bindPfBack(){
   const b=document.getElementById("pfBack");
   if(b) b.onclick=()=>{ selectedFirm=null; render(); window.scrollTo({top:0,behavior:"smooth"}); };
+}
+
+// ── 3단계: 종목별 매매 타임라인 ──
+function renderStockHistory(){
+  const items = (ARCHIVE.disclosures || [])
+    .filter(x=>x.firm===selectedFirm && x.corp_name===selectedStock)
+    .sort((a,b)=>(b.rcept_no||"").localeCompare(a.rcept_no||"")); 
+    
+  $("#count").textContent = t("count_history", items.length);
+  const feed=$("#feed");
+  const name = localizeFirm(selectedFirm);
+  const header = `<li class="pf-header">
+    <button class="pf-back" id="pfBackStock">← ${t("firm_pf_back")}</button>
+    <div class="pf-title">${selectedStock}</div>
+    <div class="pf-meta">${name} · ${t("trade_history")}</div>
+  </li>`;
+  
+  const rows = items.map(item=>{
+    const dt=fmtDate(item.rcept_dt);
+    const dl=dartLink(item.rcept_no);
+    const tag=firmTag(item);
+    const shares = item.stkqy ? Number(item.stkqy).toLocaleString() : "—";
+    
+    // 날짜 띄어쓰기 픽스
+    const dateStr = LANG==="en" ? `${dt.m} ${dt.d}, ${dt.y}` : `${dt.y}년 ${dt.m} ${dt.d}`;
+
+    const inner=`
+      <div class="corp" style="margin-left: 10px;">
+        <div class="name" style="font-size: 15px;">${dateStr}</div>
+        <div class="sub">${t("shares_held")} ${shares}</div>
+      </div>
+      <div class="stake">
+        <div class="pct">${item.stkrt ? item.stkrt+"%" : "—"}</div>
+        <div class="delta ${tag.cls}">${tag.txt}</div>
+      </div>`;
+    return dl?`<a class="row" href="${dl}" target="_blank" rel="noopener" style="grid-template-columns: 1fr auto;">${inner}</a>`
+             :`<div class="row" style="grid-template-columns: 1fr auto;">${inner}</div>`;
+  }).join("");
+  
+  feed.innerHTML = header + rows;
+  
+  const b=document.getElementById("pfBackStock");
+  if(b) b.onclick=()=>{ selectedStock=null; render(); window.scrollTo({top:0,behavior:"smooth"}); };
 }
 
 function renderInsider(){
@@ -741,7 +795,6 @@ function render(){
 }
 
 function buildFirmTabs(){
-  // 운용사 목록이 피드에 카드로 표시되므로 상단 필터 버튼은 사용하지 않음
   $("#firmTabs").innerHTML=""; $("#firmTabs").style.display="none";
 }
 
@@ -795,7 +848,7 @@ $("#langToggle").querySelectorAll("button").forEach(b=>{
 
 function switchView(v){
   view=v;
-  if(v==="firm") selectedFirm=null; // 운용사 탭 진입 시 항상 목록부터
+  if(v==="firm") { selectedFirm=null; selectedStock=null; } // 초기화
   $("#mainTabs").querySelectorAll("button").forEach(b=>b.setAttribute("aria-selected", b.dataset.view===v));
   buildFirmTabs(); buildMarketFilter(); setFooter(); render();
 }
@@ -809,11 +862,14 @@ function loadData(isFirstLoad){
     fetch("insider.json?ts="+Date.now()).then(r=>r.json()).catch(()=>null),
     fetch("buyback.json?ts="+Date.now()).then(r=>r.json()).catch(()=>null),
     fetch("market.json?ts="+Date.now()).then(r=>r.json()).catch(()=>null),
-  ]).then(([f,i,b,mk])=>{
+    fetch("archive.json?ts="+Date.now()).then(r=>r.json()).catch(()=>null), // 신규 연동
+  ]).then(([f,i,b,mk,ar])=>{
     if(f) FIRM=f;
     if(i) INSIDER=i;
     if(b) BUYBACK=b;
     if(mk){ LAST_MARKET=mk; }
+    if(ar) ARCHIVE=ar; // 5년 치 전체 거래 내역 저장
+    
     renderTicker(LAST_MARKET);
     if(mk) drawChart(currentChartName);
     if(isFirstLoad){
@@ -826,7 +882,6 @@ function loadData(isFirstLoad){
 loadData(true);
 setInterval(()=>loadData(false), 300000);
 
-// market.json 단독 재시도 (티커가 비어있을 때 대비)
 function refreshTicker(){
   fetch("market.json?ts="+Date.now())
     .then(r=>r.json())
@@ -835,8 +890,6 @@ function refreshTicker(){
 }
 refreshTicker();
 
-// 초기 차트 로드 (KOSPI)
-// 일봉/월봉 토글
 document.querySelectorAll("#chartTf button").forEach(b=>{
   b.onclick=()=>{
     currentTimeframe = b.dataset.tf;
@@ -846,7 +899,6 @@ document.querySelectorAll("#chartTf button").forEach(b=>{
   };
 });
 
-// 초기 차트 로드 (KOSPI)
 drawChart("KOSPI");
 </script>
 </body>
