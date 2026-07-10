@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-10T18:37:18Z",
+  "updated_at": "2026-07-10T18:47:38Z",
   "portfolios": {
     "워런 버핏 (버크셔 해서웨이)": {
       "report_date": "2026-03-31",
@@ -160,6 +160,60 @@
           "value": 17892939000,
           "shares": 433558,
           "weight": 0.01
+        }
+      ]
+    },
+    "마이클 버리 (사이언 에셋)": {
+      "report_date": "2025-09-30",
+      "total_value_usd": 1381198076000,
+      "holdings": [
+        {
+          "name": "PALANTIR TECHNOLOGIES INC",
+          "value": 912100000000,
+          "shares": 5000000,
+          "weight": 66.04
+        },
+        {
+          "name": "엔비디아 (NVDA)",
+          "value": 186580000000,
+          "shares": 1000000,
+          "weight": 13.51
+        },
+        {
+          "name": "PFIZER INC",
+          "value": 152880000000,
+          "shares": 6000000,
+          "weight": 11.07
+        },
+        {
+          "name": "HALLIBURTON CO",
+          "value": 61500000000,
+          "shares": 2500000,
+          "weight": 4.45
+        },
+        {
+          "name": "MOLINA HEALTHCARE INC",
+          "value": 23920000000,
+          "shares": 125000,
+          "weight": 1.73
+        },
+        {
+          "name": "LULULEMON ATHLETICA INC",
+          "value": 17793000000,
+          "shares": 100000,
+          "weight": 1.29
+        },
+        {
+          "name": "SLM CORP",
+          "value": 13287895000,
+          "shares": 480054,
+          "weight": 0.96
+        },
+        {
+          "name": "BRUKER CORP",
+          "value": 13137181000,
+          "shares": 48334,
+          "weight": 0.95
         }
       ]
     },
@@ -370,6 +424,72 @@
           "value": 9409872000,
           "shares": 28611,
           "weight": 0.07
+        }
+      ]
+    },
+    "빌 애크먼 (퍼싱 스퀘어)": {
+      "report_date": "2026-03-31",
+      "total_value_usd": 13714299861000,
+      "holdings": [
+        {
+          "name": "BROOKFIELD CORP",
+          "value": 2415946008000,
+          "shares": 59697208,
+          "weight": 17.62
+        },
+        {
+          "name": "아마존 (AMZN)",
+          "value": 2385104083000,
+          "shares": 11451981,
+          "weight": 17.39
+        },
+        {
+          "name": "UBER TECHNOLOGIES INC",
+          "value": 2154934398000,
+          "shares": 29958771,
+          "weight": 15.71
+        },
+        {
+          "name": "마이크로소프트 (MSFT)",
+          "value": 2092970053000,
+          "shares": 5654078,
+          "weight": 15.26
+        },
+        {
+          "name": "RESTAURANT BRANDS INTL INC",
+          "value": 1673501194000,
+          "shares": 22645483,
+          "weight": 12.2
+        },
+        {
+          "name": "메타 (META)",
+          "value": 1522358404000,
+          "shares": 2660861,
+          "weight": 11.1
+        },
+        {
+          "name": "HOWARD HUGHES HOLDINGS INC",
+          "value": 1192581569000,
+          "shares": 18852064,
+          "weight": 8.7
+        },
+        {
+          "name": "SEAPORT ENTMT GROUP INC",
+          "value": 107910794000,
+          "shares": 5023780,
+          "weight": 0.79
+        },
+        {
+          "name": "알파벳 (GOOGL)",
+          "value": 98731763000,
+          "shares": 344102,
+          "weight": 0.72
+        },
+        {
+          "name": "HERTZ GLOBAL HLDGS INC",
+          "value": 70261595000,
+          "shares": 15241127,
+          "weight": 0.51
         }
       ]
     },
@@ -799,6 +919,84 @@
         }
       ]
     },
+    "칼 아이칸 (아이칸 캐피탈)": {
+      "report_date": "2026-03-31",
+      "total_value_usd": 8553640766000,
+      "holdings": [
+        {
+          "name": "ICAHN ENTERPRISES LP",
+          "value": 4147974070000,
+          "shares": 549400539,
+          "weight": 48.49
+        },
+        {
+          "name": "CVR ENERGY INC",
+          "value": 2395943093000,
+          "shares": 71201875,
+          "weight": 28.01
+        },
+        {
+          "name": "CVR PARTNERS LP",
+          "value": 527488588000,
+          "shares": 4164274,
+          "weight": 6.17
+        },
+        {
+          "name": "CENTURI HOLDINGS INC",
+          "value": 418755845000,
+          "shares": 14336044,
+          "weight": 4.9
+        },
+        {
+          "name": "INTERNATIONAL FLAVORS AND FRAGRANCES INC",
+          "value": 310151250000,
+          "shares": 4275000,
+          "weight": 3.63
+        },
+        {
+          "name": "ECHOSTAR CORPORATION",
+          "value": 164429732000,
+          "shares": 1404542,
+          "weight": 1.92
+        },
+        {
+          "name": "AMERICAN ELECTRIC POWER COMPANY",
+          "value": 157990724000,
+          "shares": 1205300,
+          "weight": 1.85
+        },
+        {
+          "name": "JETBLUE AIRWAYS CORP",
+          "value": 148608069000,
+          "shares": 33621735,
+          "weight": 1.74
+        },
+        {
+          "name": "MONRO INC",
+          "value": 81460311000,
+          "shares": 5078573,
+          "weight": 0.95
+        },
+        {
+          "name": "SANDRIDGE ENERGY INC",
+          "value": 80697003000,
+          "shares": 4947701,
+          "weight": 0.94
+        },
+        {
+          "name": "CAESARS ENTERTAINMENT INC",
+          "value": 64492081000,
+          "shares": 2440109,
+          "weight": 0.75
+        },
+        {
+          "name": "BAUSCH PLUS LOMB CORP",
+          "value": 55650000000,
+          "shares": 3500000,
+          "weight": 0.65
+        }
+      ]
+    },
     "단 롭 (서드 포인트)": {
       "report_date": "2026-03-31",
       "total_value_usd": 2082795760000,
@@ -1042,6 +1240,180 @@
           "value": 287852000,
           "shares": 4044,
           "weight": 0.01
+        }
+      ]
+    },
+    "프렘 왓사 (페어팩스 파이낸셜)": {
+      "report_date": "2026-03-31",
+      "total_value_usd": 1942669475000,
+      "holdings": [
+        {
+          "name": "ORLA MINING LTD",
+          "value": 501579333000,
+          "shares": 31817229,
+          "weight": 25.82
+        },
+        {
+          "name": "UNDER ARMOUR INC",
+          "value": 380640114000,
+          "shares": 65000000,
+          "weight": 19.59
+        },
+        {
+          "name": "CVS HEALTH CORP",
+          "value": 194775840000,
+          "shares": 2712000,
+          "weight": 10.03
+        },
+        {
+          "name": "KENNEDY-WILSON HOLDINGS INC",
+          "value": 144277357000,
+          "shares": 13322009,
+          "weight": 7.43
+        },
+        {
+          "name": "CLEVELAND-CLIFFS INC",
+          "value": 125749864000,
+          "shares": 14899273,
+          "weight": 6.47
+        },
+        {
+          "name": "크래프트 하인즈 (KHC)",
+          "value": 118429136000,
+          "shares": 5268200,
+          "weight": 6.1
+        },
+        {
+          "name": "BLACKBERRY LTD",
+          "value": 113335913000,
+          "shares": 34980220,
+          "weight": 5.83
+        },
+        {
+          "name": "ATS CORP",
+          "value": 69352987000,
+          "shares": 2486400,
+          "weight": 3.57
+        },
+        {
+          "name": "MOLSON COORS BEVERAGE CO",
+          "value": 61941810000,
+          "shares": 1438500,
+          "weight": 3.19
+        },
+        {
+          "name": "HELMERICH & PAYNE INC",
+          "value": 42303003000,
+          "shares": 1174105,
+          "weight": 2.18
+        },
+        {
+          "name": "TAIWAN SEMICONDUCTOR MFG LTD",
+          "value": 31679970000,
+          "shares": 93700,
+          "weight": 1.63
+        },
+        {
+          "name": "GENERAL MOTORS CO",
+          "value": 28009392000,
+          "shares": 375965,
+          "weight": 1.44
+        },
+        {
+          "name": "PFIZER INC",
+          "value": 27814563000,
+          "shares": 990900,
+          "weight": 1.43
+        },
+        {
+          "name": "BANK NOVA SCOTIA",
+          "value": 24822057000,
+          "shares": 359100,
+          "weight": 1.28
+        },
+        {
+          "name": "WENDYS CO",
+          "value": 22751558000,
+          "shares": 3268902,
+          "weight": 1.17
+        },
+        {
+          "name": "MERCK & CO INC",
+          "value": 20799870000,
+          "shares": 172900,
+          "weight": 1.07
+        },
+        {
+          "name": "JOHNSON & JOHNSON",
+          "value": 17937492000,
+          "shares": 73400,
+          "weight": 0.92
+        },
+        {
+          "name": "GARRETT MOTION INC",
+          "value": 3351638000,
+          "shares": 184460,
+          "weight": 0.17
+        },
+        {
+          "name": "COLLIERS INTL GROUP INC",
+          "value": 2606499000,
+          "shares": 25000,
+          "weight": 0.13
+        },
+        {
+          "name": "CANADIAN NATIONAL RAILWAY CO",
+          "value": 2532690000,
+          "shares": 24800,
+          "weight": 0.13
+        },
+        {
+          "name": "LULULEMON ATHLETICA INC",
+          "value": 1912125000,
+          "shares": 12500,
+          "weight": 0.1
+        },
+        {
+          "name": "WARNER BROS DISCOVERY INC",
+          "value": 1588776000,
+          "shares": 57900,
+          "weight": 0.08
+        },
+        {
+          "name": "CAPRI HOLDINGS LTD",
+          "value": 1377684000,
+          "shares": 78100,
+          "weight": 0.07
+        },
+        {
+          "name": "BRIGHTSTAR LOTTERY PLC",
+          "value": 874971000,
+          "shares": 68733,
+          "weight": 0.05
+        },
+        {
+          "name": "PENN ENTERTAINMENT INC",
+          "value": 825147000,
+          "shares": 54900,
+          "weight": 0.04
+        },
+        {
+          "name": "BERKSHIRE HATHAWAY INC",
+          "value": 718176000,
+          "shares": 1,
+          "weight": 0.04
+        },
+        {
+          "name": "MAGNACHIP SEMICONDUCTOR CORP",
+          "value": 348750000,
+          "shares": 125000,
+          "weight": 0.02
+        },
+        {
+          "name": "PRIORITY TECH HOLDINGS INC",
+          "value": 332760000,
+          "shares": 70500,
+          "weight": 0.02
         }
       ]
     },
