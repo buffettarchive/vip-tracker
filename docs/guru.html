@@ -43,21 +43,38 @@ a{color:inherit;text-decoration:none}
 .nav-links a{color:var(--muted); transition:0.2s;}
 .nav-links a:hover{color:var(--ink);}
 .nav-links a.active{color:var(--cobalt);}
-
 .spacer{margin-left:auto}
 
-/* ── 거장 선택 탭 ── */
-.maintabs{display:flex;gap:9px;margin:32px 0 24px;flex-wrap:wrap}
-.maintabs button{
-  font-family:inherit;font-size:15px;font-weight:700;cursor:pointer;
-  padding:11px 20px;border-radius:9999px;border:none;
-  background:var(--card);color:#4b4d55;box-shadow:0 3px 0 #e4e2db;
-  transition:transform .12s,box-shadow .12s;
+/* ── 거장 선택 드롭다운 ── */
+.guru-selector-wrap {
+  margin: 36px 0 24px;
 }
-.maintabs button:active{transform:translateY(3px);box-shadow:0 0 0 #e4e2db}
-.maintabs button.active{
-  background:var(--cobalt);color:#fff;
-  box-shadow:0 4px 0 var(--cobalt-d),0 8px 16px rgba(0,71,255,.24);
+.guru-select {
+  appearance: none;
+  background-color: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px 40px 14px 20px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(22,24,29,.04);
+  width: 100%;
+  max-width: 480px;
+  outline: none;
+  transition: all 0.2s;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2374767c' viewBox='0 0 256 256'%3E%3Cpath d='M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+}
+.guru-select:hover {
+  border-color: #d9d8d1;
+}
+.guru-select:focus {
+  border-color: var(--cobalt);
+  box-shadow: 0 0 0 3px rgba(0,71,255,.15);
 }
 
 /* ── 대시보드 상단 요약 & 차트 ── */
@@ -108,8 +125,8 @@ a{color:inherit;text-decoration:none}
 </nav>
 
 <div class="wrap">
-  <div class="maintabs" id="guruTabs">
-    <!-- 거장 버튼들이 여기에 렌더링됩니다 -->
+  <div class="guru-selector-wrap" id="guruTabs">
+    <!-- 드롭다운 메뉴가 렌더링됩니다 -->
   </div>
 
   <div class="summary-box">
@@ -125,7 +142,7 @@ a{color:inherit;text-decoration:none}
   </div>
 
   <ul class="feed" id="holdingsFeed">
-    <!-- 종목 리스트가 여기에 렌더링됩니다 -->
+    <!-- 종목 리스트가 렌더링됩니다 -->
   </ul>
 </div>
 
@@ -135,10 +152,9 @@ let VIPS = {};
 let activeGuru = "";
 let chartInstance = null;
 
-// 숫자 포맷팅 (달러 변환)
 function formatUSD(val) {
-  if (val >= 1e9) return "$" + (val / 1e9).toFixed(2) + "B"; // Billion (십억 달러)
-  if (val >= 1e6) return "$" + (val / 1e6).toFixed(2) + "M"; // Million (백만 달러)
+  if (val >= 1e9) return "$" + (val / 1e9).toFixed(2) + "B"; 
+  if (val >= 1e6) return "$" + (val / 1e6).toFixed(2) + "M"; 
   return "$" + val.toLocaleString();
 }
 
@@ -150,7 +166,7 @@ function initData() {
         VIPS = data.portfolios;
         const gurus = Object.keys(VIPS);
         if (gurus.length > 0) {
-          activeGuru = gurus[0]; // 첫 번째 거장을 기본값으로
+          activeGuru = gurus[0]; 
           renderTabs(gurus);
           renderGuru();
         }
@@ -162,17 +178,16 @@ function initData() {
 }
 
 function renderTabs(gurus) {
-  const html = gurus.map(name => 
-    `<button class="${name === activeGuru ? 'active' : ''}" data-guru="${name}">${name}</button>`
-  ).join("");
-  $("#guruTabs").innerHTML = html;
+  const selectHtml = `
+    <select class="guru-select" id="guruSelect">
+      ${gurus.map(name => `<option value="${name}" ${name === activeGuru ? 'selected' : ''}>${name}</option>`).join("")}
+    </select>
+  `;
+  $("#guruTabs").innerHTML = selectHtml;
 
-  $("#guruTabs").querySelectorAll("button").forEach(btn => {
-    btn.onclick = () => {
-      activeGuru = btn.dataset.guru;
-      renderTabs(gurus);
-      renderGuru();
-    };
+  $("#guruSelect").addEventListener("change", (e) => {
+    activeGuru = e.target.value;
+    renderGuru();
   });
 }
 
@@ -180,7 +195,6 @@ function renderGuru() {
   const data = VIPS[activeGuru];
   if (!data) return;
 
-  // 상단 요약 업데이트
   $("#guruName").textContent = activeGuru;
   $("#guruMeta").textContent = `최근 SEC 공시 보고일: ${data.report_date}`;
   $("#guruTotalVal").textContent = formatUSD(data.total_value_usd);
@@ -193,14 +207,13 @@ function renderChart(holdings) {
   const ctx = document.getElementById('portfolioChart').getContext('2d');
   if (chartInstance) chartInstance.destroy();
 
-  // 상위 7개 종목만 차트에 표시하고, 나머지는 '기타'로 묶음 (차트 가독성)
   let labels = [];
   let dataPoints = [];
   let otherWeight = 0;
 
   holdings.forEach((h, index) => {
     if (index < 7) {
-      labels.push(h.name.split(" ")[0]); // 이름이 길면 첫 단어만
+      labels.push(h.name.split(" ")[0]); 
       dataPoints.push(h.weight);
     } else {
       otherWeight += h.weight;
@@ -218,9 +231,7 @@ function renderChart(holdings) {
       labels: labels,
       datasets: [{
         data: dataPoints,
-        backgroundColor: [
-          '#0047FF', '#336CFF', '#6691FF', '#99B6FF', '#CCDFFF', '#E6EEFF', '#F3F7FF', '#e4e2db'
-        ],
+        backgroundColor: ['#0047FF', '#336CFF', '#6691FF', '#99B6FF', '#CCDFFF', '#E6EEFF', '#F3F7FF', '#e4e2db'],
         borderWidth: 2,
         borderColor: '#ffffff'
       }]
