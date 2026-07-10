@@ -56,9 +56,9 @@ a:hover{opacity:.82}
 <body>
 <div id="ba-root" style="background:var(--bg);color:var(--ink);font-weight:400;min-height:100vh;overflow-x:hidden">
 
-  <header data-screen-label="Nav" style="position:sticky;top:0;z-index:100;background:rgba(248,247,244,.82);backdrop-filter:saturate(160%) blur(16px);-webkit-backdrop-filter:saturate(160%) blur(16px);border-bottom:1px solid var(--line)">
-    <nav style="max-width:1200px;margin:0 auto;height:66px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;gap:20px">
-      <a href="#top" style="display:flex;align-items:center"><img src="logo.png" alt="Buffett Archive" style="height:24px;width:auto"></a>
+  <header data-screen-label="Nav" style="position:sticky;top:0;z-index:100;background:rgba(248,247,244,.82);backdrop-filter:saturate(160%) blur(16px);-webkit-backdrop-filter:saturate(160%) blur(16px)">
+    <nav style="max-width:1200px;margin:0 auto;height:74px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;gap:20px">
+      <a href="#top" style="display:flex;align-items:center"><img src="logo.png" alt="Buffett Archive" style="height:32px;width:auto"></a>
       <div style="display:flex;align-items:center;gap:30px">
         <a href="#features" style="font-size:15px;color:#40424a;font-weight:500">Value Investing</a>
         <a href="#data" style="font-size:15px;color:#40424a;font-weight:500">Data</a>
@@ -71,8 +71,8 @@ a:hover{opacity:.82}
   <section id="top" data-screen-label="Hero" style="max-width:1200px;margin:0 auto;padding:84px 28px 72px;display:grid;grid-template-columns:1.25fr .85fr;gap:48px;align-items:center">
     <div>
       <div style="display:inline-flex;align-items:center;gap:8px;background:var(--chip);color:var(--cobalt);font-size:14px;font-weight:700;padding:9px 15px;border-radius:9999px;margin-bottom:26px"><i class="ph-fill ph-lightning" style="font-size:15px"></i> 지금까지 <span id="stat-hero-count">1,497</span>건의 내부자 매수 기록</div>
-      <h1 id="ba-h1" style="font-size:52px;line-height:1.18;letter-spacing:-1.8px;font-weight:700;margin:0 0 22px;white-space:nowrap">자산운용사의 지분공시를,<br>한눈에 간편하게</h1>
-      <p style="font-size:19px;line-height:1.65;color:#4b4d55;font-weight:400;margin:0 0 36px;max-width:490px">브이아이피, 얼라인, Miri 등. 가치투자 운용사들의 포트폴리오를 보여드립니다. 내부자 매수와 자사주 소각 공시까지 실시간으로 확인 가능합니다.</p>
+      <h1 id="ba-h1" style="font-size:52px;line-height:1.18;letter-spacing:-1.8px;font-weight:700;margin:0 0 22px;white-space:nowrap">가치투자 운용사의 지분공시를<br>한눈에 간편하게</h1>
+      <p style="font-size:19px;line-height:1.65;color:#4b4d55;font-weight:400;margin:0 0 36px;max-width:490px">브이아이피, 얼라인, 라이프. 국내 가치투자 운용사가 어떤 종목을 보유하는지 운용사별로 정리합니다. 내부자 매수와 자사주 소각까지 한곳에서 확인합니다.</p>
       <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">
         <a href="dashboard.html" class="ba-btn3d" style="display:inline-block;background:var(--cobalt);color:#fff;font-family:inherit;font-size:18px;font-weight:700;padding:18px 32px;border:none;border-radius:16px;cursor:pointer;box-shadow:0 6px 0 var(--cobalt-d),0 15px 30px rgba(0,71,255,.32);transition:transform .12s,box-shadow .12s">대시보드 열기</a>
         <a href="#data" class="ba-btn3d-lt" style="display:inline-block;background:#fff;color:var(--ink);font-family:inherit;font-size:18px;font-weight:700;padding:18px 28px;border:none;border-radius:16px;cursor:pointer;box-shadow:0 5px 0 #e4e2db,0 12px 22px rgba(22,24,29,.08);transition:transform .12s,box-shadow .12s">서비스 둘러보기</a>
@@ -82,13 +82,13 @@ a:hover{opacity:.82}
         <span style="width:30px;height:30px;border-radius:50%;background:#e7ecf5;border:2px solid var(--bg);margin-left:-9px;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#5a6270">얼</span>
         <span style="width:30px;height:30px;border-radius:50%;background:#dfe6ff;border:2px solid var(--bg);margin-left:-9px;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--cobalt)">에</span>
         <span style="width:30px;height:30px;border-radius:50%;background:#e7ecf5;border:2px solid var(--bg);margin-left:-9px;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#5a6270">트</span>
-      </div><span>가치투자 운용사 <b style="color:var(--ink)">7</b>곳과 코스피·코스닥 <b style="color:var(--ink)">전 종목</b>을 트래킹하고 있어요</span></div>
+      </div><span>가치투자 운용사 7곳과 코스피·코스닥 전 종목을 트래킹하고 있어요</span></div>
     </div>
     <!-- app preview -->
     <div style="position:relative">
       <div style="background:#fff;border-radius:28px;padding:22px 22px 8px;box-shadow:0 2px 6px rgba(22,24,29,.05),0 30px 70px rgba(22,24,29,.16)">
         <div style="display:flex;align-items:center;justify-content:space-between;padding:4px 4px 18px">
-          <div style="font-size:16px;font-weight:700">내부자 매수</div>
+          <div style="font-size:16px;font-weight:700">운용사 지분공시</div>
           <div style="display:flex;gap:6px"><span style="width:9px;height:9px;border-radius:50%;background:#ececec"></span><span style="width:9px;height:9px;border-radius:50%;background:#ececec"></span><span style="width:9px;height:9px;border-radius:50%;background:var(--cobalt)"></span></div>
         </div>
         <div id="hero-preview"><div style="display:flex;justify-content:space-between;align-items:center;padding:15px 4px;border-top:1px solid #f3f3ef">
@@ -284,17 +284,29 @@ return Promise.all([
     setText("feat-buyback", buyback.entries.length.toLocaleString()); // Features 카드
   }
 
-  // ── Hero 미리보기 카드 (내부자 최신 3건) ──
-  if(insider && insider.disclosures){
-    const top = sortByRcept(insider.disclosures).slice(0,3);
+  // ── Hero 미리보기 카드 (운용사 지분공시 최신 3건) ──
+  if(data && data.disclosures){
+    const top = sortByRcept(data.disclosures).slice(0,3);
     const el = document.getElementById("hero-preview");
-    if(el) el.innerHTML = top.map(x=>heroRowHtml({
-      init: initial(x.corp_name),
-      name: x.corp_name,
-      sub: `${x.repror||""}${x.ofcps&&x.ofcps!=="-"?" · "+x.ofcps:""}`,
-      big: "+"+fmtNum((x.irds_cnt||"").toString().replace(/,/g,"")),
-      small: "보유 "+(x.hold_rate||"0")+"%"
-    })).join("");
+    const firmShort = (f)=>({
+      "브이아이피자산운용":"브이아이피","얼라인파트너스자산운용":"얼라인","라이프자산운용":"라이프",
+      "에셋플러스자산운용":"에셋플러스","트러스톤자산운용":"트러스톤"
+    }[f]||f);
+    if(el) el.innerHTML = top.map(x=>{
+      const cur=parseFloat(x.stkrt), prev=parseFloat(x.stkrt_prev);
+      const diff=(!isNaN(cur)&&!isNaN(prev))?(cur-prev):null;
+      let small = "보유 지분";
+      if((x.kind||"").includes("신규")) small="신규 편입";
+      else if(x.kind==="매수" && diff!=null) small=`▲${Math.abs(diff).toFixed(2)}%p`;
+      else if(x.kind==="매도" && diff!=null) small=`▼${Math.abs(diff).toFixed(2)}%p`;
+      return heroRowHtml({
+        init: initial(x.corp_name),
+        name: x.corp_name,
+        sub: firmShort(x.firm),
+        big: (x.stkrt?x.stkrt+"%":"—"),
+        small: small
+      });
+    }).join("");
   }
 
   // ── 데이터 미리보기: insider ──
