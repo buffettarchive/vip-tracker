@@ -181,16 +181,6 @@ a.row{cursor:pointer}
 
 .empty{padding:64px 0;text-align:center;color:var(--muted);font-size:15px}
 
-/* ── 운용사 포트폴리오 뷰 ── */
-.firm-row{cursor:pointer}
-.stock-row{cursor:pointer}
-.firm-avatar{background:var(--chip);color:var(--cobalt)}
-.pf-header{list-style:none;padding:20px 22px 22px;border-bottom:2px solid var(--ink)}
-.pf-back{font-family:inherit;font-size:13px;font-weight:600;color:var(--muted);background:transparent;border:none;cursor:pointer;padding:0;margin-bottom:14px;transition:color .15s}
-.pf-back:hover{color:var(--cobalt)}
-.pf-title{font-size:24px;font-weight:700;letter-spacing:-.6px;color:var(--ink)}
-.pf-meta{font-size:12.5px;color:var(--muted);margin-top:6px}
-
 /* ── 면책조항 / 푸터 ── */
 footer#footer{margin:40px 0 0;padding-top:24px;border-top:1px solid var(--line)}
 .dtitle{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:10px}
@@ -280,13 +270,6 @@ const I18N = {
     empty_firm: "표시할 공시가 없습니다.",
     empty_buyback: "표시할 자사주 매입/소각 공시가 없습니다.",
     held_stake: "보유 지분",
-    count_firm_list: n => `${n}개 운용사`,
-    count_portfolio: n => `보유 종목 ${n}개`,
-    holdings_label: "보유",
-    stocks_unit: "종목",
-    top_holding: "최대 보유",
-    recent_label: "최근 공시",
-    firm_list_back: "운용사 목록",
     "pf-disclaimer": "5% 이상 지분공시 기준",
     shares_held: "보유 주식",
     bought: "매수 주식수",
@@ -308,16 +291,7 @@ const I18N = {
     bb_cancel: "소각",
     bb_shares: "취득 주식수",
     bb_shares_cancel: "소각 주식수",
-    bb_amount: "취득 금액",
-    traded_stocks: "거래 종목",
-    total_filings: "총 공시",
-    filings_unit: "건",
-    count_traded: n => `${n}개 종목 거래`,
-    trade_count: n => `${n}건`,
-    latest_stake: "최근 지분",
-    count_history: n => `매매 이력 ${n}건`,
-    trade_history: "매매 이력",
-    firm_pf_back: "거래 종목 목록",
+    bb_amount: "취득 금액"
   },
   en: {
     title_html: "버핏아카이브",
@@ -333,13 +307,6 @@ const I18N = {
     empty_firm: "No filings to display.",
     empty_buyback: "No treasury buyback or cancellation filings to display.",
     held_stake: "Held",
-    count_firm_list: n => `${n} firms`,
-    count_portfolio: n => `${n} holdings`,
-    holdings_label: "Holds",
-    stocks_unit: " stocks",
-    top_holding: "Top",
-    recent_label: "Latest",
-    firm_list_back: "Firms",
     "pf-disclaimer": "Based on 5%+ ownership filings",
     shares_held: "Shares",
     bought: "Shares Bought",
@@ -361,16 +328,7 @@ const I18N = {
     bb_cancel: "Cancellation",
     bb_shares: "Shares to acquire",
     bb_shares_cancel: "Shares to cancel",
-    bb_amount: "Amount",
-    traded_stocks: "Traded Stocks",
-    total_filings: "Total Filings",
-    filings_unit: "",
-    count_traded: n => `${n} stocks traded`,
-    trade_count: n => `${n} filings`,
-    latest_stake: "Latest Stake",
-    count_history: n => `${n} history records`,
-    trade_history: "History",
-    firm_pf_back: "Traded Stocks",
+    bb_amount: "Amount"
   }
 };
 
@@ -471,8 +429,6 @@ let view = params.get("view") || "insider";
 if(!["insider", "firm", "buyback"].includes(view)) view = "insider";
 
 let activeFirm="전체", activeMarket="ALL", activeBBType="ALL";
-let selectedFirm=null; 
-let selectedStock=null;
 let currentChartName="KOSPI";
 let currentTimeframe="daily";
 let LAST_MARKET=null;
@@ -611,129 +567,42 @@ function renderTicker(mk){
   });
 }
 
-function buildFirmPortfolio(firmName){
-  const items = (ARCHIVE.disclosures || []).filter(x=>x.firm===firmName);
-  const byCorp = {};
-  items.forEach(x=>{
-    const key = x.corp_name;
-    if(!byCorp[key] || (x.rcept_no||"") > (byCorp[key].rcept_no||"")) byCorp[key]=x;
-  });
-  return Object.values(byCorp).sort((a,b)=>(b.rcept_no||"").localeCompare(a.rcept_no||""));
-}
-
+// ── 운용사 지분공시 (일자별 플랫 리스트 뷰) ──
 function renderFirm(){
-  if(selectedStock){ renderStockHistory(); return; }
-  if(selectedFirm){ renderFirmPortfolio(); return; }
-  renderFirmList();
-}
+  let list = [...(ARCHIVE.disclosures || []), ...(FIRM.disclosures || [])];
+  // 중복 공시 제거 (접수번호 기준)
+  const unique = Array.from(new Map(list.map(item => [item.rcept_no, item])).values());
+  list = unique;
 
-function renderFirmList(){
-  const firms = ARCHIVE.firms || FIRM.firms || [];
-  $("#count").textContent = t("count_firm_list", firms.length);
-  const feed=$("#feed");
-  if(!firms.length){feed.innerHTML=`<li class="empty">${t("empty_firm")}</li>`;return;}
-  feed.innerHTML = firms.map(firm=>{
-    const pf = buildFirmPortfolio(firm);
-    const name = localizeFirm(firm);
-    const totalFilings = (ARCHIVE.disclosures || []).filter(x=>x.firm===firm).length;
-    return `<div class="row firm-row" data-firm-select="${firm}">
-      <div class="avatar firm-avatar">${name.trim().charAt(0)}</div>
-      <div class="corp">
-        <div class="name">${name}</div>
-        <div class="sub">${t("traded_stocks")} <span class="who">${pf.length}${t("stocks_unit")}</span> · ${t("total_filings")} ${totalFilings}${t("filings_unit")}</div>
-      </div>
-      <div class="stake">
-        <div class="pct" style="font-size:16px">${pf.length}<span style="font-size:12px;color:var(--muted);font-weight:600">${t("stocks_unit")}</span></div>
-        <div class="held">5년 누적 데이터</div>
-      </div>
-    </div>`;
-  }).join("");
-  feed.querySelectorAll("[data-firm-select]").forEach(el=>{
-    el.onclick=()=>{ selectedFirm=el.dataset.firmSelect; selectedStock=null; render(); window.scrollTo({top:0,behavior:"smooth"}); };
-  });
-}
+  if(activeFirm!=="전체"){
+    list = list.filter(x => x.firm === activeFirm);
+  }
+  // 가장 최근 공시부터 내림차순 정렬
+  list.sort((a,b)=>(b.rcept_no||"").localeCompare(a.rcept_no||""));
 
-function renderFirmPortfolio(){
-  const pf = buildFirmPortfolio(selectedFirm);
-  const name = localizeFirm(selectedFirm);
-  $("#count").textContent = t("count_traded", pf.length);
+  $("#count").textContent = t("count_firm", list.length);
   const feed=$("#feed");
-  const header = `<li class="pf-header">
-    <button class="pf-back" id="pfBack">← ${t("firm_list_back")}</button>
-    <div class="pf-title">${name}</div>
-    <div class="pf-meta">${t("count_traded", pf.length)} · 5년 전체 내역</div>
-  </li>`;
-  if(!pf.length){ feed.innerHTML=header+`<li class="empty">${t("empty_firm")}</li>`; bindPfBack(); return; }
-  const rows = pf.map(item=>{
-    const dt=fmtDate(item.rcept_dt);
+  if(!list.length){feed.innerHTML=`<li class="empty">${t("empty_firm")}</li>`;return;}
+
+  feed.innerHTML = list.map(item=>{
+    const dt=fmtDate(item.rcept_dt), dl=dartLink(item.rcept_no);
+    const tag=firmTag(item);
     const code=item.stock_code?`<span class="code">${item.stock_code}</span>`:"";
-    const historyCount = (ARCHIVE.disclosures || []).filter(x=>x.firm===selectedFirm && x.corp_name===item.corp_name).length;
-    
-    const dateStr = LANG==="en" ? `${dt.m} ${dt.d}, ${dt.y}` : `${dt.y}년 ${dt.m} ${dt.d}`;
-    
+
     const inner=`
       <div class="avatar">${(item.corp_name||"·").trim().charAt(0)}</div>
       <div class="corp">
         <div class="name">${item.corp_name}${code}</div>
-        <div class="sub">${t("trade_count", historyCount)} · ${t("recent_label")} ${dateStr}</div>
+        <div class="sub">${localizeFirm(item.firm)} · ${localizeResn(item.report_resn)}</div>
       </div>
       <div class="stake">
         <div class="pct">${item.stkrt ? item.stkrt+"%" : "—"}</div>
-        <div class="held">${t("latest_stake")}</div>
-      </div>`;
-    return `<div class="row stock-row" data-stock-select="${item.corp_name}">${inner}</div>`;
-  }).join("");
-  feed.innerHTML = header + rows;
-  bindPfBack();
-  feed.querySelectorAll("[data-stock-select]").forEach(el=>{
-    el.onclick=()=>{ selectedStock=el.dataset.stockSelect; render(); window.scrollTo({top:0,behavior:"smooth"}); };
-  });
-}
-
-function bindPfBack(){
-  const b=document.getElementById("pfBack");
-  if(b) b.onclick=()=>{ selectedFirm=null; render(); window.scrollTo({top:0,behavior:"smooth"}); };
-}
-
-function renderStockHistory(){
-  const items = (ARCHIVE.disclosures || [])
-    .filter(x=>x.firm===selectedFirm && x.corp_name===selectedStock)
-    .sort((a,b)=>(b.rcept_no||"").localeCompare(a.rcept_no||"")); 
-    
-  $("#count").textContent = t("count_history", items.length);
-  const feed=$("#feed");
-  const name = localizeFirm(selectedFirm);
-  const header = `<li class="pf-header">
-    <button class="pf-back" id="pfBackStock">← ${t("firm_pf_back")}</button>
-    <div class="pf-title">${selectedStock}</div>
-    <div class="pf-meta">${name} · ${t("trade_history")}</div>
-  </li>`;
-  
-  const rows = items.map(item=>{
-    const dt=fmtDate(item.rcept_dt);
-    const dl=dartLink(item.rcept_no);
-    const tag=firmTag(item);
-    const shares = item.stkqy ? Number(item.stkqy).toLocaleString() : "—";
-    
-    const dateStr = LANG==="en" ? `${dt.m} ${dt.d}, ${dt.y}` : `${dt.y}년 ${dt.m} ${dt.d}`;
-
-    const inner=`
-      <div class="corp" style="margin-left: 10px;">
-        <div class="name" style="font-size: 15px;">${dateStr}</div>
-        <div class="sub">${t("shares_held")} ${shares}</div>
-      </div>
-      <div class="stake">
-        <div class="pct">${item.stkrt ? item.stkrt+"%" : "—"}</div>
+        <div class="held">${dt.m} ${dt.d}</div>
         <div class="delta ${tag.cls}">${tag.txt}</div>
       </div>`;
-    return dl?`<a class="row" href="${dl}" target="_blank" rel="noopener" style="grid-template-columns: 1fr auto;">${inner}</a>`
-             :`<div class="row" style="grid-template-columns: 1fr auto;">${inner}</div>`;
+    return dl?`<a class="row" href="${dl}" target="_blank" rel="noopener">${inner}</a>`
+             :`<div class="row">${inner}</div>`;
   }).join("");
-  
-  feed.innerHTML = header + rows;
-  
-  const b=document.getElementById("pfBackStock");
-  if(b) b.onclick=()=>{ selectedStock=null; render(); window.scrollTo({top:0,behavior:"smooth"}); };
 }
 
 function renderInsider(){
@@ -834,7 +703,16 @@ function render(){
 }
 
 function buildFirmTabs(){
-  $("#firmTabs").innerHTML=""; $("#firmTabs").style.display="none";
+  if(view!=="firm"){ $("#firmTabs").innerHTML=""; $("#firmTabs").style.display="none"; return; }
+  $("#firmTabs").style.display="flex";
+  const firms = ["전체", ...(ARCHIVE.firms || FIRM.firms || [])];
+  const uniqFirms = [...new Set(firms)];
+  $("#firmTabs").innerHTML = uniqFirms.map(f=>
+    `<button aria-selected="${f===activeFirm}" data-f="${f}">${f==="전체"?t("all"):localizeFirm(f)}</button>`
+  ).join("");
+  $("#firmTabs").querySelectorAll("button").forEach(b=>{
+    b.onclick=()=>{activeFirm=b.dataset.f; buildFirmTabs(); render();};
+  });
 }
 
 function buildMarketFilter(){
@@ -877,7 +755,14 @@ function applyStaticTexts(){
   
   // 영문 네비게이션 텍스트
   const navGuru = document.getElementById("nav-guru");
+  const navInsider = document.getElementById("nav-insider");
+  const navFirm = document.getElementById("nav-firm");
+  const navBuyback = document.getElementById("nav-buyback");
+
   if(navGuru) navGuru.textContent = LANG==="en" ? "Guru Portfolio" : "구루 포트폴리오";
+  if(navInsider) navInsider.textContent = LANG==="en" ? "Insider Buying" : "내부자매수";
+  if(navFirm) navFirm.textContent = LANG==="en" ? "Firm Filings" : "국내 지분공시";
+  if(navBuyback) navBuyback.textContent = LANG==="en" ? "Buybacks" : "자사주매입";
 }
 
 function switchLang(lang){
@@ -891,7 +776,6 @@ $("#langToggle").querySelectorAll("button").forEach(b=>{
 
 function switchView(v, updateUrl=true){
   view=v;
-  if(v==="firm") { selectedFirm=null; selectedStock=null; } 
   $("#mainTabs").querySelectorAll("button").forEach(b=>b.setAttribute("aria-selected", b.dataset.view===v));
   updateNavLinks();
   if(updateUrl) window.history.replaceState(null, "", "?view="+v);
