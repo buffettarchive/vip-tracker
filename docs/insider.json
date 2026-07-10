@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-10T14:14+09:00",
+  "updated_at": "2026-07-10T14:34+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260710000284",
+  "last_seen": "20260710000304",
   "disclosures": [
+    {
+      "rcept_no": "20260710000304",
+      "rcept_dt": "2026-07-10",
+      "corp_name": "DXVX",
+      "stock_code": "180400",
+      "market": "KOSDAQ",
+      "corp_code": "00995993",
+      "repror": "임종윤",
+      "ofcps": "기타비상무이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "142,507",
+      "total_cnt": "57,415,138",
+      "irds_rate": "0.15",
+      "hold_rate": "58.33",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260710000284",
       "rcept_dt": "2026-07-10",
