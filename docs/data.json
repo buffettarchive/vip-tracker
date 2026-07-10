@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-10T10:44+09:00",
+  "updated_at": "2026-07-10T10:49+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -10,7 +10,7 @@
     "피델리티",
     "Miri"
   ],
-  "last_seen": "20260710000133",
+  "last_seen": "20260710000146",
   "disclosures": [
     {
       "rcept_no": "20260710000133",
@@ -19,13 +19,13 @@
       "corp_name": "지어소프트",
       "stock_code": "051160",
       "corp_code": "00389110",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkrt": "10.24",
+      "stkrt_prev": "8.91",
+      "stkqy": "1585000",
+      "report_resn": "일반투자목적으로 장내에서 발행회사 주식 매수",
+      "purpose": "일반투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "기타"
+      "kind": "매수"
     },
     {
       "rcept_no": "20260710000085",
