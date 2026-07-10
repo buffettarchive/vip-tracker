@@ -40,14 +40,14 @@ a:hover{opacity:.82}
 /* 3D 버튼 press 인터랙션 */
 .ba-btn3d:active,.ba-btn3d-lt:active,.ba-btn3d-w:active,.ba-tab:active{transform:translateY(3px)}
 
-/* 상단 정중앙 내비게이션 스타일 */
+/* 상단 우측 내비게이션 스타일 */
 .nav-links{
-  position:absolute; left:50%; transform:translateX(-50%);
-  display:flex; gap:32px; font-size:16px; font-weight:700;
+  margin-left:auto; /* 우측 끝으로 밀기 */
+  display:flex; gap:32px; font-size:16px; font-weight:700; align-items:center;
 }
-.nav-links a{color:var(--muted); transition:0.2s;}
-.nav-links a:hover{color:var(--ink);}
-.nav-links a.active{color:var(--cobalt);}
+.nav-links a{color:var(--cobalt); transition:0.2s;}
+.nav-links a:hover{color:var(--cobalt-d);}
+.nav-links a.active{color:var(--cobalt-d); text-decoration:underline; text-underline-offset:6px;}
 </style>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6B17RZ2E78"></script>
@@ -62,17 +62,14 @@ a:hover{opacity:.82}
 <div id="ba-root" style="background:var(--bg);color:var(--ink);font-weight:400;min-height:100vh;overflow-x:hidden">
 
   <header data-screen-label="Nav" style="position:sticky;top:0;z-index:100;background:rgba(248,247,244,.82);backdrop-filter:saturate(160%) blur(16px);-webkit-backdrop-filter:saturate(160%) blur(16px)">
-    <nav style="max-width:1200px;margin:0 auto;height:74px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;position:relative;">
+    <nav style="max-width:1200px;margin:0 auto;height:74px;display:flex;align-items:center;padding:0 28px;">
       <a href="#top" style="display:flex;align-items:center"><img src="logo.png" alt="Buffett Archive" style="height:32px;width:auto"></a>
       
-      <!-- 정중앙 메뉴 영역 -->
+      <!-- 우측 끝 메뉴 영역 -->
       <div class="nav-links">
         <a href="dashboard.html">국내 가치투자</a>
         <a href="guru.html">미국 투자거장 (13F)</a>
       </div>
-      
-      <!-- 우측 여백 -->
-      <div style="width:32px;"></div>
     </nav>
   </header>
 
