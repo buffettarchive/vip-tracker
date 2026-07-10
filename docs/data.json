@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-10T16:39+09:00",
+  "updated_at": "2026-07-10T16:44+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -10,7 +10,7 @@
     "피델리티",
     "Miri"
   ],
-  "last_seen": "20260710000592",
+  "last_seen": "20260710000603",
   "disclosures": [
     {
       "rcept_no": "20260710000522",
@@ -19,13 +19,13 @@
       "corp_name": "현대홈쇼핑",
       "stock_code": "057050",
       "corp_code": "00412597",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkrt": "0",
+      "stkrt_prev": "5.01",
+      "stkqy": "0",
+      "report_resn": "주식교환 및 단순추가취득/처분",
+      "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "기타"
+      "kind": "매도"
     },
     {
       "rcept_no": "20260710000514",
@@ -34,13 +34,13 @@
       "corp_name": "넥스틴",
       "stock_code": "348210",
       "corp_code": "01080252",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkrt": "0.05",
+      "stkrt_prev": "5.24",
+      "stkqy": "4961",
+      "report_resn": "1% 이상 변동",
+      "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "기타"
+      "kind": "매도"
     },
     {
       "rcept_no": "20260710000503",
@@ -49,13 +49,13 @@
       "corp_name": "이엔에프테크놀로지",
       "stock_code": "102710",
       "corp_code": "00530185",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkrt": "5.28",
+      "stkrt_prev": "8.28",
+      "stkqy": "754353",
+      "report_resn": "1% 이상 변동",
+      "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "기타"
+      "kind": "매도"
     },
     {
       "rcept_no": "20260710000487",
@@ -64,13 +64,13 @@
       "corp_name": "원익머트리얼즈",
       "stock_code": "104830",
       "corp_code": "00623661",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkrt": "5.37",
+      "stkrt_prev": "7.38",
+      "stkqy": "676949",
+      "report_resn": "1% 이상 변동",
+      "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "기타"
+      "kind": "매도"
     },
     {
       "rcept_no": "20260710000468",
@@ -79,13 +79,13 @@
       "corp_name": "유니테스트",
       "stock_code": "086390",
       "corp_code": "00540447",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkrt": "4.45",
+      "stkrt_prev": "8.26",
+      "stkqy": "939801",
+      "report_resn": "1% 이상 변동",
+      "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "기타"
+      "kind": "매도"
     },
     {
       "rcept_no": "20260710000224",
