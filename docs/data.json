@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-10T17:49+09:00",
+  "updated_at": "2026-07-10T17:59+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -10,8 +10,23 @@
     "피델리티",
     "Miri"
   ],
-  "last_seen": "20260710000707",
+  "last_seen": "20260710000713",
   "disclosures": [
+    {
+      "rcept_no": "20260710000713",
+      "rcept_dt": "2026-07-10",
+      "firm": "라이프자산운용",
+      "corp_name": "팸텍",
+      "stock_code": "271830",
+      "corp_code": "01146220",
+      "stkrt": "",
+      "stkrt_prev": "",
+      "stkqy": "",
+      "report_resn": "",
+      "purpose": "",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "기타"
+    },
     {
       "rcept_no": "20260710000644",
       "rcept_dt": "2026-07-10",
