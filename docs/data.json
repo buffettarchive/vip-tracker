@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-10T10:04+09:00",
+  "updated_at": "2026-07-10T10:09+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -10,7 +10,7 @@
     "피델리티",
     "Miri"
   ],
-  "last_seen": "20260710000087",
+  "last_seen": "20260710000093",
   "disclosures": [
     {
       "rcept_no": "20260710000085",
@@ -19,13 +19,13 @@
       "corp_name": "피에이치에이",
       "stock_code": "043370",
       "corp_code": "00155151",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkrt": "10.40",
+      "stkrt_prev": "8.72",
+      "stkqy": "2184317",
+      "report_resn": "1% 이상 변동",
+      "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "기타"
+      "kind": "매수"
     },
     {
       "rcept_no": "20260710000080",
@@ -34,13 +34,13 @@
       "corp_name": "LF",
       "stock_code": "093050",
       "corp_code": "00593032",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkrt": "8.84",
+      "stkrt_prev": "6.86",
+      "stkqy": "2584856",
+      "report_resn": "1% 이상 변동",
+      "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "기타"
+      "kind": "매수"
     },
     {
       "rcept_no": "20260709000173",
