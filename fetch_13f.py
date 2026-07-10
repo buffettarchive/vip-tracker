@@ -1,9 +1,8 @@
 """
-fetch_13f.py — 미국 가치투자 거장 13F 공시 수집 (한국판 데이터로마 - 방탄 파싱 엔진 적용)
+fetch_13f.py — 미국 가치투자 거장 13F 공시 수집 (빈 껍데기 공시 패스 및 방탄 파싱 적용)
 """
 
 import os, sys, json, time, re, base64
-import xml.etree.ElementTree as ET
 import datetime as dt
 import requests
 
@@ -23,8 +22,7 @@ GH_HEADERS = {
     "X-GitHub-Api-Version": "2022-11-28",
 }
 
-# ─────────────────────────────────────────────────────────
-# 요청하신 데이터로마 주요 슈퍼 인베스터 50명 CIK 매핑 리스트
+# 데이터로마 주요 슈퍼 인베스터 50명
 GURUS = {
     "워런 버핏 (버크셔 해서웨이)": "0001067983",
     "마이클 버리 (사이언 에셋)": "0001649339",
@@ -77,7 +75,6 @@ GURUS = {
     "바이킹 글로벌 (안드레아스 할보센)": "0001103804",
     "빌 밀러 (밀러 밸류 파트너스)": "0000820124"
 }
-# ─────────────────────────────────────────────────────────
 
 TRANSLATE = {
     "APPLE INC": "애플 (AAPL)",
@@ -105,68 +102,40 @@ TRANSLATE = {
 }
 
 def clean_issuer_name(name):
-    clean = name.upper().replace(".", "").replace(",", "").strip()
+    clean = name.upper().replace(".", "").replace(",", "").replace("&AMP;", "&").strip()
     for key in TRANSLATE:
         if clean.startswith(key):
             return TRANSLATE[key]
     return clean
 
-def get_latest_13f_xml_url(cik):
-    sub_url = f"https://data.sec.gov/submissions/CIK{cik}.json"
-    r = s.get(sub_url, timeout=15)
-    
-    if r.status_code != 200:
-        return None, None
-    
-    recent = r.json().get("filings", {}).get("recent", {})
-    forms = recent.get("form", [])
-    
-    for i, form in enumerate(forms):
-        if form.startswith("13F-HR"):
-            accession = recent["accessionNumber"][i]
-            report_date = recent["reportDate"][i]
-            accession_no_dash = accession.replace("-", "")
-            
-            idx_url = f"https://www.sec.gov/Archives/edgar/data/{int(cik)}/{accession_no_dash}/index.json"
-            idx_r = s.get(idx_url, timeout=15)
-            if idx_r.status_code == 200:
-                files = idx_r.json().get("directory", {}).get("item", [])
-                for file in files:
-                    name = file["name"].lower()
-                    if name.endswith(".xml") and "primary_doc" not in name:
-                        xml_url = f"https://www.sec.gov/Archives/edgar/data/{int(cik)}/{accession_no_dash}/{file['name']}"
-                        return xml_url, report_date
-            break
-    return None, None
-
 def parse_13f_xml(xml_content):
-    # 특이한 네임스페이스와 접두사를 모두 지워버리는 강력한 전처리
     text = xml_content.decode('utf-8', errors='ignore')
-    text = re.sub(r'\sxmlns[^>]*', '', text)
-    text = re.sub(r'<[a-zA-Z0-9\-]+:', '<', text)
-    text = re.sub(r'</[a-zA-Z0-9\-]+:', '</', text)
     
-    try:
-        root = ET.fromstring(text)
-    except Exception as e:
-        print(f"  [XML 파싱 오류] {e}")
-        return [], 0
-
+    # XML 태그 오염 무시하고 infoTable 덩어리만 강제 추출
+    info_blocks = re.findall(r'<[a-zA-Z0-9_:-]*infoTable\b[^>]*>(.*?)</[a-zA-Z0-9_:-]*infoTable>', text, re.DOTALL | re.IGNORECASE)
+    
     holdings = {}
     total_val = 0
     
-    for info in root.findall('.//infoTable'):
-        issuer = info.findtext('nameOfIssuer')
-        if not issuer: continue
+    for block in info_blocks:
+        issuer_m = re.search(r'<[a-zA-Z0-9_:-]*nameOfIssuer[^>]*>(.*?)</[a-zA-Z0-9_:-]*nameOfIssuer>', block, re.IGNORECASE)
+        if not issuer_m: continue
+        issuer = issuer_m.group(1).strip()
         
-        # 쉼표(,) 등 특수기호가 섞여 있어도 제거 후 변환
-        val_str = info.findtext('value') or "0"
-        val = int(float(val_str.replace(',', ''))) * 1000
-        
-        shrs_el = info.find('.//shrsOrPrnAmt/sshPrnamt')
-        shares_str = shrs_el.text if shrs_el is not None else "0"
-        shares = int(float(shares_str.replace(',', '')))
-        
+        val_m = re.search(r'<[a-zA-Z0-9_:-]*value[^>]*>(.*?)</[a-zA-Z0-9_:-]*value>', block, re.IGNORECASE)
+        val_str = val_m.group(1).strip() if val_m else "0"
+        try:
+            val = int(float(val_str.replace(',', ''))) * 1000
+        except:
+            val = 0
+            
+        shares_m = re.search(r'<[a-zA-Z0-9_:-]*sshPrnamt[^>]*>(.*?)</[a-zA-Z0-9_:-]*sshPrnamt>', block, re.IGNORECASE)
+        shares_str = shares_m.group(1).strip() if shares_m else "0"
+        try:
+            shares = int(float(shares_str.replace(',', '')))
+        except:
+            shares = 0
+            
         name = clean_issuer_name(issuer)
         if name in holdings:
             holdings[name]['value'] += val
@@ -184,6 +153,62 @@ def parse_13f_xml(xml_content):
         
     result_list.sort(key=lambda x: x['value'], reverse=True)
     return result_list, total_val
+
+def get_valid_13f_holdings(cik):
+    sub_url = f"https://data.sec.gov/submissions/CIK{cik}.json"
+    r = s.get(sub_url, timeout=15)
+    time.sleep(0.5)
+    
+    if r.status_code != 200:
+        return [], 0, None
+    
+    recent = r.json().get("filings", {}).get("recent", {})
+    forms = recent.get("form", [])
+    
+    # 여러 개의 13F를 뒤져서 빈 껍데기가 아닌 진짜 데이터가 나올 때까지 반복
+    for i, form in enumerate(forms):
+        if form.startswith("13F-HR"):
+            accession = recent["accessionNumber"][i]
+            report_date = recent["reportDate"][i]
+            accession_no_dash = accession.replace("-", "")
+            
+            idx_url = f"https://www.sec.gov/Archives/edgar/data/{int(cik)}/{accession_no_dash}/index.json"
+            idx_r = s.get(idx_url, timeout=15)
+            time.sleep(0.5)
+            
+            if idx_r.status_code == 200:
+                files = idx_r.json().get("directory", {}).get("item", [])
+                xml_file = None
+                
+                # 1순위: infotable 명시
+                for file in files:
+                    fname = file["name"].lower()
+                    if fname.endswith(".xml") and ("infotable" in fname or "info_table" in fname):
+                        xml_file = file["name"]
+                        break
+                        
+                # 2순위: primary_doc이 아닌 첫 xml
+                if not xml_file:
+                    for file in files:
+                        fname = file["name"].lower()
+                        if fname.endswith(".xml") and "primary_doc" not in fname:
+                            xml_file = file["name"]
+                            break
+                            
+                if xml_file:
+                    xml_url = f"https://www.sec.gov/Archives/edgar/data/{int(cik)}/{accession_no_dash}/{xml_file}"
+                    xml_r = s.get(xml_url, timeout=20)
+                    time.sleep(0.5)
+                    
+                    if xml_r.status_code == 200:
+                        holdings, total_val = parse_13f_xml(xml_r.content)
+                        # 핵심: 빈 문서(수정 공시 등)면 종료하지 않고, 과거 분기로 계속 넘어감
+                        if holdings: 
+                            return holdings, total_val, report_date
+                        else:
+                            print(f"  → [건너뜀] {report_date} 공시 내용이 없어 이전 분기를 탐색합니다.")
+                            
+    return [], 0, None
 
 def gh_get_file():
     url = f"{GH_API}/repos/{GH_OWNER}/{GH_REPO}/contents/{GH_PATH}?ref={GH_BRANCH}"
@@ -208,33 +233,22 @@ def main():
     portfolios = {}
     
     for guru_name, cik in GURUS.items():
-        print(f"[scan] {guru_name} (CIK: {cik}) 조회 중...")
+        print(f"[scan] {guru_name} 조회 중...")
         try:
-            xml_url, report_date = get_latest_13f_xml_url(cik)
+            holdings, total_val, report_date = get_valid_13f_holdings(cik)
             
-            if xml_url:
-                r = s.get(xml_url, timeout=20)
-                if r.status_code == 200:
-                    holdings, total_val = parse_13f_xml(r.content)
-                    if holdings:
-                        portfolios[guru_name] = {
-                            "report_date": report_date,
-                            "total_value_usd": total_val,
-                            "holdings": holdings
-                        }
-                        print(f"  → 성공: {len(holdings)}개 종목 확인 (보고일: {report_date})")
-                    else:
-                        print(f"  → [빈 포트폴리오] 종목을 파싱하지 못했거나, 전량 매도 상태입니다.")
-                else:
-                    print(f"  → [접속 실패] XML 요청 거부 (코드: {r.status_code})")
-                
-                time.sleep(1) # SEC 서버 부하 방지를 위한 필수 대기
+            if holdings:
+                portfolios[guru_name] = {
+                    "report_date": report_date,
+                    "total_value_usd": total_val,
+                    "holdings": holdings
+                }
+                print(f"  → 성공: {len(holdings)}개 종목 확인 (보고일: {report_date})")
             else:
-                print(f"  → [실패] 최신 13F 공시 문서(XML)를 찾지 못했습니다.")
+                print(f"  → [실패] 유효한 포트폴리오를 찾을 수 없습니다.")
                 
         except Exception as e:
-            # 특정 거장에서 에러가 발생해도 절대 멈추지 않고 건너뛰기
-            print(f"  → [오류 발생 건너뜀] {str(e)}")
+            print(f"  → [오류] {str(e)} - 다음 거장으로 넘어갑니다.")
             continue
             
     payload = {
@@ -245,8 +259,6 @@ def main():
     if portfolios:
         gh_put_file(payload, sha)
         print(f"\n[완료] 총 {len(portfolios)}명의 거장 포트폴리오 갱신 및 업로드 성공!")
-    else:
-        print("\n[실패] 수집된 데이터가 하나도 없습니다.")
 
 if __name__ == "__main__":
     main()
