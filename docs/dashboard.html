@@ -242,7 +242,6 @@ footer#footer{margin:40px 0 0;padding-top:24px;border-top:1px solid var(--line)}
 
 </div>
 
-<!-- 여기서부터 복구된 자바스크립트 영역입니다 -->
 <script>
 const $ = s => document.querySelector(s);
 
@@ -576,7 +575,8 @@ function buildFirmPortfolio(firmName){
     const key = x.corp_name;
     if(!byCorp[key] || (x.rcept_no||"") > (byCorp[key].rcept_no||"")) byCorp[key]=x;
   });
-  return Object.values(byCorp).sort((a,b)=>(parseFloat(b.stkrt)||0)-(parseFloat(a.stkrt)||0));
+  // 최신 공시일(접수번호) 기준 내림차순 정렬 적용
+  return Object.values(byCorp).sort((a,b)=>(b.rcept_no||"").localeCompare(a.rcept_no||""));
 }
 
 function renderFirm(){
@@ -629,7 +629,6 @@ function renderFirmPortfolio(){
     const code=item.stock_code?`<span class="code">${item.stock_code}</span>`:"";
     const historyCount = (ARCHIVE.disclosures || []).filter(x=>x.firm===selectedFirm && x.corp_name===item.corp_name).length;
     
-    // 날짜 띄어쓰기 픽스
     const dateStr = LANG==="en" ? `${dt.m} ${dt.d}, ${dt.y}` : `${dt.y}년 ${dt.m} ${dt.d}`;
     
     const inner=`
@@ -677,7 +676,6 @@ function renderStockHistory(){
     const tag=firmTag(item);
     const shares = item.stkqy ? Number(item.stkqy).toLocaleString() : "—";
     
-    // 날짜 띄어쓰기 픽스
     const dateStr = LANG==="en" ? `${dt.m} ${dt.d}, ${dt.y}` : `${dt.y}년 ${dt.m} ${dt.d}`;
 
     const inner=`
@@ -850,7 +848,7 @@ $("#langToggle").querySelectorAll("button").forEach(b=>{
 
 function switchView(v){
   view=v;
-  if(v==="firm") { selectedFirm=null; selectedStock=null; } // 초기화
+  if(v==="firm") { selectedFirm=null; selectedStock=null; } 
   $("#mainTabs").querySelectorAll("button").forEach(b=>b.setAttribute("aria-selected", b.dataset.view===v));
   buildFirmTabs(); buildMarketFilter(); setFooter(); render();
 }
@@ -858,7 +856,6 @@ $("#mainTabs").querySelectorAll("button").forEach(b=>{
   b.onclick=()=>switchView(b.dataset.view);
 });
 
-// [새 공시 병합 로직이 포함된 안전한 loadData 함수]
 function loadData(isFirstLoad){
   Promise.all([
     fetch("data.json?ts="+Date.now()).then(r=>r.json()).catch(()=>null),
