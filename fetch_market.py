@@ -130,17 +130,21 @@ def main():
         if q:
             quotes[name] = q
             print(f"  {name}: {q['price']} ({q['change_pct']:+.2f}%)")
-        # 캔들차트용 과거 시세 수집 (일봉 1년 + 월봉 최대)
-        daily = fetch_history(symbol, interval="1d", rng="1y")
+        # 캔들차트용 과거 시세 수집 (일봉/주봉/월봉, 모두 전체 기간)
+        # 일봉은 데이터가 많아 최근 2년으로 제한, 주봉/월봉은 전체 기간
+        daily = fetch_history(symbol, interval="1d", rng="2y")
+        weekly = fetch_history(symbol, interval="1wk", rng="max")
         monthly = fetch_history(symbol, interval="1mo", rng="max")
         entry = {}
         if daily:
             entry["daily"] = daily
+        if weekly:
+            entry["weekly"] = weekly
         if monthly:
             entry["monthly"] = monthly
         if entry:
             history[name] = entry
-            print(f"    history {name}: 일봉 {len(daily or [])} / 월봉 {len(monthly or [])}")
+            print(f"    history {name}: 일봉 {len(daily or [])} / 주봉 {len(weekly or [])} / 월봉 {len(monthly or [])}")
         time.sleep(0.3)
 
     if not quotes:
