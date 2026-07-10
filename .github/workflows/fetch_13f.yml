@@ -2,8 +2,9 @@ name: 미국 투자거장 13F 포트폴리오 갱신
 
 on:
   schedule:
-    - cron: '0 0 * * *' # 매일 자정 (UTC 기준) 실행
-  workflow_dispatch: # 수동 실행 버튼 활성화
+    # 2, 5, 8, 11월의 1일부터 16일까지 매일 자정(UTC)에만 실행됨 (가장 효율적인 13F 공시 시즌 타겟팅)
+    - cron: '0 0 1-16 2,5,8,11 *'
+  workflow_dispatch: # 수동 실행 버튼
 
 jobs:
   run-13f-fetch:
