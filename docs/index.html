@@ -72,7 +72,7 @@ a:hover{opacity:.82}
     <div>
       <div style="display:inline-flex;align-items:center;gap:8px;background:var(--chip);color:var(--cobalt);font-size:14px;font-weight:700;padding:9px 15px;border-radius:9999px;margin-bottom:26px"><i class="ph-fill ph-lightning" style="font-size:15px"></i> 지금까지 <span id="stat-hero-count">1,497</span>건의 내부자 매수 기록</div>
       <h1 id="ba-h1" style="font-size:52px;line-height:1.18;letter-spacing:-1.8px;font-weight:700;margin:0 0 22px;white-space:nowrap">가치투자 운용사의 지분공시를<br>한눈에 간편하게</h1>
-      <p style="font-size:19px;line-height:1.65;color:#4b4d55;font-weight:400;margin:0 0 36px;max-width:490px">브이아이피, 얼라인, 라이프. 국내 가치투자 운용사가 어떤 종목을 보유하는지 운용사별로 정리합니다. 내부자 매수와 자사주 소각까지 한곳에서 확인합니다.</p>
+      <p style="font-size:19px;line-height:1.65;color:#4b4d55;font-weight:400;margin:0 0 36px;max-width:490px">VIP, 얼라인, 라이프. 국내 가치투자 운용사가 어떤 종목을 보유하는지 운용사별로 정리합니다. 내부자 매수와 자사주 소각까지 한곳에서 확인합니다.</p>
       <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">
         <a href="dashboard.html" class="ba-btn3d" style="display:inline-block;background:var(--cobalt);color:#fff;font-family:inherit;font-size:18px;font-weight:700;padding:18px 32px;border:none;border-radius:16px;cursor:pointer;box-shadow:0 6px 0 var(--cobalt-d),0 15px 30px rgba(0,71,255,.32);transition:transform .12s,box-shadow .12s">대시보드 열기</a>
         <a href="#data" class="ba-btn3d-lt" style="display:inline-block;background:#fff;color:var(--ink);font-family:inherit;font-size:18px;font-weight:700;padding:18px 28px;border:none;border-radius:16px;cursor:pointer;box-shadow:0 5px 0 #e4e2db,0 12px 22px rgba(22,24,29,.08);transition:transform .12s,box-shadow .12s">서비스 둘러보기</a>
@@ -289,7 +289,7 @@ return Promise.all([
     const top = sortByRcept(data.disclosures).slice(0,3);
     const el = document.getElementById("hero-preview");
     const firmShort = (f)=>({
-      "브이아이피자산운용":"브이아이피","얼라인파트너스자산운용":"얼라인","라이프자산운용":"라이프",
+      "브이아이피자산운용":"VIP자산운용","얼라인파트너스자산운용":"얼라인","라이프자산운용":"라이프",
       "에셋플러스자산운용":"에셋플러스","트러스톤자산운용":"트러스톤"
     }[f]||f);
     if(el) el.innerHTML = top.map(x=>{
