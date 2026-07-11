@@ -1,5 +1,6 @@
 """
-fetch_13f.py — 미국 가치투자 거장 13F 공시 수집 (네이버 API 실시간 연동 완벽 자동화)
+fetch_13f.py — 미국 가치투자 거장 13F 공시 수집 + 한글 종목명 자동 번역
+버핏아카이브 최종본
 """
 
 import os, sys, json, time, re, base64
@@ -16,7 +17,7 @@ GH_API     = "https://api.github.com"
 
 s = requests.Session()
 s.headers.update({
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+    "User-Agent": "BuffettArchive buffettarchive1@gmail.com",
     "Accept-Encoding": "gzip, deflate"
 })
 
@@ -27,7 +28,7 @@ GH_HEADERS = {
 }
 
 # ══════════════════════════════════════════════════════════════════
-# CIK 최종 교정본 (13F 제출 투자자문사 기준 68명)
+# 검증된 64명 CIK (SEC EDGAR 13F-HR 제출 투자자문사 기준)
 # ══════════════════════════════════════════════════════════════════
 GURUS = {
     "마이클 버리 (사이언 에셋)": "0001649339",
@@ -52,25 +53,24 @@ GURUS = {
     "빌 & 멀린다 게이츠 재단 (캐스케이드)": "0001166559",
     "체이스 콜먼 (타이거 글로벌)": "0001167483",
     "스티븐 맨델 (론 파인)": "0001061165",
-    "리 애인슬리 (매버릭 캐피탈)": "0001010649",
     "브루스 버코위츠 (페어홈)": "0001056831",
-    "빌 니그렌 (해리스 어소시에이츠)": "0000804550",
-    "글렌 그린버그 (브레이브 워리어)": "0001576428",
     "메이슨 호킨스 (사우스이스턴)": "0000807985",
     "척 아크레 (아크레 캐피탈)": "0001112520",
     "도지 앤 콕스": "0000315066",
-    "존 로저스 (아리엘 인베스트먼트)": "0001113148",
     "크리스 혼 (TCI 펀드)": "0001647251",
     "퍼스트 이글 인베스트먼트": "0000810958",
     "데이비드 에이브럼스 (아브람스 캐피탈)": "0001358706",
-    "크리스토퍼 데이비스 (데이비스 어드바이저스)": "0000353184",
     "트위디 브라운": "0000732905",
+    "리 애인슬리 (매버릭 캐피탈)": "0000934639",
+    "빌 니그렌 (해리스 어소시에이츠)": "0000813917",
+    "글렌 그린버그 (브레이브 워리어)": "0001553733",
+    "존 로저스 (아리엘 인베스트먼트)": "0000936753",
+    "크리스토퍼 데이비스 (데이비스 어드바이저스)": "0001036325",
     "토마스 루소 (가드너 루소)": "0000860643",
     "데이비드 롤프 (웨지우드)": "0000859804",
     "윌리엄 폰 뮈플링 (칸티용)": "0001279936",
     "퍼스트 퍼시픽 어드바이저스": "0001377581",
     "레온 쿠퍼만 (오메가)": "0000898202",
-    "사라 케터러 (코즈웨이)": "0001211513",
     "헨리 엘렌보겐 (듀러블 캐피탈)": "0001798849",
     "데니스 홍 (쇼스프링)": "0001766908",
     "데이비드 카츠 (매트릭스)": "0001016287",
@@ -91,199 +91,254 @@ GURUS = {
     "톰 밴크로프트 (마카이라)": "0001540866",
     "사만다 맥레모어 (페이션트)": "0001854794",
     "클리포드 소신 (CAS)": "0001697591",
-    "프란시스 추 (추 어소시에이츠)": "0001389403",
     "글렌 웰링 (인게이지드)": "0001559771",
     "밸리 포지 캐피탈": "0001697868",
     "린셀 트레인": "0001484150",
+    "프란시스 추 (추 어소시에이츠)": "0001389403",
 }
 
 # ══════════════════════════════════════════════════════════════════
-# 네이버 금융 자동완성 API를 활용한 실시간 번역 엔진 (메모리 캐시 적용)
+# SEC 요청 유틸리티 (레이트리밋 + 지수 백오프)
 # ══════════════════════════════════════════════════════════════════
-TRANSLATION_CACHE = {}
+_last_sec_time = 0
 
-def get_korean_name_from_naver(eng_name):
-    if not eng_name:
-        return ""
-        
-    # 이미 검색했던 종목이면 네이버에 묻지 않고 캐시에서 즉시 반환 (속도 극대화)
-    if eng_name in TRANSLATION_CACHE:
-        return TRANSLATION_CACHE[eng_name]
-        
-    url = f"https://ac.finance.naver.com/ac?q={urllib.parse.quote(eng_name)}&q_enc=utf-8&st=111&r_format=json&t_koreng=1"
-    
-    try:
-        r = s.get(url, timeout=5)
-        if r.status_code == 200:
-            data = r.json()
-            items = data.get("items", [])
-            if items and len(items[0]) > 0:
-                match = items[0][0]
-                if len(match) >= 2:
-                    ticker = match[0]
-                    kor_name = match[1]
-                    # 결과값에 한글이 정상적으로 포함되어 있는지 검증
-                    if re.search('[가-힣]', kor_name):
-                        result = f"{kor_name} ({ticker})"
-                        TRANSLATION_CACHE[eng_name] = result
-                        time.sleep(0.1) # IP 차단 방지용 미세 딜레이
-                        return result
-    except:
-        pass
-        
-    # 네이버에도 안 나오는 초소형 마이너 종목은 깔끔한 영문 대소문자로 변환하여 반환
-    fallback_name = eng_name.title()
-    TRANSLATION_CACHE[eng_name] = fallback_name
-    time.sleep(0.1)
-    return fallback_name
-
-def clean_and_translate_issuer(raw_name):
-    # 1. 쓸데없는 13F 꼬리표 싹둑 자르기 (가장 지저분한 것들 모두 포함)
-    clean = raw_name.upper().replace(".", "").replace(",", "").replace("&AMP;", "&").replace("'", "").strip()
-    clean = re.sub(r'\b(INC|CORP|LTD|PLC|LLC|CO|COMPANY|NEW|DEL|COM|CLASS A|CLASS B|CLASS C|CAP|HLDG|HLDGS|HOLDINGS|HOLDING|GROUP|STK|CL A|CL B|CL C|SER A|SER B|SPONSORED|ADR|ADS|SHS)\b', '', clean).strip()
-    
-    # 2. 1차 네이버 API 검색
-    translated = get_korean_name_from_naver(clean)
-    
-    # 3. 만약 네이버 검색에 실패했다면 (이름이 너무 길어서 안 나오는 경우 대비) -> 첫 단어만 떼서 2차 검색
-    if translated == clean.title() and " " in clean:
-        first_word = clean.split(" ")[0]
-        if len(first_word) > 2:
-            translated_fallback = get_korean_name_from_naver(first_word)
-            if translated_fallback != first_word.title():
-                return translated_fallback
-                
-    return translated
-
-_last_request_time = 0
-
-def safe_get(url):
-    global _last_request_time
+def safe_get(url, timeout=15):
+    global _last_sec_time
     for attempt in range(5):
-        elapsed = time.time() - _last_request_time
+        elapsed = time.time() - _last_sec_time
         if elapsed < 0.35:
             time.sleep(0.35 - elapsed)
         try:
-            _last_request_time = time.time()
-            r = s.get(url, timeout=15)
+            _last_sec_time = time.time()
+            r = s.get(url, timeout=timeout)
             if r.status_code == 200:
                 return r
             elif r.status_code in (403, 429):
                 wait = min(5 * (2 ** attempt), 60)
-                print(f"    [경고] SEC 차단 감지 ({r.status_code}). {wait}초 대기 후 재시도... ({attempt+1}/5)")
+                print(f"    [SEC 차단] {r.status_code}, {wait}초 대기 ({attempt+1}/5)")
                 time.sleep(wait)
             else:
                 return r
         except Exception as e:
             wait = min(5 * (2 ** attempt), 60)
-            print(f"    [에러] 네트워크 오류. {wait}초 대기... ({attempt+1}/5)")
+            print(f"    [네트워크] {e}, {wait}초 대기 ({attempt+1}/5)")
             time.sleep(wait)
     return None
 
+# ══════════════════════════════════════════════════════════════════
+# 13F XML 파싱 (정규식 방탄 파서)
+# ══════════════════════════════════════════════════════════════════
 def parse_13f_xml(xml_content):
     text = xml_content.decode('utf-8', errors='ignore')
     text = re.sub(r'\sxmlns[^>]*', '', text)
     text = re.sub(r'<[a-zA-Z0-9\-]+:', '<', text)
     text = re.sub(r'</[a-zA-Z0-9\-]+:', '</', text)
-    info_blocks = re.findall(r'<[a-zA-Z0-9_:-]*infoTable\b[^>]*>(.*?)</[a-zA-Z0-9_:-]*infoTable>', text, re.DOTALL | re.IGNORECASE)
-    
+    blocks = re.findall(r'<[a-zA-Z0-9_:-]*infoTable\b[^>]*>(.*?)</[a-zA-Z0-9_:-]*infoTable>', text, re.DOTALL | re.IGNORECASE)
     holdings = {}
     total_val = 0
-    
-    for block in info_blocks:
-        issuer_m = re.search(r'<[a-zA-Z0-9_:-]*nameOfIssuer[^>]*>(.*?)</[a-zA-Z0-9_:-]*nameOfIssuer>', block, re.IGNORECASE)
-        if not issuer_m: continue
-        issuer = issuer_m.group(1).strip()
-        
-        val_m = re.search(r'<[a-zA-Z0-9_:-]*value[^>]*>(.*?)</[a-zA-Z0-9_:-]*value>', block, re.IGNORECASE)
-        val_str = val_m.group(1).strip() if val_m else "0"
-        try: val = int(float(val_str.replace(',', ''))) * 1000
+    for block in blocks:
+        m = re.search(r'<[^>]*nameOfIssuer[^>]*>(.*?)</[^>]*nameOfIssuer>', block, re.IGNORECASE)
+        if not m: continue
+        issuer = m.group(1).strip().upper().replace(".", "").replace(",", "").replace("&AMP;", "&")
+        m2 = re.search(r'<[^>]*value[^>]*>(.*?)</[^>]*value>', block, re.IGNORECASE)
+        try: val = int(float(m2.group(1).strip().replace(',', ''))) * 1000 if m2 else 0
         except: val = 0
-        
-        shares_m = re.search(r'<[a-zA-Z0-9_:-]*sshPrnamt[^>]*>(.*?)</[a-zA-Z0-9_:-]*sshPrnamt>', block, re.IGNORECASE)
-        shares_str = shares_m.group(1).strip() if shares_m else "0"
-        try: shares = int(float(shares_str.replace(',', '')))
+        m3 = re.search(r'<[^>]*sshPrnamt[^>]*>(.*?)</[^>]*sshPrnamt>', block, re.IGNORECASE)
+        try: shares = int(float(m3.group(1).strip().replace(',', ''))) if m3 else 0
         except: shares = 0
-        
-        # 완전 자동화된 네이버 API 번역 엔진 통과
-        name = clean_and_translate_issuer(issuer)
-        
-        if name in holdings:
-            holdings[name]['value'] += val
-            holdings[name]['shares'] += shares
+        if issuer in holdings:
+            holdings[issuer]['value'] += val
+            holdings[issuer]['shares'] += shares
         else:
-            holdings[name] = {'name': name, 'value': val, 'shares': shares}
+            holdings[issuer] = {'name': issuer, 'value': val, 'shares': shares}
         total_val += val
-        
-    result_list = []
+    result = []
     for h in holdings.values():
-        weight = round((h['value'] / total_val * 100), 2) if total_val > 0 else 0
-        h['weight'] = weight
-        result_list.append(h)
-    result_list.sort(key=lambda x: x['value'], reverse=True)
-    return result_list, total_val
+        h['weight'] = round((h['value'] / total_val * 100), 2) if total_val > 0 else 0
+        result.append(h)
+    result.sort(key=lambda x: x['value'], reverse=True)
+    return result, total_val
 
 def get_valid_13f_holdings(cik):
-    sub_url = f"https://data.sec.gov/submissions/CIK{cik}.json"
-    r = safe_get(sub_url)
+    r = safe_get(f"https://data.sec.gov/submissions/CIK{cik}.json")
     if not r or r.status_code != 200:
         return [], 0, None
-        
-    data = r.json()
-    recent = data.get("filings", {}).get("recent", {})
+    recent = r.json().get("filings", {}).get("recent", {})
     forms = recent.get("form", [])
     hr_indices = [i for i, f in enumerate(forms) if f.startswith("13F-HR")]
-    
     if not hr_indices:
         return [], 0, None
-        
     for i in hr_indices[:3]:
-        accession = recent["accessionNumber"][i]
-        report_date = recent["reportDate"][i]
-        accession_no_dash = accession.replace("-", "")
-        cik_int = int(cik)
-        idx_url = f"https://www.sec.gov/Archives/edgar/data/{cik_int}/{accession_no_dash}/index.json"
-        idx_r = safe_get(idx_url)
-        
+        acc = recent["accessionNumber"][i].replace("-", "")
+        date = recent["reportDate"][i]
+        idx_r = safe_get(f"https://www.sec.gov/Archives/edgar/data/{int(cik)}/{acc}/index.json")
         if not idx_r or idx_r.status_code != 200:
             continue
-            
         files = idx_r.json().get("directory", {}).get("item", [])
         xml_file = None
-        for file in files:
-            fname = file["name"].lower()
-            if fname.endswith(".xml") and ("infotable" in fname or "info_table" in fname):
-                xml_file = file["name"]
-                break
-                
+        for f in files:
+            fn = f["name"].lower()
+            if fn.endswith(".xml") and ("infotable" in fn or "info_table" in fn):
+                xml_file = f["name"]; break
         if not xml_file:
-            for file in files:
-                fname = file["name"].lower()
-                if fname.endswith(".xml") and "primary_doc" not in fname:
-                    xml_file = file["name"]
-                    break
-                    
+            for f in files:
+                fn = f["name"].lower()
+                if fn.endswith(".xml") and "primary_doc" not in fn:
+                    xml_file = f["name"]; break
         if not xml_file:
             continue
-            
-        xml_url = f"https://www.sec.gov/Archives/edgar/data/{cik_int}/{accession_no_dash}/{xml_file}"
-        xml_r = safe_get(xml_url)
-        
+        xml_r = safe_get(f"https://www.sec.gov/Archives/edgar/data/{int(cik)}/{acc}/{xml_file}")
         if xml_r and xml_r.status_code == 200:
-            holdings, total_val = parse_13f_xml(xml_r.content)
+            holdings, total = parse_13f_xml(xml_r.content)
             if holdings:
-                return holdings, total_val, report_date
-                
+                return holdings, total, date
     return [], 0, None
 
-def gh_get_file():
+# ══════════════════════════════════════════════════════════════════
+# 한글 종목명 자동 번역 시스템
+# 구조: SEC company_tickers.json(1회 다운로드) → 티커 매칭
+#       → 네이버 API(캐시 미스분만) → docs/stock_names_kr.json 캐시
+# ══════════════════════════════════════════════════════════════════
+KR_CACHE_PATH = "docs/stock_names_kr.json"
+
+def build_ticker_map():
+    """SEC 전체 종목 데이터에서 종목명→티커 매핑 (요청 1회)"""
+    r = safe_get("https://www.sec.gov/files/company_tickers.json")
+    if not r or r.status_code != 200:
+        print("[한글화] SEC 티커 데이터 실패, 번역 건너뜀")
+        return {}
+    tmap = {}
+    for entry in r.json().values():
+        title = re.sub(r'[^A-Z0-9& ]', '', entry.get("title", "").upper()).strip()
+        ticker = entry.get("ticker", "")
+        if title and ticker:
+            tmap[title] = ticker
+    print(f"[한글화] SEC 티커맵 {len(tmap)}건 로드")
+    return tmap
+
+def match_ticker(name, tmap):
+    """13F 종목명 → 티커 매칭 (정확→접두어→첫2단어 순)"""
+    clean = re.sub(r'[^A-Z0-9& ]', '', name.upper()).strip()
+    if clean in tmap: return tmap[clean]
+    for title, ticker in tmap.items():
+        if len(clean) >= 6 and (title.startswith(clean) or clean.startswith(title)):
+            return ticker
+    words = clean.split()[:2]
+    if len(words) >= 2:
+        prefix = ' '.join(words)
+        for title, ticker in tmap.items():
+            if title.startswith(prefix):
+                return ticker
+    return None
+
+def naver_korean_name(ticker):
+    """네이버 증권 API로 한글 종목명 조회 (5초 타임아웃 엄수)"""
+    for ex in ['O', 'N', 'A']:  # NASDAQ, NYSE, AMEX
+        try:
+            r = requests.get(
+                f"https://m.stock.naver.com/api/stock/{ticker}.{ex}/basic",
+                timeout=5,
+                headers={"User-Agent": "Mozilla/5.0"}
+            )
+            if r.status_code == 200:
+                name = r.json().get("stockName", "")
+                if name:
+                    return f"{name} ({ticker})"
+        except requests.exceptions.Timeout:
+            print(f"    [네이버] {ticker} 타임아웃, 건너뜀")
+            return None
+        except:
+            pass
+    return None
+
+def load_kr_cache():
+    """GitHub에서 한글명 캐시 로드"""
+    url = f"{GH_API}/repos/{GH_OWNER}/{GH_REPO}/contents/{KR_CACHE_PATH}?ref={GH_BRANCH}"
+    try:
+        r = requests.get(url, headers=GH_HEADERS, timeout=10)
+        if r.status_code == 200:
+            data = json.loads(base64.b64decode(r.json()["content"]).decode("utf-8"))
+            print(f"[한글화] 캐시 {len(data)}건 로드")
+            return data, r.json()["sha"]
+    except:
+        pass
+    return {}, None
+
+def save_kr_cache(cache, sha):
+    """한글명 캐시 GitHub 저장"""
+    url = f"{GH_API}/repos/{GH_OWNER}/{GH_REPO}/contents/{KR_CACHE_PATH}"
+    blob = json.dumps(cache, ensure_ascii=False, indent=2)
+    body = {
+        "message": f"kr_names: {len(cache)} stocks",
+        "content": base64.b64encode(blob.encode("utf-8")).decode("ascii"),
+        "branch": GH_BRANCH,
+    }
+    if sha: body["sha"] = sha
+    try:
+        requests.put(url, headers=GH_HEADERS, json=body, timeout=15)
+        print(f"[한글화] 캐시 저장 ({len(cache)}건)")
+    except:
+        print("[한글화] 캐시 저장 실패 (다음 실행에서 재시도)")
+
+def translate_portfolios(portfolios):
+    """전체 포트폴리오 종목명 한글 번역 (안전 + 자동 누적)"""
+    cache, cache_sha = load_kr_cache()
+    tmap = build_ticker_map()
+    if not tmap:
+        return  # SEC 데이터 실패 시 번역 단계 통째로 건너뜀
+
+    # 고유 종목명 수집
+    all_names = set()
+    for g in portfolios.values():
+        for h in g["holdings"]:
+            all_names.add(h["name"])
+
+    # 캐시 미스 목록
+    miss = [n for n in all_names if n not in cache]
+    print(f"[한글화] 종목 {len(all_names)}건 중 캐시 히트 {len(all_names)-len(miss)}건, 신규 {len(miss)}건")
+
+    # ── 신규 종목만 네이버 API 조회 (시간 예산 10분, 2초 간격) ──
+    start = time.time()
+    MAX_TIME = 600  # 10분
+    done = 0
+    for name in miss:
+        if time.time() - start > MAX_TIME:
+            print(f"[한글화] 시간 예산 초과, {len(miss)-done}건 다음 실행으로 이월")
+            break
+        ticker = match_ticker(name, tmap)
+        if ticker:
+            kr = naver_korean_name(ticker)
+            if kr:
+                cache[name] = kr
+            else:
+                cache[name] = f"{name} ({ticker})"  # 네이버 실패 → 영문+티커
+        # 티커 못 찾으면 캐시 안 넣고 원문 유지 (다음 실행에서 재시도)
+        done += 1
+        time.sleep(2)  # ★ 네이버 차단 방지 핵심
+
+    # 적용
+    for g in portfolios.values():
+        for h in g["holdings"]:
+            if h["name"] in cache:
+                h["name"] = cache[h["name"]]
+
+    # 캐시 저장 (신규 번역이 있을 때만)
+    if done > 0:
+        save_kr_cache(cache, cache_sha)
+
+    print(f"[한글화] 완료: 번역 {done}건")
+
+# ══════════════════════════════════════════════════════════════════
+# GitHub 파일 I/O
+# ══════════════════════════════════════════════════════════════════
+def gh_get_sha():
     url = f"{GH_API}/repos/{GH_OWNER}/{GH_REPO}/contents/{GH_PATH}?ref={GH_BRANCH}"
     r = safe_get(url)
     if r and r.status_code == 200:
         return r.json()["sha"]
     return None
 
-def gh_put_file(data, sha):
+def gh_put(data, sha):
     url = f"{GH_API}/repos/{GH_OWNER}/{GH_REPO}/contents/{GH_PATH}"
     blob = json.dumps(data, ensure_ascii=False, indent=2)
     body = {
@@ -294,52 +349,50 @@ def gh_put_file(data, sha):
     if sha: body["sha"] = sha
     requests.put(url, headers=GH_HEADERS, json=body, timeout=15)
 
+# ══════════════════════════════════════════════════════════════════
+# 메인
+# ══════════════════════════════════════════════════════════════════
 def main():
-    sha = gh_get_file()
+    sha = gh_get_sha()
     portfolios = {}
     failed = []
     total = len(GURUS)
-    
-    print(f"[시작] 총 {total}명의 거장 포트폴리오 조회를 시작합니다. (네이버 API 연동 모드)")
-    for idx, (guru_name, cik) in enumerate(GURUS.items(), 1):
-        print(f"\n[scan {idx}/{total}] {guru_name} (CIK: {cik})")
+
+    print(f"[시작] {total}명 거장 조회")
+    for idx, (name, cik) in enumerate(GURUS.items(), 1):
+        print(f"[{idx}/{total}] {name}")
         try:
-            holdings, total_val, report_date = get_valid_13f_holdings(cik)
+            holdings, val, date = get_valid_13f_holdings(cik)
             if holdings:
-                portfolios[guru_name] = {
-                    "report_date": report_date,
-                    "total_value_usd": total_val,
-                    "holdings": holdings
-                }
-                print(f"  → 성공: {len(holdings)}개 종목 (보고일: {report_date})")
+                portfolios[name] = {"report_date": date, "total_value_usd": val, "holdings": holdings}
+                print(f"  ✓ {len(holdings)}종목 ({date})")
             else:
-                failed.append(guru_name)
-                print(f"  → [실패] 유효한 포트폴리오 없음")
+                failed.append(name)
+                print(f"  ✗ 실패")
         except Exception as e:
-            failed.append(guru_name)
-            print(f"  → [치명적 오류] {str(e)}")
-            
+            failed.append(name)
+            print(f"  ✗ 에러: {e}")
         time.sleep(1.5)
-        
         if idx % 10 == 0 and idx < total:
-            print(f"\n  ⏳ [{idx}/{total}] SEC 디도스 오해 방지 쿨다운 30초...\n")
             time.sleep(30)
-            
+
+    # ── 한글 종목명 번역 ──
+    if portfolios:
+        translate_portfolios(portfolios)
+
+    # ── 업로드 ──
     payload = {
         "updated_at": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "portfolios": portfolios
     }
-    
     if portfolios:
-        gh_put_file(payload, sha)
-        
-    print(f"\n{'='*60}")
-    print(f"[완료] 성공: {len(portfolios)}명 / 실패: {len(failed)}명 / 총: {total}명")
+        gh_put(payload, sha)
+
+    print(f"\n{'='*50}")
+    print(f"성공: {len(portfolios)}명 / 실패: {len(failed)}명")
     if failed:
-        print(f"\n[실패 목록]")
-        for name in failed:
-            print(f"  - {name}")
-    print(f"{'='*60}")
+        for f in failed: print(f"  - {f}")
+    print(f"{'='*50}")
 
 if __name__ == "__main__":
     main()
