@@ -147,21 +147,37 @@ def clean_issuer_name(name):
             return TRANSLATE[key]
     return clean
 
-# SEC 서버 차단을 우회하기 위한 무적의 HTTP 요청 함수
+# ──────────────────────────────────────────────────────
+# [핵심 수정 1] 글로벌 요청 간 딜레이를 강제하는 래퍼
+# SEC 공정접근 기준: ~10 req/s이지만 GitHub Actions 공유 IP는
+# 훨씬 낮은 실효 한도를 받으므로 0.35초 간격을 최소로 유지합니다.
+# ──────────────────────────────────────────────────────
+_last_request_time = 0
+
 def safe_get(url):
+    global _last_request_time
     for attempt in range(5):
+        # 요청 간 최소 0.35초 간격 보장 (SEC 초당 ~2.8요청)
+        elapsed = time.time() - _last_request_time
+        if elapsed < 0.35:
+            time.sleep(0.35 - elapsed)
+
         try:
+            _last_request_time = time.time()
             r = s.get(url, timeout=15)
             if r.status_code == 200:
                 return r
             elif r.status_code in (403, 429):
-                print(f"    [경고] SEC 서버 차단 감지 (코드 {r.status_code}). 5초 대기 후 재시도... ({attempt+1}/5)")
-                time.sleep(5)
+                # [핵심 수정 2] 점진적 백오프: 5→10→20→40→60초
+                wait = min(5 * (2 ** attempt), 60)
+                print(f"    [경고] SEC 서버 차단 감지 (코드 {r.status_code}). {wait}초 대기 후 재시도... ({attempt+1}/5)")
+                time.sleep(wait)
             else:
                 return r
         except Exception as e:
-            print(f"    [네트워크 에러] {e}. 5초 후 재시도... ({attempt+1}/5)")
-            time.sleep(5)
+            wait = min(5 * (2 ** attempt), 60)
+            print(f"    [네트워크 에러] {e}. {wait}초 후 재시도... ({attempt+1}/5)")
+            time.sleep(wait)
     return None
 
 def parse_13f_xml(xml_content):
@@ -283,11 +299,13 @@ def gh_put_file(data, sha):
 def main():
     sha = gh_get_file()
     portfolios = {}
+    failed = []   # [핵심 수정 3] 실패 목록 추적
     
-    print(f"[시작] 총 {len(GURUS)}명의 거장 포트폴리오 조회를 시작합니다.")
+    total = len(GURUS)
+    print(f"[시작] 총 {total}명의 거장 포트폴리오 조회를 시작합니다.")
     
-    for guru_name, cik in GURUS.items():
-        print(f"[scan] {guru_name} 조회 중...")
+    for idx, (guru_name, cik) in enumerate(GURUS.items(), 1):
+        print(f"[scan {idx}/{total}] {guru_name} 조회 중...")
         try:
             holdings, total_val, report_date = get_valid_13f_holdings(cik)
             
@@ -299,13 +317,22 @@ def main():
                 }
                 print(f"  → 성공: {len(holdings)}개 종목 확인 (보고일: {report_date})")
             else:
+                failed.append(guru_name)
                 print(f"  → [실패] 유효한 포트폴리오를 찾을 수 없습니다.")
                 
         except Exception as e:
+            failed.append(guru_name)
             print(f"  → [치명적 오류] {str(e)} - 건너뜁니다.")
             
-        # 디도스로 오해받지 않기 위한 필수 안전 대기 시간
+        # 구루 간 대기 (safe_get 내부 딜레이와 별도)
         time.sleep(1.5)
+
+        # ──────────────────────────────────────────────
+        # [핵심 수정 3] 매 10명마다 쿨다운 — SEC IP 차단 해제 대기
+        # ──────────────────────────────────────────────
+        if idx % 10 == 0 and idx < total:
+            print(f"\n  ⏳ [{idx}/{total}] SEC 쿨다운 30초 대기...\n")
+            time.sleep(30)
             
     payload = {
         "updated_at": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
@@ -314,7 +341,15 @@ def main():
     
     if portfolios:
         gh_put_file(payload, sha)
-        print(f"\n[완료] 총 {len(portfolios)}명의 거장 데이터가 성공적으로 업로드되었습니다!")
+
+    # 결과 요약
+    print(f"\n{'='*50}")
+    print(f"[완료] 성공: {len(portfolios)}명 / 실패: {len(failed)}명 / 총: {total}명")
+    if failed:
+        print(f"[실패 목록]")
+        for name in failed:
+            print(f"  - {name}")
+    print(f"{'='*50}")
 
 if __name__ == "__main__":
     main()
