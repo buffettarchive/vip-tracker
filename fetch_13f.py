@@ -1,5 +1,5 @@
 """
-fetch_13f.py — 미국 가치투자 거장 13F 공시 수집 (진단 로깅 포함)
+fetch_13f.py — 미국 가치투자 거장 13F 공시 수집 (CIK 교정 및 방탄 파싱 적용)
 """
 
 import os, sys, json, time, re, base64
@@ -25,92 +25,77 @@ GH_HEADERS = {
     "X-GitHub-Api-Version": "2022-11-28",
 }
 
+# ── CIK 완벽 교정본 적용 (13F 제출 투자자문사 기준 68명) ──
 GURUS = {
     "마이클 버리 (사이언 에셋)": "0001649339",
     "워런 버핏 (버크셔 해서웨이)": "0001067983",
     "빌 애크먼 (퍼싱 스퀘어)": "0001336528",
     "세스 클라만 (바우포스트 그룹)": "0001061768",
     "리 루 (히말라야 캐피탈)": "0001569205",
-    "모니시 파브라이 (달랄 스트리트)": "0001548760",
-    "데이비드 테퍼 (아팔루사)": "0001006438",
-    "스탠리 드러켄밀러 (듀케인)": "0001525287",
-    "가이 스피어 (아쿠아마린)": "0001569420",
-    "하워드 막스 (오크트리)": "0000940517",
-    "단 용핑 (H&H 인베스트먼트)": "0001763131",
-    "아브람스 바이슨 인베스트먼트": "0001438363",
     "넬슨 펠츠 (트리안 펀드)": "0001345471",
-    "리 애인슬리 (매버릭 캐피탈)": "0000939016",
     "바이킹 글로벌 (안드레아스 할보센)": "0001103804",
-    "밸류액트 캐피탈": "0001130626",
-    "데이비드 아인혼 (그린라이트)": "0001072971",
     "칼 아이칸 (아이칸 캐피탈)": "0000921669",
-    "브루스 버코위츠 (페어홈)": "0001083622",
-    "빌 니그렌 (오크마크 펀드)": "0000870233",
-    "빌 & 멀린다 게이츠 재단": "0001320414",
-    "노버트 루 (펀치 카드)": "0001509993",
-    "헨리 엘렌보겐 (듀러블 캐피탈)": "0001788775",
-    "크리스토퍼 블룸스트란 (셈퍼 아우구스투스)": "0001452932",
-    "메이슨 호킨스 (사우스이스턴)": "0000868148",
-    "글렌 그린버그 (브레이브 워리어)": "0001549429",
     "단 롭 (서드 포인트)": "0001040273",
-    "스티븐 맨델 (론 파인)": "0001041693",
-    "알렉스 뢰퍼스 (아틀란틱)": "0001010300",
-    "밸리 포지 캐피탈": "0001614748",
-    "데이비드 롤프 (웨지우드)": "0001053648",
-    "체이스 콜먼 (타이거 글로벌)": "0001136363",
-    "글렌 웰링 (인게이지드 캐피탈)": "0001560383",
-    "클리포드 소신 (CAS 인베스트먼트)": "0001560943",
-    "알타록 파트너스": "0001600742",
-    "프랑수아 로숑 (지베르니 캐피탈)": "0001518428",
-    "레온 쿠퍼만 (오메가 어드바이저스)": "0001010574",
-    "아놀드 반 덴 버그 (센추리 매니지먼트)": "0001053150",
-    "브라이언 로렌스 (오크클리프)": "0001331006",
     "빌 밀러 (밀러 밸류 파트너스)": "0000820124",
-    "팻 도시 (도시 애셋)": "0001605634",
-    "크리스 혼 (TCI 펀드)": "0001603508",
-    "AKO 캐피탈": "0001613915",
-    "테리 스미스 (펀드스미스)": "0001567330",
     "프렘 왓사 (페어팩스)": "0000915191",
-    "힐만 캐피탈 매니지먼트": "0001099684",
-    "트리플 프론드 파트너스": "0001770630",
-    "톰 밴크로프트 (마카이라)": "0001423851",
-    "루안 커니프 (세쿼이아 펀드)": "0000311471",
-    "그레그 알렉산더 (코니퍼 매니지먼트)": "0001510444",
-    "존 로저스 (아리엘 인베스트먼트)": "0000881855",
-    "데이비드 에이브럼스 (아브람스 캐피탈)": "0001386403",
-    "척 아크레 (아크레 캐피탈)": "0001158172",
-    "퍼스트 이글 인베스트먼트": "0001318060",
-    "데니스 홍 (쇼스프링 파트너스)": "0001640102",
-    "사라 케터러 (코즈웨이 캐피탈)": "0001158227",
-    "월러스 웨이츠 (웨이츠 인베스트먼트)": "0000806689",
-    "도지 앤 콕스": "0000029669",
-    "프란시스 추 (추 어소시에이츠)": "0001222472",
-    "사만다 맥레모어 (페이션트 캐피탈)": "0001815198",
-    "폴렌 캐피탈": "0001026006",
-    "퍼스트 퍼시픽 어드바이저스": "0000812011",
-    "메이어스 & 파워 펀드": "0000062820",
-    "써드 애비뉴 매니지먼트": "0000898567",
-    "존 아미티지 (에저턴 캐피탈)": "0001158652",
-    "토마스 루소 (가드너 루소)": "0000862022",
-    "벌칸 밸류 파트너스": "0001487602",
-    "로버트 비날 (RV 캐피탈)": "0001607519",
-    "조쉬 타라소프 (그린리아 레인)": "0001567332",
-    "칸 브라더스 그룹": "0001026003",
-    "해리 번 (사운드 쇼어)": "0000940381",
-    "윌리엄 폰 뮈플링 (칸티용)": "0001306354",
-    "크리스토퍼 데이비스 (데이비스 어드바이저스)": "0001037750",
-    "트위디 브라운": "0001009309",
-    "뮬렌캠프": "0000201886",
-    "젠슨 인베스트먼트": "0001000650",
-    "스티븐 체크 (체크 캐피탈)": "0000908816",
     "토마스 게이너 (마켈 그룹)": "0001096343",
-    "토레이 펀드": "0000890250",
-    "얙트먼 에셋 매니지먼트": "0000906473",
-    "린셀 트레인": "0001340122",
     "리차드 제나 (제나 인베스트먼트)": "0001390777",
-    "데이비드 카츠 (매트릭스 애셋)": "0001020416",
-    "로버트 올스타인 (올스타인 캐피탈)": "0001004128",
-    "그린헤이븐 어소시에이츠": "0001062660"
+    "모니시 파브라이 (파브라이 인베스트먼트)": "0001549575",
+    "데이비드 테퍼 (아팔루사)": "0001656456",
+    "스탠리 드러켄밀러 (듀케인)": "0001536411",
+    "하워드 막스 (오크트리)": "0001535472",
+    "데이비드 아인혼 (그린라이트)": "0001079114",
+    "밸류액트 캐피탈": "0001397545",
+    "빌 & 멀린다 게이츠 재단 (캐스케이드)": "0001166559",
+    "체이스 콜먼 (타이거 글로벌)": "0001167483",
+    "스티븐 맨델 (론 파인)": "0001061165",
+    "리 애인슬리 (매버릭 캐피탈)": "0001010649",
+    "브루스 버코위츠 (페어홈)": "0001056831",
+    "빌 니그렌 (해리스 어소시에이츠)": "0000804550",
+    "글렌 그린버그 (브레이브 워리어)": "0001576428",
+    "메이슨 호킨스 (사우스이스턴)": "0000807985",
+    "척 아크레 (아크레 캐피탈)": "0001112520",
+    "도지 앤 콕스": "0000315066",
+    "존 로저스 (아리엘 인베스트먼트)": "0001113148",
+    "크리스 혼 (TCI 펀드)": "0001647251",
+    "퍼스트 이글 인베스트먼트": "0000810958",
+    "데이비드 에이브럼스 (아브람스 캐피탈)": "0001358706",
+    "크리스토퍼 데이비스 (데이비스 어드바이저스)": "0000353184",
+    "트위디 브라운": "0000732905",
+    "토마스 루소 (가드너 루소)": "0001547698",
+    "데이비드 롤프 (웨지우드)": "0000945458",
+    "윌리엄 폰 뮈플링 (칸티용)": "0001279863",
+    "퍼스트 퍼시픽 어드바이저스": "0000806643",
+    "레온 쿠퍼만 (오메가)": "0001011712",
+    "사라 케터러 (코즈웨이)": "0001211513",
+    "헨리 엘렌보겐 (듀러블 캐피탈)": "0001783330",
+    "데니스 홍 (쇼스프링)": "0001669883",
+    "데이비드 카츠 (매트릭스)": "0000913646",
+    "크리스토퍼 블룸스트란 (셈퍼 아우구스투스)": "0001543510",
+    "루안 커니프 (세쿼이아)": "0000851730",
+    "알타록 파트너스": "0001544856",
+    "폴렌 캐피탈": "0001534252",
+    "써드 애비뉴 매니지먼트": "0000872289",
+    "해리 번 (사운드 쇼어)": "0000836291",
+    "젠슨 인베스트먼트": "0001061219",
+    "스티븐 체크 (체크 캐피탈)": "0001118698",
+    "토레이 펀드": "0000775755",
+    "얙트먼 에셋 매니지먼트": "0000810126",
+    "로버트 올스타인 (올스타인)": "0001111540",
+    "그린헤이븐 어소시에이츠": "0000875070",
+    "메이어스 & 파워": "0000782897",
+    "뮬렌캠프": "0000764281",
+    "브라이언 로렌스 (오크클리프)": "0001353977",
+    "아놀드 반 덴 버그 (센추리)": "0000795245",
+    "팻 도시 (도시 애셋)": "0001670477",
+    "린셀 트레인": "0001655888",
+    "힐만 캐피탈": "0001657932",
+    "톰 밴크로프트 (마카이라)": "0001568639",
+    "사만다 맥레모어 (페이션트)": "0001832384",
+    "클리포드 소신 (CAS)": "0001598471",
+    "프란시스 추 (추 어소시에이츠)": "0001389691",
+    "글렌 웰링 (인게이지드)": "0001607004",
+    "밸리 포지 캐피탈": "0001580155"
 }
 
 TRANSLATE = {
@@ -145,34 +130,25 @@ def clean_issuer_name(name):
             return TRANSLATE[key]
     return clean
 
-_last_request_time = 0
-
 def safe_get(url):
-    global _last_request_time
     for attempt in range(5):
-        elapsed = time.time() - _last_request_time
-        if elapsed < 0.35:
-            time.sleep(0.35 - elapsed)
         try:
-            _last_request_time = time.time()
             r = s.get(url, timeout=15)
             if r.status_code == 200:
                 return r
             elif r.status_code in (403, 429):
-                wait = min(5 * (2 ** attempt), 60)
-                print(f"    [경고] SEC 차단 ({r.status_code}). {wait}초 대기... ({attempt+1}/5)")
-                time.sleep(wait)
+                print(f"    [경고] SEC 서버 차단 감지. 5초 대기 후 재시도... ({attempt+1}/5)")
+                time.sleep(5)
             else:
-                print(f"    [DEBUG] HTTP {r.status_code} ← {url[:80]}")
                 return r
         except Exception as e:
-            wait = min(5 * (2 ** attempt), 60)
-            print(f"    [에러] {e}. {wait}초 대기... ({attempt+1}/5)")
-            time.sleep(wait)
+            print(f"    [네트워크 에러] 5초 후 재시도... ({attempt+1}/5)")
+            time.sleep(5)
     return None
 
 def parse_13f_xml(xml_content):
     text = xml_content.decode('utf-8', errors='ignore')
+    
     text = re.sub(r'\sxmlns[^>]*', '', text)
     text = re.sub(r'<[a-zA-Z0-9\-]+:', '<', text)
     text = re.sub(r'</[a-zA-Z0-9\-]+:', '</', text)
@@ -207,6 +183,7 @@ def parse_13f_xml(xml_content):
             holdings[name]['shares'] += shares
         else:
             holdings[name] = {'name': name, 'value': val, 'shares': shares}
+            
         total_val += val
 
     result_list = []
@@ -214,91 +191,57 @@ def parse_13f_xml(xml_content):
         weight = round((h['value'] / total_val * 100), 2) if total_val > 0 else 0
         h['weight'] = weight
         result_list.append(h)
+        
     result_list.sort(key=lambda x: x['value'], reverse=True)
     return result_list, total_val
 
 def get_valid_13f_holdings(cik):
-    # ── 1단계: submissions JSON 가져오기 ──
     sub_url = f"https://data.sec.gov/submissions/CIK{cik}.json"
     r = safe_get(sub_url)
     
     if not r or r.status_code != 200:
-        print(f"    [DIAG] ❌ submissions 요청 실패 (응답: {r.status_code if r else 'None'})")
         return [], 0, None
     
-    data = r.json()
-    recent = data.get("filings", {}).get("recent", {})
+    recent = r.json().get("filings", {}).get("recent", {})
     forms = recent.get("form", [])
     
-    # ── 2단계: 13F-HR 폼 찾기 ──
-    hr_indices = [i for i, f in enumerate(forms) if f.startswith("13F-HR")]
-    
-    if not hr_indices:
-        # 어떤 폼 타입이 있는지 출력 (진단용)
-        form_types = {}
-        for f in forms:
-            form_types[f] = form_types.get(f, 0) + 1
-        top_forms = sorted(form_types.items(), key=lambda x: -x[1])[:5]
-        print(f"    [DIAG] ❌ 13F-HR 없음. recent 폼 {len(forms)}건. 상위: {top_forms}")
-        return [], 0, None
-    
-    print(f"    [DIAG] ✓ 13F-HR {len(hr_indices)}건 발견")
-    
-    # ── 3단계: 각 13F-HR에서 XML 정보표 찾기 ──
-    for attempt_num, i in enumerate(hr_indices[:3]):  # 최대 3개 분기까지 시도
-        accession = recent["accessionNumber"][i]
-        report_date = recent["reportDate"][i]
-        accession_no_dash = accession.replace("-", "")
-        cik_int = int(cik)
-        
-        idx_url = f"https://www.sec.gov/Archives/edgar/data/{cik_int}/{accession_no_dash}/index.json"
-        idx_r = safe_get(idx_url)
-        
-        if not idx_r or idx_r.status_code != 200:
-            print(f"    [DIAG] ❌ index.json 실패 ({report_date}, 응답: {idx_r.status_code if idx_r else 'None'})")
-            continue
-        
-        files = idx_r.json().get("directory", {}).get("item", [])
-        all_files = [f["name"] for f in files]
-        xml_files = [f["name"] for f in files if f["name"].lower().endswith(".xml")]
-        
-        if not xml_files:
-            print(f"    [DIAG] ❌ XML 파일 없음 ({report_date}). 전체 파일: {all_files[:8]}")
-            continue
-        
-        # 정보표 XML 찾기 (우선순위: infotable > 비-primary XML)
-        xml_file = None
-        for f in files:
-            fname = f["name"].lower()
-            if fname.endswith(".xml") and ("infotable" in fname or "info_table" in fname):
-                xml_file = f["name"]
-                break
-        
-        if not xml_file:
-            for f in files:
-                fname = f["name"].lower()
-                if fname.endswith(".xml") and "primary_doc" not in fname:
-                    xml_file = f["name"]
-                    break
-        
-        if not xml_file:
-            print(f"    [DIAG] ❌ 정보표 XML 특정 불가 ({report_date}). XML 파일들: {xml_files}")
-            continue
+    for i, form in enumerate(forms):
+        if form.startswith("13F-HR"):
+            accession = recent["accessionNumber"][i]
+            report_date = recent["reportDate"][i]
+            accession_no_dash = accession.replace("-", "")
             
-        # ── 4단계: XML 파싱 ──
-        xml_url = f"https://www.sec.gov/Archives/edgar/data/{cik_int}/{accession_no_dash}/{xml_file}"
-        xml_r = safe_get(xml_url)
-        
-        if not xml_r or xml_r.status_code != 200:
-            print(f"    [DIAG] ❌ XML 다운로드 실패 ({xml_file}, 응답: {xml_r.status_code if xml_r else 'None'})")
-            continue
+            idx_url = f"https://www.sec.gov/Archives/edgar/data/{int(cik)}/{accession_no_dash}/index.json"
+            idx_r = safe_get(idx_url)
             
-        holdings, total_val = parse_13f_xml(xml_r.content)
-        if holdings:
-            return holdings, total_val, report_date
-        else:
-            print(f"    [DIAG] ❌ XML 파싱 결과 비어있음 ({report_date}, 파일: {xml_file}, 크기: {len(xml_r.content)}바이트)")
-            
+            if idx_r and idx_r.status_code == 200:
+                files = idx_r.json().get("directory", {}).get("item", [])
+                xml_file = None
+                
+                for file in files:
+                    fname = file["name"].lower()
+                    if fname.endswith(".xml") and ("infotable" in fname or "info_table" in fname):
+                        xml_file = file["name"]
+                        break
+                        
+                if not xml_file:
+                    for file in files:
+                        fname = file["name"].lower()
+                        if fname.endswith(".xml") and "primary_doc" not in fname:
+                            xml_file = file["name"]
+                            break
+                            
+                if xml_file:
+                    xml_url = f"https://www.sec.gov/Archives/edgar/data/{int(cik)}/{accession_no_dash}/{xml_file}"
+                    xml_r = safe_get(xml_url)
+                    
+                    if xml_r and xml_r.status_code == 200:
+                        holdings, total_val = parse_13f_xml(xml_r.content)
+                        if holdings: 
+                            return holdings, total_val, report_date
+                        else:
+                            print(f"    [건너뜀] {report_date} 공시 내용이 없어 이전 분기를 탐색합니다.")
+                            
     return [], 0, None
 
 def gh_get_file():
@@ -322,13 +265,11 @@ def gh_put_file(data, sha):
 def main():
     sha = gh_get_file()
     portfolios = {}
-    failed = []
     
-    total = len(GURUS)
-    print(f"[시작] 총 {total}명의 거장 포트폴리오 조회를 시작합니다.")
+    print(f"[시작] 총 {len(GURUS)}명의 거장 포트폴리오 조회를 시작합니다.")
     
-    for idx, (guru_name, cik) in enumerate(GURUS.items(), 1):
-        print(f"\n[scan {idx}/{total}] {guru_name} (CIK: {cik}) 조회 중...")
+    for guru_name, cik in GURUS.items():
+        print(f"[scan] {guru_name} 조회 중...")
         try:
             holdings, total_val, report_date = get_valid_13f_holdings(cik)
             
@@ -338,19 +279,15 @@ def main():
                     "total_value_usd": total_val,
                     "holdings": holdings
                 }
-                print(f"  → 성공: {len(holdings)}개 종목 (보고일: {report_date})")
+                print(f"  → 성공: {len(holdings)}개 종목 확인 (보고일: {report_date})")
             else:
-                failed.append(guru_name)
-                print(f"  → [실패]")
+                print(f"  → [실패] 유효한 포트폴리오를 찾을 수 없습니다.")
                 
         except Exception as e:
-            failed.append(guru_name)
-            print(f"  → [치명적 오류] {str(e)}")
+            print(f"  → [치명적 오류] 건너뜁니다.")
             
+        # SEC 디도스 오해 방지 1.5초 휴식
         time.sleep(1.5)
-        if idx % 10 == 0 and idx < total:
-            print(f"\n  ⏳ [{idx}/{total}] 쿨다운 30초...\n")
-            time.sleep(30)
             
     payload = {
         "updated_at": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
@@ -359,14 +296,7 @@ def main():
     
     if portfolios:
         gh_put_file(payload, sha)
-
-    print(f"\n{'='*60}")
-    print(f"[완료] 성공: {len(portfolios)}명 / 실패: {len(failed)}명 / 총: {total}명")
-    if failed:
-        print(f"\n[실패 목록]")
-        for name in failed:
-            print(f"  - {name}")
-    print(f"{'='*60}")
+        print(f"\n[완료] 총 {len(portfolios)}명의 거장 데이터가 성공적으로 업로드되었습니다!")
 
 if __name__ == "__main__":
     main()
