@@ -1,5 +1,5 @@
 """
-fetch_13f.py — 미국 가치투자 거장 13F 공시 수집 (84명 풀버전 & SEC 차단 완벽 우회)
+fetch_13f.py — 미국 가치투자 거장 13F 공시 수집 (진단 로깅 포함)
 """
 
 import os, sys, json, time, re, base64
@@ -14,7 +14,6 @@ GH_BRANCH  = "main"
 GH_API     = "https://api.github.com"
 
 s = requests.Session()
-# SEC는 User-Agent가 없거나 불량하면 403 에러를 냅니다.
 s.headers.update({
     "User-Agent": "BuffettArchive buffettarchive1@gmail.com",
     "Accept-Encoding": "gzip, deflate"
@@ -26,7 +25,6 @@ GH_HEADERS = {
     "X-GitHub-Api-Version": "2022-11-28",
 }
 
-# 데이터로마 슈퍼 인베스터 84명 풀 리스트
 GURUS = {
     "마이클 버리 (사이언 에셋)": "0001649339",
     "워런 버핏 (버크셔 해서웨이)": "0001067983",
@@ -147,42 +145,34 @@ def clean_issuer_name(name):
             return TRANSLATE[key]
     return clean
 
-# ──────────────────────────────────────────────────────
-# [핵심 수정 1] 글로벌 요청 간 딜레이를 강제하는 래퍼
-# SEC 공정접근 기준: ~10 req/s이지만 GitHub Actions 공유 IP는
-# 훨씬 낮은 실효 한도를 받으므로 0.35초 간격을 최소로 유지합니다.
-# ──────────────────────────────────────────────────────
 _last_request_time = 0
 
 def safe_get(url):
     global _last_request_time
     for attempt in range(5):
-        # 요청 간 최소 0.35초 간격 보장 (SEC 초당 ~2.8요청)
         elapsed = time.time() - _last_request_time
         if elapsed < 0.35:
             time.sleep(0.35 - elapsed)
-
         try:
             _last_request_time = time.time()
             r = s.get(url, timeout=15)
             if r.status_code == 200:
                 return r
             elif r.status_code in (403, 429):
-                # [핵심 수정 2] 점진적 백오프: 5→10→20→40→60초
                 wait = min(5 * (2 ** attempt), 60)
-                print(f"    [경고] SEC 서버 차단 감지 (코드 {r.status_code}). {wait}초 대기 후 재시도... ({attempt+1}/5)")
+                print(f"    [경고] SEC 차단 ({r.status_code}). {wait}초 대기... ({attempt+1}/5)")
                 time.sleep(wait)
             else:
+                print(f"    [DEBUG] HTTP {r.status_code} ← {url[:80]}")
                 return r
         except Exception as e:
             wait = min(5 * (2 ** attempt), 60)
-            print(f"    [네트워크 에러] {e}. {wait}초 후 재시도... ({attempt+1}/5)")
+            print(f"    [에러] {e}. {wait}초 대기... ({attempt+1}/5)")
             time.sleep(wait)
     return None
 
 def parse_13f_xml(xml_content):
     text = xml_content.decode('utf-8', errors='ignore')
-    
     text = re.sub(r'\sxmlns[^>]*', '', text)
     text = re.sub(r'<[a-zA-Z0-9\-]+:', '<', text)
     text = re.sub(r'</[a-zA-Z0-9\-]+:', '</', text)
@@ -217,7 +207,6 @@ def parse_13f_xml(xml_content):
             holdings[name]['shares'] += shares
         else:
             holdings[name] = {'name': name, 'value': val, 'shares': shares}
-            
         total_val += val
 
     result_list = []
@@ -225,57 +214,91 @@ def parse_13f_xml(xml_content):
         weight = round((h['value'] / total_val * 100), 2) if total_val > 0 else 0
         h['weight'] = weight
         result_list.append(h)
-        
     result_list.sort(key=lambda x: x['value'], reverse=True)
     return result_list, total_val
 
 def get_valid_13f_holdings(cik):
+    # ── 1단계: submissions JSON 가져오기 ──
     sub_url = f"https://data.sec.gov/submissions/CIK{cik}.json"
     r = safe_get(sub_url)
     
     if not r or r.status_code != 200:
+        print(f"    [DIAG] ❌ submissions 요청 실패 (응답: {r.status_code if r else 'None'})")
         return [], 0, None
     
-    recent = r.json().get("filings", {}).get("recent", {})
+    data = r.json()
+    recent = data.get("filings", {}).get("recent", {})
     forms = recent.get("form", [])
     
-    for i, form in enumerate(forms):
-        if form.startswith("13F-HR"):
-            accession = recent["accessionNumber"][i]
-            report_date = recent["reportDate"][i]
-            accession_no_dash = accession.replace("-", "")
+    # ── 2단계: 13F-HR 폼 찾기 ──
+    hr_indices = [i for i, f in enumerate(forms) if f.startswith("13F-HR")]
+    
+    if not hr_indices:
+        # 어떤 폼 타입이 있는지 출력 (진단용)
+        form_types = {}
+        for f in forms:
+            form_types[f] = form_types.get(f, 0) + 1
+        top_forms = sorted(form_types.items(), key=lambda x: -x[1])[:5]
+        print(f"    [DIAG] ❌ 13F-HR 없음. recent 폼 {len(forms)}건. 상위: {top_forms}")
+        return [], 0, None
+    
+    print(f"    [DIAG] ✓ 13F-HR {len(hr_indices)}건 발견")
+    
+    # ── 3단계: 각 13F-HR에서 XML 정보표 찾기 ──
+    for attempt_num, i in enumerate(hr_indices[:3]):  # 최대 3개 분기까지 시도
+        accession = recent["accessionNumber"][i]
+        report_date = recent["reportDate"][i]
+        accession_no_dash = accession.replace("-", "")
+        cik_int = int(cik)
+        
+        idx_url = f"https://www.sec.gov/Archives/edgar/data/{cik_int}/{accession_no_dash}/index.json"
+        idx_r = safe_get(idx_url)
+        
+        if not idx_r or idx_r.status_code != 200:
+            print(f"    [DIAG] ❌ index.json 실패 ({report_date}, 응답: {idx_r.status_code if idx_r else 'None'})")
+            continue
+        
+        files = idx_r.json().get("directory", {}).get("item", [])
+        all_files = [f["name"] for f in files]
+        xml_files = [f["name"] for f in files if f["name"].lower().endswith(".xml")]
+        
+        if not xml_files:
+            print(f"    [DIAG] ❌ XML 파일 없음 ({report_date}). 전체 파일: {all_files[:8]}")
+            continue
+        
+        # 정보표 XML 찾기 (우선순위: infotable > 비-primary XML)
+        xml_file = None
+        for f in files:
+            fname = f["name"].lower()
+            if fname.endswith(".xml") and ("infotable" in fname or "info_table" in fname):
+                xml_file = f["name"]
+                break
+        
+        if not xml_file:
+            for f in files:
+                fname = f["name"].lower()
+                if fname.endswith(".xml") and "primary_doc" not in fname:
+                    xml_file = f["name"]
+                    break
+        
+        if not xml_file:
+            print(f"    [DIAG] ❌ 정보표 XML 특정 불가 ({report_date}). XML 파일들: {xml_files}")
+            continue
             
-            idx_url = f"https://www.sec.gov/Archives/edgar/data/{int(cik)}/{accession_no_dash}/index.json"
-            idx_r = safe_get(idx_url)
+        # ── 4단계: XML 파싱 ──
+        xml_url = f"https://www.sec.gov/Archives/edgar/data/{cik_int}/{accession_no_dash}/{xml_file}"
+        xml_r = safe_get(xml_url)
+        
+        if not xml_r or xml_r.status_code != 200:
+            print(f"    [DIAG] ❌ XML 다운로드 실패 ({xml_file}, 응답: {xml_r.status_code if xml_r else 'None'})")
+            continue
             
-            if idx_r and idx_r.status_code == 200:
-                files = idx_r.json().get("directory", {}).get("item", [])
-                xml_file = None
-                
-                for file in files:
-                    fname = file["name"].lower()
-                    if fname.endswith(".xml") and ("infotable" in fname or "info_table" in fname):
-                        xml_file = file["name"]
-                        break
-                        
-                if not xml_file:
-                    for file in files:
-                        fname = file["name"].lower()
-                        if fname.endswith(".xml") and "primary_doc" not in fname:
-                            xml_file = file["name"]
-                            break
-                            
-                if xml_file:
-                    xml_url = f"https://www.sec.gov/Archives/edgar/data/{int(cik)}/{accession_no_dash}/{xml_file}"
-                    xml_r = safe_get(xml_url)
-                    
-                    if xml_r and xml_r.status_code == 200:
-                        holdings, total_val = parse_13f_xml(xml_r.content)
-                        if holdings: 
-                            return holdings, total_val, report_date
-                        else:
-                            print(f"    [건너뜀] {report_date} 공시 내용이 없어 이전 분기를 탐색합니다.")
-                            
+        holdings, total_val = parse_13f_xml(xml_r.content)
+        if holdings:
+            return holdings, total_val, report_date
+        else:
+            print(f"    [DIAG] ❌ XML 파싱 결과 비어있음 ({report_date}, 파일: {xml_file}, 크기: {len(xml_r.content)}바이트)")
+            
     return [], 0, None
 
 def gh_get_file():
@@ -299,13 +322,13 @@ def gh_put_file(data, sha):
 def main():
     sha = gh_get_file()
     portfolios = {}
-    failed = []   # [핵심 수정 3] 실패 목록 추적
+    failed = []
     
     total = len(GURUS)
     print(f"[시작] 총 {total}명의 거장 포트폴리오 조회를 시작합니다.")
     
     for idx, (guru_name, cik) in enumerate(GURUS.items(), 1):
-        print(f"[scan {idx}/{total}] {guru_name} 조회 중...")
+        print(f"\n[scan {idx}/{total}] {guru_name} (CIK: {cik}) 조회 중...")
         try:
             holdings, total_val, report_date = get_valid_13f_holdings(cik)
             
@@ -315,23 +338,18 @@ def main():
                     "total_value_usd": total_val,
                     "holdings": holdings
                 }
-                print(f"  → 성공: {len(holdings)}개 종목 확인 (보고일: {report_date})")
+                print(f"  → 성공: {len(holdings)}개 종목 (보고일: {report_date})")
             else:
                 failed.append(guru_name)
-                print(f"  → [실패] 유효한 포트폴리오를 찾을 수 없습니다.")
+                print(f"  → [실패]")
                 
         except Exception as e:
             failed.append(guru_name)
-            print(f"  → [치명적 오류] {str(e)} - 건너뜁니다.")
+            print(f"  → [치명적 오류] {str(e)}")
             
-        # 구루 간 대기 (safe_get 내부 딜레이와 별도)
         time.sleep(1.5)
-
-        # ──────────────────────────────────────────────
-        # [핵심 수정 3] 매 10명마다 쿨다운 — SEC IP 차단 해제 대기
-        # ──────────────────────────────────────────────
         if idx % 10 == 0 and idx < total:
-            print(f"\n  ⏳ [{idx}/{total}] SEC 쿨다운 30초 대기...\n")
+            print(f"\n  ⏳ [{idx}/{total}] 쿨다운 30초...\n")
             time.sleep(30)
             
     payload = {
@@ -342,14 +360,13 @@ def main():
     if portfolios:
         gh_put_file(payload, sha)
 
-    # 결과 요약
-    print(f"\n{'='*50}")
+    print(f"\n{'='*60}")
     print(f"[완료] 성공: {len(portfolios)}명 / 실패: {len(failed)}명 / 총: {total}명")
     if failed:
-        print(f"[실패 목록]")
+        print(f"\n[실패 목록]")
         for name in failed:
             print(f"  - {name}")
-    print(f"{'='*50}")
+    print(f"{'='*60}")
 
 if __name__ == "__main__":
     main()
