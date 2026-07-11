@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-07-11T20:58:36Z",
+  "updated_at": "2026-07-11T21:11:37Z",
   "portfolios": {
-    "Warren Buffett - Berkshire Hathaway": {
+    "워런 버핏 (버크셔 해서웨이)": {
       "report_date": "2026-03-31",
       "total_value_usd": 263095703570000,
       "holdings": [
@@ -163,7 +163,7 @@
         }
       ]
     },
-    "Michael Burry - Scion Asset Management": {
+    "마이클 버리 (사이언 에셋)": {
       "report_date": "2025-09-30",
       "total_value_usd": 1381198076000,
       "holdings": [
@@ -217,7 +217,7 @@
         }
       ]
     },
-    "Bill Ackman - Pershing Square Capital Management": {
+    "빌 애크먼 (퍼싱 스퀘어)": {
       "report_date": "2026-03-31",
       "total_value_usd": 13714299861000,
       "holdings": [
@@ -283,7 +283,7 @@
         }
       ]
     },
-    "Seth Klarman - Baupost Group": {
+    "세스 클라만 (바우포스트 그룹)": {
       "report_date": "2026-03-31",
       "total_value_usd": 5115380000,
       "holdings": [
@@ -421,7 +421,7 @@
         }
       ]
     },
-    "Li Lu - Himalaya Capital Management": {
+    "리 루 (히말라야 캐피탈)": {
       "report_date": "2026-03-31",
       "total_value_usd": 12827766987000,
       "holdings": [
@@ -631,7 +631,7 @@
         }
       ]
     },
-    "Nelson Peltz - Trian Fund Management": {
+    "넬슨 펠츠 (트리안 펀드)": {
       "report_date": "2026-03-31",
       "total_value_usd": 3859778188000,
       "holdings": [
@@ -685,7 +685,7 @@
         }
       ]
     },
-    "Viking Global Investors": {
+    "바이킹 글로벌 (안드레아스 할보센)": {
       "report_date": "2026-03-31",
       "total_value_usd": 35748670967000,
       "holdings": [
@@ -1153,7 +1153,7 @@
         }
       ]
     },
-    "Carl Icahn - Icahn Capital Management": {
+    "칼 아이칸 (아이칸 캐피탈)": {
       "report_date": "2026-03-31",
       "total_value_usd": 8553640766000,
       "holdings": [
@@ -1231,7 +1231,7 @@
         }
       ]
     },
-    "Daniel Loeb - Third Point": {
+    "단 롭 (서드 포인트)": {
       "report_date": "2026-03-31",
       "total_value_usd": 2082795760000,
       "holdings": [
@@ -1423,7 +1423,7 @@
         }
       ]
     },
-    "Bill Miller - Miller Value Partners": {
+    "빌 밀러 (밀러 밸류 파트너스)": {
       "report_date": "2026-03-31",
       "total_value_usd": 2984059912000,
       "holdings": [
@@ -1669,7 +1669,7 @@
         }
       ]
     },
-    "Prem Watsa - Fairfax Financial Holdings": {
+    "프렘 왓사 (페어팩스)": {
       "report_date": "2026-03-31",
       "total_value_usd": 1942669475000,
       "holdings": [
@@ -1843,7 +1843,7 @@
         }
       ]
     },
-    "Thomas Gayner - Markel Group": {
+    "토마스 게이너 (마켈 그룹)": {
       "report_date": "2026-03-31",
       "total_value_usd": 11938885174000,
       "holdings": [
@@ -2605,7 +2605,7 @@
         }
       ]
     },
-    "Richard Pzena - Pzena Investment Management": {
+    "리차드 프제나 (프제나 인베스트먼트)": {
       "report_date": "2026-03-31",
       "total_value_usd": 30796447662000,
       "holdings": [
@@ -3559,7 +3559,7 @@
         }
       ]
     },
-    "Mohnish Pabrai - Pabrai Investments": {
+    "모니시 파브라이 (파브라이 인베스트먼트)": {
       "report_date": "2026-03-31",
       "total_value_usd": 422885142000,
       "holdings": [
@@ -3583,7 +3583,7 @@
         }
       ]
     },
-    "David Tepper - Appaloosa Management": {
+    "데이비드 테퍼 (아팔루사)": {
       "report_date": "2026-03-31",
       "total_value_usd": 5933477986000,
       "holdings": [
@@ -3775,7 +3775,7 @@
         }
       ]
     },
-    "Stephen Mandel - Lone Pine Capital": {
+    "스티븐 맨델 (론 파인)": {
       "report_date": "2026-03-31",
       "total_value_usd": 12543849391000,
       "holdings": [
@@ -3997,7 +3997,7 @@
         }
       ]
     },
-    "Howard Marks - Oaktree Capital Management": {
+    "하워드 막스 (오크트리)": {
       "report_date": "2026-03-31",
       "total_value_usd": 2515203115000,
       "holdings": [
@@ -4147,7 +4147,7 @@
         }
       ]
     },
-    "David Einhorn - Greenlight Capital": {
+    "데이비드 아인혼 (그린라이트)": {
       "report_date": "2023-12-31",
       "total_value_usd": 2047998727000,
       "holdings": [
@@ -4387,7 +4387,7 @@
         }
       ]
     },
-    "ValueAct Capital": {
+    "밸류액트 캐피탈": {
       "report_date": "2022-06-30",
       "total_value_usd": 0,
       "holdings": [
@@ -4399,7 +4399,145 @@
         }
       ]
     },
-    "Chase Coleman - Tiger Global Management": {
+    "빌 & 멀린다 게이츠 재단 (캐스케이드)": {
+      "report_date": "2026-03-31",
+      "total_value_usd": 31665505891000,
+      "holdings": [
+        {
+          "name": "Berkshire Hathaway",
+          "value": 8169547277000,
+          "shares": 17048304,
+          "weight": 25.8
+        },
+        {
+          "name": "Waste Mgmt",
+          "value": 6351934228000,
+          "shares": 27642344,
+          "weight": 20.06
+        },
+        {
+          "name": "Canadian Natl Ry",
+          "value": 5326238797000,
+          "shares": 51826786,
+          "weight": 16.82
+        },
+        {
+          "name": "Caterpillar",
+          "value": 4501281374000,
+          "shares": 6353614,
+          "weight": 14.22
+        },
+        {
+          "name": "Deere &",
+          "value": 2003871027000,
+          "shares": 3557378,
+          "weight": 6.33
+        },
+        {
+          "name": "Ecolab",
+          "value": 1388104065000,
+          "shares": 5218044,
+          "weight": 4.38
+        },
+        {
+          "name": "Walmart",
+          "value": 1042768482000,
+          "shares": 8390477,
+          "weight": 3.29
+        },
+        {
+          "name": "Fedex",
+          "value": 849262057000,
+          "shares": 2384362,
+          "weight": 2.68
+        },
+        {
+          "name": "Coca-Cola Femsa Sab De Cv",
+          "value": 606245838000,
+          "shares": 6214719,
+          "weight": 1.91
+        },
+        {
+          "name": "Waste Connections",
+          "value": 331243587000,
+          "shares": 2039175,
+          "weight": 1.05
+        },
+        {
+          "name": "Madison Square Grdn Sprt Cor",
+          "value": 190399288000,
+          "shares": 592406,
+          "weight": 0.6
+        },
+        {
+          "name": "Coupang",
+          "value": 174603090000,
+          "shares": 9248045,
+          "weight": 0.55
+        },
+        {
+          "name": "Anheuser Busch Inbev Sa Nv",
+          "value": 118137110000,
+          "shares": 1703000,
+          "weight": 0.37
+        },
+        {
+          "name": "Paccar",
+          "value": 115500000000,
+          "shares": 1000000,
+          "weight": 0.36
+        },
+        {
+          "name": "West Pharmaceutical Svsc",
+          "value": 111409480000,
+          "shares": 444500,
+          "weight": 0.35
+        },
+        {
+          "name": "Mcdonalds",
+          "value": 104083571000,
+          "shares": 334900,
+          "weight": 0.33
+        },
+        {
+          "name": "Schrodinger",
+          "value": 79311703000,
+          "shares": 6981664,
+          "weight": 0.25
+        },
+        {
+          "name": "Danaher",
+          "value": 70720800000,
+          "shares": 373000,
+          "weight": 0.22
+        },
+        {
+          "name": "크래프트 하인즈 (KHC)",
+          "value": 55608774000,
+          "shares": 2472600,
+          "weight": 0.18
+        },
+        {
+          "name": "Hormel Foods",
+          "value": 47231819000,
+          "shares": 2085290,
+          "weight": 0.15
+        },
+        {
+          "name": "On  Ag",
+          "value": 17010000000,
+          "shares": 500000,
+          "weight": 0.05
+        },
+        {
+          "name": "Veralto",
+          "value": 10993524000,
+          "shares": 124333,
+          "weight": 0.03
+        }
+      ]
+    },
+    "체이스 콜먼 (타이거 글로벌)": {
       "report_date": "2026-03-31",
       "total_value_usd": 22845413829000,
       "holdings": [
@@ -4723,7 +4861,7 @@
         }
       ]
     },
-    "Lee Ainslie - Maverick Capital": {
+    "리 애인슬리 (매버릭 캐피탈)": {
       "report_date": "2026-03-31",
       "total_value_usd": 8670232588000,
       "holdings": [
@@ -6163,7 +6301,7 @@
         }
       ]
     },
-    "Bruce Berkowitz - Fairholme Capital": {
+    "브루스 버코위츠 (페어홈)": {
       "report_date": "2026-03-31",
       "total_value_usd": 1514192261000,
       "holdings": [
@@ -6223,7 +6361,7 @@
         }
       ]
     },
-    "Bill Nygren - Oakmark Funds": {
+    "빌 니그렌 (해리스 어소시에이츠)": {
       "report_date": "2026-03-31",
       "total_value_usd": 75031782060000,
       "holdings": [
@@ -7123,7 +7261,7 @@
         }
       ]
     },
-    "Glenn Greenberg - Brave Warrior Advisors": {
+    "글렌 그린버그 (브레이브 워리어)": {
       "report_date": "2026-03-31",
       "total_value_usd": 4040158246000,
       "holdings": [
@@ -7339,7 +7477,7 @@
         }
       ]
     },
-    "Mason Hawkins - Southeastern Asset Management": {
+    "메이슨 호킨스 (사우스이스턴)": {
       "report_date": "2026-03-31",
       "total_value_usd": 2032773449000,
       "holdings": [
@@ -7633,7 +7771,7 @@
         }
       ]
     },
-    "Chuck Akre - Akre Capital Management": {
+    "척 아크레 (아크레 캐피탈)": {
       "report_date": "2026-03-31",
       "total_value_usd": 6134537825000,
       "holdings": [
@@ -7753,7 +7891,7 @@
         }
       ]
     },
-    "Dodge & Cox Funds": {
+    "도지 앤 콕스": {
       "report_date": "2026-03-31",
       "total_value_usd": 1898434661409000,
       "holdings": [
@@ -30913,7 +31051,7 @@
         }
       ]
     },
-    "John Rogers - Ariel Investments": {
+    "존 로저스 (아리엘 인베스트먼트)": {
       "report_date": "2026-03-31",
       "total_value_usd": 8934260435000,
       "holdings": [
@@ -31543,7 +31681,7 @@
         }
       ]
     },
-    "Chris Hohn - TCI Fund Management": {
+    "크리스 혼 (TCI 펀드)": {
       "report_date": "2026-03-31",
       "total_value_usd": 45170870798000,
       "holdings": [
@@ -31603,7 +31741,7 @@
         }
       ]
     },
-    "First Eagle Investment Management": {
+    "퍼스트 이글 인베스트먼트": {
       "report_date": "2026-03-31",
       "total_value_usd": 400999898000,
       "holdings": [
@@ -32317,7 +32455,7 @@
         }
       ]
     },
-    "David Abrams - Abrams Capital Management": {
+    "데이비드 에이브럼스 (아브람스 캐피탈)": {
       "report_date": "2026-03-31",
       "total_value_usd": 4638238227000,
       "holdings": [
@@ -32383,7 +32521,7 @@
         }
       ]
     },
-    "Christopher Davis - Davis Advisors": {
+    "크리스토퍼 데이비스 (데이비스 어드바이저스)": {
       "report_date": "2026-03-31",
       "total_value_usd": 21781443023000,
       "holdings": [
@@ -33049,7 +33187,7 @@
         }
       ]
     },
-    "Tweedy Browne": {
+    "트위디 브라운": {
       "report_date": "2026-03-31",
       "total_value_usd": 1258817374000,
       "holdings": [
@@ -33613,7 +33751,7 @@
         }
       ]
     },
-    "Thomas Russo - Gardner Russo & Quinn": {
+    "토마스 루소 (가드너 루소)": {
       "report_date": "2026-03-31",
       "total_value_usd": 8496278296000,
       "holdings": [
@@ -34129,7 +34267,7 @@
         }
       ]
     },
-    "David Rolfe - Wedgewood Partners": {
+    "데이비드 롤프 (웨지우드)": {
       "report_date": "2026-03-31",
       "total_value_usd": 484285577000,
       "holdings": [
@@ -34267,7 +34405,7 @@
         }
       ]
     },
-    "William Von Mueffling - Cantillon Capital Management": {
+    "윌리엄 폰 뮈플링 (칸티용)": {
       "report_date": "2026-03-31",
       "total_value_usd": 15050978966000,
       "holdings": [
@@ -34501,7 +34639,7 @@
         }
       ]
     },
-    "First Pacific Advisors": {
+    "퍼스트 퍼시픽 어드바이저스": {
       "report_date": "2026-03-31",
       "total_value_usd": 7139533673000,
       "holdings": [
@@ -35005,7 +35143,7 @@
         }
       ]
     },
-    "Leon Cooperman": {
+    "레온 쿠퍼만 (오메가)": {
       "report_date": "2018-12-31",
       "total_value_usd": 1023044000,
       "holdings": [
@@ -35221,7 +35359,7 @@
         }
       ]
     },
-    "Henry Ellenbogen - Durable Capital Partners": {
+    "헨리 엘렌보겐 (듀러블 캐피탈)": {
       "report_date": "2026-03-31",
       "total_value_usd": 9713928029000,
       "holdings": [
@@ -35449,7 +35587,7 @@
         }
       ]
     },
-    "Dennis Hong - ShawSpring Partners": {
+    "데니스 홍 (쇼스프링)": {
       "report_date": "2026-03-31",
       "total_value_usd": 267608814000,
       "holdings": [
@@ -35527,7 +35665,7 @@
         }
       ]
     },
-    "David Katz - Matrix Asset Advisors": {
+    "데이비드 카츠 (매트릭스)": {
       "report_date": "2026-03-31",
       "total_value_usd": 1090209468000,
       "holdings": [
@@ -36055,7 +36193,7 @@
         }
       ]
     },
-    "Christopher Bloomstran - Semper Augustus": {
+    "크리스토퍼 블룸스트란 (셈퍼 아우구스투스)": {
       "report_date": "2026-03-31",
       "total_value_usd": 837339668000,
       "holdings": [
@@ -36313,7 +36451,7 @@
         }
       ]
     },
-    "AltaRock Partners": {
+    "알타록 파트너스": {
       "report_date": "2026-03-31",
       "total_value_usd": 4126337614000,
       "holdings": [
@@ -36367,7 +36505,7 @@
         }
       ]
     },
-    "Polen Capital Management": {
+    "폴렌 캐피탈": {
       "report_date": "2026-03-31",
       "total_value_usd": 14456164077000,
       "holdings": [
@@ -37669,7 +37807,7 @@
         }
       ]
     },
-    "Third Avenue Management": {
+    "써드 애비뉴 매니지먼트": {
       "report_date": "2026-03-31",
       "total_value_usd": 616036133000,
       "holdings": [
@@ -37993,7 +38131,7 @@
         }
       ]
     },
-    "Steven Check - Check Capital Management": {
+    "스티븐 체크 (체크 캐피탈)": {
       "report_date": "2026-03-31",
       "total_value_usd": 3436041546000,
       "holdings": [
@@ -38287,7 +38425,7 @@
         }
       ]
     },
-    "Torray Funds": {
+    "토레이 펀드": {
       "report_date": "2026-03-31",
       "total_value_usd": 681685832000,
       "holdings": [
@@ -38815,7 +38953,7 @@
         }
       ]
     },
-    "Yacktman Asset Management": {
+    "얙트먼 에셋 매니지먼트": {
       "report_date": "2026-03-31",
       "total_value_usd": 7499157453000,
       "holdings": [
@@ -39259,7 +39397,7 @@
         }
       ]
     },
-    "Robert Olstein - Olstein Capital Management": {
+    "로버트 올스타인 (올스타인)": {
       "report_date": "2026-06-30",
       "total_value_usd": 0,
       "holdings": [
@@ -39271,7 +39409,7 @@
         }
       ]
     },
-    "Greenhaven Associates": {
+    "그린헤이븐 어소시에이츠": {
       "report_date": "2026-03-31",
       "total_value_usd": 6071579036000,
       "holdings": [
@@ -39439,7 +39577,7 @@
         }
       ]
     },
-    "Muhlenkamp": {
+    "뮬렌캠프": {
       "report_date": "2026-03-31",
       "total_value_usd": 379789142000,
       "holdings": [
@@ -39613,7 +39751,7 @@
         }
       ]
     },
-    "Bryan Lawrence - Oakcliff Capital": {
+    "브라이언 로렌스 (오크클리프)": {
       "report_date": "2026-03-31",
       "total_value_usd": 226634133000,
       "holdings": [
@@ -39667,7 +39805,7 @@
         }
       ]
     },
-    "Pat Dorsey - Dorsey Asset Management": {
+    "팻 도시 (도시 애셋)": {
       "report_date": "2026-03-31",
       "total_value_usd": 1255861264000,
       "holdings": [
@@ -39739,7 +39877,7 @@
         }
       ]
     },
-    "Hillman Capital Management": {
+    "힐만 캐피탈": {
       "report_date": "2026-03-31",
       "total_value_usd": 144004744000,
       "holdings": [
@@ -40051,7 +40189,7 @@
         }
       ]
     },
-    "Tom Bancroft - Makaira Partners": {
+    "톰 밴크로프트 (마카이라)": {
       "report_date": "2026-03-31",
       "total_value_usd": 0,
       "holdings": [
@@ -40063,7 +40201,7 @@
         }
       ]
     },
-    "Samantha McLemore - Patient Capital Management": {
+    "사만다 맥레모어 (페이션트)": {
       "report_date": "2026-03-31",
       "total_value_usd": 2735137666000,
       "holdings": [
@@ -40303,7 +40441,7 @@
         }
       ]
     },
-    "Clifford Sosin - CAS Investment Partners": {
+    "클리포드 소신 (CAS)": {
       "report_date": "2026-03-31",
       "total_value_usd": 1748117080000,
       "holdings": [
@@ -40339,7 +40477,7 @@
         }
       ]
     },
-    "Glenn Welling - Engaged Capital": {
+    "글렌 웰링 (인게이지드)": {
       "report_date": "2026-03-31",
       "total_value_usd": 303413763000,
       "holdings": [
@@ -40393,7 +40531,7 @@
         }
       ]
     },
-    "Valley Forge Capital Management": {
+    "밸리 포지 캐피탈": {
       "report_date": "2026-03-31",
       "total_value_usd": 3375637687000,
       "holdings": [
@@ -40441,7 +40579,7 @@
         }
       ]
     },
-    "Lindsell Train": {
+    "린셀 트레인": {
       "report_date": "2026-03-31",
       "total_value_usd": 3136812519000,
       "holdings": [
@@ -40603,7 +40741,7 @@
         }
       ]
     },
-    "Francis Chou - Chou Associates": {
+    "프란시스 추 (추 어소시에이츠)": {
       "report_date": "2026-03-31",
       "total_value_usd": 210266544000,
       "holdings": [
@@ -40789,7 +40927,7 @@
         }
       ]
     },
-    "Guy Spier - Aquamarine Capital": {
+    "가이 스피어 (아쿠아마린 캐피탈)": {
       "report_date": "2022-06-30",
       "total_value_usd": 170229000,
       "holdings": [
@@ -40861,7 +40999,7 @@
         }
       ]
     },
-    "John Armitage - Egerton Capital": {
+    "존 아미티지 (에저턴 캐피탈)": {
       "report_date": "2026-03-31",
       "total_value_usd": 9010197462000,
       "holdings": [
@@ -41011,7 +41149,7 @@
         }
       ]
     },
-    "Duan Yongping - H&H International Investment": {
+    "단 용핑 (H&H 인베스트먼트)": {
       "report_date": "2026-03-31",
       "total_value_usd": 20003996234000,
       "holdings": [
@@ -41131,7 +41269,7 @@
         }
       ]
     },
-    "Norbert Lou - Punch Card Management": {
+    "노버트 루 (펀치 카드)": {
       "report_date": "2014-09-30",
       "total_value_usd": 106583000,
       "holdings": [
@@ -41149,7 +41287,7 @@
         }
       ]
     },
-    "Abrams Bison Investments": {
+    "아브람스 바이슨 인베스트먼트": {
       "report_date": "2026-03-31",
       "total_value_usd": 2310985598000,
       "holdings": [
@@ -41221,7 +41359,7 @@
         }
       ]
     },
-    "Triple Frond Partners": {
+    "트리플 프론드 파트너스": {
       "report_date": "2026-03-31",
       "total_value_usd": 962895000,
       "holdings": [
@@ -41299,7 +41437,7 @@
         }
       ]
     },
-    "Wallace Weitz - Weitz Investment Management": {
+    "월러스 웨이츠 (웨이츠)": {
       "report_date": "2026-03-31",
       "total_value_usd": 240668825000,
       "holdings": [
@@ -41329,7 +41467,7 @@
         }
       ]
     },
-    "Francois Rochon - Giverny Capital": {
+    "프랑수아 로숑 (지베르니)": {
       "report_date": "2026-03-31",
       "total_value_usd": 2731351278000,
       "holdings": [
