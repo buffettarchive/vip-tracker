@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-11T13:15:26Z",
+  "updated_at": "2026-07-11T13:30:02Z",
   "portfolios": {
     "마이클 버리 (사이언 에셋)": {
       "report_date": "2025-09-30",
@@ -60958,6 +60958,1308 @@
           "value": 4664891000,
           "shares": 15341,
           "weight": 0.11
+        }
+      ]
+    },
+    "폴렌 캐피탈": {
+      "report_date": "2026-03-31",
+      "total_value_usd": 14456164077000,
+      "holdings": [
+        {
+          "name": "마이크로소프트 (MSFT)",
+          "value": 1053462402000,
+          "shares": 2845888,
+          "weight": 7.29
+        },
+        {
+          "name": "알파벳 (GOOGL)",
+          "value": 853380096000,
+          "shares": 2974832,
+          "weight": 5.9
+        },
+        {
+          "name": "ELI LILLY & CO",
+          "value": 841181778000,
+          "shares": 914557,
+          "weight": 5.82
+        },
+        {
+          "name": "BROADCOM INC",
+          "value": 834924015000,
+          "shares": 2697567,
+          "weight": 5.78
+        },
+        {
+          "name": "아마존 (AMZN)",
+          "value": 811573863000,
+          "shares": 3896739,
+          "weight": 5.61
+        },
+        {
+          "name": "마스터카드 (MA)",
+          "value": 770169816000,
+          "shares": 1541388,
+          "weight": 5.33
+        },
+        {
+          "name": "SERVICENOW INC",
+          "value": 760021232000,
+          "shares": 7269453,
+          "weight": 5.26
+        },
+        {
+          "name": "SHOPIFY INC",
+          "value": 748105429000,
+          "shares": 6306740,
+          "weight": 5.17
+        },
+        {
+          "name": "비자 (V)",
+          "value": 739206345000,
+          "shares": 2445760,
+          "weight": 5.11
+        },
+        {
+          "name": "ORACLE CORP",
+          "value": 739118451000,
+          "shares": 5024257,
+          "weight": 5.11
+        },
+        {
+          "name": "엔비디아 (NVDA)",
+          "value": 715780775000,
+          "shares": 4104247,
+          "weight": 4.95
+        },
+        {
+          "name": "COSTAR GROUP INC",
+          "value": 507088654000,
+          "shares": 12570368,
+          "weight": 3.51
+        },
+        {
+          "name": "MSCI INC",
+          "value": 501014820000,
+          "shares": 929509,
+          "weight": 3.47
+        },
+        {
+          "name": "ZOETIS INC",
+          "value": 499209768000,
+          "shares": 4223076,
+          "weight": 3.45
+        },
+        {
+          "name": "STARBUCKS CORP",
+          "value": 452921141000,
+          "shares": 5055488,
+          "weight": 3.13
+        },
+        {
+          "name": "AON PLC",
+          "value": 437061344000,
+          "shares": 1354053,
+          "weight": 3.02
+        },
+        {
+          "name": "IDEXX LABS INC",
+          "value": 390969243000,
+          "shares": 695811,
+          "weight": 2.7
+        },
+        {
+          "name": "AIRBNB INC",
+          "value": 287128813000,
+          "shares": 2273747,
+          "weight": 1.99
+        },
+        {
+          "name": "INTUITIVE SURGICAL INC",
+          "value": 279740605000,
+          "shares": 606826,
+          "weight": 1.94
+        },
+        {
+          "name": "메타 (META)",
+          "value": 272713407000,
+          "shares": 476663,
+          "weight": 1.89
+        },
+        {
+          "name": "ACCENTURE PLC IRELAND",
+          "value": 268632941000,
+          "shares": 1354748,
+          "weight": 1.86
+        },
+        {
+          "name": "SYNOPSYS INC",
+          "value": 266130284000,
+          "shares": 671233,
+          "weight": 1.84
+        },
+        {
+          "name": "LAM RESEARCH CORP",
+          "value": 225303412000,
+          "shares": 1054495,
+          "weight": 1.56
+        },
+        {
+          "name": "ISHARES TR",
+          "value": 224216204000,
+          "shares": 847034,
+          "weight": 1.55
+        },
+        {
+          "name": "UBER TECHNOLOGIES INC",
+          "value": 209886531000,
+          "shares": 2917928,
+          "weight": 1.45
+        },
+        {
+          "name": "ROLLINS INC",
+          "value": 116309779000,
+          "shares": 2177678,
+          "weight": 0.8
+        },
+        {
+          "name": "MERCADOLIBRE INC",
+          "value": 59567722000,
+          "shares": 34452,
+          "weight": 0.41
+        },
+        {
+          "name": "TAIWAN SEMICONDUCTOR MANUFAC",
+          "value": 59035081000,
+          "shares": 174686,
+          "weight": 0.41
+        },
+        {
+          "name": "SPOTIFY TECHNOLOGY S A",
+          "value": 52093417000,
+          "shares": 107429,
+          "weight": 0.36
+        },
+        {
+          "name": "BOSTON SCIENTIFIC CORP",
+          "value": 36378606000,
+          "shares": 579739,
+          "weight": 0.25
+        },
+        {
+          "name": "ASML HLDG NV",
+          "value": 21228760000,
+          "shares": 16072,
+          "weight": 0.15
+        },
+        {
+          "name": "NU HLDGS LTD",
+          "value": 17491709000,
+          "shares": 1217238,
+          "weight": 0.12
+        },
+        {
+          "name": "SAP SE",
+          "value": 11415227000,
+          "shares": 66674,
+          "weight": 0.08
+        },
+        {
+          "name": "ARGAN INC",
+          "value": 9793352000,
+          "shares": 17981,
+          "weight": 0.07
+        },
+        {
+          "name": "POWELL INDS INC",
+          "value": 9460784000,
+          "shares": 17485,
+          "weight": 0.07
+        },
+        {
+          "name": "BLOOM ENERGY CORP",
+          "value": 9109128000,
+          "shares": 67231,
+          "weight": 0.06
+        },
+        {
+          "name": "INTUIT",
+          "value": 8583861000,
+          "shares": 19853,
+          "weight": 0.06
+        },
+        {
+          "name": "BEL FUSE INC",
+          "value": 8580255000,
+          "shares": 43339,
+          "weight": 0.06
+        },
+        {
+          "name": "CECO ENVIRONMENTAL CORP",
+          "value": 8533703000,
+          "shares": 143231,
+          "weight": 0.06
+        },
+        {
+          "name": "DIGITALOCEAN HLDGS INC",
+          "value": 8252551000,
+          "shares": 96206,
+          "weight": 0.06
+        },
+        {
+          "name": "NETFLIX INC",
+          "value": 8007890000,
+          "shares": 83285,
+          "weight": 0.06
+        },
+        {
+          "name": "BWX TECHNOLOGIES INC",
+          "value": 7795772000,
+          "shares": 38123,
+          "weight": 0.05
+        },
+        {
+          "name": "VSE CORP",
+          "value": 7752176000,
+          "shares": 42040,
+          "weight": 0.05
+        },
+        {
+          "name": "AMPRIUS TECHNOLOGIES INC",
+          "value": 7117365000,
+          "shares": 422145,
+          "weight": 0.05
+        },
+        {
+          "name": "CLEAR SECURE INC",
+          "value": 7063019000,
+          "shares": 145900,
+          "weight": 0.05
+        },
+        {
+          "name": "VANGUARD INDEX FDS",
+          "value": 7001827000,
+          "shares": 16030,
+          "weight": 0.05
+        },
+        {
+          "name": "FASTLY INC",
+          "value": 6931333000,
+          "shares": 238518,
+          "weight": 0.05
+        },
+        {
+          "name": "MODINE MFG CO",
+          "value": 6293692000,
+          "shares": 29042,
+          "weight": 0.04
+        },
+        {
+          "name": "PLANET LABS PBC",
+          "value": 5978896000,
+          "shares": 213914,
+          "weight": 0.04
+        },
+        {
+          "name": "DLOCAL LTD",
+          "value": 5952050000,
+          "shares": 458909,
+          "weight": 0.04
+        },
+        {
+          "name": "BROOKDALE SR LIVING INC",
+          "value": 5750716000,
+          "shares": 420374,
+          "weight": 0.04
+        },
+        {
+          "name": "IES HOLDINGS INC",
+          "value": 5695246000,
+          "shares": 11953,
+          "weight": 0.04
+        },
+        {
+          "name": "SPHERE ENTERTAINMENT CO",
+          "value": 5669598000,
+          "shares": 48293,
+          "weight": 0.04
+        },
+        {
+          "name": "WILLIS TOWERS WATSON PLC LTD",
+          "value": 5632577000,
+          "shares": 19376,
+          "weight": 0.04
+        },
+        {
+          "name": "MEDTRONIC PLC",
+          "value": 5256201000,
+          "shares": 60661,
+          "weight": 0.04
+        },
+        {
+          "name": "ISHARES INC",
+          "value": 5169642000,
+          "shares": 72894,
+          "weight": 0.04
+        },
+        {
+          "name": "NLIGHT INC",
+          "value": 5119883000,
+          "shares": 89791,
+          "weight": 0.04
+        },
+        {
+          "name": "ASTRAZENECA PLC",
+          "value": 5118898000,
+          "shares": 26046,
+          "weight": 0.04
+        },
+        {
+          "name": "GENEDX HOLDINGS CORP",
+          "value": 4971848000,
+          "shares": 77419,
+          "weight": 0.03
+        },
+        {
+          "name": "CARPENTER TECHNOLOGY CORP",
+          "value": 4899679000,
+          "shares": 12431,
+          "weight": 0.03
+        },
+        {
+          "name": "SOLARIS ENERGY INFRAS INC",
+          "value": 4728474000,
+          "shares": 83675,
+          "weight": 0.03
+        },
+        {
+          "name": "BABCOCK & WILCOX ENTERPRISES",
+          "value": 3988217000,
+          "shares": 271492,
+          "weight": 0.03
+        },
+        {
+          "name": "TENCENT MUSIC ENTMT GROUP",
+          "value": 3807380000,
+          "shares": 410278,
+          "weight": 0.03
+        },
+        {
+          "name": "PAYCOM SOFTWARE INC",
+          "value": 3747225000,
+          "shares": 30831,
+          "weight": 0.03
+        },
+        {
+          "name": "FIGURE TECHNOLOGY SOLUTIO",
+          "value": 3586274000,
+          "shares": 105634,
+          "weight": 0.02
+        },
+        {
+          "name": "KARMAN HLDGS INC",
+          "value": 3527483000,
+          "shares": 44066,
+          "weight": 0.02
+        },
+        {
+          "name": "BRIDGEBIO PHARMA INC",
+          "value": 3411059000,
+          "shares": 45934,
+          "weight": 0.02
+        },
+        {
+          "name": "PRAXIS PRECISION MEDICINES I",
+          "value": 3235754000,
+          "shares": 10043,
+          "weight": 0.02
+        },
+        {
+          "name": "GUARDANT HEALTH INC",
+          "value": 3207548000,
+          "shares": 34725,
+          "weight": 0.02
+        },
+        {
+          "name": "ICICI BANK LIMITED",
+          "value": 3057724000,
+          "shares": 118059,
+          "weight": 0.02
+        },
+        {
+          "name": "ON HLDG AG",
+          "value": 2995481000,
+          "shares": 88051,
+          "weight": 0.02
+        },
+        {
+          "name": "AEHR TEST SYS",
+          "value": 2944004000,
+          "shares": 79396,
+          "weight": 0.02
+        },
+        {
+          "name": "CONSTRUCTION PARTNERS INC",
+          "value": 2925678000,
+          "shares": 26329,
+          "weight": 0.02
+        },
+        {
+          "name": "ADOBE INC",
+          "value": 2884835000,
+          "shares": 11868,
+          "weight": 0.02
+        },
+        {
+          "name": "ASTRONICS CORP",
+          "value": 2830019000,
+          "shares": 42410,
+          "weight": 0.02
+        },
+        {
+          "name": "AXT INC",
+          "value": 2812989000,
+          "shares": 49368,
+          "weight": 0.02
+        },
+        {
+          "name": "TESLA INC",
+          "value": 2739054000,
+          "shares": 7368,
+          "weight": 0.02
+        },
+        {
+          "name": "SEA LTD",
+          "value": 2722322000,
+          "shares": 32874,
+          "weight": 0.02
+        },
+        {
+          "name": "MILLICOM INTL CELLULAR S A",
+          "value": 2705034000,
+          "shares": 36096,
+          "weight": 0.02
+        },
+        {
+          "name": "CORPORACION AMER ARPTS S A",
+          "value": 2682485000,
+          "shares": 106069,
+          "weight": 0.02
+        },
+        {
+          "name": "WAYFAIR INC",
+          "value": 2648595000,
+          "shares": 35216,
+          "weight": 0.02
+        },
+        {
+          "name": "VICTORY CAP HLDGS INC DEL",
+          "value": 2610557000,
+          "shares": 39868,
+          "weight": 0.02
+        },
+        {
+          "name": "PROTAGONIST THERAPEUTICS INC",
+          "value": 2565120000,
+          "shares": 24337,
+          "weight": 0.02
+        },
+        {
+          "name": "SCHOLAR ROCK HLDG CORP",
+          "value": 2553911000,
+          "shares": 51951,
+          "weight": 0.02
+        },
+        {
+          "name": "SITIME CORP",
+          "value": 2452330000,
+          "shares": 7101,
+          "weight": 0.02
+        },
+        {
+          "name": "STATE STR SPDR S&P 500 ETF T",
+          "value": 2443256000,
+          "shares": 3757,
+          "weight": 0.02
+        },
+        {
+          "name": "JOBY AVIATION INC",
+          "value": 2434668000,
+          "shares": 294754,
+          "weight": 0.02
+        },
+        {
+          "name": "OPPENHEIMER HLDGS INC",
+          "value": 2404027000,
+          "shares": 26954,
+          "weight": 0.02
+        },
+        {
+          "name": "TECHNIPFMC PLC",
+          "value": 2370675000,
+          "shares": 34293,
+          "weight": 0.02
+        },
+        {
+          "name": "CARVANA CO",
+          "value": 2310064000,
+          "shares": 7348,
+          "weight": 0.02
+        },
+        {
+          "name": "VICOR CORP",
+          "value": 2237739000,
+          "shares": 13899,
+          "weight": 0.02
+        },
+        {
+          "name": "RESOLUTE HLDGS MGMT INC",
+          "value": 2218479000,
+          "shares": 13669,
+          "weight": 0.02
+        },
+        {
+          "name": "ASTEC INDS INC",
+          "value": 2216700000,
+          "shares": 41172,
+          "weight": 0.02
+        },
+        {
+          "name": "CAMECO CORP",
+          "value": 2195008000,
+          "shares": 20210,
+          "weight": 0.02
+        },
+        {
+          "name": "PROTO LABS INC",
+          "value": 2143610000,
+          "shares": 37594,
+          "weight": 0.01
+        },
+        {
+          "name": "KRATOS DEFENSE & SEC SOLUTIO",
+          "value": 2063475000,
+          "shares": 29265,
+          "weight": 0.01
+        },
+        {
+          "name": "THE REALREAL INC",
+          "value": 2014534000,
+          "shares": 221865,
+          "weight": 0.01
+        },
+        {
+          "name": "IRADIMED CORP",
+          "value": 1996817000,
+          "shares": 20744,
+          "weight": 0.01
+        },
+        {
+          "name": "PREFORMED LINE PRODS CO",
+          "value": 1987576000,
+          "shares": 7341,
+          "weight": 0.01
+        },
+        {
+          "name": "CELCUITY INC",
+          "value": 1961039000,
+          "shares": 17181,
+          "weight": 0.01
+        },
+        {
+          "name": "MIRUM PHARMACEUTICALS INC",
+          "value": 1896654000,
+          "shares": 20531,
+          "weight": 0.01
+        },
+        {
+          "name": "ERO COPPER CORP",
+          "value": 1871141000,
+          "shares": 70159,
+          "weight": 0.01
+        },
+        {
+          "name": "RAMACO RES INC",
+          "value": 1848614000,
+          "shares": 119574,
+          "weight": 0.01
+        },
+        {
+          "name": "AZZ INC",
+          "value": 1806627000,
+          "shares": 14438,
+          "weight": 0.01
+        },
+        {
+          "name": "FIGS INC",
+          "value": 1793624000,
+          "shares": 121437,
+          "weight": 0.01
+        },
+        {
+          "name": "AAR CORP",
+          "value": 1774128000,
+          "shares": 16208,
+          "weight": 0.01
+        },
+        {
+          "name": "LINDBLAD EXPEDITIONS HLDGS I",
+          "value": 1766797000,
+          "shares": 102127,
+          "weight": 0.01
+        },
+        {
+          "name": "LITTELFUSE INC",
+          "value": 1682837000,
+          "shares": 4959,
+          "weight": 0.01
+        },
+        {
+          "name": "SHAKE SHACK INC",
+          "value": 1666775000,
+          "shares": 18840,
+          "weight": 0.01
+        },
+        {
+          "name": "BUTTERFLY NETWORK INC",
+          "value": 1641290000,
+          "shares": 406260,
+          "weight": 0.01
+        },
+        {
+          "name": "SOFI TECHNOLOGIES INC",
+          "value": 1641119000,
+          "shares": 103345,
+          "weight": 0.01
+        },
+        {
+          "name": "ADAPTIVE BIOTECHNOLOGIES COR",
+          "value": 1610788000,
+          "shares": 116051,
+          "weight": 0.01
+        },
+        {
+          "name": "WISDOMTREE INC",
+          "value": 1587113000,
+          "shares": 109005,
+          "weight": 0.01
+        },
+        {
+          "name": "KODIAK SCIENCES INC",
+          "value": 1576414000,
+          "shares": 41354,
+          "weight": 0.01
+        },
+        {
+          "name": "ABBOTT LABORATORIES",
+          "value": 1548326000,
+          "shares": 15081,
+          "weight": 0.01
+        },
+        {
+          "name": "TERAWULF INC",
+          "value": 1534991000,
+          "shares": 106375,
+          "weight": 0.01
+        },
+        {
+          "name": "IRSA INVERSIONES Y REP S A",
+          "value": 1525945000,
+          "shares": 94136,
+          "weight": 0.01
+        },
+        {
+          "name": "ROCKET LAB CORP",
+          "value": 1512702000,
+          "shares": 23555,
+          "weight": 0.01
+        },
+        {
+          "name": "GLOBAL X FDS",
+          "value": 1474534000,
+          "shares": 18868,
+          "weight": 0.01
+        },
+        {
+          "name": "AXOS FINANCIAL INC",
+          "value": 1433681000,
+          "shares": 16849,
+          "weight": 0.01
+        },
+        {
+          "name": "TAYSHA GENE THERAPIES INC",
+          "value": 1429274000,
+          "shares": 319748,
+          "weight": 0.01
+        },
+        {
+          "name": "GRAHAM CORP",
+          "value": 1405802000,
+          "shares": 17813,
+          "weight": 0.01
+        },
+        {
+          "name": "ESTABLISHMENT LABS HLDGS INC",
+          "value": 1381117000,
+          "shares": 24324,
+          "weight": 0.01
+        },
+        {
+          "name": "NEXGEN ENERGY LTD",
+          "value": 1364276000,
+          "shares": 117610,
+          "weight": 0.01
+        },
+        {
+          "name": "OUTFRONT MEDIA INC",
+          "value": 1362392000,
+          "shares": 51411,
+          "weight": 0.01
+        },
+        {
+          "name": "CHEESECAKE FACTORY INC",
+          "value": 1359005000,
+          "shares": 24822,
+          "weight": 0.01
+        },
+        {
+          "name": "NUVALENT INC",
+          "value": 1305623000,
+          "shares": 12744,
+          "weight": 0.01
+        },
+        {
+          "name": "APPLIED OPTOELECTRONICS INC",
+          "value": 1261491000,
+          "shares": 14913,
+          "weight": 0.01
+        },
+        {
+          "name": "ESQUIRE FINL HLDGS INC",
+          "value": 1259148000,
+          "shares": 11713,
+          "weight": 0.01
+        },
+        {
+          "name": "DENALI THERAPEUTICS INC",
+          "value": 1253779000,
+          "shares": 65301,
+          "weight": 0.01
+        },
+        {
+          "name": "CIRCLE INTERNET GROUP INC",
+          "value": 1249680000,
+          "shares": 13098,
+          "weight": 0.01
+        },
+        {
+          "name": "IONQ INC",
+          "value": 1214002000,
+          "shares": 42109,
+          "weight": 0.01
+        },
+        {
+          "name": "IVANHOE ELECTRIC INC",
+          "value": 1148739000,
+          "shares": 97186,
+          "weight": 0.01
+        },
+        {
+          "name": "TWIST BIOSCIENCE CORP",
+          "value": 1142238000,
+          "shares": 24037,
+          "weight": 0.01
+        },
+        {
+          "name": "LIFE TIME GROUP HOLDINGS INC",
+          "value": 1090558000,
+          "shares": 40481,
+          "weight": 0.01
+        },
+        {
+          "name": "SIONNA THERAPEUTICS INC",
+          "value": 1073410000,
+          "shares": 26775,
+          "weight": 0.01
+        },
+        {
+          "name": "VISHAY PRECISION GROUP INC",
+          "value": 1053499000,
+          "shares": 24263,
+          "weight": 0.01
+        },
+        {
+          "name": "STERLING INFRASTRUCTURE INC",
+          "value": 1039760000,
+          "shares": 2553,
+          "weight": 0.01
+        },
+        {
+          "name": "CENTRAL PAC FINL CORP",
+          "value": 1033043000,
+          "shares": 32323,
+          "weight": 0.01
+        },
+        {
+          "name": "애플 (AAPL)",
+          "value": 1028389000,
+          "shares": 4052,
+          "weight": 0.01
+        },
+        {
+          "name": "FABRINET",
+          "value": 1006534000,
+          "shares": 1930,
+          "weight": 0.01
+        },
+        {
+          "name": "MAMAS CREATIONS INC",
+          "value": 1003359000,
+          "shares": 65408,
+          "weight": 0.01
+        },
+        {
+          "name": "XOMETRY INC",
+          "value": 1003194000,
+          "shares": 24564,
+          "weight": 0.01
+        },
+        {
+          "name": "FLUOR CORP",
+          "value": 980163000,
+          "shares": 21011,
+          "weight": 0.01
+        },
+        {
+          "name": "CALLAWAY GOLF CO",
+          "value": 977582000,
+          "shares": 70431,
+          "weight": 0.01
+        },
+        {
+          "name": "WINMARK CORP",
+          "value": 976097000,
+          "shares": 2283,
+          "weight": 0.01
+        },
+        {
+          "name": "OPENLANE INC",
+          "value": 972473000,
+          "shares": 33361,
+          "weight": 0.01
+        },
+        {
+          "name": "ADTRAN HOLDINGS INC",
+          "value": 952155000,
+          "shares": 75688,
+          "weight": 0.01
+        },
+        {
+          "name": "JFROG LTD",
+          "value": 949863000,
+          "shares": 20240,
+          "weight": 0.01
+        },
+        {
+          "name": "HCI GROUP INC",
+          "value": 944049000,
+          "shares": 6106,
+          "weight": 0.01
+        },
+        {
+          "name": "STRIDE INC",
+          "value": 932045000,
+          "shares": 10571,
+          "weight": 0.01
+        },
+        {
+          "name": "KONTOOR BRANDS INC",
+          "value": 927266000,
+          "shares": 13192,
+          "weight": 0.01
+        },
+        {
+          "name": "VANGUARD INTL EQUITY INDEX F",
+          "value": 912950000,
+          "shares": 6600,
+          "weight": 0.01
+        },
+        {
+          "name": "CANTOR EQUITY PARTNERS II IN",
+          "value": 902400000,
+          "shares": 82865,
+          "weight": 0.01
+        },
+        {
+          "name": "GREEN BRICK PARTNERS INC",
+          "value": 849709000,
+          "shares": 13184,
+          "weight": 0.01
+        },
+        {
+          "name": "ARLO TECHNOLOGIES INC",
+          "value": 834931000,
+          "shares": 58674,
+          "weight": 0.01
+        },
+        {
+          "name": "CURTISS WRIGHT CORP",
+          "value": 811895000,
+          "shares": 1192,
+          "weight": 0.01
+        },
+        {
+          "name": "AMERICAN PUB ED INC",
+          "value": 803259000,
+          "shares": 14122,
+          "weight": 0.01
+        },
+        {
+          "name": "LIGHTPATH TECHNOLOGIES INC",
+          "value": 792922000,
+          "shares": 79055,
+          "weight": 0.01
+        },
+        {
+          "name": "BLACKSKY TECHNOLOGY INC",
+          "value": 770953000,
+          "shares": 30642,
+          "weight": 0.01
+        },
+        {
+          "name": "ETON PHARMACEUTICALS INC",
+          "value": 743806000,
+          "shares": 30138,
+          "weight": 0.01
+        },
+        {
+          "name": "TRANSMEDICS GROUP INC",
+          "value": 737821000,
+          "shares": 7422,
+          "weight": 0.01
+        },
+        {
+          "name": "FIREFLY AEROSPACE INC",
+          "value": 725957000,
+          "shares": 25499,
+          "weight": 0.01
+        },
+        {
+          "name": "DAVE INC",
+          "value": 673554000,
+          "shares": 3869,
+          "weight": 0.0
+        },
+        {
+          "name": "ONCE UPON A FARM PBC",
+          "value": 664317000,
+          "shares": 40631,
+          "weight": 0.0
+        },
+        {
+          "name": "HDFC BANK LTD",
+          "value": 595289000,
+          "shares": 23926,
+          "weight": 0.0
+        },
+        {
+          "name": "VELO3D INC",
+          "value": 576856000,
+          "shares": 61433,
+          "weight": 0.0
+        },
+        {
+          "name": "GPGI INC",
+          "value": 571243000,
+          "shares": 33406,
+          "weight": 0.0
+        },
+        {
+          "name": "BETTER HOME & FINANCE HOLDIN",
+          "value": 568460000,
+          "shares": 15959,
+          "weight": 0.0
+        },
+        {
+          "name": "ASP ISOTOPES INC",
+          "value": 543527000,
+          "shares": 122970,
+          "weight": 0.0
+        },
+        {
+          "name": "EMBRAER SA",
+          "value": 542249000,
+          "shares": 9138,
+          "weight": 0.0
+        },
+        {
+          "name": "ORION GROUP HLDGS INC",
+          "value": 536989000,
+          "shares": 49265,
+          "weight": 0.0
+        },
+        {
+          "name": "LEMONADE INC",
+          "value": 515167000,
+          "shares": 8219,
+          "weight": 0.0
+        },
+        {
+          "name": "SEMTECH CORP",
+          "value": 503860000,
+          "shares": 6553,
+          "weight": 0.0
+        },
+        {
+          "name": "ANI PHARMACEUTICALS INC",
+          "value": 492852000,
+          "shares": 6409,
+          "weight": 0.0
+        },
+        {
+          "name": "THERMON GROUP HLDGS INC",
+          "value": 477086000,
+          "shares": 9466,
+          "weight": 0.0
+        },
+        {
+          "name": "FLOTEK INDUSTRIES INC",
+          "value": 469085000,
+          "shares": 27642,
+          "weight": 0.0
+        },
+        {
+          "name": "MANITOWOC CO INC",
+          "value": 464590000,
+          "shares": 39879,
+          "weight": 0.0
+        },
+        {
+          "name": "MIRION TECHNOLOGIES INC",
+          "value": 463281000,
+          "shares": 24921,
+          "weight": 0.0
+        },
+        {
+          "name": "FTAI AVIATION LTD",
+          "value": 431690000,
+          "shares": 1762,
+          "weight": 0.0
+        },
+        {
+          "name": "ASCENDIS PHARMA A/S",
+          "value": 414459000,
+          "shares": 1812,
+          "weight": 0.0
+        },
+        {
+          "name": "CLEAR CHANNEL OUTDOOR HLDGS",
+          "value": 414058000,
+          "shares": 174708,
+          "weight": 0.0
+        },
+        {
+          "name": "VEECO INSTRS INC DEL",
+          "value": 407268000,
+          "shares": 12028,
+          "weight": 0.0
+        },
+        {
+          "name": "DELUXE CORP MEDIUM TERM NTS",
+          "value": 389884000,
+          "shares": 14157,
+          "weight": 0.0
+        },
+        {
+          "name": "ANNEXON INC",
+          "value": 388642000,
+          "shares": 70152,
+          "weight": 0.0
+        },
+        {
+          "name": "MILLERKNOLL INC",
+          "value": 380370000,
+          "shares": 26305,
+          "weight": 0.0
+        },
+        {
+          "name": "PHIBRO ANIMAL HEALTH CORP",
+          "value": 374725000,
+          "shares": 6775,
+          "weight": 0.0
+        },
+        {
+          "name": "ALTO NEUROSCIENCE INC",
+          "value": 373460000,
+          "shares": 16613,
+          "weight": 0.0
+        },
+        {
+          "name": "CENTRAL PUERTO S A",
+          "value": 372280000,
+          "shares": 22120,
+          "weight": 0.0
+        },
+        {
+          "name": "AXSOME THERAPEUTICS INC",
+          "value": 357646000,
+          "shares": 2116,
+          "weight": 0.0
+        },
+        {
+          "name": "MITEK SYS INC",
+          "value": 357008000,
+          "shares": 26445,
+          "weight": 0.0
+        },
+        {
+          "name": "BRISTOW GROUP INC",
+          "value": 350878000,
+          "shares": 7483,
+          "weight": 0.0
+        },
+        {
+          "name": "SKYWATER TECHNOLOGY INC",
+          "value": 348518000,
+          "shares": 12715,
+          "weight": 0.0
+        },
+        {
+          "name": "DIANTHUS THERAPEUTICS INC",
+          "value": 345666000,
+          "shares": 4119,
+          "weight": 0.0
+        },
+        {
+          "name": "TWILIO INC",
+          "value": 340721000,
+          "shares": 2708,
+          "weight": 0.0
+        },
+        {
+          "name": "ALCOA CORP",
+          "value": 329992000,
+          "shares": 4975,
+          "weight": 0.0
+        },
+        {
+          "name": "HYPERLIQUID STRATEGIES INC",
+          "value": 315621000,
+          "shares": 62008,
+          "weight": 0.0
+        },
+        {
+          "name": "SES AI CORPORATION",
+          "value": 308101000,
+          "shares": 320271,
+          "weight": 0.0
+        },
+        {
+          "name": "MUELLER INDS INC",
+          "value": 306805000,
+          "shares": 2769,
+          "weight": 0.0
+        },
+        {
+          "name": "SANDISK CORP",
+          "value": 287809000,
+          "shares": 453,
+          "weight": 0.0
+        },
+        {
+          "name": "SHARKNINJA INC",
+          "value": 263797000,
+          "shares": 2491,
+          "weight": 0.0
+        },
+        {
+          "name": "NATERA INC",
+          "value": 253787000,
+          "shares": 1269,
+          "weight": 0.0
+        },
+        {
+          "name": "FIRST SOLAR INC",
+          "value": 251507000,
+          "shares": 1275,
+          "weight": 0.0
+        },
+        {
+          "name": "GARTNER INC",
+          "value": 245280000,
+          "shares": 1549,
+          "weight": 0.0
+        },
+        {
+          "name": "VISTA ENERGY SAB DE CV",
+          "value": 242561000,
+          "shares": 3214,
+          "weight": 0.0
+        },
+        {
+          "name": "MACOM TECH SOLUTIONS HLDGS I",
+          "value": 236060000,
+          "shares": 1063,
+          "weight": 0.0
+        },
+        {
+          "name": "NUSCALE PWR CORP",
+          "value": 230307000,
+          "shares": 21246,
+          "weight": 0.0
+        },
+        {
+          "name": "SALESFORCE INC",
+          "value": 226859000,
+          "shares": 1215,
+          "weight": 0.0
+        },
+        {
+          "name": "AFFIRM HLDGS INC",
+          "value": 218241000,
+          "shares": 4763,
+          "weight": 0.0
+        },
+        {
+          "name": "TALEN ENERGY CORP",
+          "value": 217715000,
+          "shares": 682,
+          "weight": 0.0
+        },
+        {
+          "name": "SPDR SERIES TRUST",
+          "value": 209489000,
+          "shares": 2286,
+          "weight": 0.0
+        },
+        {
+          "name": "QXO INC",
+          "value": 207639000,
+          "shares": 10692,
+          "weight": 0.0
+        },
+        {
+          "name": "GRUPO FINANCIERO GALICIA SA",
+          "value": 204963000,
+          "shares": 4388,
+          "weight": 0.0
+        },
+        {
+          "name": "EL POLLO LOCO HLDGS INC",
+          "value": 182010000,
+          "shares": 13132,
+          "weight": 0.0
+        },
+        {
+          "name": "NAUTILUS BIOTECHNOLOGY INC",
+          "value": 156539000,
+          "shares": 40345,
+          "weight": 0.0
+        },
+        {
+          "name": "OPENDOOR TECHNOLOGIES INC",
+          "value": 81778000,
+          "shares": 17474,
+          "weight": 0.0
         }
       ]
     },
