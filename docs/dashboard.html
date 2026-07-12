@@ -462,6 +462,45 @@ document.querySelectorAll(".nav-links a").forEach(link => {
   };
 });
 
+// ── 1. 일봉 데이터를 주봉/월봉으로 자동 변환해주는 헬퍼 함수 추가 ──
+function aggregateCandles(data, tf) {
+  if (!Array.isArray(data) || tf === "daily") return data;
+  
+  const res = [];
+  let cur = null, curKey = null;
+  
+  for (const d of data) {
+    const dt = new Date(d.time);
+    let key, timeStr;
+    
+    if (tf === "monthly") {
+      key = d.time.substring(0, 7); // YYYY-MM
+      timeStr = key + "-01"; // 월봉은 매월 1일 날짜로 표기
+    } else if (tf === "weekly") {
+      // 해당 주의 월요일 날짜를 계산하여 그룹핑
+      const day = dt.getDay();
+      const diff = dt.getDate() - day + (day === 0 ? -6 : 1);
+      const monday = new Date(dt.setDate(diff));
+      key = monday.toISOString().substring(0, 10);
+      timeStr = key;
+    }
+    
+    if (key !== curKey) {
+      if (cur) res.push(cur);
+      curKey = key;
+      // 새로운 캔들 생성
+      cur = { time: timeStr, open: d.open, high: d.high, low: d.low, close: d.close };
+    } else {
+      // 기존 캔들에 데이터 누적 (고가, 저가 갱신 및 종가 반영)
+      cur.high = Math.max(cur.high, d.high);
+      cur.low = Math.min(cur.low, d.low);
+      cur.close = d.close;
+    }
+  }
+  if (cur) res.push(cur);
+  return res;
+}
+
 // ── Lightweight Charts ──
 function fmtOhlc(v){
   if(v==null || isNaN(v)) return "—";
@@ -507,20 +546,30 @@ function initChart(){
   });
 }
 
+// ── 2. 기존 drawChart 함수 교체 ──
 function drawChart(name){
   currentChartName = name;
   const titleEl = document.getElementById("chartTitle");
   if(titleEl) titleEl.textContent = name;
+  
   document.querySelectorAll(".ticker-item").forEach(it=>{
     it.classList.toggle("active", it.dataset.tvname===name);
   });
+  
   initChart();
   if(!lwSeries) return;
+  
   const raw = (LAST_MARKET && LAST_MARKET.history) ? LAST_MARKET.history[name] : null;
   const hintEl = document.getElementById("chartHint");
   let series = null;
-  if(Array.isArray(raw)) series = raw;               
-  else if(raw) series = raw[currentTimeframe] || raw.daily || raw.weekly || raw.monthly;
+  
+  // raw 데이터가 일봉 배열일 경우 프론트엔드에서 즉석으로 주봉/월봉 병합 처리
+  if(Array.isArray(raw)) {
+    series = aggregateCandles(raw, currentTimeframe);
+  } else if(raw) {
+    series = raw[currentTimeframe] || raw.daily || raw.weekly || raw.monthly;
+  }
+  
   if(!series || !series.length){
     lwSeries.setData([]);
     lastCandle = null;
@@ -528,6 +577,7 @@ function drawChart(name){
     if(hintEl) hintEl.textContent = "차트 데이터를 불러오는 중입니다";
     return;
   }
+  
   // ── 잘못된 캔들 보정: open/high/low가 0이면 close 값으로 대체 ──
   series = series.map(c => {
     if(c.close > 0 && (c.open === 0 || c.high === 0 || c.low === 0)){
@@ -535,14 +585,17 @@ function drawChart(name){
     }
     return c;
   }).filter(c => c.close > 0);
+  
   if(!series.length){
     lwSeries.setData([]);
     lastCandle = null;
     updateOhlcBar(null);
     return;
   }
+  
   const tfLabel = {daily:"일봉", weekly:"주봉", monthly:"월봉"}[currentTimeframe] || "일봉";
   if(hintEl) hintEl.textContent = `전체 기간 · ${tfLabel} · 스크롤로 과거 탐색`;
+  
   // 시리즈 교체 (timeframe 전환 시 시간축 충돌 방지)
   lwChart.removeSeries(lwSeries);
   lwSeries = lwChart.addCandlestickSeries({
@@ -557,9 +610,11 @@ function drawChart(name){
     const d = param.seriesData.get(lwSeries);
     if(d) updateOhlcBar({ time: param.time, open:d.open, high:d.high, low:d.low, close:d.close });
   });
+  
   lwSeries.setData(series);
   lastCandle = series[series.length-1];   
   updateOhlcBar(lastCandle);
+  
   if(lwChart){
     const lastTime = series[series.length-1].time;
     const end = new Date(lastTime);
