@@ -528,6 +528,19 @@ function drawChart(name){
     if(hintEl) hintEl.textContent = "차트 데이터를 불러오는 중입니다";
     return;
   }
+  // ── 잘못된 캔들 보정: open/high/low가 0이면 close 값으로 대체 ──
+  series = series.map(c => {
+    if(c.close > 0 && (c.open === 0 || c.high === 0 || c.low === 0)){
+      return { time: c.time, open: c.close, high: c.close, low: c.close, close: c.close };
+    }
+    return c;
+  }).filter(c => c.close > 0);
+  if(!series.length){
+    lwSeries.setData([]);
+    lastCandle = null;
+    updateOhlcBar(null);
+    return;
+  }
   const tfLabel = {daily:"일봉", weekly:"주봉", monthly:"월봉"}[currentTimeframe] || "일봉";
   if(hintEl) hintEl.textContent = `전체 기간 · ${tfLabel} · 스크롤로 과거 탐색`;
   lwSeries.setData(series);
