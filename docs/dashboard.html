@@ -543,6 +543,20 @@ function drawChart(name){
   }
   const tfLabel = {daily:"일봉", weekly:"주봉", monthly:"월봉"}[currentTimeframe] || "일봉";
   if(hintEl) hintEl.textContent = `전체 기간 · ${tfLabel} · 스크롤로 과거 탐색`;
+  // 시리즈 교체 (timeframe 전환 시 시간축 충돌 방지)
+  lwChart.removeSeries(lwSeries);
+  lwSeries = lwChart.addCandlestickSeries({
+    upColor:'#e0473b', downColor:'#0047FF',
+    wickUpColor:'#e0473b', wickDownColor:'#0047FF',
+    borderVisible:false,
+  });
+  lwChart.subscribeCrosshairMove(param=>{
+    if(!param || !param.time || !param.seriesData || !lwSeries){
+      updateOhlcBar(lastCandle); return;
+    }
+    const d = param.seriesData.get(lwSeries);
+    if(d) updateOhlcBar({ time: param.time, open:d.open, high:d.high, low:d.low, close:d.close });
+  });
   lwSeries.setData(series);
   lastCandle = series[series.length-1];   
   updateOhlcBar(lastCandle);
