@@ -462,36 +462,48 @@ document.querySelectorAll(".nav-links a").forEach(link => {
   };
 });
 
-// ── 1. 일봉 데이터를 주봉/월봉으로 자동 변환해주는 헬퍼 함수 추가 ──
+// ── 1. 일봉 데이터를 주봉/월봉으로 자동 변환해주는 헬퍼 함수 (안전한 UTC 기준) ──
 function aggregateCandles(data, tf) {
-  if (!Array.isArray(data) || tf === "daily") return data;
+  if (!Array.isArray(data)) return [];
+  if (tf === "daily") return data;
   
   const res = [];
   let cur = null, curKey = null;
   
   for (const d of data) {
-    const dt = new Date(d.time);
-    let key, timeStr;
+    let dateStr = d.time;
+    if (typeof d.time === "number") {
+      dateStr = new Date(d.time * 1000).toISOString().substring(0, 10);
+    }
     
+    let key, timeStr;
     if (tf === "monthly") {
-      key = d.time.substring(0, 7); // YYYY-MM
-      timeStr = key + "-01"; // 월봉은 매월 1일 날짜로 표기
+      key = dateStr.substring(0, 7); 
+      timeStr = key + "-01"; 
     } else if (tf === "weekly") {
-      // 해당 주의 월요일 날짜를 계산하여 그룹핑
-      const day = dt.getDay();
-      const diff = dt.getDate() - day + (day === 0 ? -6 : 1);
-      const monday = new Date(dt.setDate(diff));
-      key = monday.toISOString().substring(0, 10);
-      timeStr = key;
+      const parts = dateStr.split('-');
+      if(parts.length === 3) {
+        const year = parseInt(parts[0], 10);
+        const month = parseInt(parts[1], 10) - 1;
+        const date = parseInt(parts[2], 10);
+        const utcDt = new Date(Date.UTC(year, month, date));
+        
+        const day = utcDt.getUTCDay();
+        const diff = utcDt.getUTCDate() - day + (day === 0 ? -6 : 1);
+        
+        const monday = new Date(Date.UTC(utcDt.getUTCFullYear(), utcDt.getUTCMonth(), diff));
+        key = monday.toISOString().substring(0, 10);
+        timeStr = key;
+      } else {
+        key = dateStr; timeStr = dateStr;
+      }
     }
     
     if (key !== curKey) {
       if (cur) res.push(cur);
       curKey = key;
-      // 새로운 캔들 생성
       cur = { time: timeStr, open: d.open, high: d.high, low: d.low, close: d.close };
     } else {
-      // 기존 캔들에 데이터 누적 (고가, 저가 갱신 및 종가 반영)
       cur.high = Math.max(cur.high, d.high);
       cur.low = Math.min(cur.low, d.low);
       cur.close = d.close;
@@ -546,7 +558,7 @@ function initChart(){
   });
 }
 
-// ── 2. 기존 drawChart 함수 교체 ──
+// ── 2. 핵심 버그 해결: 어떤 객체 형태든 무조건 일봉 배열을 강제로 뽑아내어 병합 ──
 function drawChart(name){
   currentChartName = name;
   const titleEl = document.getElementById("chartTitle");
@@ -561,14 +573,19 @@ function drawChart(name){
   
   const raw = (LAST_MARKET && LAST_MARKET.history) ? LAST_MARKET.history[name] : null;
   const hintEl = document.getElementById("chartHint");
-  let series = null;
   
-  // raw 데이터가 일봉 배열일 경우 프론트엔드에서 즉석으로 주봉/월봉 병합 처리
-  if(Array.isArray(raw)) {
-    series = aggregateCandles(raw, currentTimeframe);
-  } else if(raw) {
-    series = raw[currentTimeframe] || raw.daily || raw.weekly || raw.monthly;
+  // 데이터가 {daily: [...]} 처럼 객체 안에 숨어있을 경우 배열을 완벽하게 꺼내오도록 수정
+  let baseData = null;
+  if (Array.isArray(raw)) {
+    baseData = raw;
+  } else if (raw && raw.daily) {
+    baseData = raw.daily;
+  } else if (raw) {
+    baseData = raw[Object.keys(raw)[0]];
   }
+
+  // 꺼내온 일봉 데이터를 즉석에서 주봉/월봉으로 묶어줌
+  let series = aggregateCandles(baseData, currentTimeframe);
   
   if(!series || !series.length){
     lwSeries.setData([]);
