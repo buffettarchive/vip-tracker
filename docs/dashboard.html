@@ -519,8 +519,48 @@ function drawChart(name){
   const raw = (LAST_MARKET && LAST_MARKET.history) ? LAST_MARKET.history[name] : null;
   const hintEl = document.getElementById("chartHint");
   let series = null;
-  if(Array.isArray(raw)) series = raw;               
-  else if(raw) series = raw[currentTimeframe] || raw.daily || raw.weekly || raw.monthly;
+  // 일봉 데이터 확보 (배열이든 객체든)
+  let dailyData = null;
+  if(Array.isArray(raw)) dailyData = raw;
+  else if(raw) dailyData = raw.daily || raw.weekly || raw.monthly || null;
+
+  if(!dailyData || !dailyData.length){
+    lwSeries.setData([]);
+    lastCandle = null;
+    updateOhlcBar(null);
+    if(hintEl) hintEl.textContent = "차트 데이터를 불러오는 중입니다";
+    return;
+  }
+
+  // ── 클라이언트 사이드 주봉/월봉 집계 ──
+  function aggregateCandles(daily, period){
+    const buckets = new Map();
+    for(const c of daily){
+      let key;
+      if(period === "weekly"){
+        const d = new Date(c.time);
+        const day = d.getDay();
+        const diff = d.getDate() - day + (day === 0 ? -6 : 1); // Monday
+        const monday = new Date(d.setDate(diff));
+        key = monday.toISOString().slice(0,10);
+      } else {
+        key = c.time.slice(0,7) + "-01";
+      }
+      if(!buckets.has(key)){
+        buckets.set(key, {time:key, open:c.open, high:c.high, low:c.low, close:c.close});
+      } else {
+        const b = buckets.get(key);
+        b.high = Math.max(b.high, c.high);
+        b.low = Math.min(b.low, c.low);
+        b.close = c.close;
+      }
+    }
+    return Array.from(buckets.values());
+  }
+
+  if(currentTimeframe === "weekly") series = aggregateCandles(dailyData, "weekly");
+  else if(currentTimeframe === "monthly") series = aggregateCandles(dailyData, "monthly");
+  else series = dailyData;
   if(!series || !series.length){
     lwSeries.setData([]);
     lastCandle = null;
