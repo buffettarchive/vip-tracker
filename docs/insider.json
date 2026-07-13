@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-13T14:59+09:00",
+  "updated_at": "2026-07-13T15:09+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260713000212",
+  "last_seen": "20260713000224",
   "disclosures": [
+    {
+      "rcept_no": "20260713000224",
+      "rcept_dt": "2026-07-13",
+      "corp_name": "흥국에프엔비",
+      "stock_code": "189980",
+      "market": "KOSDAQ",
+      "corp_code": "00916516",
+      "repror": "박철범",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "14,135",
+      "total_cnt": "713,614",
+      "irds_rate": "0.04",
+      "hold_rate": "1.78",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260713000188",
       "rcept_dt": "2026-07-13",
