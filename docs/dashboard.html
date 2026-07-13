@@ -462,57 +462,6 @@ document.querySelectorAll(".nav-links a").forEach(link => {
   };
 });
 
-// ── 1. 일봉 데이터를 주봉/월봉으로 자동 변환해주는 헬퍼 함수 (안전한 UTC 기준) ──
-function aggregateCandles(data, tf) {
-  if (!Array.isArray(data)) return [];
-  if (tf === "daily") return data;
-  
-  const res = [];
-  let cur = null, curKey = null;
-  
-  for (const d of data) {
-    let dateStr = d.time;
-    if (typeof d.time === "number") {
-      dateStr = new Date(d.time * 1000).toISOString().substring(0, 10);
-    }
-    
-    let key, timeStr;
-    if (tf === "monthly") {
-      key = dateStr.substring(0, 7); 
-      timeStr = key + "-01"; 
-    } else if (tf === "weekly") {
-      const parts = dateStr.split('-');
-      if(parts.length === 3) {
-        const year = parseInt(parts[0], 10);
-        const month = parseInt(parts[1], 10) - 1;
-        const date = parseInt(parts[2], 10);
-        const utcDt = new Date(Date.UTC(year, month, date));
-        
-        const day = utcDt.getUTCDay();
-        const diff = utcDt.getUTCDate() - day + (day === 0 ? -6 : 1);
-        
-        const monday = new Date(Date.UTC(utcDt.getUTCFullYear(), utcDt.getUTCMonth(), diff));
-        key = monday.toISOString().substring(0, 10);
-        timeStr = key;
-      } else {
-        key = dateStr; timeStr = dateStr;
-      }
-    }
-    
-    if (key !== curKey) {
-      if (cur) res.push(cur);
-      curKey = key;
-      cur = { time: timeStr, open: d.open, high: d.high, low: d.low, close: d.close };
-    } else {
-      cur.high = Math.max(cur.high, d.high);
-      cur.low = Math.min(cur.low, d.low);
-      cur.close = d.close;
-    }
-  }
-  if (cur) res.push(cur);
-  return res;
-}
-
 // ── Lightweight Charts ──
 function fmtOhlc(v){
   if(v==null || isNaN(v)) return "—";
@@ -558,35 +507,20 @@ function initChart(){
   });
 }
 
-// ── 2. 핵심 버그 해결: 어떤 객체 형태든 무조건 일봉 배열을 강제로 뽑아내어 병합 ──
 function drawChart(name){
   currentChartName = name;
   const titleEl = document.getElementById("chartTitle");
   if(titleEl) titleEl.textContent = name;
-  
   document.querySelectorAll(".ticker-item").forEach(it=>{
     it.classList.toggle("active", it.dataset.tvname===name);
   });
-  
   initChart();
   if(!lwSeries) return;
-  
   const raw = (LAST_MARKET && LAST_MARKET.history) ? LAST_MARKET.history[name] : null;
   const hintEl = document.getElementById("chartHint");
-  
-  // 데이터가 {daily: [...]} 처럼 객체 안에 숨어있을 경우 배열을 완벽하게 꺼내오도록 수정
-  let baseData = null;
-  if (Array.isArray(raw)) {
-    baseData = raw;
-  } else if (raw && raw.daily) {
-    baseData = raw.daily;
-  } else if (raw) {
-    baseData = raw[Object.keys(raw)[0]];
-  }
-
-  // 꺼내온 일봉 데이터를 즉석에서 주봉/월봉으로 묶어줌
-  let series = aggregateCandles(baseData, currentTimeframe);
-  
+  let series = null;
+  if(Array.isArray(raw)) series = raw;               
+  else if(raw) series = raw[currentTimeframe] || raw.daily || raw.weekly || raw.monthly;
   if(!series || !series.length){
     lwSeries.setData([]);
     lastCandle = null;
@@ -594,7 +528,6 @@ function drawChart(name){
     if(hintEl) hintEl.textContent = "차트 데이터를 불러오는 중입니다";
     return;
   }
-  
   // ── 잘못된 캔들 보정: open/high/low가 0이면 close 값으로 대체 ──
   series = series.map(c => {
     if(c.close > 0 && (c.open === 0 || c.high === 0 || c.low === 0)){
@@ -602,17 +535,15 @@ function drawChart(name){
     }
     return c;
   }).filter(c => c.close > 0);
-  
   if(!series.length){
     lwSeries.setData([]);
     lastCandle = null;
     updateOhlcBar(null);
     return;
   }
-  
   const tfLabel = {daily:"일봉", weekly:"주봉", monthly:"월봉"}[currentTimeframe] || "일봉";
-  if(hintEl) hintEl.textContent = `전체 기간 · ${tfLabel} · 스크롤로 과거 탐색`;
-  
+  console.log('[차트진단]', currentTimeframe, '| isArray:', Array.isArray(raw), '| keys:', raw ? Object.keys(raw) : 'null', '| 캔들수:', series.length);
+  if(hintEl) hintEl.textContent = `전체 기간 · ${tfLabel} · 캔들 ${series.length}개`;
   // 시리즈 교체 (timeframe 전환 시 시간축 충돌 방지)
   lwChart.removeSeries(lwSeries);
   lwSeries = lwChart.addCandlestickSeries({
@@ -627,11 +558,9 @@ function drawChart(name){
     const d = param.seriesData.get(lwSeries);
     if(d) updateOhlcBar({ time: param.time, open:d.open, high:d.high, low:d.low, close:d.close });
   });
-  
   lwSeries.setData(series);
   lastCandle = series[series.length-1];   
   updateOhlcBar(lastCandle);
-  
   if(lwChart){
     const lastTime = series[series.length-1].time;
     const end = new Date(lastTime);
