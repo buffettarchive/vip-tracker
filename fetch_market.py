@@ -96,6 +96,30 @@ def fetch_history(symbol, interval="1d", rng="1y"):
         return None
 
 
+def aggregate_candles(daily, period="weekly"):
+    """일봉 데이터를 주봉/월봉으로 집계."""
+    if not daily:
+        return []
+    from collections import OrderedDict
+    buckets = OrderedDict()
+    for c in daily:
+        d = c["time"]  # "YYYY-MM-DD"
+        if period == "weekly":
+            date = dt.date.fromisoformat(d)
+            monday = date - dt.timedelta(days=date.weekday())
+            key = monday.isoformat()
+        else:  # monthly
+            key = d[:7] + "-01"
+        if key not in buckets:
+            buckets[key] = {"time": key, "open": c["open"], "high": c["high"], "low": c["low"], "close": c["close"]}
+        else:
+            b = buckets[key]
+            b["high"] = max(b["high"], c["high"])
+            b["low"] = min(b["low"], c["low"])
+            b["close"] = c["close"]
+    return list(buckets.values())
+
+
 def gh_get_file():
     url = f"{GH_API}/repos/{GH_OWNER}/{GH_REPO}/contents/{GH_PATH}?ref={GH_BRANCH}"
     r = s.get(url, headers=GH_HEADERS, timeout=15)
@@ -130,20 +154,17 @@ def main():
         if q:
             quotes[name] = q
             print(f"  {name}: {q['price']} ({q['change_pct']:+.2f}%)")
-        # 캔들차트용 과거 시세 수집 (일봉/주봉/월봉 모두 전체 기간)
+        # 일봉만 Yahoo에서 가져오고, 주봉/월봉은 직접 집계
         daily = fetch_history(symbol, interval="1d", rng="max")
-        weekly = fetch_history(symbol, interval="1wk", rng="max")
-        monthly = fetch_history(symbol, interval="1mo", rng="max")
-        entry = {}
         if daily:
-            entry["daily"] = daily
-        if weekly:
-            entry["weekly"] = weekly
-        if monthly:
-            entry["monthly"] = monthly
-        if entry:
-            history[name] = entry
-            print(f"    history {name}: 일봉 {len(daily or [])} / 주봉 {len(weekly or [])} / 월봉 {len(monthly or [])}")
+            weekly = aggregate_candles(daily, "weekly")
+            monthly = aggregate_candles(daily, "monthly")
+            history[name] = {
+                "daily": daily,
+                "weekly": weekly,
+                "monthly": monthly,
+            }
+            print(f"    history {name}: 일봉 {len(daily)} / 주봉 {len(weekly)} / 월봉 {len(monthly)}")
         time.sleep(0.3)
 
     if not quotes:
