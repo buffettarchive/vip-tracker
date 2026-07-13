@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-13T09:05+09:00",
+  "updated_at": "2026-07-13T09:19+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260710000718",
+  "last_seen": "20260713000004",
   "disclosures": [
+    {
+      "rcept_no": "20260713000004",
+      "rcept_dt": "2026-07-13",
+      "corp_name": "파라텍",
+      "stock_code": "033540",
+      "market": "KOSDAQ",
+      "corp_code": "00105138",
+      "repror": "휴림로봇",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "248,376",
+      "total_cnt": "248,376",
+      "irds_rate": "0.48",
+      "hold_rate": "0.48",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260710000718",
       "rcept_dt": "2026-07-13",
