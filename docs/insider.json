@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-13T15:49+09:00",
+  "updated_at": "2026-07-13T16:14+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260713000276",
+  "last_seen": "20260713000295",
   "disclosures": [
+    {
+      "rcept_no": "20260713000295",
+      "rcept_dt": "2026-07-13",
+      "corp_name": "에스에스알",
+      "stock_code": "275630",
+      "market": "KOSDAQ",
+      "corp_code": "01250374",
+      "repror": "지란지교시큐리티",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "55,047",
+      "total_cnt": "2,545,403",
+      "irds_rate": "1.05",
+      "hold_rate": "48.45",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260713000262",
       "rcept_dt": "2026-07-13",
