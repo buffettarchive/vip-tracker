@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-13T14:09+09:00",
+  "updated_at": "2026-07-13T14:29+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260713000170",
+  "last_seen": "20260713000188",
   "disclosures": [
+    {
+      "rcept_no": "20260713000188",
+      "rcept_dt": "2026-07-13",
+      "corp_name": "이화산업",
+      "stock_code": "000760",
+      "market": "KOSPI",
+      "corp_code": "00145686",
+      "repror": "조승현",
+      "ofcps": "사장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "588,000",
+      "total_cnt": "644,000",
+      "irds_rate": "21.00",
+      "hold_rate": "23.00",
+      "method": "장외매수"
+    },
     {
       "rcept_no": "20260713000170",
       "rcept_dt": "2026-07-13",
