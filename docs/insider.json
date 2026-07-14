@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-14T11:19+09:00",
+  "updated_at": "2026-07-14T11:49+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260714000113",
+  "last_seen": "20260714000125",
   "disclosures": [
+    {
+      "rcept_no": "20260714000125",
+      "rcept_dt": "2026-07-14",
+      "corp_name": "경동제약",
+      "stock_code": "011040",
+      "market": "KOSDAQ",
+      "corp_code": "00101549",
+      "repror": "류덕희",
+      "ofcps": "명예회장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "2,700",
+      "total_cnt": "415,099",
+      "irds_rate": "0.01",
+      "hold_rate": "1.35",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260714000113",
       "rcept_dt": "2026-07-14",
