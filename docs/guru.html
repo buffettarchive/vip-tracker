@@ -203,7 +203,21 @@ async function init(){
     if(cR){CHANGES=cR;activeChangeQ=cR.period||"";if(cR.changes)changesCache[activeChangeQ]=cR.changes}
     if(mR)MANIFEST=mR;
     if(pR&&pR.prices){PRICES=pR.prices;pricesUpdatedAt=pR.updated_at||""}
-    const gurus=Object.keys(VIPS);
+    const PRIORITY=[
+      "워런 버핏 (버크셔 해서웨이)",
+      "모니시 파브라이 (파브라이 인베스트먼트)",
+      "리 루 (히말라야 캐피탈)",
+      "빌 애크먼 (퍼싱 스퀘어)",
+      "칼 아이칸 (아이칸 캐피탈)",
+      "세스 클라만 (바우포스트 그룹)",
+      "하워드 막스 (오크트리)",
+      "척 아크레 (아크레 캐피탈)",
+      "스탠리 드러켄밀러 (듀케인)",
+    ];
+    const allGurus=Object.keys(VIPS);
+    const top=PRIORITY.filter(g=>allGurus.includes(g));
+    const rest=allGurus.filter(g=>!PRIORITY.includes(g));
+    const gurus=[...top,...rest];
     if(gurus.length>0){activeGuru=gurus[0];renderGuruSelect(gurus);renderGuru()}
     setupTabs();
   }catch(e){console.error(e)}
@@ -327,13 +341,7 @@ function renderTable(holdings,tableId,showPrices){
     </tr>`;
   }).join("");
 
-  let footer='<tfoot><tr><td colspan="10" style="padding:12px 14px;font-size:12px;color:var(--muted);border-top:1px solid var(--line)">* Reported Price: 포트폴리오 보고일 기준 주가 (Value ÷ Shares)';
-  if(pricesUpdatedAt){
-    const d=new Date(pricesUpdatedAt);
-    footer+=` · 시세 업데이트: ${d.toLocaleDateString("ko-KR")} ${d.toLocaleTimeString("ko-KR",{hour:'2-digit',minute:'2-digit'})}`;
-  }
-  footer+='</td></tr></tfoot>';
-  tbl.innerHTML=thead+'<tbody>'+tbody+'</tbody>'+footer;
+  tbl.innerHTML=thead+'<tbody>'+tbody+'</tbody>';
 }
 
 init();
