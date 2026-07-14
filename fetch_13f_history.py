@@ -268,9 +268,12 @@ def find_infotable_file(items):
         # 4순위: 아무 XML (primary_doc 제외)
         if fl.endswith(".xml") and fl != "primary_doc.xml" and "R" not in fname[:2]:
             candidates.append(("c", fname))
-        # 5순위: infotable이 이름에 있는 txt
+        # 5순위: infotable이 이름에 있는 txt (내용이 XML인 경우 많음)
         if "infotable" in fl and fl.endswith(".txt"):
-            candidates.append(("d", fname))
+            candidates.append(("b2", fname))
+        # 6순위: 13f가 이름에 있는 txt
+        if "13f" in fl and fl.endswith(".txt") and "index" not in fl:
+            candidates.append(("e", fname))
 
     if candidates:
         candidates.sort(key=lambda x: x[0])
@@ -307,7 +310,8 @@ def get_holdings_for_filing(cik, accession, guru_name=""):
         return []
 
     xml_url = f"https://www.sec.gov/Archives/edgar/data/{cik_plain}/{acc_clean}/{xml_filename}"
-    xml_raw = safe_get(xml_url, accept="application/xml")
+    accept_type = "application/xml" if xml_filename.lower().endswith(".xml") else "text/plain"
+    xml_raw = safe_get(xml_url, accept=accept_type)
     if not xml_raw:
         if _diag_count < DIAG_LIMIT:
             _diag_count += 1
@@ -416,7 +420,7 @@ def collect_history(max_quarters=None, guru_filter=None, start_year=2013):
             return
         log.info(f"필터: {list(gurus.keys())}")
 
-    log.info(f"수집 범위: {start_year}년 이후")
+    log.info(f"수집 범위: {start_year}년 이후 (XML 포맷)")
     log.info(f"━━━ 1단계: {len(gurus)}명 파일링 목록 수집 ━━━")
     quarter_guru_filings = {}
 
@@ -519,7 +523,7 @@ def main():
     parser = argparse.ArgumentParser(description="81명 구루 13F 히스토리 백필")
     parser.add_argument("--quarters", type=int, default=None, help="구루당 최대 분기 수")
     parser.add_argument("--guru", type=str, default=None, help="특정 구루만 (이름 일부)")
-    parser.add_argument("--start-year", type=int, default=2013, help="수집 시작년도 (기본: 2013)")
+    parser.add_argument("--start-year", type=int, default=2014, help="수집 시작년도 (기본: 2014)")
     args = parser.parse_args()
     collect_history(max_quarters=args.quarters, guru_filter=args.guru, start_year=args.start_year)
 
