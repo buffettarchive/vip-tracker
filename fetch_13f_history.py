@@ -408,7 +408,7 @@ def save_manifest():
     log.info(f"  📋 매니페스트: 아카이브 {len(archive_quarters)}개, 변동 {len(changes_quarters)}개")
 
 
-def collect_history(max_quarters=None, guru_filter=None, start_year=2013):
+def collect_history(max_quarters=None, guru_filter=None, start_year=2013, end_quarter=None):
     global _diag_count
     _diag_count = 0
 
@@ -446,6 +446,9 @@ def collect_history(max_quarters=None, guru_filter=None, start_year=2013):
             time.sleep(COOLDOWN_SEC)
 
     all_quarters = sorted(quarter_guru_filings.keys())
+    if end_quarter:
+        all_quarters = [q for q in all_quarters if q <= end_quarter]
+        log.info(f"종료 분기: {end_quarter}")
     if not all_quarters:
         log.error("수집할 분기 없음")
         return
@@ -524,8 +527,9 @@ def main():
     parser.add_argument("--quarters", type=int, default=None, help="구루당 최대 분기 수")
     parser.add_argument("--guru", type=str, default=None, help="특정 구루만 (이름 일부)")
     parser.add_argument("--start-year", type=int, default=2014, help="수집 시작년도 (기본: 2014)")
+    parser.add_argument("--end-quarter", type=str, default=None, help="수집 종료 분기 (예: 2026_Q1)")
     args = parser.parse_args()
-    collect_history(max_quarters=args.quarters, guru_filter=args.guru, start_year=args.start_year)
+    collect_history(max_quarters=args.quarters, guru_filter=args.guru, start_year=args.start_year, end_quarter=args.end_quarter)
 
 
 if __name__ == "__main__":
