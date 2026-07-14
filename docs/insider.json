@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-14T13:56+09:00",
+  "updated_at": "2026-07-14T14:19+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260714000175",
+  "last_seen": "20260714000191",
   "disclosures": [
+    {
+      "rcept_no": "20260714000191",
+      "rcept_dt": "2026-07-14",
+      "corp_name": "영흥",
+      "stock_code": "012160",
+      "market": "KOSPI",
+      "corp_code": "00141477",
+      "repror": "장수은",
+      "ofcps": "전무",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "10,000",
+      "total_cnt": "10,000",
+      "irds_rate": "0.06",
+      "hold_rate": "0.06",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260714000175",
       "rcept_dt": "2026-07-14",
