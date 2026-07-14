@@ -35,7 +35,7 @@ jobs:
             ARGS="$ARGS --quarters ${{ inputs.quarters }}"
           fi
           if [ -n "${{ inputs.guru }}" ]; then
-            ARGS="$ARGS --guru '${{ inputs.guru }}'"
+            ARGS="$ARGS --guru ${{ inputs.guru }}"
           fi
           python fetch_13f_history.py $ARGS
 
