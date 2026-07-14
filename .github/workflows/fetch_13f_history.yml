@@ -1,0 +1,53 @@
+name: 13F 히스토리 백필
+
+on:
+  workflow_dispatch:
+    inputs:
+      quarters:
+        description: '구루당 최대 분기 수 (빈칸 = 전체)'
+        required: false
+        default: ''
+      guru:
+        description: '특정 구루만 (이름 일부, 빈칸 = 전체 81명)'
+        required: false
+        default: ''
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120   # 81명 × 20분기 = 장시간 소요
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 백필 실행
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ARGS=""
+          if [ -n "${{ inputs.quarters }}" ]; then
+            ARGS="$ARGS --quarters ${{ inputs.quarters }}"
+          fi
+          if [ -n "${{ inputs.guru }}" ]; then
+            ARGS="$ARGS --guru '${{ inputs.guru }}'"
+          fi
+          python fetch_13f_history.py $ARGS
+
+      - name: 커밋 & 푸시
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/us_vips_archive/ docs/us_vips_changes/ docs/us_vips_changes.json
+          if git diff --cached --quiet; then
+            echo "변경 없음"
+          else
+            COUNT=$(ls -1 docs/us_vips_archive/*.json 2>/dev/null | wc -l)
+            git commit -m "📊 13F 히스토리 백필: ${COUNT}개 분기"
+            git push
+          fi
