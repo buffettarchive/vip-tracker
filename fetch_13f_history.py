@@ -1,15 +1,12 @@
 #!/usr/bin/env python3
 """
-fetch_13f_history.py — 81명 구루의 과거 13F-HR 전량 수집 + 분기별 변동 계산
+fetch_13f_history.py — 81명 구루 과거 13F-HR 수집 + 분기별 변동 계산
 
-출력:
-  docs/us_vips_archive/YYYY_QN.json   — 분기별 포트폴리오 스냅샷
-  docs/us_vips_changes/YYYY_QN.json   — 인접 분기 대비 변동내역
-  docs/us_vips_changes.json           — 가장 최근 분기 변동내역 (guru.html용)
-  docs/us_vips_manifest.json          — 사용 가능한 분기 목록 (guru.html용)
-
-사용법:
-  python fetch_13f_history.py [--quarters N] [--guru "이름"] [--start-year YYYY]
+변경사항 (v3):
+  - XML 네임스페이스 접두사 범용 매칭 (ns1, ns2, n1, 등 모두 지원)
+  - 파일 탐색 범위 확대 (.xml 외에 .txt infotable도 시도)
+  - [DIAG] 진단 로그 추가 (첫 5건 실패에 대해 상세 출력)
+  - --start-year 기본값 2013
 """
 
 import json, os, re, sys, time, argparse, logging
@@ -25,6 +22,7 @@ COOLDOWN_EVERY = 10
 COOLDOWN_SEC = 30
 MAX_RETRIES = 4
 BACKOFF_BASE = 5
+DIAG_LIMIT = 5  # 첫 N건 실패만 상세 진단 출력
 
 ARCHIVE_DIR = Path("docs/us_vips_archive")
 CHANGES_DIR = Path("docs/us_vips_changes")
@@ -33,6 +31,8 @@ MANIFEST_PATH = Path("docs/us_vips_manifest.json")
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s", datefmt="%H:%M:%S")
 log = logging.getLogger("13f-history")
+
+_diag_count = 0
 
 GURUS = {
     "마이클 버리 (사이언 에셋)": "0001649339",
@@ -137,10 +137,8 @@ def safe_get(url, accept="application/json"):
                 log.warning(f"  HTTP {e.code} → {wait}s 대기 ({attempt+1}/{MAX_RETRIES})")
                 time.sleep(wait)
             else:
-                log.error(f"  HTTP {e.code}: {url}")
                 return None
-        except (URLError, TimeoutError) as e:
-            log.error(f"  Network error: {e}")
+        except (URLError, TimeoutError):
             if attempt < MAX_RETRIES:
                 time.sleep(BACKOFF_BASE * (2 ** attempt))
             else:
@@ -177,8 +175,7 @@ def get_all_13f_filings(cik, start_year=2013):
         fname = fobj.get("name", "")
         if not fname:
             continue
-        batch_url = f"https://data.sec.gov/submissions/{fname}"
-        batch_raw = safe_get(batch_url)
+        batch_raw = safe_get(f"https://data.sec.gov/submissions/{fname}")
         if not batch_raw:
             continue
         try:
@@ -199,10 +196,8 @@ def get_all_13f_filings(cik, start_year=2013):
         report_date = all_report_dates[i]
         if not report_date:
             continue
-        # start_year 이전 분기는 스킵 (XML 포맷 이전 = 파싱 불가)
         try:
-            rd_year = int(report_date[:4])
-            if rd_year < start_year:
+            if int(report_date[:4]) < start_year:
                 continue
         except ValueError:
             continue
@@ -218,18 +213,26 @@ def get_all_13f_filings(cik, start_year=2013):
 
 
 def parse_13f_xml(xml_bytes):
+    """범용 네임스페이스 지원 XML 파서. ns1:, ns2:, n1:, 접두사없음 모두 처리."""
     try:
         text = xml_bytes.decode("utf-8", errors="replace")
     except Exception:
         return []
+
+    # 임의 네임스페이스 접두사 매칭: <prefix:tag> or <tag>
+    NS = r"(?:\w+:)?"
+
     entries = []
-    blocks = re.split(r"</?(?:ns1:|)infoTable>", text, flags=re.IGNORECASE)
+    # infoTable 블록 분리 — 여러 네임스페이스 접두사 대응
+    blocks = re.split(rf"</?{NS}infoTable\b[^>]*>", text, flags=re.IGNORECASE)
+
     for block in blocks:
-        name_m = re.search(r"<(?:ns1:|)nameOfIssuer>(.*?)</(?:ns1:|)nameOfIssuer>", block, re.I | re.S)
-        cusip_m = re.search(r"<(?:ns1:|)cusip>(.*?)</(?:ns1:|)cusip>", block, re.I | re.S)
-        value_m = re.search(r"<(?:ns1:|)value>(.*?)</(?:ns1:|)value>", block, re.I | re.S)
-        shares_m = re.search(r"<(?:ns1:|)(?:sshPrnamt|Amt)>(.*?)</(?:ns1:|)(?:sshPrnamt|Amt)>", block, re.I | re.S)
-        type_m = re.search(r"<(?:ns1:|)(?:sshPrnamtType|Type)>(.*?)</(?:ns1:|)(?:sshPrnamtType|Type)>", block, re.I | re.S)
+        name_m = re.search(rf"<{NS}nameOfIssuer>(.*?)</{NS}nameOfIssuer>", block, re.I | re.S)
+        cusip_m = re.search(rf"<{NS}cusip>(.*?)</{NS}cusip>", block, re.I | re.S)
+        value_m = re.search(rf"<{NS}value>(.*?)</{NS}value>", block, re.I | re.S)
+        shares_m = re.search(rf"<{NS}(?:sshPrnamt|Amt)>(.*?)</{NS}(?:sshPrnamt|Amt)>", block, re.I | re.S)
+        type_m = re.search(rf"<{NS}(?:sshPrnamtType|Type)>(.*?)</{NS}(?:sshPrnamtType|Type)>", block, re.I | re.S)
+
         if not name_m or not value_m:
             continue
         name = name_m.group(1).strip()
@@ -247,41 +250,77 @@ def parse_13f_xml(xml_bytes):
     return entries
 
 
-def get_holdings_for_filing(cik, accession):
+def find_infotable_file(items):
+    """index.json의 파일 목록에서 13F infotable 파일을 찾는다. 우선순위 순서."""
+    candidates = []
+    for item in items:
+        fname = item.get("name", "")
+        fl = fname.lower()
+        # 1순위: infotable이 이름에 있는 XML
+        if "infotable" in fl and fl.endswith(".xml"):
+            return fname
+        # 2순위: 13f + xml
+        if "13f" in fl and fl.endswith(".xml"):
+            candidates.append(("a", fname))
+        # 3순위: information + xml
+        if "information" in fl and fl.endswith(".xml"):
+            candidates.append(("b", fname))
+        # 4순위: 아무 XML (primary_doc 제외)
+        if fl.endswith(".xml") and fl != "primary_doc.xml" and "R" not in fname[:2]:
+            candidates.append(("c", fname))
+        # 5순위: infotable이 이름에 있는 txt
+        if "infotable" in fl and fl.endswith(".txt"):
+            candidates.append(("d", fname))
+
+    if candidates:
+        candidates.sort(key=lambda x: x[0])
+        return candidates[0][1]
+    return None
+
+
+def get_holdings_for_filing(cik, accession, guru_name=""):
+    global _diag_count
     cik_plain = str(int(cik))
     acc_clean = accession.replace("-", "")
     index_url = f"https://www.sec.gov/Archives/edgar/data/{cik_plain}/{acc_clean}/index.json"
+
     raw = safe_get(index_url)
     if not raw:
+        if _diag_count < DIAG_LIMIT:
+            _diag_count += 1
+            log.info(f"    [DIAG] index.json 로드 실패: {index_url}")
         return []
+
     try:
         idx = json.loads(raw)
     except json.JSONDecodeError:
         return []
 
-    xml_filename = None
-    for item in idx.get("directory", {}).get("item", []):
-        fname = item.get("name", "").lower()
-        if "infotable" in fname and fname.endswith(".xml"):
-            xml_filename = item["name"]
-            break
-        if fname.endswith(".xml") and "13f" in fname:
-            xml_filename = item["name"]
+    items = idx.get("directory", {}).get("item", [])
+    xml_filename = find_infotable_file(items)
 
     if not xml_filename:
-        for item in idx.get("directory", {}).get("item", []):
-            fname = item.get("name", "").lower()
-            if fname.endswith(".xml") and fname not in ("primary_doc.xml",):
-                xml_filename = item["name"]
-                break
-    if not xml_filename:
+        if _diag_count < DIAG_LIMIT:
+            _diag_count += 1
+            fnames = [it.get("name", "") for it in items]
+            log.info(f"    [DIAG] XML 파일 못 찾음. 디렉토리 파일들: {fnames}")
         return []
 
     xml_url = f"https://www.sec.gov/Archives/edgar/data/{cik_plain}/{acc_clean}/{xml_filename}"
     xml_raw = safe_get(xml_url, accept="application/xml")
     if not xml_raw:
+        if _diag_count < DIAG_LIMIT:
+            _diag_count += 1
+            log.info(f"    [DIAG] XML 다운로드 실패: {xml_filename}")
         return []
-    return parse_13f_xml(xml_raw)
+
+    entries = parse_13f_xml(xml_raw)
+    if not entries and _diag_count < DIAG_LIMIT:
+        _diag_count += 1
+        preview = xml_raw[:500].decode("utf-8", errors="replace")
+        log.info(f"    [DIAG] XML 파싱 0건. 파일: {xml_filename}, 처음 500자:\n{preview}")
+
+    return entries
 
 
 def compute_changes(prev_holdings, curr_holdings):
@@ -366,6 +405,9 @@ def save_manifest():
 
 
 def collect_history(max_quarters=None, guru_filter=None, start_year=2013):
+    global _diag_count
+    _diag_count = 0
+
     gurus = GURUS
     if guru_filter:
         gurus = {k: v for k, v in GURUS.items() if guru_filter in k}
@@ -374,7 +416,7 @@ def collect_history(max_quarters=None, guru_filter=None, start_year=2013):
             return
         log.info(f"필터: {list(gurus.keys())}")
 
-    log.info(f"수집 범위: {start_year}년 이후 (XML 포맷)")
+    log.info(f"수집 범위: {start_year}년 이후")
     log.info(f"━━━ 1단계: {len(gurus)}명 파일링 목록 수집 ━━━")
     quarter_guru_filings = {}
 
@@ -419,8 +461,9 @@ def collect_history(max_quarters=None, guru_filter=None, start_year=2013):
         log.info(f"[Q {qi+1}/{len(all_quarters)}] {quarter} — {len(to_collect)}명 수집 (기존 {len(already_done)}명)")
         archive = existing or {"period": quarter, "collected_at": "", "portfolios": {}}
         collected = 0
+        failed = 0
         for gi, (guru_name, finfo) in enumerate(to_collect.items()):
-            holdings = get_holdings_for_filing(finfo["cik"], finfo["accession"])
+            holdings = get_holdings_for_filing(finfo["cik"], finfo["accession"], guru_name)
             if holdings:
                 total_val = sum(h.get("value_x1000", 0) for h in holdings)
                 archive["portfolios"][guru_name] = {
@@ -430,6 +473,7 @@ def collect_history(max_quarters=None, guru_filter=None, start_year=2013):
                 }
                 collected += 1
             else:
+                failed += 1
                 log.warning(f"    ✗ {guru_name}: 파싱 실패")
             if (gi + 1) % COOLDOWN_EVERY == 0 and (gi + 1) < len(to_collect):
                 log.info(f"    ⏳ 쿨다운 {COOLDOWN_SEC}초...")
@@ -437,7 +481,7 @@ def collect_history(max_quarters=None, guru_filter=None, start_year=2013):
 
         archive["collected_at"] = datetime.utcnow().isoformat() + "Z"
         save_archive(quarter, archive)
-        log.info(f"  → {quarter}: {collected}명 신규, 총 {len(archive['portfolios'])}명\n")
+        log.info(f"  → {quarter}: ✓{collected}명 성공 / ✗{failed}명 실패, 총 {len(archive['portfolios'])}명\n")
 
     log.info(f"\n━━━ 3단계: 분기별 변동내역 계산 ━━━")
     for i in range(1, len(all_quarters)):
@@ -475,7 +519,7 @@ def main():
     parser = argparse.ArgumentParser(description="81명 구루 13F 히스토리 백필")
     parser.add_argument("--quarters", type=int, default=None, help="구루당 최대 분기 수")
     parser.add_argument("--guru", type=str, default=None, help="특정 구루만 (이름 일부)")
-    parser.add_argument("--start-year", type=int, default=2013, help="수집 시작년도 (기본: 2013, XML 포맷 이전은 파싱 불가)")
+    parser.add_argument("--start-year", type=int, default=2013, help="수집 시작년도 (기본: 2013)")
     args = parser.parse_args()
     collect_history(max_quarters=args.quarters, guru_filter=args.guru, start_year=args.start_year)
 
