@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-14T11:59+09:00",
+  "updated_at": "2026-07-14T12:09+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260714000130",
+  "last_seen": "20260714000133",
   "disclosures": [
+    {
+      "rcept_no": "20260714000133",
+      "rcept_dt": "2026-07-14",
+      "corp_name": "세동",
+      "stock_code": "053060",
+      "market": "KOSDAQ",
+      "corp_code": "00133663",
+      "repror": "윤 정 상",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "40,167",
+      "total_cnt": "3,458,555",
+      "irds_rate": "0.23",
+      "hold_rate": "19.59",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260714000125",
       "rcept_dt": "2026-07-14",
