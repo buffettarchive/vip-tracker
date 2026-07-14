@@ -21,6 +21,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:
@@ -47,6 +49,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "변경 없음"
           else
+            git pull --rebase origin main
             git commit -m "📊 13F 히스토리 백필"
             git push
           fi
