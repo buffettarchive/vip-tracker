@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-14T13:39+09:00",
+  "updated_at": "2026-07-14T13:51+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260714000163",
+  "last_seen": "20260714000168",
   "disclosures": [
+    {
+      "rcept_no": "20260714000168",
+      "rcept_dt": "2026-07-14",
+      "corp_name": "이지케어텍",
+      "stock_code": "099750",
+      "market": "KOSDAQ",
+      "corp_code": "00490090",
+      "repror": "최형우",
+      "ofcps": "전무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "3,000",
+      "total_cnt": "3,000",
+      "irds_rate": "0.02",
+      "hold_rate": "0.02",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260714000163",
       "rcept_dt": "2026-07-14",
