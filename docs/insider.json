@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-14T15:14+09:00",
+  "updated_at": "2026-07-14T15:44+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260714000261",
+  "last_seen": "20260714000308",
   "disclosures": [
+    {
+      "rcept_no": "20260714000308",
+      "rcept_dt": "2026-07-14",
+      "corp_name": "인베니아",
+      "stock_code": "079950",
+      "market": "KOSDAQ",
+      "corp_code": "00409371",
+      "repror": "구동범",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "9,750",
+      "total_cnt": "1,327,839",
+      "irds_rate": "0.07",
+      "hold_rate": "9.62",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260714000223",
       "rcept_dt": "2026-07-14",
