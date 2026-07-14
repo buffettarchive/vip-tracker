@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-14T17:14+09:00",
+  "updated_at": "2026-07-14T17:34+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260714000435",
+  "last_seen": "20260714000465",
   "disclosures": [
+    {
+      "rcept_no": "20260714000455",
+      "rcept_dt": "2026-07-14",
+      "corp_name": "한샘",
+      "stock_code": "009240",
+      "market": "KOSPI",
+      "corp_code": "00161693",
+      "repror": "김유진",
+      "ofcps": "사장",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "5,000",
+      "total_cnt": "45,000",
+      "irds_rate": "0.02",
+      "hold_rate": "0.19",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260714000435",
       "rcept_dt": "2026-07-14",
