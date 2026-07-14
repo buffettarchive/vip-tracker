@@ -12,9 +12,13 @@ on:
         required: false
         default: ''
       start_year:
-        description: '수집 시작년도 (기본: 2014)'
+        description: '수집 시작년도 (기본: 2020)'
         required: false
         default: '2020'
+      end_quarter:
+        description: '수집 종료 분기 (예: 2026_Q1)'
+        required: false
+        default: '2026_Q1'
 
 jobs:
   backfill:
@@ -45,6 +49,9 @@ jobs:
           fi
           if [ -n "${{ inputs.start_year }}" ]; then
             ARGS="$ARGS --start-year ${{ inputs.start_year }}"
+          fi
+          if [ -n "${{ inputs.end_quarter }}" ]; then
+            ARGS="$ARGS --end-quarter ${{ inputs.end_quarter }}"
           fi
           python fetch_13f_history.py $ARGS
 
