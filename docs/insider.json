@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-14T16:59+09:00",
+  "updated_at": "2026-07-14T17:14+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260714000431",
+  "last_seen": "20260714000435",
   "disclosures": [
+    {
+      "rcept_no": "20260714000435",
+      "rcept_dt": "2026-07-14",
+      "corp_name": "영풍",
+      "stock_code": "000670",
+      "market": "KOSPI",
+      "corp_code": "00141307",
+      "repror": "박진순",
+      "ofcps": "이사",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "283",
+      "total_cnt": "593",
+      "irds_rate": "0.00",
+      "hold_rate": "0.00",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260714000424",
       "rcept_dt": "2026-07-14",
