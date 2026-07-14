@@ -1,0 +1,135 @@
+{
+ "period": "2024_Q3",
+ "compared_to": "2024_Q2",
+ "generated_at": "2026-07-14T07:31:18.729448Z",
+ "changes": {
+  "워런 버핏 (버크셔 해서웨이)": [
+   {
+    "name": "SIRIUS XM HOLDINGS INC",
+    "cusip": "829933100",
+    "action": "NEW",
+    "shares": 105155029,
+    "value_x1000": 2486916437,
+    "prev_shares": 0,
+    "change_pct": null
+   },
+   {
+    "name": "DOMINOS PIZZA INC",
+    "cusip": "25754A201",
+    "action": "NEW",
+    "shares": 1277256,
+    "value_x1000": 549398896,
+    "prev_shares": 0,
+    "change_pct": null
+   },
+   {
+    "name": "POOL CORP",
+    "cusip": "73278L105",
+    "action": "NEW",
+    "shares": 404057,
+    "value_x1000": 152248678,
+    "prev_shares": 0,
+    "change_pct": null
+   },
+   {
+    "name": "HEICO CORP NEW",
+    "cusip": "422806208",
+    "action": "ADD",
+    "shares": 1049687,
+    "value_x1000": 213884223,
+    "prev_shares": 1044242,
+    "change_pct": 0.52
+   },
+   {
+    "name": "APPLE INC",
+    "cusip": "037833100",
+    "action": "REDUCE",
+    "shares": 300000000,
+    "value_x1000": 69900000000,
+    "prev_shares": 400000000,
+    "change_pct": -25.0
+   },
+   {
+    "name": "BANK AMER CORP",
+    "cusip": "060505104",
+    "action": "REDUCE",
+    "shares": 797683307,
+    "value_x1000": 31652073622,
+    "prev_shares": 1032852006,
+    "change_pct": -22.77
+   },
+   {
+    "name": "CAPITAL ONE FINL CORP",
+    "cusip": "14040H105",
+    "action": "REDUCE",
+    "shares": 9100000,
+    "value_x1000": 1362543000,
+    "prev_shares": 9819052,
+    "change_pct": -7.32
+   },
+   {
+    "name": "NU HLDGS LTD",
+    "cusip": "G6683N103",
+    "action": "REDUCE",
+    "shares": 86438997,
+    "value_x1000": 1179892309,
+    "prev_shares": 107118784,
+    "change_pct": -19.31
+   },
+   {
+    "name": "CHARTER COMMUNICATIONS INC N",
+    "cusip": "16119P108",
+    "action": "REDUCE",
+    "shares": 2821879,
+    "value_x1000": 914514546,
+    "prev_shares": 3828941,
+    "change_pct": -26.3
+   },
+   {
+    "name": "ULTA BEAUTY INC",
+    "cusip": "90384S303",
+    "action": "REDUCE",
+    "shares": 24203,
+    "value_x1000": 9417871,
+    "prev_shares": 690106,
+    "change_pct": -96.49
+   },
+   {
+    "name": "FLOOR &amp; DECOR HLDGS INC",
+    "cusip": "339750101",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 3977870,
+    "change_pct": -100.0
+   },
+   {
+    "name": "LIBERTY MEDIA CORP DEL",
+    "cusip": "531229789",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 70002897,
+    "change_pct": -100.0
+   },
+   {
+    "name": "LIBERTY MEDIA CORP DEL",
+    "cusip": "531229813",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 35182219,
+    "change_pct": -100.0
+   },
+   {
+    "name": "SIRIUS XM HOLDINGS INC",
+    "cusip": "82968B103",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 132878213,
+    "change_pct": -100.0
+   }
+  ]
+ }
+}

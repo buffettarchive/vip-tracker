@@ -1,0 +1,162 @@
+{
+ "period": "2024_Q4",
+ "compared_to": "2024_Q3",
+ "generated_at": "2026-07-14T07:31:18.730449Z",
+ "changes": {
+  "워런 버핏 (버크셔 해서웨이)": [
+   {
+    "name": "CONSTELLATION BRANDS INC",
+    "cusip": "21036P108",
+    "action": "NEW",
+    "shares": 5624324,
+    "value_x1000": 1242975604,
+    "prev_shares": 0,
+    "change_pct": null
+   },
+   {
+    "name": "OCCIDENTAL PETE CORP",
+    "cusip": "674599105",
+    "action": "ADD",
+    "shares": 264178414,
+    "value_x1000": 13053055436,
+    "prev_shares": 255281524,
+    "change_pct": 3.49
+   },
+   {
+    "name": "VERISIGN INC",
+    "cusip": "92343E102",
+    "action": "ADD",
+    "shares": 13271457,
+    "value_x1000": 2746660741,
+    "prev_shares": 12815613,
+    "change_pct": 3.56
+   },
+   {
+    "name": "SIRIUS XM HOLDINGS INC",
+    "cusip": "829933100",
+    "action": "ADD",
+    "shares": 117468573,
+    "value_x1000": 2678283465,
+    "prev_shares": 105155029,
+    "change_pct": 11.71
+   },
+   {
+    "name": "DOMINOS PIZZA INC",
+    "cusip": "25754A201",
+    "action": "ADD",
+    "shares": 2382000,
+    "value_x1000": 999868320,
+    "prev_shares": 1277256,
+    "change_pct": 86.49
+   },
+   {
+    "name": "POOL CORP",
+    "cusip": "73278L105",
+    "action": "ADD",
+    "shares": 598689,
+    "value_x1000": 204117028,
+    "prev_shares": 404057,
+    "change_pct": 48.17
+   },
+   {
+    "name": "BANK AMER CORP",
+    "cusip": "060505104",
+    "action": "REDUCE",
+    "shares": 680233587,
+    "value_x1000": 29896266149,
+    "prev_shares": 797683307,
+    "change_pct": -14.72
+   },
+   {
+    "name": "CAPITAL ONE FINL CORP",
+    "cusip": "14040H105",
+    "action": "REDUCE",
+    "shares": 7450000,
+    "value_x1000": 1328484000,
+    "prev_shares": 9100000,
+    "change_pct": -18.13
+   },
+   {
+    "name": "CITIGROUP INC",
+    "cusip": "172967424",
+    "action": "REDUCE",
+    "shares": 14639502,
+    "value_x1000": 1030474546,
+    "prev_shares": 55244797,
+    "change_pct": -73.5
+   },
+   {
+    "name": "T-MOBILE US INC",
+    "cusip": "872590104",
+    "action": "REDUCE",
+    "shares": 4350000,
+    "value_x1000": 960175500,
+    "prev_shares": 4672000,
+    "change_pct": -6.89
+   },
+   {
+    "name": "CHARTER COMMUNICATIONS INC N",
+    "cusip": "16119P108",
+    "action": "REDUCE",
+    "shares": 1991759,
+    "value_x1000": 682715232,
+    "prev_shares": 2821879,
+    "change_pct": -29.42
+   },
+   {
+    "name": "LIBERTY MEDIA CORP DEL",
+    "cusip": "531229854",
+    "action": "REDUCE",
+    "shares": 6801360,
+    "value_x1000": 630214018,
+    "prev_shares": 7722451,
+    "change_pct": -11.93
+   },
+   {
+    "name": "LOUISIANA PAC CORP",
+    "cusip": "546347105",
+    "action": "REDUCE",
+    "shares": 5664793,
+    "value_x1000": 586589315,
+    "prev_shares": 5964793,
+    "change_pct": -5.03
+   },
+   {
+    "name": "NU HLDGS LTD",
+    "cusip": "G6683N103",
+    "action": "REDUCE",
+    "shares": 40180168,
+    "value_x1000": 416266540,
+    "prev_shares": 86438997,
+    "change_pct": -53.52
+   },
+   {
+    "name": "SPDR S&amp;P 500 ETF TR",
+    "cusip": "78462F103",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 39400,
+    "change_pct": -100.0
+   },
+   {
+    "name": "ULTA BEAUTY INC",
+    "cusip": "90384S303",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 24203,
+    "change_pct": -100.0
+   },
+   {
+    "name": "VANGUARD INDEX FDS",
+    "cusip": "922908363",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 43000,
+    "change_pct": -100.0
+   }
+  ]
+ }
+}
