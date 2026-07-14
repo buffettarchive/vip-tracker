@@ -1,0 +1,820 @@
+{
+ "period": "2025_Q3",
+ "collected_at": "2026-07-14T02:52:09.213046Z",
+ "portfolios": {
+  "워런 버핏 (버크셔 해서웨이)": {
+   "cik": "0001067983",
+   "filing_date": "2025-11-14",
+   "report_date": "2025-09-30",
+   "holdings": [
+    {
+     "name": "ALLY FINL INC",
+     "cusip": "02005N100",
+     "value_x1000": 498611260,
+     "shares": 12719675,
+     "type": "SH"
+    },
+    {
+     "name": "ALLY FINL INC",
+     "cusip": "02005N100",
+     "value_x1000": 109911900,
+     "shares": 2803875,
+     "type": "SH"
+    },
+    {
+     "name": "ALLY FINL INC",
+     "cusip": "02005N100",
+     "value_x1000": 165745440,
+     "shares": 4228200,
+     "type": "SH"
+    },
+    {
+     "name": "ALLY FINL INC",
+     "cusip": "02005N100",
+     "value_x1000": 122970400,
+     "shares": 3137000,
+     "type": "SH"
+    },
+    {
+     "name": "ALLY FINL INC",
+     "cusip": "02005N100",
+     "value_x1000": 189581000,
+     "shares": 4836250,
+     "type": "SH"
+    },
+    {
+     "name": "ALLY FINL INC",
+     "cusip": "02005N100",
+     "value_x1000": 49980000,
+     "shares": 1275000,
+     "type": "SH"
+    },
+    {
+     "name": "ALPHABET INC",
+     "cusip": "02079K305",
+     "value_x1000": 6219957,
+     "shares": 25586,
+     "type": "SH"
+    },
+    {
+     "name": "ALPHABET INC",
+     "cusip": "02079K305",
+     "value_x1000": 4332177164,
+     "shares": 17820556,
+     "type": "SH"
+    },
+    {
+     "name": "AMAZON COM INC",
+     "cusip": "023135106",
+     "value_x1000": 1695958680,
+     "shares": 7724000,
+     "type": "SH"
+    },
+    {
+     "name": "AMAZON COM INC",
+     "cusip": "023135106",
+     "value_x1000": 499741320,
+     "shares": 2276000,
+     "type": "SH"
+    },
+    {
+     "name": "AMERICAN EXPRESS CO",
+     "cusip": "025816109",
+     "value_x1000": 381964735,
+     "shares": 1149942,
+     "type": "SH"
+    },
+    {
+     "name": "AMERICAN EXPRESS CO",
+     "cusip": "025816109",
+     "value_x1000": 49512116707,
+     "shares": 149061045,
+     "type": "SH"
+    },
+    {
+     "name": "AMERICAN EXPRESS CO",
+     "cusip": "025816109",
+     "value_x1000": 464928670,
+     "shares": 1399713,
+     "type": "SH"
+    },
+    {
+     "name": "APPLE INC",
+     "cusip": "037833100",
+     "value_x1000": 176203960,
+     "shares": 692000,
+     "type": "SH"
+    },
+    {
+     "name": "APPLE INC",
+     "cusip": "037833100",
+     "value_x1000": 977779200,
+     "shares": 3840000,
+     "type": "SH"
+    },
+    {
+     "name": "APPLE INC",
+     "cusip": "037833100",
+     "value_x1000": 8657420,
+     "shares": 34000,
+     "type": "SH"
+    },
+    {
+     "name": "APPLE INC",
+     "cusip": "037833100",
+     "value_x1000": 8841772120,
+     "shares": 34724000,
+     "type": "SH"
+    },
+    {
+     "name": "APPLE INC",
+     "cusip": "037833100",
+     "value_x1000": 693612120,
+     "shares": 2724000,
+     "type": "SH"
+    },
+    {
+     "name": "APPLE INC",
+     "cusip": "037833100",
+     "value_x1000": 3954913160,
+     "shares": 15532000,
+     "type": "SH"
+    },
+    {
+     "name": "APPLE INC",
+     "cusip": "037833100",
+     "value_x1000": 15670691034,
+     "shares": 61542988,
+     "type": "SH"
+    },
+    {
+     "name": "APPLE INC",
+     "cusip": "037833100",
+     "value_x1000": 1834354520,
+     "shares": 7204000,
+     "type": "SH"
+    },
+    {
+     "name": "APPLE INC",
+     "cusip": "037833100",
+     "value_x1000": 3685005360,
+     "shares": 14472000,
+     "type": "SH"
+    },
+    {
+     "name": "APPLE INC",
+     "cusip": "037833100",
+     "value_x1000": 23161087763,
+     "shares": 90959776,
+     "type": "SH"
+    },
+    {
+     "name": "APPLE INC",
+     "cusip": "037833100",
+     "value_x1000": 690556560,
+     "shares": 2712000,
+     "type": "SH"
+    },
+    {
+     "name": "APPLE INC",
+     "cusip": "037833100",
+     "value_x1000": 961482880,
+     "shares": 3776000,
+     "type": "SH"
+    },
+    {
+     "name": "ATLANTA BRAVES HLDGS INC",
+     "cusip": "047726302",
+     "value_x1000": 4500745,
+     "shares": 108217,
+     "type": "SH"
+    },
+    {
+     "name": "ATLANTA BRAVES HLDGS INC",
+     "cusip": "047726302",
+     "value_x1000": 4028699,
+     "shares": 96867,
+     "type": "SH"
+    },
+    {
+     "name": "ATLANTA BRAVES HLDGS INC",
+     "cusip": "047726302",
+     "value_x1000": 620897,
+     "shares": 14929,
+     "type": "SH"
+    },
+    {
+     "name": "ATLANTA BRAVES HLDGS INC",
+     "cusip": "047726302",
+     "value_x1000": 151055,
+     "shares": 3632,
+     "type": "SH"
+    },
+    {
+     "name": "BANK AMER CORP",
+     "cusip": "060505104",
+     "value_x1000": 202232800,
+     "shares": 3920000,
+     "type": "SH"
+    },
+    {
+     "name": "BANK AMER CORP",
+     "cusip": "060505104",
+     "value_x1000": 613921000,
+     "shares": 11900000,
+     "type": "SH"
+    },
+    {
+     "name": "BANK AMER CORP",
+     "cusip": "060505104",
+     "value_x1000": 7506345,
+     "shares": 145500,
+     "type": "SH"
+    },
+    {
+     "name": "BANK AMER CORP",
+     "cusip": "060505104",
+     "value_x1000": 4265693974,
+     "shares": 82684512,
+     "type": "SH"
+    },
+    {
+     "name": "BANK AMER CORP",
+     "cusip": "060505104",
+     "value_x1000": 108339000,
+     "shares": 2100000,
+     "type": "SH"
+    },
+    {
+     "name": "BANK AMER CORP",
+     "cusip": "060505104",
+     "value_x1000": 1083390000,
+     "shares": 21000000,
+     "type": "SH"
+    },
+    {
+     "name": "BANK AMER CORP",
+     "cusip": "060505104",
+     "value_x1000": 16034172000,
+     "shares": 310800000,
+     "type": "SH"
+    },
+    {
+     "name": "BANK AMER CORP",
+     "cusip": "060505104",
+     "value_x1000": 6485894800,
+     "shares": 125720000,
+     "type": "SH"
+    },
+    {
+     "name": "BANK AMER CORP",
+     "cusip": "060505104",
+     "value_x1000": 505582000,
+     "shares": 9800000,
+     "type": "SH"
+    },
+    {
+     "name": "CAPITAL ONE FINL CORP",
+     "cusip": "14040H105",
+     "value_x1000": 412237900,
+     "shares": 1939213,
+     "type": "SH"
+    },
+    {
+     "name": "CAPITAL ONE FINL CORP",
+     "cusip": "14040H105",
+     "value_x1000": 653425640,
+     "shares": 3073787,
+     "type": "SH"
+    },
+    {
+     "name": "CAPITAL ONE FINL CORP",
+     "cusip": "14040H105",
+     "value_x1000": 454283460,
+     "shares": 2137000,
+     "type": "SH"
+    },
+    {
+     "name": "CHARTER COMMUNICATIONS INC N",
+     "cusip": "16119P108",
+     "value_x1000": 291853943,
+     "shares": 1060882,
+     "type": "SH"
+    },
+    {
+     "name": "CHEVRON CORP NEW",
+     "cusip": "166764100",
+     "value_x1000": 536411725,
+     "shares": 3454258,
+     "type": "SH"
+    },
+    {
+     "name": "CHEVRON CORP NEW",
+     "cusip": "166764100",
+     "value_x1000": 2727513715,
+     "shares": 17564001,
+     "type": "SH"
+    },
+    {
+     "name": "CHEVRON CORP NEW",
+     "cusip": "166764100",
+     "value_x1000": 9534806,
+     "shares": 61400,
+     "type": "SH"
+    },
+    {
+     "name": "CHEVRON CORP NEW",
+     "cusip": "166764100",
+     "value_x1000": 324866680,
+     "shares": 2092000,
+     "type": "SH"
+    },
+    {
+     "name": "CHEVRON CORP NEW",
+     "cusip": "166764100",
+     "value_x1000": 5049597230,
+     "shares": 32517208,
+     "type": "SH"
+    },
+    {
+     "name": "CHEVRON CORP NEW",
+     "cusip": "166764100",
+     "value_x1000": 443880936,
+     "shares": 2858400,
+     "type": "SH"
+    },
+    {
+     "name": "CHEVRON CORP NEW",
+     "cusip": "166764100",
+     "value_x1000": 9562684437,
+     "shares": 61579525,
+     "type": "SH"
+    },
+    {
+     "name": "CHEVRON CORP NEW",
+     "cusip": "166764100",
+     "value_x1000": 300952020,
+     "shares": 1938000,
+     "type": "SH"
+    },
+    {
+     "name": "COCA COLA CO",
+     "cusip": "191216100",
+     "value_x1000": 53056000,
+     "shares": 800000,
+     "type": "SH"
+    },
+    {
+     "name": "COCA COLA CO",
+     "cusip": "191216100",
+     "value_x1000": 24635957,
+     "shares": 371471,
+     "type": "SH"
+    },
+    {
+     "name": "COCA COLA CO",
+     "cusip": "191216100",
+     "value_x1000": 5637200,
+     "shares": 85000,
+     "type": "SH"
+    },
+    {
+     "name": "COCA COLA CO",
+     "cusip": "191216100",
+     "value_x1000": 5324381824,
+     "shares": 80283200,
+     "type": "SH"
+    },
+    {
+     "name": "COCA COLA CO",
+     "cusip": "191216100",
+     "value_x1000": 120967680,
+     "shares": 1824000,
+     "type": "SH"
+    },
+    {
+     "name": "COCA COLA CO",
+     "cusip": "191216100",
+     "value_x1000": 955750784,
+     "shares": 14411200,
+     "type": "SH"
+    },
+    {
+     "name": "COCA COLA CO",
+     "cusip": "191216100",
+     "value_x1000": 994163328,
+     "shares": 14990400,
+     "type": "SH"
+    },
+    {
+     "name": "COCA COLA CO",
+     "cusip": "191216100",
+     "value_x1000": 18750171387,
+     "shares": 282722729,
+     "type": "SH"
+    },
+    {
+     "name": "COCA COLA CO",
+     "cusip": "191216100",
+     "value_x1000": 235568640,
+     "shares": 3552000,
+     "type": "SH"
+    },
+    {
+     "name": "COCA COLA CO",
+     "cusip": "191216100",
+     "value_x1000": 63667200,
+     "shares": 960000,
+     "type": "SH"
+    },
+    {
+     "name": "CONSTELLATION BRANDS INC",
+     "cusip": "21036P108",
+     "value_x1000": 53868000,
+     "shares": 400000,
+     "type": "SH"
+    },
+    {
+     "name": "CONSTELLATION BRANDS INC",
+     "cusip": "21036P108",
+     "value_x1000": 1750710000,
+     "shares": 13000000,
+     "type": "SH"
+    },
+    {
+     "name": "DAVITA INC",
+     "cusip": "23918K108",
+     "value_x1000": 2209905533,
+     "shares": 16632088,
+     "type": "SH"
+    },
+    {
+     "name": "DAVITA INC",
+     "cusip": "23918K108",
+     "value_x1000": 2063270599,
+     "shares": 15528491,
+     "type": "SH"
+    },
+    {
+     "name": "DIAGEO P L C",
+     "cusip": "25243Q205",
+     "value_x1000": 21734183,
+     "shares": 227750,
+     "type": "SH"
+    },
+    {
+     "name": "DOMINOS PIZZA INC",
+     "cusip": "25754A201",
+     "value_x1000": 1287335476,
+     "shares": 2981945,
+     "type": "SH"
+    },
+    {
+     "name": "HEICO CORP NEW",
+     "cusip": "422806208",
+     "value_x1000": 328947963,
+     "shares": 1294612,
+     "type": "SH"
+    },
+    {
+     "name": "JEFFERIES FINL GROUP INC",
+     "cusip": "47233W109",
+     "value_x1000": 28363364,
+     "shares": 433558,
+     "type": "SH"
+    },
+    {
+     "name": "KRAFT HEINZ CO",
+     "cusip": "500754106",
+     "value_x1000": 8479530661,
+     "shares": 325634818,
+     "type": "SH"
+    },
+    {
+     "name": "KROGER CO",
+     "cusip": "501044101",
+     "value_x1000": 1119483937,
+     "shares": 16607090,
+     "type": "SH"
+    },
+    {
+     "name": "KROGER CO",
+     "cusip": "501044101",
+     "value_x1000": 51806675,
+     "shares": 768531,
+     "type": "SH"
+    },
+    {
+     "name": "KROGER CO",
+     "cusip": "501044101",
+     "value_x1000": 361797492,
+     "shares": 5367119,
+     "type": "SH"
+    },
+    {
+     "name": "KROGER CO",
+     "cusip": "501044101",
+     "value_x1000": 1837411897,
+     "shares": 27257260,
+     "type": "SH"
+    },
+    {
+     "name": "LAMAR ADVERTISING CO NEW",
+     "cusip": "512816109",
+     "value_x1000": 147162306,
+     "shares": 1202110,
+     "type": "SH"
+    },
+    {
+     "name": "LENNAR CORP",
+     "cusip": "526057104",
+     "value_x1000": 888701738,
+     "shares": 7050950,
+     "type": "SH"
+    },
+    {
+     "name": "LENNAR CORP",
+     "cusip": "526057302",
+     "value_x1000": 21715790,
+     "shares": 180980,
+     "type": "SH"
+    },
+    {
+     "name": "LIBERTY MEDIA CORP DEL",
+     "cusip": "531229722",
+     "value_x1000": 352930267,
+     "shares": 3639582,
+     "type": "SH"
+    },
+    {
+     "name": "LIBERTY MEDIA CORP DEL",
+     "cusip": "531229722",
+     "value_x1000": 13881934,
+     "shares": 143157,
+     "type": "SH"
+    },
+    {
+     "name": "LIBERTY MEDIA CORP DEL",
+     "cusip": "531229722",
+     "value_x1000": 536209773,
+     "shares": 5529646,
+     "type": "SH"
+    },
+    {
+     "name": "LIBERTY MEDIA CORP DEL",
+     "cusip": "531229722",
+     "value_x1000": 15769261,
+     "shares": 162620,
+     "type": "SH"
+    },
+    {
+     "name": "LIBERTY MEDIA CORP DEL",
+     "cusip": "531229722",
+     "value_x1000": 139894352,
+     "shares": 1442656,
+     "type": "SH"
+    },
+    {
+     "name": "LIBERTY MEDIA CORP DEL",
+     "cusip": "531229748",
+     "value_x1000": 95403121,
+     "shares": 1011698,
+     "type": "SH"
+    },
+    {
+     "name": "LIBERTY MEDIA CORP DEL",
+     "cusip": "531229748",
+     "value_x1000": 309754283,
+     "shares": 3284775,
+     "type": "SH"
+    },
+    {
+     "name": "LIBERTY MEDIA CORP DEL",
+     "cusip": "531229748",
+     "value_x1000": 22004622,
+     "shares": 233347,
+     "type": "SH"
+    },
+    {
+     "name": "LIBERTY MEDIA CORP DEL",
+     "cusip": "531229748",
+     "value_x1000": 43073222,
+     "shares": 456768,
+     "type": "SH"
+    },
+    {
+     "name": "LIBERTY MEDIA CORP DEL",
+     "cusip": "531229854",
+     "value_x1000": 302187951,
+     "shares": 2893135,
+     "type": "SH"
+    },
+    {
+     "name": "LIBERTY MEDIA CORP DEL",
+     "cusip": "531229854",
+     "value_x1000": 13100119,
+     "shares": 125420,
+     "type": "SH"
+    },
+    {
+     "name": "LOUISIANA PAC CORP",
+     "cusip": "546347105",
+     "value_x1000": 117258495,
+     "shares": 1319884,
+     "type": "SH"
+    },
+    {
+     "name": "LOUISIANA PAC CORP",
+     "cusip": "546347105",
+     "value_x1000": 386001716,
+     "shares": 4344909,
+     "type": "SH"
+    },
+    {
+     "name": "MASTERCARD INC",
+     "cusip": "57636Q104",
+     "value_x1000": 2267645249,
+     "shares": 3986648,
+     "type": "SH"
+    },
+    {
+     "name": "MOODYS CORP",
+     "cusip": "615369105",
+     "value_x1000": 34354208,
+     "shares": 72100,
+     "type": "SH"
+    },
+    {
+     "name": "MOODYS CORP",
+     "cusip": "615369105",
+     "value_x1000": 5705337213,
+     "shares": 11973928,
+     "type": "SH"
+    },
+    {
+     "name": "MOODYS CORP",
+     "cusip": "615369105",
+     "value_x1000": 6014964400,
+     "shares": 12623750,
+     "type": "SH"
+    },
+    {
+     "name": "NVR INC",
+     "cusip": "62944T105",
+     "value_x1000": 89281142,
+     "shares": 11112,
+     "type": "SH"
+    },
+    {
+     "name": "NUCOR CORP",
+     "cusip": "670346105",
+     "value_x1000": 867801447,
+     "shares": 6407749,
+     "type": "SH"
+    },
+    {
+     "name": "OCCIDENTAL PETE CORP",
+     "cusip": "674599105",
+     "value_x1000": 12518482615,
+     "shares": 264941431,
+     "type": "SH"
+    },
+    {
+     "name": "POOL CORP",
+     "cusip": "73278L105",
+     "value_x1000": 120927300,
+     "shares": 390000,
+     "type": "SH"
+    },
+    {
+     "name": "POOL CORP",
+     "cusip": "73278L105",
+     "value_x1000": 951569172,
+     "shares": 3068885,
+     "type": "SH"
+    },
+    {
+     "name": "SIRIUS XM HOLDINGS INC",
+     "cusip": "829933100",
+     "value_x1000": 372048315,
+     "shares": 15984890,
+     "type": "SH"
+    },
+    {
+     "name": "SIRIUS XM HOLDINGS INC",
+     "cusip": "829933100",
+     "value_x1000": 2354281286,
+     "shares": 101150646,
+     "type": "SH"
+    },
+    {
+     "name": "SIRIUS XM HOLDINGS INC",
+     "cusip": "829933100",
+     "value_x1000": 30874078,
+     "shares": 1326491,
+     "type": "SH"
+    },
+    {
+     "name": "SIRIUS XM HOLDINGS INC",
+     "cusip": "829933100",
+     "value_x1000": 147681970,
+     "shares": 6345090,
+     "type": "SH"
+    },
+    {
+     "name": "UNITEDHEALTH GROUP INC",
+     "cusip": "91324P102",
+     "value_x1000": 675026970,
+     "shares": 1954900,
+     "type": "SH"
+    },
+    {
+     "name": "UNITEDHEALTH GROUP INC",
+     "cusip": "91324P102",
+     "value_x1000": 1065134479,
+     "shares": 3084664,
+     "type": "SH"
+    },
+    {
+     "name": "VERISIGN INC",
+     "cusip": "92343E102",
+     "value_x1000": 272006793,
+     "shares": 972947,
+     "type": "SH"
+    },
+    {
+     "name": "VERISIGN INC",
+     "cusip": "92343E102",
+     "value_x1000": 2241293959,
+     "shares": 8016933,
+     "type": "SH"
+    },
+    {
+     "name": "VISA INC",
+     "cusip": "92826C839",
+     "value_x1000": 2832586895,
+     "shares": 8297460,
+     "type": "SH"
+    },
+    {
+     "name": "ALLEGION PLC",
+     "cusip": "G0176J109",
+     "value_x1000": 138356588,
+     "shares": 780133,
+     "type": "SH"
+    },
+    {
+     "name": "AON PLC",
+     "cusip": "G0403H108",
+     "value_x1000": 821560320,
+     "shares": 2304000,
+     "type": "SH"
+    },
+    {
+     "name": "AON PLC",
+     "cusip": "G0403H108",
+     "value_x1000": 15620343,
+     "shares": 43806,
+     "type": "SH"
+    },
+    {
+     "name": "AON PLC",
+     "cusip": "G0403H108",
+     "value_x1000": 624797337,
+     "shares": 1752194,
+     "type": "SH"
+    },
+    {
+     "name": "LIBERTY LATIN AMERICA LTD",
+     "cusip": "G9001E102",
+     "value_x1000": 8336482,
+     "shares": 1005607,
+     "type": "SH"
+    },
+    {
+     "name": "LIBERTY LATIN AMERICA LTD",
+     "cusip": "G9001E102",
+     "value_x1000": 13472784,
+     "shares": 1625185,
+     "type": "SH"
+    },
+    {
+     "name": "LIBERTY LATIN AMERICA LTD",
+     "cusip": "G9001E128",
+     "value_x1000": 10837129,
+     "shares": 1284020,
+     "type": "SH"
+    },
+    {
+     "name": "CHUBB LIMITED",
+     "cusip": "H1467J104",
+     "value_x1000": 8843709614,
+     "shares": 31332895,
+     "type": "SH"
+    }
+   ],
+   "total_value_x1000": 267334501955,
+   "holding_count": 115
+  }
+ }
+}

@@ -1,0 +1,270 @@
+{
+ "period": "2026_Q1",
+ "compared_to": "2025_Q4",
+ "generated_at": "2026-07-14T02:52:10.569223Z",
+ "changes": {
+  "워런 버핏 (버크셔 해서웨이)": [
+   {
+    "name": "DELTA AIR LINES INC",
+    "cusip": "247361702",
+    "action": "NEW",
+    "shares": 39809456,
+    "value_x1000": 2646532635,
+    "prev_shares": 0,
+    "change_pct": null
+   },
+   {
+    "name": "ALPHABET INC",
+    "cusip": "02079K107",
+    "action": "NEW",
+    "shares": 3585215,
+    "value_x1000": 1028454775,
+    "prev_shares": 0,
+    "change_pct": null
+   },
+   {
+    "name": "MACYS INC",
+    "cusip": "55616P104",
+    "action": "NEW",
+    "shares": 3038355,
+    "value_x1000": 54963842,
+    "prev_shares": 0,
+    "change_pct": null
+   },
+   {
+    "name": "ALPHABET INC",
+    "cusip": "02079K305",
+    "action": "ADD",
+    "shares": 54249798,
+    "value_x1000": 15600071913,
+    "prev_shares": 17846142,
+    "change_pct": 203.99
+   },
+   {
+    "name": "NEW YORK TIMES CO MTN BE",
+    "cusip": "650111107",
+    "action": "ADD",
+    "shares": 15146535,
+    "value_x1000": 1268219376,
+    "prev_shares": 5065744,
+    "change_pct": 199.0
+   },
+   {
+    "name": "LENNAR CORP",
+    "cusip": "526057104",
+    "action": "ADD",
+    "shares": 10099642,
+    "value_x1000": 877052911,
+    "prev_shares": 7050950,
+    "change_pct": 43.24
+   },
+   {
+    "name": "LENNAR CORP",
+    "cusip": "526057302",
+    "action": "ADD",
+    "shares": 237703,
+    "value_x1000": 19995576,
+    "prev_shares": 180980,
+    "change_pct": 31.34
+   },
+   {
+    "name": "BANK AMERICA CORP",
+    "cusip": "060505104",
+    "action": "REDUCE",
+    "shares": 513624165,
+    "value_x1000": 25039178044,
+    "prev_shares": 517295934,
+    "change_pct": -0.71
+   },
+   {
+    "name": "CHEVRON CORPORATION",
+    "cusip": "166764100",
+    "action": "REDUCE",
+    "shares": 84375856,
+    "value_x1000": 17457364606,
+    "prev_shares": 130156362,
+    "change_pct": -35.17
+   },
+   {
+    "name": "DAVITA INC",
+    "cusip": "23918K108",
+    "action": "REDUCE",
+    "shares": 30100585,
+    "value_x1000": 4626158909,
+    "prev_shares": 31759065,
+    "change_pct": -5.22
+   },
+   {
+    "name": "LIBERTY LIVE HOLDINGS INC",
+    "cusip": "530909308",
+    "action": "REDUCE",
+    "shares": 10587143,
+    "value_x1000": 996356028,
+    "prev_shares": 10917661,
+    "change_pct": -3.03
+   },
+   {
+    "name": "NUCOR CORP",
+    "cusip": "670346105",
+    "action": "REDUCE",
+    "shares": 3907075,
+    "value_x1000": 660686383,
+    "prev_shares": 6407749,
+    "change_pct": -39.03
+   },
+   {
+    "name": "CONSTELLATION BRANDS INC",
+    "cusip": "21036P108",
+    "action": "REDUCE",
+    "shares": 632890,
+    "value_x1000": 94933500,
+    "prev_shares": 13000000,
+    "change_pct": -95.13
+   },
+   {
+    "name": "AMAZON COM INC",
+    "cusip": "023135106",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 2276000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "ATLANTA BRAVES HLDGS INC",
+    "cusip": "047726302",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 115428,
+    "change_pct": -100.0
+   },
+   {
+    "name": "CHARTER COMMUNICATIONS INC N",
+    "cusip": "16119P108",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 1060882,
+    "change_pct": -100.0
+   },
+   {
+    "name": "DIAGEO PLC",
+    "cusip": "25243Q205",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 227750,
+    "change_pct": -100.0
+   },
+   {
+    "name": "DOMINOS PIZZA INC",
+    "cusip": "25754A201",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 3350000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "HEICO CORP NEW",
+    "cusip": "422806208",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 1294612,
+    "change_pct": -100.0
+   },
+   {
+    "name": "LAMAR ADVERTISING CO NEW",
+    "cusip": "512816109",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 1202410,
+    "change_pct": -100.0
+   },
+   {
+    "name": "LIBERTY MEDIA CORP DEL",
+    "cusip": "531229755",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 3018555,
+    "change_pct": -100.0
+   },
+   {
+    "name": "MASTERCARD INCORPORATED",
+    "cusip": "57636Q104",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 3986648,
+    "change_pct": -100.0
+   },
+   {
+    "name": "POOL CORP",
+    "cusip": "73278L105",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 3068885,
+    "change_pct": -100.0
+   },
+   {
+    "name": "UNITEDHEALTH GROUP INC",
+    "cusip": "91324P102",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 5039564,
+    "change_pct": -100.0
+   },
+   {
+    "name": "VISA INC",
+    "cusip": "92826C839",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 8297460,
+    "change_pct": -100.0
+   },
+   {
+    "name": "ALLEGION PLC",
+    "cusip": "G0176J109",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 780133,
+    "change_pct": -100.0
+   },
+   {
+    "name": "AON PLC",
+    "cusip": "G0403H108",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 3602995,
+    "change_pct": -100.0
+   },
+   {
+    "name": "LIBERTY LATIN AMERICA LTD",
+    "cusip": "G9001E102",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 2396665,
+    "change_pct": -100.0
+   },
+   {
+    "name": "LIBERTY LATIN AMERICA LTD",
+    "cusip": "G9001E128",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 1284020,
+    "change_pct": -100.0
+   }
+  ]
+ }
+}

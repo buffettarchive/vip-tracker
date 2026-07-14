@@ -1,0 +1,189 @@
+{
+ "period": "2025_Q4",
+ "compared_to": "2025_Q3",
+ "generated_at": "2026-07-14T02:52:10.568001Z",
+ "changes": {
+  "워런 버핏 (버크셔 해서웨이)": [
+   {
+    "name": "LIBERTY LIVE HOLDINGS INC",
+    "cusip": "530909308",
+    "action": "NEW",
+    "shares": 10917661,
+    "value_x1000": 907912688,
+    "prev_shares": 0,
+    "change_pct": null
+   },
+   {
+    "name": "LIBERTY LIVE HOLDINGS INC",
+    "cusip": "530909100",
+    "action": "NEW",
+    "shares": 4986588,
+    "value_x1000": 406406923,
+    "prev_shares": 0,
+    "change_pct": null
+   },
+   {
+    "name": "NEW YORK TIMES CO",
+    "cusip": "650111107",
+    "action": "NEW",
+    "shares": 5065744,
+    "value_x1000": 351663948,
+    "prev_shares": 0,
+    "change_pct": null
+   },
+   {
+    "name": "LIBERTY MEDIA CORP DEL",
+    "cusip": "531229755",
+    "action": "NEW",
+    "shares": 3018555,
+    "value_x1000": 297357853,
+    "prev_shares": 0,
+    "change_pct": null
+   },
+   {
+    "name": "CHEVRON CORP NEW",
+    "cusip": "166764100",
+    "action": "ADD",
+    "shares": 130156362,
+    "value_x1000": 19837131131,
+    "prev_shares": 122064792,
+    "change_pct": 6.63
+   },
+   {
+    "name": "CHUBB LIMITED",
+    "cusip": "H1467J104",
+    "action": "ADD",
+    "shares": 34249183,
+    "value_x1000": 10689854998,
+    "prev_shares": 31332895,
+    "change_pct": 9.31
+   },
+   {
+    "name": "DOMINOS PIZZA INC",
+    "cusip": "25754A201",
+    "action": "ADD",
+    "shares": 3350000,
+    "value_x1000": 1396347000,
+    "prev_shares": 2981945,
+    "change_pct": 12.34
+   },
+   {
+    "name": "LAMAR ADVERTISING CO NEW",
+    "cusip": "512816109",
+    "action": "ADD",
+    "shares": 1202410,
+    "value_x1000": 152201058,
+    "prev_shares": 1202110,
+    "change_pct": 0.02
+   },
+   {
+    "name": "APPLE INC",
+    "cusip": "037833100",
+    "action": "REDUCE",
+    "shares": 227917808,
+    "value_x1000": 61961735283,
+    "prev_shares": 238212764,
+    "change_pct": -4.32
+   },
+   {
+    "name": "BANK AMERICA CORP",
+    "cusip": "060505104",
+    "action": "REDUCE",
+    "shares": 517295934,
+    "value_x1000": 28451276370,
+    "prev_shares": 568070012,
+    "change_pct": -8.94
+   },
+   {
+    "name": "DAVITA INC",
+    "cusip": "23918K108",
+    "action": "REDUCE",
+    "shares": 31759065,
+    "value_x1000": 3608147375,
+    "prev_shares": 32160579,
+    "change_pct": -1.25
+   },
+   {
+    "name": "CONSTELLATION BRANDS INC",
+    "cusip": "21036P108",
+    "action": "REDUCE",
+    "shares": 13000000,
+    "value_x1000": 1793480000,
+    "prev_shares": 13400000,
+    "change_pct": -2.99
+   },
+   {
+    "name": "AON PLC",
+    "cusip": "G0403H108",
+    "action": "REDUCE",
+    "shares": 3602995,
+    "value_x1000": 1271424876,
+    "prev_shares": 4100000,
+    "change_pct": -12.12
+   },
+   {
+    "name": "POOL CORP",
+    "cusip": "73278L105",
+    "action": "REDUCE",
+    "shares": 3068885,
+    "value_x1000": 702007444,
+    "prev_shares": 3458885,
+    "change_pct": -11.28
+   },
+   {
+    "name": "AMAZON COM INC",
+    "cusip": "023135106",
+    "action": "REDUCE",
+    "shares": 2276000,
+    "value_x1000": 525346320,
+    "prev_shares": 10000000,
+    "change_pct": -77.24
+   },
+   {
+    "name": "LIBERTY LATIN AMERICA LTD",
+    "cusip": "G9001E102",
+    "action": "REDUCE",
+    "shares": 2396665,
+    "value_x1000": 17711354,
+    "prev_shares": 2630792,
+    "change_pct": -8.9
+   },
+   {
+    "name": "ATLANTA BRAVES HLDGS INC",
+    "cusip": "047726302",
+    "action": "REDUCE",
+    "shares": 115428,
+    "value_x1000": 4553634,
+    "prev_shares": 223645,
+    "change_pct": -48.39
+   },
+   {
+    "name": "LIBERTY MEDIA CORP DEL",
+    "cusip": "531229722",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 10917661,
+    "change_pct": -100.0
+   },
+   {
+    "name": "LIBERTY MEDIA CORP DEL",
+    "cusip": "531229748",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 4986588,
+    "change_pct": -100.0
+   },
+   {
+    "name": "LIBERTY MEDIA CORP DEL",
+    "cusip": "531229854",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 3018555,
+    "change_pct": -100.0
+   }
+  ]
+ }
+}
