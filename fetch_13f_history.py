@@ -6,16 +6,10 @@ fetch_13f_history.py — 81명 구루의 과거 13F-HR 전량 수집 + 분기별
   docs/us_vips_archive/YYYY_QN.json   — 분기별 포트폴리오 스냅샷
   docs/us_vips_changes/YYYY_QN.json   — 인접 분기 대비 변동내역
   docs/us_vips_changes.json           — 가장 최근 분기 변동내역 (guru.html용)
+  docs/us_vips_manifest.json          — 사용 가능한 분기 목록 (guru.html용)
 
 사용법:
-  로컬:   python fetch_13f_history.py [--quarters N] [--guru "이름"]
-  Actions: workflow_dispatch로 실행 (timeout 60분+ 권장)
-
-Rate limiting:
-  - 요청 간 0.35초 최소 간격
-  - 10명마다 30초 쿨다운
-  - 403/429 시 지수 백오프
-  - Resumable: 이미 수집된 분기는 스킵
+  python fetch_13f_history.py [--quarters N] [--guru "이름"] [--start-year YYYY]
 """
 
 import json, os, re, sys, time, argparse, logging
@@ -24,32 +18,21 @@ from pathlib import Path
 from urllib.request import Request, urlopen
 from urllib.error import HTTPError, URLError
 
-# ──────────────────────────────────────────────
-# 설정
-# ──────────────────────────────────────────────
-
 SEC_UA = "BuffettArchive buffettarchive1@gmail.com"
 SEC_HEADERS = {"User-Agent": SEC_UA, "Accept": "application/json"}
-MIN_INTERVAL = 0.35          # SEC 요청 간 최소 간격(초)
-COOLDOWN_EVERY = 10          # N명마다 쿨다운
-COOLDOWN_SEC = 30            # 쿨다운 길이(초)
-MAX_RETRIES = 4              # 백오프 최대 재시도
-BACKOFF_BASE = 5             # 백오프 초기 대기(초)
+MIN_INTERVAL = 0.35
+COOLDOWN_EVERY = 10
+COOLDOWN_SEC = 30
+MAX_RETRIES = 4
+BACKOFF_BASE = 5
 
 ARCHIVE_DIR = Path("docs/us_vips_archive")
 CHANGES_DIR = Path("docs/us_vips_changes")
 LATEST_CHANGES = Path("docs/us_vips_changes.json")
+MANIFEST_PATH = Path("docs/us_vips_manifest.json")
 
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s [%(levelname)s] %(message)s",
-    datefmt="%H:%M:%S",
-)
+logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s", datefmt="%H:%M:%S")
 log = logging.getLogger("13f-history")
-
-# ──────────────────────────────────────────────
-# 81명 CIK (인수인계 문서 §2.1 그대로)
-# ──────────────────────────────────────────────
 
 GURUS = {
     "마이클 버리 (사이언 에셋)": "0001649339",
@@ -135,14 +118,9 @@ GURUS = {
     "젠슨 인베스트먼트": "0001106129",
 }
 
-# ──────────────────────────────────────────────
-# HTTP 유틸
-# ──────────────────────────────────────────────
-
 _last_request_time = 0.0
 
-def safe_get(url: str, accept: str = "application/json") -> bytes | None:
-    """SEC rate-limit 준수 + 지수 백오프. None 반환 = 실패."""
+def safe_get(url, accept="application/json"):
     global _last_request_time
     for attempt in range(MAX_RETRIES + 1):
         elapsed = time.time() - _last_request_time
@@ -155,60 +133,46 @@ def safe_get(url: str, accept: str = "application/json") -> bytes | None:
                 return resp.read()
         except HTTPError as e:
             if e.code in (403, 429, 503):
-                wait = BACKOFF_BASE * (2 ** attempt)
-                wait = min(wait, 60)
-                log.warning(f"  HTTP {e.code} → {wait}s 대기 후 재시도 ({attempt+1}/{MAX_RETRIES})")
+                wait = min(BACKOFF_BASE * (2 ** attempt), 60)
+                log.warning(f"  HTTP {e.code} → {wait}s 대기 ({attempt+1}/{MAX_RETRIES})")
                 time.sleep(wait)
             else:
                 log.error(f"  HTTP {e.code}: {url}")
                 return None
         except (URLError, TimeoutError) as e:
-            log.error(f"  Network error: {e} — {url}")
+            log.error(f"  Network error: {e}")
             if attempt < MAX_RETRIES:
                 time.sleep(BACKOFF_BASE * (2 ** attempt))
             else:
                 return None
     return None
 
-# ──────────────────────────────────────────────
-# SEC EDGAR 13F 파싱
-# ──────────────────────────────────────────────
 
-def report_date_to_quarter(date_str: str) -> str:
-    """'2025-12-31' → '2025_Q4'"""
+def report_date_to_quarter(date_str):
     d = datetime.strptime(date_str, "%Y-%m-%d")
     q = (d.month - 1) // 3 + 1
     return f"{d.year}_Q{q}"
 
 
-def get_all_13f_filings(cik: str) -> list[dict]:
-    """
-    SEC submissions에서 해당 CIK의 모든 13F-HR 파일링 메타데이터를 반환.
-    반환: [{"accession": ..., "filing_date": ..., "report_date": ..., "quarter": ...}, ...]
-    최신순 정렬.
-    """
+def get_all_13f_filings(cik, start_year=2013):
     cik_padded = cik.zfill(10)
     url = f"https://data.sec.gov/submissions/CIK{cik_padded}.json"
     raw = safe_get(url)
     if not raw:
         return []
-
     try:
         data = json.loads(raw)
     except json.JSONDecodeError:
-        log.error(f"  submissions JSON 파싱 실패: {cik}")
         return []
 
     filings_recent = data.get("filings", {}).get("recent", {})
     filings_files = data.get("filings", {}).get("files", [])
 
-    # recent + older batches를 합친다
     all_forms = list(filings_recent.get("form", []))
     all_accessions = list(filings_recent.get("accessionNumber", []))
     all_filing_dates = list(filings_recent.get("filingDate", []))
     all_report_dates = list(filings_recent.get("reportDate", []))
 
-    # older filing batches (있으면)
     for fobj in filings_files:
         fname = fobj.get("name", "")
         if not fname:
@@ -226,7 +190,6 @@ def get_all_13f_filings(cik: str) -> list[dict]:
         all_filing_dates.extend(batch.get("filingDate", []))
         all_report_dates.extend(batch.get("reportDate", []))
 
-    # 13F-HR만 필터 (13F-HR/A 수정본은 제외 — 원본만)
     results = []
     for i, form in enumerate(all_forms):
         if form != "13F-HR":
@@ -236,6 +199,13 @@ def get_all_13f_filings(cik: str) -> list[dict]:
         report_date = all_report_dates[i]
         if not report_date:
             continue
+        # start_year 이전 분기는 스킵 (XML 포맷 이전 = 파싱 불가)
+        try:
+            rd_year = int(report_date[:4])
+            if rd_year < start_year:
+                continue
+        except ValueError:
+            continue
         results.append({
             "accession": all_accessions[i],
             "filing_date": all_filing_dates[i] if i < len(all_filing_dates) else "",
@@ -243,36 +213,25 @@ def get_all_13f_filings(cik: str) -> list[dict]:
             "quarter": report_date_to_quarter(report_date),
         })
 
-    # 최신순 정렬
     results.sort(key=lambda x: x["report_date"], reverse=True)
     return results
 
 
-def parse_13f_xml(xml_bytes: bytes) -> list[dict]:
-    """정규식 기반 13F XML 파싱 — fetch_13f.py와 동일 로직."""
+def parse_13f_xml(xml_bytes):
     try:
         text = xml_bytes.decode("utf-8", errors="replace")
     except Exception:
         return []
-
     entries = []
-    # <infoTable> 엔트리 단위 분리
     blocks = re.split(r"</?(?:ns1:|)infoTable>", text, flags=re.IGNORECASE)
-
     for block in blocks:
         name_m = re.search(r"<(?:ns1:|)nameOfIssuer>(.*?)</(?:ns1:|)nameOfIssuer>", block, re.I | re.S)
         cusip_m = re.search(r"<(?:ns1:|)cusip>(.*?)</(?:ns1:|)cusip>", block, re.I | re.S)
         value_m = re.search(r"<(?:ns1:|)value>(.*?)</(?:ns1:|)value>", block, re.I | re.S)
-        shares_m = re.search(
-            r"<(?:ns1:|)(?:sshPrnamt|Amt)>(.*?)</(?:ns1:|)(?:sshPrnamt|Amt)>", block, re.I | re.S
-        )
-        type_m = re.search(
-            r"<(?:ns1:|)(?:sshPrnamtType|Type)>(.*?)</(?:ns1:|)(?:sshPrnamtType|Type)>", block, re.I | re.S
-        )
-
+        shares_m = re.search(r"<(?:ns1:|)(?:sshPrnamt|Amt)>(.*?)</(?:ns1:|)(?:sshPrnamt|Amt)>", block, re.I | re.S)
+        type_m = re.search(r"<(?:ns1:|)(?:sshPrnamtType|Type)>(.*?)</(?:ns1:|)(?:sshPrnamtType|Type)>", block, re.I | re.S)
         if not name_m or not value_m:
             continue
-
         name = name_m.group(1).strip()
         cusip = cusip_m.group(1).strip() if cusip_m else ""
         try:
@@ -284,52 +243,37 @@ def parse_13f_xml(xml_bytes: bytes) -> list[dict]:
         except ValueError:
             shares = 0
         stype = type_m.group(1).strip() if type_m else "SH"
-
-        entries.append({
-            "name": name,
-            "cusip": cusip,
-            "value_x1000": value,
-            "shares": shares,
-            "type": stype,
-        })
-
+        entries.append({"name": name, "cusip": cusip, "value_x1000": value, "shares": shares, "type": stype})
     return entries
 
 
-def get_holdings_for_filing(cik: str, accession: str) -> list[dict]:
-    """특정 13F-HR 파일링의 보유 내역을 파싱해서 반환."""
-    cik_plain = str(int(cik))  # 앞 0 제거
+def get_holdings_for_filing(cik, accession):
+    cik_plain = str(int(cik))
     acc_clean = accession.replace("-", "")
     index_url = f"https://www.sec.gov/Archives/edgar/data/{cik_plain}/{acc_clean}/index.json"
-
     raw = safe_get(index_url)
     if not raw:
         return []
-
     try:
         idx = json.loads(raw)
     except json.JSONDecodeError:
         return []
 
-    # XML 정보 테이블 파일 찾기
     xml_filename = None
     for item in idx.get("directory", {}).get("item", []):
         fname = item.get("name", "").lower()
         if "infotable" in fname and fname.endswith(".xml"):
             xml_filename = item["name"]
             break
-        # 대안: primary_doc.xml 등
         if fname.endswith(".xml") and "13f" in fname:
             xml_filename = item["name"]
 
     if not xml_filename:
-        # 마지막 시도: .xml 파일 아무거나
         for item in idx.get("directory", {}).get("item", []):
             fname = item.get("name", "").lower()
             if fname.endswith(".xml") and fname not in ("primary_doc.xml",):
                 xml_filename = item["name"]
                 break
-
     if not xml_filename:
         return []
 
@@ -337,99 +281,53 @@ def get_holdings_for_filing(cik: str, accession: str) -> list[dict]:
     xml_raw = safe_get(xml_url, accept="application/xml")
     if not xml_raw:
         return []
-
     return parse_13f_xml(xml_raw)
 
 
-# ──────────────────────────────────────────────
-# 변동 계산 엔진
-# ──────────────────────────────────────────────
-
-def compute_changes(prev_holdings: list[dict], curr_holdings: list[dict]) -> list[dict]:
-    """
-    이전 분기 vs 현재 분기 보유 내역을 비교해 변동 목록 반환.
-    매칭 키: CUSIP (없으면 name fallback).
-    """
+def compute_changes(prev_holdings, curr_holdings):
     def make_key(h):
         return h.get("cusip") or h.get("name", "")
-
-    prev_map = {}
-    for h in prev_holdings:
-        k = make_key(h)
-        if k:
-            # 같은 CUSIP 여러 라인 → 합산 (PUT/CALL 등)
-            if k in prev_map:
-                prev_map[k]["shares"] += h.get("shares", 0)
-                prev_map[k]["value_x1000"] += h.get("value_x1000", 0)
+    def aggregate(holdings):
+        m = {}
+        for h in holdings:
+            k = make_key(h)
+            if not k:
+                continue
+            if k in m:
+                m[k]["shares"] += h.get("shares", 0)
+                m[k]["value_x1000"] += h.get("value_x1000", 0)
             else:
-                prev_map[k] = {**h, "shares": h.get("shares", 0), "value_x1000": h.get("value_x1000", 0)}
+                m[k] = {**h, "shares": h.get("shares", 0), "value_x1000": h.get("value_x1000", 0)}
+        return m
 
-    curr_map = {}
-    for h in curr_holdings:
-        k = make_key(h)
-        if k:
-            if k in curr_map:
-                curr_map[k]["shares"] += h.get("shares", 0)
-                curr_map[k]["value_x1000"] += h.get("value_x1000", 0)
-            else:
-                curr_map[k] = {**h, "shares": h.get("shares", 0), "value_x1000": h.get("value_x1000", 0)}
-
+    prev_map = aggregate(prev_holdings)
+    curr_map = aggregate(curr_holdings)
     changes = []
-    all_keys = set(list(prev_map.keys()) + list(curr_map.keys()))
 
-    for k in sorted(all_keys):
+    for k in sorted(set(list(prev_map.keys()) + list(curr_map.keys()))):
         prev = prev_map.get(k)
         curr = curr_map.get(k)
-
         if curr and not prev:
-            changes.append({
-                "name": curr["name"],
-                "cusip": curr.get("cusip", ""),
-                "action": "NEW",
-                "shares": curr["shares"],
-                "value_x1000": curr["value_x1000"],
-                "prev_shares": 0,
-                "change_pct": None,
-            })
+            changes.append({"name": curr["name"], "cusip": curr.get("cusip", ""), "action": "NEW",
+                            "shares": curr["shares"], "value_x1000": curr["value_x1000"],
+                            "prev_shares": 0, "change_pct": None})
         elif prev and not curr:
-            changes.append({
-                "name": prev["name"],
-                "cusip": prev.get("cusip", ""),
-                "action": "EXIT",
-                "shares": 0,
-                "value_x1000": 0,
-                "prev_shares": prev["shares"],
-                "change_pct": -100.0,
-            })
-        elif prev and curr:
-            ps = prev["shares"]
-            cs = curr["shares"]
-            if ps == cs:
-                continue  # 변동 없음
-            pct = round((cs - ps) / ps * 100, 2) if ps > 0 else None
-            action = "ADD" if cs > ps else "REDUCE"
-            changes.append({
-                "name": curr["name"],
-                "cusip": curr.get("cusip", ""),
-                "action": action,
-                "shares": cs,
-                "value_x1000": curr["value_x1000"],
-                "prev_shares": ps,
-                "change_pct": pct,
-            })
+            changes.append({"name": prev["name"], "cusip": prev.get("cusip", ""), "action": "EXIT",
+                            "shares": 0, "value_x1000": 0,
+                            "prev_shares": prev["shares"], "change_pct": -100.0})
+        elif prev and curr and prev["shares"] != curr["shares"]:
+            pct = round((curr["shares"] - prev["shares"]) / prev["shares"] * 100, 2) if prev["shares"] else None
+            action = "ADD" if curr["shares"] > prev["shares"] else "REDUCE"
+            changes.append({"name": curr["name"], "cusip": curr.get("cusip", ""), "action": action,
+                            "shares": curr["shares"], "value_x1000": curr["value_x1000"],
+                            "prev_shares": prev["shares"], "change_pct": pct})
 
-    # 정렬: NEW → ADD → REDUCE → EXIT, 각 그룹 내 value 내림차순
-    action_order = {"NEW": 0, "ADD": 1, "REDUCE": 2, "EXIT": 3}
-    changes.sort(key=lambda x: (action_order.get(x["action"], 9), -(x.get("value_x1000") or 0)))
+    order = {"NEW": 0, "ADD": 1, "REDUCE": 2, "EXIT": 3}
+    changes.sort(key=lambda x: (order.get(x["action"], 9), -(x.get("value_x1000") or 0)))
     return changes
 
 
-# ──────────────────────────────────────────────
-# 아카이브 I/O
-# ──────────────────────────────────────────────
-
-def load_archive(quarter: str) -> dict | None:
-    """이미 수집된 분기 아카이브 로드. 없으면 None."""
+def load_archive(quarter):
     path = ARCHIVE_DIR / f"{quarter}.json"
     if not path.exists():
         return None
@@ -439,46 +337,35 @@ def load_archive(quarter: str) -> dict | None:
     except Exception:
         return None
 
-
-def save_archive(quarter: str, archive: dict):
-    """분기 아카이브 저장."""
+def save_archive(quarter, archive):
     ARCHIVE_DIR.mkdir(parents=True, exist_ok=True)
     path = ARCHIVE_DIR / f"{quarter}.json"
     with open(path, "w", encoding="utf-8") as f:
         json.dump(archive, f, ensure_ascii=False, indent=1)
     log.info(f"  📁 저장: {path} ({len(archive.get('portfolios', {}))}명)")
 
-
-def save_changes(quarter: str, prev_quarter: str, all_changes: dict):
-    """변동내역 저장."""
+def save_changes(quarter, prev_quarter, all_changes):
     CHANGES_DIR.mkdir(parents=True, exist_ok=True)
-    payload = {
-        "period": quarter,
-        "compared_to": prev_quarter,
-        "generated_at": datetime.utcnow().isoformat() + "Z",
-        "changes": all_changes,
-    }
+    payload = {"period": quarter, "compared_to": prev_quarter,
+               "generated_at": datetime.utcnow().isoformat() + "Z", "changes": all_changes}
     path = CHANGES_DIR / f"{quarter}.json"
     with open(path, "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=1)
-
-    # 가장 최근 변동내역은 루트에도 복사 (guru.html용)
     with open(LATEST_CHANGES, "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=1)
-
     total = sum(len(v) for v in all_changes.values())
     log.info(f"  📊 변동저장: {path} (총 {total}건)")
 
+def save_manifest():
+    archive_quarters = sorted([f.stem for f in ARCHIVE_DIR.glob("*.json")]) if ARCHIVE_DIR.exists() else []
+    changes_quarters = sorted([f.stem for f in CHANGES_DIR.glob("*.json")]) if CHANGES_DIR.exists() else []
+    manifest = {"archive_quarters": archive_quarters, "changes_quarters": changes_quarters}
+    with open(MANIFEST_PATH, "w", encoding="utf-8") as f:
+        json.dump(manifest, f, ensure_ascii=False, indent=1)
+    log.info(f"  📋 매니페스트: 아카이브 {len(archive_quarters)}개, 변동 {len(changes_quarters)}개")
 
-# ──────────────────────────────────────────────
-# 메인 수집 로직
-# ──────────────────────────────────────────────
 
-def collect_history(max_quarters: int | None = None, guru_filter: str | None = None):
-    """
-    1단계: 81명 각각의 모든 13F-HR을 수집해서 분기별 아카이브로 저장.
-    2단계: 인접 분기 간 변동내역 계산.
-    """
+def collect_history(max_quarters=None, guru_filter=None, start_year=2013):
     gurus = GURUS
     if guru_filter:
         gurus = {k: v for k, v in GURUS.items() if guru_filter in k}
@@ -487,52 +374,41 @@ def collect_history(max_quarters: int | None = None, guru_filter: str | None = N
             return
         log.info(f"필터: {list(gurus.keys())}")
 
-    # ── 1단계: 파일링 메타데이터 수집 ──
+    log.info(f"수집 범위: {start_year}년 이후 (XML 포맷)")
     log.info(f"━━━ 1단계: {len(gurus)}명 파일링 목록 수집 ━━━")
-
-    # {quarter: {guru_name: filing_info}} 매핑
-    quarter_guru_filings: dict[str, dict[str, dict]] = {}
+    quarter_guru_filings = {}
 
     for idx, (name, cik) in enumerate(gurus.items()):
         log.info(f"[{idx+1}/{len(gurus)}] {name} (CIK {cik})")
-
-        filings = get_all_13f_filings(cik)
+        filings = get_all_13f_filings(cik, start_year=start_year)
         if not filings:
-            log.warning(f"  ⚠️ 13F-HR 파일링 없음")
+            log.warning(f"  ⚠️ {start_year}년 이후 13F-HR 없음")
             continue
-
         if max_quarters:
             filings = filings[:max_quarters]
-
-        log.info(f"  📋 {len(filings)}개 분기 발견: {filings[0]['quarter']} ~ {filings[-1]['quarter']}")
-
+        log.info(f"  📋 {len(filings)}개 분기: {filings[0]['quarter']} ~ {filings[-1]['quarter']}")
         for f in filings:
             q = f["quarter"]
             if q not in quarter_guru_filings:
                 quarter_guru_filings[q] = {}
             quarter_guru_filings[q][name] = {
-                "cik": cik,
-                "accession": f["accession"],
-                "filing_date": f["filing_date"],
-                "report_date": f["report_date"],
+                "cik": cik, "accession": f["accession"],
+                "filing_date": f["filing_date"], "report_date": f["report_date"],
             }
-
-        # 쿨다운
         if (idx + 1) % COOLDOWN_EVERY == 0 and (idx + 1) < len(gurus):
             log.info(f"  ⏳ 쿨다운 {COOLDOWN_SEC}초...")
             time.sleep(COOLDOWN_SEC)
 
     all_quarters = sorted(quarter_guru_filings.keys())
+    if not all_quarters:
+        log.error("수집할 분기 없음")
+        return
     log.info(f"\n총 {len(all_quarters)}개 분기: {all_quarters[0]} ~ {all_quarters[-1]}")
 
-    # ── 2단계: 분기별 보유내역 수집 ──
     log.info(f"\n━━━ 2단계: 분기별 보유내역 수집 ━━━")
-
     for qi, quarter in enumerate(all_quarters):
         existing = load_archive(quarter)
         guru_filings = quarter_guru_filings[quarter]
-
-        # Resumable: 이미 수집된 구루는 스킵
         already_done = set(existing["portfolios"].keys()) if existing else set()
         to_collect = {k: v for k, v in guru_filings.items() if k not in already_done}
 
@@ -541,98 +417,67 @@ def collect_history(max_quarters: int | None = None, guru_filter: str | None = N
             continue
 
         log.info(f"[Q {qi+1}/{len(all_quarters)}] {quarter} — {len(to_collect)}명 수집 (기존 {len(already_done)}명)")
-
-        archive = existing or {
-            "period": quarter,
-            "collected_at": datetime.utcnow().isoformat() + "Z",
-            "portfolios": {},
-        }
-
-        collected_count = 0
+        archive = existing or {"period": quarter, "collected_at": "", "portfolios": {}}
+        collected = 0
         for gi, (guru_name, finfo) in enumerate(to_collect.items()):
             holdings = get_holdings_for_filing(finfo["cik"], finfo["accession"])
-
             if holdings:
                 total_val = sum(h.get("value_x1000", 0) for h in holdings)
                 archive["portfolios"][guru_name] = {
-                    "cik": finfo["cik"],
-                    "filing_date": finfo["filing_date"],
-                    "report_date": finfo["report_date"],
-                    "holdings": holdings,
-                    "total_value_x1000": total_val,
-                    "holding_count": len(holdings),
+                    "cik": finfo["cik"], "filing_date": finfo["filing_date"],
+                    "report_date": finfo["report_date"], "holdings": holdings,
+                    "total_value_x1000": total_val, "holding_count": len(holdings),
                 }
-                collected_count += 1
-                log.debug(f"    ✓ {guru_name}: {len(holdings)}종목, ${total_val:,}K")
+                collected += 1
             else:
-                log.warning(f"    ✗ {guru_name}: 보유내역 파싱 실패")
-
-            # 10명마다 쿨다운
+                log.warning(f"    ✗ {guru_name}: 파싱 실패")
             if (gi + 1) % COOLDOWN_EVERY == 0 and (gi + 1) < len(to_collect):
                 log.info(f"    ⏳ 쿨다운 {COOLDOWN_SEC}초...")
                 time.sleep(COOLDOWN_SEC)
 
-        # 분기 완료 후 저장
         archive["collected_at"] = datetime.utcnow().isoformat() + "Z"
         save_archive(quarter, archive)
-        log.info(f"  → {quarter} 완료: {collected_count}명 신규수집, 총 {len(archive['portfolios'])}명\n")
+        log.info(f"  → {quarter}: {collected}명 신규, 총 {len(archive['portfolios'])}명\n")
 
-    # ── 3단계: 변동내역 계산 ──
     log.info(f"\n━━━ 3단계: 분기별 변동내역 계산 ━━━")
-
     for i in range(1, len(all_quarters)):
         prev_q = all_quarters[i - 1]
         curr_q = all_quarters[i]
-
         changes_path = CHANGES_DIR / f"{curr_q}.json"
         if changes_path.exists():
             log.info(f"  {curr_q} vs {prev_q} — 이미 계산됨, 스킵")
             continue
-
         prev_archive = load_archive(prev_q)
         curr_archive = load_archive(curr_q)
         if not prev_archive or not curr_archive:
             continue
-
         all_changes = {}
-        both_names = set(prev_archive["portfolios"].keys()) & set(curr_archive["portfolios"].keys())
-
-        for guru_name in sorted(both_names):
+        both = set(prev_archive["portfolios"].keys()) & set(curr_archive["portfolios"].keys())
+        for guru_name in sorted(both):
             prev_h = prev_archive["portfolios"][guru_name].get("holdings", [])
             curr_h = curr_archive["portfolios"][guru_name].get("holdings", [])
             changes = compute_changes(prev_h, curr_h)
             if changes:
                 all_changes[guru_name] = changes
-
         if all_changes:
             save_changes(curr_q, prev_q, all_changes)
-        else:
-            log.info(f"  {curr_q} vs {prev_q} — 변동 없음")
+
+    save_manifest()
 
     log.info(f"\n━━━ 완료 ━━━")
-
-    # 요약 통계
     archive_files = sorted(ARCHIVE_DIR.glob("*.json")) if ARCHIVE_DIR.exists() else []
-    changes_files = sorted(CHANGES_DIR.glob("*.json")) if CHANGES_DIR.exists() else []
     log.info(f"아카이브: {len(archive_files)}개 분기")
-    log.info(f"변동내역: {len(changes_files)}개 분기")
     if archive_files:
         log.info(f"기간: {archive_files[0].stem} ~ {archive_files[-1].stem}")
 
 
-# ──────────────────────────────────────────────
-# CLI
-# ──────────────────────────────────────────────
-
 def main():
     parser = argparse.ArgumentParser(description="81명 구루 13F 히스토리 백필")
-    parser.add_argument("--quarters", type=int, default=None,
-                        help="구루당 최대 수집 분기 수 (기본: 전체)")
-    parser.add_argument("--guru", type=str, default=None,
-                        help="특정 구루만 수집 (이름 일부 매칭)")
+    parser.add_argument("--quarters", type=int, default=None, help="구루당 최대 분기 수")
+    parser.add_argument("--guru", type=str, default=None, help="특정 구루만 (이름 일부)")
+    parser.add_argument("--start-year", type=int, default=2013, help="수집 시작년도 (기본: 2013, XML 포맷 이전은 파싱 불가)")
     args = parser.parse_args()
-
-    collect_history(max_quarters=args.quarters, guru_filter=args.guru)
+    collect_history(max_quarters=args.quarters, guru_filter=args.guru, start_year=args.start_year)
 
 
 if __name__ == "__main__":
