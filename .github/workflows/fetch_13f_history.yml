@@ -11,6 +11,10 @@ on:
         description: '특정 구루만 (이름 일부, 빈칸 = 전체 81명)'
         required: false
         default: ''
+      start_year:
+        description: '수집 시작년도 (기본: 2014)'
+        required: false
+        default: '2020'
 
 jobs:
   backfill:
@@ -38,6 +42,9 @@ jobs:
           fi
           if [ -n "${{ inputs.guru }}" ]; then
             ARGS="$ARGS --guru ${{ inputs.guru }}"
+          fi
+          if [ -n "${{ inputs.start_year }}" ]; then
+            ARGS="$ARGS --start-year ${{ inputs.start_year }}"
           fi
           python fetch_13f_history.py $ARGS
 
