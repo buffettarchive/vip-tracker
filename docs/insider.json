@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-14T12:19+09:00",
+  "updated_at": "2026-07-14T12:26+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260714000135",
+  "last_seen": "20260714000138",
   "disclosures": [
+    {
+      "rcept_no": "20260714000138",
+      "rcept_dt": "2026-07-14",
+      "corp_name": "에프알텍",
+      "stock_code": "073540",
+      "market": "KOSDAQ",
+      "corp_code": "00442561",
+      "repror": "김대용",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "54,219",
+      "total_cnt": "1,170,513",
+      "irds_rate": "0.47",
+      "hold_rate": "10.26",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260714000135",
       "rcept_dt": "2026-07-14",
