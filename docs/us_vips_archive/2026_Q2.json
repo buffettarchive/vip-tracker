@@ -1,0 +1,22 @@
+{
+ "period": "2026_Q2",
+ "collected_at": "2026-07-14T09:42:44.619444Z",
+ "portfolios": {
+  "로버트 올스타인 (올스타인)": {
+   "cik": "0000947996",
+   "filing_date": "2026-07-07",
+   "report_date": "2026-06-30",
+   "holdings": [
+    {
+     "name": "0",
+     "cusip": "000000000",
+     "value_x1000": 0,
+     "shares": 0,
+     "type": "SH"
+    }
+   ],
+   "total_value_x1000": 0,
+   "holding_count": 1
+  }
+ }
+}

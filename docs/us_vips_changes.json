@@ -1,169 +1,907 @@
 {
- "period": "2025_Q2",
- "compared_to": "2025_Q1",
- "generated_at": "2026-07-14T07:31:18.732147Z",
+ "period": "2026_Q2",
+ "compared_to": "2026_Q1",
+ "generated_at": "2026-07-14T09:42:51.132806Z",
  "changes": {
-  "워런 버핏 (버크셔 해서웨이)": [
+  "로버트 올스타인 (올스타인)": [
    {
-    "name": "UNITEDHEALTH GROUP INC",
-    "cusip": "91324P102",
+    "name": "0",
+    "cusip": "000000000",
     "action": "NEW",
-    "shares": 5039564,
-    "value_x1000": 1572192781,
+    "shares": 0,
+    "value_x1000": 0,
     "prev_shares": 0,
     "change_pct": null
    },
    {
-    "name": "NUCOR CORP",
-    "cusip": "670346105",
-    "action": "NEW",
-    "shares": 6614112,
-    "value_x1000": 856792068,
-    "prev_shares": 0,
-    "change_pct": null
+    "name": "ABM INDS INC",
+    "cusip": "000957100",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 211361,
+    "change_pct": -100.0
    },
    {
-    "name": "LENNAR CORP",
-    "cusip": "526057104",
-    "action": "NEW",
-    "shares": 7048993,
-    "value_x1000": 779689116,
-    "prev_shares": 0,
-    "change_pct": null
+    "name": "AGCO CORP",
+    "cusip": "001084102",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 6500,
+    "change_pct": -100.0
    },
    {
-    "name": "D R HORTON INC",
-    "cusip": "23331A109",
-    "action": "NEW",
-    "shares": 1485350,
-    "value_x1000": 191491322,
-    "prev_shares": 0,
-    "change_pct": null
+    "name": "ADOBE INC",
+    "cusip": "00724F101",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 25000,
+    "change_pct": -100.0
    },
    {
-    "name": "LAMAR ADVERTISING CO NEW",
-    "cusip": "512816109",
-    "action": "NEW",
-    "shares": 1169507,
-    "value_x1000": 141931370,
-    "prev_shares": 0,
-    "change_pct": null
+    "name": "ALPHABET INC",
+    "cusip": "02079K107",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 7500,
+    "change_pct": -100.0
    },
    {
-    "name": "ALLEGION PLC",
-    "cusip": "G0176J109",
-    "action": "NEW",
-    "shares": 780133,
-    "value_x1000": 112432768,
-    "prev_shares": 0,
-    "change_pct": null
-   },
-   {
-    "name": "CHEVRON CORP NEW",
-    "cusip": "166764100",
-    "action": "ADD",
-    "shares": 122064792,
-    "value_x1000": 17478457567,
-    "prev_shares": 118610534,
-    "change_pct": 2.91
-   },
-   {
-    "name": "CONSTELLATION BRANDS INC",
-    "cusip": "21036P108",
-    "action": "ADD",
-    "shares": 13400000,
-    "value_x1000": 2179912000,
-    "prev_shares": 12009000,
-    "change_pct": 11.58
-   },
-   {
-    "name": "DOMINOS PIZZA INC",
-    "cusip": "25754A201",
-    "action": "ADD",
-    "shares": 2633868,
-    "value_x1000": 1186820921,
-    "prev_shares": 2620613,
-    "change_pct": 0.51
-   },
-   {
-    "name": "POOL CORP",
-    "cusip": "73278L105",
-    "action": "ADD",
-    "shares": 3458885,
-    "value_x1000": 1008195800,
-    "prev_shares": 1464000,
-    "change_pct": 136.26
-   },
-   {
-    "name": "HEICO CORP NEW",
-    "cusip": "422806208",
-    "action": "ADD",
-    "shares": 1294612,
-    "value_x1000": 334980855,
-    "prev_shares": 1162088,
-    "change_pct": 11.4
-   },
-   {
-    "name": "LENNAR CORP",
-    "cusip": "526057302",
-    "action": "ADD",
-    "shares": 180930,
-    "value_x1000": 19042883,
-    "prev_shares": 152572,
-    "change_pct": 18.59
+    "name": "AMAZON COM INC",
+    "cusip": "023135106",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 18000,
+    "change_pct": -100.0
    },
    {
     "name": "APPLE INC",
     "cusip": "037833100",
-    "action": "REDUCE",
-    "shares": 280000000,
-    "value_x1000": 57447600000,
-    "prev_shares": 300000000,
-    "change_pct": -6.67
-   },
-   {
-    "name": "BANK AMER CORP",
-    "cusip": "060505104",
-    "action": "REDUCE",
-    "shares": 605267375,
-    "value_x1000": 28641252185,
-    "prev_shares": 631573531,
-    "change_pct": -4.17
-   },
-   {
-    "name": "DAVITA INC",
-    "cusip": "23918K108",
-    "action": "REDUCE",
-    "shares": 33796541,
-    "value_x1000": 4814317266,
-    "prev_shares": 35142479,
-    "change_pct": -3.83
-   },
-   {
-    "name": "CHARTER COMMUNICATIONS INC N",
-    "cusip": "16119P108",
-    "action": "REDUCE",
-    "shares": 1060882,
-    "value_x1000": 433699170,
-    "prev_shares": 1984259,
-    "change_pct": -46.54
-   },
-   {
-    "name": "LIBERTY MEDIA CORP DEL",
-    "cusip": "531229854",
-    "action": "REDUCE",
-    "shares": 3018555,
-    "value_x1000": 315438998,
-    "prev_shares": 3512000,
-    "change_pct": -14.05
-   },
-   {
-    "name": "T-MOBILE US INC",
-    "cusip": "872590104",
     "action": "EXIT",
     "shares": 0,
     "value_x1000": 0,
-    "prev_shares": 3883145,
+    "prev_shares": 13000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "AVANTOR INC",
+    "cusip": "05352A100",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 1210000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "BAXTER INTL INC",
+    "cusip": "071813109",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 464000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "BECTON DICKINSON &amp; CO",
+    "cusip": "075887109",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 44000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "BERKSHIRE HATHAWAY INC DEL",
+    "cusip": "084670702",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 11000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "BLUE BIRD CORP",
+    "cusip": "095306106",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 19526,
+    "change_pct": -100.0
+   },
+   {
+    "name": "BOOZ ALLEN HAMILTON HLDG CORP",
+    "cusip": "099502106",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 66000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "BRADY CORP",
+    "cusip": "104674106",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 7500,
+    "change_pct": -100.0
+   },
+   {
+    "name": "CBRE GROUP INC",
+    "cusip": "12504L109",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 47000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "CVS HEALTH CORP",
+    "cusip": "126650100",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 50000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "CENTRAL GARDEN &amp; PET CO",
+    "cusip": "153527205",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 45000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "CISCO SYS INC",
+    "cusip": "17275R102",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 46000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "CITIZENS FINL GROUP INC",
+    "cusip": "174610105",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 88200,
+    "change_pct": -100.0
+   },
+   {
+    "name": "CONSTELLATION BRANDS INC",
+    "cusip": "21036P108",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 30500,
+    "change_pct": -100.0
+   },
+   {
+    "name": "CORNING INC",
+    "cusip": "219350105",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 5000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "CORTEVA INC",
+    "cusip": "22052L104",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 66000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "DELTA AIR LINES INC DEL",
+    "cusip": "247361702",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 88000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "DINE BRANDS GLOBAL INC",
+    "cusip": "254423106",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 215000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "DISNEY WALT CO",
+    "cusip": "254687106",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 104000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "DOUGLAS DYNAMIC INC",
+    "cusip": "25960R105",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 17543,
+    "change_pct": -100.0
+   },
+   {
+    "name": "DOVER CORP",
+    "cusip": "260003108",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 23000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "EBAY INC",
+    "cusip": "278642103",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 16000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "EQUIFAX INC",
+    "cusip": "294429105",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 37000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "META PLATFORMS INC",
+    "cusip": "30303M102",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 7900,
+    "change_pct": -100.0
+   },
+   {
+    "name": "FEDEX CORP",
+    "cusip": "31428X106",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 13500,
+    "change_pct": -100.0
+   },
+   {
+    "name": "FIDELITY NATL INFORMATION SV",
+    "cusip": "31620M106",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 174000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "FIFTH THIRD BANCORP",
+    "cusip": "316773100",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 113000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "FIRST ADVANTAGE",
+    "cusip": "31846B108",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 95000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "FIRST HAWAIIAN INC",
+    "cusip": "32051X108",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 37000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "FORTIVE CORP",
+    "cusip": "34959J108",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 88000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "GENERAL DYNAMICS",
+    "cusip": "369550108",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 20500,
+    "change_pct": -100.0
+   },
+   {
+    "name": "GENERAL MTRS CO",
+    "cusip": "37045V100",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 44000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "GOLDMAN SACHS GROUP INC",
+    "cusip": "38141G104",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 1200,
+    "change_pct": -100.0
+   },
+   {
+    "name": "HOME BANCSHARES INC",
+    "cusip": "436893200",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 35500,
+    "change_pct": -100.0
+   },
+   {
+    "name": "HONEYWELL INTL INC",
+    "cusip": "438516106",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 26000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "INTERNATIONAL FLAVORS&amp;FRAGRANCE",
+    "cusip": "459506101",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 119000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "JOHNSON &amp; JOHNSON",
+    "cusip": "478160104",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 24500,
+    "change_pct": -100.0
+   },
+   {
+    "name": "JONES LANG LASALLE INC",
+    "cusip": "48020Q107",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 21000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "KORN FERRY",
+    "cusip": "500643200",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 120000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "KULICKE &amp; SOFFA INDS INC",
+    "cusip": "501242101",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 61000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "LKQ CORP",
+    "cusip": "501889208",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 314700,
+    "change_pct": -100.0
+   },
+   {
+    "name": "L3HARRIS TECHNOLOGIES INC",
+    "cusip": "502431109",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 8100,
+    "change_pct": -100.0
+   },
+   {
+    "name": "LOCKHEED MARTIN CORP",
+    "cusip": "539830109",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 6750,
+    "change_pct": -100.0
+   },
+   {
+    "name": "MICROSOFT CORP",
+    "cusip": "594918104",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 16700,
+    "change_pct": -100.0
+   },
+   {
+    "name": "MIDDLEBY CORP",
+    "cusip": "596278101",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 37500,
+    "change_pct": -100.0
+   },
+   {
+    "name": "MILLER INDS INC TENN",
+    "cusip": "600551204",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 21500,
+    "change_pct": -100.0
+   },
+   {
+    "name": "MOHAWK INDS INC",
+    "cusip": "608190104",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 65750,
+    "change_pct": -100.0
+   },
+   {
+    "name": "NOV INC",
+    "cusip": "62955J103",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 42000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "NASDAQ INC",
+    "cusip": "631103108",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 96000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "NIKE INC",
+    "cusip": "654106103",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 107000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "OMNICOM GROUP INC",
+    "cusip": "681919106",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 118000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "ON SEMICONDUCTOR CORP",
+    "cusip": "682189105",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 86000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "PEPSICO INC",
+    "cusip": "713448108",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 26000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "PRESTIGE CONSMR HEALTHCARE",
+    "cusip": "74112D101",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 21000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "PROGYNY INC",
+    "cusip": "74340E103",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 56000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "PROSPERITY BANCSHARES INC",
+    "cusip": "743606105",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 12000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "QUEST DIAGNOSTICS INC",
+    "cusip": "74834L100",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 35800,
+    "change_pct": -100.0
+   },
+   {
+    "name": "RALLIANT CORP",
+    "cusip": "750940108",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 160000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "RTX CORP",
+    "cusip": "75513E101",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 11500,
+    "change_pct": -100.0
+   },
+   {
+    "name": "REYNOLDS CONSUMER PRODS INC",
+    "cusip": "76171L106",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 283000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "S&amp;P GLOBAL INC",
+    "cusip": "78409V104",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 13500,
+    "change_pct": -100.0
+   },
+   {
+    "name": "SS&amp;C TECHNOLOGIES HLDGS INC",
+    "cusip": "78467J100",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 105000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "HENRY SCHEIN INC",
+    "cusip": "806407102",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 74000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "SCHLUMBERGER LTD",
+    "cusip": "806857108",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 135000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "SOLSTICE ADVANCED MATLS INC",
+    "cusip": "83443Q103",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 49000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "SOUTHWEST AIRLS CO",
+    "cusip": "844741108",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 84000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "STANLEY BLACK &amp; DECKER INC",
+    "cusip": "854502101",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 55000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "SYSCO CORP",
+    "cusip": "871829107",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 60000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "TARGET CORP",
+    "cusip": "87612E106",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 46452,
+    "change_pct": -100.0
+   },
+   {
+    "name": "TENNANT CO",
+    "cusip": "880345103",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 17000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "TEXAS INSTRS INC",
+    "cusip": "882508104",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 22000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "THERMO FISHER SCIENTIFIC INC",
+    "cusip": "883556102",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 6750,
+    "change_pct": -100.0
+   },
+   {
+    "name": "TIMKEN CO",
+    "cusip": "887389104",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 5000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "TRAVELERS COMPANIES INC",
+    "cusip": "89417E109",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 21000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "US BANCORP DEL",
+    "cusip": "902973304",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 110000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "UBER TECHNOLOGIES INC",
+    "cusip": "90353T100",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 53000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "UNITED PARCEL SERVICE INC",
+    "cusip": "911312106",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 52000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "UNITEDHEALTH GROUP INC",
+    "cusip": "91324P102",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 23000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "VISA INC",
+    "cusip": "92826C839",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 11750,
+    "change_pct": -100.0
+   },
+   {
+    "name": "VISHAY INTERTECHNOLOGY INC",
+    "cusip": "928298108",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 47000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "VONTIER CORPORATION",
+    "cusip": "928881101",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 238739,
+    "change_pct": -100.0
+   },
+   {
+    "name": "WATERS CORP",
+    "cusip": "941848103",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 10000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "WELLS FARGO CO NEW",
+    "cusip": "949746101",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 66000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "WESCO INTL INC",
+    "cusip": "95082P105",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 13150,
+    "change_pct": -100.0
+   },
+   {
+    "name": "ZIMMER BIOMET HOLDINGS INC",
+    "cusip": "98956P102",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 87000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "CUSHMAN AND WAKEFIELD LTD",
+    "cusip": "G2717C106",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 82000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "APTIV PLC",
+    "cusip": "G3265R107",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 79000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "GATES INDUSTRIAL CORPRATIN P",
+    "cusip": "G39108108",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 74500,
+    "change_pct": -100.0
+   },
+   {
+    "name": "INVESCO LTD",
+    "cusip": "G491BT108",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 217000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "MEDTRONIC PLC",
+    "cusip": "G5960L103",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 73000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "SENSATA TECHNOLOGIES HLDNG P",
+    "cusip": "G8060N102",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 278200,
+    "change_pct": -100.0
+   },
+   {
+    "name": "WILLIS TOWERS WATSON PLC LTD",
+    "cusip": "G96629103",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 23400,
+    "change_pct": -100.0
+   },
+   {
+    "name": "AEBI SCHMIDT",
+    "cusip": "H00501108",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 127000,
+    "change_pct": -100.0
+   },
+   {
+    "name": "CHUBB LIMITED",
+    "cusip": "H1467J104",
+    "action": "EXIT",
+    "shares": 0,
+    "value_x1000": 0,
+    "prev_shares": 19000,
     "change_pct": -100.0
    }
   ]
