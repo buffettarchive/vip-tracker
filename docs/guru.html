@@ -7,8 +7,6 @@
 <title>버핏아카이브 — 미국 투자거장</title>
 <meta name="description" content="미국 가치투자 거장들의 13F 포트폴리오 트래킹" />
 <link rel="icon" href="favicon.ico" />
-
-<!-- 폰트 및 라이브러리 -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/spoqa-han-sans@3.3.0/css/SpoqaHanSansNeo.css" />
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -18,6 +16,10 @@
   --cobalt:#0047FF; --cobalt-d:#0034c2;
   --bg:#F8F7F4; --card:#ffffff; --ink:#16181d; --muted:#74767c;
   --line:#ecebe5; --line-2:#f3f3ef; --chip:#e9eeff;
+  --green:#16a34a; --green-bg:#f0fdf4;
+  --blue:#2563eb; --blue-bg:#eff6ff;
+  --amber:#d97706; --amber-bg:#fffbeb;
+  --red:#dc2626; --red-bg:#fef2f2;
 }
 body{
   background:var(--bg); color:var(--ink);
@@ -29,7 +31,6 @@ a{color:inherit;text-decoration:none}
 ::selection{background:rgba(0,71,255,.16)}
 .wrap{max-width:960px;margin:0 auto;padding:0 20px 60px}
 
-/* ── 상단 네비게이션 ── */
 .topnav{
   position:sticky;top:0;z-index:50;
   background:rgba(248,247,244,.86);backdrop-filter:saturate(180%) blur(12px);
@@ -40,63 +41,68 @@ a{color:inherit;text-decoration:none}
 }
 .topnav .logo{height:32px;width:auto;transition:opacity .15s}
 .topnav a:hover .logo{opacity:.7}
-
-/* 메뉴 이동 링크 (우측 끝 배치, 연회색 -> 파란색 통일) */
 .nav-links{
   margin-left:auto;
   display:flex; gap:28px; font-size:16px; font-weight:700; align-items:center;
 }
 .nav-links a{color:var(--muted); transition:0.2s;}
 .nav-links a:hover{color:var(--ink);}
-.nav-links a.active{color:var(--cobalt); text-decoration:none;}
+.nav-links a.active{color:var(--cobalt);}
 
-/* ── 거장 선택 드롭다운 ── */
-.guru-selector-wrap {
-  margin: 36px 0 24px;
+/* 거장 드롭다운 */
+.guru-selector-wrap{margin:36px 0 24px}
+.guru-select{
+  appearance:none; background-color:var(--card); border:1px solid var(--line);
+  border-radius:14px; padding:14px 40px 14px 20px;
+  font-family:inherit; font-size:16px; font-weight:700; color:var(--ink);
+  cursor:pointer; box-shadow:0 4px 12px rgba(22,24,29,.04);
+  width:100%; max-width:480px; outline:none; transition:all .2s;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2374767c' viewBox='0 0 256 256'%3E%3Cpath d='M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat:no-repeat; background-position:right 16px center;
 }
-.guru-select {
-  appearance: none;
-  background-color: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 14px 40px 14px 20px;
-  font-family: inherit;
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--ink);
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(22,24,29,.04);
-  width: 100%;
-  max-width: 480px;
-  outline: none;
-  transition: all 0.2s;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2374767c' viewBox='0 0 256 256'%3E%3Cpath d='M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z'%3E%3C/path%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 16px center;
-}
-.guru-select:hover {
-  border-color: #d9d8d1;
-}
-.guru-select:focus {
-  border-color: var(--cobalt);
-  box-shadow: 0 0 0 3px rgba(0,71,255,.15);
-}
+.guru-select:hover{border-color:#d9d8d1}
+.guru-select:focus{border-color:var(--cobalt);box-shadow:0 0 0 3px rgba(0,71,255,.15)}
 
-/* ── 대시보드 상단 요약 & 차트 ── */
+/* 탭 바 */
+.tab-bar{
+  display:flex; gap:0; border-bottom:2px solid var(--line); margin-bottom:24px;
+}
+.tab-btn{
+  padding:12px 28px; font-size:15px; font-weight:700; color:var(--muted);
+  cursor:pointer; border:none; background:none;
+  border-bottom:2px solid transparent; margin-bottom:-2px; transition:all .2s;
+  font-family:inherit;
+}
+.tab-btn:hover{color:var(--ink)}
+.tab-btn.active{color:var(--cobalt); border-bottom-color:var(--cobalt)}
+
+/* 분기 선택 */
+.quarter-selector{margin-bottom:20px; display:none;}
+.quarter-selector.show{display:block}
+.quarter-select{
+  appearance:none; background-color:var(--card); border:1px solid var(--line);
+  border-radius:10px; padding:10px 36px 10px 16px;
+  font-family:inherit; font-size:14px; font-weight:600; color:var(--ink);
+  cursor:pointer; outline:none; transition:all .2s;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='%2374767c' viewBox='0 0 256 256'%3E%3Cpath d='M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat:no-repeat; background-position:right 12px center;
+}
+.quarter-select:focus{border-color:var(--cobalt);box-shadow:0 0 0 3px rgba(0,71,255,.15)}
+
+/* 요약 박스 */
 .summary-box{
   background:var(--card);border:1px solid var(--line);border-radius:20px;
   padding:32px;box-shadow:0 4px 20px rgba(22,24,29,.04);
-  display:grid; grid-template-columns: 1fr 340px; gap:40px; align-items:center;
+  display:grid; grid-template-columns:1fr 340px; gap:40px; align-items:center;
   margin-bottom:20px;
 }
-.guru-title{font-size:32px; font-weight:700; letter-spacing:-1px; margin-bottom:8px;}
-.guru-meta{font-size:15px; color:var(--muted); font-weight:500; margin-bottom:24px;}
-.val-title{font-size:13px; color:var(--muted); font-weight:600; margin-bottom:4px;}
-.val-amount{font-size:36px; font-weight:700; color:var(--ink); letter-spacing:-0.5px;}
+.guru-title{font-size:32px; font-weight:700; letter-spacing:-1px; margin-bottom:8px}
+.guru-meta{font-size:15px; color:var(--muted); font-weight:500; margin-bottom:24px}
+.val-title{font-size:13px; color:var(--muted); font-weight:600; margin-bottom:4px}
+.val-amount{font-size:36px; font-weight:700; color:var(--ink); letter-spacing:-.5px}
+.chart-container{position:relative; height:240px; width:100%; display:flex; justify-content:center}
 
-.chart-container{position:relative; height:240px; width:100%; display:flex; justify-content:center;}
-
-/* ── 종목 리스트 ── */
+/* 종목 리스트 */
 .feed{list-style:none;background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 4px 20px rgba(22,24,29,.04)}
 .row{
   display:grid;grid-template-columns:40px 1fr auto;gap:16px;align-items:center;
@@ -104,16 +110,53 @@ a{color:inherit;text-decoration:none}
 }
 .row:last-child{border-bottom:none}
 .row:hover{background:#faf9f6}
-
-.rank{font-size:16px; font-weight:700; color:var(--muted); text-align:center;}
-.corp .name{font-size:17px;font-weight:700;letter-spacing:-.3px;color:var(--ink);}
-.corp .sub{font-size:13px;color:var(--muted);margin-top:4px;}
-
-.stake{text-align:right;}
+.rank{font-size:16px; font-weight:700; color:var(--muted); text-align:center}
+.corp .name{font-size:17px;font-weight:700;letter-spacing:-.3px;color:var(--ink)}
+.corp .sub{font-size:13px;color:var(--muted);margin-top:4px}
+.stake{text-align:right}
 .stake .pct{font-size:20px;font-weight:700;color:var(--cobalt);letter-spacing:-.5px}
 .stake .val{font-size:13px;color:var(--muted);margin-top:4px;font-weight:600}
-
 .empty{padding:64px 0;text-align:center;color:var(--muted);font-size:15px}
+
+/* 매매변동 행 */
+.change-row{
+  display:grid; grid-template-columns:80px 1fr auto; gap:16px; align-items:center;
+  padding:16px 22px; border-bottom:1px solid var(--line-2);
+}
+.change-row:last-child{border-bottom:none}
+.change-row:hover{background:#faf9f6}
+
+.action-badge{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:4px 12px; border-radius:8px; font-size:13px; font-weight:700;
+  letter-spacing:.3px;
+}
+.action-badge.NEW{background:var(--green-bg); color:var(--green)}
+.action-badge.ADD{background:var(--blue-bg); color:var(--blue)}
+.action-badge.REDUCE{background:var(--amber-bg); color:var(--amber)}
+.action-badge.EXIT{background:var(--red-bg); color:var(--red)}
+
+.change-name{font-size:16px; font-weight:700; letter-spacing:-.2px}
+.change-detail{text-align:right}
+.change-shares{font-size:14px; font-weight:600; color:var(--ink)}
+.change-pct{font-size:13px; font-weight:600; margin-top:2px}
+.change-pct.up{color:var(--blue)}
+.change-pct.down{color:var(--red)}
+
+/* 변동 요약 카운터 */
+.change-summary{
+  display:flex; gap:12px; margin-bottom:20px; flex-wrap:wrap;
+}
+.change-count{
+  display:flex; align-items:center; gap:6px;
+  padding:8px 16px; border-radius:10px; font-size:14px; font-weight:700;
+  background:var(--card); border:1px solid var(--line);
+}
+.change-count .dot{width:8px;height:8px;border-radius:50%}
+.change-count .dot.NEW{background:var(--green)}
+.change-count .dot.ADD{background:var(--blue)}
+.change-count .dot.REDUCE{background:var(--amber)}
+.change-count .dot.EXIT{background:var(--red)}
 </style>
 </head>
 <body>
@@ -121,8 +164,6 @@ a{color:inherit;text-decoration:none}
 <nav class="topnav">
   <div class="topnav-inner">
     <a href="index.html" title="홈으로"><img src="logo.png" alt="Buffett Archive" class="logo"></a>
-    
-    <!-- 분리된 4개 메뉴 영역 -->
     <div class="nav-links">
       <a href="dashboard.html?view=insider">내부자매수</a>
       <a href="dashboard.html?view=firm">운용사 지분공시</a>
@@ -133,136 +174,408 @@ a{color:inherit;text-decoration:none}
 </nav>
 
 <div class="wrap">
-  <div class="guru-selector-wrap" id="guruTabs">
-    <!-- 드롭다운 메뉴가 렌더링됩니다 -->
+  <div class="guru-selector-wrap" id="guruTabs"></div>
+
+  <div class="tab-bar" id="tabBar">
+    <button class="tab-btn active" data-tab="portfolio">포트폴리오</button>
+    <button class="tab-btn" data-tab="changes">매매변동</button>
+    <button class="tab-btn" data-tab="history">히스토리</button>
   </div>
 
-  <div class="summary-box">
-    <div>
-      <div class="guru-title" id="guruName">로딩 중...</div>
-      <div class="guru-meta" id="guruMeta">SEC 13F 공시 기준</div>
-      <div class="val-title">포트폴리오 총 운용 자산 (USD)</div>
-      <div class="val-amount" id="guruTotalVal">$0</div>
-    </div>
-    <div class="chart-container">
-      <canvas id="portfolioChart"></canvas>
-    </div>
+  <div class="quarter-selector" id="quarterSelector">
+    <select class="quarter-select" id="quarterSelect"></select>
   </div>
 
-  <ul class="feed" id="holdingsFeed">
-    <!-- 종목 리스트가 렌더링됩니다 -->
-  </ul>
+  <!-- 포트폴리오 탭 -->
+  <div id="view-portfolio">
+    <div class="summary-box">
+      <div>
+        <div class="guru-title" id="guruName">로딩 중...</div>
+        <div class="guru-meta" id="guruMeta">SEC 13F 공시 기준</div>
+        <div class="val-title">포트폴리오 총 운용 자산 (USD)</div>
+        <div class="val-amount" id="guruTotalVal">$0</div>
+      </div>
+      <div class="chart-container">
+        <canvas id="portfolioChart"></canvas>
+      </div>
+    </div>
+    <ul class="feed" id="holdingsFeed"></ul>
+  </div>
+
+  <!-- 매매변동 탭 -->
+  <div id="view-changes" style="display:none">
+    <div class="change-summary" id="changeSummary"></div>
+    <div class="feed" id="changesFeed"></div>
+  </div>
+
+  <!-- 히스토리 탭 -->
+  <div id="view-history" style="display:none">
+    <div class="summary-box">
+      <div>
+        <div class="guru-title" id="histGuruName">-</div>
+        <div class="guru-meta" id="histGuruMeta">-</div>
+        <div class="val-title">포트폴리오 총 운용 자산 (USD)</div>
+        <div class="val-amount" id="histTotalVal">$0</div>
+      </div>
+      <div class="chart-container">
+        <canvas id="histChart"></canvas>
+      </div>
+    </div>
+    <ul class="feed" id="histFeed"></ul>
+  </div>
 </div>
 
 <script>
 const $ = s => document.querySelector(s);
+const $$ = s => document.querySelectorAll(s);
+
 let VIPS = {};
+let CHANGES = {};
+let MANIFEST = { archive_quarters: [], changes_quarters: [] };
+let archiveCache = {};
+let changesCache = {};
+
 let activeGuru = "";
+let activeTab = "portfolio";
+let activeChangeQ = "";
+let activeHistQ = "";
 let chartInstance = null;
+let histChartInstance = null;
+
+/* ── 유틸 ── */
 
 function formatUSD(val) {
-  if (val >= 1e9) return "$" + (val / 1e9).toFixed(2) + "B"; 
-  if (val >= 1e6) return "$" + (val / 1e6).toFixed(2) + "M"; 
+  if (val >= 1e9) return "$" + (val / 1e9).toFixed(2) + "B";
+  if (val >= 1e6) return "$" + (val / 1e6).toFixed(2) + "M";
   return "$" + val.toLocaleString();
 }
 
-function initData() {
-  fetch("us_vips.json?ts=" + Date.now())
-    .then(r => r.json())
-    .then(data => {
-      if (data && data.portfolios) {
-        VIPS = data.portfolios;
-        const gurus = Object.keys(VIPS);
-        if (gurus.length > 0) {
-          activeGuru = gurus[0]; 
-          renderTabs(gurus);
-          renderGuru();
-        }
-      }
-    })
-    .catch(err => {
-      $("#holdingsFeed").innerHTML = `<li class="empty">데이터를 불러오지 못했습니다.</li>`;
-    });
+function quarterLabel(q) {
+  return q.replace("_", " ");
 }
 
-function renderTabs(gurus) {
-  const selectHtml = `
-    <select class="guru-select" id="guruSelect">
-      ${gurus.map(name => `<option value="${name}" ${name === activeGuru ? 'selected' : ''}>${name}</option>`).join("")}
-    </select>
-  `;
-  $("#guruTabs").innerHTML = selectHtml;
+/* ── 초기화 ── */
 
-  $("#guruSelect").addEventListener("change", (e) => {
+async function init() {
+  try {
+    const [vipsRes, changesRes, manifestRes] = await Promise.all([
+      fetch("us_vips.json?ts=" + Date.now()).then(r => r.ok ? r.json() : null),
+      fetch("us_vips_changes.json?ts=" + Date.now()).then(r => r.ok ? r.json() : null).catch(() => null),
+      fetch("us_vips_manifest.json?ts=" + Date.now()).then(r => r.ok ? r.json() : null).catch(() => null),
+    ]);
+
+    if (vipsRes && vipsRes.portfolios) {
+      VIPS = vipsRes.portfolios;
+    } else if (vipsRes) {
+      VIPS = vipsRes;
+    }
+
+    if (changesRes) {
+      CHANGES = changesRes;
+      activeChangeQ = changesRes.period || "";
+      if (changesRes.changes) {
+        changesCache[activeChangeQ] = changesRes.changes;
+      }
+    }
+
+    if (manifestRes) {
+      MANIFEST = manifestRes;
+    }
+
+    const gurus = Object.keys(VIPS);
+    if (gurus.length > 0) {
+      activeGuru = gurus[0];
+      renderGuruSelect(gurus);
+      renderGuru();
+    }
+
+    setupTabs();
+  } catch (err) {
+    console.error(err);
+    $("#holdingsFeed").innerHTML = '<li class="empty">데이터를 불러오지 못했습니다.</li>';
+  }
+}
+
+/* ── 거장 셀렉터 ── */
+
+function renderGuruSelect(gurus) {
+  $("#guruTabs").innerHTML = `
+    <select class="guru-select" id="guruSelect">
+      ${gurus.map(n => `<option value="${n}" ${n === activeGuru ? 'selected' : ''}>${n}</option>`).join("")}
+    </select>`;
+  $("#guruSelect").addEventListener("change", e => {
     activeGuru = e.target.value;
-    renderGuru();
+    renderCurrentTab();
   });
 }
+
+/* ── 탭 전환 ── */
+
+function setupTabs() {
+  $$(".tab-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      $$(".tab-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      activeTab = btn.dataset.tab;
+      renderCurrentTab();
+    });
+  });
+}
+
+function renderCurrentTab() {
+  $("#view-portfolio").style.display = activeTab === "portfolio" ? "" : "none";
+  $("#view-changes").style.display = activeTab === "changes" ? "" : "none";
+  $("#view-history").style.display = activeTab === "history" ? "" : "none";
+
+  const qs = $("#quarterSelector");
+  if (activeTab === "changes") {
+    if (MANIFEST.changes_quarters.length > 1) {
+      qs.classList.add("show");
+      renderQuarterSelect(MANIFEST.changes_quarters, activeChangeQ, onChangeQuarterChange);
+    } else { qs.classList.remove("show"); }
+    renderChanges();
+  } else if (activeTab === "history") {
+    if (MANIFEST.archive_quarters.length > 0) {
+      qs.classList.add("show");
+      if (!activeHistQ) activeHistQ = MANIFEST.archive_quarters[MANIFEST.archive_quarters.length - 1];
+      renderQuarterSelect(MANIFEST.archive_quarters, activeHistQ, onHistQuarterChange);
+    } else { qs.classList.remove("show"); }
+    renderHistory();
+  } else {
+    qs.classList.remove("show");
+    renderGuru();
+  }
+}
+
+function renderQuarterSelect(quarters, active, onChange) {
+  const sel = $("#quarterSelect");
+  sel.innerHTML = quarters.slice().reverse().map(q =>
+    `<option value="${q}" ${q === active ? 'selected' : ''}>${quarterLabel(q)}</option>`
+  ).join("");
+  sel.onchange = e => onChange(e.target.value);
+}
+
+function onChangeQuarterChange(q) {
+  activeChangeQ = q;
+  renderChanges();
+}
+
+function onHistQuarterChange(q) {
+  activeHistQ = q;
+  renderHistory();
+}
+
+/* ── 포트폴리오 탭 (기존) ── */
 
 function renderGuru() {
   const data = VIPS[activeGuru];
   if (!data) return;
-
   $("#guruName").textContent = activeGuru;
-  $("#guruMeta").textContent = `최근 SEC 공시 보고일: ${data.report_date}`;
-  $("#guruTotalVal").textContent = formatUSD(data.total_value_usd);
-
-  renderChart(data.holdings);
-  renderList(data.holdings);
+  $("#guruMeta").textContent = "최근 SEC 공시 보고일: " + (data.report_date || "-");
+  $("#guruTotalVal").textContent = formatUSD(data.total_value_usd || 0);
+  renderChart(data.holdings || [], "portfolioChart", c => { chartInstance = c; }, chartInstance);
+  renderList(data.holdings || [], "holdingsFeed");
 }
 
-function renderChart(holdings) {
-  const ctx = document.getElementById('portfolioChart').getContext('2d');
-  if (chartInstance) chartInstance.destroy();
+/* ── 매매변동 탭 ── */
+
+async function renderChanges() {
+  const feed = $("#changesFeed");
+  const summary = $("#changeSummary");
+
+  if (!activeChangeQ) {
+    summary.innerHTML = "";
+    feed.innerHTML = '<div class="empty">아직 수집된 변동 데이터가 없습니다.</div>';
+    return;
+  }
+
+  let changes = changesCache[activeChangeQ];
+  if (!changes) {
+    try {
+      const res = await fetch(`us_vips_changes/${activeChangeQ}.json?ts=${Date.now()}`);
+      if (res.ok) {
+        const data = await res.json();
+        changes = data.changes || {};
+        changesCache[activeChangeQ] = changes;
+      }
+    } catch (e) {}
+  }
+
+  if (!changes) {
+    summary.innerHTML = "";
+    feed.innerHTML = '<div class="empty">변동 데이터를 불러오지 못했습니다.</div>';
+    return;
+  }
+
+  const guruChanges = changes[activeGuru];
+  if (!guruChanges || guruChanges.length === 0) {
+    summary.innerHTML = "";
+    feed.innerHTML = '<div class="empty">이 분기에 매매변동이 없습니다.</div>';
+    return;
+  }
+
+  // 요약 카운터
+  const counts = { NEW: 0, ADD: 0, REDUCE: 0, EXIT: 0 };
+  guruChanges.forEach(c => { if (counts[c.action] !== undefined) counts[c.action]++; });
+  summary.innerHTML = Object.entries(counts)
+    .filter(([, v]) => v > 0)
+    .map(([action, count]) => `
+      <div class="change-count">
+        <span class="dot ${action}"></span>
+        ${action} ${count}건
+      </div>`).join("");
+
+  // 변동 리스트
+  feed.innerHTML = guruChanges.map(c => {
+    const prev = (c.prev_shares || 0).toLocaleString();
+    const curr = (c.shares || 0).toLocaleString();
+    let sharesText = "";
+    let pctText = "";
+    let pctClass = "";
+
+    if (c.action === "NEW") {
+      sharesText = curr + "주 신규매수";
+      pctText = "NEW";
+      pctClass = "up";
+    } else if (c.action === "EXIT") {
+      sharesText = prev + "주 전량매도";
+      pctText = "EXIT";
+      pctClass = "down";
+    } else if (c.action === "ADD") {
+      sharesText = prev + " → " + curr + "주";
+      pctText = c.change_pct != null ? "+" + c.change_pct.toFixed(1) + "%" : "";
+      pctClass = "up";
+    } else {
+      sharesText = prev + " → " + curr + "주";
+      pctText = c.change_pct != null ? c.change_pct.toFixed(1) + "%" : "";
+      pctClass = "down";
+    }
+
+    return `
+      <div class="change-row">
+        <div class="action-badge ${c.action}">${c.action}</div>
+        <div class="change-name">${c.name}</div>
+        <div class="change-detail">
+          <div class="change-shares">${sharesText}</div>
+          <div class="change-pct ${pctClass}">${pctText}</div>
+        </div>
+      </div>`;
+  }).join("");
+}
+
+/* ── 히스토리 탭 ── */
+
+async function renderHistory() {
+  const feed = $("#histFeed");
+
+  if (!activeHistQ || MANIFEST.archive_quarters.length === 0) {
+    $("#histGuruName").textContent = "-";
+    $("#histGuruMeta").textContent = "-";
+    $("#histTotalVal").textContent = "$0";
+    feed.innerHTML = '<li class="empty">아직 수집된 히스토리 데이터가 없습니다.</li>';
+    return;
+  }
+
+  let archive = archiveCache[activeHistQ];
+  if (!archive) {
+    try {
+      const res = await fetch(`us_vips_archive/${activeHistQ}.json?ts=${Date.now()}`);
+      if (res.ok) {
+        archive = await res.json();
+        archiveCache[activeHistQ] = archive;
+      }
+    } catch (e) {}
+  }
+
+  if (!archive || !archive.portfolios) {
+    feed.innerHTML = '<li class="empty">히스토리 데이터를 불러오지 못했습니다.</li>';
+    return;
+  }
+
+  const guruData = archive.portfolios[activeGuru];
+  if (!guruData) {
+    $("#histGuruName").textContent = activeGuru;
+    $("#histGuruMeta").textContent = quarterLabel(activeHistQ);
+    $("#histTotalVal").textContent = "$0";
+    feed.innerHTML = '<li class="empty">이 분기에 해당 구루의 데이터가 없습니다.</li>';
+    if (histChartInstance) { histChartInstance.destroy(); histChartInstance = null; }
+    return;
+  }
+
+  // 아카이브 데이터는 value_x1000 기반 → weight 계산
+  const holdings = (guruData.holdings || []).map(h => {
+    const val = (h.value_x1000 || 0) * 1000;
+    const totalVal = (guruData.total_value_x1000 || 1) * 1000;
+    return {
+      name: h.name,
+      shares: h.shares || 0,
+      value: val,
+      weight: totalVal > 0 ? (val / totalVal) * 100 : 0,
+    };
+  });
+  holdings.sort((a, b) => b.value - a.value);
+
+  const totalUsd = (guruData.total_value_x1000 || 0) * 1000;
+
+  $("#histGuruName").textContent = activeGuru;
+  $("#histGuruMeta").textContent = "보고일: " + (guruData.report_date || quarterLabel(activeHistQ));
+  $("#histTotalVal").textContent = formatUSD(totalUsd);
+
+  renderChart(holdings, "histChart", c => { histChartInstance = c; }, histChartInstance);
+  renderList(holdings, "histFeed");
+}
+
+/* ── 공통: 차트 & 리스트 ── */
+
+function renderChart(holdings, canvasId, setter, existing) {
+  const ctx = document.getElementById(canvasId).getContext('2d');
+  if (existing) existing.destroy();
 
   let labels = [];
   let dataPoints = [];
   let otherWeight = 0;
 
-  holdings.forEach((h, index) => {
-    if (index < 7) {
-      labels.push(h.name.split(" ")[0]); 
-      dataPoints.push(h.weight);
+  holdings.forEach((h, i) => {
+    if (i < 7) {
+      labels.push(h.name.length > 12 ? h.name.substring(0, 12) + "…" : h.name);
+      dataPoints.push(parseFloat(h.weight.toFixed(2)));
     } else {
       otherWeight += h.weight;
     }
   });
-
   if (otherWeight > 0) {
     labels.push("기타");
     dataPoints.push(parseFloat(otherWeight.toFixed(2)));
   }
 
-  chartInstance = new Chart(ctx, {
+  const inst = new Chart(ctx, {
     type: 'doughnut',
     data: {
       labels: labels,
       datasets: [{
         data: dataPoints,
-        backgroundColor: ['#0047FF', '#336CFF', '#6691FF', '#99B6FF', '#CCDFFF', '#E6EEFF', '#F3F7FF', '#e4e2db'],
-        borderWidth: 2,
-        borderColor: '#ffffff'
+        backgroundColor: ['#0047FF','#336CFF','#6691FF','#99B6FF','#CCDFFF','#E6EEFF','#F3F7FF','#e4e2db'],
+        borderWidth: 2, borderColor: '#ffffff'
       }]
     },
     options: {
-      responsive: true,
-      maintainAspectRatio: false,
+      responsive: true, maintainAspectRatio: false,
       plugins: {
-        legend: { position: 'right', labels: { font: { family: "'Spoqa Han Sans Neo', sans-serif" }, boxWidth: 12 } },
-        tooltip: { callbacks: { label: function(context) { return context.label + ': ' + context.raw + '%'; } } }
+        legend: { position:'right', labels:{ font:{ family:"'Spoqa Han Sans Neo',sans-serif" }, boxWidth:12 }},
+        tooltip: { callbacks: { label: ctx => ctx.label + ': ' + ctx.raw + '%' }}
       },
       cutout: '65%'
     }
   });
+  setter(inst);
 }
 
-function renderList(holdings) {
-  const feed = $("#holdingsFeed");
+function renderList(holdings, feedId) {
+  const feed = document.getElementById(feedId);
   if (!holdings || holdings.length === 0) {
-    feed.innerHTML = `<li class="empty">포트폴리오 정보가 없습니다.</li>`;
+    feed.innerHTML = '<li class="empty">포트폴리오 정보가 없습니다.</li>';
     return;
   }
-
   feed.innerHTML = holdings.map((h, i) => `
     <div class="row">
       <div class="rank">${i + 1}</div>
@@ -274,11 +587,10 @@ function renderList(holdings) {
         <div class="pct">${h.weight.toFixed(2)}%</div>
         <div class="val">${formatUSD(h.value)}</div>
       </div>
-    </div>
-  `).join("");
+    </div>`).join("");
 }
 
-initData();
+init();
 </script>
 </body>
 </html>
