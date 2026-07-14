@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-14T14:29+09:00",
+  "updated_at": "2026-07-14T14:39+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260714000210",
+  "last_seen": "20260714000227",
   "disclosures": [
+    {
+      "rcept_no": "20260714000223",
+      "rcept_dt": "2026-07-14",
+      "corp_name": "메지온",
+      "stock_code": "140410",
+      "market": "KOSDAQ",
+      "corp_code": "00808022",
+      "repror": "박동현",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "1,022",
+      "total_cnt": "1,850,983",
+      "irds_rate": "0.00",
+      "hold_rate": "6.09",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260714000210",
       "rcept_dt": "2026-07-14",
