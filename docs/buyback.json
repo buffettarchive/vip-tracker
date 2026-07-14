@@ -1,10 +1,10 @@
 {
   "entries": [
     {
-      "rcept_no": "20260714000368",
+      "rcept_no": "20260714000392",
       "rcept_dt": "20260714",
-      "corp_code": "00190321",
-      "corp_name": "케이티",
+      "corp_code": "00361008",
+      "corp_name": "한화엔진",
       "corp_cls": "Y",
       "report_nm": "주요사항보고서(자기주식취득결정)",
       "type": "취득",
@@ -12,6 +12,24 @@
       "amount_common": null,
       "acq_purpose": null,
       "acq_method": null,
+      "acq_period_start": null,
+      "acq_period_end": null,
+      "total_shares": null,
+      "ratio_pct": null,
+      "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260714000392"
+    },
+    {
+      "rcept_no": "20260714000368",
+      "rcept_dt": "20260714",
+      "corp_code": "00190321",
+      "corp_name": "케이티",
+      "corp_cls": "Y",
+      "report_nm": "주요사항보고서(자기주식취득결정)",
+      "type": "취득",
+      "shares_common": 3532,
+      "amount_common": 186136400,
+      "acq_purpose": "기지급된 장기성과 주식 지급취소에따른 자기주식 취득",
+      "acq_method": "장외취득",
       "acq_period_start": null,
       "acq_period_end": null,
       "total_shares": null,
@@ -6169,5 +6187,5 @@
       "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250610000225"
     }
   ],
-  "last_seen": "20260714000368"
+  "last_seen": "20260714000392"
 }
