@@ -3,27 +3,25 @@
 fetch_stock_prices.py — 구루 포트폴리오 보유 종목의 현재가 + 52주 고저 수집
 
 흐름:
-  1. us_vips.json에서 보유 종목 CUSIP 전량 수집
-  2. OpenFIGI API로 CUSIP → 티커 매핑 (배치, 캐시)
-  3. Yahoo Finance v8 chart API로 현재가 / 52W High / 52W Low 조회
+  1. us_vips_archive/ 최신 파일에서 보유 종목 CUSIP 수집
+  2. OpenFIGI API로 CUSIP → 티커 매핑 (캐시)
+  3. Yahoo Finance로 현재가 / 52W High / 52W Low 조회
   4. docs/stock_prices.json으로 저장
-
-GitHub Actions에서 실행. 별도 워크플로우 또는 cron에 추가.
 """
 
-import json, time, re, sys, logging
+import json, time, logging, glob
 from datetime import datetime
 from pathlib import Path
 from urllib.request import Request, urlopen
-from urllib.error import HTTPError, URLError
+from urllib.error import HTTPError
 
-VIPS_PATH = Path("docs/us_vips.json")
+ARCHIVE_DIR = Path("docs/us_vips_archive")
 PRICES_PATH = Path("docs/stock_prices.json")
 TICKER_CACHE_PATH = Path("docs/ticker_cache.json")
 
 YF_UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
 FIGI_URL = "https://api.openfigi.com/v3/mapping"
-FIGI_BATCH = 80  # OpenFIGI 배치당 최대 100, 여유있게 80
+FIGI_BATCH = 80
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s", datefmt="%H:%M:%S")
 log = logging.getLogger("stock-prices")
@@ -41,21 +39,34 @@ def save_json(path, data):
         json.dump(data, f, ensure_ascii=False, indent=1)
 
 
-def collect_unique_stocks(vips):
-    """us_vips.json에서 고유 종목 수집. {cusip: name}"""
+def collect_unique_stocks():
+    """아카이브 최신 파일에서 고유 종목 수집. {cusip: name}"""
     stocks = {}
-    portfolios = vips.get("portfolios", vips)
-    for guru_data in portfolios.values():
-        for h in guru_data.get("holdings", []):
-            cusip = h.get("cusip", "").strip()
-            name = h.get("name", "").strip()
-            if cusip and name:
-                stocks[cusip] = name
+
+    # 최신 아카이브 파일 찾기
+    archive_files = sorted(ARCHIVE_DIR.glob("*.json"))
+    if not archive_files:
+        log.error("아카이브 파일 없음")
+        return stocks
+
+    # 최신 2개 분기에서 종목 수집 (커버리지 최대화)
+    for af in archive_files[-2:]:
+        log.info(f"  종목 수집: {af.name}")
+        data = load_json(af)
+        if not data:
+            continue
+        for guru_data in data.get("portfolios", {}).values():
+            for h in guru_data.get("holdings", []):
+                cusip = h.get("cusip", "").strip()
+                name = h.get("name", "").strip()
+                if cusip and name:
+                    stocks[cusip] = name
+
     return stocks
 
 
 def figi_lookup(cusips):
-    """OpenFIGI API로 CUSIP → 티커 매핑. 배치 처리."""
+    """OpenFIGI API로 CUSIP → 티커 매핑."""
     result = {}
     cusip_list = list(cusips)
 
@@ -79,7 +90,7 @@ def figi_lookup(cusips):
             log.warning(f"  FIGI 배치 실패: {e}")
 
         if i + FIGI_BATCH < len(cusip_list):
-            time.sleep(1)  # rate limit
+            time.sleep(1)
 
     return result
 
@@ -110,14 +121,12 @@ def yf_get_price(ticker):
 
 
 def main():
-    vips = load_json(VIPS_PATH)
-    if not vips:
-        log.error("us_vips.json 로드 실패")
-        return
-
     # 1. 고유 종목 수집
-    stocks = collect_unique_stocks(vips)
+    stocks = collect_unique_stocks()
     log.info(f"고유 종목: {len(stocks)}개")
+    if not stocks:
+        log.error("수집된 종목 없음. 아카이브 파일을 확인하세요.")
+        return
 
     # 2. 티커 캐시 로드
     ticker_cache = load_json(TICKER_CACHE_PATH) or {}
@@ -148,19 +157,13 @@ def main():
         name = stocks.get(cusip, ticker)
         price_data = yf_get_price(ticker)
         if price_data:
-            prices[cusip] = {
-                "ticker": ticker,
-                "name": name,
-                **price_data,
-            }
+            prices[cusip] = {"ticker": ticker, "name": name, **price_data}
             success += 1
         else:
             failed += 1
 
-        # rate limit: 0.3초 간격
         time.sleep(0.3)
 
-        # 진행 상황 (50개마다)
         if (idx + 1) % 50 == 0:
             log.info(f"  진행: {idx + 1}/{len(unique_tickers)} (✓{success} ✗{failed})")
 
