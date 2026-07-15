@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-15T11:59+09:00",
+  "updated_at": "2026-07-15T12:39+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -10,8 +10,23 @@
     "피델리티",
     "Miri"
   ],
-  "last_seen": "20260715000139",
+  "last_seen": "20260715000143",
   "disclosures": [
+    {
+      "rcept_no": "20260715000143",
+      "rcept_dt": "2026-07-15",
+      "firm": "피델리티",
+      "corp_name": "달바글로벌",
+      "stock_code": "483650",
+      "corp_code": "01649204",
+      "stkrt": "",
+      "stkrt_prev": "",
+      "stkqy": "",
+      "report_resn": "",
+      "purpose": "",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "기타"
+    },
     {
       "rcept_no": "20260710000713",
       "rcept_dt": "2026-07-10",
