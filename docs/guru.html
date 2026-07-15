@@ -75,11 +75,9 @@ a{color:inherit;text-decoration:none}
 .holdings-table{width:100%;border-collapse:collapse;font-size:14px;font-family:'Spoqa Han Sans Neo',sans-serif}
 .holdings-table thead{background:#faf9f6;border-bottom:2px solid var(--line)}
 .holdings-table th{padding:14px 14px;text-align:right;font-weight:700;font-size:12px;color:var(--muted);letter-spacing:.3px;white-space:nowrap}
-.holdings-table th:nth-child(1){text-align:center;width:36px}
-.holdings-table th:nth-child(2){text-align:left}
+.holdings-table th:nth-child(1){text-align:left}
 .holdings-table td{padding:14px 14px;text-align:right;border-bottom:1px solid var(--line-2);font-weight:500;white-space:nowrap}
-.holdings-table td:nth-child(1){text-align:center;font-weight:700;color:var(--muted)}
-.holdings-table td:nth-child(2){text-align:left;font-weight:700;letter-spacing:-.2px}
+.holdings-table td:nth-child(1){text-align:left;font-weight:700;letter-spacing:-.2px}
 .holdings-table tbody tr:hover{background:#faf9f6}
 .holdings-table tbody tr:last-child td{border-bottom:none}
 .holdings-table .pct{color:var(--cobalt);font-weight:700}
@@ -90,28 +88,28 @@ a{color:inherit;text-decoration:none}
 .empty{padding:64px 0;text-align:center;color:var(--muted);font-size:15px}
 
 /* ── 매매변동 ── */
-.feed{list-style:none;background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 4px 20px rgba(22,24,29,.04)}
-.change-row{display:grid;grid-template-columns:80px 1fr auto;gap:16px;align-items:center;padding:16px 22px;border-bottom:1px solid var(--line-2)}
-.change-row:last-child{border-bottom:none}
-.change-row:hover{background:#faf9f6}
-.action-badge{display:inline-flex;align-items:center;justify-content:center;padding:4px 12px;border-radius:8px;font-size:13px;font-weight:700;letter-spacing:.3px}
-.action-badge.NEW{background:var(--green-bg);color:var(--green)}
-.action-badge.ADD{background:var(--blue-bg);color:var(--blue)}
-.action-badge.REDUCE{background:var(--amber-bg);color:var(--amber)}
-.action-badge.EXIT{background:var(--red-bg);color:var(--red)}
-.change-name{font-size:16px;font-weight:700;letter-spacing:-.2px}
-.change-detail{text-align:right}
-.change-shares{font-size:14px;font-weight:600;color:var(--ink)}
-.change-pct{font-size:13px;font-weight:600;margin-top:2px}
-.change-pct.up{color:var(--blue)}
-.change-pct.down{color:var(--red)}
-.change-summary{display:flex;gap:12px;margin-bottom:20px;flex-wrap:wrap}
-.change-count{display:flex;align-items:center;gap:6px;padding:8px 16px;border-radius:10px;font-size:14px;font-weight:700;background:var(--card);border:1px solid var(--line)}
-.change-count .dot{width:8px;height:8px;border-radius:50%}
-.change-count .dot.NEW{background:var(--green)}
-.change-count .dot.ADD{background:var(--blue)}
-.change-count .dot.REDUCE{background:var(--amber)}
-.change-count .dot.EXIT{background:var(--red)}
+/* 매매변동 테이블 */
+.changes-table{width:100%;border-collapse:collapse;font-size:14px;font-family:'Spoqa Han Sans Neo',sans-serif}
+.changes-table thead{background:#faf9f6;border-bottom:2px solid var(--line)}
+.changes-table th{padding:14px 14px;text-align:right;font-weight:700;font-size:12px;color:var(--muted);letter-spacing:.3px;white-space:nowrap}
+.changes-table th:nth-child(1){text-align:center;width:56px}
+.changes-table th:nth-child(2){text-align:left}
+.changes-table td{padding:14px 14px;text-align:right;border-bottom:1px solid var(--line-2);font-weight:500;white-space:nowrap}
+.changes-table td:nth-child(1){text-align:center}
+.changes-table td:nth-child(2){text-align:left;font-weight:700;letter-spacing:-.2px}
+.changes-table tbody tr:hover{background:#faf9f6}
+.changes-table tbody tr:last-child td{border-bottom:none}
+.changes-table .tag{display:inline-block;padding:3px 10px;border-radius:6px;font-size:12px;font-weight:800;letter-spacing:.5px}
+.changes-table .tag-new{background:#e8f5e9;color:#2e7d32}
+.changes-table .tag-add{background:#e3f2fd;color:#1565c0}
+.changes-table .tag-reduce{background:#fff3e0;color:#e65100}
+.changes-table .tag-exit{background:#fce4ec;color:#c62828}
+.change-summary{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}
+.change-chip{padding:6px 14px;border-radius:8px;font-size:13px;font-weight:700}
+.change-chip.c-new{background:#e8f5e9;color:#2e7d32}
+.change-chip.c-add{background:#e3f2fd;color:#1565c0}
+.change-chip.c-reduce{background:#fff3e0;color:#e65100}
+.change-chip.c-exit{background:#fce4ec;color:#c62828}
 
 .price-updated{font-size:12px;color:var(--muted);text-align:right;padding:10px 14px;border-top:1px solid var(--line)}
 </style>
@@ -150,7 +148,7 @@ a{color:inherit;text-decoration:none}
 
   <div id="view-changes" style="display:none">
     <div class="change-summary" id="changeSummary"></div>
-    <div class="feed" id="changesFeed"></div>
+    <div class="holdings-card"><table class="changes-table" id="changesFeed"></table></div>
   </div>
 
   <div id="view-history" style="display:none">
@@ -262,15 +260,15 @@ async function renderHistory(){
   const tbl=$("#histTable");
   if(!activeHistQ||MANIFEST.archive_quarters.length===0){
     $("#histGuruName").textContent="-";$("#histGuruMeta").textContent="-";$("#histTotalVal").textContent="$0";$("#histHoldingCount").textContent="";
-    tbl.innerHTML='<tr><td class="empty" colspan="10">아직 수집된 히스토리 데이터가 없습니다.</td></tr>';
+    tbl.innerHTML='<tr><td class="empty" colspan="9">아직 수집된 히스토리 데이터가 없습니다.</td></tr>';
     if(histChartInstance){histChartInstance.destroy();histChartInstance=null}return;
   }
   let ar=archiveCache[activeHistQ];
   if(!ar){try{const r=await fetch(`us_vips_archive/${activeHistQ}.json?ts=${Date.now()}`);if(r.ok){ar=await r.json();archiveCache[activeHistQ]=ar}}catch(e){}}
-  if(!ar||!ar.portfolios){tbl.innerHTML='<tr><td class="empty" colspan="10">데이터를 불러오지 못했습니다.</td></tr>';return}
+  if(!ar||!ar.portfolios){tbl.innerHTML='<tr><td class="empty" colspan="9">데이터를 불러오지 못했습니다.</td></tr>';return}
   const gd=ar.portfolios[activeGuru];
   if(!gd){$("#histGuruName").textContent=activeGuru;$("#histGuruMeta").textContent=quarterLabel(activeHistQ);$("#histTotalVal").textContent="$0";$("#histHoldingCount").textContent="";
-    tbl.innerHTML='<tr><td class="empty" colspan="10">이 분기에 해당 구루의 데이터가 없습니다.</td></tr>';if(histChartInstance){histChartInstance.destroy();histChartInstance=null}return}
+    tbl.innerHTML='<tr><td class="empty" colspan="9">이 분기에 해당 구루의 데이터가 없습니다.</td></tr>';if(histChartInstance){histChartInstance.destroy();histChartInstance=null}return}
   const tv=(gd.total_value_x1000||0)*1000;
   const hs=(gd.holdings||[]).map(h=>{const v=(h.value_x1000||0)*1000;return{name:h.name,cusip:h.cusip||"",shares:h.shares||0,value:v,weight:tv>0?(v/tv)*100:0}}).sort((a,b)=>b.value-a.value);
   $("#histGuruName").textContent=activeGuru;
@@ -282,24 +280,40 @@ async function renderHistory(){
 }
 
 async function renderChanges(){
-  const feed=$("#changesFeed"),summary=$("#changeSummary");
-  if(!activeChangeQ){summary.innerHTML="";feed.innerHTML='<div class="empty">아직 수집된 변동 데이터가 없습니다.</div>';return}
+  const tbl=$("#changesFeed"),summary=$("#changeSummary");
+  if(!activeChangeQ){summary.innerHTML="";tbl.innerHTML='<tr><td class="empty" colspan="6">아직 수집된 변동 데이터가 없습니다.</td></tr>';return}
   let ch=changesCache[activeChangeQ];
   if(!ch){try{const r=await fetch(`us_vips_changes/${activeChangeQ}.json?ts=${Date.now()}`);if(r.ok){const d=await r.json();ch=d.changes||{};changesCache[activeChangeQ]=ch}}catch(e){}}
-  if(!ch){summary.innerHTML="";feed.innerHTML='<div class="empty">변동 데이터를 불러오지 못했습니다.</div>';return}
+  if(!ch){summary.innerHTML="";tbl.innerHTML='<tr><td class="empty" colspan="6">변동 데이터를 불러오지 못했습니다.</td></tr>';return}
   const gc=ch[activeGuru];
-  if(!gc||gc.length===0){summary.innerHTML="";feed.innerHTML='<div class="empty">이 분기에 매매변동이 없습니다.</div>';return}
+  if(!gc||gc.length===0){summary.innerHTML="";tbl.innerHTML='<tr><td class="empty" colspan="6">이 분기에 매매변동이 없습니다.</td></tr>';return}
   const counts={NEW:0,ADD:0,REDUCE:0,EXIT:0};gc.forEach(c=>{if(counts[c.action]!==undefined)counts[c.action]++});
-  summary.innerHTML=Object.entries(counts).filter(([,v])=>v>0).map(([a,c])=>`<div class="change-count"><span class="dot ${a}"></span>${a} ${c}건</div>`).join("");
-  feed.innerHTML=gc.map(c=>{
-    const prev=fmtShares(c.prev_shares||0),curr=fmtShares(c.shares||0);
-    let st="",pt="",pc="";
-    if(c.action==="NEW"){st=curr+"주 신규매수";pt="NEW";pc="up"}
-    else if(c.action==="EXIT"){st=prev+"주 전량매도";pt="EXIT";pc="down"}
-    else if(c.action==="ADD"){st=prev+" → "+curr+"주";pt=c.change_pct!=null?"+"+c.change_pct.toFixed(1)+"%":"";pc="up"}
-    else{st=prev+" → "+curr+"주";pt=c.change_pct!=null?c.change_pct.toFixed(1)+"%":"";pc="down"}
-    return`<div class="change-row"><div class="action-badge ${c.action}">${c.action}</div><div class="change-name">${c.name}</div><div class="change-detail"><div class="change-shares">${st}</div><div class="change-pct ${pc}">${pt}</div></div></div>`;
+  const chipCls={NEW:'c-new',ADD:'c-add',REDUCE:'c-reduce',EXIT:'c-exit'};
+  summary.innerHTML=Object.entries(counts).filter(([,v])=>v>0).map(([a,c])=>`<span class="change-chip ${chipCls[a]}">${a} ${c}</span>`).join("");
+  const tagCls={NEW:'tag-new',ADD:'tag-add',REDUCE:'tag-reduce',EXIT:'tag-exit'};
+  const thead='<thead><tr><th>구분</th><th>종목</th><th>변동 전</th><th>변동 후</th><th>변동률</th><th>가치 ($1,000)</th></tr></thead>';
+  const tbody=gc.map(c=>{
+    const prev=c.prev_shares||0;
+    const curr=c.shares||0;
+    const val=c.value_x1000||0;
+    let pctHtml='<span class="dim">-</span>';
+    if(c.action==="NEW")pctHtml='<span class="up">NEW</span>';
+    else if(c.action==="EXIT")pctHtml='<span class="down">EXIT</span>';
+    else if(c.change_pct!=null){
+      const cls=c.change_pct>=0?"up":"down";
+      const sign=c.change_pct>=0?"+":"";
+      pctHtml=`<span class="${cls}">${sign}${c.change_pct.toFixed(1)}%</span>`;
+    }
+    return`<tr>
+      <td><span class="tag ${tagCls[c.action]}">${c.action}</span></td>
+      <td>${c.name}</td>
+      <td>${prev>0?fmtShares(prev):'<span class="dim">-</span>'}</td>
+      <td>${curr>0?fmtShares(curr):'<span class="dim">-</span>'}</td>
+      <td>${pctHtml}</td>
+      <td>${val>0?'$'+val.toLocaleString():'<span class="dim">-</span>'}</td>
+    </tr>`;
   }).join("");
+  tbl.innerHTML=thead+'<tbody>'+tbody+'</tbody>';
 }
 
 function renderChart(holdings,canvasId,setter,existing){
@@ -313,12 +327,12 @@ function renderChart(holdings,canvasId,setter,existing){
 
 function renderTable(holdings,tableId,showPrices){
   const tbl=document.getElementById(tableId);
-  if(!holdings||holdings.length===0){tbl.innerHTML='<tr><td class="empty" colspan="10">포트폴리오 정보가 없습니다.</td></tr>';return}
+  if(!holdings||holdings.length===0){tbl.innerHTML='<tr><td class="empty" colspan="9">포트폴리오 정보가 없습니다.</td></tr>';return}
   const hasPrices=Object.keys(PRICES).length>0;
   const thead=`<thead><tr>
-    <th>#</th><th>Stock</th><th>% of Portfolio</th><th>Shares</th>
-    <th>Reported Price*</th><th>Value</th>
-    <th>Current Price</th><th>+/- Reported</th><th>52W Low</th><th>52W High</th>
+    <th>종목</th><th>비중</th><th>보유주식수</th>
+    <th>기준가</th><th>보유가치</th>
+    <th>현재가</th><th>등락률</th><th>52주 저가</th><th>52주 고가</th>
   </tr></thead>`;
 
   const tbody=holdings.map((h,i)=>{
@@ -329,7 +343,6 @@ function renderTable(holdings,tableId,showPrices){
     const w52h=pd?pd.week52_high:null;
 
     return`<tr>
-      <td>${i+1}</td>
       <td>${h.name}</td>
       <td class="pct">${h.weight.toFixed(2)}%</td>
       <td>${fmtShares(h.shares)}</td>
