@@ -21,7 +21,7 @@ TICKER_CACHE_PATH = Path("docs/ticker_cache.json")
 
 YF_UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
 FIGI_URL = "https://api.openfigi.com/v3/mapping"
-FIGI_BATCH = 80
+FIGI_BATCH = 10
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s", datefmt="%H:%M:%S")
 log = logging.getLogger("stock-prices")
@@ -90,7 +90,7 @@ def figi_lookup(cusips):
             log.warning(f"  FIGI 배치 실패: {e}")
 
         if i + FIGI_BATCH < len(cusip_list):
-            time.sleep(1)
+            time.sleep(2.5)  # 무료 API: 25 req/min
 
     return result
 
