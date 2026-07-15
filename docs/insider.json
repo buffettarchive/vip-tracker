@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-15T15:54+09:00",
+  "updated_at": "2026-07-15T16:11+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260715000347",
+  "last_seen": "20260715000348",
   "disclosures": [
+    {
+      "rcept_no": "20260715000348",
+      "rcept_dt": "2026-07-15",
+      "corp_name": "큐로홀딩스",
+      "stock_code": "051780",
+      "market": "KOSDAQ",
+      "corp_code": "00296324",
+      "repror": "조중기",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "1,400",
+      "total_cnt": "1,400",
+      "irds_rate": "0.02",
+      "hold_rate": "0.02",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260715000345",
       "rcept_dt": "2026-07-15",
