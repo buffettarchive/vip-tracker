@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-15T09:49+09:00",
+  "updated_at": "2026-07-15T09:59+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260715000036",
+  "last_seen": "20260715000050",
   "disclosures": [
+    {
+      "rcept_no": "20260715000050",
+      "rcept_dt": "2026-07-15",
+      "corp_name": "넥써쓰",
+      "stock_code": "205500",
+      "market": "KOSDAQ",
+      "corp_code": "01042429",
+      "repror": "장현국",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "161,765",
+      "total_cnt": "5,968,762",
+      "irds_rate": "-2.78",
+      "hold_rate": "7.33",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260715000036",
       "rcept_dt": "2026-07-15",
