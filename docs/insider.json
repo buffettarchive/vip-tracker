@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-15T17:39+09:00",
+  "updated_at": "2026-07-15T17:59+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260715000505",
+  "last_seen": "20260715000522",
   "disclosures": [
+    {
+      "rcept_no": "20260715000509",
+      "rcept_dt": "2026-07-15",
+      "corp_name": "스페코",
+      "stock_code": "013810",
+      "market": "KOSDAQ",
+      "corp_code": "00136165",
+      "repror": "넥사코리아",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "4,917,071",
+      "total_cnt": "4,917,071",
+      "irds_rate": "33.55",
+      "hold_rate": "33.55",
+      "method": "장외매수"
+    },
     {
       "rcept_no": "20260715000471",
       "rcept_dt": "2026-07-15",
