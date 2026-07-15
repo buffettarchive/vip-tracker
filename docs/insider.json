@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-15T17:59+09:00",
+  "updated_at": "2026-07-15T18:24+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260715000522",
+  "last_seen": "20260715000531",
   "disclosures": [
+    {
+      "rcept_no": "20260715000531",
+      "rcept_dt": "2026-07-15",
+      "corp_name": "콜마홀딩스",
+      "stock_code": "024720",
+      "market": "KOSPI",
+      "corp_code": "00203290",
+      "repror": "윤상현",
+      "ofcps": "부회장",
+      "rgist": "등기임원",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "49,321",
+      "total_cnt": "10,939,637",
+      "irds_rate": "2.28",
+      "hold_rate": "31.90",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260715000509",
       "rcept_dt": "2026-07-15",
