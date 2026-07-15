@@ -202,6 +202,7 @@ async function init(){
     if(vR&&vR.portfolios)VIPS=vR.portfolios;else if(vR)VIPS=vR;
     if(cR){CHANGES=cR;activeChangeQ=cR.period||"";if(cR.changes)changesCache[activeChangeQ]=cR.changes}
     if(mR)MANIFEST=mR;
+    if(!activeChangeQ&&MANIFEST.changes_quarters.length>0)activeChangeQ=MANIFEST.changes_quarters[MANIFEST.changes_quarters.length-1];
     if(pR&&pR.prices){PRICES=pR.prices;pricesUpdatedAt=pR.updated_at||""}
     const PRIORITY=[
       "워런 버핏 (버크셔 해서웨이)",
