@@ -92,23 +92,19 @@ a{color:inherit;text-decoration:none}
 .changes-table{width:100%;border-collapse:collapse;font-size:14px;font-family:'Spoqa Han Sans Neo',sans-serif}
 .changes-table thead{background:#faf9f6;border-bottom:2px solid var(--line)}
 .changes-table th{padding:14px 14px;text-align:center;font-weight:700;font-size:12px;color:var(--muted);letter-spacing:.3px;white-space:nowrap}
-.changes-table th:nth-child(1){text-align:center;width:56px}
 .changes-table td{padding:14px 14px;text-align:center;border-bottom:1px solid var(--line-2);font-weight:500;white-space:nowrap}
-.changes-table td:nth-child(1){text-align:center}
-.changes-table td:nth-child(2){text-align:center;font-weight:700;letter-spacing:-.2px}
+.changes-table td:nth-child(2){font-weight:700;letter-spacing:-.2px}
 .changes-table tbody tr:hover{background:#faf9f6}
 .changes-table tbody tr:last-child td{border-bottom:none}
-.changes-table .tag{display:inline-block;padding:3px 10px;border-radius:6px;font-size:12px;font-weight:800;letter-spacing:.5px}
-.changes-table .tag-new{background:#e8f5e9;color:#2e7d32}
-.changes-table .tag-add{background:#e3f2fd;color:#1565c0}
-.changes-table .tag-reduce{background:#fff3e0;color:#e65100}
-.changes-table .tag-exit{background:#fce4ec;color:#c62828}
+.changes-table .tag{display:inline-block;padding:4px 12px;border-radius:6px;font-size:12px;font-weight:700}
+.changes-table .tag-buy-new{background:#0047FF;color:#fff}
+.changes-table .tag-buy-add{background:#4d7fff;color:#fff}
+.changes-table .tag-sell-reduce{background:#ff6b6b;color:#fff}
+.changes-table .tag-sell-exit{background:#dc2626;color:#fff}
 .change-summary{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}
 .change-chip{padding:6px 14px;border-radius:8px;font-size:13px;font-weight:700}
-.change-chip.c-new{background:#e8f5e9;color:#2e7d32}
-.change-chip.c-add{background:#e3f2fd;color:#1565c0}
-.change-chip.c-reduce{background:#fff3e0;color:#e65100}
-.change-chip.c-exit{background:#fce4ec;color:#c62828}
+.change-chip.c-buy{background:#e8eeff;color:#0047FF}
+.change-chip.c-sell{background:#fee;color:#dc2626}
 
 .price-updated{font-size:12px;color:var(--muted);text-align:right;padding:10px 14px;border-top:1px solid var(--line)}
 </style>
@@ -280,36 +276,36 @@ async function renderHistory(){
 
 async function renderChanges(){
   const tbl=$("#changesFeed"),summary=$("#changeSummary");
-  if(!activeChangeQ){summary.innerHTML="";tbl.innerHTML='<tr><td class="empty" colspan="6">아직 수집된 변동 데이터가 없습니다.</td></tr>';return}
+  if(!activeChangeQ){summary.innerHTML="";tbl.innerHTML='<tr><td class="empty" colspan="5">아직 수집된 변동 데이터가 없습니다.</td></tr>';return}
   let ch=changesCache[activeChangeQ];
   if(!ch){try{const r=await fetch(`us_vips_changes/${activeChangeQ}.json?ts=${Date.now()}`);if(r.ok){const d=await r.json();ch=d.changes||{};changesCache[activeChangeQ]=ch}}catch(e){}}
-  if(!ch){summary.innerHTML="";tbl.innerHTML='<tr><td class="empty" colspan="6">변동 데이터를 불러오지 못했습니다.</td></tr>';return}
+  if(!ch){summary.innerHTML="";tbl.innerHTML='<tr><td class="empty" colspan="5">변동 데이터를 불러오지 못했습니다.</td></tr>';return}
   const gc=ch[activeGuru];
-  if(!gc||gc.length===0){summary.innerHTML="";tbl.innerHTML='<tr><td class="empty" colspan="6">이 분기에 매매변동이 없습니다.</td></tr>';return}
-  const counts={NEW:0,ADD:0,REDUCE:0,EXIT:0};gc.forEach(c=>{if(counts[c.action]!==undefined)counts[c.action]++});
-  const chipCls={NEW:'c-new',ADD:'c-add',REDUCE:'c-reduce',EXIT:'c-exit'};
-  summary.innerHTML=Object.entries(counts).filter(([,v])=>v>0).map(([a,c])=>`<span class="change-chip ${chipCls[a]}">${a} ${c}</span>`).join("");
-  const tagCls={NEW:'tag-new',ADD:'tag-add',REDUCE:'tag-reduce',EXIT:'tag-exit'};
-  const thead='<thead><tr><th>구분</th><th>종목</th><th>변동 전</th><th>변동 후</th><th>변동률</th><th>가치 ($1,000)</th></tr></thead>';
+  if(!gc||gc.length===0){summary.innerHTML="";tbl.innerHTML='<tr><td class="empty" colspan="5">이 분기에 매매변동이 없습니다.</td></tr>';return}
+  const buyCount=gc.filter(c=>c.action==="NEW"||c.action==="ADD").length;
+  const sellCount=gc.filter(c=>c.action==="REDUCE"||c.action==="EXIT").length;
+  summary.innerHTML=(buyCount?`<span class="change-chip c-buy">매수 ${buyCount}</span>`:'')+
+                     (sellCount?`<span class="change-chip c-sell">매도 ${sellCount}</span>`:'');
+  const label={NEW:'신규매수',ADD:'추가매수',REDUCE:'일부매도',EXIT:'전량매도'};
+  const tagCls={NEW:'tag-buy-new',ADD:'tag-buy-add',REDUCE:'tag-sell-reduce',EXIT:'tag-sell-exit'};
+  const thead='<thead><tr><th>구분</th><th>종목</th><th>변동 전</th><th>변동 후</th><th>변동률</th></tr></thead>';
   const tbody=gc.map(c=>{
     const prev=c.prev_shares||0;
     const curr=c.shares||0;
-    const val=c.value_x1000||0;
     let pctHtml='<span class="dim">-</span>';
-    if(c.action==="NEW")pctHtml='<span class="up">NEW</span>';
-    else if(c.action==="EXIT")pctHtml='<span class="down">EXIT</span>';
+    if(c.action==="NEW")pctHtml='<span style="color:#0047FF;font-weight:700">신규</span>';
+    else if(c.action==="EXIT")pctHtml='<span style="color:#dc2626;font-weight:700">전량</span>';
     else if(c.change_pct!=null){
-      const cls=c.change_pct>=0?"up":"down";
+      const cls=c.change_pct>=0?"color:#0047FF":"color:#dc2626";
       const sign=c.change_pct>=0?"+":"";
-      pctHtml=`<span class="${cls}">${sign}${c.change_pct.toFixed(1)}%</span>`;
+      pctHtml=`<span style="${cls};font-weight:700">${sign}${c.change_pct.toFixed(1)}%</span>`;
     }
     return`<tr>
-      <td><span class="tag ${tagCls[c.action]}">${c.action}</span></td>
+      <td><span class="tag ${tagCls[c.action]}">${label[c.action]}</span></td>
       <td>${c.name}</td>
       <td>${prev>0?fmtShares(prev):'<span class="dim">-</span>'}</td>
       <td>${curr>0?fmtShares(curr):'<span class="dim">-</span>'}</td>
       <td>${pctHtml}</td>
-      <td>${val>0?'$'+val.toLocaleString():'<span class="dim">-</span>'}</td>
     </tr>`;
   }).join("");
   tbl.innerHTML=thead+'<tbody>'+tbody+'</tbody>';
