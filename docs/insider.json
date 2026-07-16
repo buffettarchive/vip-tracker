@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-16T15:44+09:00",
+  "updated_at": "2026-07-16T16:05+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260716000516",
+  "last_seen": "20260716000544",
   "disclosures": [
+    {
+      "rcept_no": "20260716000544",
+      "rcept_dt": "2026-07-16",
+      "corp_name": "나라엠앤디",
+      "stock_code": "051490",
+      "market": "KOSDAQ",
+      "corp_code": "00297095",
+      "repror": "김영주",
+      "ofcps": "부사장",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "7,870",
+      "total_cnt": "80,000",
+      "irds_rate": "0.05",
+      "hold_rate": "0.56",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260716000516",
       "rcept_dt": "2026-07-16",
