@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-16T12:59+09:00",
+  "updated_at": "2026-07-16T13:19+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260716000328",
+  "last_seen": "20260716000345",
   "disclosures": [
+    {
+      "rcept_no": "20260716000343",
+      "rcept_dt": "2026-07-16",
+      "corp_name": "코칩",
+      "stock_code": "126730",
+      "market": "KOSDAQ",
+      "corp_code": "00446901",
+      "repror": "손진형",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "5,000",
+      "total_cnt": "4,157,177",
+      "irds_rate": "0.06",
+      "hold_rate": "47.40",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260716000320",
       "rcept_dt": "2026-07-16",
