@@ -56,7 +56,7 @@ def dart(endpoint, **params):
 
 
 # FIL Limited, FIL Investment Management 등은 피델리티 계열
-FIRM_ALIAS = {"FIL": "피델리티"}
+FIRM_ALIAS = {"FIL": "피델리티", "미리": "Miri"}
 
 def firm_in(name):
     if not name:
@@ -248,7 +248,8 @@ def main():
                 break
             if rcept_no > max_seen:
                 max_seen = rcept_no
-            if "대량보유상황보고서" not in row.get("report_nm", ""):
+            report_nm = row.get("report_nm", "")
+            if "대량보유상황보고서" not in report_nm and "소유상황보고서" not in report_nm:
                 continue
             firm = firm_in(row.get("flr_nm", ""))
             if not firm or rcept_no in existing:
