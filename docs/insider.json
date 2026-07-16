@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-16T13:19+09:00",
+  "updated_at": "2026-07-16T13:39+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260716000345",
+  "last_seen": "20260716000366",
   "disclosures": [
+    {
+      "rcept_no": "20260716000365",
+      "rcept_dt": "2026-07-16",
+      "corp_name": "DMS",
+      "stock_code": "068790",
+      "market": "KOSDAQ",
+      "corp_code": "00361594",
+      "repror": "박용석",
+      "ofcps": "사내이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "31,500",
+      "total_cnt": "5,485,000",
+      "irds_rate": "0.14",
+      "hold_rate": "24.30",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260716000343",
       "rcept_dt": "2026-07-16",
