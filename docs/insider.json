@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-16T09:39+09:00",
+  "updated_at": "2026-07-16T09:59+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260716000086",
+  "last_seen": "20260716000116",
   "disclosures": [
+    {
+      "rcept_no": "20260716000116",
+      "rcept_dt": "2026-07-16",
+      "corp_name": "팅크웨어",
+      "stock_code": "084730",
+      "market": "KOSDAQ",
+      "corp_code": "00438036",
+      "repror": "유비벨록스",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "40,151",
+      "total_cnt": "4,565,685",
+      "irds_rate": "5.44",
+      "hold_rate": "41.10",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260716000086",
       "rcept_dt": "2026-07-16",
