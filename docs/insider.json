@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-16T16:37+09:00",
+  "updated_at": "2026-07-16T17:05+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260716000636",
+  "last_seen": "20260716000658",
   "disclosures": [
+    {
+      "rcept_no": "20260716000648",
+      "rcept_dt": "2026-07-16",
+      "corp_name": "삼성전자",
+      "stock_code": "005930",
+      "market": "KOSPI",
+      "corp_code": "00126380",
+      "repror": "김보현",
+      "ofcps": "부사장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "93",
+      "total_cnt": "4,559",
+      "irds_rate": "0",
+      "hold_rate": "0",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260716000628",
       "rcept_dt": "2026-07-16",
