@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-16T09:59+09:00",
+  "updated_at": "2026-07-16T10:05+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260716000116",
+  "last_seen": "20260716000133",
   "disclosures": [
+    {
+      "rcept_no": "20260716000133",
+      "rcept_dt": "2026-07-16",
+      "corp_name": "삼성출판사",
+      "stock_code": "068290",
+      "market": "KOSPI",
+      "corp_code": "00423690",
+      "repror": "김민권",
+      "ofcps": "이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,000",
+      "total_cnt": "7,853",
+      "irds_rate": "0.01",
+      "hold_rate": "0.08",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260716000116",
       "rcept_dt": "2026-07-16",
