@@ -1,6 +1,24 @@
 {
   "entries": [
     {
+      "rcept_no": "20260716000169",
+      "rcept_dt": "20260716",
+      "corp_code": "00129509",
+      "corp_name": "한익스프레스",
+      "corp_cls": "Y",
+      "report_nm": "주요사항보고서(자기주식취득결정)",
+      "type": "취득",
+      "shares_common": 400000,
+      "amount_common": 888000000,
+      "acq_purpose": "주가안정 및 주주가치제고",
+      "acq_method": "유가증권시장을 통한 장내매수",
+      "acq_period_start": null,
+      "acq_period_end": null,
+      "total_shares": null,
+      "ratio_pct": null,
+      "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260716000169"
+    },
+    {
       "rcept_no": "20260714000392",
       "rcept_dt": "20260714",
       "corp_code": "00361008",
@@ -6187,5 +6205,5 @@
       "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250610000225"
     }
   ],
-  "last_seen": "20260714000392"
+  "last_seen": "20260716000169"
 }
