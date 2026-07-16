@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-16T11:39+09:00",
+  "updated_at": "2026-07-16T11:49+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260716000305",
+  "last_seen": "20260716000310",
   "disclosures": [
+    {
+      "rcept_no": "20260716000310",
+      "rcept_dt": "2026-07-16",
+      "corp_name": "바이오포트",
+      "stock_code": "188040",
+      "market": "KOSDAQ",
+      "corp_code": "01157846",
+      "repror": "이권희",
+      "ofcps": "상무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "2,040",
+      "total_cnt": "4,540",
+      "irds_rate": "0.05",
+      "hold_rate": "0.10",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260716000303",
       "rcept_dt": "2026-07-16",
