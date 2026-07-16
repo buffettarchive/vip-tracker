@@ -8,7 +8,7 @@ v7 대비 변경:
 - fallback으로 v7 단순 패턴도 유지
 """
 
-import os, io, re, sys, json, time, zipfile, base64
+import os, io, re, sys, json, time, zipfile, base64, argparse
 import datetime as dt
 import requests
 
@@ -222,13 +222,25 @@ def gh_put(payload, sha):
 
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--backfill-days", type=int, default=0,
+                        help="과거 N일치 재스캔 (last_seen 무시)")
+    args = parser.parse_args()
+
     data, sha = gh_get()
     existing = {d["rcept_no"]: d for d in data.get("disclosures", [])}
     last_seen = data.get("last_seen", "") or (max(existing) if existing else "")
+
+    scan_days = SCAN_DAYS
+    if args.backfill_days > 0:
+        scan_days = args.backfill_days
+        last_seen = ""  # 백필 모드: last_seen 무시
+        print(f"[info] ★ 백필 모드: {scan_days}일, last_seen 무시")
+
     print(f"[info] 기존 {len(existing)}건, 마지막 본 번호={last_seen or '없음'}")
 
     today = dt.date.today()
-    bgn = (today - dt.timedelta(days=SCAN_DAYS)).strftime("%Y%m%d")
+    bgn = (today - dt.timedelta(days=scan_days)).strftime("%Y%m%d")
     end = today.strftime("%Y%m%d")
 
     added, max_seen, stop, page = 0, last_seen, False, 1
