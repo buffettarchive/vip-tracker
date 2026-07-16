@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-16T13:39+09:00",
+  "updated_at": "2026-07-16T13:59+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260716000366",
+  "last_seen": "20260716000388",
   "disclosures": [
+    {
+      "rcept_no": "20260716000388",
+      "rcept_dt": "2026-07-16",
+      "corp_name": "HC보광산업",
+      "stock_code": "225530",
+      "market": "KOSDAQ",
+      "corp_code": "00568461",
+      "repror": "이재철",
+      "ofcps": "사내이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "524",
+      "total_cnt": "524",
+      "irds_rate": "0.001",
+      "hold_rate": "0.001",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260716000365",
       "rcept_dt": "2026-07-16",
