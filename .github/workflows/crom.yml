@@ -24,7 +24,7 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install requests
-      - run: python fetch_vip.py --backfill-days 365
+      - run: python fetch_vip.py
         env:
           DART_API_KEY: ${{ secrets.DART_API_KEY }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
