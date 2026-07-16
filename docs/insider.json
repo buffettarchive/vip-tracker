@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-16T09:29+09:00",
+  "updated_at": "2026-07-16T09:39+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260716000063",
+  "last_seen": "20260716000086",
   "disclosures": [
+    {
+      "rcept_no": "20260716000086",
+      "rcept_dt": "2026-07-16",
+      "corp_name": "옵트론텍",
+      "stock_code": "082210",
+      "market": "KOSDAQ",
+      "corp_code": "00327396",
+      "repror": "정대현",
+      "ofcps": "사장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "25,000",
+      "total_cnt": "100,000",
+      "irds_rate": "0.07",
+      "hold_rate": "0.28",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260716000063",
       "rcept_dt": "2026-07-16",
