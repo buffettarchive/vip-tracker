@@ -1,8 +1,8 @@
 """
-backfill.py  (v3 · v8 블록 기반 파싱 적용)
+backfill.py  (v4 · 소유상황보고서 + 3개월 청크 + 미리 한국어 매칭)
 ─────────────────────────────────────────────────────────────
-기존 data.json 초기화 후 80일치 재구축.
-Render에서 Command를 'python backfill.py'로 바꿔 1회 실행.
+기존 data.json 초기화 후 365일치 재구축.
+Actions에서 Backfill (수동 실행)으로 1회 실행.
 """
 
 import os, io, re, sys, json, time, zipfile, base64
@@ -30,10 +30,10 @@ WATCH_FIRMS = [
     "Miri",
 ]
 
-BACKFILL_DAYS = 80
+BACKFILL_DAYS = 365
 
 s = requests.Session()
-s.headers.update({"User-Agent": "vip-tracker-backfill/3.0"})
+s.headers.update({"User-Agent": "vip-tracker-backfill/4.0"})
 GH_HEADERS = {
     "Authorization": f"Bearer {GH_TOKEN}",
     "Accept": "application/vnd.github+json",
@@ -52,8 +52,7 @@ def dart(endpoint, **params):
     return {"status": "999", "list": []}
 
 
-# FIL Limited, FIL Investment Management 등은 피델리티 계열
-FIRM_ALIAS = {"FIL": "피델리티"}
+FIRM_ALIAS = {"FIL": "피델리티", "미리": "Miri"}
 
 def firm_in(name):
     if not name:
@@ -108,8 +107,6 @@ def parse_document(rcept_no):
 
 def _parse_plain(plain):
     out = {}
-
-    # 이번 보고서: 바로 뒤 숫자들에서 주식수·비율 추출
     cur_match = re.search(r"이번\s*보고서(.{3,200}?)(?:의결권|보고사유|변동사유|보유목적|$)", plain, re.DOTALL)
     if cur_match:
         block = cur_match.group(1)
@@ -120,8 +117,6 @@ def _parse_plain(plain):
                 out["stkrt"] = raw
             elif v > 100 and "stkqy" not in out:
                 out["stkqy"] = raw.replace(",", "")
-
-    # 직전 보고서: 바로 뒤 숫자들에서 비율 추출
     prev_match = re.search(r"직전\s*보고서(.{3,200}?)(?:이번\s*보고서|의결권|보고사유|변동사유|보유목적|$)", plain, re.DOTALL)
     if prev_match:
         block = prev_match.group(1)
@@ -130,8 +125,6 @@ def _parse_plain(plain):
             if v is not None and "." in raw_n and v < 100:
                 out["stkrt_prev"] = raw_n
                 break
-
-    # fallback
     if "stkrt" not in out:
         cur = re.search(r"이번\s*보고서\s*([\d,]+)\s+([\d]+(?:\.\d+)?)", plain)
         if cur:
@@ -141,7 +134,6 @@ def _parse_plain(plain):
         prev = re.search(r"직전\s*보고서\s*([\d,]+)\s+([\d]+(?:\.\d+)?)", plain)
         if prev:
             out["stkrt_prev"] = prev.group(2)
-
     for pat in [
         r"보고사유\s*(.+?)\s*(?:보유목적|변동사유|비고)",
         r"보고사유\s*(.{3,60})",
@@ -150,7 +142,6 @@ def _parse_plain(plain):
         if resn:
             out["report_resn"] = resn.group(1).strip()[:60]
             break
-
     for pat in [
         r"보유목적\s*([가-힣A-Za-z]+투자)",
         r"보유목적\s*([가-힣A-Za-z]{2,20})",
@@ -159,7 +150,6 @@ def _parse_plain(plain):
         if purpose:
             out["purpose"] = purpose.group(1).strip()
             break
-
     return out
 
 
@@ -210,59 +200,72 @@ def main():
     print("[info] 기존 데이터 무시하고 새로 구축")
 
     today = dt.date.today()
-    bgn = (today - dt.timedelta(days=BACKFILL_DAYS)).strftime("%Y%m%d")
-    end = today.strftime("%Y%m%d")
+    start_date = today - dt.timedelta(days=BACKFILL_DAYS)
+
+    # DART API: corp_code 없이 최대 3개월 → 89일 청크
+    chunk_days = 89
+    date_ranges = []
+    d_cursor = start_date
+    while d_cursor < today:
+        d_end = min(d_cursor + dt.timedelta(days=chunk_days), today)
+        date_ranges.append((d_cursor.strftime("%Y%m%d"), d_end.strftime("%Y%m%d")))
+        d_cursor = d_end + dt.timedelta(days=1)
+    print(f"[info] {len(date_ranges)}개 구간으로 스캔 ({BACKFILL_DAYS}일)")
 
     items, seen = {}, set()
-    max_seen, page = "", 1
-    while True:
-        d = dart("list.json", bgn_de=bgn, end_de=end, pblntf_ty="D",
-                 page_no=page, page_count=100, sort="date", sort_mth="desc")
-        st = d.get("status")
-        if st == "013":
-            break
-        if st != "000":
-            print(f"[warn] list status={st} msg={d.get('message')}", file=sys.stderr)
-            break
-        for row in d.get("list", []) or []:
-            rcept_no = row["rcept_no"]
-            if rcept_no > max_seen:
-                max_seen = rcept_no
-            if "대량보유상황보고서" not in row.get("report_nm", ""):
-                continue
-            firm = firm_in(row.get("flr_nm", ""))
-            if not firm or rcept_no in seen:
-                continue
-            seen.add(rcept_no)
-            doc = parse_document(rcept_no)
-            time.sleep(0.3)
-            kind = classify(doc.get("stkrt"), doc.get("stkrt_prev"), doc.get("report_resn", ""))
-            rdt = row.get("rcept_dt", "")
+    max_seen = ""
 
-            ok = "✓" if doc.get("stkrt") else "✗"
-            print(f"  [{ok}] {row.get('corp_name','')} / {firm} / stkrt={doc.get('stkrt','?')} / {kind}")
+    for chunk_bgn, chunk_end in date_ranges:
+        page = 1
+        while True:
+            d = dart("list.json", bgn_de=chunk_bgn, end_de=chunk_end, pblntf_ty="D",
+                     page_no=page, page_count=100, sort="date", sort_mth="desc")
+            st = d.get("status")
+            if st == "013":
+                break
+            if st != "000":
+                print(f"[warn] list status={st} msg={d.get('message')}", file=sys.stderr)
+                break
+            for row in d.get("list", []) or []:
+                rcept_no = row["rcept_no"]
+                if rcept_no > max_seen:
+                    max_seen = rcept_no
+                report_nm = row.get("report_nm", "")
+                if "대량보유상황보고서" not in report_nm and "소유상황보고서" not in report_nm:
+                    continue
+                firm = firm_in(row.get("flr_nm", ""))
+                if not firm or rcept_no in seen:
+                    continue
+                seen.add(rcept_no)
+                doc = parse_document(rcept_no)
+                time.sleep(0.3)
+                kind = classify(doc.get("stkrt"), doc.get("stkrt_prev"), doc.get("report_resn", ""))
+                rdt = row.get("rcept_dt", "")
 
-            items[rcept_no] = {
-                "rcept_no": rcept_no,
-                "rcept_dt": f"{rdt[:4]}-{rdt[4:6]}-{rdt[6:]}" if len(rdt) == 8 else rdt,
-                "firm": firm,
-                "corp_name": row.get("corp_name", ""),
-                "stock_code": row.get("stock_code", ""),
-                "corp_code": row.get("corp_code", ""),
-                "stkrt": doc.get("stkrt", ""),
-                "stkrt_prev": doc.get("stkrt_prev", ""),
-                "stkqy": doc.get("stkqy", ""),
-                "report_resn": doc.get("report_resn", ""),
-                "purpose": doc.get("purpose", ""),
-                "report_nm": row.get("report_nm", ""),
-                "kind": kind,
-            }
-        tp = int(d.get("total_page", 1) or 1)
-        print(f"  ...페이지 {page}/{tp}, 누적 {len(items)}건")
-        if page >= tp:
-            break
-        page += 1
-        time.sleep(0.2)
+                ok = "✓" if doc.get("stkrt") else "✗"
+                print(f"  [{ok}] {row.get('corp_name','')} / {firm} / stkrt={doc.get('stkrt','?')} / {kind}")
+
+                items[rcept_no] = {
+                    "rcept_no": rcept_no,
+                    "rcept_dt": f"{rdt[:4]}-{rdt[4:6]}-{rdt[6:]}" if len(rdt) == 8 else rdt,
+                    "firm": firm,
+                    "corp_name": row.get("corp_name", ""),
+                    "stock_code": row.get("stock_code", ""),
+                    "corp_code": row.get("corp_code", ""),
+                    "stkrt": doc.get("stkrt", ""),
+                    "stkrt_prev": doc.get("stkrt_prev", ""),
+                    "stkqy": doc.get("stkqy", ""),
+                    "report_resn": doc.get("report_resn", ""),
+                    "purpose": doc.get("purpose", ""),
+                    "report_nm": row.get("report_nm", ""),
+                    "kind": kind,
+                }
+            tp = int(d.get("total_page", 1) or 1)
+            print(f"  ...{chunk_bgn}~{chunk_end} 페이지 {page}/{tp}, 누적 {len(items)}건")
+            if page >= tp:
+                break
+            page += 1
+            time.sleep(0.2)
 
     merged = sorted(items.values(), key=lambda x: x.get("rcept_no", ""), reverse=True)
     payload = {
