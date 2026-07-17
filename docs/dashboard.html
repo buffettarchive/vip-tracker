@@ -86,7 +86,7 @@ a{color:inherit;text-decoration:none}
 /* 검색 */
 .search-wrap{margin:12px 0 0}
 .search-input{display:block;
-  width: 350px; /* 검색창 길이 대폭 확장 */
+  width: 350px;
   max-width: 100%;
   padding:10px 16px 10px 40px;
   font-family:inherit;font-size:14px;font-weight:500;color:var(--ink);
@@ -139,17 +139,41 @@ a{color:inherit;text-decoration:none}
 
 /* ── 필터 컨트롤 ── */
 .controls{display:flex;align-items:center;padding:22px 0 6px;flex-wrap:wrap;gap:10px}
+
+/* 운용사 선택 드롭다운 (구루 스타일 차용) */
+.firm-select {
+  appearance: none;
+  -webkit-appearance: none;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  background: var(--card) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2374767c' viewBox='0 0 256 256'%3E%3Cpath d='M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z'/%3E%3C/svg%3E") no-repeat right 14px center;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 10px 40px 10px 16px;
+  outline: none;
+  cursor: pointer;
+  transition: all .2s;
+  min-width: 220px;
+  margin-top: 12px; /* 검색창과 나란히 있을 때 정렬용 */
+}
+.firm-select:focus {
+  border-color: var(--cobalt);
+  box-shadow: 0 0 0 3px rgba(0,71,255,.1);
+}
+
 .firm-tabs,.market-filter{display:flex;gap:6px;flex-wrap:wrap}
-.firm-tabs button,.market-filter button{
+.market-filter button{
   font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;
   background:var(--card);border:1px solid var(--line);color:var(--muted);
   padding:7px 14px;border-radius:999px;transition:.15s;
 }
-.firm-tabs button:hover,.market-filter button:hover{border-color:#d9d8d1;color:var(--ink)}
-.firm-tabs button[aria-selected="true"],.market-filter button[aria-selected="true"]{
+.market-filter button:hover{border-color:#d9d8d1;color:var(--ink)}
+.market-filter button[aria-selected="true"]{
   background:var(--cobalt);color:#fff;border-color:var(--cobalt);
 }
-.count{font-size:13px;color:var(--muted);margin-left:auto;font-weight:600}
+.count{font-size:13px;color:var(--muted);margin-left:auto;font-weight:600; margin-top: 12px;}
 
 /* ── 피드 리스트 (카드 컨테이너) ── */
 .feed{list-style:none;background:var(--card);border:1px solid var(--line);border-radius:20px;margin-top:14px;overflow:hidden;box-shadow:0 4px 20px rgba(22,24,29,.04)}
@@ -262,7 +286,8 @@ footer#footer{margin:40px 0 0;padding-top:24px;border-top:1px solid var(--line)}
   </div>
 
   <div class="controls">
-    <div class="firm-tabs" id="firmTabs" role="tablist"></div>
+    <div class="firm-tabs" id="firmTabs"></div> <!-- 드롭다운 렌더링 위치 -->
+    <div class="market-filter" id="marketFilter"></div>
     <div class="search-wrap"><input type="text" class="search-input" id="searchInput" placeholder="기업명 검색"></div>
     <div class="count" id="count"></div>
   </div>
@@ -284,8 +309,8 @@ const I18N = {
     tab_insider: "내부자 매수",
     tab_firm: "운용사 지분공시",
     tab_buyback: "자사주 매입/소각",
-    all: "전체",
-    market_all: "전체",
+    all: "전체 운용사 (ALL)",
+    market_all: "전체 시장",
     count_insider: n => `${n}건의 내부자 매수`,
     count_firm: n => `${n}건의 공시`,
     count_buyback: n => `${n}건의 자사주 공시`,
@@ -321,8 +346,8 @@ const I18N = {
     tab_insider: "Insider Buying",
     tab_firm: "Asset Manager Filings",
     tab_buyback: "Treasury Buybacks",
-    all: "All",
-    market_all: "All",
+    all: "All Firms (ALL)",
+    market_all: "All Markets",
     count_insider: n => `${n} insider purchases`,
     count_firm: n => `${n} filings`,
     count_buyback: n => `${n} treasury stock filings`,
@@ -434,13 +459,34 @@ function dartLink(rcept_no){
 }
 
 function firmTag(item){
-  const cur=parseFloat(item.stkrt), prev=parseFloat(item.stkrt_prev);
-  const diff=(!isNaN(cur)&&!isNaN(prev))?(cur-prev):null;
-  const kind=item.kind||"";
-  if(!kind) return {cls:"etc",txt:t("kind_pending")};
+  const cur = parseFloat(item.stkrt || item.hold_rate);
+  const prev = parseFloat(item.stkrt_prev);
+  const diff = (!isNaN(cur) && !isNaN(prev)) ? (cur - prev) : null;
+  
+  let kind = item.kind || "";
+  let sharesDiff = 0;
+  
+  if (item.irds_cnt) {
+      sharesDiff = parseInt(String(item.irds_cnt).replace(/,/g, ''));
+      if ((!kind || kind === "기타") && !isNaN(sharesDiff)) {
+          if (sharesDiff > 0) kind = "매수";
+          else if (sharesDiff < 0) kind = "매도";
+      }
+  }
+
+  if(!kind || kind==="기타") return {cls:"etc",txt:t("kind_pending")};
   if(kind.includes("신규")) return {cls:"buy",txt:cur!=null?`${t("kind_new")} +${cur.toFixed(2)}%p`:t("kind_new")};
-  if(kind==="매수") return {cls:"buy",txt:diff!=null?`${t("kind_buy")} ▲${Math.abs(diff).toFixed(2)}%p`:t("kind_buy")};
-  if(kind==="매도") return {cls:"sell",txt:diff!=null?`${t("kind_sell")} ▼${Math.abs(diff).toFixed(2)}%p`:t("kind_sell")};
+  
+  if(kind==="매수"){
+      if(diff!=null) return {cls:"buy",txt:`${t("kind_buy")} ▲${Math.abs(diff).toFixed(2)}%p`};
+      if(sharesDiff > 0) return {cls:"buy",txt:`${t("kind_buy")} ▲${sharesDiff.toLocaleString()}주`};
+      return {cls:"buy",txt:t("kind_buy")};
+  }
+  if(kind==="매도"){
+      if(diff!=null) return {cls:"sell",txt:`${t("kind_sell")} ▼${Math.abs(diff).toFixed(2)}%p`};
+      if(sharesDiff < 0) return {cls:"sell",txt:`${t("kind_sell")} ▼${Math.abs(sharesDiff).toLocaleString()}주`};
+      return {cls:"sell",txt:t("kind_sell")};
+  }
   return {cls:"etc",txt:t("kind_etc")};
 }
 
@@ -473,6 +519,50 @@ document.querySelectorAll(".nav-links a").forEach(link => {
     }
   };
 });
+
+function aggregateCandles(data, tf) {
+  if (!Array.isArray(data)) return [];
+  if (tf === "daily") return data;
+  
+  let uniqueMap = {};
+  
+  for (const d of data) {
+    let dateStr = String(d.time);
+    if (typeof d.time === "number" || !dateStr.includes("-")) {
+      const t = new Date(d.time * 1000);
+      dateStr = t.getUTCFullYear() + "-" + String(t.getUTCMonth()+1).padStart(2,'0') + "-" + String(t.getUTCDate()).padStart(2,'0');
+    }
+    
+    let timeStr = dateStr;
+    if (tf === "monthly") {
+      timeStr = dateStr.substring(0, 7) + "-01";
+    } else if (tf === "weekly") {
+      const parts = dateStr.split('-');
+      if (parts.length === 3) {
+        const y = parseInt(parts[0], 10);
+        const m = parseInt(parts[1], 10) - 1;
+        const dNum = parseInt(parts[2], 10);
+        
+        const dt = new Date(Date.UTC(y, m, dNum));
+        const day = dt.getUTCDay();
+        const diff = dt.getUTCDate() - day + (day === 0 ? -6 : 1);
+        const monday = new Date(Date.UTC(y, m, diff));
+        timeStr = monday.toISOString().substring(0, 10);
+      }
+    }
+    
+    if (!uniqueMap[timeStr]) {
+      uniqueMap[timeStr] = { time: timeStr, open: d.open, high: d.high, low: d.low, close: d.close };
+    } else {
+      let cur = uniqueMap[timeStr];
+      cur.high = Math.max(cur.high, d.high);
+      cur.low = Math.min(cur.low, d.low);
+      cur.close = d.close; 
+    }
+  }
+  
+  return Object.values(uniqueMap).sort((a, b) => a.time.localeCompare(b.time));
+}
 
 function fmtOhlc(v){
   if(v==null || isNaN(v)) return "—";
@@ -546,8 +636,7 @@ function drawChart(name){
       else if (raw && Array.isArray(raw.daily)) baseData = raw.daily;
       else if (raw && Object.keys(raw).length > 0) baseData = raw[Object.keys(raw)[0]];
       
-      // 변환 로직 (필요시)
-      series = baseData;
+      series = aggregateCandles(baseData, currentTimeframe);
   }
   
   if(!series || !series.length){
@@ -655,14 +744,22 @@ function renderFirm(){
     const tag=firmTag(item);
     const code=item.stock_code?`<span class="code">${item.stock_code}</span>`:"";
 
+    let resnRaw = item.report_resn || item.report_nm || "";
+    if (resnRaw.includes("특정증권등의종류") || resnRaw.includes("변동일*")) {
+        resnRaw = "장내매매 등 (주요주주 소유상황보고)";
+    }
+    
+    const curPct = item.stkrt || item.hold_rate;
+    const pctDisplay = curPct ? curPct + "%" : "—";
+
     const inner=`
       <div class="avatar">${(item.corp_name||"·").trim().charAt(0)}</div>
       <div class="corp">
         <div class="name">${item.corp_name}${code}</div>
-        <div class="sub">${localizeFirm(item.firm)} · ${localizeResn(item.report_resn)}</div>
+        <div class="sub">${localizeFirm(item.firm)} · ${localizeResn(resnRaw)}</div>
       </div>
       <div class="stake">
-        <div class="pct">${item.stkrt ? item.stkrt+"%" : "—"}</div>
+        <div class="pct">${pctDisplay}</div>
         <div class="held">${dt.m} ${dt.d}</div>
         <div class="delta ${tag.cls}">${tag.txt}</div>
       </div>`;
@@ -764,20 +861,49 @@ function render(){
   else renderInsider();
 }
 
+// ── 💡 탭 버튼 대신 구루 포트폴리오 스타일의 드롭다운(Select) 렌더링 ──
 function buildFirmTabs(){
   if(view!=="firm"){ $("#firmTabs").innerHTML=""; $("#firmTabs").style.display="none"; return; }
-  $("#firmTabs").style.display="flex";
+  $("#firmTabs").style.display="block"; // 드롭다운 레이아웃용 block 처리
+  
   const firms = ["전체", ...(ARCHIVE.firms || FIRM.firms || [])];
   const uniqFirms = [...new Set(firms)];
-  $("#firmTabs").innerHTML = uniqFirms.map(f=>
-    `<button aria-selected="${f===activeFirm}" data-f="${f}">${f==="전체"?t("all"):localizeFirm(f)}</button>`
-  ).join("");
-  $("#firmTabs").querySelectorAll("button").forEach(b=>{
-    b.onclick=()=>{activeFirm=b.dataset.f; buildFirmTabs(); render();};
+  
+  let optionsHtml = uniqFirms.map(f => {
+    const label = f === "전체" ? t("all") : localizeFirm(f);
+    const selected = f === activeFirm ? "selected" : "";
+    return `<option value="${f}" ${selected}>${label}</option>`;
+  }).join("");
+  
+  $("#firmTabs").innerHTML = `<select class="firm-select" id="firmSelect">${optionsHtml}</select>`;
+  
+  // 드롭다운 변경 감지 이벤트
+  $("#firmSelect").addEventListener("change", (e) => {
+    activeFirm = e.target.value;
+    render();
   });
 }
 
-function buildMarketFilter(){}
+function buildMarketFilter(){
+  if(view==="firm"){ $("#marketFilter").innerHTML=""; $("#marketFilter").style.display="none"; return; }
+  $("#marketFilter").style.display="flex";
+  const opts=[["ALL",t("market_all")],["KOSPI","KOSPI"],["KOSDAQ","KOSDAQ"]];
+  let html = opts.map(([k,label])=>
+    `<button aria-selected="${k===activeMarket}" data-mk="${k}">${label}</button>`).join("");
+  if(view==="buyback"){
+    const bbOpts=[["ALL",t("all")],["취득",t("bb_acq")],["소각",t("bb_cancel")]];
+    html += `<span style="display:inline-block;width:12px"></span>`;
+    html += bbOpts.map(([k,label])=>
+      `<button aria-selected="${k===activeBBType}" data-bbtype="${k}">${label}</button>`).join("");
+  }
+  $("#marketFilter").innerHTML = html;
+  $("#marketFilter").querySelectorAll("button[data-mk]").forEach(b=>{
+    b.onclick=()=>{activeMarket=b.dataset.mk;buildMarketFilter();render();};
+  });
+  $("#marketFilter").querySelectorAll("button[data-bbtype]").forEach(b=>{
+    b.onclick=()=>{activeBBType=b.dataset.bbtype;buildMarketFilter();render();};
+  });
+}
 
 function setFooter(){
   $("#footer").innerHTML = `
