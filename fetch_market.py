@@ -155,7 +155,7 @@ def main():
             quotes[name] = q
             print(f"  {name}: {q['price']} ({q['change_pct']:+.2f}%)")
         # 일봉만 Yahoo에서 가져오고, 주봉/월봉은 직접 집계
-        daily = fetch_history(symbol, interval="1d", rng="max")
+        daily = fetch_history(symbol, interval="1d", rng="2y")
         if daily:
             weekly = aggregate_candles(daily, "weekly")
             monthly = aggregate_candles(daily, "monthly")
