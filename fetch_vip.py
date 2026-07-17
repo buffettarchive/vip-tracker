@@ -240,63 +240,80 @@ def main():
     print(f"[info] 기존 {len(existing)}건, 마지막 본 번호={last_seen or '없음'}")
 
     today = dt.date.today()
-    bgn = (today - dt.timedelta(days=scan_days)).strftime("%Y%m%d")
-    end = today.strftime("%Y%m%d")
+    start_date = today - dt.timedelta(days=scan_days)
 
-    added, max_seen, stop, page = 0, last_seen, False, 1
-    while not stop:
-        d = dart("list.json", bgn_de=bgn, end_de=end, pblntf_ty="D",
-                 page_no=page, page_count=100, sort="date", sort_mth="desc")
-        st = d.get("status")
-        if st == "013":
+    # DART API는 corp_code 없이 최대 3개월만 조회 가능 → 90일 단위 청크
+    chunk_days = 89
+    date_ranges = []
+    d_cursor = start_date
+    while d_cursor < today:
+        d_end = min(d_cursor + dt.timedelta(days=chunk_days), today)
+        date_ranges.append((d_cursor.strftime("%Y%m%d"), d_end.strftime("%Y%m%d")))
+        d_cursor = d_end + dt.timedelta(days=1)
+
+    if len(date_ranges) > 1:
+        print(f"[info] {len(date_ranges)}개 구간으로 나눠서 스캔")
+
+    added, max_seen, global_stop = 0, last_seen, False
+
+    for chunk_bgn, chunk_end in date_ranges:
+        if global_stop:
             break
-        if st != "000":
-            print(f"[warn] list status={st} msg={d.get('message')}", file=sys.stderr)
-            break
-        for row in d.get("list", []) or []:
-            rcept_no = row["rcept_no"]
-            if last_seen and rcept_no <= last_seen:
-                stop = True
+        stop, page = False, 1
+        while not stop:
+            d = dart("list.json", bgn_de=chunk_bgn, end_de=chunk_end, pblntf_ty="D",
+                     page_no=page, page_count=100, sort="date", sort_mth="desc")
+            st = d.get("status")
+            if st == "013":
                 break
-            if rcept_no > max_seen:
-                max_seen = rcept_no
-            report_nm = row.get("report_nm", "")
-            if "대량보유상황보고서" not in report_nm and "소유상황보고서" not in report_nm:
-                continue
-            firm = firm_in(row.get("flr_nm", ""))
-            if not firm or rcept_no in existing:
-                continue
+            if st != "000":
+                print(f"[warn] list status={st} msg={d.get('message')}", file=sys.stderr)
+                break
+            for row in d.get("list", []) or []:
+                rcept_no = row["rcept_no"]
+                if last_seen and rcept_no <= last_seen:
+                    stop = True
+                    global_stop = True
+                    break
+                if rcept_no > max_seen:
+                    max_seen = rcept_no
+                report_nm = row.get("report_nm", "")
+                if "대량보유상황보고서" not in report_nm and "소유상황보고서" not in report_nm:
+                    continue
+                firm = firm_in(row.get("flr_nm", ""))
+                if not firm or rcept_no in existing:
+                    continue
 
-            doc = parse_document(rcept_no)
-            time.sleep(0.3)
-            kind = classify(doc.get("stkrt"), doc.get("stkrt_prev"), doc.get("report_resn", ""))
-            rdt = row.get("rcept_dt", "")
+                doc = parse_document(rcept_no)
+                time.sleep(0.3)
+                kind = classify(doc.get("stkrt"), doc.get("stkrt_prev"), doc.get("report_resn", ""))
+                rdt = row.get("rcept_dt", "")
 
-            ok = "✓" if doc.get("stkrt") else "✗"
-            print(f"  [{ok}] {row.get('corp_name','')} / {firm} / stkrt={doc.get('stkrt','?')} / {kind}")
+                ok = "✓" if doc.get("stkrt") else "✗"
+                print(f"  [{ok}] {row.get('corp_name','')} / {firm} / stkrt={doc.get('stkrt','?')} / {kind}")
 
-            existing[rcept_no] = {
-                "rcept_no": rcept_no,
-                "rcept_dt": f"{rdt[:4]}-{rdt[4:6]}-{rdt[6:]}" if len(rdt) == 8 else rdt,
-                "firm": firm,
-                "corp_name": row.get("corp_name", ""),
-                "stock_code": row.get("stock_code", ""),
-                "corp_code": row.get("corp_code", ""),
-                "stkrt": doc.get("stkrt", ""),
-                "stkrt_prev": doc.get("stkrt_prev", ""),
-                "stkqy": doc.get("stkqy", ""),
-                "report_resn": doc.get("report_resn", ""),
-                "purpose": doc.get("purpose", ""),
-                "report_nm": row.get("report_nm", ""),
-                "kind": kind,
-            }
-            added += 1
+                existing[rcept_no] = {
+                    "rcept_no": rcept_no,
+                    "rcept_dt": f"{rdt[:4]}-{rdt[4:6]}-{rdt[6:]}" if len(rdt) == 8 else rdt,
+                    "firm": firm,
+                    "corp_name": row.get("corp_name", ""),
+                    "stock_code": row.get("stock_code", ""),
+                    "corp_code": row.get("corp_code", ""),
+                    "stkrt": doc.get("stkrt", ""),
+                    "stkrt_prev": doc.get("stkrt_prev", ""),
+                    "stkqy": doc.get("stkqy", ""),
+                    "report_resn": doc.get("report_resn", ""),
+                    "purpose": doc.get("purpose", ""),
+                    "report_nm": row.get("report_nm", ""),
+                    "kind": kind,
+                }
+                added += 1
 
-        tp = int(d.get("total_page", 1) or 1)
-        if page >= tp:
-            break
-        page += 1
-        time.sleep(0.2)
+            tp = int(d.get("total_page", 1) or 1)
+            if page >= tp:
+                break
+            page += 1
+            time.sleep(0.2)
 
     # ── 불완전 항목 재시도 (stkrt 비어있는 최근 항목) ──
     retried = 0
