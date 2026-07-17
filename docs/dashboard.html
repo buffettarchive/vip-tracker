@@ -232,6 +232,11 @@ footer#footer{margin:40px 0 0;padding-top:24px;border-top:1px solid var(--line)}
     <div class="chart-head">
       <span class="chart-title" id="chartTitle">KOSPI</span>
       <span class="chart-hint" id="chartHint"></span>
+      <div class="chart-tf" id="chartTf">
+        <button data-tf="daily" aria-selected="true">일봉</button>
+        <button data-tf="weekly" aria-selected="false">주봉</button>
+        <button data-tf="monthly" aria-selected="false">월봉</button>
+      </div>
     </div>
     <div class="ohlc-bar" id="ohlcBar"></div>
     <div id="marketChart" class="tv-chart"></div>
@@ -530,7 +535,7 @@ function drawChart(name){
     return c;
   }).filter(c => c.close > 0);
   const tfLabel = {daily:"일봉", weekly:"주봉", monthly:"월봉"}[currentTimeframe] || "일봉";
-  if(hintEl) hintEl.textContent = `전체 기간 · ${tfLabel} · 스크롤로 과거 탐색`;
+  if(hintEl) hintEl.textContent = `${tfLabel} · 스크롤로 과거 탐색`;
   lwSeries.setData(series);
   lastCandle = series[series.length-1];   
   updateOhlcBar(lastCandle);
