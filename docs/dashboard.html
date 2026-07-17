@@ -82,20 +82,77 @@ a{color:inherit;text-decoration:none}
 }
 .ticker::-webkit-scrollbar{display:none}
 
-/* ── TradingView 차트 ── */
-/* 검색 */
-.search-wrap{margin:12px 0 0}
-.search-input{display:block;
+/* ── 메인 탭 (3D 버튼 스타일) ── */
+.maintabs{display:flex;gap:9px;margin:24px 0 0;flex-wrap:wrap}
+.maintabs button{
+  font-family:inherit;font-size:15px;font-weight:700;cursor:pointer;
+  padding:11px 20px;border-radius:9999px;border:none;
+  background:var(--card);color:#4b4d55;box-shadow:0 3px 0 #e4e2db;
+  transition:transform .12s,box-shadow .12s;
+}
+.maintabs button:active{transform:translateY(3px);box-shadow:0 0 0 #e4e2db}
+.maintabs button[aria-selected="true"]{
+  background:var(--cobalt);color:#fff;
+  box-shadow:0 4px 0 var(--cobalt-d),0 8px 16px rgba(0,71,255,.24);
+}
+
+/* ── 필터 및 검색 컨트롤 ── */
+.controls{
+  display:flex;
+  align-items:center; /* 수평 정렬을 완벽하게 맞춤 */
+  padding:22px 0 12px;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+/* 기업명 검색창 */
+.search-wrap{margin:0} /* 기존에 어긋났던 마진 삭제 */
+.search-input{
+  display:block;
   width: 350px;
   max-width: 100%;
-  padding:10px 16px 10px 40px;
-  font-family:inherit;font-size:14px;font-weight:500;color:var(--ink);
+  height: 42px; /* 드롭다운과 높이 통일 */
+  padding: 10px 16px 10px 40px;
+  font-family:inherit;
+  font-size:14px;
+  font-weight:500; /* 폰트 굵기 통일 */
+  color:var(--ink);
   background:var(--card) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='%2374767c' viewBox='0 0 256 256'%3E%3Cpath d='M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z'/%3E%3C/svg%3E") no-repeat 12px center;
-  border:1px solid var(--line);border-radius:12px;outline:none;transition:all .2s;
+  border:1px solid var(--line);
+  border-radius:12px;
+  outline:none;
+  transition:all .2s;
 }
 .search-input:focus{border-color:var(--cobalt);box-shadow:0 0 0 3px rgba(0,71,255,.1)}
 .search-input::placeholder{color:var(--muted);font-weight:400}
 
+/* 운용사 선택 드롭다운 (구루 스타일 + 검색창 디자인 통일) */
+.firm-select {
+  appearance: none;
+  -webkit-appearance: none;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500; /* 검색창 폰트 굵기와 100% 동일하게 */
+  color: var(--ink);
+  background: var(--card) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2374767c' viewBox='0 0 256 256'%3E%3Cpath d='M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z'/%3E%3C/svg%3E") no-repeat right 14px center;
+  border: 1px solid var(--line);
+  border-radius: 12px; /* 둥근 모서리 일치 */
+  padding: 10px 40px 10px 16px;
+  height: 42px; /* 검색창 높이와 100% 동일하게 */
+  outline: none;
+  cursor: pointer;
+  transition: all .2s;
+  min-width: 220px;
+  margin: 0; /* 어긋났던 마진 삭제 */
+}
+.firm-select:focus {
+  border-color: var(--cobalt);
+  box-shadow: 0 0 0 3px rgba(0,71,255,.1);
+}
+
+.count{font-size:13px;color:var(--muted);margin-left:auto;font-weight:600;margin-top:0;}
+
+/* ── TradingView 차트 ── */
 .chart-wrap{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px 18px 8px;margin-top:14px;box-shadow:0 4px 20px rgba(22,24,29,.04)}
 .chart-head{display:flex;align-items:baseline;gap:12px;margin-bottom:12px;padding:0 4px;flex-wrap:wrap}
 .chart-tf{margin-left:auto;display:inline-flex;gap:2px;background:#f1f2f6;border-radius:10px;padding:3px}
@@ -122,58 +179,6 @@ a{color:inherit;text-decoration:none}
 .ticker-price{color:var(--ink);font-weight:700;font-size:14px}
 .ticker-chg{font-size:12.5px;font-weight:700}
 .ticker-chg.up{color:var(--up)} .ticker-chg.down{color:var(--down)} .ticker-chg.flat{color:var(--muted)}
-
-/* ── 메인 탭 (3D 버튼 스타일) ── */
-.maintabs{display:flex;gap:9px;margin:24px 0 0;flex-wrap:wrap}
-.maintabs button{
-  font-family:inherit;font-size:15px;font-weight:700;cursor:pointer;
-  padding:11px 20px;border-radius:9999px;border:none;
-  background:var(--card);color:#4b4d55;box-shadow:0 3px 0 #e4e2db;
-  transition:transform .12s,box-shadow .12s;
-}
-.maintabs button:active{transform:translateY(3px);box-shadow:0 0 0 #e4e2db}
-.maintabs button[aria-selected="true"]{
-  background:var(--cobalt);color:#fff;
-  box-shadow:0 4px 0 var(--cobalt-d),0 8px 16px rgba(0,71,255,.24);
-}
-
-/* ── 필터 컨트롤 ── */
-.controls{display:flex;align-items:center;padding:22px 0 6px;flex-wrap:wrap;gap:10px}
-
-/* 운용사 선택 드롭다운 (구루 스타일 차용) */
-.firm-select {
-  appearance: none;
-  -webkit-appearance: none;
-  font-family: inherit;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--ink);
-  background: var(--card) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2374767c' viewBox='0 0 256 256'%3E%3Cpath d='M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z'/%3E%3C/svg%3E") no-repeat right 14px center;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 10px 40px 10px 16px;
-  outline: none;
-  cursor: pointer;
-  transition: all .2s;
-  min-width: 220px;
-  margin-top: 12px; /* 검색창과 나란히 있을 때 정렬용 */
-}
-.firm-select:focus {
-  border-color: var(--cobalt);
-  box-shadow: 0 0 0 3px rgba(0,71,255,.1);
-}
-
-.firm-tabs,.market-filter{display:flex;gap:6px;flex-wrap:wrap}
-.market-filter button{
-  font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;
-  background:var(--card);border:1px solid var(--line);color:var(--muted);
-  padding:7px 14px;border-radius:999px;transition:.15s;
-}
-.market-filter button:hover{border-color:#d9d8d1;color:var(--ink)}
-.market-filter button[aria-selected="true"]{
-  background:var(--cobalt);color:#fff;border-color:var(--cobalt);
-}
-.count{font-size:13px;color:var(--muted);margin-left:auto;font-weight:600; margin-top: 12px;}
 
 /* ── 피드 리스트 (카드 컨테이너) ── */
 .feed{list-style:none;background:var(--card);border:1px solid var(--line);border-radius:20px;margin-top:14px;overflow:hidden;box-shadow:0 4px 20px rgba(22,24,29,.04)}
@@ -285,10 +290,12 @@ footer#footer{margin:40px 0 0;padding-top:24px;border-top:1px solid var(--line)}
     <button role="tab" data-view="buyback" aria-selected="false" id="tabBuyback">자사주 매입/소각</button>
   </div>
 
+  <!-- 컨트롤 영역 (검색창, 드롭다운 완벽 정렬) -->
   <div class="controls">
-    <div class="firm-tabs" id="firmTabs"></div> <!-- 드롭다운 렌더링 위치 -->
-    <div class="market-filter" id="marketFilter"></div>
     <div class="search-wrap"><input type="text" class="search-input" id="searchInput" placeholder="기업명 검색"></div>
+    <div class="firm-tabs" id="firmTabs"></div> <!-- 드롭다운 렌더링 위치 -->
+    <!-- 전체시장, KOSPI 등의 버튼은 사용자가 원하지 않으므로 완전히 비워둠 -->
+    <div class="market-filter" id="marketFilter"></div> 
     <div class="count" id="count"></div>
   </div>
 
@@ -309,8 +316,8 @@ const I18N = {
     tab_insider: "내부자 매수",
     tab_firm: "운용사 지분공시",
     tab_buyback: "자사주 매입/소각",
-    all: "전체 운용사 (ALL)",
-    market_all: "전체 시장",
+    all: "전체", // "전체 운용사 (ALL)"에서 "전체"로 수정
+    market_all: "전체",
     count_insider: n => `${n}건의 내부자 매수`,
     count_firm: n => `${n}건의 공시`,
     count_buyback: n => `${n}건의 자사주 공시`,
@@ -346,8 +353,8 @@ const I18N = {
     tab_insider: "Insider Buying",
     tab_firm: "Asset Manager Filings",
     tab_buyback: "Treasury Buybacks",
-    all: "All Firms (ALL)",
-    market_all: "All Markets",
+    all: "All", // "All Firms (ALL)"에서 "All"로 수정
+    market_all: "All",
     count_insider: n => `${n} insider purchases`,
     count_firm: n => `${n} filings`,
     count_buyback: n => `${n} treasury stock filings`,
@@ -864,7 +871,7 @@ function render(){
 // ── 💡 탭 버튼 대신 구루 포트폴리오 스타일의 드롭다운(Select) 렌더링 ──
 function buildFirmTabs(){
   if(view!=="firm"){ $("#firmTabs").innerHTML=""; $("#firmTabs").style.display="none"; return; }
-  $("#firmTabs").style.display="block"; // 드롭다운 레이아웃용 block 처리
+  $("#firmTabs").style.display="block"; 
   
   const firms = ["전체", ...(ARCHIVE.firms || FIRM.firms || [])];
   const uniqFirms = [...new Set(firms)];
@@ -877,32 +884,16 @@ function buildFirmTabs(){
   
   $("#firmTabs").innerHTML = `<select class="firm-select" id="firmSelect">${optionsHtml}</select>`;
   
-  // 드롭다운 변경 감지 이벤트
   $("#firmSelect").addEventListener("change", (e) => {
     activeFirm = e.target.value;
     render();
   });
 }
 
+// ── 불필요한 필터(전체시장, KOSPI 등) 완전 삭제 ──
 function buildMarketFilter(){
-  if(view==="firm"){ $("#marketFilter").innerHTML=""; $("#marketFilter").style.display="none"; return; }
-  $("#marketFilter").style.display="flex";
-  const opts=[["ALL",t("market_all")],["KOSPI","KOSPI"],["KOSDAQ","KOSDAQ"]];
-  let html = opts.map(([k,label])=>
-    `<button aria-selected="${k===activeMarket}" data-mk="${k}">${label}</button>`).join("");
-  if(view==="buyback"){
-    const bbOpts=[["ALL",t("all")],["취득",t("bb_acq")],["소각",t("bb_cancel")]];
-    html += `<span style="display:inline-block;width:12px"></span>`;
-    html += bbOpts.map(([k,label])=>
-      `<button aria-selected="${k===activeBBType}" data-bbtype="${k}">${label}</button>`).join("");
-  }
-  $("#marketFilter").innerHTML = html;
-  $("#marketFilter").querySelectorAll("button[data-mk]").forEach(b=>{
-    b.onclick=()=>{activeMarket=b.dataset.mk;buildMarketFilter();render();};
-  });
-  $("#marketFilter").querySelectorAll("button[data-bbtype]").forEach(b=>{
-    b.onclick=()=>{activeBBType=b.dataset.bbtype;buildMarketFilter();render();};
-  });
+  $("#marketFilter").innerHTML = "";
+  $("#marketFilter").style.display = "none";
 }
 
 function setFooter(){
