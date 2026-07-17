@@ -1,5 +1,5 @@
 """
-backfill.py  (v4 · 소유상황보고서 + 3개월 청크 + 미리 한국어 매칭)
+backfill.py  (v5 · 소유상황보고서 + 3개월 청크 + 내부자 공시(Miri) 파싱 완벽 호환)
 ─────────────────────────────────────────────────────────────
 기존 data.json 초기화 후 365일치 재구축.
 Actions에서 Backfill (수동 실행)으로 1회 실행.
@@ -33,7 +33,7 @@ WATCH_FIRMS = [
 BACKFILL_DAYS = 365
 
 s = requests.Session()
-s.headers.update({"User-Agent": "vip-tracker-backfill/4.0"})
+s.headers.update({"User-Agent": "vip-tracker-backfill/5.0"})
 GH_HEADERS = {
     "Authorization": f"Bearer {GH_TOKEN}",
     "Accept": "application/vnd.github+json",
@@ -107,6 +107,8 @@ def parse_document(rcept_no):
 
 def _parse_plain(plain):
     out = {}
+    
+    # ── 1. 5% 대량보유상황보고서 파싱 (기존 로직) ──
     cur_match = re.search(r"이번\s*보고서(.{3,200}?)(?:의결권|보고사유|변동사유|보유목적|$)", plain, re.DOTALL)
     if cur_match:
         block = cur_match.group(1)
@@ -117,6 +119,7 @@ def _parse_plain(plain):
                 out["stkrt"] = raw
             elif v > 100 and "stkqy" not in out:
                 out["stkqy"] = raw.replace(",", "")
+                
     prev_match = re.search(r"직전\s*보고서(.{3,200}?)(?:이번\s*보고서|의결권|보고사유|변동사유|보유목적|$)", plain, re.DOTALL)
     if prev_match:
         block = prev_match.group(1)
@@ -125,15 +128,35 @@ def _parse_plain(plain):
             if v is not None and "." in raw_n and v < 100:
                 out["stkrt_prev"] = raw_n
                 break
+                
     if "stkrt" not in out:
         cur = re.search(r"이번\s*보고서\s*([\d,]+)\s+([\d]+(?:\.\d+)?)", plain)
         if cur:
             out["stkqy"] = cur.group(1).replace(",", "")
             out["stkrt"] = cur.group(2)
+            
     if "stkrt_prev" not in out:
         prev = re.search(r"직전\s*보고서\s*([\d,]+)\s+([\d]+(?:\.\d+)?)", plain)
         if prev:
             out["stkrt_prev"] = prev.group(2)
+            
+    # ── 2. 임원·주요주주 소유상황보고서 (Miri 등) 추가 파싱 로직 ──
+    # '이번 보고서'라는 단어가 없어서 위 로직이 실패했을 경우, 내부자 공시 양식으로 지분율과 증감 수량을 스캔합니다.
+    if "stkrt" not in out:
+        # "소유비율" 주변에 있는 가장 첫 번째 소수점 숫자를 추출
+        rate_match = re.search(r"소유비율[^\d]{0,50}?(\d+\.\d+)", plain)
+        if rate_match:
+            out["stkrt"] = rate_match.group(1)
+            
+    if "irds_cnt" not in out:
+        # "증감", "취득", "장내매수" 근처에 있는 숫자(보통 콤마 포함)를 추출하여 매수/매도 수량 확보
+        diff_match = re.search(r"(?:증감|취득|처분|장내매수|장내매도)[^\d]{0,30}?([+\-]?\s*\d{1,3}(?:,\d{3})+)", plain)
+        if diff_match:
+            val = diff_match.group(1).replace(",", "").replace(" ", "")
+            if val.isdigit() or (val.startswith('-') and val[1:].isdigit()):
+                out["irds_cnt"] = val
+
+    # ── 기타 텍스트 추출 ──
     for pat in [
         r"보고사유\s*(.+?)\s*(?:보유목적|변동사유|비고)",
         r"보고사유\s*(.{3,60})",
@@ -142,6 +165,7 @@ def _parse_plain(plain):
         if resn:
             out["report_resn"] = resn.group(1).strip()[:60]
             break
+            
     for pat in [
         r"보유목적\s*([가-힣A-Za-z]+투자)",
         r"보유목적\s*([가-힣A-Za-z]{2,20})",
@@ -150,22 +174,34 @@ def _parse_plain(plain):
         if purpose:
             out["purpose"] = purpose.group(1).strip()
             break
+            
     return out
 
 
-def classify(stkrt, stkrt_prev, report_resn=""):
+def classify(stkrt, stkrt_prev, report_resn="", irds_cnt=""):
     cur = to_float(stkrt)
     prev = to_float(stkrt_prev)
+    irds = to_float(irds_cnt)
+    
     if "신규" in (report_resn or ""):
         return "매수(신규)"
+        
+    if cur is not None and prev is not None:
+        if cur > prev:
+            return "매수"
+        if cur < prev:
+            return "매도"
+            
+    # Miri처럼 이전 지분율(stkrt_prev)은 없지만 증감 주식수(irds_cnt)가 있는 경우, 이를 기준으로 매매 판별
+    if irds is not None:
+        if irds > 0: return "매수"
+        if irds < 0: return "매도"
+        
     if cur is None:
         return "기타"
     if prev is None:
         return "매수(신규)"
-    if cur > prev:
-        return "매수"
-    if cur < prev:
-        return "매도"
+        
     return "기타"
 
 
@@ -239,7 +275,9 @@ def main():
                 seen.add(rcept_no)
                 doc = parse_document(rcept_no)
                 time.sleep(0.3)
-                kind = classify(doc.get("stkrt"), doc.get("stkrt_prev"), doc.get("report_resn", ""))
+                
+                # 추출한 irds_cnt를 함께 전달하여 매수/매도/기타를 더 정확하게 판별
+                kind = classify(doc.get("stkrt"), doc.get("stkrt_prev"), doc.get("report_resn", ""), doc.get("irds_cnt", ""))
                 rdt = row.get("rcept_dt", "")
 
                 ok = "✓" if doc.get("stkrt") else "✗"
@@ -255,6 +293,7 @@ def main():
                     "stkrt": doc.get("stkrt", ""),
                     "stkrt_prev": doc.get("stkrt_prev", ""),
                     "stkqy": doc.get("stkqy", ""),
+                    "irds_cnt": doc.get("irds_cnt", ""), # 프론트엔드로 증감수량 전달
                     "report_resn": doc.get("report_resn", ""),
                     "purpose": doc.get("purpose", ""),
                     "report_nm": row.get("report_nm", ""),
