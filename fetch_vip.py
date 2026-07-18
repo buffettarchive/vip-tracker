@@ -120,27 +120,42 @@ def _parse_plain(plain):
     """태그 제거된 본문 텍스트에서 데이터 추출."""
     out = {}
 
-    # ── 이번 보고서: 바로 뒤의 숫자들에서 주식수·비율 추출 ──
-    cur_match = re.search(r"이번\s*보고서(.{3,200}?)(?:의결권|보고사유|변동사유|보유목적|$)", plain, re.DOTALL)
-    if cur_match:
-        block = cur_match.group(1)
-        nums = re.findall(r"([\d,]+(?:\.\d+)?)", block)
-        float_nums = [(n, to_float(n)) for n in nums if to_float(n) is not None]
-        for raw, v in float_nums:
-            if "." in raw and v < 100 and "stkrt" not in out:
-                out["stkrt"] = raw
-            elif v > 100 and "stkqy" not in out:
-                out["stkqy"] = raw.replace(",", "")
+    # ── 소유상황보고서 전용: "이번보고서 날짜 주식수 비율" 직접 매칭 ──
+    owm = re.search(r"이번\s*보고서\s*\d{4}년?\s*\d{1,2}월?\s*\d{1,2}일?\s*([\d,]+)\s+([\d.]+)", plain)
+    if owm:
+        out["stkqy"] = owm.group(1).replace(",", "")
+        out["stkrt"] = owm.group(2)
+
+    # ── 대량보유상황보고서 패턴 (기존, fallback) ──
+    if "stkrt" not in out:
+        cur_match = re.search(r"이번\s*보고서(.{3,400}?)(?:의결권|보고사유|변동사유|보유목적|증\s*감|특정증권|종류별|세부변동)", plain, re.DOTALL)
+        if cur_match:
+            block = cur_match.group(1)
+            block = re.sub(r"\d{4}년?\s*\d{1,2}월?\s*\d{1,2}일?", "", block)
+            nums = re.findall(r"([\d,]+(?:\.\d+)?)", block)
+            float_nums = [(n, to_float(n)) for n in nums if to_float(n) is not None]
+            for raw, v in float_nums:
+                if "." in raw and v < 100 and "stkrt" not in out:
+                    out["stkrt"] = raw
+                elif v > 100 and "stkqy" not in out:
+                    out["stkqy"] = raw.replace(",", "")
 
     # ── 직전 보고서: 바로 뒤의 숫자들에서 비율 추출 ──
-    prev_match = re.search(r"직전\s*보고서(.{3,200}?)(?:이번\s*보고서|의결권|보고사유|변동사유|보유목적|$)", plain, re.DOTALL)
-    if prev_match:
-        block = prev_match.group(1)
-        for raw_n in re.findall(r"([\d,]+(?:\.\d+)?)", block):
-            v = to_float(raw_n)
-            if v is not None and "." in raw_n and v < 100:
-                out["stkrt_prev"] = raw_n
-                break
+    # 소유상황보고서 전용: 직전보고서 날짜 주식수 비율
+    opm = re.search(r"직전\s*보고서\s*\d{4}년?\s*\d{1,2}월?\s*\d{1,2}일?\s*([\d,]+)\s+([\d.]+)", plain)
+    if opm:
+        out["stkrt_prev"] = opm.group(2)
+
+    if "stkrt_prev" not in out:
+        prev_match = re.search(r"직전\s*보고서(.{3,400}?)(?:이번\s*보고서|의결권|보고사유|변동사유|보유목적|증\s*감|특정증권|$)", plain, re.DOTALL)
+        if prev_match:
+            block = prev_match.group(1)
+            block2 = re.sub(r"\d{4}년?\s*\d{1,2}월?\s*\d{1,2}일?", "", block)
+            for raw_n in re.findall(r"([\d,]+(?:\.\d+)?)", block2):
+                v = to_float(raw_n)
+                if v is not None and "." in raw_n and v < 100:
+                    out["stkrt_prev"] = raw_n
+                    break
 
     # ── fallback: 단순 패턴 ──
     if "stkrt" not in out:
