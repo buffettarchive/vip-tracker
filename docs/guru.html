@@ -159,7 +159,7 @@ a{color:inherit;text-decoration:none}
 <script>
 const $ = s => document.querySelector(s);
 const $$ = s => document.querySelectorAll(s);
-let VIPS={}, CHANGES={}, MANIFEST={archive_quarters:[],changes_quarters:[]}, PRICES={};
+let VIPS={}, CHANGES={}, MANIFEST={archive_quarters:[],changes_quarters:[]}, PRICES={}, TICKER_CACHE={};
 let archiveCache={}, changesCache={};
 let activeGuru="", activeTab="portfolio", activeChangeQ="", activeHistQ="";
 let chartInstance=null, histChartInstance=null;
@@ -178,36 +178,56 @@ function fmtPctChange(reported,current){
 function quarterLabel(q){return q.replace("_"," ")}
 
 let PRICE_BY_NAME={};
+let PRICE_NAMES=[];
 function buildPriceIndex(){
   PRICE_BY_NAME={};
+  PRICE_NAMES=[];
   for(const[cusip,p]of Object.entries(PRICES)){
-    if(p.name)PRICE_BY_NAME[p.name.toUpperCase()]=p;
+    if(p.name){
+      const key=p.name.toUpperCase().trim();
+      PRICE_BY_NAME[key]=p;
+      PRICE_NAMES.push(key);
+    }
   }
+}
+function findByName(name){
+  if(!name)return null;
+  const key=name.toUpperCase().trim();
+  if(PRICE_BY_NAME[key])return PRICE_BY_NAME[key];
+  // 부분 매칭: 종목명 앞부분 일치 (CLASS A/B 등 차이 대응)
+  const base=key.replace(/\s+(CL\s*[A-Z]|CLASS\s*[A-Z]|SER\s*[A-Z]|SERIES\s*[A-Z])$/,"").trim();
+  if(base!==key&&PRICE_BY_NAME[base])return PRICE_BY_NAME[base];
+  // 더 짧은 매칭: 첫 단어들로
+  for(const n of PRICE_NAMES){
+    if(n.startsWith(base+" ")||base.startsWith(n+" "))return PRICE_BY_NAME[n];
+  }
+  return null;
 }
 function getTicker(cusip,name){
   if(cusip&&PRICES[cusip]&&PRICES[cusip].ticker)return PRICES[cusip].ticker;
-  if(name){const p=PRICE_BY_NAME[name.toUpperCase()];if(p&&p.ticker)return p.ticker;}
-  return null;
+  const p=findByName(name);
+  return p?p.ticker:null;
 }
 function getPriceData(cusip,name){
   if(cusip&&PRICES[cusip])return PRICES[cusip];
-  if(name&&PRICE_BY_NAME[name.toUpperCase()])return PRICE_BY_NAME[name.toUpperCase()];
-  return null;
+  return findByName(name);
 }
 
 async function init(){
   try{
-    const [vR,cR,mR,pR]=await Promise.all([
+    const [vR,cR,mR,pR,tcR]=await Promise.all([
       fetch("us_vips.json?ts="+Date.now()).then(r=>r.ok?r.json():null),
       fetch("us_vips_changes.json?ts="+Date.now()).then(r=>r.ok?r.json():null).catch(()=>null),
       fetch("us_vips_manifest.json?ts="+Date.now()).then(r=>r.ok?r.json():null).catch(()=>null),
       fetch("stock_prices.json?ts="+Date.now()).then(r=>r.ok?r.json():null).catch(()=>null),
+      fetch("ticker_cache.json?ts="+Date.now()).then(r=>r.ok?r.json():null).catch(()=>null),
     ]);
     if(vR&&vR.portfolios)VIPS=vR.portfolios;else if(vR)VIPS=vR;
     if(cR){CHANGES=cR;activeChangeQ=cR.period||"";if(cR.changes)changesCache[activeChangeQ]=cR.changes}
     if(mR)MANIFEST=mR;
     if(!activeChangeQ&&MANIFEST.changes_quarters.length>0)activeChangeQ=MANIFEST.changes_quarters[MANIFEST.changes_quarters.length-1];
     if(pR&&pR.prices){PRICES=pR.prices;pricesUpdatedAt=pR.updated_at||"";buildPriceIndex()}
+    if(tcR)TICKER_CACHE=tcR;
     const PRIORITY=[
       "워런 버핏 (버크셔 해서웨이)",
       "모니시 파브라이 (파브라이 인베스트먼트)",
@@ -342,7 +362,11 @@ function renderTable(holdings,tableId,showPrices){
   </tr></thead>`;
 
   const tbody=holdings.map((h,i)=>{
-    const rp=h.shares>0?h.value/h.shares:0;
+    // value 보정: value_x1000이면 *1000, 이미 USD면 그대로, 1000x 과대면 /1000
+    let val=h.value||0;
+    if(h.value_x1000){val=h.value_x1000*1000;}
+    else if(val>1e12){val=val/1000;}
+    let rp=h.shares>0?val/h.shares:0;
     const pd=getPriceData(h.cusip,h.name);
     const cp=pd?pd.current_price:null;
     const w52l=pd?pd.week52_low:null;
@@ -353,7 +377,7 @@ function renderTable(holdings,tableId,showPrices){
       <td class="pct">${h.weight.toFixed(2)}%</td>
       <td>${fmtShares(h.shares)}</td>
       <td>${fmtPrice(rp)}</td>
-      <td>${fmtUSD(h.value)}</td>
+      <td>${fmtUSD(val)}</td>
       <td>${cp?fmtPrice(cp):'<span class="dim">-</span>'}</td>
       <td>${fmtPctChange(rp,cp)}</td>
       <td>${w52l?fmtPrice(w52l):'<span class="dim">-</span>'}</td>
