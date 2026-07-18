@@ -249,7 +249,7 @@ function rowHtml({init, name, mk, sub, big, small, bigColor}){
   </div>`;
 }
 
-function heroRowHtml({init, name, sub, big, small}){
+function heroRowHtml({init, name, sub, big, small, smallColor}){
   return `<div style="display:flex;justify-content:space-between;align-items:center;padding:15px 4px;border-top:1px solid #f3f3ef">
     <div style="display:flex;align-items:center;gap:12px">
       <div style="width:42px;height:42px;border-radius:13px;background:#f3f4f7;display:flex;align-items:center;justify-content:center;font-weight:700;color:#5a6270">${init}</div>
@@ -258,7 +258,7 @@ function heroRowHtml({init, name, sub, big, small}){
     </div>
     <div style="text-align:right">
       <div style="font-size:16px;font-weight:700;color:var(--cobalt)">${big}</div>
-      <div style="font-size:11px;color:var(--muted)">${small}</div>
+      <div style="font-size:11px;font-weight:600;color:${smallColor||'var(--muted)'}">${small}</div>
     </div>
   </div>`;
 }
@@ -299,15 +299,17 @@ return Promise.all([
       const cur=parseFloat(x.stkrt), prev=parseFloat(x.stkrt_prev);
       const diff=(!isNaN(cur)&&!isNaN(prev))?(cur-prev):null;
       let small = "보유 지분";
-      if((x.kind||"").includes("신규")) small="신규 편입";
-      else if(x.kind==="매수" && diff!=null) small=`▲${Math.abs(diff).toFixed(2)}%p`;
-      else if(x.kind==="매도" && diff!=null) small=`▼${Math.abs(diff).toFixed(2)}%p`;
+      let smallColor = "var(--muted)";
+      if((x.kind||"").includes("신규")){ small="신규 편입"; smallColor="#16a34a"; }
+      else if(x.kind==="매수" && diff!=null){ small=`매수 ▲${Math.abs(diff).toFixed(2)}%p`; smallColor="#16a34a"; }
+      else if(x.kind==="매도" && diff!=null){ small=`매도 ▼${Math.abs(diff).toFixed(2)}%p`; smallColor="#dc2626"; }
       return heroRowHtml({
         init: initial(x.corp_name),
         name: x.corp_name,
         sub: firmShort(x.firm),
         big: (x.stkrt?x.stkrt+"%":"—"),
-        small: small
+        small: small,
+        smallColor: smallColor
       });
     }).join("");
   }
