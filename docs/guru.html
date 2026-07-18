@@ -179,14 +179,35 @@ function quarterLabel(q){return q.replace("_"," ")}
 
 let PRICE_BY_NAME={};
 let PRICE_NAMES=[];
+let TICKER_BY_NAME={};
+function normName(n){
+  return n.toUpperCase().replace(/[.,\/]/g,'').replace(/\s+/g,' ')
+    .replace(/\s+(CL|CLASS)\s*[A-Z]$/,'')
+    .replace(/\s+(INC|CORP|CO|LTD|PLC|NV|SA|AG|SE|LP|LLC)$/,'')
+    .replace(/\s+(GROUP|HLDGS|HOLDINGS|INTERNATIONAL|INTL)$/,'')
+    .replace(/\s+(INC|CORP|CO|LTD)$/,'')
+    .trim();
+}
 function buildPriceIndex(){
   PRICE_BY_NAME={};
   PRICE_NAMES=[];
+  TICKER_BY_NAME={};
   for(const[cusip,p]of Object.entries(PRICES)){
     if(p.name){
       const key=p.name.toUpperCase().trim();
       PRICE_BY_NAME[key]=p;
       PRICE_NAMES.push(key);
+      const nk=normName(p.name);
+      if(!PRICE_BY_NAME[nk])PRICE_BY_NAME[nk]=p;
+      if(p.ticker)TICKER_BY_NAME[key]=p.ticker;
+    }
+  }
+  // ticker_cache에서 cusip→ticker 매핑을 이름 기반으로도 연결
+  for(const[cusip,ticker]of Object.entries(TICKER_CACHE)){
+    const p=PRICES[cusip];
+    if(p&&p.name){
+      TICKER_BY_NAME[p.name.toUpperCase().trim()]=ticker;
+      TICKER_BY_NAME[normName(p.name)]=ticker;
     }
   }
 }
@@ -194,19 +215,26 @@ function findByName(name){
   if(!name)return null;
   const key=name.toUpperCase().trim();
   if(PRICE_BY_NAME[key])return PRICE_BY_NAME[key];
-  // 부분 매칭: 종목명 앞부분 일치 (CLASS A/B 등 차이 대응)
-  const base=key.replace(/\s+(CL\s*[A-Z]|CLASS\s*[A-Z]|SER\s*[A-Z]|SERIES\s*[A-Z])$/,"").trim();
-  if(base!==key&&PRICE_BY_NAME[base])return PRICE_BY_NAME[base];
-  // 더 짧은 매칭: 첫 단어들로
+  const nk=normName(name);
+  if(PRICE_BY_NAME[nk])return PRICE_BY_NAME[nk];
+  // 부분 매칭
   for(const n of PRICE_NAMES){
-    if(n.startsWith(base+" ")||base.startsWith(n+" "))return PRICE_BY_NAME[n];
+    const nn=normName(n);
+    if(nn===nk||n.startsWith(nk+" ")||nk.startsWith(nn+" "))return PRICE_BY_NAME[n];
   }
   return null;
 }
 function getTicker(cusip,name){
   if(cusip&&PRICES[cusip]&&PRICES[cusip].ticker)return PRICES[cusip].ticker;
-  const p=findByName(name);
-  return p?p.ticker:null;
+  if(cusip&&TICKER_CACHE[cusip])return TICKER_CACHE[cusip];
+  if(name){
+    const key=name.toUpperCase().trim();
+    if(TICKER_BY_NAME[key])return TICKER_BY_NAME[key];
+    if(TICKER_BY_NAME[normName(name)])return TICKER_BY_NAME[normName(name)];
+    const p=findByName(name);
+    if(p&&p.ticker)return p.ticker;
+  }
+  return null;
 }
 function getPriceData(cusip,name){
   if(cusip&&PRICES[cusip])return PRICES[cusip];
@@ -362,10 +390,10 @@ function renderTable(holdings,tableId,showPrices){
   </tr></thead>`;
 
   const tbody=holdings.map((h,i)=>{
-    // value 보정: value_x1000이면 *1000, 이미 USD면 그대로, 1000x 과대면 /1000
-    let val=h.value||0;
-    if(h.value_x1000){val=h.value_x1000*1000;}
-    else if(val>1e12){val=val/1000;}
+    // value 보정: archive(value_x1000)이면 *1000, us_vips.json(value)이면 항상 /1000
+    let val;
+    if(h.value_x1000!==undefined){val=h.value_x1000*1000;}
+    else{val=(h.value||0)/1000;}
     let rp=h.shares>0?val/h.shares:0;
     const pd=getPriceData(h.cusip,h.name);
     const cp=pd?pd.current_price:null;
