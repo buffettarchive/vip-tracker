@@ -169,16 +169,26 @@ def _parse_plain(plain):
             out["stkrt_prev"] = prev.group(2)
 
     # ── 보고사유 ──
-    for pat in [
-        r"보고사유\s*(.+?)\s*(?:보유목적|변동사유|비고)",
-        r"보고사유\s*(.{3,60})",
-    ]:
-        resn = re.search(pat, plain)
-        if resn:
-            val = resn.group(1).strip()[:60]
-            if val:
-                out["report_resn"] = val
-                break
+    # 소유상황보고서: 세부변동내역에서 장내매수/장외매수 등 추출
+    trade_methods = re.findall(r"(장내매수|장외매수|장내매매|시간외매매|시간외매수|장내매도|장외매도)", plain)
+    if trade_methods:
+        # 가장 많이 나온 거래방법 사용
+        from collections import Counter
+        method = Counter(trade_methods).most_common(1)[0][0]
+        out["report_resn"] = method
+
+    if "report_resn" not in out:
+        for pat in [
+            r"보고사유\s*(.+?)\s*(?:보유목적|변동사유|비고)",
+            r"보고사유\s*(.{3,60})",
+        ]:
+            resn = re.search(pat, plain)
+            if resn:
+                val = resn.group(1).strip()[:60]
+                # 표 헤더 쓰레기 필터링
+                if val and "취득/처분" not in val and "변동전" not in val and "거래계획" not in val:
+                    out["report_resn"] = val
+                    break
 
     # ── 보유목적 ──
     for pat in [
