@@ -150,14 +150,24 @@ def _parse_plain(plain):
         prev = re.search(r"직전\s*보고서\s*([\d,]+)\s+([\d]+(?:\.\d+)?)", plain)
         if prev:
             out["stkrt_prev"] = prev.group(2)
-    for pat in [
-        r"보고사유\s*(.+?)\s*(?:보유목적|변동사유|비고)",
-        r"보고사유\s*(.{3,60})",
-    ]:
-        resn = re.search(pat, plain)
-        if resn:
-            out["report_resn"] = resn.group(1).strip()[:60]
-            break
+    # 보고사유: 소유상황보고서는 세부변동내역에서 장내매수 등 추출
+    trade_methods = re.findall(r"(장내매수|장외매수|장내매매|시간외매매|시간외매수|장내매도|장외매도)", plain)
+    if trade_methods:
+        from collections import Counter
+        method = Counter(trade_methods).most_common(1)[0][0]
+        out["report_resn"] = method
+
+    if "report_resn" not in out:
+        for pat in [
+            r"보고사유\s*(.+?)\s*(?:보유목적|변동사유|비고)",
+            r"보고사유\s*(.{3,60})",
+        ]:
+            resn = re.search(pat, plain)
+            if resn:
+                val = resn.group(1).strip()[:60]
+                if val and "취득/처분" not in val and "변동전" not in val and "거래계획" not in val:
+                    out["report_resn"] = val
+                    break
     for pat in [
         r"보유목적\s*([가-힣A-Za-z]+투자)",
         r"보유목적\s*([가-힣A-Za-z]{2,20})",
