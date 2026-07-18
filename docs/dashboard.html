@@ -58,7 +58,7 @@ a{color:inherit;text-decoration:none}
 .topnav .logo{height:32px;width:auto;transition:opacity .15s}
 .topnav a:hover .logo{opacity:.7}
 
-/* 메뉴 이동 링크 */
+/* 메뉴 이동 링크 (우측 끝 배치, 연회색 -> 파란색 통일) */
 .nav-links{
   margin-left:auto;
   display:flex; gap:28px; font-size:16px; font-weight:700; align-items:center;
@@ -82,77 +82,18 @@ a{color:inherit;text-decoration:none}
 }
 .ticker::-webkit-scrollbar{display:none}
 
-/* ── 메인 탭 (3D 버튼 스타일) ── */
-.maintabs{display:flex;gap:9px;margin:24px 0 0;flex-wrap:wrap}
-.maintabs button{
-  font-family:inherit;font-size:15px;font-weight:700;cursor:pointer;
-  padding:11px 20px;border-radius:9999px;border:none;
-  background:var(--card);color:#4b4d55;box-shadow:0 3px 0 #e4e2db;
-  transition:transform .12s,box-shadow .12s;
-}
-.maintabs button:active{transform:translateY(3px);box-shadow:0 0 0 #e4e2db}
-.maintabs button[aria-selected="true"]{
-  background:var(--cobalt);color:#fff;
-  box-shadow:0 4px 0 var(--cobalt-d),0 8px 16px rgba(0,71,255,.24);
-}
-
-/* ── 필터 및 검색 컨트롤 ── */
-.controls{
-  display:flex;
-  align-items:center; 
-  padding:22px 0 12px;
-  flex-wrap:wrap;
-  gap:12px;
-}
-
-/* 기업명 검색창 */
-.search-wrap{margin:0} 
-.search-input{
-  display:block;
-  width: 350px;
-  max-width: 100%;
-  height: 42px; 
-  padding: 10px 16px 10px 40px;
-  font-family:inherit;
-  font-size:14px;
-  font-weight:500; 
-  color:var(--ink);
+/* ── TradingView 차트 ── */
+/* 검색 */
+.search-wrap{margin:12px 0 0}
+.search-input{display:block;
+  width:100%;max-width:720px;padding:12px 16px 12px 40px;
+  font-family:inherit;font-size:14px;font-weight:500;color:var(--ink);
   background:var(--card) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='%2374767c' viewBox='0 0 256 256'%3E%3Cpath d='M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z'/%3E%3C/svg%3E") no-repeat 12px center;
-  border:1px solid var(--line);
-  border-radius:12px;
-  outline:none;
-  transition:all .2s;
+  border:1px solid var(--line);border-radius:12px;outline:none;transition:all .2s;
 }
 .search-input:focus{border-color:var(--cobalt);box-shadow:0 0 0 3px rgba(0,71,255,.1)}
 .search-input::placeholder{color:var(--muted);font-weight:400}
 
-/* 운용사 선택 드롭다운 */
-.firm-select {
-  appearance: none;
-  -webkit-appearance: none;
-  font-family: inherit;
-  font-size: 14px;
-  font-weight: 500; 
-  color: var(--ink);
-  background: var(--card) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2374767c' viewBox='0 0 256 256'%3E%3Cpath d='M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z'/%3E%3C/svg%3E") no-repeat right 14px center;
-  border: 1px solid var(--line);
-  border-radius: 12px; 
-  padding: 10px 40px 10px 16px;
-  height: 42px; 
-  outline: none;
-  cursor: pointer;
-  transition: all .2s;
-  min-width: 220px;
-  margin: 0; 
-}
-.firm-select:focus {
-  border-color: var(--cobalt);
-  box-shadow: 0 0 0 3px rgba(0,71,255,.1);
-}
-
-.count{font-size:13px;color:var(--muted);margin-left:auto;font-weight:600;margin-top:0;}
-
-/* ── TradingView 차트 ── */
 .chart-wrap{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px 18px 8px;margin-top:14px;box-shadow:0 4px 20px rgba(22,24,29,.04)}
 .chart-head{display:flex;align-items:baseline;gap:12px;margin-bottom:12px;padding:0 4px;flex-wrap:wrap}
 .chart-tf{margin-left:auto;display:inline-flex;gap:2px;background:#f1f2f6;border-radius:10px;padding:3px}
@@ -179,6 +120,34 @@ a{color:inherit;text-decoration:none}
 .ticker-price{color:var(--ink);font-weight:700;font-size:14px}
 .ticker-chg{font-size:12.5px;font-weight:700}
 .ticker-chg.up{color:var(--up)} .ticker-chg.down{color:var(--down)} .ticker-chg.flat{color:var(--muted)}
+
+/* ── 메인 탭 (3D 버튼 스타일) ── */
+.maintabs{display:flex;gap:9px;margin:24px 0 0;flex-wrap:wrap}
+.maintabs button{
+  font-family:inherit;font-size:15px;font-weight:700;cursor:pointer;
+  padding:11px 20px;border-radius:9999px;border:none;
+  background:var(--card);color:#4b4d55;box-shadow:0 3px 0 #e4e2db;
+  transition:transform .12s,box-shadow .12s;
+}
+.maintabs button:active{transform:translateY(3px);box-shadow:0 0 0 #e4e2db}
+.maintabs button[aria-selected="true"]{
+  background:var(--cobalt);color:#fff;
+  box-shadow:0 4px 0 var(--cobalt-d),0 8px 16px rgba(0,71,255,.24);
+}
+
+/* ── 필터 컨트롤 ── */
+.controls{display:flex;align-items:center;padding:22px 0 6px;flex-wrap:wrap;gap:10px}
+.firm-tabs,.market-filter{display:flex;gap:6px;flex-wrap:wrap}
+.firm-tabs button,.market-filter button{
+  font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;
+  background:var(--card);border:1px solid var(--line);color:var(--muted);
+  padding:7px 14px;border-radius:999px;transition:.15s;
+}
+.firm-tabs button:hover,.market-filter button:hover{border-color:#d9d8d1;color:var(--ink)}
+.firm-tabs button[aria-selected="true"],.market-filter button[aria-selected="true"]{
+  background:var(--cobalt);color:#fff;border-color:var(--cobalt);
+}
+.count{font-size:13px;color:var(--muted);margin-left:auto;font-weight:600}
 
 /* ── 피드 리스트 (카드 컨테이너) ── */
 .feed{list-style:none;background:var(--card);border:1px solid var(--line);border-radius:20px;margin-top:14px;overflow:hidden;box-shadow:0 4px 20px rgba(22,24,29,.04)}
@@ -223,6 +192,16 @@ a.row{cursor:pointer}
 
 .empty{padding:64px 0;text-align:center;color:var(--muted);font-size:15px}
 
+/* ── 운용사 포트폴리오 뷰 ── */
+.firm-row{cursor:pointer}
+.stock-row{cursor:pointer}
+.firm-avatar{background:var(--chip);color:var(--cobalt)}
+.pf-header{list-style:none;padding:20px 22px 22px;border-bottom:2px solid var(--ink)}
+.pf-back{font-family:inherit;font-size:13px;font-weight:600;color:var(--muted);background:transparent;border:none;cursor:pointer;padding:0;margin-bottom:14px;transition:color .15s}
+.pf-back:hover{color:var(--cobalt)}
+.pf-title{font-size:24px;font-weight:700;letter-spacing:-.6px;color:var(--ink)}
+.pf-meta{font-size:12.5px;color:var(--muted);margin-top:6px}
+
 /* ── 면책조항 / 푸터 ── */
 footer#footer{margin:40px 0 0;padding-top:24px;border-top:1px solid var(--line)}
 .dtitle{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:10px}
@@ -239,6 +218,7 @@ footer#footer{margin:40px 0 0;padding-top:24px;border-top:1px solid var(--line)}
   <div class="topnav-inner">
     <a href="index.html" title="홈으로"><img src="logo.png" alt="Buffett Archive" class="logo"></a>
     
+    <!-- 4개 메뉴 영역 -->
     <div class="nav-links">
       <a href="dashboard.html?view=insider" id="nav-insider">내부자매수</a>
       <a href="dashboard.html?view=firm" id="nav-firm">운용사 지분공시</a>
@@ -280,8 +260,8 @@ footer#footer{margin:40px 0 0;padding-top:24px;border-top:1px solid var(--line)}
   </div>
 
   <div class="controls">
+    <div class="firm-tabs" id="firmTabs" role="tablist"></div>
     <div class="search-wrap"><input type="text" class="search-input" id="searchInput" placeholder="기업명 검색"></div>
-    <div class="firm-tabs" id="firmTabs"></div> <!-- 드롭다운 렌더링 위치 -->
     <div class="count" id="count"></div>
   </div>
 
@@ -451,45 +431,20 @@ function dartLink(rcept_no){
   return `https://dart.fss.or.kr/dsaf001/main.do?rcpNo=${rcept_no}`;
 }
 
-// ── 💡 파이썬 백필(Miri 등) 누락키 완벽 대응 펌 태그 ──
 function firmTag(item){
-  // 5% 룰 공시는 stkrt, 임원 주요주주 공시는 sp_stkrt 또는 hold_rate 키를 가짐
-  const cur = parseFloat(item.stkrt || item.hold_rate || item.sp_stkrt);
-  const prev = parseFloat(item.stkrt_prev || item.sp_stkrt_prev);
-  const diff = (!isNaN(cur) && !isNaN(prev)) ? (cur - prev) : null;
-  
-  let kind = item.kind || "";
-  let sharesDiff = 0;
-  
-  // 파이썬 수집기가 증감 주식수를 어떤 키에 넣든 100% 잡아냄
-  const irds = item.irds_cnt || item.증감수 || item.change_shares || null;
-  
-  if (irds) {
-      sharesDiff = parseInt(String(irds).replace(/,/g, ''));
-      if ((!kind || kind === "기타") && !isNaN(sharesDiff) && sharesDiff !== 0) {
-          if (sharesDiff > 0) kind = "매수";
-          else if (sharesDiff < 0) kind = "매도";
-      }
-  }
-
-  if(!kind || kind==="기타") return {cls:"etc",txt:t("kind_pending")};
-  if(kind.includes("신규")) return {cls:"buy",txt:!isNaN(cur)?`${t("kind_new")} +${cur.toFixed(2)}%p`:t("kind_new")};
-  
-  if(kind==="매수"){
-      if(diff!=null) return {cls:"buy",txt:`${t("kind_buy")} ▲${Math.abs(diff).toFixed(2)}%p`};
-      if(!isNaN(sharesDiff) && sharesDiff > 0) return {cls:"buy",txt:`${t("kind_buy")} ▲${sharesDiff.toLocaleString()}주`};
-      return {cls:"buy",txt:t("kind_buy")};
-  }
-  if(kind==="매도"){
-      if(diff!=null) return {cls:"sell",txt:`${t("kind_sell")} ▼${Math.abs(diff).toFixed(2)}%p`};
-      if(!isNaN(sharesDiff) && sharesDiff < 0) return {cls:"sell",txt:`${t("kind_sell")} ▼${Math.abs(sharesDiff).toLocaleString()}주`};
-      return {cls:"sell",txt:t("kind_sell")};
-  }
+  const cur=parseFloat(item.stkrt), prev=parseFloat(item.stkrt_prev);
+  const diff=(!isNaN(cur)&&!isNaN(prev))?(cur-prev):null;
+  const kind=item.kind||"";
+  if(!kind) return {cls:"etc",txt:t("kind_pending")};
+  if(kind.includes("신규")) return {cls:"buy",txt:cur!=null?`${t("kind_new")} +${cur.toFixed(2)}%p`:t("kind_new")};
+  if(kind==="매수") return {cls:"buy",txt:diff!=null?`${t("kind_buy")} ▲${Math.abs(diff).toFixed(2)}%p`:t("kind_buy")};
+  if(kind==="매도") return {cls:"sell",txt:diff!=null?`${t("kind_sell")} ▼${Math.abs(diff).toFixed(2)}%p`:t("kind_sell")};
   return {cls:"etc",txt:t("kind_etc")};
 }
 
 let FIRM={disclosures:[],firms:[]}, INSIDER={disclosures:[]}, BUYBACK={entries:[]}, ARCHIVE={disclosures:[],firms:[]};
 
+// URL 파라미터에서 초기 뷰 로드
 const params = new URLSearchParams(window.location.search);
 let view = params.get("view") || "insider";
 if(!["insider", "firm", "buyback"].includes(view)) view = "insider";
@@ -502,6 +457,7 @@ let LAST_MARKET=null;
 let lwChart=null, lwSeries=null;
 let lastCandle=null;
 
+// ── 상단 네비게이션 활성화 로직 ──
 function updateNavLinks() {
   document.querySelectorAll(".nav-links a").forEach(a => a.classList.remove("active"));
   const activeNav = document.getElementById("nav-" + view);
@@ -518,55 +474,11 @@ document.querySelectorAll(".nav-links a").forEach(link => {
   };
 });
 
-function aggregateCandles(data, tf) {
-  if (!Array.isArray(data)) return [];
-  if (tf === "daily") return data;
-  
-  let uniqueMap = {};
-  
-  for (const d of data) {
-    let dateStr = String(d.time);
-    if (typeof d.time === "number" || !dateStr.includes("-")) {
-      const t = new Date(d.time * 1000);
-      dateStr = t.getUTCFullYear() + "-" + String(t.getUTCMonth()+1).padStart(2,'0') + "-" + String(t.getUTCDate()).padStart(2,'0');
-    }
-    
-    let timeStr = dateStr;
-    if (tf === "monthly") {
-      timeStr = dateStr.substring(0, 7) + "-01";
-    } else if (tf === "weekly") {
-      const parts = dateStr.split('-');
-      if (parts.length === 3) {
-        const y = parseInt(parts[0], 10);
-        const m = parseInt(parts[1], 10) - 1;
-        const dNum = parseInt(parts[2], 10);
-        
-        const dt = new Date(Date.UTC(y, m, dNum));
-        const day = dt.getUTCDay();
-        const diff = dt.getUTCDate() - day + (day === 0 ? -6 : 1);
-        const monday = new Date(Date.UTC(y, m, diff));
-        timeStr = monday.toISOString().substring(0, 10);
-      }
-    }
-    
-    if (!uniqueMap[timeStr]) {
-      uniqueMap[timeStr] = { time: timeStr, open: d.open, high: d.high, low: d.low, close: d.close };
-    } else {
-      let cur = uniqueMap[timeStr];
-      cur.high = Math.max(cur.high, d.high);
-      cur.low = Math.min(cur.low, d.low);
-      cur.close = d.close; 
-    }
-  }
-  
-  return Object.values(uniqueMap).sort((a, b) => a.time.localeCompare(b.time));
-}
-
+// ── Lightweight Charts ──
 function fmtOhlc(v){
   if(v==null || isNaN(v)) return "—";
   return Math.abs(v) < 10000 ? v.toLocaleString(undefined,{minimumFractionDigits:2, maximumFractionDigits:2}) : Math.round(v).toLocaleString();
 }
-
 function updateOhlcBar(candle){
   const bar = document.getElementById("ohlcBar");
   if(!bar) return;
@@ -584,7 +496,6 @@ function updateOhlcBar(candle){
 function initChart(){
   const container = document.getElementById("marketChart");
   if(!container || !window.LightweightCharts || lwChart) return;
-  
   lwChart = LightweightCharts.createChart(container, {
     layout: { background:{ type:'solid', color:'#ffffff' }, textColor:'#74767c', fontFamily:"'Spoqa Han Sans Neo', sans-serif" },
     grid: { vertLines:{ color:'#f3f3ef' }, horzLines:{ color:'#f3f3ef' } },
@@ -593,13 +504,11 @@ function initChart(){
     crosshair: { mode: LightweightCharts.CrosshairMode.Normal },
     autoSize: true,
   });
-  
   lwSeries = lwChart.addCandlestickSeries({
     upColor:'#e0473b', downColor:'#0047FF',
     wickUpColor:'#e0473b', wickDownColor:'#0047FF',
     borderVisible:false,
   });
-  
   lwChart.subscribeCrosshairMove(param=>{
     if(!param || !param.time || !param.seriesData || !lwSeries){
       updateOhlcBar(lastCandle);
@@ -614,29 +523,16 @@ function drawChart(name){
   currentChartName = name;
   const titleEl = document.getElementById("chartTitle");
   if(titleEl) titleEl.textContent = name;
-  
   document.querySelectorAll(".ticker-item").forEach(it=>{
     it.classList.toggle("active", it.dataset.tvname===name);
   });
-  
   initChart();
   if(!lwSeries) return;
-  
   const raw = (LAST_MARKET && LAST_MARKET.history) ? LAST_MARKET.history[name] : null;
   const hintEl = document.getElementById("chartHint");
-  
-  let series = [];
-  if (raw && !Array.isArray(raw) && raw[currentTimeframe] && Array.isArray(raw[currentTimeframe])) {
-      series = raw[currentTimeframe];
-  } else {
-      let baseData = [];
-      if (Array.isArray(raw)) baseData = raw;
-      else if (raw && Array.isArray(raw.daily)) baseData = raw.daily;
-      else if (raw && Object.keys(raw).length > 0) baseData = raw[Object.keys(raw)[0]];
-      
-      series = aggregateCandles(baseData, currentTimeframe);
-  }
-  
+  let series = null;
+  if(Array.isArray(raw)) series = raw;               
+  else if(raw) series = raw[currentTimeframe] || raw.daily || raw.weekly || raw.monthly;
   if(!series || !series.length){
     lwSeries.setData([]);
     lastCandle = null;
@@ -644,51 +540,30 @@ function drawChart(name){
     if(hintEl) hintEl.textContent = "차트 데이터를 불러오는 중입니다";
     return;
   }
-  
   series = series.map(c => {
     if(c.close > 0 && (c.open === 0 || c.high === 0 || c.low === 0)){
       return { time: c.time, open: c.close, high: c.close, low: c.close, close: c.close };
     }
     return c;
   }).filter(c => c.close > 0);
-  
-  if(!series.length){
-    lwSeries.setData([]);
-    lastCandle = null;
-    updateOhlcBar(null);
-    return;
-  }
-  
   const tfLabel = {daily:"일봉", weekly:"주봉", monthly:"월봉"}[currentTimeframe] || "일봉";
-  if(hintEl) hintEl.textContent = `전체 기간 · ${tfLabel} · 스크롤로 과거 탐색`;
-  
-  try {
-    lwSeries.setData(series);
-    lastCandle = series[series.length-1];   
-    updateOhlcBar(lastCandle);
-    
+  if(hintEl) hintEl.textContent = `${tfLabel} · 스크롤로 과거 탐색`;
+  lwSeries.setData(series);
+  lastCandle = series[series.length-1];   
+  updateOhlcBar(lastCandle);
+  if(lwChart){
     const lastTime = series[series.length-1].time;
     const end = new Date(lastTime);
     const start = new Date(end); start.setFullYear(start.getFullYear()-1);
     const fmt = d => d.toISOString().slice(0,10);
     const firstTime = series[0].time;
     const from = (fmt(start) > firstTime) ? fmt(start) : firstTime;
-    
-    lwChart.timeScale().setVisibleRange({ from, to: lastTime });
-  } catch (err) {
-    console.error("차트 렌더링 에러:", err);
+    try { lwChart.timeScale().setVisibleRange({ from, to: lastTime }); }
+    catch(e){ lwChart.timeScale().fitContent(); }
   }
 }
 
-document.querySelectorAll("#chartTf button").forEach(b=>{
-  b.onclick=()=>{
-    currentTimeframe = b.dataset.tf;
-    document.querySelectorAll("#chartTf button").forEach(x=>
-      x.setAttribute("aria-selected", x.dataset.tf===currentTimeframe));
-    drawChart(currentChartName);
-  };
-});
-
+// ── 시장 지표 티커 ──
 const CHART_NAMES = ["KOSPI","KOSDAQ","S&P 500","USD/KRW","야간선물"];
 
 function renderTicker(mk){
@@ -720,8 +595,10 @@ function renderTicker(mk){
   });
 }
 
+// ── 운용사 지분공시 (일자별 플랫 리스트 뷰) ──
 function renderFirm(){
   let list = [...(ARCHIVE.disclosures || []), ...(FIRM.disclosures || [])];
+  // 중복 공시 제거 (접수번호 기준)
   const unique = Array.from(new Map(list.map(item => [item.rcept_no, item])).values());
   list = unique;
 
@@ -742,24 +619,14 @@ function renderFirm(){
     const tag=firmTag(item);
     const code=item.stock_code?`<span class="code">${item.stock_code}</span>`:"";
 
-    // ── 백필된 내부자 공시(Miri 등) 쓰레기 텍스트 예외처리 ──
-    let resnRaw = item.report_resn || item.report_nm || "";
-    if (resnRaw.includes("특정증권등의종류") || resnRaw.includes("변동일*") || resnRaw.includes("거래계획보고일자")) {
-        resnRaw = "장내매매 등 (주요주주 소유상황보고)";
-    }
-    
-    // ── 모든 종류의 지분율 키값 대응 (Miri 해결 핵심) ──
-    const curPct = item.stkrt || item.hold_rate || item.sp_stkrt;
-    const pctDisplay = (curPct && !isNaN(parseFloat(curPct))) ? parseFloat(curPct).toFixed(2) + "%" : "—";
-
     const inner=`
       <div class="avatar">${(item.corp_name||"·").trim().charAt(0)}</div>
       <div class="corp">
         <div class="name">${item.corp_name}${code}</div>
-        <div class="sub">${localizeFirm(item.firm)} · ${localizeResn(resnRaw)}</div>
+        <div class="sub">${localizeFirm(item.firm)} · ${localizeResn(item.report_resn)}</div>
       </div>
       <div class="stake">
-        <div class="pct">${pctDisplay}</div>
+        <div class="pct">${item.stkrt ? item.stkrt+"%" : "—"}</div>
         <div class="held">${dt.m} ${dt.d}</div>
         <div class="delta ${tag.cls}">${tag.txt}</div>
       </div>`;
@@ -863,24 +730,18 @@ function render(){
 
 function buildFirmTabs(){
   if(view!=="firm"){ $("#firmTabs").innerHTML=""; $("#firmTabs").style.display="none"; return; }
-  $("#firmTabs").style.display="block"; 
-  
+  $("#firmTabs").style.display="flex";
   const firms = ["전체", ...(ARCHIVE.firms || FIRM.firms || [])];
   const uniqFirms = [...new Set(firms)];
-  
-  let optionsHtml = uniqFirms.map(f => {
-    const label = f === "전체" ? t("all") : localizeFirm(f);
-    const selected = f === activeFirm ? "selected" : "";
-    return `<option value="${f}" ${selected}>${label}</option>`;
-  }).join("");
-  
-  $("#firmTabs").innerHTML = `<select class="firm-select" id="firmSelect">${optionsHtml}</select>`;
-  
-  $("#firmSelect").addEventListener("change", (e) => {
-    activeFirm = e.target.value;
-    render();
+  $("#firmTabs").innerHTML = uniqFirms.map(f=>
+    `<button aria-selected="${f===activeFirm}" data-f="${f}">${f==="전체"?t("all"):localizeFirm(f)}</button>`
+  ).join("");
+  $("#firmTabs").querySelectorAll("button").forEach(b=>{
+    b.onclick=()=>{activeFirm=b.dataset.f; buildFirmTabs(); render();};
   });
 }
+
+function buildMarketFilter(){}
 
 function setFooter(){
   $("#footer").innerHTML = `
@@ -899,6 +760,7 @@ function applyStaticTexts(){
   $("#langToggle").querySelectorAll("button").forEach(b=>
     b.setAttribute("aria-selected", b.dataset.lang===LANG));
   
+  // 영문 네비게이션 텍스트
   const navGuru = document.getElementById("nav-guru");
   const navInsider = document.getElementById("nav-insider");
   const navFirm = document.getElementById("nav-firm");
@@ -913,7 +775,7 @@ function applyStaticTexts(){
 function switchLang(lang){
   LANG = lang;
   localStorage.setItem("ba_lang", lang);
-  applyStaticTexts(); buildFirmTabs(); setFooter(); render();
+  applyStaticTexts(); buildFirmTabs(); buildMarketFilter(); setFooter(); render();
 }
 $("#langToggle").querySelectorAll("button").forEach(b=>{
   b.onclick=()=>switchLang(b.dataset.lang);
@@ -924,12 +786,13 @@ function switchView(v, updateUrl=true){
   $("#mainTabs").querySelectorAll("button").forEach(b=>b.setAttribute("aria-selected", b.dataset.view===v));
   updateNavLinks();
   if(updateUrl) window.history.replaceState(null, "", "?view="+v);
-  buildFirmTabs(); setFooter(); render();
+  buildFirmTabs(); buildMarketFilter(); setFooter(); render();
 }
 $("#mainTabs").querySelectorAll("button").forEach(b=>{
   b.onclick=()=>switchView(b.dataset.view);
 });
 
+// 화면 초기화 셋업
 updateNavLinks();
 $("#mainTabs").querySelectorAll("button").forEach(b=>b.setAttribute("aria-selected", b.dataset.view===view));
 
@@ -962,7 +825,7 @@ function loadData(isFirstLoad){
     if(mk) drawChart(currentChartName);
     if(isFirstLoad){
       if(FIRM.is_seed) $("#seedFlag").innerHTML=`<span class="badge big">${t("seed")}</span>`;
-      applyStaticTexts(); buildFirmTabs(); setFooter();
+      applyStaticTexts(); buildFirmTabs(); buildMarketFilter(); setFooter();
     }
     render();
   });
@@ -977,6 +840,15 @@ function refreshTicker(){
     .catch(()=>{});
 }
 refreshTicker();
+
+document.querySelectorAll("#chartTf button").forEach(b=>{
+  b.onclick=()=>{
+    currentTimeframe = b.dataset.tf;
+    document.querySelectorAll("#chartTf button").forEach(x=>
+      x.setAttribute("aria-selected", x.dataset.tf===currentTimeframe));
+    drawChart(currentChartName);
+  };
+});
 
 document.getElementById("searchInput").addEventListener("input", e=>{
   searchQuery = e.target.value.trim().toLowerCase();
