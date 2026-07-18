@@ -178,29 +178,28 @@ function fmtPctChange(reported,current){
 function quarterLabel(q){return q.replace("_"," ")}
 
 let PRICE_BY_NAME={};
-let PRICE_NAMES=[];
+let PRICE_BY_NORM={};
 let PRICE_BY_TICKER={};
 let TICKER_BY_NAME={};
 function normName(n){
   return n.toUpperCase()
     .replace(/[.,'\/&]/g,'').replace(/\s+/g,' ')
     .replace(/\s+(CL|CLASS)\s*[A-Z]$/,'')
-    .replace(/\s+(INC|CORP|CO|LTD|PLC|NV|SA|AG|SE|LP|LLC|SWITZ|DE)$/,'')
+    .replace(/\s+(INC|CORP|CO|LTD|PLC|NV|SA|AG|SE|LP|LLC|SWITZ|DE|CORPORATION)$/,'')
     .replace(/\s+(GROUP|HLDGS|HOLDINGS|INTERNATIONAL|INTL|IN)$/,'')
-    .replace(/\s+(INC|CORP|CO|LTD|CORPORATION)$/,'')
+    .replace(/\s+(INC|CORP|CO|LTD)$/,'')
     .replace(/\s+(MTN\s*BE|NEW)$/,'')
     .replace(/\bOF\b/g,' ').replace(/\bTHE\b/g,' ')
     .replace(/\s+/g,' ').trim();
 }
 function buildPriceIndex(){
-  PRICE_BY_NAME={};PRICE_NAMES=[];PRICE_BY_TICKER={};TICKER_BY_NAME={};
+  PRICE_BY_NAME={};PRICE_BY_NORM={};PRICE_BY_TICKER={};TICKER_BY_NAME={};
   for(const[cusip,p]of Object.entries(PRICES)){
     if(p.name){
       const key=p.name.toUpperCase().trim();
-      PRICE_BY_NAME[key]=p;
-      PRICE_NAMES.push(key);
       const nk=normName(p.name);
-      if(!PRICE_BY_NAME[nk])PRICE_BY_NAME[nk]=p;
+      PRICE_BY_NAME[key]=p;
+      if(!PRICE_BY_NORM[nk])PRICE_BY_NORM[nk]=p;
       if(p.ticker){
         PRICE_BY_TICKER[p.ticker]=p;
         TICKER_BY_NAME[key]=p.ticker;
@@ -211,12 +210,10 @@ function buildPriceIndex(){
   for(const[cusip,ticker]of Object.entries(TICKER_CACHE)){
     const p=PRICES[cusip];
     if(p&&p.name){
-      TICKER_BY_NAME[p.name.toUpperCase().trim()]=ticker;
+      const key=p.name.toUpperCase().trim();
+      TICKER_BY_NAME[key]=ticker;
       TICKER_BY_NAME[normName(p.name)]=ticker;
       if(!PRICE_BY_TICKER[ticker])PRICE_BY_TICKER[ticker]=p;
-    }else if(!PRICE_BY_TICKER[ticker]){
-      // ticker_cache에 있지만 PRICES에 없는 경우 → 이름 매핑만 등록
-      TICKER_BY_NAME[cusip]=ticker;
     }
   }
 }
@@ -225,16 +222,8 @@ function findByName(name){
   const key=name.toUpperCase().trim();
   if(PRICE_BY_NAME[key])return PRICE_BY_NAME[key];
   const nk=normName(name);
-  if(PRICE_BY_NAME[nk])return PRICE_BY_NAME[nk];
-  // 부분 매칭: 정규화된 이름이 서로 포함관계
-  for(const n of PRICE_NAMES){
-    const nn=normName(n);
-    if(nn===nk)return PRICE_BY_NAME[n];
-    if(nk.length>=4&&nn.length>=4){
-      if(nn.startsWith(nk)||nk.startsWith(nn))return PRICE_BY_NAME[n];
-    }
-  }
-  // 티커로 역매칭: 이름에서 티커를 찾고 → 티커로 가격 조회
+  if(PRICE_BY_NORM[nk])return PRICE_BY_NORM[nk];
+  // 티커 역매칭
   const tk=TICKER_BY_NAME[key]||TICKER_BY_NAME[nk];
   if(tk&&PRICE_BY_TICKER[tk])return PRICE_BY_TICKER[tk];
   return null;
@@ -247,18 +236,6 @@ function getTicker(cusip,name){
     if(TICKER_BY_NAME[key])return TICKER_BY_NAME[key];
     const nk=normName(name);
     if(TICKER_BY_NAME[nk])return TICKER_BY_NAME[nk];
-    const p=findByName(name);
-    if(p&&p.ticker)return p.ticker;
-  }
-  return null;
-}
-function getPriceData(cusip,name){
-  if(cusip&&PRICES[cusip])return PRICES[cusip];
-  return findByName(name);
-}
-    const key=name.toUpperCase().trim();
-    if(TICKER_BY_NAME[key])return TICKER_BY_NAME[key];
-    if(TICKER_BY_NAME[normName(name)])return TICKER_BY_NAME[normName(name)];
     const p=findByName(name);
     if(p&&p.ticker)return p.ticker;
   }
