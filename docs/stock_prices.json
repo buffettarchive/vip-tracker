@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-07-18T18:54:03.011749Z",
- "count": 5371,
+ "updated_at": "2026-07-19T03:21:42.510163Z",
+ "count": 5699,
  "prices": {
   "02005N100": {
    "ticker": "ALLY",
@@ -44,9 +44,9 @@
    "week52_low": 38.64,
    "week52_high": 52.77
   },
-  "92343V104": {
+  "G0772R208": {
    "ticker": "BAC",
-   "name": "Verizon",
+   "name": "Bank of N.T. Butterfield &amp; Son Limited",
    "current_price": 61.27,
    "week52_low": 45.66,
    "week52_high": 61.27
@@ -65,6 +65,13 @@
    "week52_low": 126.23,
    "week52_high": 382.08
   },
+  "166764100": {
+   "ticker": "CVX",
+   "name": "Chevron Corporation",
+   "current_price": 187.38,
+   "week52_low": 147.75,
+   "week52_high": 211.15
+  },
   "191216100": {
    "ticker": "KO",
    "name": "Coca-Cola Co",
@@ -72,12 +79,40 @@
    "week52_low": 65.67,
    "week52_high": 84.14
   },
+  "21036P108": {
+   "ticker": "STZ",
+   "name": "CONSTELLATION BRANDS INC",
+   "current_price": 132.87,
+   "week52_low": 127.65,
+   "week52_high": 175.52
+  },
+  "23918K108": {
+   "ticker": "DVA",
+   "name": "DAVITA INC",
+   "current_price": 236.97,
+   "week52_low": 104.74,
+   "week52_high": 236.97
+  },
+  "G42089113": {
+   "ticker": "DEO",
+   "name": "Diageo PLC",
+   "current_price": 84.0,
+   "week52_low": 73.32,
+   "week52_high": 115.33
+  },
   "25754A201": {
    "ticker": "DPZ",
    "name": "DOMINOS PIZZA INC",
    "current_price": 322.18,
    "week52_low": 298.18,
    "week52_high": 485.53
+  },
+  "422806109": {
+   "ticker": "HEI",
+   "name": "HEICO CORP NEW",
+   "current_price": 342.66,
+   "week52_low": 264.04,
+   "week52_high": 362.09
   },
   "47233w109": {
    "ticker": "JEF",
@@ -107,7 +142,7 @@
    "week52_low": 115.5,
    "week52_high": 162.32
   },
-  "526057104": {
+  "526057302": {
    "ticker": "LEN",
    "name": "LENNAR CORP",
    "current_price": 83.89,
@@ -128,7 +163,7 @@
    "week52_low": 79.21,
    "week52_high": 108.0
   },
-  "531229755": {
+  "531229AQ5": {
    "ticker": "FWONK",
    "name": "LIBERTY MEDIA CORP DEL",
    "current_price": 102.2,
@@ -148,6 +183,13 @@
    "current_price": 543.6,
    "week52_low": 484.24,
    "week52_high": 598.96
+  },
+  "615369105": {
+   "ticker": "MCO",
+   "name": "MOODYS CORP",
+   "current_price": 510.86,
+   "week52_low": 424.84,
+   "week52_high": 538.92
   },
   "62944T105": {
    "ticker": "NVR",
@@ -219,6 +261,20 @@
    "week52_low": 125.65,
    "week52_high": 179.77
   },
+  "G0403H108": {
+   "ticker": "AON",
+   "name": "AON plc Registered Shs",
+   "current_price": 367.21,
+   "week52_low": 311.51,
+   "week52_high": 375.1
+  },
+  "G9001E102": {
+   "ticker": "LILA",
+   "name": "LIBERTY LATIN AMERICA LTD",
+   "current_price": 7.34,
+   "week52_low": 4.37,
+   "week52_high": 7.62
+  },
   "G9001E128": {
    "ticker": "1LL.F",
    "name": "LIBERTY LATIN AMERICA LTD",
@@ -289,7 +345,7 @@
    "week52_low": 18.89,
    "week52_high": 27.12
   },
-  "90353T100": {
+  "90353TAM2": {
    "ticker": "UBER",
    "name": "UBER TECHNOLOGIES INC",
    "current_price": 72.46,
@@ -331,9 +387,9 @@
    "week52_low": 274.66,
    "week52_high": 417.89
   },
-  "31488V107": {
+  "G3421J106": {
    "ticker": "FERG",
-   "name": "FERGUSON ENTERPRISES INC",
+   "name": "Ferguson Plc New",
    "current_price": 232.02,
    "week52_low": 211.61,
    "week52_high": 264.27
@@ -373,7 +429,7 @@
    "week52_low": 12.36,
    "week52_high": 22.91
   },
-  "G4412G101": {
+  "42703MAF0": {
    "ticker": "HLF",
    "name": "HERBALIFE LTD",
    "current_price": 11.99,
@@ -422,6 +478,13 @@
    "week52_low": 211.2,
    "week52_high": 294.0
   },
+  "084670702": {
+   "ticker": "BRKB-USD",
+   "name": "Berkshire Hathaway Inc. - Class B",
+   "current_price": 491.27,
+   "week52_low": 478.15,
+   "week52_high": 509.56
+  },
   "227046109": {
    "ticker": "CROX",
    "name": "CROCS INC",
@@ -463,6 +526,13 @@
    "current_price": 20.07,
    "week52_low": 20.03,
    "week52_high": 20.29
+  },
+  "G4474Y214": {
+   "ticker": "JNRFX",
+   "name": "JANUS HENDERSON GROUP PLC",
+   "current_price": 91.69,
+   "week52_low": 77.72,
+   "week52_high": 102.86
   },
   "83444M101": {
    "ticker": "SOLV",
@@ -513,16 +583,16 @@
    "week52_low": 34.05,
    "week52_high": 48.6
   },
-  "09061G101": {
+  "09061GAK7": {
    "ticker": "BMRN",
-   "name": "BioMarin Pharmaceuticals",
+   "name": "BIOMARIN PHARMACEUTICAL",
    "current_price": 59.59,
    "week52_low": 51.46,
    "week52_high": 64.08
   },
-  "097023105": {
+  "097023204": {
    "ticker": "BA",
-   "name": "The Boeing Company",
+   "name": "BOEING CO",
    "current_price": 214.03,
    "week52_low": 179.7,
    "week52_high": 252.15
@@ -534,7 +604,7 @@
    "week52_low": 44.03,
    "week52_high": 107.22
   },
-  "10806X102": {
+  "10806XAJ1": {
    "ticker": "BBIO",
    "name": "BRIDGEBIO PHARMA INC",
    "current_price": 81.38,
@@ -547,6 +617,13 @@
    "current_price": 112.97,
    "week52_low": 96.96,
    "week52_high": 117.25
+  },
+  "14365C103": {
+   "ticker": "CCL",
+   "name": "CARNIVAL PLC",
+   "current_price": 26.41,
+   "week52_low": 23.99,
+   "week52_high": 33.99
   },
   "146869102": {
    "ticker": "CVNA",
@@ -590,6 +667,13 @@
    "week52_low": 189.36,
    "week52_high": 239.17
   },
+  "253868103": {
+   "ticker": "DLR",
+   "name": "Digital Realty Trust, Inc.",
+   "current_price": 173.88,
+   "week52_low": 149.99,
+   "week52_high": 203.62
+  },
   "254687106": {
    "ticker": "DIS",
    "name": "The Walt Disney Company",
@@ -597,7 +681,7 @@
    "week52_low": 92.42,
    "week52_high": 121.47
   },
-  "26142V105": {
+  "26142RAB0": {
    "ticker": "DKNG",
    "name": "DRAFTKINGS INC NEW",
    "current_price": 24.94,
@@ -625,9 +709,9 @@
    "week52_low": 198.87,
    "week52_high": 315.14
   },
-  "37045V100": {
+  "35045V100": {
    "ticker": "GM",
-   "name": "General Motors Company",
+   "name": "General Motors Co (GM)",
    "current_price": 76.07,
    "week52_low": 52.53,
    "week52_high": 84.24
@@ -667,6 +751,13 @@
    "week52_low": 157.77,
    "week52_high": 242.41
   },
+  "465562106": {
+   "ticker": "ITUB",
+   "name": "ITAU UNIBANCO HLDG S A",
+   "current_price": 8.2,
+   "week52_low": 6.11,
+   "week52_high": 9.51
+  },
   "G51502105": {
    "ticker": "JCI",
    "name": "Johnson Controls International plc",
@@ -694,6 +785,13 @@
    "current_price": 208.73,
    "week52_low": 208.73,
    "week52_high": 287.39
+  },
+  "574795100": {
+   "ticker": "3M4.SG",
+   "name": "MASIMO CORP",
+   "current_price": 155.0,
+   "week52_low": 155.0,
+   "week52_high": 155.0
   },
   "580135101": {
    "ticker": "MCD",
@@ -751,6 +849,13 @@
    "week52_low": 1.07,
    "week52_high": 7.17
   },
+  "N69605108": {
+   "ticker": "PHVS",
+   "name": "PHARVARIS N V",
+   "current_price": 34.94,
+   "week52_low": 20.0,
+   "week52_high": 35.07
+  },
   "693475105": {
    "ticker": "PNC",
    "name": "PNC Finl SVCS Group",
@@ -786,7 +891,7 @@
    "week52_low": 134.74,
    "week52_high": 226.78
   },
-  "767292105": {
+  "767292AB1": {
    "ticker": "RIOT",
    "name": "RIOT PLATFORMS INC",
    "current_price": 18.26,
@@ -842,6 +947,13 @@
    "week52_low": 16.74,
    "week52_high": 49.41
   },
+  "34385P108": {
+   "ticker": "LAB",
+   "name": "STANDARD BIOTOOLS INC",
+   "current_price": 0.89,
+   "week52_low": 0.73,
+   "week52_high": 1.63
+  },
   "N82405106": {
    "ticker": "STLA",
    "name": "STELLANTIS N.V",
@@ -876,6 +988,13 @@
    "current_price": 532.48,
    "week52_low": 414.75,
    "week52_high": 625.98
+  },
+  "00510N102": {
+   "ticker": "TIC",
+   "name": "TIC SOLUTIONS INC",
+   "current_price": 6.85,
+   "week52_low": 6.57,
+   "week52_high": 14.49
   },
   "892672106": {
    "ticker": "TW",
@@ -933,6 +1052,13 @@
    "week52_low": 19.7,
    "week52_high": 39.25
   },
+  "12662P108": {
+   "ticker": "CVI",
+   "name": "CVR ENERGY INC",
+   "current_price": 35.13,
+   "week52_low": 20.72,
+   "week52_high": 39.58
+  },
   "126633205": {
    "ticker": "UAN",
    "name": "CVR Partners, LP",
@@ -940,7 +1066,7 @@
    "week52_low": 87.98,
    "week52_high": 137.0
   },
-  "278768106": {
+  "278768AB2": {
    "ticker": "ECHO",
    "name": "ECHOSTAR CORP",
    "current_price": 92.0,
@@ -968,12 +1094,19 @@
    "week52_low": 14.09,
    "week52_high": 23.81
   },
-  "477143101": {
+  "477143AR2": {
    "ticker": "JBLU",
    "name": "JETBLUE AIRWAYS CORP",
    "current_price": 5.42,
    "week52_low": 4.03,
    "week52_high": 6.36
+  },
+  "80007P869": {
+   "ticker": "SD",
+   "name": "Sandridge Energy Inc.",
+   "current_price": 13.63,
+   "week52_low": 10.0,
+   "week52_high": 17.61
   },
   "844895102": {
    "ticker": "SWX",
@@ -982,9 +1115,9 @@
    "week52_low": 77.49,
    "week52_high": 93.2
   },
-  "01609W102": {
+  "01609WBG6": {
    "ticker": "BABA",
-   "name": "ALIBABA GROUP HOLDING LTD",
+   "name": "ALIBABA GROUP HOLDING",
    "current_price": 114.97,
    "week52_low": 94.81,
    "week52_high": 188.03
@@ -1001,7 +1134,7 @@
    "name": "AURORA INNOVATION INC",
    "current_price": 0.18,
    "week52_low": 0.18,
-   "week52_high": 0.18
+   "week52_high": 0.25
   },
   "051774107": {
    "ticker": "AUR",
@@ -1078,7 +1211,7 @@
    "name": "HERTZ GLOBAL HLDGS INC",
    "current_price": 0.81,
    "week52_low": 0.81,
-   "week52_high": 0.81
+   "week52_high": 2.04
   },
   "49177J102": {
    "ticker": "KVUE",
@@ -1087,9 +1220,9 @@
    "week52_low": 14.37,
    "week52_high": 22.84
   },
-  "538034109": {
+  "538034BC2": {
    "ticker": "LYV",
-   "name": "LIVE NATION ENTERTAINMENT INC",
+   "name": "LIVE NATION ENTERTAINMENT IN",
    "current_price": 180.22,
    "week52_low": 130.63,
    "week52_high": 186.59
@@ -1108,9 +1241,9 @@
    "week52_low": 174.05,
    "week52_high": 417.41
   },
-  "655844108": {
+  "842587DZ7": {
    "ticker": "NSC",
-   "name": "NORFOLK SOUTHN CORP",
+   "name": "SOUTHERN CO",
    "current_price": 340.16,
    "week52_low": 274.72,
    "week52_high": 340.16
@@ -1142,6 +1275,13 @@
    "current_price": 154.53,
    "week52_low": 85.5,
    "week52_high": 154.53
+  },
+  "88023U101": {
+   "ticker": "SGI",
+   "name": "SOMNIGROUP INTERNATIONAL INC",
+   "current_price": 72.73,
+   "week52_low": 62.68,
+   "week52_high": 96.32
   },
   "L8681T102": {
    "ticker": "639.F",
@@ -1304,9 +1444,9 @@
    "week52_low": 26.71,
    "week52_high": 35.31
   },
-  "G6359F137": {
+  "62957HAL9": {
    "ticker": "NBR",
-   "name": "NABORS INDUSTRIES LTD",
+   "name": "NABORS INDS INC",
    "current_price": 83.89,
    "week52_low": 30.12,
    "week52_high": 105.41
@@ -1325,6 +1465,13 @@
    "week52_low": 5.42,
    "week52_high": 8.64
   },
+  "594972AU5": {
+   "ticker": "MSTR",
+   "name": "STRATEGY INC",
+   "current_price": 94.85,
+   "week52_low": 82.31,
+   "week52_high": 423.22
+  },
   "G87110105": {
    "ticker": "FTI",
    "name": "TECHNIPFMC PLC",
@@ -1339,7 +1486,7 @@
    "week52_low": 45.65,
    "week52_high": 93.68
   },
-  "902681105": {
+  "902681AB1": {
    "ticker": "UGI",
    "name": "UGI CORP NEW",
    "current_price": 36.62,
@@ -1353,9 +1500,9 @@
    "week52_low": 26.11,
    "week52_high": 55.52
   },
-  "911312106": {
+  "911460103": {
    "ticker": "UPS",
-   "name": "United Parcel Service, Inc. Cl B",
+   "name": "UNITED SEC BANCSHARES CALIF",
    "current_price": 117.72,
    "week52_low": 82.87,
    "week52_high": 119.24
@@ -1402,6 +1549,13 @@
    "week52_low": 55.19,
    "week52_high": 89.43
   },
+  "084670108": {
+   "ticker": "BRK-B",
+   "name": "BERKSHIRE HATHAWAY INC DEL",
+   "current_price": 490.91,
+   "week52_low": 465.4,
+   "week52_high": 513.81
+  },
   "09228F103": {
    "ticker": "BB",
    "name": "BLACKBERRY LTD",
@@ -1416,12 +1570,12 @@
    "week52_low": 9.25,
    "week52_high": 15.1
   },
-  "218937100": {
-   "ticker": "CNR",
-   "name": "CORE NATURAL RESOURCES INC",
-   "current_price": 83.02,
-   "week52_low": 71.0,
-   "week52_high": 113.23
+  "136375102": {
+   "ticker": "CNI",
+   "name": "CANADIAN NATL RY CO",
+   "current_price": 129.03,
+   "week52_low": 92.57,
+   "week52_high": 129.03
   },
   "G1890L107": {
    "ticker": "CPRI",
@@ -1507,6 +1661,13 @@
    "week52_low": 39.06,
    "week52_high": 53.22
   },
+  "68634K106": {
+   "ticker": "ORLA",
+   "name": "ORLA MNG LTD NEW",
+   "current_price": 8.61,
+   "week52_low": 8.61,
+   "week52_high": 21.62
+  },
   "707569109": {
    "ticker": "PENN",
    "name": "PENN ENTERTAINMENT INC",
@@ -1549,6 +1710,13 @@
    "week52_low": 571.45,
    "week52_high": 695.49
   },
+  "G1151C101": {
+   "ticker": "ACN",
+   "name": "Accenture plc Class A",
+   "current_price": 143.57,
+   "week52_low": 127.98,
+   "week52_high": 286.21
+  },
   "00508Y102": {
    "ticker": "AYI",
    "name": "ACUITY INC",
@@ -1556,12 +1724,19 @@
    "week52_low": 260.83,
    "week52_high": 373.33
   },
-  "009066101": {
+  "009066AB7": {
    "ticker": "ABNB",
    "name": "AIRBNB INC",
    "current_price": 145.98,
    "week52_low": 114.26,
    "week52_high": 148.93
+  },
+  "020002101": {
+   "ticker": "ALL",
+   "name": "ALLSTATE CORP/THE",
+   "current_price": 249.9,
+   "week52_low": 191.52,
+   "week52_high": 251.61
   },
   "032654105": {
    "ticker": "ADI",
@@ -1570,16 +1745,16 @@
    "week52_low": 221.71,
    "week52_high": 434.46
   },
-  "03769M106": {
+  "03769M304": {
    "ticker": "APO",
    "name": "APOLLO GLOBAL MGMT INC",
    "current_price": 120.47,
    "week52_low": 104.28,
    "week52_high": 152.0
   },
-  "038222105": {
+  "03828A101": {
    "ticker": "AMAT",
-   "name": "APPLIED MATLS INC",
+   "name": "APPLIED THERAPEUTICS INC",
    "current_price": 529.66,
    "week52_low": 160.76,
    "week52_high": 626.84
@@ -1633,6 +1808,13 @@
    "week52_low": 56.25,
    "week52_high": 103.84
   },
+  "115637209": {
+   "ticker": "BF-B",
+   "name": "BROWN FORMAN CORP",
+   "current_price": 25.58,
+   "week52_low": 22.8,
+   "week52_high": 31.26
+  },
   "117043109": {
    "ticker": "BC",
    "name": "<![CDATA[BRUNSWICK CORP]]>",
@@ -1640,9 +1822,9 @@
    "week52_low": 56.64,
    "week52_high": 89.12
   },
-  "13646K108": {
+  "178587101": {
    "ticker": "CP",
-   "name": "CANADIAN PACIFIC KANSAS CITY LTD",
+   "name": "CITY OFFICE REIT INC",
    "current_price": 93.71,
    "week52_low": 70.01,
    "week52_high": 93.71
@@ -1744,6 +1926,13 @@
    "current_price": 177.08,
    "week52_low": 153.93,
    "week52_high": 263.09
+  },
+  "30231G102": {
+   "ticker": "XOM",
+   "name": "ExxonMobil",
+   "current_price": 147.36,
+   "week52_low": 106.49,
+   "week52_high": 170.99
   },
   "303075105": {
    "ticker": "FDS",
@@ -1934,6 +2123,13 @@
    "week52_low": 137.12,
    "week52_high": 170.49
   },
+  "718172109": {
+   "ticker": "PM",
+   "name": "PHILIP MORRIS INTL INC",
+   "current_price": 192.98,
+   "week52_low": 144.33,
+   "week52_high": 192.98
+  },
   "74144T108": {
    "ticker": "TROW",
    "name": "T Rowe Price Group Inc",
@@ -2025,6 +2221,13 @@
    "week52_low": 71.16,
    "week52_high": 91.16
   },
+  "87612E106": {
+   "ticker": "TGT",
+   "name": "TARGET CORP",
+   "current_price": 139.6,
+   "week52_low": 85.53,
+   "week52_high": 140.39
+  },
   "882508104": {
    "ticker": "TXN",
    "name": "Texas Instruments Inc",
@@ -2053,9 +2256,9 @@
    "week52_low": 710.47,
    "week52_high": 1121.66
   },
-  "92345Y106": {
+  "554489104": {
    "ticker": "VRSK",
-   "name": "Verisk Analytics Inc",
+   "name": "VERIS RESIDENTIAL INC",
    "current_price": 200.68,
    "week52_low": 162.55,
    "week52_high": 301.9
@@ -2319,6 +2522,20 @@
    "week52_low": 2.87,
    "week52_high": 4.22
   },
+  "004397105": {
+   "ticker": "ARAY",
+   "name": "ACCURAY INC DEL",
+   "current_price": 0.26,
+   "week52_low": 0.24,
+   "week52_high": 1.77
+  },
+  "004498101": {
+   "ticker": "ACIW",
+   "name": "ACI WORLDWIDE INC",
+   "current_price": 58.07,
+   "week52_low": 39.44,
+   "week52_high": 58.07
+  },
   "00461U105": {
    "ticker": "ACRS",
    "name": "ACLARIS THERAPEUTICS INC",
@@ -2452,12 +2669,26 @@
    "week52_low": 7.25,
    "week52_high": 18.45
   },
+  "00751Y106": {
+   "ticker": "AAP",
+   "name": "ADVANCE AUTO PARTS INC",
+   "current_price": 53.16,
+   "week52_low": 38.89,
+   "week52_high": 62.18
+  },
   "00790R104": {
    "ticker": "WMS",
    "name": "ADVANCED DRAIN SYS INC DEL",
    "current_price": 147.55,
    "week52_low": 111.75,
    "week52_high": 175.38
+  },
+  "007973AE0": {
+   "ticker": "AVX.F",
+   "name": "ADVANCED ENERGY INDS",
+   "current_price": 241.2,
+   "week52_low": 119.0,
+   "week52_high": 326.4
   },
   "007973100": {
    "ticker": "AEIS",
@@ -2487,6 +2718,13 @@
    "week52_low": 13.05,
    "week52_high": 47.5
   },
+  "H00501108": {
+   "ticker": "AEBI",
+   "name": "AEBI SCHMIDT HLDG AG",
+   "current_price": 12.76,
+   "week52_low": 9.41,
+   "week52_high": 15.61
+  },
   "00766T100": {
    "ticker": "ACM",
    "name": "AECOM",
@@ -2515,12 +2753,19 @@
    "week52_low": 10.76,
    "week52_high": 25.58
   },
-  "n00985106": {
-   "ticker": "R1D.F",
-   "name": "AerCap Holdings",
-   "current_price": 128.0,
-   "week52_low": 91.4,
-   "week52_high": 131.2
+  "N00985106": {
+   "ticker": "R1D.SG",
+   "name": "AERCAP HOLDINGS NV",
+   "current_price": 128.15,
+   "week52_low": 93.3,
+   "week52_high": 131.1
+  },
+  "008073AA6": {
+   "ticker": "AVAV",
+   "name": "AEROVIRONMENT INC",
+   "current_price": 142.2,
+   "week52_low": 137.95,
+   "week52_high": 392.86
   },
   "00810F106": {
    "ticker": "ASLE",
@@ -2557,6 +2802,13 @@
    "week52_low": 42.53,
    "week52_high": 92.18
   },
+  "00827BAD8": {
+   "ticker": "AFRM.MX",
+   "name": "AFFIRM HLDGS INC",
+   "current_price": 1340.0,
+   "week52_low": 785.0,
+   "week52_high": 1700.0
+  },
   "001055102": {
    "ticker": "AFL",
    "name": "AFLAC INC",
@@ -2577,6 +2829,13 @@
    "current_price": 12.11,
    "week52_low": 10.96,
    "week52_high": 16.85
+  },
+  "00846U101": {
+   "ticker": "A",
+   "name": "Agilent Technologies, Inc. (A)",
+   "current_price": 131.46,
+   "week52_low": 110.24,
+   "week52_high": 153.5
   },
   "00857U206": {
    "ticker": "AGL",
@@ -2620,6 +2879,13 @@
    "week52_low": 70.51,
    "week52_high": 81.35
   },
+  "00912X302": {
+   "ticker": "BAREIT.BK",
+   "name": "AIR LEASE CORP",
+   "current_price": 11.6,
+   "week52_low": 9.35,
+   "week52_high": 11.6
+  },
   "612160101": {
    "ticker": "AIRJ",
    "name": "AIRJOULE TECHNOLOGIES CORP",
@@ -2648,7 +2914,7 @@
    "week52_low": 2.0,
    "week52_high": 5.86
   },
-  "00971T101": {
+  "00971TAN1": {
    "ticker": "AKAM",
    "name": "AKAMAI TECHNOLOGIES INC",
    "current_price": 120.19,
@@ -2704,7 +2970,7 @@
    "week52_low": 45.13,
    "week52_high": 76.29
   },
-  "012653101": {
+  "012653200": {
    "ticker": "ALB",
    "name": "ALBEMARLE CORP",
    "current_price": 120.78,
@@ -2760,6 +3026,13 @@
    "week52_low": 20.44,
    "week52_high": 32.15
   },
+  "014491104": {
+   "ticker": "8478.TW",
+   "name": "ALEXANDER &amp; BALDWIN INC NEW",
+   "current_price": 150.5,
+   "week52_low": 146.5,
+   "week52_high": 226.5
+  },
   "014752109": {
    "ticker": "ALX",
    "name": "ALEXANDERS INC",
@@ -2788,14 +3061,28 @@
    "week52_low": 31.73,
    "week52_high": 44.21
   },
-  "01625V104": {
+  "01626W101": {
+   "ticker": "ALIT",
+   "name": "ALIGHT INC",
+   "current_price": 21.74,
+   "week52_low": 10.86,
+   "week52_high": 115.2
+  },
+  "016255101": {
+   "ticker": "ALGN",
+   "name": "ALIGN TECHNOLOGY INC",
+   "current_price": 176.76,
+   "week52_low": 125.79,
+   "week52_high": 205.56
+  },
+  "01625VAB0": {
    "ticker": "ALHC",
    "name": "ALIGNMENT HEALTHCARE INC",
    "current_price": 20.6,
    "week52_low": 11.76,
    "week52_high": 23.81
   },
-  "01644J108": {
+  "01644JAB4": {
    "ticker": "ALKT",
    "name": "ALKAMI TECHNOLOGY INC",
    "current_price": 17.91,
@@ -2837,7 +3124,7 @@
    "week52_low": 10.11,
    "week52_high": 11.47
   },
-  "018802108": {
+  "018802AC2": {
    "ticker": "LNT",
    "name": "ALLIANT ENERGY CORP",
    "current_price": 74.82,
@@ -2865,7 +3152,7 @@
    "week52_low": 1.04,
    "week52_high": 2.78
   },
-  "02043Q107": {
+  "02043QAB3": {
    "ticker": "ALNY",
    "name": "ALNYLAM PHARMACEUTICALS INC",
    "current_price": 267.47,
@@ -2886,7 +3173,7 @@
    "week52_low": 2.0,
    "week52_high": 6.07
   },
-  "02081G201": {
+  "02081GAD4": {
    "ticker": "ATEC",
    "name": "ALPHATEC HLDGS INC",
    "current_price": 8.54,
@@ -3047,9 +3334,9 @@
    "week52_low": 17.11,
    "week52_high": 27.75
   },
-  "02376R102": {
+  "030506109": {
    "ticker": "AAL",
-   "name": "AMERICAN AIRLINES GROUP INC",
+   "name": "AMERICAN WOODMARK CORP",
    "current_price": 14.98,
    "week52_low": 10.3,
    "week52_high": 17.92
@@ -3138,6 +3425,13 @@
    "week52_low": 6.45,
    "week52_high": 14.34
   },
+  "02913V103": {
+   "ticker": "APEI",
+   "name": "AMERICAN PUB ED INC",
+   "current_price": 50.71,
+   "week52_low": 29.37,
+   "week52_high": 60.6
+  },
   "029899101": {
    "ticker": "AWR",
    "name": "AMER STATES WTR CO",
@@ -3166,6 +3460,13 @@
    "week52_low": 2.06,
    "week52_high": 5.81
   },
+  "030420103": {
+   "ticker": "AWK",
+   "name": "AMERICAN WTR WKS CO INC NEW",
+   "current_price": 135.11,
+   "week52_low": 123.27,
+   "week52_high": 146.2
+  },
   "03062T105": {
    "ticker": "CRMT",
    "name": "America&apos;s Car-Mart, Inc.",
@@ -3173,12 +3474,33 @@
    "week52_low": 2.09,
    "week52_high": 54.84
   },
+  "03062D803": {
+   "ticker": "USAS",
+   "name": "AMERICAS GOLD AND SILVER COR",
+   "current_price": 3.78,
+   "week52_low": 2.3,
+   "week52_high": 9.79
+  },
+  "03076C106": {
+   "ticker": "AMP",
+   "name": "AMERIPRISE FINL INC",
+   "current_price": 527.87,
+   "week52_low": 433.94,
+   "week52_high": 544.55
+  },
   "03076K108": {
    "ticker": "ABCB",
    "name": "AMERIS BANCORP",
    "current_price": 92.31,
    "week52_low": 65.91,
    "week52_high": 92.31
+  },
+  "03071H100": {
+   "ticker": "AMSF",
+   "name": "AMERISAFE INC",
+   "current_price": 33.9,
+   "week52_low": 30.18,
+   "week52_high": 46.89
   },
   "031001100": {
    "ticker": "ATLO",
@@ -3207,6 +3529,13 @@
    "current_price": 62.94,
    "week52_low": 21.16,
    "week52_high": 90.46
+  },
+  "001744101": {
+   "ticker": "AMN",
+   "name": "AMN HEALTHCARE SERVICES INC",
+   "current_price": 35.0,
+   "week52_low": 15.12,
+   "week52_high": 35.0
   },
   "03168L105": {
    "ticker": "AMRX",
@@ -3348,6 +3677,13 @@
    "week52_low": 57.1,
    "week52_high": 85.09
   },
+  "00182CAC7": {
+   "ticker": "ANIP",
+   "name": "ANI PHARMACEUTICALS INC",
+   "current_price": 79.2,
+   "week52_low": 63.93,
+   "week52_high": 97.71
+  },
   "035255108": {
    "ticker": "ANIK",
    "name": "ANIKA THERAPEUTICS INC",
@@ -3411,6 +3747,13 @@
    "week52_low": 30.78,
    "week52_high": 45.15
   },
+  "75605Y106": {
+   "ticker": "DOC.XA",
+   "name": "ANYWHERE REAL ESTATE INC",
+   "current_price": 0.12,
+   "week52_low": 0.12,
+   "week52_high": 0.19
+  },
   "03743Q108": {
    "ticker": "APA",
    "name": "APA CORPORATION",
@@ -3467,7 +3810,7 @@
    "week52_low": 11.19,
    "week52_high": 17.04
   },
-  "038169207": {
+  "038169AB4": {
    "ticker": "APLD",
    "name": "APPLIED DIGITAL CORP",
    "current_price": 25.79,
@@ -3530,6 +3873,13 @@
    "week52_low": 5.05,
    "week52_high": 12.46
   },
+  "03879J100": {
+   "ticker": "ABUS",
+   "name": "ARBUTUS BIOPHARMA CORP",
+   "current_price": 4.56,
+   "week52_low": 3.13,
+   "week52_high": 4.87
+  },
   "03937C105": {
    "ticker": "ARCB",
    "name": "ARCBEST CORP",
@@ -3564,6 +3914,13 @@
    "current_price": 37.14,
    "week52_low": 22.48,
    "week52_high": 41.95
+  },
+  "G0457F107": {
+   "ticker": "AD8.DU",
+   "name": "ARCOS DORADOS HLDGS INC",
+   "current_price": 7.2,
+   "week52_low": 5.61,
+   "week52_high": 7.84
   },
   "039653100": {
    "ticker": "ACA",
@@ -3642,7 +3999,7 @@
    "week52_low": 4.33,
    "week52_high": 5.32
   },
-  "03990B101": {
+  "03990B309": {
    "ticker": "ARES",
    "name": "ARES MANAGEMENT CORPORATION",
    "current_price": 125.68,
@@ -3733,6 +4090,13 @@
    "week52_low": 154.21,
    "week52_high": 203.32
   },
+  "00770C101": {
+   "ticker": "ARQ",
+   "name": "ARQ INC",
+   "current_price": 2.06,
+   "week52_low": 1.92,
+   "week52_high": 7.72
+  },
   "G0567U127": {
    "ticker": "ARQQ",
    "name": "ARQIT QUANTUM INC",
@@ -3747,7 +4111,7 @@
    "week52_low": 34.65,
    "week52_high": 74.98
   },
-  "04271T100": {
+  "04271TAB6": {
    "ticker": "ARRY",
    "name": "ARRAY TECHNOLOGIES INC",
    "current_price": 6.11,
@@ -3775,7 +4139,7 @@
    "week52_low": 26.09,
    "week52_high": 41.56
   },
-  "04280A100": {
+  "04280AAC4": {
    "ticker": "ARWR",
    "name": "ARROWHEAD PHARMACEUTICALS IN",
    "current_price": 74.3,
@@ -3823,6 +4187,13 @@
    "current_price": 7.69,
    "week52_low": 5.46,
    "week52_high": 15.01
+  },
+  "03073E105": {
+   "ticker": "ABG",
+   "name": "Cencora, Inc.",
+   "current_price": 220.36,
+   "week52_low": 179.17,
+   "week52_high": 257.48
   },
   "04351P101": {
    "ticker": "ASND",
@@ -3943,6 +4314,20 @@
    "week52_low": 18.78,
    "week52_high": 49.17
   },
+  "G0593M107": {
+   "ticker": "AZN",
+   "name": "ASTRAZENECA PLC",
+   "current_price": 168.9,
+   "week52_low": 137.58,
+   "week52_high": 208.45
+  },
+  "04635X102": {
+   "ticker": "209.SG",
+   "name": "ASTRIA THERAPEUTICS INC",
+   "current_price": 19.32,
+   "week52_low": 19.32,
+   "week52_high": 19.32
+  },
   "046433108": {
    "ticker": "ATRO",
    "name": "ASTRONICS CORP",
@@ -3950,12 +4335,12 @@
    "week52_low": 24.35,
    "week52_high": 84.32
   },
-  "87971M103": {
-   "ticker": "T",
-   "name": "TELUS CORPORATION",
-   "current_price": 21.81,
-   "week52_low": 20.58,
-   "week52_high": 29.59
+  "04649U102": {
+   "ticker": "ASUR",
+   "name": "ASURE SOFTWARE INC",
+   "current_price": 8.14,
+   "week52_low": 7.43,
+   "week52_high": 10.46
   },
   "04683R106": {
    "ticker": "AVIR",
@@ -3970,6 +4355,13 @@
    "current_price": 22.79,
    "week52_low": 17.3,
    "week52_high": 25.42
+  },
+  "01741R102": {
+   "ticker": "ATI",
+   "name": "ATI INC",
+   "current_price": 186.17,
+   "week52_low": 72.46,
+   "week52_high": 201.34
   },
   "047649108": {
    "ticker": "ATKR",
@@ -4006,6 +4398,13 @@
    "week52_low": 8.15,
    "week52_high": 19.07
   },
+  "049468101": {
+   "ticker": "TEAM",
+   "name": "ATLASSIAN CORPORATION",
+   "current_price": 93.29,
+   "week52_low": 57.15,
+   "week52_high": 203.0
+  },
   "049560105": {
    "ticker": "ATO",
    "name": "ATMOS ENERGY CORP",
@@ -4033,6 +4432,13 @@
    "current_price": 5.62,
    "week52_low": 1.99,
    "week52_high": 11.09
+  },
+  "04962H506": {
+   "ticker": "ATOS",
+   "name": "ATOSSA THERAPEUTICS INC",
+   "current_price": 2.49,
+   "week52_low": 1.88,
+   "week52_high": 16.2
   },
   "04965M106": {
    "ticker": "ATAT",
@@ -4230,6 +4636,13 @@
    "week52_low": 3.23,
    "week52_high": 10.15
   },
+  "053774105": {
+   "ticker": "CAR",
+   "name": "AVIS BUDGET GROUP INC",
+   "current_price": 160.57,
+   "week52_low": 96.47,
+   "week52_high": 493.86
+  },
   "05379B107": {
    "ticker": "AVA",
    "name": "AVISTA CORP",
@@ -4279,12 +4692,19 @@
    "week52_low": 11.28,
    "week52_high": 45.89
   },
-  "05464C101": {
+  "05464CAB7": {
    "ticker": "AXON",
    "name": "AXON ENTERPRISE INC",
    "current_price": 510.28,
    "week52_low": 345.94,
    "week52_high": 842.5
+  },
+  "05465C100": {
+   "ticker": "AX",
+   "name": "AXOS FINANCIAL INC",
+   "current_price": 99.53,
+   "week52_low": 76.5,
+   "week52_high": 101.01
   },
   "05464T104": {
    "ticker": "AXSM",
@@ -4341,6 +4761,13 @@
    "current_price": 149.48,
    "week52_low": 114.23,
    "week52_high": 244.37
+  },
+  "056752108": {
+   "ticker": "BIDU",
+   "name": "BAIDU INC",
+   "current_price": 107.24,
+   "week52_low": 86.13,
+   "week52_high": 161.44
   },
   "05684B107": {
    "ticker": "BCSF",
@@ -4496,6 +4923,13 @@
    "week52_low": 37.39,
    "week52_high": 60.1
   },
+  "06652V208": {
+   "ticker": "BANR",
+   "name": "BANNER CORP",
+   "current_price": 71.08,
+   "week52_low": 58.07,
+   "week52_high": 71.08
+  },
   "066849100": {
    "ticker": "BHB",
    "name": "BAR HBR BANKSHARES",
@@ -4629,6 +5063,13 @@
    "week52_low": 138.66,
    "week52_high": 185.39
   },
+  "690370101": {
+   "ticker": "BBBY",
+   "name": "BED BATH &amp; BEYOND INC",
+   "current_price": 5.03,
+   "week52_low": 4.37,
+   "week52_high": 12.02
+  },
   "077347201": {
    "ticker": "BELFA",
    "name": "BEL FUSE INC",
@@ -4671,7 +5112,7 @@
    "week52_low": 10.27,
    "week52_high": 16.52
   },
-  "08265T208": {
+  "08265TAD1": {
    "ticker": "BSY",
    "name": "BENTLEY SYS INC",
    "current_price": 32.34,
@@ -4755,7 +5196,7 @@
    "week52_low": 267.44,
    "week52_high": 467.14
   },
-  "090043100": {
+  "090043AF7": {
    "ticker": "BILL",
    "name": "BILL HOLDINGS INC",
    "current_price": 44.71,
@@ -4804,6 +5245,13 @@
    "week52_low": 85.68,
    "week52_high": 115.98
   },
+  "090572207": {
+   "ticker": "BIO",
+   "name": "BIO RAD LABS INC",
+   "current_price": 304.36,
+   "week52_low": 246.4,
+   "week52_high": 339.75
+  },
   "090683103": {
    "ticker": "BTMD",
    "name": "BIOTE CORP",
@@ -4825,6 +5273,13 @@
    "week52_low": 6.18,
    "week52_high": 12.06
   },
+  "M2029K104": {
+   "ticker": "BIRK",
+   "name": "BIRKENSTOCK HLDG PLC",
+   "current_price": 44.36,
+   "week52_low": 31.19,
+   "week52_high": 53.4
+  },
   "G1144A105": {
    "ticker": "BTBT",
    "name": "BIT DIGITAL INC",
@@ -4845,6 +5300,13 @@
    "current_price": 15.69,
    "week52_low": 13.56,
    "week52_high": 61.29
+  },
+  "091748400": {
+   "ticker": "IMRA",
+   "name": "BITWISE FUNDS TRUST",
+   "current_price": 14.37,
+   "week52_low": 12.63,
+   "week52_high": 51.93
   },
   "09180C106": {
    "ticker": "BJRI",
@@ -4902,7 +5364,7 @@
    "week52_low": 27.04,
    "week52_high": 69.6
   },
-  "09239B109": {
+  "09239BAF6": {
    "ticker": "BL",
    "name": "BLACKLINE INC",
    "current_price": 30.29,
@@ -4916,12 +5378,33 @@
    "week52_low": 10.04,
    "week52_high": 10.04
   },
+  "09254E103": {
+   "ticker": "MYI",
+   "name": "BLACKROCK MUNIYIELD QLTY III",
+   "current_price": 10.91,
+   "week52_low": 10.25,
+   "week52_high": 11.25
+  },
+  "09248F109": {
+   "ticker": "XBLEX",
+   "name": "BLACKROCK MUNICIPAL INC TRST",
+   "current_price": 11.41,
+   "week52_low": 11.41,
+   "week52_high": 11.41
+  },
   "09254J102": {
    "ticker": "MUA",
    "name": "BLACKROCK MUNIASSETS FUND",
    "current_price": 10.8,
    "week52_low": 10.15,
    "week52_high": 11.79
+  },
+  "09254C107": {
+   "ticker": "MUC",
+   "name": "BLACKROCK MUNIHOLD QLT FD II",
+   "current_price": 10.85,
+   "week52_low": 10.08,
+   "week52_high": 11.04
   },
   "09253N104": {
    "ticker": "MHD",
@@ -5021,19 +5504,19 @@
    "week52_low": 42.75,
    "week52_high": 78.81
   },
-  "69121K104": {
-   "ticker": "OBDC",
-   "name": "BLUE OWL CAPITAL CORPORATION",
-   "current_price": 10.99,
-   "week52_low": 10.82,
-   "week52_high": 15.09
-  },
   "09581B103": {
    "ticker": "OWL",
    "name": "BLUE OWL CAPITAL INC",
    "current_price": 9.52,
    "week52_low": 8.23,
    "week52_high": 20.61
+  },
+  "69121K104": {
+   "ticker": "OBDC",
+   "name": "BLUE OWL CAPITAL CORPORATION",
+   "current_price": 10.99,
+   "week52_low": 10.82,
+   "week52_high": 15.09
   },
   "095924106": {
    "ticker": "OTF",
@@ -5245,7 +5728,7 @@
    "week52_low": 69.02,
    "week52_high": 96.33
   },
-  "10482B101": {
+  "10482BAB7": {
    "ticker": "BHR",
    "name": "BRAEMAR HOTELS &amp; RESORTS INC",
    "current_price": 2.0,
@@ -5308,7 +5791,7 @@
    "week52_low": 4.91,
    "week52_high": 6.06
   },
-  "10950A106": {
+  "10950A205": {
    "ticker": "BTSG",
    "name": "BRIGHTSPRING HEALTH SVCS INC",
    "current_price": 70.69,
@@ -5343,6 +5826,13 @@
    "week52_low": 33.13,
    "week52_high": 49.77
   },
+  "110448107": {
+   "ticker": "BTI",
+   "name": "BRITISH AMERICAN TOBACCO PLC",
+   "current_price": 62.84,
+   "week52_low": 51.19,
+   "week52_high": 65.36
+  },
   "11120U105": {
    "ticker": "BRX",
    "name": "Brixmor Property Group, Inc.",
@@ -5370,6 +5860,13 @@
    "current_price": 22.8,
    "week52_low": 15.77,
    "week52_high": 22.8
+  },
+  "112463AF1": {
+   "ticker": "BKD",
+   "name": "BROOKDALE SR LIVING INC",
+   "current_price": 15.01,
+   "week52_low": 7.21,
+   "week52_high": 16.51
   },
   "11259V106": {
    "ticker": "BBUC.TO",
@@ -5399,7 +5896,7 @@
    "week52_low": 13.21,
    "week52_high": 16.18
   },
-  "116794108": {
+  "116794207": {
    "ticker": "BRKR",
    "name": "BRUKER CORP",
    "current_price": 58.23,
@@ -5462,7 +5959,7 @@
    "week52_low": 56.81,
    "week52_high": 71.54
   },
-  "122017106": {
+  "122017AD8": {
    "ticker": "BURL",
    "name": "BURLINGTON STORES INC",
    "current_price": 345.31,
@@ -5546,7 +6043,7 @@
    "week52_low": 1.36,
    "week52_high": 3.88
   },
-  "12685J105": {
+  "12685JAE5": {
    "ticker": "CABO",
    "name": "CABLE ONE INC",
    "current_price": 39.3,
@@ -5559,6 +6056,13 @@
    "current_price": 90.39,
    "week52_low": 61.48,
    "week52_high": 93.4
+  },
+  "127190304": {
+   "ticker": "CACI",
+   "name": "CACI INTL INC",
+   "current_price": 461.56,
+   "week52_low": 453.92,
+   "week52_high": 662.19
   },
   "127203107": {
    "ticker": "WHD",
@@ -5594,6 +6098,13 @@
    "current_price": 24.69,
    "week52_low": 23.16,
    "week52_high": 34.05
+  },
+  "G1757E113": {
+   "ticker": "CHP.L",
+   "name": "CALEDONIA MNG CORP",
+   "current_price": 1.75,
+   "week52_low": 1.7,
+   "week52_high": 5.0
   },
   "129500104": {
    "ticker": "CAL",
@@ -5644,12 +6155,12 @@
    "week52_low": 35.69,
    "week52_high": 54.58
   },
-  "18453H106": {
-   "ticker": "CCO",
-   "name": "CLEAR CHANNEL OUTDOOR HLDGS",
-   "current_price": 2.42,
-   "week52_low": 1.02,
-   "week52_high": 2.43
+  "13321L108": {
+   "ticker": "CCJ",
+   "name": "CAMECO CORP",
+   "current_price": 85.62,
+   "week52_low": 72.93,
+   "week52_high": 124.04
   },
   "13463J101": {
    "ticker": "CAMP",
@@ -5987,12 +6498,19 @@
    "week52_low": 37.93,
    "week52_high": 69.24
   },
-  "15102K100": {
+  "15102KAA8": {
    "ticker": "CELC",
    "name": "CELCUITY INC",
    "current_price": 88.38,
    "week52_low": 13.59,
    "week52_high": 138.23
+  },
+  "15117B202": {
+   "ticker": "CLDX",
+   "name": "CELLDEX THERAPEUTICS INC NEW",
+   "current_price": 35.35,
+   "week52_low": 20.66,
+   "week52_high": 39.11
   },
   "M2197Q107": {
    "ticker": "CLBT",
@@ -6015,13 +6533,6 @@
    "week52_low": 7.62,
    "week52_high": 13.11
   },
-  "03073E105": {
-   "ticker": "ABG",
-   "name": "Cencora, Inc.",
-   "current_price": 220.36,
-   "week52_low": 179.17,
-   "week52_high": 257.48
-  },
   "15135U109": {
    "ticker": "CVE",
    "name": "CENOVUS ENERGY INC",
@@ -6036,7 +6547,7 @@
    "week52_low": 25.59,
    "week52_high": 67.86
   },
-  "15189T107": {
+  "15189TBD8": {
    "ticker": "CNP",
    "name": "CENTERPOINT ENERGY INC",
    "current_price": 43.13,
@@ -6049,6 +6560,13 @@
    "current_price": 55.82,
    "week52_low": 53.51,
    "week52_high": 68.38
+  },
+  "152309100": {
+   "ticker": "260.MU",
+   "name": "CENTESSA PHARMACEUTICALS PLC",
+   "current_price": 34.6,
+   "week52_low": 35.0,
+   "week52_high": 35.0
   },
   "153527106": {
    "ticker": "CENT",
@@ -6071,14 +6589,14 @@
    "week52_low": 26.15,
    "week52_high": 39.09
   },
-  "15643U104": {
+  "15643UAE4": {
    "ticker": "LEU",
    "name": "CENTRUS ENERGY CORP",
    "current_price": 156.05,
    "week52_low": 156.05,
    "week52_high": 383.0
   },
-  "156431108": {
+  "156431AQ1": {
    "ticker": "CENX",
    "name": "CENTURY ALUM CO",
    "current_price": 41.5,
@@ -6092,7 +6610,7 @@
    "week52_low": 48.41,
    "week52_high": 74.84
   },
-  "156727109": {
+  "156727AD1": {
    "ticker": "CRNC",
    "name": "CERENCE INC",
    "current_price": 8.63,
@@ -6119,6 +6637,13 @@
    "current_price": 3.13,
    "week52_low": 1.21,
    "week52_high": 3.16
+  },
+  "15713L109": {
+   "ticker": "DP8.F",
+   "name": "CERVOMED INC",
+   "current_price": 2.56,
+   "week52_low": 1.96,
+   "week52_high": 8.6
   },
   "157210105": {
    "ticker": "CEVA",
@@ -6147,6 +6672,13 @@
    "current_price": 71.85,
    "week52_low": 24.85,
    "week52_high": 75.24
+  },
+  "12532H104": {
+   "ticker": "GIB",
+   "name": "CGI INC",
+   "current_price": 68.12,
+   "week52_low": 61.28,
+   "week52_high": 101.11
   },
   "G59467202": {
    "ticker": "CD",
@@ -6197,16 +6729,16 @@
    "week52_low": 114.51,
    "week52_high": 220.11
   },
-  "163072101": {
+  "163072AC5": {
    "ticker": "CAKE",
    "name": "CHEESECAKE FACTORY INC",
    "current_price": 85.77,
    "week52_low": 44.94,
    "week52_high": 85.77
   },
-  "163086101": {
+  "163086AE1": {
    "ticker": "CHEF",
-   "name": "CHEFS WHSE INC",
+   "name": "CHEFS' WAREHOUSE THE",
    "current_price": 97.08,
    "week52_low": 55.44,
    "week52_high": 97.09
@@ -6344,7 +6876,14 @@
    "week52_low": 21.95,
    "week52_high": 33.8
   },
-  "17253J106": {
+  "172908105": {
+   "ticker": "CTAS",
+   "name": "CINTAS CORP",
+   "current_price": 204.45,
+   "week52_low": 165.71,
+   "week52_high": 226.27
+  },
+  "17253JAA4": {
    "ticker": "CIFR",
    "name": "CIPHER DIGITAL INC",
    "current_price": 17.56,
@@ -6371,6 +6910,13 @@
    "current_price": 64.21,
    "week52_low": 29.09,
    "week52_high": 64.21
+  },
+  "172967424": {
+   "ticker": "C",
+   "name": "Citigroup Inc.",
+   "current_price": 129.36,
+   "week52_low": 91.83,
+   "week52_high": 143.06
   },
   "172922106": {
    "ticker": "CZNC",
@@ -6456,12 +7002,19 @@
    "week52_low": 205.85,
    "week52_high": 311.43
   },
-  "18452B209": {
+  "18452BAC4": {
    "ticker": "CLSK",
    "name": "CLEANSPARK INC",
    "current_price": 13.03,
    "week52_low": 8.66,
    "week52_high": 19.52
+  },
+  "18453H106": {
+   "ticker": "CCO",
+   "name": "CLEAR CHANNEL OUTDOOR HLDGS",
+   "current_price": 2.42,
+   "week52_low": 1.02,
+   "week52_high": 2.43
   },
   "18467V109": {
    "ticker": "YOU",
@@ -6540,7 +7093,7 @@
    "week52_low": 1.72,
    "week52_high": 5.41
   },
-  "125896100": {
+  "125896BX7": {
    "ticker": "CMS",
    "name": "CMS ENERGY CORP",
    "current_price": 73.65,
@@ -6561,7 +7114,7 @@
    "week52_low": 22.36,
    "week52_high": 34.27
   },
-  "12653C108": {
+  "12653CAG3": {
    "ticker": "CNX",
    "name": "CNX RES CORP",
    "current_price": 33.28,
@@ -6610,6 +7163,13 @@
    "week52_low": 1.01,
    "week52_high": 3.11
   },
+  "189763105": {
+   "ticker": "CODX",
+   "name": "CO-DIAGNOSTICS INC",
+   "current_price": 2.46,
+   "week52_low": 1.28,
+   "week52_high": 13.8
+  },
   "192108504": {
    "ticker": "CDE",
    "name": "COEUR MNG INC",
@@ -6617,12 +7177,19 @@
    "week52_low": 8.68,
    "week52_high": 27.15
   },
-  "19240Q201": {
+  "19240QAA0": {
    "ticker": "COGT",
    "name": "COGENT BIOSCIENCES INC",
    "current_price": 39.08,
    "week52_low": 10.96,
    "week52_high": 42.11
+  },
+  "19239V302": {
+   "ticker": "CCOI",
+   "name": "COGENT COMM HOLDINGS INC",
+   "current_price": 10.97,
+   "week52_low": 10.97,
+   "week52_high": 50.0
   },
   "192422103": {
    "ticker": "CGNX",
@@ -6673,9 +7240,9 @@
    "week52_low": 19.05,
    "week52_high": 69.4
   },
-  "19260Q107": {
+  "37940XAU6": {
    "ticker": "COIN",
-   "name": "COINBASE GLOBAL INC",
+   "name": "GLOBAL PMTS INC",
    "current_price": 157.12,
    "week52_low": 149.06,
    "week52_high": 419.78
@@ -6687,9 +7254,9 @@
    "week52_low": 77.05,
    "week52_high": 99.14
   },
-  "19459J104": {
+  "19459JAC8": {
    "ticker": "COLL",
-   "name": "Collegium Pharmaceutical Inc.",
+   "name": "COLLEGIUM PHARMACEUTICAL INC",
    "current_price": 36.08,
    "week52_low": 30.07,
    "week52_high": 49.84
@@ -6883,7 +7450,7 @@
    "week52_low": 5.78,
    "week52_high": 11.59
   },
-  "207410101": {
+  "207410AH4": {
    "ticker": "CNMD",
    "name": "CONMED CORP",
    "current_price": 43.2,
@@ -7023,6 +7590,13 @@
    "week52_low": 16.5,
    "week52_high": 28.1
   },
+  "218937100": {
+   "ticker": "CNR",
+   "name": "CORE NATURAL RESOURCES INC",
+   "current_price": 83.02,
+   "week52_low": 71.0,
+   "week52_high": 113.23
+  },
   "21874A106": {
    "ticker": "CORZ",
    "name": "CORE SCIENTIFIC INC NEW",
@@ -7099,6 +7673,13 @@
    "current_price": 14.9,
    "week52_low": 4.1,
    "week52_high": 25.1
+  },
+  "Y2001C101": {
+   "ticker": "CMDB",
+   "name": "COSTAMARE BULKERS HLDGS LTD",
+   "current_price": 18.81,
+   "week52_low": 8.91,
+   "week52_high": 19.34
   },
   "Y1771G102": {
    "ticker": "CMRE",
@@ -7177,6 +7758,13 @@
    "week52_low": 36.13,
    "week52_high": 66.86
   },
+  "224633206": {
+   "ticker": "CRD-B",
+   "name": "CRAWFORD &amp; CO",
+   "current_price": 10.23,
+   "week52_low": 8.87,
+   "week52_high": 11.46
+  },
   "G2519Y108": {
    "ticker": "BAP",
    "name": "CREDICORP LTD",
@@ -7240,12 +7828,26 @@
    "week52_low": 3.81,
    "week52_high": 20.86
   },
+  "227483104": {
+   "ticker": "CCRN",
+   "name": "CROSS CTRY HEALTHCARE INC",
+   "current_price": 13.24,
+   "week52_low": 7.95,
+   "week52_high": 14.23
+  },
   "22788C105": {
    "ticker": "CRWD",
    "name": "CROWDSTRIKE HLDGS INC",
    "current_price": 203.08,
    "week52_low": 92.39,
    "week52_high": 203.08
+  },
+  "22822V101": {
+   "ticker": "CCI",
+   "name": "Crown Castle, Inc.",
+   "current_price": 79.17,
+   "week52_low": 76.6,
+   "week52_high": 111.48
   },
   "229050307": {
    "ticker": "CYRX",
@@ -7345,6 +7947,13 @@
    "week52_low": 472.43,
    "week52_high": 771.93
   },
+  "G2717C106": {
+   "ticker": "CWK",
+   "name": "CUSHMAN AND WAKEFIELD LTD",
+   "current_price": 13.66,
+   "week52_low": 11.18,
+   "week52_high": 17.2
+  },
   "23204X103": {
    "ticker": "CTOS",
    "name": "CUSTOM TRUCK ONE SOURCE INC",
@@ -7380,7 +7989,7 @@
    "week52_low": 3.13,
    "week52_high": 5.88
   },
-  "23282W605": {
+  "23282WAC4": {
    "ticker": "CYTK",
    "name": "CYTOKINETICS INC",
    "current_price": 80.18,
@@ -7414,6 +8023,13 @@
    "current_price": 19.12,
    "week52_low": 15.92,
    "week52_high": 27.73
+  },
+  "235825205": {
+   "ticker": "DAN",
+   "name": "DANA INC",
+   "current_price": 26.56,
+   "week52_low": 15.64,
+   "week52_high": 38.93
   },
   "88634W108": {
    "ticker": "DUNK",
@@ -7450,7 +8066,7 @@
    "week52_low": 30.1,
    "week52_high": 64.65
   },
-  "23804L103": {
+  "23804LAD5": {
    "ticker": "DDOG",
    "name": "DATADOG INC",
    "current_price": 258.69,
@@ -7484,6 +8100,13 @@
    "current_price": 54.41,
    "week52_low": 44.94,
    "week52_high": 55.89
+  },
+  "23954D109": {
+   "ticker": "PDJHX",
+   "name": "DAY ONE BIOPHARMACEUTICALS I",
+   "current_price": 14.89,
+   "week52_low": 12.72,
+   "week52_high": 15.06
   },
   "243537107": {
    "ticker": "DECK",
@@ -7555,12 +8178,26 @@
    "week52_low": 12.75,
    "week52_high": 25.83
   },
+  "248356107": {
+   "ticker": "DNN",
+   "name": "DENISON MINES CORP",
+   "current_price": 2.82,
+   "week52_low": 2.03,
+   "week52_high": 4.18
+  },
   "24906P109": {
    "ticker": "XRAY",
    "name": "DENTSPLY SIRONA INC",
    "current_price": 14.05,
    "week52_low": 10.0,
    "week52_high": 16.03
+  },
+  "249906108": {
+   "ticker": "DSGX",
+   "name": "DESCARTES SYS GROUP INC",
+   "current_price": 74.16,
+   "week52_low": 63.08,
+   "week52_high": 107.79
   },
   "25056L103": {
    "ticker": "DSGN",
@@ -7576,12 +8213,26 @@
    "week52_low": 2.56,
    "week52_high": 8.44
   },
+  "D18190898": {
+   "ticker": "DB",
+   "name": "Deutsche Bank AG Namen Akt",
+   "current_price": 35.2,
+   "week52_low": 28.37,
+   "week52_high": 39.66
+  },
   "25179M103": {
    "ticker": "DVN",
    "name": "DEVON ENERGY CORP NEW",
    "current_price": 43.83,
    "week52_low": 31.74,
    "week52_high": 52.07
+  },
+  "252131AM9": {
+   "ticker": "DXCM",
+   "name": "DEXCOM INC",
+   "current_price": 76.65,
+   "week52_low": 55.0,
+   "week52_high": 88.99
   },
   "Y2065G121": {
    "ticker": "DHT",
@@ -7596,6 +8247,13 @@
    "current_price": 7.3,
    "week52_low": 4.12,
    "week52_high": 9.39
+  },
+  "25264R207": {
+   "ticker": "DHEAX",
+   "name": "DIAMOND HILL INVT GROUP INC",
+   "current_price": 9.92,
+   "week52_low": 9.9,
+   "week52_high": 10.09
   },
   "25278X109": {
    "ticker": "FANG",
@@ -7631,6 +8289,13 @@
    "current_price": 63.92,
    "week52_low": 31.14,
    "week52_high": 72.15
+  },
+  "25381B101": {
+   "ticker": "DMRC",
+   "name": "DIGIMARC CORP NEW",
+   "current_price": 5.99,
+   "week52_low": 4.41,
+   "week52_high": 14.7
   },
   "25400W102": {
    "ticker": "APPS",
@@ -7730,6 +8395,13 @@
    "week52_low": 29.27,
    "week52_high": 37.94
   },
+  "254423106": {
+   "ticker": "DIN",
+   "name": "DINE BRANDS GLOBAL INC",
+   "current_price": 35.91,
+   "week52_low": 21.06,
+   "week52_high": 37.83
+  },
   "25445D101": {
    "ticker": "DDL",
    "name": "DINGDONG CAYMAN LTD -SPN ADR",
@@ -7828,6 +8500,13 @@
    "week52_low": 42.89,
    "week52_high": 84.59
   },
+  "25659T107": {
+   "ticker": "DLB",
+   "name": "DOLBY LABORATORIES INC",
+   "current_price": 49.07,
+   "week52_low": 49.07,
+   "week52_high": 76.36
+  },
   "G27907107": {
    "ticker": "DOLE",
    "name": "DOLE PLC",
@@ -7883,6 +8562,13 @@
    "current_price": 184.14,
    "week52_low": 146.6,
    "week52_high": 271.22
+  },
+  "Y2106R110": {
+   "ticker": "LPG",
+   "name": "DORIAN LPG LIMITED",
+   "current_price": 41.03,
+   "week52_low": 24.37,
+   "week52_high": 46.46
   },
   "258278100": {
    "ticker": "DORM",
@@ -8024,7 +8710,7 @@
    "week52_low": 86.41,
    "week52_high": 186.6
   },
-  "26441C204": {
+  "26441CBY0": {
    "ticker": "DUK",
    "name": "DUKE ENERGY CORP NEW",
    "current_price": 125.01,
@@ -8037,6 +8723,13 @@
    "current_price": 133.85,
    "week52_low": 90.03,
    "week52_high": 370.49
+  },
+  "26614N102": {
+   "ticker": "DD",
+   "name": "DUPONT DE NEMOURS INC",
+   "current_price": 135.29,
+   "week52_low": 87.79,
+   "week52_high": 151.23
   },
   "26701L100": {
    "ticker": "BROS",
@@ -8086,6 +8779,13 @@
    "current_price": 23.74,
    "week52_low": 9.02,
    "week52_high": 23.74
+  },
+  "26817Q886": {
+   "ticker": "DX",
+   "name": "DYNEX CAP INC",
+   "current_price": 13.33,
+   "week52_low": 12.1,
+   "week52_high": 14.65
   },
   "268948106": {
    "ticker": "EGBN",
@@ -8163,6 +8863,13 @@
    "current_price": 50.51,
    "week52_low": 50.38,
    "week52_high": 52.05
+  },
+  "278642103": {
+   "ticker": "EBAY",
+   "name": "EBAY INC.",
+   "current_price": 112.06,
+   "week52_low": 78.14,
+   "week52_high": 117.2
   },
   "26828M106": {
    "ticker": "ECBK",
@@ -8262,12 +8969,12 @@
    "week52_low": 432.97,
    "week52_high": 936.14
   },
-  "97717X867": {
-   "ticker": "ELD",
-   "name": "WISDOMTREE TR",
-   "current_price": 28.59,
-   "week52_low": 27.67,
-   "week52_high": 30.1
+  "284902509": {
+   "ticker": "EGO",
+   "name": "ELDORADO GOLD CORP NEW",
+   "current_price": 27.95,
+   "week52_low": 19.75,
+   "week52_high": 47.37
   },
   "285409108": {
    "ticker": "ELMD",
@@ -8289,6 +8996,13 @@
    "current_price": 4.07,
    "week52_low": 1.44,
    "week52_high": 4.32
+  },
+  "28618M106": {
+   "ticker": "ESI",
+   "name": "ELEMENT SOLUTIONS INC",
+   "current_price": 37.4,
+   "week52_low": 23.17,
+   "week52_high": 45.97
   },
   "26856L103": {
    "ticker": "ELF",
@@ -8345,6 +9059,13 @@
    "current_price": 55.11,
    "week52_low": 45.66,
    "week52_high": 55.11
+  },
+  "29103W104": {
+   "ticker": "EEX",
+   "name": "EMERALD HOLDING INC",
+   "current_price": 5.04,
+   "week52_low": 3.66,
+   "week52_high": 5.28
   },
   "29089Q105": {
    "ticker": "EBS",
@@ -8514,7 +9235,7 @@
    "week52_low": 100.56,
    "week52_high": 238.09
   },
-  "194014502": {
+  "194014AB2": {
    "ticker": "ENOV",
    "name": "ENOVIS CORPORATION",
    "current_price": 27.07,
@@ -8548,6 +9269,13 @@
    "current_price": 171.28,
    "week52_low": 136.8,
    "week52_high": 214.17
+  },
+  "29362U104": {
+   "ticker": "ENTG",
+   "name": "ENTEGRIS INC",
+   "current_price": 138.74,
+   "week52_low": 73.14,
+   "week52_high": 178.77
   },
   "29364G103": {
    "ticker": "ETR",
@@ -8590,6 +9318,13 @@
    "current_price": 21.06,
    "week52_low": 5.49,
    "week52_high": 27.79
+  },
+  "415864107": {
+   "ticker": "NVRI",
+   "name": "ENVIRI CORP",
+   "current_price": 22.91,
+   "week52_low": 8.6,
+   "week52_high": 23.28
   },
   "29415F104": {
    "ticker": "NVST",
@@ -8738,6 +9473,13 @@
    "week52_low": 185.22,
    "week52_high": 343.5
   },
+  "29664W105": {
+   "ticker": "ESPR",
+   "name": "ESPERION THERAPEUTICS INC NE",
+   "current_price": 3.18,
+   "week52_low": 1.17,
+   "week52_high": 4.04
+  },
   "296650104": {
    "ticker": "ESP",
    "name": "ESPEY MFG &amp; ELECTRS CORP",
@@ -8808,7 +9550,7 @@
    "week52_low": 14.13,
    "week52_high": 42.32
   },
-  "29786A106": {
+  "29786AAN6": {
    "ticker": "ETSY",
    "name": "ETSY INC",
    "current_price": 84.1,
@@ -8821,6 +9563,13 @@
    "current_price": 81.34,
    "week52_low": 64.05,
    "week52_high": 103.78
+  },
+  "29882P106": {
+   "ticker": "EHR=F",
+   "name": "EUROPEAN WAX CTR INC",
+   "current_price": 750.0,
+   "week52_low": 750.0,
+   "week52_high": 750.0
   },
   "29970N104": {
    "ticker": "EVEX",
@@ -8850,7 +9599,7 @@
    "week52_low": 309.97,
    "week52_high": 382.57
   },
-  "30034W106": {
+  "30034WAD8": {
    "ticker": "EVRG",
    "name": "EVERGY INC",
    "current_price": 85.59,
@@ -8906,7 +9655,7 @@
    "week52_low": 14.5,
    "week52_high": 31.68
   },
-  "30050B101": {
+  "30050BAJ0": {
    "ticker": "EVH",
    "name": "EVOLENT HEALTH INC",
    "current_price": 5.81,
@@ -8962,6 +9711,13 @@
    "week52_low": 23.7,
    "week52_high": 42.15
   },
+  "30161Q104": {
+   "ticker": "EXEL",
+   "name": "EXELIXIS INC",
+   "current_price": 55.92,
+   "week52_low": 37.26,
+   "week52_high": 56.5
+  },
   "30161N101": {
    "ticker": "PEO",
    "name": "EXELON CORP",
@@ -8997,7 +9753,7 @@
    "week52_low": 86.98,
    "week52_high": 122.86
   },
-  "30212P303": {
+  "30212PBE4": {
    "ticker": "EXPE",
    "name": "EXPEDIA GROUP INC",
    "current_price": 268.77,
@@ -9213,6 +9969,13 @@
    "current_price": 312.98,
    "week52_low": 174.94,
    "week52_high": 338.31
+  },
+  "31447P100": {
+   "ticker": "FENC",
+   "name": "FENNEC PHARMACEUTICALS INC",
+   "current_price": 10.5,
+   "week52_low": 5.81,
+   "week52_high": 11.02
   },
   "314911108": {
    "ticker": "FRMI",
@@ -9522,12 +10285,26 @@
    "week52_low": 28.95,
    "week52_high": 37.64
   },
+  "336433107": {
+   "ticker": "FSLR",
+   "name": "FIRST SOLAR INC",
+   "current_price": 211.99,
+   "week52_low": 175.85,
+   "week52_high": 306.79
+  },
   "32051X108": {
    "ticker": "FHB",
    "name": "FIRST HAWAIIAN INC",
    "current_price": 29.29,
    "week52_low": 23.23,
    "week52_high": 30.13
+  },
+  "320517105": {
+   "ticker": "FHN",
+   "name": "FIRST HORIZON CORPORATION",
+   "current_price": 25.8,
+   "week52_low": 20.28,
+   "week52_high": 26.23
   },
   "32054K103": {
    "ticker": "FR",
@@ -9570,13 +10347,6 @@
    "current_price": 29.51,
    "week52_low": 20.66,
    "week52_high": 30.54
-  },
-  "336433107": {
-   "ticker": "FSLR",
-   "name": "FIRST SOLAR INC",
-   "current_price": 211.99,
-   "week52_low": 175.85,
-   "week52_high": 306.79
   },
   "33738D606": {
    "ticker": "LGOV",
@@ -9830,7 +10600,7 @@
    "week52_low": 122.45,
    "week52_high": 227.68
   },
-  "337932107": {
+  "337932AR8": {
    "ticker": "FE",
    "name": "FIRSTENERGY CORP",
    "current_price": 48.53,
@@ -9865,12 +10635,19 @@
    "week52_low": 29.44,
    "week52_high": 48.81
   },
-  "338307101": {
+  "338307AF8": {
    "ticker": "FIVN",
    "name": "FIVE9 INC",
    "current_price": 25.58,
    "week52_low": 13.61,
    "week52_high": 28.84
+  },
+  "649445400": {
+   "ticker": "SHOT",
+   "name": "Flagstar Financial, Inc.",
+   "current_price": 0.39,
+   "week52_low": 9.83,
+   "week52_high": 9.83
   },
   "G35947202": {
    "ticker": "FLNG",
@@ -9970,19 +10747,26 @@
    "week52_low": 49.09,
    "week52_high": 89.69
   },
-  "34379V103": {
+  "34379VAB9": {
    "ticker": "FLNC",
    "name": "FLUENCE ENERGY INC",
    "current_price": 14.07,
    "week52_low": 7.0,
    "week52_high": 30.77
   },
-  "343412102": {
+  "343412AJ1": {
    "ticker": "FLR",
    "name": "FLUOR CORP",
    "current_price": 49.08,
    "week52_low": 40.05,
    "week52_high": 56.61
+  },
+  "G3643J108": {
+   "ticker": "FLUT",
+   "name": "FLUTTER ENTMT PLC",
+   "current_price": 106.56,
+   "week52_low": 92.38,
+   "week52_high": 307.17
   },
   "302492103": {
    "ticker": "FLYW",
@@ -10019,7 +10803,7 @@
    "week52_low": 85.25,
    "week52_high": 129.37
   },
-  "345370860": {
+  "345370CZ1": {
    "ticker": "F",
    "name": "FORD MTR CO",
    "current_price": 14.23,
@@ -10032,6 +10816,13 @@
    "current_price": 29.9,
    "week52_low": 21.84,
    "week52_high": 31.94
+  },
+  "34631F102": {
+   "ticker": "FPS",
+   "name": "FORGENT POWER SOLUTIONS INC",
+   "current_price": 39.79,
+   "week52_low": 28.87,
+   "week52_high": 63.41
   },
   "346563109": {
    "ticker": "FORR",
@@ -10075,9 +10866,9 @@
    "week52_low": 18.38,
    "week52_high": 61.93
   },
-  "34986A104": {
+  "349862409": {
    "ticker": "FWRD",
-   "name": "FORWARD AIR CORP",
+   "name": "FORWARD INDS INC N Y",
    "current_price": 13.75,
    "week52_low": 8.76,
    "week52_high": 32.11
@@ -10313,7 +11104,7 @@
    "week52_low": 24.2,
    "week52_high": 36.4
   },
-  "358039105": {
+  "358039AB1": {
    "ticker": "FRPT",
    "name": "FRESHPET INC",
    "current_price": 56.64,
@@ -10474,6 +11265,13 @@
    "week52_low": 17.55,
    "week52_high": 18.44
   },
+  "35953D401": {
+   "ticker": "FUBO",
+   "name": "FUBOTV INC",
+   "current_price": 9.72,
+   "week52_low": 9.18,
+   "week52_high": 52.2
+  },
   "359616109": {
    "ticker": "FULC",
    "name": "FULCRUM THERAPEUTICS INC",
@@ -10551,9 +11349,16 @@
    "week52_low": 17.64,
    "week52_high": 39.82
   },
-  "36467W109": {
+  "G3R239101": {
+   "ticker": "GAMB",
+   "name": "GAMBLING COM GROUP LIMITED",
+   "current_price": 1.8,
+   "week52_low": 1.8,
+   "week52_high": 11.09
+  },
+  "36467W117": {
    "ticker": "GME",
-   "name": "GAMESTOP CORP",
+   "name": "GAMESTOP CORP NEW",
    "current_price": 21.89,
    "week52_low": 20.14,
    "week52_high": 26.53
@@ -10585,6 +11390,13 @@
    "current_price": 140.19,
    "week52_low": 127.49,
    "week52_high": 356.64
+  },
+  "G39108108": {
+   "ticker": "GTES",
+   "name": "GATES INDUSTRIAL CORPRATIN P",
+   "current_price": 26.61,
+   "week52_low": 21.61,
+   "week52_high": 28.79
   },
   "361448103": {
    "ticker": "GATX",
@@ -10634,6 +11446,13 @@
    "current_price": 26.74,
    "week52_low": 17.89,
    "week52_high": 31.58
+  },
+  "Y2685T131": {
+   "ticker": "GNK",
+   "name": "GENCO SHIPPING &amp; TRADING LTD",
+   "current_price": 24.12,
+   "week52_low": 15.22,
+   "week52_high": 25.91
   },
   "368678108": {
    "ticker": "GENC",
@@ -10726,6 +11545,13 @@
    "week52_low": 20.7,
    "week52_high": 28.9
   },
+  "37253A103": {
+   "ticker": "THRM",
+   "name": "GENTHERM INC",
+   "current_price": 35.94,
+   "week52_low": 27.53,
+   "week52_high": 38.74
+  },
   "37247D106": {
    "ticker": "GNW",
    "name": "GENWORTH FINL INC",
@@ -10746,6 +11572,13 @@
    "current_price": 48.57,
    "week52_low": 37.42,
    "week52_high": 48.57
+  },
+  "374163103": {
+   "ticker": "GERN",
+   "name": "GERON CORP",
+   "current_price": 1.44,
+   "week52_low": 1.07,
+   "week52_high": 1.88
   },
   "374275105": {
    "ticker": "GETY",
@@ -10999,12 +11832,33 @@
    "week52_low": 36.09,
    "week52_high": 57.04
   },
+  "38059T106": {
+   "ticker": "GFI",
+   "name": "GOLD FIELDS LTD",
+   "current_price": 31.99,
+   "week52_low": 24.22,
+   "week52_high": 58.84
+  },
   "00181T107": {
    "ticker": "GOLD",
    "name": "Gold.com, Inc.",
    "current_price": 38.31,
    "week52_low": 20.57,
    "week52_high": 60.91
+  },
+  "381013101": {
+   "ticker": "000712.SZ",
+   "name": "GOLDEN ENTMT INC",
+   "current_price": 8.27,
+   "week52_low": 8.27,
+   "week52_high": 15.47
+  },
+  "381098300": {
+   "ticker": "SE0.F",
+   "name": "GOLDEN MATRIX GROUP INC",
+   "current_price": 11.56,
+   "week52_low": 5.02,
+   "week52_high": 16.68
   },
   "381430503": {
    "ticker": "GSLC",
@@ -11146,7 +12000,14 @@
    "week52_low": 32.43,
    "week52_high": 110.39
   },
-  "387328107": {
+  "38526M106": {
+   "ticker": "LOPE",
+   "name": "GRAND CANYON ED INC",
+   "current_price": 140.44,
+   "week52_low": 140.44,
+   "week52_high": 218.35
+  },
+  "387328AD9": {
    "ticker": "GVA",
    "name": "GRANITE CONSTR INC",
    "current_price": 124.03,
@@ -11181,6 +12042,13 @@
    "week52_low": 8.91,
    "week52_high": 23.32
   },
+  "390607109": {
+   "ticker": "GLUX",
+   "name": "GREAT LAKES DREDGE &amp; DOCK CO",
+   "current_price": 0.0,
+   "week52_low": 0.0,
+   "week52_high": 0.0
+  },
   "390905107": {
    "ticker": "GSBC",
    "name": "GREAT SOUTHN BANCORP INC",
@@ -11202,7 +12070,14 @@
    "week52_low": 9.64,
    "week52_high": 14.5
   },
-  "393657101": {
+  "393222104": {
+   "ticker": "GPRE",
+   "name": "GREEN PLAINS INC",
+   "current_price": 19.23,
+   "week52_low": 7.4,
+   "week52_high": 19.23
+  },
+  "393657AM3": {
    "ticker": "GBX",
    "name": "GREENBRIER COS INC",
    "current_price": 50.02,
@@ -11230,7 +12105,7 @@
    "week52_low": 8.15,
    "week52_high": 30.07
   },
-  "397624107": {
+  "397624206": {
    "ticker": "GEF",
    "name": "GREIF INC",
    "current_price": 76.32,
@@ -11293,9 +12168,9 @@
    "week52_low": 279.71,
    "week52_high": 381.16
   },
-  "399909100": {
+  "400506101": {
    "ticker": "GGAL",
-   "name": "GRUPO FINANCIERO GALICIA S.A",
+   "name": "GRUPO AEROPORTUNARIO DEL PAC",
    "current_price": 49.94,
    "week52_low": 26.45,
    "week52_high": 59.13
@@ -11314,7 +12189,7 @@
    "week52_low": 36.31,
    "week52_high": 60.23
   },
-  "40131M109": {
+  "40131MAB5": {
    "ticker": "GH",
    "name": "GUARDANT HEALTH INC",
    "current_price": 155.87,
@@ -11335,7 +12210,7 @@
    "week52_low": 10.61,
    "week52_high": 15.13
   },
-  "40171V100": {
+  "40171VAC4": {
    "ticker": "GWRE",
    "name": "GUIDEWIRE SOFTWARE INC",
    "current_price": 150.02,
@@ -11355,6 +12230,13 @@
    "current_price": 54.05,
    "week52_low": 47.47,
    "week52_high": 65.59
+  },
+  "403783103": {
+   "ticker": "GYRE",
+   "name": "GYRE THERAPEUTICS INC",
+   "current_price": 6.05,
+   "week52_low": 5.91,
+   "week52_high": 8.3
   },
   "44332N106": {
    "ticker": "HTHT",
@@ -11440,7 +12322,7 @@
    "week52_low": 20.9,
    "week52_high": 41.76
   },
-  "40637H109": {
+  "40637HAD1": {
    "ticker": "HALO",
    "name": "HALOZYME THERAPEUTICS INC",
    "current_price": 77.81,
@@ -11524,6 +12406,13 @@
    "week52_low": 25.9,
    "week52_high": 40.51
   },
+  "413216300": {
+   "ticker": "HMY",
+   "name": "HARMONY GOLD MNG LTD",
+   "current_price": 14.65,
+   "week52_low": 13.28,
+   "week52_high": 23.45
+  },
   "415858109": {
    "ticker": "HROW",
    "name": "HARROW INC",
@@ -11551,6 +12440,13 @@
    "current_price": 19.08,
    "week52_low": 18.44,
    "week52_high": 19.49
+  },
+  "416906204": {
+   "ticker": "HBIO",
+   "name": "HARVARD BIOSCIENCE INC",
+   "current_price": 6.23,
+   "week52_low": 3.8,
+   "week52_high": 7.6
   },
   "418056107": {
    "ticker": "HAS",
@@ -11678,13 +12574,6 @@
    "week52_low": 5.69,
    "week52_high": 31.81
   },
-  "422806109": {
-   "ticker": "HEI",
-   "name": "HEICO CORP NEW",
-   "current_price": 342.66,
-   "week52_low": 264.04,
-   "week52_high": 362.09
-  },
   "G4388N106": {
    "ticker": "HELE",
    "name": "HELEN OF TROY LTD",
@@ -11699,19 +12588,19 @@
    "week52_low": 35.43,
    "week52_high": 90.49
   },
+  "42330P107": {
+   "ticker": "HLX",
+   "name": "HELIX ENERGY SOLUTIONS GRP I",
+   "current_price": 9.58,
+   "week52_low": 5.72,
+   "week52_high": 10.29
+  },
   "806407102": {
    "ticker": "HSIC",
    "name": "SCHEIN HENRY INC",
    "current_price": 87.82,
    "week52_low": 62.98,
    "week52_high": 87.82
-  },
-  "42704l104": {
-   "ticker": "HRI",
-   "name": "Herc Holdings Inc",
-   "current_price": 149.47,
-   "week52_low": 91.04,
-   "week52_high": 180.31
   },
   "427096508": {
    "ticker": "HTGC",
@@ -11733,6 +12622,13 @@
    "current_price": 27.04,
    "week52_low": 20.58,
    "week52_high": 31.14
+  },
+  "427746102": {
+   "ticker": "HRTX",
+   "name": "HERON THERAPEUTICS INC",
+   "current_price": 0.47,
+   "week52_low": 0.4,
+   "week52_high": 1.93
   },
   "428103105": {
    "ticker": "HESM",
@@ -11888,6 +12784,13 @@
    "week52_low": 2.13,
    "week52_high": 4.95
   },
+  "438516106": {
+   "ticker": "HON",
+   "name": "HONEYWELL INTL INC",
+   "current_price": 225.02,
+   "week52_low": 198.59,
+   "week52_high": 255.87
+  },
   "439038100": {
    "ticker": "HOFT",
    "name": "HOOKER FURNISHINGS CORPORATI",
@@ -12042,6 +12945,20 @@
    "week52_low": 171.0,
    "week52_high": 277.66
   },
+  "42824C208": {
+   "ticker": "HPQ",
+   "name": "Hewlett Packard Ent Ser C Conv",
+   "current_price": 24.84,
+   "week52_low": 18.26,
+   "week52_high": 29.34
+  },
+  "404280406": {
+   "ticker": "HSBC",
+   "name": "HSBC HLDGS PLC",
+   "current_price": 100.61,
+   "week52_low": 61.37,
+   "week52_high": 100.61
+  },
   "443320106": {
    "ticker": "HUBG",
    "name": "HUB GROUP INC",
@@ -12181,6 +13098,20 @@
    "current_price": 20.71,
    "week52_low": 18.88,
    "week52_high": 33.04
+  },
+  "44891N208": {
+   "ticker": "4LRA.MU",
+   "name": "IAC INC",
+   "current_price": 39.58,
+   "week52_low": 27.43,
+   "week52_high": 41.52
+  },
+  "450913108": {
+   "ticker": "IAG",
+   "name": "IAMGOLD CORP",
+   "current_price": 14.14,
+   "week52_low": 6.86,
+   "week52_high": 24.57
   },
   "G4690M101": {
    "ticker": "IBEX",
@@ -12329,6 +13260,13 @@
    "week52_low": 2.06,
    "week52_high": 11.11
   },
+  "4525EP101": {
+   "ticker": "IMUX",
+   "name": "IMMUNIC INC",
+   "current_price": 15.16,
+   "week52_low": 5.61,
+   "week52_high": 15.3
+  },
   "45256X103": {
    "ticker": "IBRX",
    "name": "IMMUNITYBIO INC",
@@ -12357,7 +13295,7 @@
    "week52_low": 82.31,
    "week52_high": 134.73
   },
-  "453204109": {
+  "453204AD1": {
    "ticker": "PI",
    "name": "IMPINJ INC",
    "current_price": 138.37,
@@ -12574,12 +13512,19 @@
    "week52_low": 6.4,
    "week52_high": 20.29
   },
-  "464288661": {
-   "ticker": "IEI",
-   "name": "ISHARES TR",
-   "current_price": 116.98,
-   "week52_low": 116.73,
-   "week52_high": 120.72
+  "45765U103": {
+   "ticker": "NSIT",
+   "name": "INSIGHT ENTERPRISES INC",
+   "current_price": 115.33,
+   "week52_low": 65.82,
+   "week52_high": 145.82
+  },
+  "457669307": {
+   "ticker": "INSM",
+   "name": "INSMED INC",
+   "current_price": 108.32,
+   "week52_low": 94.22,
+   "week52_high": 207.77
   },
   "457730109": {
    "ticker": "INSP",
@@ -12623,7 +13568,7 @@
    "week52_low": 20.37,
    "week52_high": 47.67
   },
-  "45826H109": {
+  "45826HAD1": {
    "ticker": "ITGR",
    "name": "INTEGER HLDGS CORP",
    "current_price": 95.42,
@@ -12651,6 +13596,13 @@
    "week52_low": 8.21,
    "week52_high": 25.6
   },
+  "459200101": {
+   "ticker": "IBM",
+   "name": "Intl Business Machines",
+   "current_price": 212.67,
+   "week52_low": 212.67,
+   "week52_high": 309.24
+  },
   "45841N107": {
    "ticker": "IBKR",
    "name": "INTERACTIVE BROKERS GROUP IN",
@@ -12664,6 +13616,13 @@
    "current_price": 158.08,
    "week52_low": 114.67,
    "week52_high": 172.85
+  },
+  "45867GAD3": {
+   "ticker": "IDCC",
+   "name": "INTERDIGITAL INC",
+   "current_price": 260.45,
+   "week52_low": 224.38,
+   "week52_high": 378.62
   },
   "458665304": {
    "ticker": "TILE",
@@ -12713,13 +13672,6 @@
    "current_price": 13.44,
    "week52_low": 6.85,
    "week52_high": 18.8
-  },
-  "459200101": {
-   "ticker": "IBM",
-   "name": "Intl Business Machines",
-   "current_price": 212.67,
-   "week52_low": 212.67,
-   "week52_high": 309.24
   },
   "46121Y201": {
    "ticker": "IPI",
@@ -12917,6 +13869,13 @@
    "week52_low": 9.9,
    "week52_high": 11.37
   },
+  "46090E103": {
+   "ticker": "QQQD.BA",
+   "name": "INVESCO QQQ TR",
+   "current_price": 36.21,
+   "week52_low": 27.7,
+   "week52_high": 38.67
+  },
   "46138E743": {
    "ticker": "PXF",
    "name": "INVESCO EXCH TRADED FD TR II",
@@ -13085,6 +14044,13 @@
    "week52_low": 0.52,
    "week52_high": 2.69
   },
+  "462222AF7": {
+   "ticker": "IONS",
+   "name": "IONIS PHARMACEUTICALS INC",
+   "current_price": 54.39,
+   "week52_low": 41.64,
+   "week52_high": 86.5
+  },
   "46222L108": {
    "ticker": "IONQ",
    "name": "IONQ INC",
@@ -13127,7 +14093,7 @@
    "week52_low": 15.4,
    "week52_high": 63.54
   },
-  "450056106": {
+  "450056AB2": {
    "ticker": "IRTC",
    "name": "IRHYTHM HOLDINGS INC",
    "current_price": 110.88,
@@ -13245,6 +14211,13 @@
    "current_price": 84.52,
    "week52_low": 83.66,
    "week52_high": 91.47
+  },
+  "464288661": {
+   "ticker": "IEI",
+   "name": "ISHARES TR",
+   "current_price": 116.98,
+   "week52_low": 116.73,
+   "week52_high": 120.72
   },
   "464288638": {
    "ticker": "IGIB",
@@ -13456,6 +14429,13 @@
    "week52_low": 39.55,
    "week52_high": 50.02
   },
+  "464287275": {
+   "ticker": "EPU.SN",
+   "name": "ISHARES TR",
+   "current_price": 84.98,
+   "week52_low": 46.2,
+   "week52_high": 90.3
+  },
   "464286319": {
    "ticker": "DVYE",
    "name": "ISHARES INC",
@@ -13581,6 +14561,13 @@
    "current_price": 66.94,
    "week52_low": 59.12,
    "week52_high": 69.37
+  },
+  "44955L106": {
+   "ticker": "IAU",
+   "name": "I-80 GOLD CORP",
+   "current_price": 75.5,
+   "week52_low": 62.91,
+   "week52_high": 99.07
   },
   "46435G250": {
    "ticker": "HYDB",
@@ -13883,6 +14870,13 @@
    "week52_low": 41.43,
    "week52_high": 49.91
   },
+  "464286715": {
+   "ticker": "EPPCL.SN",
+   "name": "ISHARES INC",
+   "current_price": 49936.0,
+   "week52_low": 29229.0,
+   "week52_high": 29229.0
+  },
   "46434G830": {
    "ticker": "EWI",
    "name": "ISHARES INC",
@@ -13945,6 +14939,13 @@
    "current_price": 97.33,
    "week52_low": 58.39,
    "week52_high": 109.99
+  },
+  "464286624": {
+   "ticker": "THD",
+   "name": "ISHARES MSCI THAILAND ETF",
+   "current_price": 72.87,
+   "week52_low": 55.95,
+   "week52_high": 75.05
   },
   "46434V761": {
    "ticker": "UAE",
@@ -14401,7 +15402,7 @@
    "week52_low": 1.23,
    "week52_high": 3.68
   },
-  "465741106": {
+  "465741AQ9": {
    "ticker": "ITRI",
    "name": "ITRON INC",
    "current_price": 85.99,
@@ -14478,12 +15479,26 @@
    "week52_low": 15.68,
    "week52_high": 24.23
   },
+  "G4253H101": {
+   "ticker": "JHX",
+   "name": "JAMES HARDIE INDS PLC",
+   "current_price": 25.82,
+   "week52_low": 16.69,
+   "week52_high": 29.01
+  },
   "46990A102": {
    "ticker": "JRVR",
    "name": "JAMES RIV GROUP HOLDINGS INC",
    "current_price": 4.59,
    "week52_low": 3.91,
    "week52_high": 7.04
+  },
+  "47074L105": {
+   "ticker": "JAMFX",
+   "name": "JAMF HLDG CORP",
+   "current_price": 5.44,
+   "week52_low": 4.61,
+   "week52_high": 7.94
   },
   "47103U845": {
    "ticker": "JAAA",
@@ -14548,6 +15563,13 @@
    "week52_low": 11.91,
    "week52_high": 18.32
   },
+  "477839104": {
+   "ticker": "JBTM",
+   "name": "JBT MAREL CORPORATION",
+   "current_price": 134.0,
+   "week52_low": 115.44,
+   "week52_high": 168.55
+  },
   "47215P106": {
    "ticker": "JD",
    "name": "JD.COM INC",
@@ -14590,7 +15612,7 @@
    "week52_low": 90.91,
    "week52_high": 116.49
   },
-  "G65163100": {
+  "47775AAA9": {
    "ticker": "JOBY",
    "name": "JOBY AVIATION INC",
    "current_price": 7.23,
@@ -14779,6 +15801,13 @@
    "week52_low": 1.08,
    "week52_high": 1.87
   },
+  "483497103": {
+   "ticker": "4XC1.MU",
+   "name": "KALVISTA PHARMACEUTICALS INC",
+   "current_price": 23.15,
+   "week52_low": 23.15,
+   "week52_high": 23.15
+  },
   "48553T106": {
    "ticker": "BZ",
    "name": "KANZHUN LIMITED",
@@ -14807,12 +15836,26 @@
    "week52_low": 3.85,
    "week52_high": 10.34
   },
+  "48241A105": {
+   "ticker": "KB",
+   "name": "KB FINL GROUP INC",
+   "current_price": 119.37,
+   "week52_low": 77.5,
+   "week52_high": 123.19
+  },
   "48666K109": {
    "ticker": "KBH",
    "name": "KB HOME",
    "current_price": 56.1,
    "week52_low": 45.07,
    "week52_high": 67.97
+  },
+  "48242W106": {
+   "ticker": "KBR",
+   "name": "KBR INC",
+   "current_price": 35.07,
+   "week52_low": 30.06,
+   "week52_high": 51.06
   },
   "48716P108": {
    "ticker": "KRNY",
@@ -14827,6 +15870,13 @@
    "current_price": 15.32,
    "week52_low": 8.27,
    "week52_high": 15.32
+  },
+  "488401100": {
+   "ticker": "KMPR",
+   "name": "KEMPER CORP",
+   "current_price": 28.02,
+   "week52_low": 24.67,
+   "week52_high": 61.73
   },
   "489170100": {
    "ticker": "KMT",
@@ -14883,6 +15933,13 @@
    "current_price": 315.9,
    "week52_low": 158.68,
    "week52_high": 363.67
+  },
+  "493732101": {
+   "ticker": "KFRC",
+   "name": "KFORCE INC",
+   "current_price": 58.56,
+   "week52_low": 25.3,
+   "week52_high": 58.56
   },
   "49427F108": {
    "ticker": "KRC",
@@ -14960,6 +16017,13 @@
    "current_price": 9.65,
    "week52_low": 9.65,
    "week52_high": 15.15
+  },
+  "G52694109": {
+   "ticker": "KNSA",
+   "name": "KINIKSA PHARMACEUTICALS INTL",
+   "current_price": 63.95,
+   "week52_low": 26.33,
+   "week52_high": 64.53
   },
   "496902404": {
    "ticker": "KGC",
@@ -15129,7 +16193,7 @@
    "week52_low": 3.37,
    "week52_high": 6.23
   },
-  "500688106": {
+  "500688AH9": {
    "ticker": "KOS",
    "name": "KOSMOS ENERGY LTD",
    "current_price": 2.24,
@@ -15290,7 +16354,7 @@
    "week52_low": 1.12,
    "week52_high": 4.99
   },
-  "516544103": {
+  "516544AB9": {
    "ticker": "LNTH",
    "name": "LANTHEUS HLDGS INC",
    "current_price": 107.59,
@@ -15430,7 +16494,7 @@
    "week52_low": 101.76,
    "week52_high": 198.34
   },
-  "525558201": {
+  "525558AB8": {
    "ticker": "LMAT",
    "name": "LEMAITRE VASCULAR INC",
    "current_price": 101.63,
@@ -15450,6 +16514,13 @@
    "current_price": 19.23,
    "week52_low": 12.83,
    "week52_high": 21.05
+  },
+  "52603B107": {
+   "ticker": "TREE",
+   "name": "LENDINGTREE INC",
+   "current_price": 46.25,
+   "week52_low": 35.73,
+   "week52_high": 74.53
   },
   "52634L108": {
    "ticker": "LNSR",
@@ -15479,9 +16550,9 @@
    "week52_low": 0.95,
    "week52_high": 11.92
   },
-  "52736R102": {
+  "52736r102": {
    "ticker": "LEVI",
-   "name": "Levi Strauss &amp; Co",
+   "name": "Levi Strauss &amp; Co Cl A",
    "current_price": 24.36,
    "week52_low": 17.91,
    "week52_high": 24.54
@@ -15548,6 +16619,13 @@
    "current_price": 53.79,
    "week52_low": 38.1,
    "week52_high": 107.83
+  },
+  "514766104": {
+   "ticker": "LFCR",
+   "name": "LIFECORE BIOMEDICAL INC",
+   "current_price": 4.68,
+   "week52_low": 3.66,
+   "week52_high": 8.69
   },
   "53216B104": {
    "ticker": "LFMD",
@@ -15675,6 +16753,13 @@
    "week52_low": 14.54,
    "week52_high": 79.94
   },
+  "53635B107": {
+   "ticker": "0P0001HHNX.L",
+   "name": "LIQUIDITY SVCS INC",
+   "current_price": 12510.8,
+   "week52_low": 12030.24,
+   "week52_high": 12510.75
+  },
   "536797103": {
    "ticker": "LAD",
    "name": "LITHIA MTRS INC",
@@ -15717,6 +16802,13 @@
    "week52_low": 0.69,
    "week52_high": 5.85
   },
+  "501889208": {
+   "ticker": "LKQ",
+   "name": "LKQ CORP",
+   "current_price": 25.38,
+   "week52_low": 24.61,
+   "week52_high": 37.12
+  },
   "539439109": {
    "ticker": "LYG",
    "name": "LLOYDS BANKING GROUP PLC",
@@ -15751,6 +16843,13 @@
    "current_price": 3.08,
    "week52_low": 2.44,
    "week52_high": 6.77
+  },
+  "H50430232": {
+   "ticker": "LOGI",
+   "name": "LOGITECH INTL S A",
+   "current_price": 102.83,
+   "week52_low": 85.84,
+   "week52_high": 121.87
   },
   "54738L109": {
    "ticker": "LOVE",
@@ -15822,7 +16921,21 @@
    "week52_low": 102.22,
    "week52_high": 970.7
   },
-  "529043408": {
+  "55024UAD1": {
+   "ticker": "LITE.MX",
+   "name": "LUMENTUM HLDGS INC",
+   "current_price": 12950.0,
+   "week52_low": 1294.0,
+   "week52_high": 16903.61
+  },
+  "G5698W116": {
+   "ticker": "LXFR",
+   "name": "LUXFER HLDGS PLC",
+   "current_price": 16.51,
+   "week52_low": 11.51,
+   "week52_high": 19.08
+  },
+  "529043309": {
    "ticker": "LXP",
    "name": "LXP INDUSTRIAL TRUST",
    "current_price": 58.51,
@@ -15857,7 +16970,7 @@
    "week52_low": 16.14,
    "week52_high": 25.92
   },
-  "55405Y100": {
+  "55405YAD2": {
    "ticker": "MTSI",
    "name": "MACOM TECH SOLUTIONS HLDGS I",
    "current_price": 267.36,
@@ -15892,6 +17005,13 @@
    "week52_low": 298.4,
    "week52_high": 598.91
   },
+  "559166103": {
+   "ticker": "MEGL",
+   "name": "MAGIC SOFTWARE ENTERPRISES",
+   "current_price": 1.17,
+   "week52_low": 0.89,
+   "week52_high": 1.79
+  },
   "559222401": {
    "ticker": "MGA",
    "name": "MAGNA INTL INC",
@@ -15906,7 +17026,7 @@
    "week52_low": 8.75,
    "week52_high": 15.08
   },
-  "55955D100": {
+  "55955DAB6": {
    "ticker": "MGNI",
    "name": "MAGNITE INC",
    "current_price": 19.0,
@@ -16018,7 +17138,7 @@
    "week52_low": 13.63,
    "week52_high": 39.32
   },
-  "565788106": {
+  "565788AF3": {
    "ticker": "MARA",
    "name": "MARA HOLDINGS INC",
    "current_price": 10.69,
@@ -16060,6 +17180,13 @@
    "week52_low": 29.98,
    "week52_high": 65.78
   },
+  "78413P101": {
+   "ticker": "SMHI",
+   "name": "SEACOR MARINE HLDGS INC",
+   "current_price": 7.91,
+   "week52_low": 4.81,
+   "week52_high": 7.91
+  },
   "567908108": {
    "ticker": "HZO",
    "name": "MARINEMAX INC",
@@ -16088,7 +17215,7 @@
    "week52_low": 15.24,
    "week52_high": 26.08
   },
-  "57164Y107": {
+  "57164YAF4": {
    "ticker": "VAC",
    "name": "MARRIOTT VACATIONS WORLDWIDE",
    "current_price": 99.98,
@@ -16207,6 +17334,13 @@
    "week52_low": 14.46,
    "week52_high": 19.92
   },
+  "57777K106": {
+   "ticker": "MXCT",
+   "name": "MAXCYTE INC",
+   "current_price": 1.24,
+   "week52_low": 0.68,
+   "week52_high": 2.25
+  },
   "577933104": {
    "ticker": "MMS",
    "name": "MAXIMUS INC",
@@ -16248,6 +17382,13 @@
    "current_price": 62.92,
    "week52_low": 10.0,
    "week52_high": 62.92
+  },
+  "579780206": {
+   "ticker": "MKC",
+   "name": "McCormick Inc",
+   "current_price": 51.7,
+   "week52_low": 46.35,
+   "week52_high": 72.26
   },
   "58039P305": {
    "ticker": "MUX",
@@ -16312,6 +17453,13 @@
    "week52_low": 4.05,
    "week52_high": 5.76
   },
+  "58468P206": {
+   "ticker": "MNOV",
+   "name": "MEDICINOVA INC",
+   "current_price": 1.35,
+   "week52_low": 1.23,
+   "week52_high": 1.86
+  },
   "58470H101": {
    "ticker": "MED",
    "name": "MEDIFAST INC",
@@ -16339,6 +17487,20 @@
    "current_price": 83.2,
    "week52_low": 73.81,
    "week52_high": 105.33
+  },
+  "G59665102": {
+   "ticker": "MGTX",
+   "name": "MEIRAGTX HLDGS PLC",
+   "current_price": 12.44,
+   "week52_low": 7.0,
+   "week52_high": 13.92
+  },
+  "58733R102": {
+   "ticker": "MELI",
+   "name": "MERCADOLIBRE INC",
+   "current_price": 1813.91,
+   "week52_low": 1546.81,
+   "week52_high": 2472.91
   },
   "587376104": {
    "ticker": "MBWM",
@@ -16382,9 +17544,9 @@
    "week52_low": 61.27,
    "week52_high": 92.97
   },
-  "59001A102": {
+  "59001ABF8": {
    "ticker": "MTH",
-   "name": "Meritage Homes Corp (MTH)",
+   "name": "MERITAGE HOMES CORP",
    "current_price": 74.17,
    "week52_low": 58.76,
    "week52_high": 85.18
@@ -16466,6 +17628,13 @@
    "week52_low": 5.05,
    "week52_high": 5.61
   },
+  "55277P104": {
+   "ticker": "MGEE",
+   "name": "MGE ENERGY INC",
+   "current_price": 81.05,
+   "week52_low": 73.65,
+   "week52_high": 87.74
+  },
   "552848103": {
    "ticker": "MTG",
    "name": "MGIC INVT CORP WIS",
@@ -16487,7 +17656,7 @@
    "week52_low": 31.12,
    "week52_high": 56.16
   },
-  "595017104": {
+  "595017302": {
    "ticker": "MCHP",
    "name": "MICROCHIP TECHNOLOGY INC.",
    "current_price": 80.96,
@@ -16528,6 +17697,13 @@
    "current_price": 133.22,
    "week52_low": 94.6,
    "week52_high": 140.88
+  },
+  "596304204": {
+   "ticker": "0P000073DD.TO",
+   "name": "MIDDLEFIELD BANC CORP",
+   "current_price": 13.58,
+   "week52_low": 13.52,
+   "week52_high": 13.58
   },
   "596680108": {
    "ticker": "MSEX",
@@ -16571,6 +17747,13 @@
    "week52_low": 3.42,
    "week52_high": 7.65
   },
+  "60255C885": {
+   "ticker": "MMQ0.SG",
+   "name": "MIND MEDICINE MINDMED INC",
+   "current_price": 38.8,
+   "week52_low": 4.7,
+   "week52_high": 40.9
+  },
   "603158106": {
    "ticker": "MTX",
    "name": "MINERALS TECHNOLOGIES INC",
@@ -16592,7 +17775,7 @@
    "week52_low": 15.97,
    "week52_high": 29.37
   },
-  "604749101": {
+  "604749AB7": {
    "ticker": "MIRM",
    "name": "MIRUM PHARMACEUTICALS INC",
    "current_price": 118.86,
@@ -16605,6 +17788,13 @@
    "current_price": 13.59,
    "week52_low": 10.22,
    "week52_high": 14.81
+  },
+  "60646V105": {
+   "ticker": "MRX.F",
+   "name": "MISTER CAR WASH INC",
+   "current_price": 1.12,
+   "week52_low": 1.12,
+   "week52_high": 2.0
   },
   "60649T107": {
    "ticker": "MG",
@@ -16634,7 +17824,7 @@
    "week52_low": 5.56,
    "week52_high": 10.48
   },
-  "55306N104": {
+  "55306NAB0": {
    "ticker": "MKSI",
    "name": "MKS INC.",
    "current_price": 324.69,
@@ -16697,6 +17887,13 @@
    "week52_low": 90.07,
    "week52_high": 133.87
   },
+  "M7S64H106": {
+   "ticker": "MNDY",
+   "name": "MONDAY COM LTD",
+   "current_price": 78.69,
+   "week52_low": 58.81,
+   "week52_high": 292.24
+  },
   "609207105": {
    "ticker": "MDLZ",
    "name": "MONDELEZ INTL INC",
@@ -16752,6 +17949,20 @@
    "current_price": 20.93,
    "week52_low": 15.31,
    "week52_high": 31.06
+  },
+  "615394301": {
+   "ticker": "MOG-A",
+   "name": "MOOG INC-CLASS B",
+   "current_price": 393.31,
+   "week52_low": 182.56,
+   "week52_high": 425.36
+  },
+  "617446448": {
+   "ticker": "MS",
+   "name": "MORGAN STANLEY",
+   "current_price": 215.5,
+   "week52_low": 139.09,
+   "week52_high": 223.17
   },
   "617700109": {
    "ticker": "MORN",
@@ -16823,16 +18034,16 @@
    "week52_low": 82.93,
    "week52_high": 124.77
   },
-  "55380K109": {
+  "55380K133": {
    "ticker": "MPTI",
-   "name": "M-TRON INDS INC",
+   "name": "M-TRON INDUSTRIES INC-W/I",
    "current_price": 75.95,
    "week52_low": 40.11,
    "week52_high": 98.61
   },
-  "624756102": {
+  "624758108": {
    "ticker": "MLI",
-   "name": "MUELLER INDS INC",
+   "name": "MUELLER WTR PRODS INC",
    "current_price": 59.13,
    "week52_low": 41.67,
    "week52_high": 70.42
@@ -17082,6 +18293,13 @@
    "week52_low": 7.81,
    "week52_high": 14.13
   },
+  "Y62132108": {
+   "ticker": "NVGS",
+   "name": "NAVIGATOR HLDGS LTD",
+   "current_price": 20.71,
+   "week52_low": 14.4,
+   "week52_high": 23.87
+  },
   "63942X106": {
    "ticker": "NVTS",
    "name": "NAVITAS SEMICONDUCTOR CORP",
@@ -17123,6 +18341,13 @@
    "current_price": 177.71,
    "week52_low": 51.37,
    "week52_high": 286.69
+  },
+  "64031N108": {
+   "ticker": "NNI",
+   "name": "NELNET INC",
+   "current_price": 134.28,
+   "week52_low": 119.63,
+   "week52_high": 141.66
   },
   "640491106": {
    "ticker": "NEOG",
@@ -17208,6 +18433,13 @@
    "week52_low": 20.27,
    "week52_high": 35.18
   },
+  "64115T104": {
+   "ticker": "NTCT",
+   "name": "NETSCOUT SYS INC",
+   "current_price": 41.3,
+   "week52_low": 20.77,
+   "week52_high": 43.68
+  },
   "64119N608": {
    "ticker": "NTSK",
    "name": "NETSKOPE INC",
@@ -17277,6 +18509,13 @@
    "current_price": 0.36,
    "week52_low": 0.34,
    "week52_high": 4.57
+  },
+  "644535106": {
+   "ticker": "PI8.F",
+   "name": "NEW GOLD INC CDA",
+   "current_price": 0.17,
+   "week52_low": 0.17,
+   "week52_high": 0.5
   },
   "646025106": {
    "ticker": "NJR",
@@ -17390,12 +18629,19 @@
    "week52_low": 1.36,
    "week52_high": 2.39
   },
-  "65339F101": {
+  "65339F655": {
    "ticker": "NEE",
    "name": "NEXTERA ENERGY INC",
    "current_price": 88.8,
    "week52_low": 70.4,
    "week52_high": 96.95
+  },
+  "65345N106": {
+   "ticker": "NNAVW",
+   "name": "NEXTNAV INC",
+   "current_price": 5.5,
+   "week52_low": 6.99,
+   "week52_high": 6.99
   },
   "652941105": {
    "ticker": "NXXT",
@@ -17411,6 +18657,13 @@
    "week52_low": 56.21,
    "week52_high": 156.4
   },
+  "M8T80P204": {
+   "ticker": "NEXN",
+   "name": "NEXXEN INTL LTD",
+   "current_price": 10.16,
+   "week52_low": 5.9,
+   "week52_high": 11.01
+  },
   "65342T106": {
    "ticker": "NODK",
    "name": "NI HLDGS INC",
@@ -17424,6 +18677,13 @@
    "current_price": 3.28,
    "week52_low": 3.28,
    "week52_high": 10.16
+  },
+  "653656108": {
+   "ticker": "NICE",
+   "name": "NICE LTD",
+   "current_price": 100.15,
+   "week52_low": 84.68,
+   "week52_high": 162.42
   },
   "65406E102": {
    "ticker": "NIC",
@@ -17628,9 +18888,9 @@
    "week52_low": 11.9,
    "week52_high": 21.13
   },
-  "M7516K103": {
+  "670002AD6": {
    "ticker": "NVAX",
-   "name": "NOVA LTD",
+   "name": "NOVAVAX INC",
    "current_price": 8.21,
    "week52_low": 6.47,
    "week52_high": 10.97
@@ -17649,6 +18909,20 @@
    "week52_low": 5.18,
    "week52_high": 13.32
   },
+  "67000B203": {
+   "ticker": "NOVT",
+   "name": "NOVANTA INC",
+   "current_price": 148.71,
+   "week52_low": 99.96,
+   "week52_high": 161.72
+  },
+  "66987v109": {
+   "ticker": "NVS",
+   "name": "NOVARTIS AG AMERICAN DEPOSITORY SHARES",
+   "current_price": 153.76,
+   "week52_low": 114.25,
+   "week52_high": 168.62
+  },
   "G6674U108": {
    "ticker": "NVCR",
    "name": "NOVOCURE LTD",
@@ -17662,6 +18936,13 @@
    "current_price": 14.34,
    "week52_low": 8.43,
    "week52_high": 15.9
+  },
+  "629377508": {
+   "ticker": "NRG",
+   "name": "NRG ENERGY INC",
+   "current_price": 129.11,
+   "week52_low": 125.47,
+   "week52_high": 179.18
   },
   "67018T105": {
    "ticker": "NUS",
@@ -17788,6 +19069,13 @@
    "current_price": 10.6,
    "week52_low": 9.38,
    "week52_high": 10.74
+  },
+  "670972108": {
+   "ticker": "FPCCX",
+   "name": "NUVEEN PA QLTY MUNI INC",
+   "current_price": 10.18,
+   "week52_low": 9.66,
+   "week52_high": 10.39
   },
   "67073B106": {
    "ticker": "JPC",
@@ -17922,6 +19210,13 @@
    "week52_low": 31.61,
    "week52_high": 50.13
   },
+  "67098H104": {
+   "ticker": "OI",
+   "name": "O-I GLASS INC",
+   "current_price": 9.1,
+   "week52_low": 7.91,
+   "week52_high": 16.63
+  },
   "678026105": {
    "ticker": "OIS",
    "name": "OIL STS INTL INC",
@@ -17943,7 +19238,7 @@
    "week52_low": 41.11,
    "week52_high": 163.39
   },
-  "679295105": {
+  "679295AF2": {
    "ticker": "OKTA",
    "name": "OKTA INC",
    "current_price": 149.35,
@@ -17985,6 +19280,13 @@
    "week52_low": 64.9,
    "week52_high": 138.04
   },
+  "68162K106": {
+   "ticker": "ROCLF",
+   "name": "OLYMPIC STEEL INC",
+   "current_price": 0.0,
+   "week52_low": 0.0,
+   "week52_high": 0.0
+  },
   "68170A108": {
    "ticker": "OMDA",
    "name": "OMADA HEALTH INC",
@@ -18020,7 +19322,7 @@
    "week52_low": 1.38,
    "week52_high": 2.7
   },
-  "68213N109": {
+  "68213NAF6": {
    "ticker": "OMCL",
    "name": "OMNICELL COM",
    "current_price": 45.87,
@@ -18041,7 +19343,7 @@
    "week52_low": 0.12,
    "week52_high": 0.38
   },
-  "682189105": {
+  "682189AU9": {
    "ticker": "ON",
    "name": "ON SEMICONDUCTOR CORP",
    "current_price": 87.37,
@@ -18146,6 +19448,13 @@
    "week52_low": 1.2,
    "week52_high": 3.14
   },
+  "683715106": {
+   "ticker": "OTEX",
+   "name": "OPEN TEXT CORP",
+   "current_price": 23.27,
+   "week52_low": 20.69,
+   "week52_high": 39.35
+  },
   "683712103": {
    "ticker": "OPEN",
    "name": "OPENDOOR TECHNOLOGIES INC",
@@ -18159,6 +19468,13 @@
    "current_price": 39.46,
    "week52_low": 24.33,
    "week52_high": 42.9
+  },
+  "68375NAG8": {
+   "ticker": "OPK",
+   "name": "OPKO HEALTH INC",
+   "current_price": 1.19,
+   "week52_low": 1.1,
+   "week52_high": 1.56
   },
   "68376D104": {
    "ticker": "OPRT",
@@ -18209,9 +19525,9 @@
    "week52_low": 27.4,
    "week52_high": 47.39
   },
-  "68389X105": {
+  "68389X204": {
    "ticker": "ORCL",
-   "name": "Oracle Corp",
+   "name": "ORACLE CORP",
    "current_price": 126.41,
    "week52_low": 126.41,
    "week52_high": 308.66
@@ -18222,6 +19538,13 @@
    "current_price": 37.56,
    "week52_low": 23.5,
    "week52_high": 37.65
+  },
+  "68554V108": {
+   "ticker": "OSUR",
+   "name": "ORASURE TECHNOLOGIES INC",
+   "current_price": 3.87,
+   "week52_low": 2.27,
+   "week52_high": 4.46
   },
   "68571X301": {
    "ticker": "ORC",
@@ -18258,13 +19581,6 @@
    "week52_low": 32.84,
    "week52_high": 52.27
   },
-  "68622D106": {
-   "ticker": "ORGNW",
-   "name": "ORIGIN MATERIALS INC",
-   "current_price": 0.0,
-   "week52_low": 0.0,
-   "week52_high": 0.0
-  },
   "68628V308": {
    "ticker": "ORN",
    "name": "ORION GROUP HLDGS INC",
@@ -18285,6 +19601,13 @@
    "current_price": 38.4,
    "week52_low": 22.35,
    "week52_high": 40.3
+  },
+  "686688AB8": {
+   "ticker": "ORA",
+   "name": "ORMAT TECHNOLOGIES INC",
+   "current_price": 104.7,
+   "week52_low": 86.68,
+   "week52_high": 140.0
   },
   "687380105": {
    "ticker": "ORRF",
@@ -18321,7 +19644,7 @@
    "week52_low": 120.39,
    "week52_high": 175.52
   },
-  "671044105": {
+  "671044AF2": {
    "ticker": "OSIS",
    "name": "OSI SYSTEMS INC",
    "current_price": 212.66,
@@ -18468,7 +19791,7 @@
    "week52_low": 1.12,
    "week52_high": 2.58
   },
-  "695127100": {
+  "695127AJ9": {
    "ticker": "PCRX",
    "name": "PACIRA BIOSCIENCES INC",
    "current_price": 25.61,
@@ -18496,7 +19819,7 @@
    "week52_low": 10.64,
    "week52_high": 42.3
   },
-  "69553P100": {
+  "69553PAD2": {
    "ticker": "PD",
    "name": "PAGERDUTY INC",
    "current_price": 10.3,
@@ -18587,7 +19910,7 @@
    "week52_low": 27.3,
    "week52_high": 76.25
   },
-  "698884103": {
+  "698884AH6": {
    "ticker": "PAR",
    "name": "PAR TECHNOLOGY CORP",
    "current_price": 16.35,
@@ -18643,7 +19966,7 @@
    "week52_low": 15.56,
    "week52_high": 39.06
   },
-  "70202L102": {
+  "70202LAD4": {
    "ticker": "PSN",
    "name": "PARSONS CORP DEL",
    "current_price": 56.05,
@@ -18664,7 +19987,7 @@
    "week52_low": 9.42,
    "week52_high": 14.8
   },
-  "703343103": {
+  "703343AG8": {
    "ticker": "PATK",
    "name": "PATRICK INDS INC",
    "current_price": 88.09,
@@ -18741,6 +20064,13 @@
    "week52_low": 21.68,
    "week52_high": 62.75
   },
+  "69318J100": {
+   "ticker": "CNXN",
+   "name": "PC CONNECTION INC",
+   "current_price": 78.97,
+   "week52_low": 56.26,
+   "week52_high": 78.97
+  },
   "69320M109": {
    "ticker": "PCB",
    "name": "PCB BANCORP",
@@ -18762,7 +20092,7 @@
    "week52_low": 0.54,
    "week52_high": 1.34
   },
-  "704551100": {
+  "704551AD2": {
    "ticker": "BTU",
    "name": "PEABODY ENGR CORP",
    "current_price": 22.44,
@@ -18783,7 +20113,7 @@
    "week52_low": 12.26,
    "week52_high": 16.92
   },
-  "70509V100": {
+  "70509V704": {
    "ticker": "PEB",
    "name": "PEBBLEBROOK HOTEL TR",
    "current_price": 19.01,
@@ -18804,21 +20134,21 @@
    "week52_low": 30.09,
    "week52_high": 66.27
   },
-  "70614W100": {
+  "70614WAB6": {
    "ticker": "PTON",
    "name": "PELOTON INTERACTIVE INC",
    "current_price": 6.12,
    "week52_low": 3.71,
    "week52_high": 8.58
   },
-  "69351T106": {
-   "ticker": "PPL",
-   "name": "PPL CORP",
-   "current_price": 35.85,
-   "week52_low": 33.86,
-   "week52_high": 39.65
+  "706327103": {
+   "ticker": "PBA",
+   "name": "PEMBINA PIPELINE CORP",
+   "current_price": 51.29,
+   "week52_low": 35.5,
+   "week52_high": 51.29
   },
-  "706915105": {
+  "83205YAE4": {
    "ticker": "PENG",
    "name": "PENGUIN SOLUTIONS INC",
    "current_price": 60.41,
@@ -18832,19 +20162,19 @@
    "week52_low": 22.07,
    "week52_high": 41.95
   },
-  "70932M107": {
-   "ticker": "PFSI",
-   "name": "PENNYMAC FINL SVCS INC NEW",
-   "current_price": 85.29,
-   "week52_low": 81.24,
-   "week52_high": 159.46
-  },
   "70931T103": {
    "ticker": "PMT",
    "name": "PENNYMAC MTG INVT TR",
    "current_price": 9.9,
    "week52_low": 9.9,
    "week52_high": 13.81
+  },
+  "70932M107": {
+   "ticker": "PFSI",
+   "name": "PENNYMAC FINL SVCS INC NEW",
+   "current_price": 85.29,
+   "week52_low": 81.24,
+   "week52_high": 159.46
   },
   "70959W103": {
    "ticker": "PAG",
@@ -19133,9 +20463,9 @@
    "week52_low": 7.11,
    "week52_high": 7.96
   },
-  "723484101": {
+  "723484AK7": {
    "ticker": "PNW",
-   "name": "PINNACLE WEST CAP CORP",
+   "name": "PINNACLE WEST CAPITAL",
    "current_price": 107.73,
    "week52_low": 86.52,
    "week52_high": 109.37
@@ -19153,6 +20483,13 @@
    "current_price": 17.17,
    "week52_low": 12.11,
    "week52_high": 17.29
+  },
+  "724078209": {
+   "ticker": "PIPR",
+   "name": "PIPER SANDLER COMPANIES",
+   "current_price": 76.32,
+   "week52_low": 70.57,
+   "week52_high": 94.07
   },
   "724479100": {
    "ticker": "PBI",
@@ -19287,6 +20624,13 @@
    "week52_low": 86.28,
    "week52_high": 114.61
   },
+  "737446AT1": {
+   "ticker": "6178.T",
+   "name": "POST HLDGS INC",
+   "current_price": 2329.0,
+   "week52_low": 1350.0,
+   "week52_high": 2329.0
+  },
   "73757R102": {
    "ticker": "PSTL",
    "name": "POSTAL REALTY TRUST INC",
@@ -19300,6 +20644,13 @@
    "current_price": 232.79,
    "week52_low": 75.89,
    "week52_high": 309.39
+  },
+  "739276103": {
+   "ticker": "POWI",
+   "name": "POWER INTEGRATIONS INC",
+   "current_price": 70.45,
+   "week52_low": 33.06,
+   "week52_high": 87.11
   },
   "73933G202": {
    "ticker": "PSIX",
@@ -19321,6 +20672,13 @@
    "current_price": 117.36,
    "week52_low": 96.25,
    "week52_high": 131.34
+  },
+  "69351T866": {
+   "ticker": "PPL",
+   "name": "PPL CORP",
+   "current_price": 35.85,
+   "week52_low": 33.86,
+   "week52_high": 39.65
   },
   "69354N106": {
    "ticker": "PRAA",
@@ -19363,6 +20721,13 @@
    "current_price": 327.43,
    "week52_low": 141.24,
    "week52_high": 395.66
+  },
+  "74112D101": {
+   "ticker": "4290.T",
+   "name": "PRESTIGE CONSMR HEALTHCARE",
+   "current_price": 672.0,
+   "week52_low": 609.0,
+   "week52_high": 758.0
   },
   "74255Y888": {
    "ticker": "PREF",
@@ -19427,6 +20792,13 @@
    "week52_low": 29.93,
    "week52_high": 38.98
   },
+  "74251V102": {
+   "ticker": "PFG",
+   "name": "PRINCIPAL FINANCIAL GROUP IN",
+   "current_price": 113.95,
+   "week52_low": 75.53,
+   "week52_high": 113.95
+  },
   "74276R102": {
    "ticker": "PRVA",
    "name": "PRIVIA HEALTH GROUP INC",
@@ -19490,7 +20862,7 @@
    "week52_low": 27.34,
    "week52_high": 46.42
   },
-  "743312100": {
+  "743312AD2": {
    "ticker": "PRGS",
    "name": "PROGRESS SOFTWARE CORP",
    "current_price": 40.55,
@@ -19623,12 +20995,26 @@
    "week52_low": 15.16,
    "week52_high": 17.25
   },
+  "74386T105": {
+   "ticker": "09N0.F",
+   "name": "PROVIDENT FINL SVCS INC",
+   "current_price": 0.2,
+   "week52_low": 0.05,
+   "week52_high": 0.37
+  },
   "744320102": {
    "ticker": "PRU",
    "name": "PRUDENTIAL FINL INC",
    "current_price": 119.07,
    "week52_low": 92.0,
    "week52_high": 119.07
+  },
+  "74435K204": {
+   "ticker": "K6S.SI",
+   "name": "PRUDENTIAL PLC",
+   "current_price": 14.2,
+   "week52_low": 9.04,
+   "week52_high": 15.8
   },
   "69370C100": {
    "ticker": "PTC",
@@ -19637,7 +21023,7 @@
    "week52_low": 113.68,
    "week52_high": 215.05
   },
-  "69366J200": {
+  "69366JAD3": {
    "ticker": "PTCT",
    "name": "PTC THERAPEUTICS INC",
    "current_price": 78.59,
@@ -19707,7 +21093,7 @@
    "week52_low": 54.51,
    "week52_high": 98.7
   },
-  "74623V103": {
+  "74623VAB9": {
    "ticker": "PCT",
    "name": "PURECYCLE TECHNOLOGIES INC",
    "current_price": 6.04,
@@ -19868,9 +21254,9 @@
    "week52_low": 11.25,
    "week52_high": 16.79
   },
-  "82846H405": {
+  "82846H504": {
    "ticker": "QXO",
-   "name": "QXO, Inc.",
+   "name": "QXO INC",
    "current_price": 14.4,
    "week52_low": 14.4,
    "week52_high": 27.07
@@ -19917,6 +21303,13 @@
    "week52_low": 11.66,
    "week52_high": 47.2
   },
+  "750917106": {
+   "ticker": "RMB.F",
+   "name": "RAMBUS INC DEL",
+   "current_price": 81.48,
+   "week52_low": 54.56,
+   "week52_high": 141.6
+  },
   "75281A109": {
    "ticker": "RRC",
    "name": "RANGE RES CORP",
@@ -19938,7 +21331,7 @@
    "week52_low": 3.27,
    "week52_high": 7.34
   },
-  "753422104": {
+  "753422AH7": {
    "ticker": "RPD",
    "name": "RAPID7 INC",
    "current_price": 12.2,
@@ -20029,7 +21422,7 @@
    "week52_low": 1.62,
    "week52_high": 5.38
   },
-  "88339P101": {
+  "88339PAD3": {
    "ticker": "REAL",
    "name": "THE REALREAL INC",
    "current_price": 11.21,
@@ -20197,7 +21590,7 @@
    "week52_low": 2.58,
    "week52_high": 5.92
   },
-  "759916109": {
+  "759916AD1": {
    "ticker": "RGEN",
    "name": "REPLIGEN CORP",
    "current_price": 147.25,
@@ -20210,6 +21603,13 @@
    "current_price": 10.23,
    "week52_low": 2.17,
    "week52_high": 12.09
+  },
+  "700215304": {
+   "ticker": "TRAK",
+   "name": "REPOSITRAK INC",
+   "current_price": 8.81,
+   "week52_low": 7.15,
+   "week52_high": 18.4
   },
   "760281204": {
    "ticker": "RBCAA",
@@ -20239,12 +21639,33 @@
    "week52_low": 24.17,
    "week52_high": 44.5
   },
+  "761152107": {
+   "ticker": "RMD",
+   "name": "RESMED INC",
+   "current_price": 198.99,
+   "week52_low": 188.63,
+   "week52_high": 293.73
+  },
   "76134H101": {
    "ticker": "RHLD",
    "name": "RESOLUTE HLDGS MGMT INC",
    "current_price": 133.27,
    "week52_low": 39.71,
    "week52_high": 217.61
+  },
+  "76122Q105": {
+   "ticker": "RGP",
+   "name": "RESOURCES CONNECTION INC",
+   "current_price": 4.64,
+   "week52_low": 3.61,
+   "week52_high": 5.79
+  },
+  "76156B107": {
+   "ticker": "RVLV",
+   "name": "REVOLVE GROUP INC",
+   "current_price": 24.88,
+   "week52_low": 18.61,
+   "week52_high": 30.8
   },
   "76155X100": {
    "ticker": "RVMD",
@@ -20253,12 +21674,12 @@
    "week52_low": 35.0,
    "week52_high": 189.24
   },
-  "76156B107": {
-   "ticker": "RVLV",
-   "name": "REVOLVE GROUP INC",
-   "current_price": 24.88,
-   "week52_low": 18.61,
-   "week52_high": 30.8
+  "714046109": {
+   "ticker": "RVTY",
+   "name": "REVVITY INC",
+   "current_price": 110.15,
+   "week52_low": 82.87,
+   "week52_high": 116.73
   },
   "761624105": {
    "ticker": "REX",
@@ -20344,6 +21765,13 @@
    "week52_low": 1.6,
    "week52_high": 6.18
   },
+  "766559702": {
+   "ticker": "RIGL",
+   "name": "RIGEL PHARMACEUTICALS INC",
+   "current_price": 40.54,
+   "week52_low": 18.8,
+   "week52_high": 50.49
+  },
   "76655K103": {
    "ticker": "RGTI",
    "name": "RIGETTI COMPUTING INC",
@@ -20365,7 +21793,14 @@
    "week52_low": 3.03,
    "week52_high": 4.85
   },
-  "76680R206": {
+  "76680V108": {
+   "ticker": "REI",
+   "name": "RING ENERGY INC",
+   "current_price": 1.23,
+   "week52_low": 0.73,
+   "week52_high": 1.82
+  },
+  "76680RAH0": {
    "ticker": "RNG",
    "name": "RINGCENTRAL INC",
    "current_price": 41.32,
@@ -20400,14 +21835,14 @@
    "week52_low": 4.82,
    "week52_high": 5.98
   },
-  "76954A103": {
+  "76954AAD5": {
    "ticker": "RIVN",
    "name": "RIVIAN AUTOMOTIVE INC",
    "current_price": 17.45,
    "week52_low": 11.79,
    "week52_high": 22.45
   },
-  "74965L101": {
+  "74965L200": {
    "ticker": "RLJ",
    "name": "RLJ LODGING TR",
    "current_price": 11.91,
@@ -20463,6 +21898,13 @@
    "week52_low": 24.36,
    "week52_high": 28.86
   },
+  "773122106": {
+   "ticker": "RKLB",
+   "name": "Rocket Lab",
+   "current_price": 67.62,
+   "week52_low": 40.3,
+   "week52_high": 143.48
+  },
   "77313F106": {
    "ticker": "RCKT",
    "name": "ROCKET PHARMACEUTICALS INC",
@@ -20476,6 +21918,20 @@
    "current_price": 40.94,
    "week52_low": 22.96,
    "week52_high": 45.2
+  },
+  "775109200": {
+   "ticker": "RCI",
+   "name": "ROGERS COMMUNICATIONS INC",
+   "current_price": 34.66,
+   "week52_low": 31.62,
+   "week52_high": 40.23
+  },
+  "775133101": {
+   "ticker": "ROG",
+   "name": "Rogers Corp.",
+   "current_price": 132.24,
+   "week52_low": 65.28,
+   "week52_high": 162.68
   },
   "77543R102": {
    "ticker": "ROKU",
@@ -20575,13 +22031,6 @@
    "week52_low": 4.71,
    "week52_high": 9.73
   },
-  "86771W105": {
-   "ticker": "RUN",
-   "name": "SUNRUN INC",
-   "current_price": 11.85,
-   "week52_low": 9.85,
-   "week52_high": 20.85
-  },
   "781846209": {
    "ticker": "RUSHA",
    "name": "RUSH ENTERPRISES INC",
@@ -20666,12 +22115,12 @@
    "week52_low": 3.92,
    "week52_high": 31.69
   },
-  "73245B107": {
-   "ticker": "SBC",
-   "name": "SBC MED GROUP HLDGS INC",
-   "current_price": 3.08,
-   "week52_low": 2.87,
-   "week52_high": 5.65
+  "78573L106": {
+   "ticker": "SBRA",
+   "name": "SABRA HEALTH CARE REIT INC",
+   "current_price": 20.11,
+   "week52_low": 17.74,
+   "week52_high": 20.75
   },
   "78573M104": {
    "ticker": "SABR",
@@ -20715,6 +22164,13 @@
    "week52_low": 151.78,
    "week52_high": 269.11
   },
+  "79546E104": {
+   "ticker": "SBH",
+   "name": "SALLY BEAUTY HLDGS INC",
+   "current_price": 14.88,
+   "week52_low": 9.65,
+   "week52_high": 16.6
+  },
   "79589L106": {
    "ticker": "IOT",
    "name": "SAMSARA INC",
@@ -20735,6 +22191,13 @@
    "current_price": 1354.82,
    "week52_low": 41.33,
    "week52_high": 2184.75
+  },
+  "800677106": {
+   "ticker": "SGMOQ",
+   "name": "SANGAMO THERAPEUTICS INC",
+   "current_price": 0.07,
+   "week52_low": 0.05,
+   "week52_high": 0.68
   },
   "801056102": {
    "ticker": "SANM",
@@ -20764,7 +22227,7 @@
    "week52_low": 155.09,
    "week52_high": 305.97
   },
-  "803607100": {
+  "803607AD2": {
    "ticker": "SRPT",
    "name": "SAREPTA THERAPEUTICS INC",
    "current_price": 17.22,
@@ -20784,6 +22247,13 @@
    "current_price": 36.65,
    "week52_low": 29.61,
    "week52_high": 37.88
+  },
+  "805111101": {
+   "ticker": "SVRA",
+   "name": "SAVARA INC",
+   "current_price": 5.52,
+   "week52_low": 2.26,
+   "week52_high": 6.92
   },
   "80517M109": {
    "ticker": "SVV",
@@ -20960,6 +22430,13 @@
    "week52_low": 43.55,
    "week52_high": 84.41
   },
+  "811292200": {
+   "ticker": "SCYX",
+   "name": "SCYNEXIS INC",
+   "current_price": 4.27,
+   "week52_low": 3.85,
+   "week52_high": 8.96
+  },
   "811543107": {
    "ticker": "SEB",
    "name": "Seaboard Corp",
@@ -20967,12 +22444,12 @@
    "week52_low": 3062.57,
    "week52_high": 5906.78
   },
-  "78413P101": {
-   "ticker": "SMHI",
-   "name": "SEACOR MARINE HLDGS INC",
-   "current_price": 7.91,
-   "week52_low": 4.81,
-   "week52_high": 7.91
+  "811707801": {
+   "ticker": "SBCF",
+   "name": "SEACOAST BKG CORP FLA",
+   "current_price": 33.89,
+   "week52_low": 27.58,
+   "week52_high": 35.09
   },
   "G7997W102": {
    "ticker": "SDRL",
@@ -20980,6 +22457,13 @@
    "current_price": 43.1,
    "week52_low": 27.8,
    "week52_high": 52.7
+  },
+  "G7997R103": {
+   "ticker": "STX",
+   "name": "SEAGATE TECHNOLOGY HLDNGS PL",
+   "current_price": 787.66,
+   "week52_low": 149.07,
+   "week52_high": 1070.23
   },
   "81211K100": {
    "ticker": "SDA",
@@ -20994,6 +22478,13 @@
    "current_price": 9.81,
    "week52_low": 7.55,
    "week52_high": 9.81
+  },
+  "81619Q105": {
+   "ticker": "^DJUMECUP",
+   "name": "SELECT MED HLDGS CORP",
+   "current_price": 3602.52,
+   "week52_low": 3602.52,
+   "week52_high": 3602.52
   },
   "81617J301": {
    "ticker": "WTTR",
@@ -21030,7 +22521,7 @@
    "week52_low": 78.25,
    "week52_high": 99.2
   },
-  "816850101": {
+  "816850AF8": {
    "ticker": "SMTC",
    "name": "SEMTECH CORP",
    "current_price": 124.96,
@@ -21050,6 +22541,13 @@
    "current_price": 37.76,
    "week52_low": 24.6,
    "week52_high": 44.25
+  },
+  "81725T100": {
+   "ticker": "SXT",
+   "name": "SENSIENT TECHNOLOGIES CORP",
+   "current_price": 109.05,
+   "week52_low": 82.96,
+   "week52_high": 124.49
   },
   "81728J109": {
    "ticker": "SRTS",
@@ -21436,6 +22934,13 @@
    "week52_low": 81.25,
    "week52_high": 121.4
   },
+  "83088M102": {
+   "ticker": "SWKS",
+   "name": "SKYWORKS SOLUTIONS INC",
+   "current_price": 59.35,
+   "week52_low": 53.65,
+   "week52_high": 82.42
+  },
   "78471E105": {
    "ticker": "SKYX",
    "name": "SKYX PLATFORMS CORP",
@@ -21456,6 +22961,13 @@
    "current_price": 46.99,
    "week52_low": 31.72,
    "week52_high": 57.28
+  },
+  "83125X103": {
+   "ticker": "SL2.F",
+   "name": "SLEEP NUMBER CORP",
+   "current_price": 0.13,
+   "week52_low": 0.13,
+   "week52_high": 0.13
   },
   "831349105": {
    "ticker": "SLDE",
@@ -21506,6 +23018,13 @@
    "week52_low": 29.54,
    "week52_high": 38.09
   },
+  "831754106": {
+   "ticker": "0P0000K7VE.L",
+   "name": "SMITH &amp; WESSON BRANDS INC",
+   "current_price": 2.66,
+   "week52_low": 2.41,
+   "week52_high": 2.69
+  },
   "831865209": {
    "ticker": "AOS",
    "name": "SMITH A O CORP",
@@ -21527,7 +23046,14 @@
    "week52_low": 26.25,
    "week52_high": 43.17
   },
-  "83304A106": {
+  "G8267P108": {
+   "ticker": "SW",
+   "name": "Smurfit WestRock Public Limited Company",
+   "current_price": 44.3,
+   "week52_low": 33.78,
+   "week52_high": 51.56
+  },
+  "83304AAH9": {
    "ticker": "SNAP",
    "name": "SNAP INC",
    "current_price": 4.53,
@@ -21541,7 +23067,7 @@
    "week52_low": 317.79,
    "week52_high": 412.09
   },
-  "833445109": {
+  "833445AD1": {
    "ticker": "SNOW",
    "name": "SNOWFLAKE INC",
    "current_price": 268.9,
@@ -21562,7 +23088,7 @@
    "week52_low": 24.94,
    "week52_high": 76.35
   },
-  "83418M103": {
+  "83419XAA6": {
    "ticker": "SEI",
    "name": "SOLARIS ENERGY INFRAS INC",
    "current_price": 60.28,
@@ -21660,7 +23186,7 @@
    "week52_low": 36.01,
    "week52_high": 45.96
   },
-  "842587107": {
+  "842587842": {
    "ticker": "SO",
    "name": "SOUTHERN CO",
    "current_price": 95.3,
@@ -21723,12 +23249,12 @@
    "week52_low": 43.58,
    "week52_high": 51.47
   },
-  "97717W505": {
-   "ticker": "DON",
-   "name": "WISDOMTREE TR",
-   "current_price": 57.34,
-   "week52_low": 50.02,
-   "week52_high": 57.34
+  "78467X109": {
+   "ticker": "DIA",
+   "name": "State Street SPDR Dow Jones Industrial Average ETF Trust",
+   "current_price": 520.81,
+   "week52_low": 435.72,
+   "week52_high": 527.88
   },
   "98149E303": {
    "ticker": "GLDM",
@@ -21736,6 +23262,13 @@
    "current_price": 79.45,
    "week52_low": 66.09,
    "week52_high": 104.14
+  },
+  "78463V107": {
+   "ticker": "GLD.MX",
+   "name": "SPDR GOLD TR",
+   "current_price": 6458.0,
+   "week52_low": 5709.0,
+   "week52_high": 8301.6
   },
   "78463X848": {
    "ticker": "CWI",
@@ -21765,9 +23298,9 @@
    "week52_low": 69.15,
    "week52_high": 86.66
   },
-  "78462F103": {
+  "78462f103": {
    "ticker": "SPY",
-   "name": "STATE STR SPDR S&amp;P 500 ETF T",
+   "name": "SPDR S&amp;P 500",
    "current_price": 743.29,
    "week52_low": 621.72,
    "week52_high": 756.48
@@ -21793,14 +23326,14 @@
    "week52_low": 567.09,
    "week52_high": 695.29
   },
-  "84790A105": {
+  "84762LAZ8": {
    "ticker": "SPB",
-   "name": "SPECTRUM BRANDS HOLDINGS INC",
+   "name": "SPECTRUM BRANDS INC",
    "current_price": 88.69,
    "week52_low": 50.35,
    "week52_high": 88.69
   },
-  "55826T102": {
+  "55826TAB8": {
    "ticker": "SPHR",
    "name": "SPHERE ENTERTAINMENT CO",
    "current_price": 142.62,
@@ -21835,12 +23368,33 @@
    "week52_low": 12.49,
    "week52_high": 31.63
   },
+  "84921RAB6": {
+   "ticker": "SPOT",
+   "name": "SPOTIFY USA INC",
+   "current_price": 478.14,
+   "week52_low": 417.83,
+   "week52_high": 734.92
+  },
   "85208T107": {
    "ticker": "CXM",
    "name": "SPRINKLR INC",
    "current_price": 5.83,
    "week52_low": 5.02,
    "week52_high": 9.21
+  },
+  "85208R101": {
+   "ticker": "CEF",
+   "name": "SPROTT PHYSICAL GOLD AND SIL",
+   "current_price": 39.48,
+   "week52_low": 30.67,
+   "week52_high": 57.04
+  },
+  "85207K107": {
+   "ticker": "PSLV",
+   "name": "SPROTT PHYSICAL SILVER TRUST",
+   "current_price": 18.04,
+   "week52_low": 12.52,
+   "week52_high": 33.22
   },
   "85209W109": {
    "ticker": "SPT",
@@ -22346,12 +23900,33 @@
    "week52_low": 39.54,
    "week52_high": 76.27
   },
+  "85916J409": {
+   "ticker": "STXS",
+   "name": "STEREOTAXIS INC",
+   "current_price": 1.55,
+   "week52_low": 1.55,
+   "week52_high": 3.14
+  },
   "G8473T100": {
    "ticker": "STE",
    "name": "STERIS PLC",
    "current_price": 217.84,
    "week52_low": 202.61,
    "week52_high": 268.65
+  },
+  "859241101": {
+   "ticker": "STRL",
+   "name": "STERLING INFRASTRUCTURE INC",
+   "current_price": 638.56,
+   "week52_low": 250.95,
+   "week52_high": 882.43
+  },
+  "T9224W109": {
+   "ticker": "STVN",
+   "name": "STEVANATO GROUP S P A",
+   "current_price": 19.17,
+   "week52_low": 13.43,
+   "week52_high": 26.8
   },
   "556269108": {
    "ticker": "SHOO",
@@ -22528,6 +24103,13 @@
    "week52_low": 118.46,
    "week52_high": 136.71
   },
+  "866796105": {
+   "ticker": "SLF",
+   "name": "SUN LIFE FINANCIAL INC.",
+   "current_price": 81.78,
+   "week52_low": 56.54,
+   "week52_high": 81.78
+  },
   "86722A103": {
    "ticker": "SXC",
    "name": "SUNCOKE ENERGY INC",
@@ -22570,6 +24152,13 @@
    "week52_low": 7.53,
    "week52_high": 11.27
   },
+  "86771WAD7": {
+   "ticker": "RUN",
+   "name": "SUNRUN INC",
+   "current_price": 11.85,
+   "week52_low": 9.85,
+   "week52_high": 20.85
+  },
   "867892101": {
    "ticker": "SHO",
    "name": "Sunstone Hotel Investors, Inc.",
@@ -22584,7 +24173,7 @@
    "week52_low": 8.96,
    "week52_high": 14.89
   },
-  "86800U302": {
+  "86800UAD6": {
    "ticker": "SMCI",
    "name": "SUPER MICRO COMPUTER INC",
    "current_price": 24.18,
@@ -22633,7 +24222,7 @@
    "week52_low": 41.24,
    "week52_high": 83.77
   },
-  "87157D109": {
+  "87157DAJ8": {
    "ticker": "SYNA",
    "name": "SYNAPTICS INC",
    "current_price": 114.05,
@@ -22738,7 +24327,7 @@
    "week52_low": 7.82,
    "week52_high": 16.57
   },
-  "875372203": {
+  "875372AD6": {
    "ticker": "TNDM",
    "name": "TANDEM DIABETES CARE INC",
    "current_price": 17.08,
@@ -22822,6 +24411,13 @@
    "week52_low": 73.25,
    "week52_high": 89.04
   },
+  "87162W100": {
+   "ticker": "SNX",
+   "name": "TD SYNNEX CORPORATION",
+   "current_price": 242.62,
+   "week52_low": 140.85,
+   "week52_high": 284.56
+  },
   "G87052109": {
    "ticker": "TEL",
    "name": "TE CONNECTIVITY PLC",
@@ -22842,6 +24438,13 @@
    "current_price": 3.72,
    "week52_low": 3.51,
    "week52_high": 8.57
+  },
+  "878742204": {
+   "ticker": "TECK",
+   "name": "Teck Resources Ltd., Class B",
+   "current_price": 55.05,
+   "week52_low": 31.61,
+   "week52_high": 66.16
   },
   "G87264100": {
    "ticker": "TGLS",
@@ -22913,6 +24516,13 @@
    "week52_low": 3.81,
    "week52_high": 5.63
   },
+  "715684106": {
+   "ticker": "TLK",
+   "name": "TELEKOMUNIKASI IND",
+   "current_price": 14.62,
+   "week52_low": 13.89,
+   "week52_high": 22.45
+  },
   "87975F104": {
    "ticker": "TELO",
    "name": "TELOMIR PHARMACEUTICALS INC",
@@ -22926,6 +24536,13 @@
    "current_price": 4.73,
    "week52_low": 2.38,
    "week52_high": 7.41
+  },
+  "87971M103": {
+   "ticker": "T",
+   "name": "TELUS CORPORATION",
+   "current_price": 21.81,
+   "week52_low": 20.58,
+   "week52_high": 29.59
   },
   "88023B103": {
    "ticker": "TEM",
@@ -22962,6 +24579,13 @@
    "week52_low": 153.02,
    "week52_high": 239.39
   },
+  "880345103": {
+   "ticker": "TNC",
+   "name": "TENNANT CO",
+   "current_price": 86.11,
+   "week52_low": 61.03,
+   "week52_high": 91.15
+  },
   "88076W103": {
    "ticker": "TDC",
    "name": "TERADATA CORP DEL",
@@ -22997,7 +24621,7 @@
    "week52_low": 53.77,
    "week52_high": 75.06
   },
-  "88162G103": {
+  "88162GAB9": {
    "ticker": "TTEK",
    "name": "TETRA TECH INC NEW",
    "current_price": 31.59,
@@ -23017,6 +24641,13 @@
    "current_price": 32.03,
    "week52_low": 15.38,
    "week52_high": 35.73
+  },
+  "88165K200": {
+   "ticker": "TVGN",
+   "name": "TEVOGEN BIO HLDGS INC",
+   "current_price": 4.21,
+   "week52_low": 4.21,
+   "week52_high": 61.5
   },
   "88224Q107": {
    "ticker": "TCBI",
@@ -23088,12 +24719,26 @@
    "week52_low": 9.35,
    "week52_high": 17.5
   },
+  "88362T103": {
+   "ticker": "8TG.SG",
+   "name": "THERMON GROUP HLDGS INC",
+   "current_price": 52.5,
+   "week52_low": 52.5,
+   "week52_high": 52.5
+  },
   "88422P109": {
    "ticker": "TCBX",
    "name": "THIRD COAST BANCSHARES INC",
    "current_price": 40.62,
    "week52_low": 35.94,
    "week52_high": 43.46
+  },
+  "884903808": {
+   "ticker": "TRI",
+   "name": "THOMSON REUTERS CORP",
+   "current_price": 96.2,
+   "week52_low": 78.58,
+   "week52_high": 209.29
   },
   "885160101": {
    "ticker": "THO",
@@ -23165,6 +24810,13 @@
    "week52_low": 6.8,
    "week52_high": 11.06
   },
+  "88830R101": {
+   "ticker": "TITN",
+   "name": "TITAN MACHY INC",
+   "current_price": 19.14,
+   "week52_low": 14.88,
+   "week52_high": 23.18
+  },
   "872540109": {
    "ticker": "TJX",
    "name": "TJX Companies Inc",
@@ -23213,6 +24865,13 @@
    "current_price": 39.08,
    "week52_low": 34.26,
    "week52_high": 44.23
+  },
+  "89055F103": {
+   "ticker": "28T.DU",
+   "name": "TOPBUILD COR",
+   "current_price": 298.4,
+   "week52_low": 298.4,
+   "week52_high": 298.4
   },
   "131193104": {
    "ticker": "CALY",
@@ -23347,16 +25006,23 @@
    "week52_low": 33.1,
    "week52_high": 58.91
   },
-  "89377M109": {
+  "893641100": {
+   "ticker": "TDG",
+   "name": "TRANSDIGM GROUP INC",
+   "current_price": 1214.43,
+   "week52_low": 1140.03,
+   "week52_high": 1607.45
+  },
+  "89377MAB5": {
    "ticker": "TMDX",
    "name": "TRANSMEDICS GROUP INC",
    "current_price": 73.98,
    "week52_low": 63.2,
    "week52_high": 146.31
   },
-  "H8817H100": {
+  "893830BW8": {
    "ticker": "RIG",
-   "name": "TRANSOCEAN LTD",
+   "name": "TRANSOCEAN INC",
    "current_price": 5.14,
    "week52_low": 2.63,
    "week52_high": 7.04
@@ -23368,7 +25034,14 @@
    "week52_low": 258.32,
    "week52_high": 368.98
   },
-  "89422G107": {
+  "89421Q205": {
+   "ticker": "TZOO",
+   "name": "TRAVELZOO",
+   "current_price": 10.94,
+   "week52_low": 5.37,
+   "week52_high": 12.89
+  },
+  "89422GAA5": {
    "ticker": "TVTX",
    "name": "TRAVERE THERAPEUTICS INC",
    "current_price": 56.71,
@@ -23388,6 +25061,13 @@
    "current_price": 7.52,
    "week52_low": 6.87,
    "week52_high": 10.35
+  },
+  "89469A104": {
+   "ticker": "TREEHOUSE.NS",
+   "name": "TREEHOUSE FOODS INC",
+   "current_price": 6.08,
+   "week52_low": 6.08,
+   "week52_high": 9.84
   },
   "89531P105": {
    "ticker": "TREX",
@@ -23431,6 +25111,13 @@
    "week52_low": 24.16,
    "week52_high": 36.63
   },
+  "89677Q107": {
+   "ticker": "TCOM.BA",
+   "name": "TRIP COM GROUP LTD",
+   "current_price": 33480.0,
+   "week52_low": 33480.0,
+   "week52_high": 33480.0
+  },
   "896945201": {
    "ticker": "TRIP",
    "name": "TRIPADVISOR INC",
@@ -23458,6 +25145,13 @@
    "current_price": 5.84,
    "week52_low": 3.14,
    "week52_high": 10.33
+  },
+  "205306103": {
+   "ticker": "TBRG",
+   "name": "TRUBRIDGE INC",
+   "current_price": 26.24,
+   "week52_low": 14.07,
+   "week52_high": 26.24
   },
   "89785X101": {
    "ticker": "TBI",
@@ -23522,6 +25216,13 @@
    "week52_low": 41.8,
    "week52_high": 216.44
   },
+  "898697206": {
+   "ticker": "TUQ1.F",
+   "name": "TUCOWS INC",
+   "current_price": 8.6,
+   "week52_low": 8.6,
+   "week52_high": 21.0
+  },
   "898920103": {
    "ticker": "HURA",
    "name": "TUHURA BIOSCIENCES INC",
@@ -23585,7 +25286,7 @@
    "week52_low": 25.31,
    "week52_high": 99.84
   },
-  "90187B804": {
+  "90187BAB7": {
    "ticker": "TWO",
    "name": "TWO HARBORS INVENTMENT CORPO",
    "current_price": 12.09,
@@ -23599,9 +25300,9 @@
    "week52_low": 56.57,
    "week52_high": 59.47
   },
-  "902252105": {
+  "902252AB1": {
    "ticker": "TYL",
-   "name": "TYLER TECHNOLOGIES INC",
+   "name": "TYLER TEX INDPT SCH DIST",
    "current_price": 319.51,
    "week52_low": 278.91,
    "week52_high": 594.35
@@ -23648,7 +25349,7 @@
    "week52_low": 189.45,
    "week52_high": 272.36
   },
-  "023586100": {
+  "023586506": {
    "ticker": "UHAL",
    "name": "U-Haul Holding Company",
    "current_price": 71.3,
@@ -23788,6 +25489,13 @@
    "week52_low": 99.02,
    "week52_high": 139.46
   },
+  "91307C102": {
+   "ticker": "UTH.DU",
+   "name": "UNITED THERAPEUTICS CORP DEL",
+   "current_price": 468.7,
+   "week52_low": 249.9,
+   "week52_high": 497.4
+  },
   "912932100": {
    "ticker": "UNIT",
    "name": "UNITI GROUP LLC",
@@ -23802,7 +25510,14 @@
    "week52_low": 45.31,
    "week52_high": 54.58
   },
-  "91332U101": {
+  "913290102": {
+   "ticker": "UNTY",
+   "name": "UNITY BANCORP INC",
+   "current_price": 57.25,
+   "week52_low": 45.41,
+   "week52_high": 59.54
+  },
+  "91332UAH4": {
    "ticker": "U",
    "name": "UNITY SOFTWARE INC",
    "current_price": 28.99,
@@ -23900,6 +25615,13 @@
    "week52_low": 8.05,
    "week52_high": 22.11
   },
+  "916896103": {
+   "ticker": "UEC",
+   "name": "URANIUM ENERGY CORP",
+   "current_price": 9.28,
+   "week52_low": 8.03,
+   "week52_high": 18.62
+  },
   "91704F104": {
    "ticker": "UE",
    "name": "URBAN EDGE PPTYS",
@@ -23969,6 +25691,13 @@
    "current_price": 20.48,
    "week52_low": 16.17,
    "week52_high": 20.53
+  },
+  "917488108": {
+   "ticker": "UTMD",
+   "name": "UTAH MED PRODS INC",
+   "current_price": 69.8,
+   "week52_low": 54.95,
+   "week52_high": 73.97
   },
   "918090101": {
    "ticker": "UTZ",
@@ -24579,7 +26308,7 @@
    "week52_low": 29.9,
    "week52_high": 62.35
   },
-  "922417100": {
+  "922417AJ9": {
    "ticker": "VECO",
    "name": "VEECO INSTRS INC DEL",
    "current_price": 52.27,
@@ -24599,6 +26328,13 @@
    "current_price": 17.5,
    "week52_low": 16.35,
    "week52_high": 20.49
+  },
+  "92277GAZ0": {
+   "ticker": "VTR",
+   "name": "VENTAS RLTY LTD PARTNERSHIP",
+   "current_price": 96.1,
+   "week52_low": 65.8,
+   "week52_high": 96.1
   },
   "92333F101": {
    "ticker": "VG",
@@ -24649,7 +26385,7 @@
    "week52_low": 4.12,
    "week52_high": 25.54
   },
-  "92538J106": {
+  "92538JAB2": {
    "ticker": "VERX",
    "name": "VERTEX INC",
    "current_price": 12.8,
@@ -24866,7 +26602,7 @@
    "week52_low": 126.11,
    "week52_high": 207.33
   },
-  "928298108": {
+  "928298AR9": {
    "ticker": "VSH",
    "name": "VISHAY INTERTECHNOLOGY INC",
    "current_price": 37.81,
@@ -24928,6 +26664,13 @@
    "current_price": 15.74,
    "week52_low": 10.96,
    "week52_high": 16.2
+  },
+  "928661107": {
+   "ticker": "VNRX",
+   "name": "VOLITIONRX LTD",
+   "current_price": 1.1,
+   "week52_low": 1.1,
+   "week52_high": 15.0
   },
   "928881101": {
    "ticker": "VNT",
@@ -25048,9 +26791,9 @@
    "week52_low": 95.05,
    "week52_high": 133.89
   },
-  "93403J106": {
+  "93403j106": {
    "ticker": "WRBY",
-   "name": "WARBY PARKER INC",
+   "name": "Warby Parker Inc Cl A",
    "current_price": 26.41,
    "week52_low": 16.96,
    "week52_high": 29.55
@@ -25146,6 +26889,13 @@
    "week52_low": 190.0,
    "week52_high": 264.91
   },
+  "G48833118": {
+   "ticker": "WFRD",
+   "name": "WEATHERFORD INTL PLC",
+   "current_price": 80.7,
+   "week52_low": 53.57,
+   "week52_high": 109.49
+  },
   "94724R108": {
    "ticker": "WEAV",
    "name": "WEAVE COMMUNICATIONS INC",
@@ -25174,7 +26924,7 @@
    "week52_low": 4.82,
    "week52_high": 16.89
   },
-  "92939U106": {
+  "92939UAR7": {
    "ticker": "WEC",
    "name": "WEC ENERGY GROUP INC",
    "current_price": 113.35,
@@ -25230,9 +26980,9 @@
    "week52_low": 7.55,
    "week52_high": 7.97
   },
-  "958102105": {
+  "25380B102": {
    "ticker": "WDC",
-   "name": "WESTERN DIGITAL CORP",
+   "name": "DIGI PWR X INC",
    "current_price": 477.22,
    "week52_low": 68.0,
    "week52_high": 746.23
@@ -25250,6 +27000,20 @@
    "current_price": 14.63,
    "week52_low": 9.99,
    "week52_high": 14.63
+  },
+  "959802109": {
+   "ticker": "WU",
+   "name": "WESTERN UNION",
+   "current_price": 8.88,
+   "week52_low": 7.12,
+   "week52_high": 10.28
+  },
+  "960413102": {
+   "ticker": "WLK",
+   "name": "WESTLAKE CORPORATION",
+   "current_price": 77.63,
+   "week52_low": 59.03,
+   "week52_high": 119.4
   },
   "96145W103": {
    "ticker": "WEST",
@@ -25300,12 +27064,33 @@
    "week52_low": 88.32,
    "week52_high": 163.65
   },
-  "963320106": {
+  "963025804": {
+   "ticker": "WHLR",
+   "name": "WHEELER REIT INC",
+   "current_price": 0.36,
+   "week52_low": 0.36,
+   "week52_high": 1699.2
+  },
+  "96328L205": {
+   "ticker": "UP",
+   "name": "WHEELS UP EXPERIENCE INC",
+   "current_price": 6.32,
+   "week52_low": 5.03,
+   "week52_high": 58.6
+  },
+  "963320205": {
    "ticker": "WHR",
    "name": "WHIRLPOOL CORP",
    "current_price": 38.24,
    "week52_low": 38.1,
    "week52_high": 99.74
+  },
+  "G9618E107": {
+   "ticker": "WCP.TO",
+   "name": "WHITE MTNS INS GROUP LTD",
+   "current_price": 15.99,
+   "week52_low": 9.93,
+   "week52_high": 16.79
   },
   "G96115103": {
    "ticker": "WYFI",
@@ -25327,6 +27112,13 @@
    "current_price": 50.97,
    "week52_low": 29.24,
    "week52_high": 52.76
+  },
+  "96924N100": {
+   "ticker": "WLDN",
+   "name": "WILLDAN GROUP INC",
+   "current_price": 72.7,
+   "week52_low": 72.08,
+   "week52_high": 133.78
   },
   "969457100": {
    "ticker": "WMB",
@@ -25363,12 +27155,26 @@
    "week52_low": 129.21,
    "week52_high": 362.45
   },
+  "974250102": {
+   "ticker": "WINA",
+   "name": "WINMARK CORP",
+   "current_price": 388.1,
+   "week52_low": 351.18,
+   "week52_high": 512.35
+  },
   "974637100": {
    "ticker": "WGO",
    "name": "WINNEBAGO INDS INC",
    "current_price": 30.7,
    "week52_low": 27.7,
    "week52_high": 48.79
+  },
+  "97650W108": {
+   "ticker": "WTFC",
+   "name": "WINTRUST FINL CORP",
+   "current_price": 164.3,
+   "week52_low": 122.74,
+   "week52_high": 164.3
   },
   "97651M109": {
    "ticker": "WIT",
@@ -25433,7 +27239,7 @@
    "week52_low": 57.31,
    "week52_high": 71.1
   },
-  "97717P104": {
+  "97717PAH7": {
    "ticker": "WT",
    "name": "WISDOMTREE INC",
    "current_price": 20.05,
@@ -25496,6 +27302,13 @@
    "week52_low": 82.53,
    "week52_high": 98.0
   },
+  "97717W505": {
+   "ticker": "DON",
+   "name": "WISDOMTREE TR",
+   "current_price": 57.34,
+   "week52_low": 50.02,
+   "week52_high": 57.34
+  },
   "97717W570": {
    "ticker": "EZM",
    "name": "WISDOMTREE TR",
@@ -25538,6 +27351,13 @@
    "week52_low": 15.35,
    "week52_high": 31.94
   },
+  "980228308": {
+   "ticker": "WDS",
+   "name": "WOODSIDE ENERGY GROUP LTD",
+   "current_price": 21.72,
+   "week52_low": 14.28,
+   "week52_high": 24.78
+  },
   "980745103": {
    "ticker": "WWD",
    "name": "WOODWARD INC",
@@ -25552,7 +27372,7 @@
    "week52_low": 112.5,
    "week52_high": 246.67
   },
-  "98139A105": {
+  "98139AAD7": {
    "ticker": "WK",
    "name": "WORKIVA INC",
    "current_price": 57.18,
@@ -25566,12 +27386,19 @@
    "week52_low": 121.25,
    "week52_high": 213.77
   },
-  "981475106": {
+  "98149GAB6": {
    "ticker": "WKC",
    "name": "WORLD KINECT CORPORATION",
    "current_price": 36.5,
    "week52_low": 22.64,
    "week52_high": 36.5
+  },
+  "981811102": {
+   "ticker": "WOR",
+   "name": "WORTHINGTON ENTERPRISES INC",
+   "current_price": 55.77,
+   "week52_low": 47.34,
+   "week52_high": 67.05
   },
   "982104101": {
    "ticker": "WS",
@@ -25839,6 +27666,13 @@
    "week52_low": 7.67,
    "week52_high": 13.98
   },
+  "48123V102": {
+   "ticker": "ZD",
+   "name": "ZIFF DAVIS INC",
+   "current_price": 53.98,
+   "week52_low": 27.08,
+   "week52_high": 53.98
+  },
   "98954M101": {
    "ticker": "ZG",
    "name": "ZILLOW GROUP INC",
@@ -25909,6 +27743,13 @@
    "week52_low": 118.05,
    "week52_high": 331.14
   },
+  "989817101": {
+   "ticker": "ZUMZ",
+   "name": "ZUMIEZ INC",
+   "current_price": 18.69,
+   "week52_low": 13.28,
+   "week52_high": 30.62
+  },
   "98983L108": {
    "ticker": "ZWS",
    "name": "ZURN ELKAY WATER SOLNS CORP",
@@ -25944,7 +27785,7 @@
    "week52_low": 6.27,
    "week52_high": 20.13
   },
-  "97785W106": {
+  "977852AP7": {
    "ticker": "WOLF",
    "name": "WOLFSPEED INC",
    "current_price": 29.89,
@@ -26034,6 +27875,13 @@
    "current_price": 5.45,
    "week52_low": 5.36,
    "week52_high": 9.94
+  },
+  "647581206": {
+   "ticker": "EDU",
+   "name": "NEW ORIENTAL ED &amp; TECHNOLOGY",
+   "current_price": 49.15,
+   "week52_low": 44.65,
+   "week52_high": 62.72
   },
   "H82027105": {
    "ticker": "90B.SG",
@@ -26146,6 +27994,13 @@
    "current_price": 37.02,
    "week52_low": 29.63,
    "week52_high": 37.02
+  },
+  "004468500": {
+   "ticker": "ACHV",
+   "name": "ACHIEVE LIFE SCIENCE INC",
+   "current_price": 6.27,
+   "week52_low": 2.5,
+   "week52_high": 6.4
   },
   "004890109": {
    "ticker": "ACRV",
@@ -26644,12 +28499,26 @@
    "week52_low": 2.43,
    "week52_high": 3.77
   },
+  "059520106": {
+   "ticker": "BCH",
+   "name": "BANCO DE CHILE",
+   "current_price": 40.14,
+   "week52_low": 27.59,
+   "week52_high": 44.44
+  },
   "05965X109": {
    "ticker": "BSAC",
    "name": "BANCO SANTANDER CHILE NEW",
    "current_price": 32.83,
    "week52_low": 23.13,
    "week52_high": 36.74
+  },
+  "060505682": {
+   "ticker": "BML-PL",
+   "name": "BANK AMERICA CORP",
+   "current_price": 19.4,
+   "week52_low": 19.08,
+   "week52_high": 20.92
   },
   "470299108": {
    "ticker": "BOTJ",
@@ -26706,6 +28575,13 @@
    "current_price": 4.21,
    "week52_low": 4.0,
    "week52_high": 8.7
+  },
+  "08986r408": {
+   "ticker": "BH-A",
+   "name": "Biglari Cl A",
+   "current_price": 1888.89,
+   "week52_low": 1363.05,
+   "week52_high": 2434.13
   },
   "090040106": {
    "ticker": "BILI",
@@ -26783,13 +28659,6 @@
    "current_price": 7.27,
    "week52_low": 6.49,
    "week52_high": 52.86
-  },
-  "091748707": {
-   "ticker": "IMRA",
-   "name": "BITWISE FUNDS TRUST",
-   "current_price": 14.37,
-   "week52_low": 12.63,
-   "week52_high": 51.93
   },
   "091748871": {
    "ticker": "IETH",
@@ -26930,6 +28799,13 @@
    "current_price": 4.82,
    "week52_low": 1.97,
    "week52_high": 5.03
+  },
+  "113006100": {
+   "ticker": "BBUC",
+   "name": "BROOKFIELD BUSINESS CORP",
+   "current_price": 31.25,
+   "week52_low": 28.72,
+   "week52_high": 36.89
   },
   "G16252101": {
    "ticker": "BIP",
@@ -27092,12 +28968,26 @@
    "week52_low": 22.62,
    "week52_high": 92.0
   },
+  "14161w105": {
+   "ticker": "CDLX",
+   "name": "CARDLYTICS, INC.",
+   "current_price": 4.18,
+   "week52_low": 4.18,
+   "week52_high": 28.2
+  },
   "14167R100": {
    "ticker": "CCLD",
    "name": "CARECLOUD INC",
    "current_price": 2.32,
    "week52_low": 2.11,
    "week52_high": 3.84
+  },
+  "14427M107": {
+   "ticker": "PRTS",
+   "name": "CARPARTS COM INC",
+   "current_price": 5.3,
+   "week52_low": 4.1,
+   "week52_high": 10.9
   },
   "15130G873": {
    "ticker": "CETX",
@@ -27113,6 +29003,13 @@
    "week52_low": 3.26,
    "week52_high": 38.66
   },
+  "15236F100": {
+   "ticker": "L3XB.SG",
+   "name": "CENTRAIS ELET BRAS SA",
+   "current_price": 8.4,
+   "week52_low": 8.4,
+   "week52_high": 8.4
+  },
   "15234Q207": {
    "ticker": "AXIA",
    "name": "CENTRAIS ELET BRAS SA",
@@ -27126,6 +29023,13 @@
    "current_price": 31.68,
    "week52_low": 23.03,
    "week52_high": 31.68
+  },
+  "156492100": {
+   "ticker": "CNTY",
+   "name": "CENTURY CASINOS INC",
+   "current_price": 1.18,
+   "week52_low": 1.18,
+   "week52_high": 2.77
   },
   "15673T100": {
    "ticker": "IPSC",
@@ -27176,12 +29080,26 @@
    "week52_low": 10.14,
    "week52_high": 19.1
   },
+  "204409882": {
+   "ticker": "CIDS.DU",
+   "name": "CIA ENERGETICA DE MINAS GERA",
+   "current_price": 2.78,
+   "week52_low": 1.97,
+   "week52_high": 3.04
+  },
   "17166A101": {
    "ticker": "CBUS",
    "name": "CIBUS INC",
    "current_price": 1.79,
    "week52_low": 1.22,
    "week52_high": 3.79
+  },
+  "172406308": {
+   "ticker": "CNVS",
+   "name": "CINEVERSE CORP",
+   "current_price": 2.5,
+   "week52_low": 1.97,
+   "week52_high": 6.33
   },
   "185634201": {
    "ticker": "CLNN",
@@ -27273,6 +29191,13 @@
    "current_price": 4.53,
    "week52_low": 1.34,
    "week52_high": 5.4
+  },
+  "20441A102": {
+   "ticker": "SBS",
+   "name": "COMPANHIA DE SANEAMENTO BASI",
+   "current_price": 5.75,
+   "week52_low": 3.86,
+   "week52_high": 6.94
   },
   "20441B704": {
    "ticker": "ELPC",
@@ -27477,6 +29402,13 @@
    "week52_low": 43.76,
    "week52_high": 54.2
   },
+  "23306X852": {
+   "ticker": "DBEU.MX",
+   "name": "DBX ETF TR",
+   "current_price": 913.47,
+   "week52_low": 796.87,
+   "week52_high": 913.47
+  },
   "23306X100": {
    "ticker": "DBJP.MX",
    "name": "DBX ETF TR",
@@ -27518,6 +29450,13 @@
    "current_price": 129.08,
    "week52_low": 101.11,
    "week52_high": 235.02
+  },
+  "25402DAB8": {
+   "ticker": "DOCN.MX",
+   "name": "DIGITALOCEAN HLDGS INC",
+   "current_price": 2044.86,
+   "week52_low": 2044.86,
+   "week52_high": 2044.86
   },
   "25434V831": {
    "ticker": "DUHP",
@@ -27778,6 +29717,13 @@
    "week52_low": 16.4,
    "week52_high": 97.99
   },
+  "29081P204": {
+   "ticker": "AKOB.SG",
+   "name": "EMBOTELLADORA ANDINA S A",
+   "current_price": 25.6,
+   "week52_low": 18.6,
+   "week52_high": 26.4
+  },
   "29278D105": {
    "ticker": "ENIC",
    "name": "ENEL CHILE SA",
@@ -27812,6 +29758,13 @@
    "current_price": 0.89,
    "week52_low": 0.78,
    "week52_high": 5.28
+  },
+  "G31249108": {
+   "ticker": "ESTA",
+   "name": "ESTABLISHMENT LABS HLDGS INC",
+   "current_price": 92.58,
+   "week52_low": 34.8,
+   "week52_high": 92.58
   },
   "26923Q804": {
    "ticker": "HELS",
@@ -27917,6 +29870,13 @@
    "current_price": 38.22,
    "week52_low": 31.84,
    "week52_high": 50.13
+  },
+  "30063PAC9": {
+   "ticker": "56F.F",
+   "name": "EXACT SCIENCES CORP",
+   "current_price": 0.03,
+   "week52_low": 0.02,
+   "week52_high": 0.21
   },
   "301505475": {
    "ticker": "NUKZ",
@@ -28769,7 +30729,7 @@
    "ticker": "AFRIW",
    "name": "FORAFRIC GLOBAL PLC",
    "current_price": 0.94,
-   "week52_low": 0.94,
+   "week52_low": 0.81,
    "week52_high": 0.94
   },
   "34962G208": {
@@ -28870,12 +30830,33 @@
    "week52_low": 23.63,
    "week52_high": 27.79
   },
+  "359523107": {
+   "ticker": "FTEK",
+   "name": "FUEL TECH INC",
+   "current_price": 1.53,
+   "week52_low": 1.22,
+   "week52_high": 3.63
+  },
+  "35952H700": {
+   "ticker": "FCEL",
+   "name": "FUELCELL ENERGY INC",
+   "current_price": 18.5,
+   "week52_low": 4.05,
+   "week52_high": 28.11
+  },
   "36315X101": {
    "ticker": "LKFT",
    "name": "GALAPAGOS NV",
    "current_price": 30.01,
    "week52_low": 27.05,
    "week52_high": 37.62
+  },
+  "363225202": {
+   "ticker": "GALT",
+   "name": "GALECTIN THERAPEUTICS INC",
+   "current_price": 4.17,
+   "week52_low": 2.1,
+   "week52_high": 6.25
   },
   "36322Q206": {
    "ticker": "DMRA",
@@ -28897,6 +30878,20 @@
    "current_price": 2.87,
    "week52_low": 2.39,
    "week52_high": 8.08
+  },
+  "37148K209": {
+   "ticker": "GREE",
+   "name": "GENERATION BIO CO",
+   "current_price": 1.71,
+   "week52_low": 1.05,
+   "week52_high": 2.07
+  },
+  "37149D204": {
+   "ticker": "GIPR",
+   "name": "GENERATION INCOME PPTYS INC",
+   "current_price": 1.12,
+   "week52_low": 1.12,
+   "week52_high": 16.6
   },
   "372446302": {
    "ticker": "GNPX",
@@ -29290,6 +31285,13 @@
    "week52_low": 0.47,
    "week52_high": 1.69
   },
+  "G3959D133": {
+   "ticker": "GDHG",
+   "name": "GOLDEN HEAVEN GROUP HLDGS LT",
+   "current_price": 1.36,
+   "week52_low": 1.06,
+   "week52_high": 13.68
+  },
   "38149W820": {
    "ticker": "GINN",
    "name": "GOLDMAN SACHS ETF TR",
@@ -29437,6 +31439,13 @@
    "week52_low": 1.32,
    "week52_high": 3.02
   },
+  "387437205": {
+   "ticker": "GRTUF",
+   "name": "GRANITE REAL ESTATE INVESTMENT TRUST",
+   "current_price": 70.77,
+   "week52_low": 52.29,
+   "week52_high": 70.77
+  },
   "38747R603": {
    "ticker": "DRUP",
    "name": "GRANITESHARES ETF TR",
@@ -29549,6 +31558,13 @@
    "week52_low": 12.71,
    "week52_high": 26.71
   },
+  "38911N206": {
+   "ticker": "GRVY",
+   "name": "GRAVITY CO LTD",
+   "current_price": 61.98,
+   "week52_low": 56.54,
+   "week52_high": 71.16
+  },
   "389930207": {
    "ticker": "BTC",
    "name": "GRAYSCALE BITCOIN MINI TR ET",
@@ -29583,6 +31599,27 @@
    "current_price": 1.43,
    "week52_low": 0.98,
    "week52_high": 1.96
+  },
+  "400501102": {
+   "ticker": "OMAB",
+   "name": "GRUPO AEROPORTUARIO DEL CENT",
+   "current_price": 105.31,
+   "week52_low": 97.01,
+   "week52_high": 134.98
+  },
+  "40090E106": {
+   "ticker": "PFCIBEST.CL",
+   "name": "GRUPO CIBEST SA",
+   "current_price": 65200.0,
+   "week52_low": 45560.0,
+   "week52_high": 75500.0
+  },
+  "40049J206": {
+   "ticker": "TV",
+   "name": "GRUPO TELEVISA S A B",
+   "current_price": 2.71,
+   "week52_low": 2.08,
+   "week52_high": 3.44
   },
   "36241U106": {
    "ticker": "GSIT",
@@ -29654,13 +31691,6 @@
    "week52_low": 2.26,
    "week52_high": 4.66
   },
-  "44955L106": {
-   "ticker": "IAU",
-   "name": "I-80 GOLD CORP",
-   "current_price": 75.5,
-   "week52_low": 62.91,
-   "week52_high": 99.07
-  },
   "45254E107": {
    "ticker": "IMRX",
    "name": "IMMUNEERING CORP",
@@ -29716,6 +31746,13 @@
    "current_price": 3.73,
    "week52_low": 3.73,
    "week52_high": 8.49
+  },
+  "P5626F128": {
+   "ticker": "IFS",
+   "name": "INTERCORP FINL SVCS INC",
+   "current_price": 59.46,
+   "week52_low": 36.02,
+   "week52_high": 60.68
   },
   "46090N103": {
    "ticker": "FXA",
@@ -30375,12 +32412,12 @@
    "week52_low": 109.32,
    "week52_high": 150.88
   },
-  "717046106": {
-   "ticker": "PEY",
-   "name": "Peyto Expl &amp; Dev Corp",
-   "current_price": 24.56,
-   "week52_low": 20.06,
-   "week52_high": 24.56
+  "46137V563": {
+   "ticker": "RSPT.MX",
+   "name": "INVESCO EXCHANGE TRADED FD T",
+   "current_price": 1081.57,
+   "week52_low": 753.0,
+   "week52_high": 1143.87
   },
   "46137Y609": {
    "ticker": "RSPC",
@@ -30486,6 +32523,13 @@
    "current_price": 59.86,
    "week52_low": 49.56,
    "week52_high": 64.1
+  },
+  "46137R109": {
+   "ticker": "IMVP.MX",
+   "name": "INVESCO INDIA EXCHANGE-TRADE",
+   "current_price": 349.87,
+   "week52_low": 349.87,
+   "week52_high": 349.87
   },
   "46092D103": {
    "ticker": "ACROX",
@@ -31936,6 +33980,13 @@
    "week52_low": 3.78,
    "week52_high": 9.05
   },
+  "59503A204": {
+   "ticker": "MBOT",
+   "name": "MICROBOT MED INC",
+   "current_price": 1.75,
+   "week52_low": 1.71,
+   "week52_high": 4.05
+  },
   "602566309": {
    "ticker": "MIND",
    "name": "MIND TECHNOLOGY INC",
@@ -31949,6 +34000,13 @@
    "current_price": 12.75,
    "week52_low": 11.41,
    "week52_high": 26.63
+  },
+  "60800C208": {
+   "ticker": "OY4.F",
+   "name": "MOGO INC",
+   "current_price": 0.29,
+   "week52_low": 0.14,
+   "week52_high": 0.36
   },
   "61559X104": {
    "ticker": "MLTX",
@@ -32040,6 +34098,13 @@
    "current_price": 1.74,
    "week52_low": 0.66,
    "week52_high": 3.48
+  },
+  "62886HBD2": {
+   "ticker": "NCL",
+   "name": "NCL CORP LTD",
+   "current_price": 0.16,
+   "week52_low": 0.14,
+   "week52_high": 12.35
   },
   "640268306": {
    "ticker": "NKTR",
@@ -32230,6 +34295,13 @@
    "week52_low": 5.67,
    "week52_high": 622.08
   },
+  "674599162": {
+   "ticker": "OXY.SW",
+   "name": "OCCIDENTAL PETE CORP",
+   "current_price": 44.0,
+   "week52_low": 34.28,
+   "week52_high": 51.99
+  },
   "M7518J104": {
    "ticker": "KW7.F",
    "name": "ODDITY TECH LTD",
@@ -32370,6 +34442,13 @@
    "week52_low": 28.68,
    "week52_high": 35.31
   },
+  "69549FAB5": {
+   "ticker": "0P0001MM2A.SA",
+   "name": "PAGAYA U S HLDG CO LLC",
+   "current_price": 347.47,
+   "week52_low": 342.2,
+   "week52_high": 711.42
+  },
   "69702V107": {
    "ticker": "PSBD",
    "name": "PALMER SQUARE CAPITAL BDC IN",
@@ -32390,6 +34469,13 @@
    "current_price": 1.97,
    "week52_low": 1.61,
    "week52_high": 3.77
+  },
+  "71654V101": {
+   "ticker": "PJXA.SG",
+   "name": "PETROLEO BRASILEIRO SA - PETROBRAS",
+   "current_price": 15.7,
+   "week52_low": 9.88,
+   "week52_high": 18.75
   },
   "71953R108": {
    "ticker": "PMI",
@@ -32453,6 +34539,13 @@
    "current_price": 50.8,
    "week52_low": 45.13,
    "week52_high": 91.72
+  },
+  "74019L602": {
+   "ticker": "PRPO",
+   "name": "PRECIPIO INC",
+   "current_price": 24.64,
+   "week52_low": 13.9,
+   "week52_high": 30.94
   },
   "74065P101": {
    "ticker": "PRLD",
@@ -32650,6 +34743,13 @@
    "week52_low": 7.77,
    "week52_high": 17.89
   },
+  "75382E208": {
+   "ticker": "RAPT4.SA",
+   "name": "RAPT THERAPEUTICS INC",
+   "current_price": 4.76,
+   "week52_low": 4.55,
+   "week52_high": 7.87
+  },
   "754198109": {
    "ticker": "RAVE",
    "name": "RAVE RESTAURANT GROUP INC",
@@ -32713,6 +34813,13 @@
    "week52_low": 36.13,
    "week52_high": 43.14
   },
+  "75689M101": {
+   "ticker": "RRGB",
+   "name": "RED ROBIN GOURMET BURGERS IN",
+   "current_price": 7.01,
+   "week52_low": 2.65,
+   "week52_high": 7.49
+  },
   "758932206": {
    "ticker": "RGS",
    "name": "REGIS CORPORATION",
@@ -32733,6 +34840,13 @@
    "current_price": 17.21,
    "week52_low": 16.2,
    "week52_high": 24.0
+  },
+  "76152G100": {
+   "ticker": "RVPH",
+   "name": "REVIVA PHARMACEUTCLS HLDGS I",
+   "current_price": 0.56,
+   "week52_low": 0.33,
+   "week52_high": 13.51
   },
   "749552105": {
    "ticker": "RFIL",
@@ -32761,6 +34875,13 @@
    "current_price": 1.16,
    "week52_low": 0.88,
    "week52_high": 2.37
+  },
+  "774374300": {
+   "ticker": "RMTI",
+   "name": "ROCKWELL MED INC",
+   "current_price": 6.12,
+   "week52_low": 5.54,
+   "week52_high": 17.1
   },
   "785688102": {
    "ticker": "SBR",
@@ -32803,6 +34924,13 @@
    "current_price": 11.37,
    "week52_low": 4.91,
    "week52_high": 13.7
+  },
+  "73245B107": {
+   "ticker": "SBC",
+   "name": "SBC MED GROUP HLDGS INC",
+   "current_price": 3.08,
+   "week52_low": 2.87,
+   "week52_high": 5.65
   },
   "808524888": {
    "ticker": "SCHC",
@@ -32908,6 +35036,13 @@
    "current_price": 8.44,
    "week52_low": 3.8,
    "week52_high": 18.19
+  },
+  "811916105": {
+   "ticker": "SA",
+   "name": "SEABRIDGE GOLD INC",
+   "current_price": 24.64,
+   "week52_low": 15.31,
+   "week52_high": 39.35
   },
   "81578P106": {
    "ticker": "SEER",
@@ -33034,6 +35169,13 @@
    "current_price": 69.81,
    "week52_low": 35.8,
    "week52_high": 92.68
+  },
+  "586001109": {
+   "ticker": "001236.SZ",
+   "name": "SOHO HOUSE &amp; CO INC",
+   "current_price": 7.07,
+   "week52_low": 6.97,
+   "week52_high": 13.69
   },
   "83419H103": {
    "ticker": "SMXT",
@@ -33532,6 +35674,13 @@
    "week52_low": 21.56,
    "week52_high": 22.89
   },
+  "86333MAA6": {
+   "ticker": "0AJ.F",
+   "name": "STRIDE INC",
+   "current_price": 75.5,
+   "week52_low": 52.0,
+   "week52_high": 144.0
+  },
   "86389T106": {
    "ticker": "MSC",
    "name": "STUDIO CITY INTL HLDGS LTD",
@@ -33797,6 +35946,13 @@
    "current_price": 20.87,
    "week52_low": 20.17,
    "week52_high": 46.5
+  },
+  "88634T444": {
+   "ticker": "ZETX",
+   "name": "TIDAL TRUST II",
+   "current_price": 21.97,
+   "week52_low": 11.88,
+   "week52_high": 26.7
   },
   "88636R800": {
    "ticker": "PLTY",
@@ -34155,6 +36311,13 @@
    "week52_low": 41.87,
    "week52_high": 53.55
   },
+  "90400P101": {
+   "ticker": "UGP.BA",
+   "name": "ULTRAPAR PARTICIPACOES SA",
+   "current_price": 9820.0,
+   "week52_low": 3655.0,
+   "week52_high": 9820.0
+  },
   "90470L550": {
    "ticker": "MGMT",
    "name": "UNIFIED SER TR",
@@ -34189,6 +36352,20 @@
    "current_price": 99.89,
    "week52_low": 73.08,
    "week52_high": 101.18
+  },
+  "91544A109": {
+   "ticker": "UPLD",
+   "name": "UPLAND SOFTWARE INC",
+   "current_price": 5.38,
+   "week52_low": 4.04,
+   "week52_high": 29.6
+  },
+  "91680MAD9": {
+   "ticker": "UPSTD.BA",
+   "name": "UPSTART HLDGS INC",
+   "current_price": 6.13,
+   "week52_low": 5.18,
+   "week52_high": 16.75
   },
   "90291W108": {
    "ticker": "USGO",
@@ -34757,6 +36934,13 @@
    "week52_low": 7.2,
    "week52_high": 12.61
   },
+  "949746804": {
+   "ticker": "WFCNP",
+   "name": "WELLS FARGO &amp; CO",
+   "current_price": 2.75,
+   "week52_low": 1.5,
+   "week52_high": 2.75
+  },
   "95075A107": {
    "ticker": "HOWL",
    "name": "WEREWOLF THERAPEUTICS INC",
@@ -34784,6 +36968,13 @@
    "current_price": 2.13,
    "week52_low": 1.2,
    "week52_high": 3.78
+  },
+  "967590209": {
+   "ticker": "WYY",
+   "name": "WIDEPOINT CORP",
+   "current_price": 11.66,
+   "week52_low": 3.02,
+   "week52_high": 16.72
   },
   "97717W844": {
    "ticker": "DNL",
@@ -35016,6 +37207,13 @@
    "week52_low": 26.25,
    "week52_high": 33.66
   },
+  "97717X867": {
+   "ticker": "ELD",
+   "name": "WISDOMTREE TR",
+   "current_price": 28.59,
+   "week52_low": 27.67,
+   "week52_high": 30.1
+  },
   "97717X198": {
    "ticker": "QIG",
    "name": "WISDOMTREE TR",
@@ -35219,6 +37417,13 @@
    "week52_low": 2.18,
    "week52_high": 3.46
   },
+  "231269309": {
+   "ticker": "CRIS",
+   "name": "CURIS INC",
+   "current_price": 4.63,
+   "week52_low": 4.63,
+   "week52_high": 36.8
+  },
   "670928100": {
    "ticker": "NUV",
    "name": "<![CDATA[NUVEEN MUN VALUE FD INC]]>",
@@ -35268,9 +37473,16 @@
    "week52_low": 8.88,
    "week52_high": 12.55
   },
-  "641069406": {
+  "42704l104": {
+   "ticker": "HRI",
+   "name": "Herc Holdings Inc",
+   "current_price": 149.47,
+   "week52_low": 91.04,
+   "week52_high": 180.31
+  },
+  "H57312649": {
    "ticker": "NSRGY",
-   "name": "Nestle SA Sponsored ADR",
+   "name": "Nestle SA-REG",
    "current_price": 105.13,
    "week52_low": 87.32,
    "week52_high": 109.04
@@ -35282,12 +37494,26 @@
    "week52_low": 24.38,
    "week52_high": 36.14
   },
+  "G05320109": {
+   "ticker": "Y9R.F",
+   "name": "Ashtead Group PLC",
+   "current_price": 4.86,
+   "week52_low": 3.34,
+   "week52_high": 5.7
+  },
   "K36628137": {
    "ticker": "CARL-B.CO",
    "name": "Carlsberg B A/S",
    "current_price": 926.8,
    "week52_low": 744.4,
    "week52_high": 997.0
+  },
+  "T19404101": {
+   "ticker": "0ONR.L",
+   "name": "Cofide SPA",
+   "current_price": 0.76,
+   "week52_low": 0.61,
+   "week52_high": 0.76
   },
   "H25662182": {
    "ticker": "CFRUY",
@@ -35309,13 +37535,6 @@
    "current_price": 37.62,
    "week52_low": 23.46,
    "week52_high": 37.62
-  },
-  "G42089113": {
-   "ticker": "DEO",
-   "name": "Diageo PLC",
-   "current_price": 84.0,
-   "week52_low": 73.32,
-   "week52_high": 115.33
   },
   "w2457w116": {
    "ticker": "4KK1.F",
@@ -35372,6 +37591,13 @@
    "current_price": 27.3,
    "week52_low": 22.65,
    "week52_high": 33.7
+  },
+  "H49983176": {
+   "ticker": "LSPN.F",
+   "name": "Lindt &amp; Spruengli AG - Reg",
+   "current_price": 107500.0,
+   "week52_low": 100500.0,
+   "week52_high": 141200.0
   },
   "F58149133": {
    "ticker": "LOR.NE",
@@ -35464,6 +37690,13 @@
    "week52_low": 9.78,
    "week52_high": 33.58
   },
+  "L1995B107": {
+   "ticker": "CAAP",
+   "name": "CORPORACION AMER ARPTS S A",
+   "current_price": 24.83,
+   "week52_low": 17.66,
+   "week52_high": 29.64
+  },
   "G29018101": {
    "ticker": "DLO",
    "name": "DLOCAL LTD",
@@ -35520,6 +37753,13 @@
    "week52_low": 4.71,
    "week52_high": 6.26
   },
+  "n00985106": {
+   "ticker": "R1D.F",
+   "name": "AerCap Holdings",
+   "current_price": 128.0,
+   "week52_low": 91.4,
+   "week52_high": 131.2
+  },
   "38259p508": {
    "ticker": "1GOOGL.MI",
    "name": "Alphabet Class A",
@@ -35534,6 +37774,13 @@
    "week52_low": 214.0,
    "week52_high": 398.0
   },
+  "303901102": {
+   "ticker": "FFX.F",
+   "name": "Fairfax Finl HLDGS LTD Sub VTG",
+   "current_price": 1432.0,
+   "week52_low": 1334.0,
+   "week52_high": 1678.0
+  },
   "92343v104": {
    "ticker": "VZ",
    "name": "Verizon",
@@ -35541,19 +37788,19 @@
    "week52_low": 38.82,
    "week52_high": 51.38
   },
+  "21037X100": {
+   "ticker": "CSU.TO",
+   "name": "Constellation Software",
+   "current_price": 2800.76,
+   "week52_low": 2295.18,
+   "week52_high": 4984.83
+  },
   "54338V101": {
    "ticker": "LZAGY",
    "name": "Lonza Group ADR",
    "current_price": 70.18,
    "week52_low": 58.78,
    "week52_high": 73.69
-  },
-  "773122106": {
-   "ticker": "RKLB",
-   "name": "Rocket Lab",
-   "current_price": 67.62,
-   "week52_low": 40.3,
-   "week52_high": 143.48
   },
   "775781206": {
    "ticker": "RYCEY",
@@ -35569,6 +37816,13 @@
    "week52_low": 1.0,
    "week52_high": 1.58
   },
+  "149205106": {
+   "ticker": "CATO",
+   "name": "Cato Corporation Class A",
+   "current_price": 3.21,
+   "week52_low": 2.74,
+   "week52_high": 4.62
+  },
   "922040845": {
    "ticker": "VBIL",
    "name": "Vanguard  0-3M T-Bill ETF (VBIL)",
@@ -35576,19 +37830,19 @@
    "week52_low": 75.34,
    "week52_high": 75.67
   },
-  "14161w105": {
-   "ticker": "CDLX",
-   "name": "CARDLYTICS, INC.",
-   "current_price": 4.18,
-   "week52_low": 4.18,
-   "week52_high": 28.2
-  },
   "G21082105": {
    "ticker": "CYD",
    "name": "CHINA YUCHAI INTL LTD",
    "current_price": 43.9,
    "week52_low": 22.35,
    "week52_high": 57.35
+  },
+  "349942102": {
+   "ticker": "FSM",
+   "name": "FORTUNA MINING CORP",
+   "current_price": 8.16,
+   "week52_low": 6.29,
+   "week52_high": 13.66
   },
   "74022D407": {
    "ticker": "PDS",
@@ -35604,6 +37858,13 @@
    "week52_low": 21.59,
    "week52_high": 22.75
   },
+  "072730302": {
+   "ticker": "BAYN.DE",
+   "name": "Bayer AG Spons ADR",
+   "current_price": 48.46,
+   "week52_low": 25.72,
+   "week52_high": 53.36
+  },
   "32112J106": {
    "ticker": "FBAK",
    "name": "First Natl BK Alaska Com",
@@ -35611,12 +37872,33 @@
    "week52_low": 260.0,
    "week52_high": 339.0
   },
+  "717046106": {
+   "ticker": "PEY",
+   "name": "Peyto Expl &amp; Dev Corp",
+   "current_price": 24.56,
+   "week52_low": 20.06,
+   "week52_high": 24.56
+  },
+  "722524105": {
+   "ticker": "PNE.TO",
+   "name": "Pine Cliff Energy LTD Com",
+   "current_price": 0.56,
+   "week52_low": 0.56,
+   "week52_high": 0.89
+  },
   "75062E106": {
    "ticker": "RFL",
    "name": "Rafael Holdings Inc",
    "current_price": 2.15,
    "week52_low": 1.16,
    "week52_high": 3.15
+  },
+  "89156V106": {
+   "ticker": "TOU.TO",
+   "name": "Tourmaline Oil Corp",
+   "current_price": 62.49,
+   "week52_low": 57.4,
+   "week52_high": 69.52
   },
   "97349V107": {
    "ticker": "WRLC",
@@ -35646,13 +37928,6 @@
    "week52_low": 16.61,
    "week52_high": 33.77
   },
-  "34631F102": {
-   "ticker": "FPS",
-   "name": "FORGENT POWER SOLUTIONS INC",
-   "current_price": 39.79,
-   "week52_low": 28.87,
-   "week52_high": 63.41
-  },
   "922967104": {
    "ticker": "MANE",
    "name": "VERADERMICS INC",
@@ -35660,9 +37935,9 @@
    "week52_low": 38.48,
    "week52_high": 129.74
   },
-  "866966104": {
+  "crest6610": {
    "ticker": "SUNB",
-   "name": "SUNBELT RENTALS HLDGS IN GB SHRS",
+   "name": "Sunbelt Rentals Holdings ORD",
    "current_price": 73.41,
    "week52_low": 63.09,
    "week52_high": 86.06
@@ -35694,13 +37969,6 @@
    "current_price": 13.94,
    "week52_low": 6.9,
    "week52_high": 22.68
-  },
-  "G0593M107": {
-   "ticker": "AZN",
-   "name": "ASTRAZENECA PLC",
-   "current_price": 168.9,
-   "week52_low": 137.58,
-   "week52_high": 208.45
   },
   "04650F101": {
    "ticker": "ATAI",
@@ -35744,13 +38012,6 @@
    "week52_low": 9.18,
    "week52_high": 10.2
   },
-  "09254E103": {
-   "ticker": "MYI",
-   "name": "BLACKROCK MUNIYIELD QLTY III",
-   "current_price": 10.91,
-   "week52_low": 10.25,
-   "week52_high": 11.25
-  },
   "05613H506": {
    "ticker": "BKFI",
    "name": "BNY MELLON ACTV CORE BND ETF",
@@ -35792,13 +38053,6 @@
    "current_price": 6.04,
    "week52_low": 5.48,
    "week52_high": 6.24
-  },
-  "113006100": {
-   "ticker": "BBUC",
-   "name": "BROOKFIELD BUSINESS CORP",
-   "current_price": 31.25,
-   "week52_low": 28.72,
-   "week52_high": 36.89
   },
   "055869101": {
    "ticker": "BTQ",
@@ -35932,20 +38186,6 @@
    "current_price": 23.43,
    "week52_low": 20.85,
    "week52_high": 23.53
-  },
-  "35953D401": {
-   "ticker": "FUBO",
-   "name": "FUBOTV INC",
-   "current_price": 9.72,
-   "week52_low": 9.18,
-   "week52_high": 52.2
-  },
-  "416906204": {
-   "ticker": "HBIO",
-   "name": "HARVARD BIOSCIENCE INC",
-   "current_price": 6.23,
-   "week52_low": 3.8,
-   "week52_high": 7.6
   },
   "44916Y106": {
    "ticker": "PURR",
@@ -36108,19 +38348,19 @@
    "week52_low": 82.89,
    "week52_high": 117.04
   },
-  "724078209": {
-   "ticker": "PIPR",
-   "name": "PIPER SANDLER COMPANIES",
-   "current_price": 76.32,
-   "week52_low": 70.57,
-   "week52_high": 94.07
-  },
   "72814P109": {
    "ticker": "PLBY",
    "name": "PLAYBOY INC",
    "current_price": 1.17,
    "week52_low": 1.16,
    "week52_high": 2.16
+  },
+  "74347Y797": {
+   "ticker": "KOLD",
+   "name": "PROSHARES ULTRASHORT BLOOMBE",
+   "current_price": 27.16,
+   "week52_low": 13.58,
+   "week52_high": 49.39
   },
   "746922103": {
    "ticker": "PMO",
@@ -36331,6 +38571,13 @@
    "current_price": 4.11,
    "week52_low": 2.18,
    "week52_high": 13.26
+  },
+  "03842K309": {
+   "ticker": "AQB",
+   "name": "AQUABOUNTY TECHNOLOGIES INC",
+   "current_price": 0.97,
+   "week52_low": 0.72,
+   "week52_high": 2.28
   },
   "04216R102": {
    "ticker": "ARMP",
@@ -36554,7 +38801,7 @@
    "name": "ENGENE HOLDINGS INC",
    "current_price": 0.32,
    "week52_low": 0.32,
-   "week52_high": 0.32
+   "week52_high": 2.23
   },
   "63008J884": {
    "ticker": "FEED",
@@ -36745,6 +38992,13 @@
    "week52_low": 2.96,
    "week52_high": 9.08
   },
+  "46050R102": {
+   "ticker": "ITH.TO",
+   "name": "INTERNATIONAL TOWER HILL MIN",
+   "current_price": 2.81,
+   "week52_low": 1.41,
+   "week52_high": 4.78
+  },
   "46138E578": {
    "ticker": "FDIQ",
    "name": "INVESCO EXCH TRADED FD TR II",
@@ -36906,6 +39160,13 @@
    "week52_low": 11.99,
    "week52_high": 19.35
   },
+  "532257805": {
+   "ticker": "LPTH",
+   "name": "LIGHTPATH TECHNOLOGIES INC",
+   "current_price": 10.46,
+   "week52_low": 2.96,
+   "week52_high": 16.98
+  },
   "55279B301": {
    "ticker": "LITS",
    "name": "LITE STRATEGY INC",
@@ -37060,12 +39321,26 @@
    "week52_low": 1.07,
    "week52_high": 5.75
   },
+  "684023609": {
+   "ticker": "OGEN",
+   "name": "ORAGENICS INC",
+   "current_price": 0.55,
+   "week52_low": 0.53,
+   "week52_high": 1.39
+  },
   "68572M106": {
    "ticker": "OBIO",
    "name": "ORCHESTRA BIOMED HLDGS INC",
    "current_price": 3.68,
    "week52_low": 2.42,
    "week52_high": 5.32
+  },
+  "68627G104": {
+   "ticker": "ORIO",
+   "name": "ORION DIGITAL CORP",
+   "current_price": 0.69,
+   "week52_low": 0.69,
+   "week52_high": 1.99
   },
   "68764Y207": {
    "ticker": "OSTX",
@@ -37200,6 +39475,13 @@
    "week52_low": 24.27,
    "week52_high": 31.67
   },
+  "78396V208": {
+   "ticker": "WORX",
+   "name": "SCWORX CORP",
+   "current_price": 0.67,
+   "week52_low": 0.26,
+   "week52_high": 6.41
+  },
   "826165201": {
    "ticker": "SIDU",
    "name": "SIDUS SPACE INC",
@@ -37234,6 +39516,13 @@
    "current_price": 107.27,
    "week52_low": 67.16,
    "week52_high": 134.47
+  },
+  "85205TAQ3": {
+   "ticker": "JN9.F",
+   "name": "SPIRIT AEROSYSTEMS INC",
+   "current_price": 0.0,
+   "week52_low": 0.0,
+   "week52_high": 0.02
   },
   "85208P600": {
    "ticker": "NIKL",
@@ -37374,13 +39663,6 @@
    "current_price": 3.46,
    "week52_low": 3.46,
    "week52_high": 10.11
-  },
-  "88165K200": {
-   "ticker": "TVGN",
-   "name": "TEVOGEN BIO HLDGS INC",
-   "current_price": 4.21,
-   "week52_low": 4.21,
-   "week52_high": 61.5
   },
   "885155101": {
    "ticker": "THLV",
@@ -37536,6 +39818,13 @@
    "week52_low": 1.02,
    "week52_high": 1.69
   },
+  "918284209": {
+   "ticker": "VSECU",
+   "name": "VSE CORP",
+   "current_price": 52.7,
+   "week52_low": 45.95,
+   "week52_high": 58.72
+  },
   "97717W547": {
    "ticker": "WTV",
    "name": "WISDOMTREE TR",
@@ -37591,6 +39880,13 @@
    "current_price": 70.6,
    "week52_low": 57.42,
    "week52_high": 72.18
+  },
+  "G1827P106": {
+   "ticker": "CEPS",
+   "name": "CANTOR EQUITY PARTNERS II IN",
+   "current_price": 10.37,
+   "week52_low": 10.09,
+   "week52_high": 10.4
   },
   "155038201": {
    "ticker": "CEPU",
