@@ -206,16 +206,37 @@ def _parse_plain(plain):
 def classify(stkrt, stkrt_prev, report_resn=""):
     cur = to_float(stkrt)
     prev = to_float(stkrt_prev)
-    if "신규" in (report_resn or ""):
+    resn = (report_resn or "")
+
+    # 1. 보고사유에 "신규" 명시
+    if "신규" in resn:
         return "매수(신규)"
+
+    # 2. 비율 변동으로 판별
+    if cur is not None and prev is not None:
+        if cur > prev:
+            return "매수"
+        if cur < prev:
+            return "매도"
+
+    # 3. 비율 동일하거나 prev 없을 때 → 보고사유로 판별
+    if any(k in resn for k in ["장내매수", "장외매수", "시간외매수"]):
+        return "매수" if prev is not None else "매수(신규)"
+    if any(k in resn for k in ["장내매도", "장외매도", "시간외매도"]):
+        return "매도"
+    if any(k in resn for k in ["장내매매", "시간외매매"]):
+        # 매매는 방향 불분명 → 비율로 재시도, 안 되면 보고사유 텍스트에서 추론
+        if "매수" in resn:
+            return "매수"
+        if "매도" in resn:
+            return "매도"
+        return "매수"  # 장내매매는 대부분 매수
+
+    # 4. 비율만으로
     if cur is None:
         return "기타"
     if prev is None:
         return "매수(신규)"
-    if cur > prev:
-        return "매수"
-    if cur < prev:
-        return "매도"
     return "기타"
 
 
