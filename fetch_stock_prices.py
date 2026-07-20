@@ -84,6 +84,59 @@ MANUAL_TICKERS = {
     "BRUKER CORP": "BRKR", "HALLIBURTON CO": "HAL",
     "PFIZER INC": "PFE", "NVIDIA CORPORATION": "NVDA",
     "PALANTIR TECHNOLOGIES INC": "PLTR",
+    # 추가 대형주
+    "AMAZON COM INC": "AMZN", "ILLUMINA INC": "ILMN",
+    "DISNEY WALT CO": "DIS", "WALT DISNEY CO": "DIS",
+    "CAESARS ENTERTAINMENT INC": "CZR",
+    "JETBLUE AIRWAYS CORP": "JBLU", "JETBLUE AIRWAYS CORP (JBLU)": "JBLU",
+    "AMERICAN ELECTRIC POWER COMPANY": "AEP", "AMERICAN ELECTRIC POWER CO INC": "AEP",
+    "INTERNATIONAL FLAVORS AND FRAGRANCES INC": "IFF", "INTL FLAVORS & FRAGRANCES": "IFF",
+    "MASIMO CORP": "MASI", "CONFLUENT INC": "CFLT",
+    "CYBERARK SOFTWARE LTD": "CYBR", "EVENTBRITE INC": "EB",
+    "GUESS INC": "GES", "HILLENBRAND INC": "HLI",
+    "AIR LEASE CORP": "AL", "KENNEDY-WILSON HOLDINGS INC": "KW",
+    "WIX COM LTD": "WIX", "CNH INDL N V": "CNHI",
+    "PG&E CORP": "PCG", "PG&amp;E CORP": "PCG",
+    "KKR & CO L P DEL": "KKR", "KKR &amp; CO L P DEL": "KKR", "KKR & CO INC": "KKR",
+    "CI&T INC": "CINT", "CI&amp;T INC/UNITED STATES-A": "CINT",
+    "ERMENEGILDO ZEGNA N V": "ZGN",
+    "FERROVIAL SE": "FER", "FLUSHING FINL CORP": "FFIC",
+    "NU HLDGS LTD": "NU", "OLAPLEX HLDGS INC": "OLPX",
+    "ON HLDG AG": "ONON", "ON24 INC": "ONTF", "ONESTREAM INC": "OS",
+    "SEMRUSH HLDGS INC": "SEMR",
+    "SOLENO THERAPEUTICS INC": "SLNO",
+    "SYNCHRONOSS TECHNOLOGIES INC": "SNCR", "SYNOVUS FINL CORP": "SNV",
+    "THERMON GROUP HLDGS INC": "THR", "TOPBUILD COR": "BLD", "TOPBUILD CORP": "BLD",
+    "TREEHOUSE FOODS INC": "THS", "TRINSEO PLC": "TSE",
+    "TRUECAR INC": "TRUE", "UDEMY INC": "UDMY",
+    "VENTYX BIOSCIENCES INC": "VTYX",
+    "WHITE MTNS INS GROUP LTD": "WTM",
+    "ASSERTIO HOLDINGS INC": "ASRT",
+    "CENTRAIS ELET BRAS SA": "EBR",
+    "CALAVO GROWERS INC": "CVGW", "CANTALOUPE INC": "CTLP",
+    "DAYFORCE INC": "DAY", "DENNYS CORP": "DENN",
+    "DYNAVAX TECHNOLOGIES CORP": "DVAX", "ENHABIT INC": "EHAB",
+    "AVIDITY BIOSCIENCES INC": "RNA", "ARCELLX INC": "ACLX",
+    "APELLIS PHARMACEUTICALS INC": "APLS", "AMICUS THERAPEUTIC": "FOLD",
+    "ASTRIA THERAPEUTICS INC": "ATXS", "AVADEL PHARMACEUTICALS PLC": "AVDL",
+    "BANKFINANCIAL CORP": "F", "BITFARMS LTD/CANADA": "BITF",
+    "CENTESSA PHARMACEUTICALS PLC": "CNTA", "CIDARA THERAPEUTICS INC": "CDTX",
+    "CSG SYS INTL INC": "CSGS", "KALVISTA PHARMACEUTICALS INC": "KALV",
+    "POTLATCHDELTIC CORPORATION": "PCH", "PLYMOUTH INDL REIT INC": "PLYM",
+    "TERNS PHARMACEUTICALS INC": "TERN",
+    "HOLOGIC INC": "HOLX", "COMERICA INC": "CMA",
+    "CIVITAS RESOURCES INC": "CIVI",
+    "SPROUTS FARMERS MARKET INC": "SFM",
+    "CEMEX SAB DE CV": "CX",
+    "SOUTHWEST GAS HLDGS INC": "SWX",
+    "MGM RESORTS INTERNATIONAL": "MGM",
+    "ECHOSTAR CORPORATION": "SATS",
+    "VESTIS CORPORATION": "VSTS",
+    "IAC INC": "IAC",
+    "GENEDX HOLDINGS CORP": "WGS",
+    "FORTREA HLDGS INC": "FTRE",
+    "COSTAR GROUP INC": "CSGP",
+    "LIONSGATE STUDIOS CORP": "LION",
 }
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s", datefmt="%H:%M:%S")
@@ -125,7 +178,10 @@ def collect_unique_stocks():
             for h in guru_data.get("holdings",[]):
                 cusip = h.get("cusip","").strip()
                 name = h.get("name","").strip()
-                if cusip and name: stocks[cusip] = name
+                if cusip and name:
+                    name = name.replace("&amp;", "&").replace("&lt;", "<").replace("&gt;", ">")
+                    name = name.replace("<![CDATA[", "").replace("]]>", "").strip()
+                    stocks[cusip] = name
     return stocks
 
 
