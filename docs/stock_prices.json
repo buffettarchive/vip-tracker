@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-07-19T17:04:07.057903Z",
- "count": 5695,
+ "updated_at": "2026-07-20T03:44:47.632718Z",
+ "count": 5697,
  "prices": {
   "02005N100": {
    "ticker": "ALLY",
@@ -12021,13 +12021,6 @@
    "week52_low": 8.91,
    "week52_high": 23.32
   },
-  "390607109": {
-   "ticker": "GLUX",
-   "name": "GREAT LAKES DREDGE &amp; DOCK CO",
-   "current_price": 0.0,
-   "week52_low": 0.0,
-   "week52_high": 0.0
-  },
   "390905107": {
    "ticker": "GSBC",
    "name": "GREAT SOUTHN BANCORP INC",
@@ -19293,13 +19286,6 @@
    "current_price": 66.51,
    "week52_low": 64.9,
    "week52_high": 138.04
-  },
-  "68162K106": {
-   "ticker": "ROCLF",
-   "name": "OLYMPIC STEEL INC",
-   "current_price": 0.0,
-   "week52_low": 0.0,
-   "week52_high": 0.0
   },
   "68170A108": {
    "ticker": "OMDA",
@@ -28016,13 +28002,6 @@
    "week52_low": 6.47,
    "week52_high": 15.84
   },
-  "007025885": {
-   "ticker": "ADTX",
-   "name": "ADITXT INC",
-   "current_price": 0.0,
-   "week52_low": 0.0,
-   "week52_high": 29045.52
-  },
   "00777X496": {
    "ticker": "RAAA",
    "name": "ADVISOR MANAGED PORTFOLIOS",
@@ -29849,13 +29828,6 @@
    "current_price": 97.19,
    "week52_low": 98.72,
    "week52_high": 98.72
-  },
-  "30258N105": {
-   "ticker": "FATAQ",
-   "name": "FAT BRANDS INC",
-   "current_price": 0.0,
-   "week52_low": 0.0,
-   "week52_high": 2.45
   },
   "30258N600": {
    "ticker": "FABTQ",
@@ -36227,13 +36199,6 @@
    "week52_low": 5.54,
    "week52_high": 7.05
   },
-  "901643106": {
-   "ticker": "TWNPQ",
-   "name": "TWIN HOSPITALITY GROUP INC",
-   "current_price": 0.0,
-   "week52_low": 0.0,
-   "week52_high": 4.57
-  },
   "90214Q774": {
    "ticker": "LSAF",
    "name": "TWO RDS SHARED TR",
@@ -39384,13 +39349,6 @@
    "week52_low": 67.16,
    "week52_high": 134.47
   },
-  "85205TAQ3": {
-   "ticker": "JN9.F",
-   "name": "SPIRIT AEROSYSTEMS INC",
-   "current_price": 0.0,
-   "week52_low": 0.0,
-   "week52_high": 0.02
-  },
   "85208P600": {
    "ticker": "NIKL",
    "name": "SPROTT FDS TR",
@@ -39866,6 +39824,62 @@
    "current_price": 77.37,
    "week52_low": 66.15,
    "week52_high": 85.17
+  },
+  "390607109": {
+   "ticker": "GLUX",
+   "name": "GREAT LAKES DREDGE &amp; DOCK CO",
+   "current_price": 0.0,
+   "week52_low": 0.0,
+   "week52_high": 0.0
+  },
+  "G4R20B107": {
+   "ticker": "TDOG",
+   "name": "INTER &amp; CO INC",
+   "current_price": 14.61,
+   "week52_low": 14.61,
+   "week52_high": 24.98
+  },
+  "68162K106": {
+   "ticker": "ROCLF",
+   "name": "OLYMPIC STEEL INC",
+   "current_price": 0.0,
+   "week52_low": 0.0,
+   "week52_high": 0.0
+  },
+  "007025885": {
+   "ticker": "ADTX",
+   "name": "ADITXT INC",
+   "current_price": 0.0,
+   "week52_low": 0.0,
+   "week52_high": 29045.52
+  },
+  "30258N105": {
+   "ticker": "FATAQ",
+   "name": "FAT BRANDS INC",
+   "current_price": 0.0,
+   "week52_low": 0.0,
+   "week52_high": 2.45
+  },
+  "88636X401": {
+   "ticker": "BMNZ",
+   "name": "TIDAL TRUST II",
+   "current_price": 20.1,
+   "week52_low": 14.12,
+   "week52_high": 42.67
+  },
+  "901643106": {
+   "ticker": "TWNPQ",
+   "name": "TWIN HOSPITALITY GROUP INC",
+   "current_price": 0.0,
+   "week52_low": 0.0,
+   "week52_high": 4.57
+  },
+  "85205TAQ3": {
+   "ticker": "JN9.F",
+   "name": "SPIRIT AEROSYSTEMS INC",
+   "current_price": 0.0,
+   "week52_low": 0.0,
+   "week52_high": 0.02
   }
  }
 }
