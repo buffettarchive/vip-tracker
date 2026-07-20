@@ -1,6 +1,24 @@
 {
   "entries": [
     {
+      "rcept_no": "20260720000099",
+      "rcept_dt": "20260720",
+      "corp_code": "00127909",
+      "corp_name": "삼일",
+      "corp_cls": "K",
+      "report_nm": "주요사항보고서(자기주식취득결정)",
+      "type": "취득",
+      "shares_common": null,
+      "amount_common": null,
+      "acq_purpose": null,
+      "acq_method": null,
+      "acq_period_start": null,
+      "acq_period_end": null,
+      "total_shares": null,
+      "ratio_pct": null,
+      "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260720000099"
+    },
+    {
       "rcept_no": "20260720000090",
       "rcept_dt": "20260720",
       "corp_code": "00361594",
@@ -6241,5 +6259,5 @@
       "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250610000225"
     }
   ],
-  "last_seen": "20260720000090"
+  "last_seen": "20260720000099"
 }
