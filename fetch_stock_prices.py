@@ -177,65 +177,34 @@ def main():
     all_tickers = list(set(ticker_map.values()))
     log.info(f"가격 다운로드: {len(all_tickers)}개 티커 (yfinance 배치)")
 
-    # 외국 티커 제거 (배치 오류 방지)
+    # 외국 티커 제거
     us_tickers = [t for t in all_tickers if "." not in t and is_valid_us(t)]
     foreign = len(all_tickers) - len(us_tickers)
     if foreign:
         log.info(f"  외국/무효 티커 {foreign}개 제외")
     all_tickers = us_tickers
 
-    BATCH = 200
     price_data = {}
 
-    for i in range(0, len(all_tickers), BATCH):
-        batch = all_tickers[i:i+BATCH]
-        log.info(f"  배치 {i//BATCH+1}/{(len(all_tickers)-1)//BATCH+1}: {len(batch)}개")
+    # yf.Ticker().history() 개별 조회 (가장 안정적)
+    log.info(f"  개별 조회: {len(all_tickers)}개")
+    for idx, ticker in enumerate(all_tickers):
         try:
-            df = yf.download(
-                batch, period="1y", interval="1wk",
-                group_by="ticker", progress=False,
-                auto_adjust=True, threads=True
-            )
-            if df.empty:
-                log.warning(f"  배치 빈 결과")
-                continue
-
-            for ticker in batch:
-                try:
-                    if len(batch) == 1:
-                        closes = df["Close"].dropna()
-                    else:
-                        if ticker not in df.columns.get_level_values(0):
-                            continue
-                        closes = df[ticker]["Close"].dropna()
-                    if len(closes) == 0:
-                        continue
+            t = yf.Ticker(ticker)
+            hist = t.history(period="1y")
+            if hist is not None and not hist.empty and "Close" in hist.columns:
+                closes = hist["Close"].dropna()
+                if len(closes) > 0:
                     price_data[ticker] = {
                         "current_price": round(float(closes.iloc[-1]), 2),
                         "week52_low": round(float(closes.min()), 2),
                         "week52_high": round(float(closes.max()), 2),
                     }
-                except Exception:
-                    continue
-        except Exception as e:
-            log.warning(f"  배치 실패: {e}")
-            # 배치 실패 시 개별 다운로드 fallback
-            for ticker in batch:
-                try:
-                    df2 = yf.download(ticker, period="1y", interval="1wk",
-                                     progress=False, auto_adjust=True)
-                    if not df2.empty and "Close" in df2.columns:
-                        closes = df2["Close"].dropna()
-                        if len(closes) > 0:
-                            price_data[ticker] = {
-                                "current_price": round(float(closes.iloc[-1]), 2),
-                                "week52_low": round(float(closes.min()), 2),
-                                "week52_high": round(float(closes.max()), 2),
-                            }
-                except Exception:
-                    continue
-                time.sleep(0.2)
-        time.sleep(2)
+        except Exception:
+            pass
+        if (idx + 1) % 100 == 0:
+            log.info(f"    진행: {idx+1}/{len(all_tickers)} (✓{len(price_data)})")
+        time.sleep(0.15)
 
     log.info(f"가격 수집: {len(price_data)}개 성공 / {len(all_tickers)}개 중")
 
