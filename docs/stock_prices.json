@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-07-20T04:37:40.175416Z",
- "count": 5698,
+ "updated_at": "2026-07-20T08:39:12.104518Z",
+ "count": 5719,
  "prices": {
   "02005N100": {
    "ticker": "ALLY",
@@ -39846,12 +39846,117 @@
    "week52_low": 4.44,
    "week52_high": 7.63
   },
+  "574795100": {
+   "ticker": "MASI",
+   "name": "MASIMO CORP",
+   "current_price": 179.95,
+   "week52_low": 179.95,
+   "week52_high": 179.95
+  },
+  "69331C306": {
+   "ticker": "PCG",
+   "name": "PG&E CORP",
+   "current_price": 17.32,
+   "week52_low": 13.45,
+   "week52_high": 19.0
+  },
+  "M98068105": {
+   "ticker": "WIX",
+   "name": "WIX COM LTD",
+   "current_price": 51.45,
+   "week52_low": 42.49,
+   "week52_high": 182.12
+  },
+  "489398107": {
+   "ticker": "KW",
+   "name": "KENNEDY-WILSON HOLDINGS INC",
+   "current_price": 10.92,
+   "week52_low": 10.92,
+   "week52_high": 10.92
+  },
+  "48251w104": {
+   "ticker": "KKR",
+   "name": "KKR & CO L P DEL",
+   "current_price": 100.94,
+   "week52_low": 85.93,
+   "week52_high": 152.16
+  },
+  "G0772R208": {
+   "ticker": "NTB",
+   "name": "Bank of N.T. Butterfield & Son Limited",
+   "current_price": 61.37,
+   "week52_low": 41.48,
+   "week52_high": 61.37
+  },
+  "128246105": {
+   "ticker": "CVGW",
+   "name": "CALAVO GROWERS INC",
+   "current_price": 26.09,
+   "week52_low": 26.09,
+   "week52_high": 26.09
+  },
+  "152309100": {
+   "ticker": "CNTA",
+   "name": "CENTESSA PHARMACEUTICALS PLC",
+   "current_price": 40.5,
+   "week52_low": 40.5,
+   "week52_high": 40.5
+  },
+  "N30577105": {
+   "ticker": "ZGN",
+   "name": "ERMENEGILDO ZEGNA N V",
+   "current_price": 13.9,
+   "week52_low": 7.75,
+   "week52_high": 14.7
+  },
+  "N3168P101": {
+   "ticker": "FER",
+   "name": "FERROVIAL SE",
+   "current_price": 63.59,
+   "week52_low": 51.18,
+   "week52_high": 74.38
+  },
+  "343873105": {
+   "ticker": "FFIC",
+   "name": "FLUSHING FINL CORP",
+   "current_price": 15.47,
+   "week52_low": 15.49,
+   "week52_high": 15.49
+  },
   "390607109": {
    "ticker": "GLUX",
-   "name": "GREAT LAKES DREDGE &amp; DOCK CO",
+   "name": "GREAT LAKES DREDGE & DOCK CO",
    "current_price": 0.0,
    "week52_low": 0.0,
    "week52_high": 0.0
+  },
+  "w41422101": {
+   "ticker": "HL",
+   "name": "H&M",
+   "current_price": 14.33,
+   "week52_low": 5.69,
+   "week52_high": 31.81
+  },
+  "483497103": {
+   "ticker": "KALV",
+   "name": "KALVISTA PHARMACEUTICALS INC",
+   "current_price": 27.0,
+   "week52_low": 27.0,
+   "week52_high": 27.0
+  },
+  "G6683N103": {
+   "ticker": "NU",
+   "name": "NU HLDGS LTD",
+   "current_price": 13.59,
+   "week52_low": 11.97,
+   "week52_high": 18.04
+  },
+  "679369108": {
+   "ticker": "OLPX",
+   "name": "OLAPLEX HLDGS INC",
+   "current_price": 2.07,
+   "week52_low": 2.07,
+   "week52_high": 2.07
   },
   "68162K106": {
    "ticker": "ROCLF",
@@ -39860,12 +39965,54 @@
    "week52_low": 0.0,
    "week52_high": 0.0
   },
+  "H5919C104": {
+   "ticker": "ONON",
+   "name": "ON HLDG AG",
+   "current_price": 37.2,
+   "week52_low": 32.39,
+   "week52_high": 53.12
+  },
+  "72346Q104": {
+   "ticker": "PBNK",
+   "name": "PINNACLE FINL PARTNERS INC",
+   "current_price": 18.0,
+   "week52_low": 16.02,
+   "week52_high": 20.95
+  },
+  "88362T103": {
+   "ticker": "THR",
+   "name": "THERMON GROUP HLDGS INC",
+   "current_price": 61.14,
+   "week52_low": 61.14,
+   "week52_high": 61.14
+  },
+  "89055F103": {
+   "ticker": "BLD",
+   "name": "TOPBUILD COR",
+   "current_price": 354.53,
+   "week52_low": 354.53,
+   "week52_high": 354.53
+  },
+  "G9618E107": {
+   "ticker": "WTM",
+   "name": "WHITE MTNS INS GROUP LTD",
+   "current_price": 2211.52,
+   "week52_low": 1715.94,
+   "week52_high": 2319.41
+  },
   "007025885": {
    "ticker": "ADTX",
    "name": "ADITXT INC",
    "current_price": 0.0,
    "week52_low": 0.0,
    "week52_high": 29045.52
+  },
+  "04546C304": {
+   "ticker": "ASRT",
+   "name": "ASSERTIO HOLDINGS INC",
+   "current_price": 23.5,
+   "week52_low": 23.5,
+   "week52_high": 23.5
   },
   "30258N105": {
    "ticker": "FATAQ",
