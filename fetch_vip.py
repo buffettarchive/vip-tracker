@@ -271,11 +271,46 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--backfill-days", type=int, default=0,
                         help="과거 N일치 재스캔 (last_seen 무시)")
+    parser.add_argument("--fix-etc", action="store_true",
+                        help="기타로 분류된 항목만 재파싱+재분류")
     args = parser.parse_args()
 
     data, sha = gh_get()
     existing = {d["rcept_no"]: d for d in data.get("disclosures", [])}
     last_seen = data.get("last_seen", "") or (max(existing) if existing else "")
+
+    # --fix-etc 모드: 기타 항목만 재처리 후 바로 종료
+    if args.fix_etc:
+        etc_items = {k:v for k,v in existing.items() if v.get("kind")=="기타"}
+        print(f"[info] ★ 기타 항목 재처리 모드: {len(etc_items)}건")
+        fixed = 0
+        for rcept_no, entry in etc_items.items():
+            doc = parse_document(rcept_no)
+            time.sleep(0.3)
+            if doc.get("stkrt") or doc.get("report_resn"):
+                new_resn = doc.get("report_resn", entry.get("report_resn", ""))
+                new_stkrt = doc.get("stkrt") or entry.get("stkrt", "")
+                new_prev = doc.get("stkrt_prev") or entry.get("stkrt_prev", "")
+                new_kind = classify(new_stkrt, new_prev, new_resn)
+                if new_kind != "기타":
+                    entry["kind"] = new_kind
+                    if doc.get("stkrt"): entry["stkrt"] = doc["stkrt"]
+                    if doc.get("stkrt_prev"): entry["stkrt_prev"] = doc["stkrt_prev"]
+                    if doc.get("report_resn"): entry["report_resn"] = new_resn
+                    if doc.get("stkqy"): entry["stkqy"] = doc["stkqy"]
+                    fixed += 1
+                    print(f"  [✓] {entry.get('corp_name','')} / {entry.get('firm','')} → {new_kind}")
+                else:
+                    print(f"  [─] {entry.get('corp_name','')} / {entry.get('firm','')} → 여전히 기타")
+        if fixed:
+            merged = sorted(existing.values(), key=lambda x: x.get("rcept_no",""), reverse=True)
+            payload = {**data, "disclosures": merged,
+                       "updated_at": dt.datetime.now(dt.timezone(dt.timedelta(hours=9))).isoformat(timespec="minutes")}
+            gh_put(payload, sha)
+            print(f"[info] {fixed}건 수정 → GitHub 반영")
+        else:
+            print("[info] 수정할 항목 없음")
+        return
 
     scan_days = SCAN_DAYS
     if args.backfill_days > 0:
