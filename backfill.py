@@ -198,11 +198,23 @@ def classify(stkrt, stkrt_prev, report_resn=""):
     if any(k in resn for k in ["장내매도", "장외매도", "시간외매도"]):
         return "매도"
     if any(k in resn for k in ["장내매매", "시간외매매"]):
-        if "매수" in resn:
-            return "매수"
-        if "매도" in resn:
-            return "매도"
+        if "매수" in resn: return "매수"
+        if "매도" in resn: return "매도"
         return "매수"
+    has_add = "추가" in resn
+    has_remove = "해소" in resn or "감소" in resn
+    if has_add and not has_remove:
+        return "매수"
+    if has_remove and not has_add:
+        return "매도"
+    if has_add and has_remove:
+        if cur is not None and prev is not None:
+            if cur > prev: return "매수"
+            if cur < prev: return "매도"
+    if "변동보고" in resn:
+        if cur is not None and prev is not None:
+            if cur > prev: return "매수"
+            if cur < prev: return "매도"
 
     if cur is None:
         return "기타"
