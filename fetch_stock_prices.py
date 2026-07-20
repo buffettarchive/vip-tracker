@@ -283,38 +283,7 @@ def main():
 
     log.info(f"기존 유지: {skipped}개, 누락 조회: {len(to_do)}개")
 
-    # ── 누락분 처리: 수동매핑 → 캐시 → Finnhub (Yahoo 스킵) ──
-    success=0; failed=[]
-    for idx,(nk,info) in enumerate(to_do.items()):
-        cusip=info["cusip"]; name=info["name"]
 
-        # 티커 매핑: 수동 → 캐시 → Finnhub
-        nk_clean=re.sub(r'\s*\([^)]*\)','',nk).strip()
-        nk_clean2=re.sub(r'\s+FORMERLY$','',nk_clean,flags=re.I).strip()
-        t = MANUAL.get(nk) or MANUAL.get(nk_clean) or MANUAL.get(nk_clean2) or MANUAL.get(name)
-        if not t: t=cache.get(nk) or cache.get(cusip)
-        if (not t or not is_valid_us(t)) and FINNHUB_KEY:
-            t=fh_search(name)
-        if not t:
-            failed.append((cusip,name,"티커없음")); continue
-        cache[nk]=t
-        if cusip: cache[cusip]=t
-
-        # 가격: Finnhub 우선 (빠름), 실패 시 Yahoo
-        pd=None
-        if FINNHUB_KEY:
-            pd=fh_price(t)
-        if not pd:
-            pd=yf_price(t)
-            time.sleep(0.2)
-
-        if pd:
-            prices[cusip or nk]={"ticker":t,"name":name,**pd}; success+=1
-        else:
-            failed.append((cusip,name,t))
-
-        if (idx+1)%50==0:
-            log.info(f"  진행: {idx+1}/{len(to_do)} (✓{success} ✗{len(failed)})")
 
     save_json(TICKER_CACHE_PATH,cache)
 
