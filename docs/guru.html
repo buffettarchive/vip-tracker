@@ -181,19 +181,34 @@ let PRICE_BY_NAME={};
 let PRICE_BY_NORM={};
 let PRICE_BY_TICKER={};
 let TICKER_BY_NAME={};
+// 수동 매핑: 자동 매칭 실패하는 대형주
+const MANUAL_TICKERS_MAP={
+  "COCA COLA CO":"KO","KROGER CO":"KR","S&P GLOBAL INC":"SPGI",
+  "BLOCK H & R INC":"HRB","TENCENT MUSIC ENTMT GROUP":"TME",
+  "BK OF AMERICA CORP":"BAC","JEFFERIES FINANCIAL GROUP IN":"JEF",
+  "COCA-COLA CO":"KO","T-MOBILE US INC":"TMUS","JOHNSON & JOHNSON":"JNJ",
+  "PROCTER & GAMBLE CO":"PG","CHARTER COMMUNICATIONS INC":"CHTR",
+  "BOOKING HOLDINGS INC":"BKNG","UNITEDHEALTH GROUP INC":"UNH",
+  "CHARLES SCHWAB CORP":"SCHW","ESTEE LAUDER COMPANIES INC":"EL",
+};
 function normName(n){
   return n.toUpperCase()
-    .replace(/[.,'\/&]/g,'').replace(/\s+/g,' ')
+    .replace(/[.,'\/]/g,'').replace(/&/g,' ').replace(/\s+/g,' ')
     .replace(/\s+(CL|CLASS)\s*[A-Z]$/,'')
     .replace(/\s+(INC|CORP|CO|LTD|PLC|NV|SA|AG|SE|LP|LLC|SWITZ|DE|CORPORATION)$/,'')
-    .replace(/\s+(GROUP|HLDGS|HOLDINGS|INTERNATIONAL|INTL|IN)$/,'')
+    .replace(/\s+(GROUP|HLDGS|HOLDINGS|INTERNATIONAL|INTL|IN|ENTMT)$/,'')
     .replace(/\s+(INC|CORP|CO|LTD)$/,'')
-    .replace(/\s+(MTN\s*BE|NEW)$/,'')
+    .replace(/\s+(MTN\s*BE|NEW|DEL)$/,'')
     .replace(/\bOF\b/g,' ').replace(/\bTHE\b/g,' ')
     .replace(/\s+/g,' ').trim();
 }
 function buildPriceIndex(){
   PRICE_BY_NAME={};PRICE_BY_NORM={};PRICE_BY_TICKER={};TICKER_BY_NAME={};
+  // 수동 매핑 먼저 등록
+  for(const[name,ticker]of Object.entries(MANUAL_TICKERS_MAP)){
+    TICKER_BY_NAME[name.toUpperCase()]=ticker;
+    TICKER_BY_NAME[normName(name)]=ticker;
+  }
   for(const[cusip,p]of Object.entries(PRICES)){
     if(p.name){
       const key=p.name.toUpperCase().trim();
@@ -233,6 +248,8 @@ function getTicker(cusip,name){
   if(cusip&&TICKER_CACHE[cusip])return TICKER_CACHE[cusip];
   if(name){
     const key=name.toUpperCase().trim();
+    // 수동 매핑 우선
+    if(MANUAL_TICKERS_MAP[key])return MANUAL_TICKERS_MAP[key];
     if(TICKER_BY_NAME[key])return TICKER_BY_NAME[key];
     const nk=normName(name);
     if(TICKER_BY_NAME[nk])return TICKER_BY_NAME[nk];
@@ -243,7 +260,15 @@ function getTicker(cusip,name){
 }
 function getPriceData(cusip,name){
   if(cusip&&PRICES[cusip])return PRICES[cusip];
-  return findByName(name);
+  const p=findByName(name);
+  if(p) return p;
+  // 수동 매핑으로 티커 찾고 → 티커로 가격 조회
+  if(name){
+    const key=name.toUpperCase().trim();
+    const mt=MANUAL_TICKERS_MAP[key];
+    if(mt&&PRICE_BY_TICKER[mt])return PRICE_BY_TICKER[mt];
+  }
+  return null;
 }
 
 async function init(){
