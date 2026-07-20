@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
 """
-fetch_stock_prices.py v8 — urllib 방식 (검증 완료) + 모든 개선사항 통합
-yfinance 제거, 기존 성공했던 Yahoo Finance API 직접 호출 방식 복원
+fetch_stock_prices.py v9 — Yahoo + Finnhub 하이브리드
+
+1. 기존 Yahoo 성공분 유지 (5698개)
+2. 누락분만 Finnhub API로 채움 (검색 + 시세 + 52주)
+3. Finnhub 무료 60회/분 → 누락 400개 ≈ 20분
 """
 
-import json, time, logging, re
+import json, time, logging, re, os
 from datetime import datetime
 from pathlib import Path
 from urllib.request import Request, urlopen
@@ -15,6 +18,9 @@ PRICES_PATH = Path("docs/stock_prices.json")
 TICKER_CACHE_PATH = Path("docs/ticker_cache.json")
 
 YF_UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+FINNHUB_KEY = os.environ.get("FINNHUB_API_KEY", "")
+FINNHUB = "https://finnhub.io/api/v1"
+
 FOREIGN_SUFFIXES = {'.SW','.MI','.MX','.L','.PA','.DE','.HK','.TO','.AX','.AS','.F'}
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s", datefmt="%H:%M:%S")
@@ -40,7 +46,7 @@ MANUAL = {
     "ECHOSTAR CORPORATION":"SATS","CEMEX SAB DE CV":"CX",
     "CNH INDL N V":"CNHI","WIX COM LTD":"WIX",
     "INTERNATIONAL FLAVORS AND FRAGRANCES INC":"IFF",
-    "AMERICAN ELECTRIC POWER COMPANY":"AEP","AMERICAN ELECTRIC POWER CO INC":"AEP",
+    "AMERICAN ELECTRIC POWER COMPANY":"AEP",
     "JETBLUE AIRWAYS CORP":"JBLU","JETBLUE AIRWAYS CORP (JBLU)":"JBLU",
     "CAESARS ENTERTAINMENT INC":"CZR","ILLUMINA INC":"ILMN",
     "MASIMO CORP":"MASI","AIR LEASE CORP":"AL",
@@ -86,28 +92,23 @@ MANUAL = {
     "LIBERTY GLOBAL LTD":"LBTYA","MADISON SQUARE GARDEN SPORTS":"MSGS",
     "NVIDIA CORPORATION":"NVDA","PFIZER INC":"PFE","HALLIBURTON CO":"HAL",
     "PALANTIR TECHNOLOGIES INC":"PLTR","MAGNOLIA OIL & GAS CORP":"MGY",
-    "HEICO CORP":"HEI","LIBERTY MEDIA CORP":"LSXMA",
-    "LIBERTY BROADBAND CORP":"LBRDK","MSCI INC":"MSCI",
-    "SLM CORP":"SLM","BRUKER CORP":"BRKR",
+    "HEICO CORP":"HEI","MSCI INC":"MSCI","SLM CORP":"SLM","BRUKER CORP":"BRKR",
     "NORWEGIAN CRUISE LINE HLDGS":"NCLH","AMERICOLD REALTY TRUST INC":"COLD",
     "GDS HLDGS LTD":"GDS","HERBALIFE LTD":"HLF","DNOW INC":"DNOW",
     "VAXCYTE INC":"PCVX","TELEFLEX INCORPORATED":"TFX",
     "EAST WEST BANCORP INC":"EWBC","CROCS INC":"CROX",
-    "ARDAGH METAL PACKAGING S A":"AMBP","PDD HOLDINGS INC":"PDD",
-    "LULULEMON ATHLETICA INC":"LULU","DAILY JOURNAL CORP":"DJCO",
-    "CALEDONIA MNG CORP":"CMCL","ON24 INC":"ONTF","ONESTREAM INC":"OS",
-    "TRINSEO PLC":"TSE","PEAKSTONE REALTY TRUST":"PKST",
-    "SEMLER SCIENTIFIC INC":"SMLR","LINKBANCORP INC":"LNKB",
-    "MIDDLEFIELD BANC CORP":"MBCN","ECD AUTOMOTIVE DESIGN INC":"ECDA",
-    "FORIAN INC":"FORA","FLYEXCLUSIVE INC":"FLYX",
-    "BANKFINANCIAL CORP":"F","FIVE BELOW INC":"FIVE",
+    "PDD HOLDINGS INC":"PDD","LULULEMON ATHLETICA INC":"LULU",
+    "DAILY JOURNAL CORP":"DJCO","ON24 INC":"ONTF","ONESTREAM INC":"OS",
+    "PEAKSTONE REALTY TRUST":"PKST","SEMLER SCIENTIFIC INC":"SMLR",
+    "LINKBANCORP INC":"LNKB","MIDDLEFIELD BANC CORP":"MBCN",
+    "LIBERTY MEDIA CORP":"LSXMA","LIBERTY BROADBAND CORP":"LBRDK",
 }
 
 def load_json(p):
     if not p.exists(): return None
     with open(p,"r",encoding="utf-8") as f: return json.load(f)
 
-def save_json(p, d):
+def save_json(p,d):
     with open(p,"w",encoding="utf-8") as f: json.dump(d,f,ensure_ascii=False,indent=1)
 
 def is_equity_cusip(c):
@@ -140,6 +141,7 @@ def collect_stocks():
                 stocks[name.upper()]={"cusip":cusip,"name":name}
     return stocks
 
+# ── Yahoo (기존 검증된 방식) ──
 def yf_search(name):
     variants=[]
     n=re.sub(r'\s*\([^)]*\)','',name).strip()
@@ -156,9 +158,8 @@ def yf_search(name):
     for q in variants:
         url=f"https://query1.finance.yahoo.com/v1/finance/search?q={quote_plus(q)}&quotesCount=5&newsCount=0&listsCount=0"
         try:
-            req=Request(url,headers={"User-Agent":YF_UA})
-            with urlopen(req,timeout=10) as resp:
-                data=json.loads(resp.read())
+            with urlopen(Request(url,headers={"User-Agent":YF_UA}),timeout=10) as r:
+                data=json.loads(r.read())
             for qt in data.get("quotes",[]):
                 sym=qt.get("symbol","")
                 if qt.get("quoteType")=="EQUITY" and qt.get("exchange","") in us_ex and is_valid_us(sym):
@@ -175,112 +176,165 @@ def yf_price(ticker):
     for rng,intv in [("1y","1wk"),("6mo","1d"),("3mo","1d")]:
         url=f"https://query1.finance.yahoo.com/v8/finance/chart/{ticker}?range={rng}&interval={intv}&includePrePost=false"
         try:
-            req=Request(url,headers={"User-Agent":YF_UA})
-            with urlopen(req,timeout=15) as resp:
-                data=json.loads(resp.read())
-            r=data.get("chart",{}).get("result",[])
-            if not r: continue
-            meta=r[0].get("meta",{})
-            cur=meta.get("regularMarketPrice",0)
+            with urlopen(Request(url,headers={"User-Agent":YF_UA}),timeout=15) as r:
+                data=json.loads(r.read())
+            res=data.get("chart",{}).get("result",[])
+            if not res: continue
+            cur=res[0].get("meta",{}).get("regularMarketPrice",0)
             if not cur: continue
-            closes=r[0].get("indicators",{}).get("quote",[{}])[0].get("close",[])
+            closes=res[0].get("indicators",{}).get("quote",[{}])[0].get("close",[])
             closes=[c for c in closes if c is not None]
             if not closes: continue
             return {"current_price":round(cur,2),"week52_low":round(min(closes),2),"week52_high":round(max(closes),2)}
         except: continue
     return None
 
+# ── Finnhub (Yahoo 실패분 보완) ──
+_fh_calls=0
+_fh_window_start=time.time()
+
+def _fh_rate():
+    """Finnhub 60회/분 rate limit."""
+    global _fh_calls, _fh_window_start
+    _fh_calls+=1
+    if _fh_calls>=55:
+        elapsed=time.time()-_fh_window_start
+        if elapsed<62:
+            wait=62-elapsed
+            log.info(f"    Finnhub rate limit 대기 {wait:.0f}초...")
+            time.sleep(wait)
+        _fh_calls=0
+        _fh_window_start=time.time()
+
+def fh_search(name):
+    if not FINNHUB_KEY: return None
+    clean=re.sub(r'\s*\([^)]*\)','',name).strip()
+    clean=re.sub(r'\s+(INC|CORP|CO|LTD|PLC|LP|LLC|SWITZ|FORMERLY|CORPORATION)\.?$','',clean,flags=re.I)
+    clean=re.sub(r'\s+(INC|CORP|CO|LTD)\.?$','',clean,flags=re.I).strip()
+    clean=clean.replace('&','AND')
+    url=f"{FINNHUB}/search?q={quote_plus(clean)}&token={FINNHUB_KEY}"
+    _fh_rate()
+    try:
+        with urlopen(Request(url),timeout=10) as r:
+            data=json.loads(r.read())
+        for item in data.get("result",[]):
+            sym=item.get("symbol","")
+            typ=item.get("type","")
+            if typ in ("Common Stock","ADR","EQS","") and is_valid_us(sym) and "." not in sym:
+                return sym
+    except: pass
+    return None
+
+def fh_price(ticker):
+    if not FINNHUB_KEY: return None
+    # quote
+    _fh_rate()
+    try:
+        url=f"{FINNHUB}/quote?symbol={ticker}&token={FINNHUB_KEY}"
+        with urlopen(Request(url),timeout=10) as r:
+            q=json.loads(r.read())
+        cur=q.get("c",0)
+        if not cur or cur==0: return None
+    except: return None
+    # 52주
+    _fh_rate()
+    try:
+        url=f"{FINNHUB}/stock/metric?symbol={ticker}&metric=all&token={FINNHUB_KEY}"
+        with urlopen(Request(url),timeout=10) as r:
+            m=json.loads(r.read())
+        met=m.get("metric",{})
+        w52h=met.get("52WeekHigh",cur)
+        w52l=met.get("52WeekLow",cur)
+        return {"current_price":round(cur,2),"week52_low":round(w52l,2),"week52_high":round(w52h,2)}
+    except:
+        return {"current_price":round(cur,2),"week52_low":round(cur,2),"week52_high":round(cur,2)}
+
+
 def main():
     stocks=collect_stocks()
     log.info(f"고유 종목: {len(stocks)}개 (채권 제외)")
     if not stocks: return
+    log.info(f"Finnhub API: {'사용 가능' if FINNHUB_KEY else '키 없음 — Yahoo만 사용'}")
 
     cache=load_json(TICKER_CACHE_PATH) or {}
 
-    # 잘못된 외국 티커 캐시 정리
-    bad=0
-    for k in list(cache.keys()):
-        if cache[k] and not is_valid_us(cache[k]):
-            del cache[k]; bad+=1
-    if bad: log.info(f"외국 티커 {bad}개 캐시 제거")
+    # 외국 티커 캐시 정리
+    bad=sum(1 for k in list(cache.keys()) if cache[k] and not is_valid_us(cache[k]) and not cache.pop(k,None) is None)
 
-    # 기존 가격 로드 → 성공분 유지
+    # 기존 가격 유지
     existing=(load_json(PRICES_PATH) or {}).get("prices",{})
-    prices={}
-    skipped=0
+    prices={}; skipped=0
     for nk,info in stocks.items():
         c=info["cusip"]
         if c and c in existing and existing[c].get("current_price"):
             prices[c]=existing[c]; skipped+=1
-            continue
-        for ec,ep in existing.items():
-            if ep.get("name","").upper()==nk and ep.get("current_price"):
-                prices[c or ec]=ep; skipped+=1; break
 
     # 이전 실패 캐시 삭제
-    stale=0
-    existing_cusips=set(prices.keys())
     for nk,info in stocks.items():
         c=info["cusip"]
-        if c and c not in existing_cusips and cache.get(c):
-            del cache[c]; stale+=1
-        if nk not in existing_cusips and cache.get(nk):
-            del cache[nk]; stale+=1
-    if stale: log.info(f"이전 실패 캐시 {stale}개 제거")
+        if c and c not in prices:
+            cache.pop(c,None); cache.pop(nk,None)
 
-    # 처리 대상
+    # 누락분 찾기
     to_do={}
     for nk,info in stocks.items():
-        c=info["cusip"]
-        if c not in prices:
-            found=False
-            for pc in prices:
-                if prices[pc].get("name","").upper()==nk: found=True; break
-            if not found: to_do[nk]=info
+        if info["cusip"] not in prices:
+            to_do[nk]=info
 
-    log.info(f"기존 유지: {skipped}개, 신규 조회: {len(to_do)}개")
+    log.info(f"기존 유지: {skipped}개, 누락 조회: {len(to_do)}개")
 
-    # 티커 매핑 + 가격 조회
+    # ── 누락분 처리: Yahoo → Finnhub 순서 ──
     success=0; failed=[]
     for idx,(nk,info) in enumerate(to_do.items()):
         cusip=info["cusip"]; name=info["name"]
-        # 매핑: 수동 → 캐시 → Yahoo 검색
+
+        # 티커 매핑: 수동 → 캐시 → Yahoo → Finnhub
         nk_clean=re.sub(r'\s*\([^)]*\)','',nk).strip()
         nk_clean2=re.sub(r'\s+FORMERLY$','',nk_clean,flags=re.I).strip()
-        t=MANUAL.get(nk) or MANUAL.get(nk_clean) or MANUAL.get(nk_clean2) or MANUAL.get(name)
+        t = MANUAL.get(nk) or MANUAL.get(nk_clean) or MANUAL.get(nk_clean2) or MANUAL.get(name)
         if not t: t=cache.get(nk) or cache.get(cusip)
         if not t or not is_valid_us(t):
-            t=yf_search(name); time.sleep(0.2)
+            t=yf_search(name)
+        if not t and FINNHUB_KEY:
+            t=fh_search(name)
         if not t:
             failed.append((cusip,name,"티커없음")); continue
         cache[nk]=t
         if cusip: cache[cusip]=t
-        # 가격
-        pd=yf_price(t); time.sleep(0.25)
+
+        # 가격: Yahoo → Finnhub
+        pd=yf_price(t)
+        if not pd and FINNHUB_KEY:
+            pd=fh_price(t)
+        time.sleep(0.25)
+
         if pd:
             prices[cusip or nk]={"ticker":t,"name":name,**pd}; success+=1
         else:
             failed.append((cusip,name,t))
+
         if (idx+1)%50==0:
             log.info(f"  진행: {idx+1}/{len(to_do)} (✓{success} ✗{len(failed)})")
 
-    # 실패분 재시도
-    if failed:
-        log.info(f"실패분 재시도: {len(failed)}개")
+    # 실패분 Finnhub 재시도
+    if failed and FINNHUB_KEY:
+        log.info(f"Finnhub 재시도: {len(failed)}개")
         still_failed=[]; rescued=0
         for cusip,name,old_t in failed:
-            if old_t=="티커없음":
-                t=yf_search(name); time.sleep(0.3)
-                if t:
-                    pd=yf_price(t); time.sleep(0.25)
-                    if pd:
-                        prices[cusip or name.upper()]={"ticker":t,"name":name,**pd}
-                        rescued+=1; continue
+            t=old_t
+            if t=="티커없음":
+                t=fh_search(name)
+            if t and t!="티커없음":
+                pd=fh_price(t)
+                if pd:
+                    prices[cusip or name.upper()]={"ticker":t,"name":name,**pd}
+                    cache[name.upper()]=t
+                    rescued+=1; continue
             still_failed.append((cusip,name,old_t))
-        if rescued: log.info(f"  → {rescued}개 복구")
+        log.info(f"  → {rescued}개 복구")
         failed=still_failed
 
-    save_json(TICKER_CACHE_PATH, cache)
+    save_json(TICKER_CACHE_PATH,cache)
 
     total=len(prices); fails=len(stocks)-total
     log.info(f"━━━ 최종: ✓{total}개 성공, ✗{fails}개 실패 ━━━")
