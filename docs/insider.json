@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-20T12:19+09:00",
+  "updated_at": "2026-07-20T13:24+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260720000057",
+  "last_seen": "20260720000063",
   "disclosures": [
+    {
+      "rcept_no": "20260720000063",
+      "rcept_dt": "2026-07-20",
+      "corp_name": "한국맥널티",
+      "stock_code": "222980",
+      "market": "KOSDAQ",
+      "corp_code": "00579139",
+      "repror": "koh john hanjoon",
+      "ofcps": "이사",
+      "rgist": "비등기임원",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "9,103",
+      "total_cnt": "2,784,941",
+      "irds_rate": "0.09",
+      "hold_rate": "25.25",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260720000057",
       "rcept_dt": "2026-07-20",
