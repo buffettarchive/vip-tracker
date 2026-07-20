@@ -22,6 +22,31 @@ FOREIGN_SUFFIXES = {'.SW','.MI','.MX','.L','.PA','.DE','.HK','.TO','.AX','.AS',
     '.MC','.BR','.SA','.CO','.IS','.TA','.VI','.ST','.OL','.HE','.WA','.PR',
     '.KL','.SI','.TW','.KS','.KQ','.NS','.BO','.JK','.BK','.NZ','.AT','.BA'}
 
+# 자동 매핑 실패하는 대형주 수동 매핑 (종목명 → 티커)
+MANUAL_TICKERS = {
+    "COCA COLA CO": "KO",
+    "KROGER CO": "KR",
+    "S&P GLOBAL INC": "SPGI",
+    "BLOCK H & R INC": "HRB",
+    "TENCENT MUSIC ENTMT GROUP": "TME",
+    "BK OF AMERICA CORP": "BAC",
+    "JEFFERIES FINANCIAL GROUP IN": "JEF",
+    "JEFFERIES FINANCIAL GROUP INC": "JEF",
+    "COCA-COLA CO": "KO",
+    "COCA COLA CO THE": "KO",
+    "T-MOBILE US INC": "TMUS",
+    "META PLATFORMS INC": "META",
+    "CHARTER COMMUNICATIONS INC": "CHTR",
+    "LIBERTY MEDIA CORP": "LSXMA",
+    "LIBERTY BROADBAND CORP": "LBRDK",
+    "BOOKING HOLDINGS INC": "BKNG",
+    "UNITEDHEALTH GROUP INC": "UNH",
+    "JOHNSON & JOHNSON": "JNJ",
+    "PROCTER & GAMBLE CO": "PG",
+    "ESTEE LAUDER COMPANIES INC": "EL",
+    "CHARLES SCHWAB CORP": "SCHW",
+}
+
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s", datefmt="%H:%M:%S")
 log = logging.getLogger("stock-prices")
 
@@ -183,6 +208,18 @@ def main():
             stale += 1
     if stale:
         log.info(f"이전 가격실패 {stale}개 캐시에서 제거")
+
+    # 수동 매핑 먼저 적용
+    manual_applied = 0
+    for cusip, name in stocks.items():
+        if not ticker_cache.get(cusip):
+            upper = name.upper().strip()
+            if upper in MANUAL_TICKERS:
+                ticker_cache[cusip] = MANUAL_TICKERS[upper]
+                manual_applied += 1
+    if manual_applied:
+        log.info(f"수동 매핑: {manual_applied}개 적용")
+        save_json(TICKER_CACHE_PATH, ticker_cache)
 
     uncached = {c: n for c, n in stocks.items() if not ticker_cache.get(c)}
     log.info(f"유효 캐시: {len(stocks)-len(uncached)}개, 미캐시: {len(uncached)}개")
