@@ -1,14 +1,10 @@
 #!/usr/bin/env python3
 """
-fetch_stock_prices.py v7 — yfinance 배치 다운로드 방식
-
-1. 아카이브에서 종목명+CUSIP 수집
-2. 티커 매핑: 캐시 → 수동매핑 → Yahoo 검색
-3. yfinance.download()로 전체 배치 다운로드 (한번에 수백개)
-4. stock_prices.json 저장
+fetch_stock_prices.py v8 — urllib 방식 (검증 완료) + 모든 개선사항 통합
+yfinance 제거, 기존 성공했던 Yahoo Finance API 직접 호출 방식 복원
 """
 
-import json, time, logging, re, sys
+import json, time, logging, re
 from datetime import datetime
 from pathlib import Path
 from urllib.request import Request, urlopen
@@ -19,6 +15,7 @@ PRICES_PATH = Path("docs/stock_prices.json")
 TICKER_CACHE_PATH = Path("docs/ticker_cache.json")
 
 YF_UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+FOREIGN_SUFFIXES = {'.SW','.MI','.MX','.L','.PA','.DE','.HK','.TO','.AX','.AS','.F'}
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s", datefmt="%H:%M:%S")
 log = logging.getLogger("stock-prices")
@@ -28,219 +25,273 @@ MANUAL = {
     "BK OF AMERICA CORP":"BAC","BANK AMERICA CORP":"BAC",
     "S&P GLOBAL INC":"SPGI","BLOCK H & R INC":"HRB",
     "PG&E CORP":"PCG","PG&amp;E CORP":"PCG",
-    "KKR & CO L P DEL":"KKR","KKR &amp; CO L P DEL":"KKR",
+    "KKR & CO L P DEL":"KKR","KKR &amp; CO L P DEL":"KKR","KKR & CO INC":"KKR",
     "CI&T INC/UNITED STATES-A":"CINT","CI&amp;T INC/UNITED STATES-A":"CINT",
     "AMAZON COM INC":"AMZN","DISNEY WALT CO":"DIS","WALT DISNEY CO":"DIS",
     "JEFFERIES FINANCIAL GROUP IN":"JEF","JEFFERIES FINANCIAL GROUP INC":"JEF",
     "TENCENT MUSIC ENTMT GROUP":"TME","ELEVANCE HEALTH INC FORMERLY":"ELV",
     "FERGUSON ENTERPRISES INC (FERG)":"FERG","FERGUSON ENTERPRISES INC":"FERG",
     "WILLIS TOWERS WATSON PLC LTD":"WTW","WILLIS TOWERS WATSON PLC":"WTW",
-    "TOPBUILD COR":"BLD","EAGLE MATLS INC":"EXP",
+    "TOPBUILD COR":"BLD","TOPBUILD CORP":"BLD","EAGLE MATLS INC":"EXP",
     "SUN CTRY AIRLS HLDGS INC":"SNCY","MIDWESTONE FINL GROUP INC NE":"MOFG",
     "ERMENEGILDO ZEGNA N V":"ZGN","CENTRAIS ELET BRAS SA":"EBR",
-    "GRUPO AEROMEXICO SAB DE CV":"AEROMEX.MX",
     "FIRST AMERN FINL CORP":"FAF","FAIRFAX FINL HLDGS LTD":"FFH",
     "GENUINE PARTS CO":"GPC","AON PLC":"AON","MOLINA HEALTHCARE INC":"MOH",
     "ECHOSTAR CORPORATION":"SATS","CEMEX SAB DE CV":"CX",
     "CNH INDL N V":"CNHI","WIX COM LTD":"WIX",
     "INTERNATIONAL FLAVORS AND FRAGRANCES INC":"IFF",
-    "AMERICAN ELECTRIC POWER COMPANY":"AEP",
+    "AMERICAN ELECTRIC POWER COMPANY":"AEP","AMERICAN ELECTRIC POWER CO INC":"AEP",
     "JETBLUE AIRWAYS CORP":"JBLU","JETBLUE AIRWAYS CORP (JBLU)":"JBLU",
     "CAESARS ENTERTAINMENT INC":"CZR","ILLUMINA INC":"ILMN",
     "MASIMO CORP":"MASI","AIR LEASE CORP":"AL",
     "KENNEDY-WILSON HOLDINGS INC":"KW","SPROUTS FARMERS MARKET INC":"SFM",
+    "SOUTHWEST GAS HLDGS INC":"SWX","MGM RESORTS INTERNATIONAL":"MGM",
+    "HOLOGIC INC":"HOLX","COMERICA INC":"CMA","CIVITAS RESOURCES INC":"CIVI",
+    "CONFLUENT INC":"CFLT","CYBERARK SOFTWARE LTD":"CYBR",
+    "EVENTBRITE INC":"EB","GUESS INC":"GES","HILLENBRAND INC":"HLI",
+    "NU HLDGS LTD":"NU","OLAPLEX HLDGS INC":"OLPX","ON HLDG AG":"ONON",
+    "SEMRUSH HLDGS INC":"SEMR","SOLENO THERAPEUTICS INC":"SLNO",
+    "SYNOVUS FINL CORP":"SNV","THERMON GROUP HLDGS INC":"THR",
+    "TREEHOUSE FOODS INC":"THS","TRUECAR INC":"TRUE","UDEMY INC":"UDMY",
+    "WHITE MTNS INS GROUP LTD":"WTM","DAYFORCE INC":"DAY","DENNYS CORP":"DENN",
+    "DYNAVAX TECHNOLOGIES CORP":"DVAX","ENHABIT INC":"EHAB",
+    "CALAVO GROWERS INC":"CVGW","CANTALOUPE INC":"CTLP",
+    "POTLATCHDELTIC CORPORATION":"PCH","PLYMOUTH INDL REIT INC":"PLYM",
+    "SUNOPTA INC":"STKL","TEGNA INC":"TGNA",
+    "GENEDX HOLDINGS CORP":"WGS","VESTIS CORPORATION":"VSTS",
+    "IAC INC":"IAC","FORTREA HLDGS INC":"FTRE","COSTAR GROUP INC":"CSGP",
+    "LIONSGATE STUDIOS CORP":"LION","COTERRA ENERGY INC":"CTRA",
+    "Coterra Energy Inc.":"CTRA","Tri Pointe Group Inc.":"TPH",
+    "AVIDITY BIOSCIENCES INC":"RNA","ARCELLX INC":"ACLX",
+    "APELLIS PHARMACEUTICALS INC":"APLS","AMICUS THERAPEUTIC":"FOLD",
+    "ASTRIA THERAPEUTICS INC":"ATXS","AVADEL PHARMACEUTICALS PLC":"AVDL",
+    "CENTESSA PHARMACEUTICALS PLC":"CNTA","CIDARA THERAPEUTICS INC":"CDTX",
+    "CSG SYS INTL INC":"CSGS","KALVISTA PHARMACEUTICALS INC":"KALV",
+    "VENTYX BIOSCIENCES INC":"VTYX","TERNS PHARMACEUTICALS INC":"TERN",
+    "FLUSHING FINL CORP":"FFIC","ASSERTIO HOLDINGS INC":"ASRT",
+    "STANDARD BIOTOOLS INC":"LAB","SYNCHRONOSS TECHNOLOGIES INC":"SNCR",
+    "BITFARMS LTD/CANADA":"BITF","FERROVIAL SE":"FER",
+    "RESTAURANT BRANDS INTL INC":"QSR","WESCO INTL INC":"WCC",
+    "UNION PAC CORP":"UNP","ELEVANCE HEALTH INC":"ELV",
+    "T-MOBILE US INC":"TMUS","META PLATFORMS INC":"META",
+    "CHARTER COMMUNICATIONS INC":"CHTR","BOOKING HOLDINGS INC":"BKNG",
+    "UNITEDHEALTH GROUP INC":"UNH","JOHNSON & JOHNSON":"JNJ",
+    "PROCTER & GAMBLE CO":"PG","ESTEE LAUDER COMPANIES INC":"EL",
+    "CHARLES SCHWAB CORP":"SCHW","FISERV INC":"FI",
+    "AGILENT TECHNOLOGIES INC":"A","TYLER TECHNOLOGIES INC":"TYL",
+    "ROPER TECHNOLOGIES INC":"ROP","DOLBY LABORATORIES INC":"DLB",
+    "VIASAT INC":"VSAT","VAIL RESORTS INC":"MTN",
+    "BROWN & BROWN INC":"BRO","GLOBAL PAYMENTS INC":"GPN",
+    "ARCH CAP GROUP LTD":"ACGL","WATERS CORP":"WAT",
+    "LIBERTY GLOBAL LTD":"LBTYA","MADISON SQUARE GARDEN SPORTS":"MSGS",
+    "NVIDIA CORPORATION":"NVDA","PFIZER INC":"PFE","HALLIBURTON CO":"HAL",
+    "PALANTIR TECHNOLOGIES INC":"PLTR","MAGNOLIA OIL & GAS CORP":"MGY",
+    "HEICO CORP":"HEI","LIBERTY MEDIA CORP":"LSXMA",
+    "LIBERTY BROADBAND CORP":"LBRDK","MSCI INC":"MSCI",
+    "SLM CORP":"SLM","BRUKER CORP":"BRKR",
+    "NORWEGIAN CRUISE LINE HLDGS":"NCLH","AMERICOLD REALTY TRUST INC":"COLD",
+    "GDS HLDGS LTD":"GDS","HERBALIFE LTD":"HLF","DNOW INC":"DNOW",
+    "VAXCYTE INC":"PCVX","TELEFLEX INCORPORATED":"TFX",
+    "EAST WEST BANCORP INC":"EWBC","CROCS INC":"CROX",
+    "ARDAGH METAL PACKAGING S A":"AMBP","PDD HOLDINGS INC":"PDD",
+    "LULULEMON ATHLETICA INC":"LULU","DAILY JOURNAL CORP":"DJCO",
+    "CALEDONIA MNG CORP":"CMCL","ON24 INC":"ONTF","ONESTREAM INC":"OS",
+    "TRINSEO PLC":"TSE","PEAKSTONE REALTY TRUST":"PKST",
+    "SEMLER SCIENTIFIC INC":"SMLR","LINKBANCORP INC":"LNKB",
+    "MIDDLEFIELD BANC CORP":"MBCN","ECD AUTOMOTIVE DESIGN INC":"ECDA",
+    "FORIAN INC":"FORA","FLYEXCLUSIVE INC":"FLYX",
+    "BANKFINANCIAL CORP":"F","FIVE BELOW INC":"FIVE",
 }
 
-FOREIGN_SUFFIXES = {'.SW','.MI','.MX','.L','.PA','.DE','.HK','.TO','.AX','.AS','.F'}
+def load_json(p):
+    if not p.exists(): return None
+    with open(p,"r",encoding="utf-8") as f: return json.load(f)
 
+def save_json(p, d):
+    with open(p,"w",encoding="utf-8") as f: json.dump(d,f,ensure_ascii=False,indent=1)
 
-def load_json(path):
-    if not path.exists(): return None
-    with open(path,"r",encoding="utf-8") as f: return json.load(f)
-
-def save_json(path, data):
-    with open(path,"w",encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=1)
-
-
-def is_equity_cusip(cusip):
-    if not cusip or len(cusip) < 9: return True
-    return cusip[6:8].isdigit()
+def is_equity_cusip(c):
+    if not c or len(c)<9: return True
+    return c[6:8].isdigit()
 
 def is_valid_us(t):
     if not t: return False
     if t[0].isdigit(): return False
-    if t.upper().endswith('W') and len(t) > 4: return False
-    for sfx in FOREIGN_SUFFIXES:
-        if t.upper().endswith(sfx.upper()): return False
+    for s in FOREIGN_SUFFIXES:
+        if t.upper().endswith(s.upper()): return False
     if '-P' in t.upper(): return False
+    if t.upper().endswith('W') and len(t)>4: return False
     return True
 
-
 def collect_stocks():
-    stocks = {}
+    stocks={}
     for af in sorted(ARCHIVE_DIR.glob("*.json"))[-2:]:
         log.info(f"  종목 수집: {af.name}")
-        data = load_json(af)
+        data=load_json(af)
         if not data: continue
         for gd in data.get("portfolios",{}).values():
             for h in gd.get("holdings",[]):
-                cusip = h.get("cusip","").strip()
-                name = h.get("name","").strip()
+                cusip=h.get("cusip","").strip()
+                name=h.get("name","").strip()
                 if not name: continue
                 if cusip and not is_equity_cusip(cusip): continue
-                name = name.replace("&amp;","&").replace("&lt;","<").replace("&gt;",">")
-                name = re.sub(r"<!\[CDATA\[|]]>","",name).strip()
-                stocks[name.upper()] = {"cusip":cusip, "name":name}
+                name=name.replace("&amp;","&").replace("&lt;","<").replace("&gt;",">")
+                name=re.sub(r"<!\[CDATA\[|]]>","",name).strip()
+                stocks[name.upper()]={"cusip":cusip,"name":name}
     return stocks
 
-
 def yf_search(name):
-    variants = [name]
-    n = re.sub(r'\s*\([^)]*\)','',name).strip()
-    n = re.sub(r'\s+FORMERLY$','',n,flags=re.I).strip()
-    if n != name: variants.append(n)
-    c = re.sub(r'\s+(INC|CORP|CO|LTD|PLC|LP|LLC|NV|SA|AG|SE|SWITZ|CORPORATION|HLDGS|HOLDINGS|GROUP)\.?$','',n,flags=re.I)
-    c = re.sub(r'\s+(INC|CORP|CO|LTD)\.?$','',c,flags=re.I).strip()
-    if c != n: variants.append(c)
+    variants=[]
+    n=re.sub(r'\s*\([^)]*\)','',name).strip()
+    n=re.sub(r'\s+FORMERLY$','',n,flags=re.I).strip()
+    variants.append(n)
+    c=re.sub(r'\s+(INC|CORP|CO|LTD|PLC|LP|LLC|NV|SA|AG|SE|SWITZ|CORPORATION|HLDGS|HOLDINGS|GROUP)\.?$','',n,flags=re.I)
+    c=re.sub(r'\s+(INC|CORP|CO|LTD)\.?$','',c,flags=re.I).strip()
+    if c!=n: variants.append(c)
     if '&' in c: variants.append(c.replace('&','AND'))
-    words = c.split()
-    if len(words) >= 3: variants.append(" ".join(words[:2]))
-
+    words=c.split()
+    if len(words)>=3: variants.append(" ".join(words[:2]))
+    if len(words)>=1 and len(words[0])>=4: variants.append(words[0])
+    us_ex={"NYQ","NMS","NGM","NAS","PCX","ASE","BTS","NYS","OPR","NCM"}
     for q in variants:
-        url = f"https://query1.finance.yahoo.com/v1/finance/search?q={quote_plus(q)}&quotesCount=5&newsCount=0&listsCount=0"
+        url=f"https://query1.finance.yahoo.com/v1/finance/search?q={quote_plus(q)}&quotesCount=5&newsCount=0&listsCount=0"
         try:
-            req = Request(url, headers={"User-Agent":YF_UA})
-            with urlopen(req, timeout=10) as resp:
-                data = json.loads(resp.read())
-            us_ex = {"NYQ","NMS","NGM","NAS","PCX","ASE","BTS","NYS","OPR","NCM"}
+            req=Request(url,headers={"User-Agent":YF_UA})
+            with urlopen(req,timeout=10) as resp:
+                data=json.loads(resp.read())
             for qt in data.get("quotes",[]):
-                sym = qt.get("symbol","")
+                sym=qt.get("symbol","")
                 if qt.get("quoteType")=="EQUITY" and qt.get("exchange","") in us_ex and is_valid_us(sym):
                     return sym
             for qt in data.get("quotes",[]):
-                sym = qt.get("symbol","")
+                sym=qt.get("symbol","")
                 if qt.get("quoteType")=="EQUITY" and is_valid_us(sym) and "." not in sym:
                     return sym
-        except Exception:
-            pass
+        except: pass
         time.sleep(0.3)
     return None
 
+def yf_price(ticker):
+    for rng,intv in [("1y","1wk"),("6mo","1d"),("3mo","1d")]:
+        url=f"https://query1.finance.yahoo.com/v8/finance/chart/{ticker}?range={rng}&interval={intv}&includePrePost=false"
+        try:
+            req=Request(url,headers={"User-Agent":YF_UA})
+            with urlopen(req,timeout=15) as resp:
+                data=json.loads(resp.read())
+            r=data.get("chart",{}).get("result",[])
+            if not r: continue
+            meta=r[0].get("meta",{})
+            cur=meta.get("regularMarketPrice",0)
+            if not cur: continue
+            closes=r[0].get("indicators",{}).get("quote",[{}])[0].get("close",[])
+            closes=[c for c in closes if c is not None]
+            if not closes: continue
+            return {"current_price":round(cur,2),"week52_low":round(min(closes),2),"week52_high":round(max(closes),2)}
+        except: continue
+    return None
 
 def main():
-    try:
-        import yfinance as yf
-    except ImportError:
-        log.error("yfinance 미설치. pip install yfinance 실행 필요")
-        return
-
-    stocks = collect_stocks()
-    log.info(f"고유 종목: {len(stocks)}개")
+    stocks=collect_stocks()
+    log.info(f"고유 종목: {len(stocks)}개 (채권 제외)")
     if not stocks: return
 
-    # ── 1단계: 티커 매핑 ──
-    cache = load_json(TICKER_CACHE_PATH) or {}
-    ticker_map = {}  # name_key → ticker
-    unmapped = []
+    cache=load_json(TICKER_CACHE_PATH) or {}
 
-    for name_key, info in stocks.items():
-        cusip = info["cusip"]
-        name = info["name"]
-        # 수동 → 캐시 → CUSIP캐시
-        t = MANUAL.get(name_key) or MANUAL.get(name) or cache.get(name_key) or cache.get(cusip)
-        if t and is_valid_us(t):
-            ticker_map[name_key] = t
+    # 잘못된 외국 티커 캐시 정리
+    bad=0
+    for k in list(cache.keys()):
+        if cache[k] and not is_valid_us(cache[k]):
+            del cache[k]; bad+=1
+    if bad: log.info(f"외국 티커 {bad}개 캐시 제거")
+
+    # 기존 가격 로드 → 성공분 유지
+    existing=(load_json(PRICES_PATH) or {}).get("prices",{})
+    prices={}
+    skipped=0
+    for nk,info in stocks.items():
+        c=info["cusip"]
+        if c and c in existing and existing[c].get("current_price"):
+            prices[c]=existing[c]; skipped+=1
+            continue
+        for ec,ep in existing.items():
+            if ep.get("name","").upper()==nk and ep.get("current_price"):
+                prices[c or ec]=ep; skipped+=1; break
+
+    # 이전 실패 캐시 삭제
+    stale=0
+    existing_cusips=set(prices.keys())
+    for nk,info in stocks.items():
+        c=info["cusip"]
+        if c and c not in existing_cusips and cache.get(c):
+            del cache[c]; stale+=1
+        if nk not in existing_cusips and cache.get(nk):
+            del cache[nk]; stale+=1
+    if stale: log.info(f"이전 실패 캐시 {stale}개 제거")
+
+    # 처리 대상
+    to_do={}
+    for nk,info in stocks.items():
+        c=info["cusip"]
+        if c not in prices:
+            found=False
+            for pc in prices:
+                if prices[pc].get("name","").upper()==nk: found=True; break
+            if not found: to_do[nk]=info
+
+    log.info(f"기존 유지: {skipped}개, 신규 조회: {len(to_do)}개")
+
+    # 티커 매핑 + 가격 조회
+    success=0; failed=[]
+    for idx,(nk,info) in enumerate(to_do.items()):
+        cusip=info["cusip"]; name=info["name"]
+        # 매핑: 수동 → 캐시 → Yahoo 검색
+        nk_clean=re.sub(r'\s*\([^)]*\)','',nk).strip()
+        nk_clean2=re.sub(r'\s+FORMERLY$','',nk_clean,flags=re.I).strip()
+        t=MANUAL.get(nk) or MANUAL.get(nk_clean) or MANUAL.get(nk_clean2) or MANUAL.get(name)
+        if not t: t=cache.get(nk) or cache.get(cusip)
+        if not t or not is_valid_us(t):
+            t=yf_search(name); time.sleep(0.2)
+        if not t:
+            failed.append((cusip,name,"티커없음")); continue
+        cache[nk]=t
+        if cusip: cache[cusip]=t
+        # 가격
+        pd=yf_price(t); time.sleep(0.25)
+        if pd:
+            prices[cusip or nk]={"ticker":t,"name":name,**pd}; success+=1
         else:
-            unmapped.append((name_key, info))
+            failed.append((cusip,name,t))
+        if (idx+1)%50==0:
+            log.info(f"  진행: {idx+1}/{len(to_do)} (✓{success} ✗{len(failed)})")
 
-    log.info(f"매핑 완료: {len(ticker_map)}개, 미매핑: {len(unmapped)}개")
-
-    # 미매핑 → Yahoo 검색
-    if unmapped:
-        log.info(f"Yahoo 검색 중... ({len(unmapped)}개)")
-        found = 0
-        for idx, (name_key, info) in enumerate(unmapped):
-            t = yf_search(info["name"])
-            if t:
-                ticker_map[name_key] = t
-                cache[name_key] = t
-                if info["cusip"]: cache[info["cusip"]] = t
-                found += 1
-            time.sleep(0.2)
-            if (idx+1) % 50 == 0:
-                log.info(f"  진행: {idx+1}/{len(unmapped)} (✓{found})")
-        log.info(f"  → {found}개 매핑 성공")
-        save_json(TICKER_CACHE_PATH, cache)
-
-    # ── 2단계: yfinance 배치 다운로드 ──
-    all_tickers = list(set(ticker_map.values()))
-    log.info(f"가격 다운로드: {len(all_tickers)}개 티커 (yfinance 배치)")
-
-    # 외국 티커 제거
-    us_tickers = [t for t in all_tickers if "." not in t and is_valid_us(t)]
-    foreign = len(all_tickers) - len(us_tickers)
-    if foreign:
-        log.info(f"  외국/무효 티커 {foreign}개 제외")
-    all_tickers = us_tickers
-
-    price_data = {}
-
-    # yf.Ticker().history() 개별 조회 (가장 안정적)
-    log.info(f"  개별 조회: {len(all_tickers)}개")
-    for idx, ticker in enumerate(all_tickers):
-        try:
-            t = yf.Ticker(ticker)
-            hist = t.history(period="1y")
-            if hist is not None and not hist.empty and "Close" in hist.columns:
-                closes = hist["Close"].dropna()
-                if len(closes) > 0:
-                    price_data[ticker] = {
-                        "current_price": round(float(closes.iloc[-1]), 2),
-                        "week52_low": round(float(closes.min()), 2),
-                        "week52_high": round(float(closes.max()), 2),
-                    }
-        except Exception:
-            pass
-        if (idx + 1) % 100 == 0:
-            log.info(f"    진행: {idx+1}/{len(all_tickers)} (✓{len(price_data)})")
-        time.sleep(0.15)
-
-    log.info(f"가격 수집: {len(price_data)}개 성공 / {len(all_tickers)}개 중")
-
-    # ── 3단계: 결과 조합 ──
-    prices = {}
-    success = 0
-    failed = []
-
-    for name_key, info in stocks.items():
-        cusip = info["cusip"]
-        name = info["name"]
-        ticker = ticker_map.get(name_key)
-
-        if ticker and ticker in price_data:
-            prices[cusip or name_key] = {
-                "ticker": ticker,
-                "name": name,
-                **price_data[ticker]
-            }
-            success += 1
-        else:
-            failed.append((cusip, name, ticker or "N/A"))
-
-    log.info(f"━━━ 최종: ✓{success}개 성공, ✗{len(failed)}개 실패 ━━━")
-
+    # 실패분 재시도
     if failed:
-        log.info(f"실패 목록 ({len(failed)}개):")
-        for cusip, name, ticker in failed[:60]:
-            log.info(f"  ✗ {name} (ticker:{ticker})")
-        if len(failed) > 60:
-            log.info(f"  ... 외 {len(failed)-60}개")
+        log.info(f"실패분 재시도: {len(failed)}개")
+        still_failed=[]; rescued=0
+        for cusip,name,old_t in failed:
+            if old_t=="티커없음":
+                t=yf_search(name); time.sleep(0.3)
+                if t:
+                    pd=yf_price(t); time.sleep(0.25)
+                    if pd:
+                        prices[cusip or name.upper()]={"ticker":t,"name":name,**pd}
+                        rescued+=1; continue
+            still_failed.append((cusip,name,old_t))
+        if rescued: log.info(f"  → {rescued}개 복구")
+        failed=still_failed
 
-    output = {"updated_at": datetime.utcnow().isoformat()+"Z", "count": success, "prices": prices}
-    save_json(PRICES_PATH, output)
-    log.info(f"저장: {PRICES_PATH} ({success}개)")
+    save_json(TICKER_CACHE_PATH, cache)
 
+    total=len(prices); fails=len(stocks)-total
+    log.info(f"━━━ 최종: ✓{total}개 성공, ✗{fails}개 실패 ━━━")
+    if failed:
+        log.info(f"실패 ({len(failed)}개):")
+        for c,n,t in failed[:60]:
+            log.info(f"  ✗ {n} (ticker:{t})")
+        if len(failed)>60: log.info(f"  ... 외 {len(failed)-60}개")
 
-if __name__ == "__main__":
+    save_json(PRICES_PATH,{"updated_at":datetime.utcnow().isoformat()+"Z","count":total,"prices":prices})
+    log.info(f"저장: {PRICES_PATH} ({total}개)")
+
+if __name__=="__main__":
     main()
