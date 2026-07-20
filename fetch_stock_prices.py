@@ -135,6 +135,18 @@ MANUAL_TICKERS = {
     "IAC INC": "IAC",
     "GENEDX HOLDINGS CORP": "WGS",
     "FORTREA HLDGS INC": "FTRE",
+    "AMAZON COM INC (AMZN)": "AMZN",
+    "COTERRA ENERGY INC": "CTRA", "Coterra Energy Inc.": "CTRA",
+    "PEAKSTONE REALTY TRUST": "PKST",
+    "SEMLER SCIENTIFIC INC": "SMLR",
+    "SUN CTRY AIRLS HLDGS INC": "SNCY",
+    "SUNOPTA INC": "STKL", "TEGNA INC": "TGNA",
+    "LINKBANCORP INC": "LNKB", "MIDDLEFIELD BANC CORP": "MBCN",
+    "MIDWESTONE FINL GROUP INC NE": "MOFG",
+    "ECD AUTOMOTIVE DESIGN INC": "ECDA", "FORIAN INC": "FORA",
+    "Tri Pointe Group Inc.": "TPH", "TRI POINTE GROUP INC": "TPH",
+    "SPRINKLR INC": "CXM", "FIVE BELOW INC": "FIVE",
+    "FOX FACTORY HOLDING CORP": "FOXF",
     "COSTAR GROUP INC": "CSGP",
     "LIONSGATE STUDIOS CORP": "LION",
 }
@@ -152,6 +164,9 @@ def save_json(path, data):
 
 
 def is_valid_us_ticker(ticker):
+    # 워런트 (ORGNW 등) 스킵
+    if ticker and ticker.upper().endswith('W') and len(ticker) > 4:
+        return False
     """미국 거래소 티커인지 검증."""
     if not ticker: return False
     t = ticker.upper()
@@ -165,6 +180,17 @@ def is_valid_us_ticker(ticker):
         return False
     return True
 
+
+def is_equity_cusip(cusip):
+    """채권/워런트 CUSIP 필터. 주식 CUSIP만 True 반환."""
+    if not cusip or len(cusip) < 9:
+        return True
+    # 주식 CUSIP: 6자리 발행자코드 + 2자리 이슈코드(보통 10, 20 등) + 1자리 체크
+    # 채권 CUSIP: 이슈코드에 알파벳 포함 (예: AY5, AL2, AD0, AS2)
+    issue_code = cusip[6:8]
+    if not issue_code[0].isdigit():
+        return False  # 첫 이슈 자리가 알파벳 → 채권
+    return True
 
 def collect_unique_stocks():
     stocks = {}
@@ -181,7 +207,8 @@ def collect_unique_stocks():
                 if cusip and name:
                     name = name.replace("&amp;", "&").replace("&lt;", "<").replace("&gt;", ">")
                     name = name.replace("<![CDATA[", "").replace("]]>", "").strip()
-                    stocks[cusip] = name
+                    if is_equity_cusip(cusip):
+                        stocks[cusip] = name
     return stocks
 
 
@@ -385,7 +412,31 @@ def main():
         if (idx+1) % 50 == 0:
             log.info(f"  진행: {idx+1}/{len(to_fetch)} (✓{success} ✗{len(failed_items)})")
 
-    log.info(f"신규 조회: ✓{success}개, ✗{len(failed_items)}개")
+    # 1y 실패분 → 3mo로 재시도
+    retry_3mo = []
+    for cusip, name, ticker in failed_items:
+        url = f"https://query1.finance.yahoo.com/v8/finance/chart/{ticker}?range=3mo&interval=1d&includePrePost=false"
+        req = Request(url, headers={"User-Agent":YF_UA})
+        try:
+            with urlopen(req, timeout=15) as resp:
+                data = json.loads(resp.read())
+            result = data.get("chart",{}).get("result",[])
+            if result:
+                meta = result[0].get("meta",{})
+                current = meta.get("regularMarketPrice",0)
+                closes = result[0].get("indicators",{}).get("quote",[{}])[0].get("close",[])
+                closes = [c for c in closes if c is not None]
+                if current and closes:
+                    prices[cusip] = {"ticker":ticker,"name":name,
+                        "current_price":round(current,2),"week52_low":round(min(closes),2),"week52_high":round(max(closes),2)}
+                    success += 1
+                    continue
+        except Exception:
+            pass
+        retry_3mo.append((cusip, name, ticker))
+        time.sleep(0.3)
+    failed_items = retry_3mo
+    log.info(f"신규 조회 (3mo 재시도 포함): ✓{success}개, ✗{len(failed_items)}개")
 
     # ── 4단계: 실패 → Yahoo 재검색 + 재시도 ──
     still_failed = []
