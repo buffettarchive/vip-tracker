@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-07-20T03:44:47.632718Z",
- "count": 5697,
+ "updated_at": "2026-07-20T04:37:40.175416Z",
+ "count": 5698,
  "prices": {
   "02005N100": {
    "ticker": "ALLY",
@@ -39825,19 +39825,33 @@
    "week52_low": 66.15,
    "week52_high": 85.17
   },
-  "390607109": {
-   "ticker": "GLUX",
-   "name": "GREAT LAKES DREDGE &amp; DOCK CO",
-   "current_price": 0.0,
-   "week52_low": 0.0,
-   "week52_high": 0.0
-  },
   "G4R20B107": {
    "ticker": "TDOG",
    "name": "INTER &amp; CO INC",
    "current_price": 14.61,
    "week52_low": 14.61,
    "week52_high": 24.98
+  },
+  "88636X401": {
+   "ticker": "BMNZ",
+   "name": "TIDAL TRUST II",
+   "current_price": 20.1,
+   "week52_low": 14.12,
+   "week52_high": 42.67
+  },
+  "G9001E102": {
+   "ticker": "LILAK",
+   "name": "LIBERTY LATIN AMERICA LTD",
+   "current_price": 7.33,
+   "week52_low": 4.44,
+   "week52_high": 7.63
+  },
+  "390607109": {
+   "ticker": "GLUX",
+   "name": "GREAT LAKES DREDGE &amp; DOCK CO",
+   "current_price": 0.0,
+   "week52_low": 0.0,
+   "week52_high": 0.0
   },
   "68162K106": {
    "ticker": "ROCLF",
@@ -39859,13 +39873,6 @@
    "current_price": 0.0,
    "week52_low": 0.0,
    "week52_high": 2.45
-  },
-  "88636X401": {
-   "ticker": "BMNZ",
-   "name": "TIDAL TRUST II",
-   "current_price": 20.1,
-   "week52_low": 14.12,
-   "week52_high": 42.67
   },
   "901643106": {
    "ticker": "TWNPQ",
