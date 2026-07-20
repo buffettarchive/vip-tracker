@@ -24,27 +24,66 @@ FOREIGN_SUFFIXES = {'.SW','.MI','.MX','.L','.PA','.DE','.HK','.TO','.AX','.AS',
 
 # 자동 매핑 실패하는 대형주 수동 매핑 (종목명 → 티커)
 MANUAL_TICKERS = {
-    "COCA COLA CO": "KO",
-    "KROGER CO": "KR",
-    "S&P GLOBAL INC": "SPGI",
-    "BLOCK H & R INC": "HRB",
+    # 음료/소비재
+    "COCA COLA CO": "KO", "COCA-COLA CO": "KO", "COCA COLA CO THE": "KO",
+    "KROGER CO": "KR", "KROGER CO THE": "KR",
+    "PROCTER & GAMBLE CO": "PG", "JOHNSON & JOHNSON": "JNJ",
+    "ESTEE LAUDER COMPANIES INC": "EL", "CONSTELLATION BRANDS INC": "STZ",
+    "HERBALIFE LTD": "HLF",
+    # 금융
+    "BK OF AMERICA CORP": "BAC", "BANK AMERICA CORP": "BAC",
+    "S&P GLOBAL INC": "SPGI", "BLOCK H & R INC": "HRB",
+    "JEFFERIES FINANCIAL GROUP IN": "JEF", "JEFFERIES FINANCIAL GROUP INC": "JEF",
+    "CHARLES SCHWAB CORP": "SCHW", "CAPITAL ONE FINL CORP": "COF",
+    "ALLY FINL INC": "ALLY", "BRIGHTHOUSE FINL INC": "BHF",
+    "FIRST AMERN FINL CORP": "FAF", "FAIRFAX FINL HLDGS LTD": "FFH",
+    "AON PLC": "AON", "ARCH CAP GROUP LTD": "ACGL",
+    "BROWN & BROWN INC": "BRO", "GLOBAL PAYMENTS INC": "GPN",
+    "MARKEL GROUP INC": "MKL",
+    # 테크
+    "AMAZON COM INC": "AMZN", "META PLATFORMS INC": "META",
+    "ALPHABET INC": "GOOGL", "APPLE INC": "AAPL",
+    "T-MOBILE US INC": "TMUS", "CHARTER COMMUNICATIONS INC": "CHTR",
+    "BOOKING HOLDINGS INC": "BKNG", "FISERV INC": "FI",
+    "AGILENT TECHNOLOGIES INC": "A", "TYLER TECHNOLOGIES INC": "TYL",
+    "ROPER TECHNOLOGIES INC": "ROP", "DOLBY LABORATORIES INC": "DLB",
+    "VIASAT INC": "VSAT", "MSCI INC": "MSCI",
     "TENCENT MUSIC ENTMT GROUP": "TME",
-    "BK OF AMERICA CORP": "BAC",
-    "JEFFERIES FINANCIAL GROUP IN": "JEF",
-    "JEFFERIES FINANCIAL GROUP INC": "JEF",
-    "COCA-COLA CO": "KO",
-    "COCA COLA CO THE": "KO",
-    "T-MOBILE US INC": "TMUS",
-    "META PLATFORMS INC": "META",
-    "CHARTER COMMUNICATIONS INC": "CHTR",
-    "LIBERTY MEDIA CORP": "LSXMA",
-    "LIBERTY BROADBAND CORP": "LBRDK",
-    "BOOKING HOLDINGS INC": "BKNG",
-    "UNITEDHEALTH GROUP INC": "UNH",
-    "JOHNSON & JOHNSON": "JNJ",
-    "PROCTER & GAMBLE CO": "PG",
-    "ESTEE LAUDER COMPANIES INC": "EL",
-    "CHARLES SCHWAB CORP": "SCHW",
+    # 헬스케어
+    "UNITEDHEALTH GROUP INC": "UNH", "MOLINA HEALTHCARE INC": "MOH",
+    "EVOLENT HEALTH INC": "EVH", "TELEFLEX INCORPORATED": "TFX",
+    "HOLOGIC INC": "HOLX",
+    # 산업재
+    "GENUINE PARTS CO": "GPC", "FERGUSON ENTERPRISES INC": "FERG",
+    "FERGUSON ENTERPRISES INC (FERG)": "FERG",
+    "WILLIS TOWERS WATSON PLC LTD": "WTW", "WILLIS TOWERS WATSON PLC": "WTW",
+    "CASELLA WASTE SYS INC": "CWST", "EAGLE MATLS INC": "EXP",
+    "WATERS CORP": "WAT",
+    # 미디어/레저
+    "LIBERTY MEDIA CORP": "LSXMA", "LIBERTY BROADBAND CORP": "LBRDK",
+    "LIBERTY GLOBAL LTD": "LBTYA", "LIBERTY LATIN AMERICA LTD": "LILAK",
+    "MADISON SQUARE GARDEN SPORTS": "MSGS", "MADISON SQUARE GARDEN ENTMT": "MSGE",
+    "VAIL RESORTS INC": "MTN",
+    "NORWEGIAN CRUISE LINE HLDGS": "NCLH",
+    # 에너지/자원
+    "MAGNOLIA OIL & GAS CORP": "MGY",
+    # 항공/방산
+    "HEICO CORP": "HEI",
+    # 기타
+    "DREYFUS GOVT SEC CASH MGMT": "DGSXX",
+    "AMERICOLD REALTY TRUST INC": "COLD",
+    "GDS HLDGS LTD": "GDS",
+    "PDD HOLDINGS INC": "PDD", "GRUPO AEROMEXICO SAB DE CV": "AERO",
+    "DNOW INC": "DNOW", "VAXCYTE INC": "PCVX",
+    "UNION PAC CORP": "UNP", "ELEVANCE HEALTH INC FORMERLY": "ELV",
+    "ELEVANCE HEALTH INC": "ELV", "RESTAURANT BRANDS INTL INC": "QSR",
+    "WESCO INTL INC": "WCC",
+    "SPROUTS FARMERS MARKET INC": "SFM", "INSTALLED BUILDING PRODS INC": "IBP",
+    "RANGE RESOURCES CORP": "RRC", "CNX RESOURCES CORP": "CNX",
+    "ANTERO RESOURCES CORP": "AR", "SLM CORP": "SLM",
+    "BRUKER CORP": "BRKR", "HALLIBURTON CO": "HAL",
+    "PFIZER INC": "PFE", "NVIDIA CORPORATION": "NVDA",
+    "PALANTIR TECHNOLOGIES INC": "PLTR",
 }
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s", datefmt="%H:%M:%S")
@@ -144,6 +183,10 @@ def yf_search_ticker(name, try_all_variants=False):
 def _clean_name_variants(name):
     variants = []
     n = name.strip()
+    # 괄호 안 텍스트 제거: "FERGUSON ENTERPRISES INC (FERG)" → "FERGUSON ENTERPRISES INC"
+    n_no_paren = re.sub(r'\s*\([^)]*\)', '', n).strip()
+    if n_no_paren != n:
+        variants.append(n_no_paren)
     variants.append(n)
     cleaned = re.sub(r'\s+(INC|CORP|CO|LTD|PLC|LP|LLC|NV|SA|AG|SE|SWITZ|CORPORATION|HLDGS|HOLDINGS|GROUP)\.?$','',n,flags=re.I)
     cleaned = re.sub(r'\s+(INC|CORP|CO|LTD|CORPORATION)\.?$','',cleaned,flags=re.I).strip()
@@ -214,8 +257,12 @@ def main():
     for cusip, name in stocks.items():
         if not ticker_cache.get(cusip):
             upper = name.upper().strip()
-            if upper in MANUAL_TICKERS:
-                ticker_cache[cusip] = MANUAL_TICKERS[upper]
+            upper_clean = re.sub(r'\s*\([^)]*\)', '', upper).strip()
+            # FORMERLY 등 제거
+            upper_clean2 = re.sub(r'\s+FORMERLY$', '', upper_clean).strip()
+            matched_ticker = MANUAL_TICKERS.get(upper) or MANUAL_TICKERS.get(upper_clean) or MANUAL_TICKERS.get(upper_clean2)
+            if matched_ticker:
+                ticker_cache[cusip] = matched_ticker
                 manual_applied += 1
     if manual_applied:
         log.info(f"수동 매핑: {manual_applied}개 적용")
