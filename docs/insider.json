@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-20T12:09+09:00",
+  "updated_at": "2026-07-20T12:19+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260720000054",
+  "last_seen": "20260720000057",
   "disclosures": [
+    {
+      "rcept_no": "20260720000057",
+      "rcept_dt": "2026-07-20",
+      "corp_name": "에프엔씨엔터",
+      "stock_code": "173940",
+      "market": "KOSDAQ",
+      "corp_code": "00925295",
+      "repror": "김유식",
+      "ofcps": "공동대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "20,878",
+      "total_cnt": "104,942",
+      "irds_rate": "0.13",
+      "hold_rate": "0.68",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260720000054",
       "rcept_dt": "2026-07-20",
