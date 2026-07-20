@@ -254,12 +254,23 @@ def main():
         ticker = ticker_cache.get(cusip)
         if ticker: unique_tickers[ticker] = cusip
 
-    log.info(f"가격 조회: {len(unique_tickers)}개 티커")
+    # 기존 가격 데이터 로드 → 이미 있는 종목은 스킵
+    existing_prices = (load_json(PRICES_PATH) or {}).get("prices", {})
+    skipped = 0
     prices = {}
+    for cusip, ep in existing_prices.items():
+        if cusip in stocks and ep.get("current_price"):
+            prices[cusip] = ep
+            skipped += 1
+
+    # 누락분만 조회
+    to_fetch = {t: c for t, c in unique_tickers.items() if c not in prices}
+    log.info(f"가격 조회: 기존 {skipped}개 유지, 신규/누락 {len(to_fetch)}개 조회")
+
     failed_items = []
     success = 0
 
-    for idx,(ticker,cusip) in enumerate(unique_tickers.items()):
+    for idx,(ticker,cusip) in enumerate(to_fetch.items()):
         name = stocks.get(cusip, ticker)
         price_data = yf_get_price(ticker)
         if price_data:
@@ -268,10 +279,10 @@ def main():
         else:
             failed_items.append((cusip, name, ticker))
         time.sleep(0.3)
-        if (idx+1) % 100 == 0:
-            log.info(f"  진행: {idx+1}/{len(unique_tickers)} (✓{success} ✗{len(failed_items)})")
+        if (idx+1) % 50 == 0:
+            log.info(f"  진행: {idx+1}/{len(to_fetch)} (✓{success} ✗{len(failed_items)})")
 
-    log.info(f"1차: ✓{success}개, ✗{len(failed_items)}개")
+    log.info(f"신규 조회: ✓{success}개, ✗{len(failed_items)}개")
 
     # ── 4단계: 실패 → Yahoo 재검색 + 재시도 ──
     still_failed = []
