@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-07-20T14:50:40.974479Z",
- "count": 7407,
+ "updated_at": "2026-07-20T19:26:40.435628Z",
+ "count": 4880,
  "prices": {
   "02005N100": {
    "ticker": "ALLY",
@@ -12182,13 +12182,6 @@
    "week52_low": 8.82,
    "week52_high": 22.74
   },
-  "390607109": {
-   "ticker": "GLUX",
-   "name": "GREAT LAKES DREDGE & DOCK CO",
-   "current_price": 0.0,
-   "week52_low": 0.0,
-   "week52_high": 0.0
-  },
   "390905107": {
    "ticker": "GSBC",
    "name": "GREAT SOUTHN BANCORP INC",
@@ -19496,13 +19489,6 @@
    "current_price": 67.11,
    "week52_low": 61.88,
    "week52_high": 140.8
-  },
-  "68162K106": {
-   "ticker": "ROCLF",
-   "name": "OLYMPIC STEEL INC",
-   "current_price": 0.0,
-   "week52_low": 0.0,
-   "week52_high": 0.0
   },
   "68170A108": {
    "ticker": "OMDA",
@@ -28261,13 +28247,6 @@
    "week52_low": 6.11,
    "week52_high": 16.64
   },
-  "007025885": {
-   "ticker": "ADTX",
-   "name": "ADITXT INC",
-   "current_price": 0.0,
-   "week52_low": 0.0,
-   "week52_high": 30754.08
-  },
   "00777X488": {
    "ticker": "RCLO",
    "name": "ADVISOR MANAGED PORTFOLIOS",
@@ -28911,6 +28890,13 @@
    "current_price": 3.35,
    "week52_low": 3.19,
    "week52_high": 39.0
+  },
+  "15234Q207": {
+   "ticker": "AXIA",
+   "name": "AXIA ENERGIA-ADR PREF",
+   "current_price": 9.87,
+   "week52_low": 6.29,
+   "week52_high": 13.43
   },
   "152413100": {
    "ticker": "CBC",
@@ -31334,13 +31320,6 @@
    "week52_low": 5.43,
    "week52_high": 7.15
   },
-  "901643106": {
-   "ticker": "TWNPQ",
-   "name": "TWIN HOSPITALITY GROUP INC",
-   "current_price": 0.0,
-   "week52_low": 0.0,
-   "week52_high": 5.04
-  },
   "90214Q774": {
    "ticker": "LSAF",
    "name": "TWO RDS SHARED TR",
@@ -32523,13 +32502,6 @@
    "current_price": 32.08,
    "week52_low": 21.49,
    "week52_high": 33.51
-  },
-  "15234Q207": {
-   "ticker": "AXIA",
-   "name": "AXIA ENERGIA-ADR PREF",
-   "current_price": 9.87,
-   "week52_low": 6.29,
-   "week52_high": 13.43
   },
   "05528C667": {
    "ticker": "BBHM",
@@ -34014,6 +33986,181 @@
    "current_price": 14.29,
    "week52_low": 7.68,
    "week52_high": 17.95
+  },
+  "N00985106": {
+   "ticker": "AER",
+   "name": "AERCAP HOLDINGS NV",
+   "current_price": 147.67,
+   "week52_low": 108.37,
+   "week52_high": 151.37
+  },
+  "G0457F107": {
+   "ticker": "ARCO",
+   "name": "ARCOS DORADOS HLDGS INC",
+   "current_price": 8.2,
+   "week52_low": 6.54,
+   "week52_high": 9.23
+  },
+  "09173B107": {
+   "ticker": "BITF",
+   "name": "BITFARMS LTD/CANADA",
+   "current_price": 3.95,
+   "week52_low": 1.41,
+   "week52_high": 10.81
+  },
+  "N20944109": {
+   "ticker": "CNH",
+   "name": "CNH INDUSTRIAL NV",
+   "current_price": 10.29,
+   "week52_low": 9.35,
+   "week52_high": 13.31
+  },
+  "N3144W105": {
+   "ticker": "XPRO",
+   "name": "EXPRO GROUP HOLDINGS NV",
+   "current_price": 16.17,
+   "week52_low": 8.65,
+   "week52_high": 18.04
+  },
+  "G3398L118": {
+   "ticker": "FDEI",
+   "name": "FIDELIS INSURANCE HOLDINGS L",
+   "current_price": 0.0,
+   "week52_low": 0.0,
+   "week52_high": 0.0
+  },
+  "G36738105": {
+   "ticker": "FRSH",
+   "name": "FRESH DEL MONTE PRODUCE INC",
+   "current_price": 11.11,
+   "week52_low": 7.24,
+   "week52_high": 14.19
+  },
+  "390607109": {
+   "ticker": "GLUX",
+   "name": "GREAT LAKES DREDGE & DOCK CO",
+   "current_price": 0.0,
+   "week52_low": 0.0,
+   "week52_high": 0.0
+  },
+  "N5505D105": {
+   "ticker": "MICC",
+   "name": "MAGNUM ICE CREAM CO NV ADR",
+   "current_price": 18.66,
+   "week52_low": 13.23,
+   "week52_high": 19.22
+  },
+  "60255C885": {
+   "ticker": "MIND",
+   "name": "MIND MEDICINE MINDMED INC",
+   "current_price": 5.5,
+   "week52_low": 4.76,
+   "week52_high": 13.2
+  },
+  "60646V105": {
+   "ticker": "MCW",
+   "name": "MISTER CAR WASH INC",
+   "current_price": 7.1,
+   "week52_low": 7.1,
+   "week52_high": 7.1
+  },
+  "68162K106": {
+   "ticker": "ROCLF",
+   "name": "OLYMPIC STEEL INC",
+   "current_price": 0.0,
+   "week52_low": 0.0,
+   "week52_high": 0.0
+  },
+  "146280508": {
+   "ticker": "SILA",
+   "name": "SILA REALTY TRUST INC",
+   "current_price": 30.36,
+   "week52_low": 30.36,
+   "week52_high": 30.36
+  },
+  "G9059U107": {
+   "ticker": "TSEOF",
+   "name": "TRINSEO PLC",
+   "current_price": 0.01,
+   "week52_low": 0.01,
+   "week52_high": 0.01
+  },
+  "91307C102": {
+   "ticker": "UTHR",
+   "name": "UNITED THERAPEUTICS CORP DEL",
+   "current_price": 528.8,
+   "week52_low": 294.28,
+   "week52_high": 588.38
+  },
+  "007025885": {
+   "ticker": "ADTX",
+   "name": "ADITXT INC",
+   "current_price": 0.0,
+   "week52_low": 0.0,
+   "week52_high": 29045.52
+  },
+  "29081P204": {
+   "ticker": "AKO-A",
+   "name": "EMBOTELLADORA ANDINA S A",
+   "current_price": 22.6,
+   "week52_low": 17.3,
+   "week52_high": 25.68
+  },
+  "40090E106": {
+   "ticker": "CIB",
+   "name": "GRUPO CIBEST SA",
+   "current_price": 80.41,
+   "week52_low": 44.1,
+   "week52_high": 82.95
+  },
+  "71654V101": {
+   "ticker": "PBR",
+   "name": "PETROLEO BRASILEIRO SA - PETROBRAS",
+   "current_price": 18.3,
+   "week52_low": 11.55,
+   "week52_high": 21.9
+  },
+  "858927106": {
+   "ticker": "STEL",
+   "name": "STELLAR BANCORP INC",
+   "current_price": 39.32,
+   "week52_low": 39.32,
+   "week52_high": 39.32
+  },
+  "901643106": {
+   "ticker": "TWNPQ",
+   "name": "TWIN HOSPITALITY GROUP INC",
+   "current_price": 0.0,
+   "week52_low": 0.0,
+   "week52_high": 4.57
+  },
+  "d2617n114": {
+   "ticker": "FLMNF",
+   "name": "Fielmann",
+   "current_price": 50.75,
+   "week52_low": 50.75,
+   "week52_high": 64.0
+  },
+  "F58149133": {
+   "ticker": "LRLCY",
+   "name": "Loreal SA",
+   "current_price": 86.35,
+   "week52_low": 79.68,
+   "week52_high": 94.79
+  },
+  "303901102": {
+   "ticker": "FRFHF",
+   "name": "Fairfax Finl HLDGS LTD Sub VTG",
+   "current_price": 1647.11,
+   "week52_low": 1558.99,
+   "week52_high": 1905.26
+  },
+  "000000000": {
+   "ticker": "CNNN",
+   "name": "NONE",
+   "current_price": 0.01,
+   "week52_low": 0.0,
+   "week52_high": 0.05
   }
  }
 }
