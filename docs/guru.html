@@ -334,9 +334,12 @@ function renderGuru(){
   $("#guruName").textContent=activeGuru;
   $("#guruMeta").textContent="최근 SEC 공시 보고일: "+(d.report_date||"-");
 
-  // total_value_usd로 스케일 자동 감지: $1T 이상이면 1000배 과대 → /1000
+  // total_value_usd로 스케일 자동 감지
+  // 종목당 평균 $20B 이상이면 1000배 과대 → /1000 보정
   const rawTotal = d.total_value_usd||0;
-  const divisor = rawTotal > 1e12 ? 1000 : 1;
+  const holdingCount = (d.holdings||[]).length || 1;
+  const avgPerHolding = rawTotal / holdingCount;
+  const divisor = avgPerHolding > 2e10 ? 1000 : 1;
   const correctedTotal = rawTotal / divisor;
 
   $("#guruTotalVal").textContent=fmtUSD(correctedTotal);
