@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-20T17:29+09:00",
+  "updated_at": "2026-07-20T17:44+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260720000283",
+  "last_seen": "20260720000313",
   "disclosures": [
+    {
+      "rcept_no": "20260720000313",
+      "rcept_dt": "2026-07-20",
+      "corp_name": "삼영에스앤씨",
+      "stock_code": "361670",
+      "market": "KOSDAQ",
+      "corp_code": "00405506",
+      "repror": "박상익",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,850",
+      "total_cnt": "115,150",
+      "irds_rate": "0.03",
+      "hold_rate": "2.03",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260720000282",
       "rcept_dt": "2026-07-20",
