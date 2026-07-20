@@ -22,9 +22,7 @@ jobs:
           python-version: '3.11'
 
       - name: 시세 수집
-        run: |
-          pip install yfinance
-          python fetch_stock_prices.py
+        run: python fetch_stock_prices.py
 
       - name: 커밋 & 푸시
         run: |
