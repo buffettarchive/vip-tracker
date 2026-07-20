@@ -3,7 +3,7 @@ name: 종목 시세 업데이트
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 22 * * 1-5'  # 미국 장 마감 후 (UTC 22시 = EST 17시)
+    - cron: '0 22 * * 1-5'
 
 jobs:
   prices:
@@ -22,7 +22,9 @@ jobs:
           python-version: '3.11'
 
       - name: 시세 수집
-        run: python fetch_stock_prices.py
+        run: |
+          pip install yfinance
+          python fetch_stock_prices.py
 
       - name: 커밋 & 푸시
         run: |
