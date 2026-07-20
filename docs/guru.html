@@ -333,8 +333,14 @@ function renderGuru(){
   const d=VIPS[activeGuru];if(!d)return;
   $("#guruName").textContent=activeGuru;
   $("#guruMeta").textContent="최근 SEC 공시 보고일: "+(d.report_date||"-");
-  $("#guruTotalVal").textContent=fmtUSD(d.total_value_usd||0);
-  const h=d.holdings||[];
+
+  // total_value_usd로 스케일 자동 감지: $1T 이상이면 1000배 과대 → /1000
+  const rawTotal = d.total_value_usd||0;
+  const divisor = rawTotal > 1e12 ? 1000 : 1;
+  const correctedTotal = rawTotal / divisor;
+
+  $("#guruTotalVal").textContent=fmtUSD(correctedTotal);
+  const h=(d.holdings||[]).map(x=>({...x, _divisor: divisor}));
   $("#holdingCount").textContent=h.length+"개 종목 보유";
   renderChart(h,"portfolioChart",c=>{chartInstance=c},chartInstance);
   renderTable(h,"holdingsTable",true);
@@ -420,10 +426,11 @@ function renderTable(holdings,tableId,showPrices){
   </tr></thead>`;
 
   const tbody=holdings.map((h,i)=>{
-    // value 보정: archive(value_x1000)이면 *1000, us_vips.json(value)이면 항상 /1000
+    // value 보정: archive(value_x1000) vs us_vips.json(value)
+    // us_vips.json은 구루마다 값 스케일이 다름 → renderTable 호출 시 divisor 전달
     let val;
     if(h.value_x1000!==undefined){val=h.value_x1000*1000;}
-    else{val=(h.value||0)/1000;}
+    else{val=(h.value||0)/(h._divisor||1);}
     let rp=h.shares>0?val/h.shares:0;
     const pd=getPriceData(h.cusip,h.name);
     const cp=pd?pd.current_price:null;
