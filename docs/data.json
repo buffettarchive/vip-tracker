@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-20T14:49+09:00",
+  "updated_at": "2026-07-20T14:59+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -19,13 +19,13 @@
       "corp_name": "미코",
       "stock_code": "059090",
       "corp_code": "00366942",
-      "stkrt": "",
+      "stkrt": "10.61",
       "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
+      "stkqy": "3546861",
+      "report_resn": "장내매수",
       "purpose": "",
       "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-      "kind": "기타"
+      "kind": "매수(신규)"
     },
     {
       "rcept_no": "20260716000223",
