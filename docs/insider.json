@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-20T15:19+09:00",
+  "updated_at": "2026-07-20T15:29+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260720000142",
+  "last_seen": "20260720000153",
   "disclosures": [
+    {
+      "rcept_no": "20260720000153",
+      "rcept_dt": "2026-07-20",
+      "corp_name": "에스엠씨지",
+      "stock_code": "460870",
+      "market": "KOSDAQ",
+      "corp_code": "01142260",
+      "repror": "최승호",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "17,800",
+      "total_cnt": "5,757,123",
+      "irds_rate": "0.09",
+      "hold_rate": "28.68",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260720000142",
       "rcept_dt": "2026-07-20",
