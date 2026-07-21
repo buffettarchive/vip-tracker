@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-21T17:27+09:00",
+  "updated_at": "2026-07-21T17:32+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260721000976",
+  "last_seen": "20260721001088",
   "disclosures": [
+    {
+      "rcept_no": "20260721001029",
+      "rcept_dt": "2026-07-21",
+      "corp_name": "E8",
+      "stock_code": "418620",
+      "market": "KOSDAQ",
+      "corp_code": "01516890",
+      "repror": "백인성",
+      "ofcps": "상무이사",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "20,000",
+      "total_cnt": "20,000",
+      "irds_rate": "0.10",
+      "hold_rate": "0.10",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260721000900",
       "rcept_dt": "2026-07-21",
