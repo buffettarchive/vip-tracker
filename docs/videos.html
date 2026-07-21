@@ -35,6 +35,14 @@ a{color:inherit;text-decoration:none}
 .video-info{padding:16px}
 .video-title{font-size:15px;font-weight:700;line-height:1.45;margin-bottom:8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .video-meta{font-size:13px;color:var(--muted)}
+.book-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.book-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;transition:transform .15s,box-shadow .15s}
+.book-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(22,24,29,.12)}
+.book-emoji{font-size:48px;margin-bottom:16px}
+.book-title{font-size:16px;font-weight:700;line-height:1.4;margin-bottom:6px}
+.book-author{font-size:14px;color:var(--muted);margin-bottom:12px}
+.book-rec{display:inline-block;font-size:12px;font-weight:600;color:var(--cobalt);background:#e9eeff;padding:3px 10px;border-radius:6px;margin-bottom:10px}
+.book-desc{font-size:13px;color:#555;line-height:1.55}
 </style>
 </head>
 <body>
@@ -45,19 +53,39 @@ a{color:inherit;text-decoration:none}
     <a href="dashboard.html?view=firm">운용사 지분공시</a>
     <a href="screener.html">스크리너</a>
     <a href="guru.html">구루 포트폴리오</a>
-    <a href="videos.html" class="active">영상</a>
+    <a href="videos.html" class="active">추천영상</a>
   </div>
 </div></nav>
 
 <div class="wrap">
-  <div class="page-title">투자 인사이트 영상</div>
-  <div class="page-sub">국내 가치투자 운용사와 구루들의 큐레이션 영상</div>
+  <div class="page-title">추천영상</div>
+  <div class="page-sub">국내 가치투자 운용사와 구루들의 큐레이션 영상 및 필독도서</div>
 
 
 </div>
 
 <script>
 // ★ 영상 추가는 여기에 한 줄만 추가하면 됩니다 ★
+// ── 필독도서 ──
+const BOOKS = [
+  // 여기에 도서 추가. 형식:
+  // { title: "한글 제목", original: "원서 제목", author: "저자", rec: "추천인", desc: "설명" },
+];
+
+const bookSection = document.createElement("div");
+bookSection.innerHTML = '<div class="section-title" style="margin-top:60px">필독도서 <span class="channel">구루 추천</span></div>' +
+  '<div class="book-grid">' + BOOKS.map(b => 
+    '<div class="book-card">' +
+    '<div class="book-emoji">📖</div>' +
+    '<div class="book-title">' + b.title + '</div>' +
+    '<div class="book-author">' + b.author + '</div>' +
+    '<div class="book-rec">' + b.rec + ' 추천</div>' +
+    '<div class="book-desc">' + b.desc + '</div>' +
+    '<div style="font-size:11px;color:var(--muted);margin-top:8px">' + b.original + '</div>' +
+    '</div>'
+  ).join("") + '</div>';
+document.querySelector(".wrap").appendChild(bookSection);
+
 const SERIES = [
   {
     name: "월간 한가투",
