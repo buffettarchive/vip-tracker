@@ -58,18 +58,18 @@ a{color:inherit;text-decoration:none}
 <script>
 // ★ 도서 추가는 여기에 한 블록만 추가 ★
 const BOOKS = [
-  {title:"현명한 투자자",original:"Benjamin Graham, The Intelligent Investor",author:"벤저민 그레이엄",rec:"리 루",desc:"가치투자의 원전. 안전마진, 미스터 마켓 개념의 시작.",cover:"https://image.yes24.com/goods/130068498/XL"},
-  {title:"증권분석",original:"Benjamin Graham & David Dodd, Security Analysis",author:"벤저민 그레이엄, 데이비드 도드",rec:"리 루",desc:"가치투자의 바이블. 재무제표 분석과 내재가치 산정의 교과서.",cover:"https://image.yes24.com/goods/56658498/XL"},
+  {title:"현명한 투자자",original:"Benjamin Graham, The Intelligent Investor",author:"벤저민 그레이엄",rec:"리 루",desc:"가치투자의 원전. 안전마진, 미스터 마켓 개념의 시작.",cover:""},
+  {title:"증권분석",original:"Benjamin Graham & David Dodd, Security Analysis",author:"벤저민 그레이엄, 데이비드 도드",rec:"리 루",desc:"가치투자의 바이블. 재무제표 분석과 내재가치 산정의 교과서.",cover:""},
   {title:"가난한 리처드의 달력",original:"Benjamin Franklin, Poor Richard's Almanack",author:"벤저민 프랭클린",rec:"리 루",desc:"벤저민 프랭클린의 지혜와 삶의 철학을 담은 고전.",cover:""},
-  {title:"벤저민 프랭클린 인생의 발견",original:"Walter Isaacson, Benjamin Franklin: An American Life",author:"월터 아이작슨",rec:"리 루",desc:"미국 건국의 아버지 벤저민 프랭클린의 삶과 업적을 다룬 평전.",cover:"https://image.yes24.com/goods/2136431/XL"},
-  {title:"아인슈타인: 삶과 우주",original:"Walter Isaacson, Einstein: His Life and Universe",author:"월터 아이작슨",rec:"리 루",desc:"아인슈타인의 인간적 면모와 과학적 업적을 조명한 전기.",cover:"https://image.yes24.com/goods/2858826/XL"},
-  {title:"금융제국 J.P.모건",original:"Ron Chernow, The House of Morgan",author:"론 처노",rec:"리 루",desc:"정부를 대신하여 국가 외교를 담당하고, 전 산업계를 장악했던 모건 가문의 전모.",cover:"https://image.yes24.com/goods/2374199/XL"},
-  {title:"부의 제국 록펠러",original:"Ron Chernow, Titan: The Life of John D. Rockefeller Sr.",author:"론 처노",rec:"리 루",desc:"석유왕 록펠러의 삶을 통해 자본주의의 빛과 그림자를 조명한 평전.",cover:"https://image.yes24.com/goods/4272753/XL"},
-  {title:"파운틴헤드",original:"Ayn Rand, The Fountainhead",author:"아인 랜드",rec:"리 루",desc:"개인주의와 창조적 독립정신을 그린 아인 랜드의 대표작.",cover:"https://image.yes24.com/goods/5287999/XL"},
-  {title:"1984",original:"George Orwell, 1984",author:"조지 오웰",rec:"리 루",desc:"전체주의 사회의 공포를 그린 20세기 최고의 디스토피아 소설.",cover:"https://image.yes24.com/goods/2620869/XL"},
-  {title:"자유의 미래",original:"Fareed Zakaria, The Future of Freedom",author:"파리드 자카리아",rec:"리 루",desc:"민주주의와 자유의 관계를 재조명한 국제정치 분석서.",cover:"https://image.yes24.com/goods/1402346/XL"},
-  {title:"흔들리는 세계의 축: 포스트 아메리칸 월드",original:"Fareed Zakaria, The Post-American World",author:"파리드 자카리아",rec:"리 루",desc:"미국 중심의 세계 질서가 변화하는 시대를 분석한 저서.",cover:"https://image.yes24.com/goods/2857197/XL"},
-  {title:"예정된 전쟁",original:"Graham Allison, Destined for War",author:"그레이엄 앨리슨",rec:"리 루",desc:"미중 갈등을 투키디데스 함정 관점에서 분석한 국제정치 필독서.",cover:"https://image.yes24.com/goods/58538844/XL"},
+  {title:"벤저민 프랭클린 인생의 발견",original:"Walter Isaacson, Benjamin Franklin: An American Life",author:"월터 아이작슨",rec:"리 루",desc:"미국 건국의 아버지 벤저민 프랭클린의 삶과 업적을 다룬 평전.",cover:""},
+  {title:"아인슈타인: 삶과 우주",original:"Walter Isaacson, Einstein: His Life and Universe",author:"월터 아이작슨",rec:"리 루",desc:"아인슈타인의 인간적 면모와 과학적 업적을 조명한 전기.",cover:""},
+  {title:"금융제국 J.P.모건",original:"Ron Chernow, The House of Morgan",author:"론 처노",rec:"리 루",desc:"정부를 대신하여 국가 외교를 담당하고, 전 산업계를 장악했던 모건 가문의 전모.",cover:""},
+  {title:"부의 제국 록펠러",original:"Ron Chernow, Titan: The Life of John D. Rockefeller Sr.",author:"론 처노",rec:"리 루",desc:"석유왕 록펠러의 삶을 통해 자본주의의 빛과 그림자를 조명한 평전.",cover:""},
+  {title:"파운틴헤드",original:"Ayn Rand, The Fountainhead",author:"아인 랜드",rec:"리 루",desc:"개인주의와 창조적 독립정신을 그린 아인 랜드의 대표작.",cover:""},
+  {title:"1984",original:"George Orwell, 1984",author:"조지 오웰",rec:"리 루",desc:"전체주의 사회의 공포를 그린 20세기 최고의 디스토피아 소설.",cover:""},
+  {title:"자유의 미래",original:"Fareed Zakaria, The Future of Freedom",author:"파리드 자카리아",rec:"리 루",desc:"민주주의와 자유의 관계를 재조명한 국제정치 분석서.",cover:""},
+  {title:"흔들리는 세계의 축: 포스트 아메리칸 월드",original:"Fareed Zakaria, The Post-American World",author:"파리드 자카리아",rec:"리 루",desc:"미국 중심의 세계 질서가 변화하는 시대를 분석한 저서.",cover:""},
+  {title:"예정된 전쟁",original:"Graham Allison, Destined for War",author:"그레이엄 앨리슨",rec:"리 루",desc:"미중 갈등을 투키디데스 함정 관점에서 분석한 국제정치 필독서.",cover:""},
 ];
 
 const grid = document.getElementById("bookGrid");
