@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-07-21T03:59:01.267684Z",
+ "updated_at": "2026-07-21T05:35:22.173747Z",
  "count": 4787,
  "prices": {
   "02005N100": {
@@ -453,7 +453,7 @@
   "084670702": {
    "ticker": "BRKB-USD",
    "name": "BERKSHIRE HATHAWAY INC-CL B",
-   "current_price": 491.14,
+   "current_price": 490.77,
    "week52_low": 478.15,
    "week52_high": 509.56
   },
@@ -12858,7 +12858,7 @@
    "ticker": "BNDY",
    "name": "HORIZON CORE BOND ETF",
    "current_price": 24.91,
-   "week52_low": 24.91,
+   "week52_low": 24.92,
    "week52_high": 26.23
   },
   "44053A556": {
@@ -14307,7 +14307,7 @@
    "ticker": "USIG",
    "name": "ISHARES BROAD USD INVESTMENT",
    "current_price": 50.6,
-   "week52_low": 50.6,
+   "week52_low": 50.61,
    "week52_high": 52.63
   },
   "464287184": {
@@ -27202,7 +27202,7 @@
    "name": "WILLIS LEASE FINANCE CORP",
    "current_price": 189.36,
    "week52_low": 39.92,
-   "week52_high": 189.36
+   "week52_high": 75.5
   },
   "971378104": {
    "ticker": "WSC",
