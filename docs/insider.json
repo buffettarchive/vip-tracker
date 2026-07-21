@@ -1,8 +1,42 @@
 {
-  "updated_at": "2026-07-21T18:29+09:00",
+  "updated_at": "2026-07-21T18:35+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260721001283",
   "disclosures": [
+    {
+      "rcept_no": "20260721001328",
+      "rcept_dt": "2026-07-21",
+      "corp_name": "국영지앤엠",
+      "stock_code": "006050",
+      "market": "KOSDAQ",
+      "corp_code": "00104537",
+      "repror": "최저스틴제이",
+      "ofcps": "대표이사 사장",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "40,000",
+      "total_cnt": "607,894",
+      "irds_rate": "0.11",
+      "hold_rate": "1.74",
+      "method": "장내매수"
+    },
+    {
+      "rcept_no": "20260721001323",
+      "rcept_dt": "2026-07-21",
+      "corp_name": "아이윈",
+      "stock_code": "090150",
+      "market": "KOSDAQ",
+      "corp_code": "00365624",
+      "repror": "신규진",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "51,308",
+      "total_cnt": "12,707,008",
+      "irds_rate": "0.12",
+      "hold_rate": "30.34",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260721001256",
       "rcept_dt": "2026-07-21",
