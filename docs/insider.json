@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-21T13:39+09:00",
+  "updated_at": "2026-07-21T13:52+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260721000204",
+  "last_seen": "20260721000230",
   "disclosures": [
+    {
+      "rcept_no": "20260721000208",
+      "rcept_dt": "2026-07-21",
+      "corp_name": "아이센스",
+      "stock_code": "099190",
+      "market": "KOSDAQ",
+      "corp_code": "00550994",
+      "repror": "남학현",
+      "ofcps": "대표이사(사장)",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,000",
+      "total_cnt": "2,011,000",
+      "irds_rate": "0.00",
+      "hold_rate": "6.99",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260721000184",
       "rcept_dt": "2026-07-21",
