@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=1200"/>
+<title>버핏아카이브 — 영상 큐레이션</title>
+<meta name="description" content="VIP자산운용 월간한가투, 국내 가치투자 구루들의 투자 인사이트 영상 큐레이션"/>
+<link rel="icon" href="favicon.ico"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/spoqa-han-sans@3.3.0/css/SpoqaHanSansNeo.css"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--cobalt:#0047FF;--bg:#F8F7F4;--card:#fff;--ink:#16181d;--muted:#74767c;--line:#ecebe5}
+body{background:var(--bg);color:var(--ink);font-family:'Spoqa Han Sans Neo',sans-serif;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px 60px}
+.topnav{position:sticky;top:0;z-index:50;background:rgba(248,247,244,.86);backdrop-filter:saturate(180%) blur(12px)}
+.topnav-inner{max-width:1200px;margin:0 auto;padding:16px 20px;display:flex;align-items:center}
+.topnav .logo{height:32px}
+.nav-links{margin-left:auto;display:flex;gap:28px;font-size:16px;font-weight:700}
+.nav-links a{color:var(--muted);transition:.2s}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a.active{color:var(--cobalt)}
+
+.page-title{font-size:36px;font-weight:700;letter-spacing:-1px;margin:40px 0 8px}
+.page-sub{font-size:15px;color:var(--muted);margin-bottom:36px}
+
+.section-title{font-size:22px;font-weight:700;margin:40px 0 20px;display:flex;align-items:center;gap:10px}
+.section-title .channel{font-size:14px;font-weight:600;color:var(--cobalt);background:#e9eeff;padding:4px 12px;border-radius:8px}
+
+.video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.video-card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:transform .15s,box-shadow .15s;cursor:pointer}
+.video-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(22,24,29,.12)}
+.video-thumb{position:relative;width:100%;padding-bottom:56.25%;background:#000}
+.video-thumb iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
+.video-info{padding:16px}
+.video-title{font-size:15px;font-weight:700;line-height:1.45;margin-bottom:8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.video-meta{font-size:13px;color:var(--muted)}
+</style>
+</head>
+<body>
+<nav class="topnav"><div class="topnav-inner">
+  <a href="index.html"><img src="logo.png" alt="Buffett Archive" class="logo"></a>
+  <div class="nav-links">
+    <a href="dashboard.html?view=insider">내부자매수</a>
+    <a href="dashboard.html?view=firm">운용사 지분공시</a>
+    <a href="screener.html">스크리너</a>
+    <a href="guru.html">구루 포트폴리오</a>
+    <a href="videos.html" class="active">영상</a>
+  </div>
+</div></nav>
+
+<div class="wrap">
+  <div class="page-title">투자 인사이트 영상</div>
+  <div class="page-sub">국내 가치투자 운용사와 구루들의 큐레이션 영상</div>
+
+  <div class="section-title">월간 한가투 <span class="channel">VIP자산운용</span></div>
+  <div class="video-grid" id="videoGrid"></div>
+</div>
+
+<script>
+// ★ 영상 추가는 여기에 한 줄만 추가하면 됩니다 ★
+const VIDEOS = [
+  { id: "A3TIseOJwdI", title: "월간 한가투 — 2026년 6월호", date: "2026.06", series: "월간 한가투" },
+  { id: "kbzcXKwjZf4", title: "월간 한가투 — 2026년 5월호", date: "2026.05", series: "월간 한가투" },
+  { id: "6jn1NrFHpSI", title: "월간 한가투 — 2026년 4월호", date: "2026.04", series: "월간 한가투" },
+  { id: "G8rHNfr33HM", title: "월간 한가투 — 2026년 3월호", date: "2026.03", series: "월간 한가투" },
+  { id: "anlqewPptyg", title: "월간 한가투 — 2026년 2월호", date: "2026.02", series: "월간 한가투" },
+  { id: "LYzZL_dQPNM", title: "월간 한가투 — 2026년 1월호", date: "2026.01", series: "월간 한가투" },
+  { id: "keztf-ftwpA", title: "월간 한가투 — 2025년 12월호", date: "2025.12", series: "월간 한가투" },
+  { id: "CIBZ664BWVk", title: "월간 한가투 — 2025년 11월호", date: "2025.11", series: "월간 한가투" },
+  { id: "plJLjUXLChw", title: "월간 한가투 — 2025년 10월호", date: "2025.10", series: "월간 한가투" },
+  { id: "isBxO67eoTo", title: "월간 한가투 — 2025년 9월호", date: "2025.09", series: "월간 한가투" },
+  { id: "rtJOlUEKeU8", title: "월간 한가투 — 2025년 8월호", date: "2025.08", series: "월간 한가투" },
+  { id: "eLEKUedm8zM", title: "월간 한가투 — 2025년 7월호", date: "2025.07", series: "월간 한가투" },
+  { id: "SDXQ3GmZFbc", title: "월간 한가투 — 2025년 5월호", date: "2025.05", series: "월간 한가투" },
+];
+
+document.getElementById("videoGrid").innerHTML = VIDEOS.map(v => `
+  <div class="video-card">
+    <div class="video-thumb">
+      <iframe src="https://www.youtube.com/embed/${v.id}" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <div class="video-info">
+      <div class="video-title">${v.title}</div>
+      <div class="video-meta">${v.series} · ${v.date}</div>
+    </div>
+  </div>
+`).join("");
+</script>
+</body>
+</html>
