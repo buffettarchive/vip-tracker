@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-21T10:51+09:00",
+  "updated_at": "2026-07-21T10:56+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260721000062",
+  "last_seen": "20260721000070",
   "disclosures": [
+    {
+      "rcept_no": "20260721000070",
+      "rcept_dt": "2026-07-21",
+      "corp_name": "메이슨캐피탈",
+      "stock_code": "021880",
+      "market": "KOSDAQ",
+      "corp_code": "00136101",
+      "repror": "리드코프",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "120,158",
+      "total_cnt": "13,504,978",
+      "irds_rate": "0.57",
+      "hold_rate": "63.65",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260721000062",
       "rcept_dt": "2026-07-21",
