@@ -286,7 +286,7 @@ function dashRow({init, name, code, mk, sub, big, bigColor, mid, delta, deltaCol
   return `<div style="display:grid;grid-template-columns:52px 1fr auto;gap:16px;align-items:center;padding:18px 0;border-top:1px solid #f3f3ef">
     <div style="width:52px;height:52px;border-radius:16px;background:#f1f2f6;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:#5a6270">${init}</div>
     <div style="min-width:0">
-      <div style="font-size:17px;font-weight:700;letter-spacing:-.3px;display:flex;align-items:center;flex-wrap:wrap;gap:2px">${name}${codeHtml}${mkb}</div>
+      <div style="font-size:17px;font-weight:700;letter-spacing:-.3px;display:flex;align-items:center;flex-wrap:wrap;gap:2px">${name}${codeHtml}</div>
       <div style="font-size:13px;color:var(--muted);margin-top:5px">${sub}</div>
     </div>
     <div style="text-align:right;white-space:nowrap">
@@ -361,16 +361,22 @@ return Promise.all([
     const panel = document.querySelector('[data-panel="insider"]');
     if(panel) panel.innerHTML = top.map(x=>{
       const m = x.method||"";
-      const mtxt = m.includes("장내")?"장내매수":m.includes("장외")?"장외매수":m.includes("시간외")?"시간외":"";
-      const pos = [x.repror||"", x.ofcps&&x.ofcps!=="-"?x.ofcps:"", mtxt].filter(Boolean).join(" · ");
+      let mb = "";
+      if(m.includes("장내")) mb='<span style="display:inline-block;font-size:10.5px;font-weight:700;padding:2px 7px;border-radius:6px;margin-left:6px;background:#e3ecff;color:#0047FF">장내매수</span>';
+      else if(m.includes("장외")) mb='<span style="display:inline-block;font-size:10.5px;font-weight:700;padding:2px 7px;border-radius:6px;margin-left:6px;background:#fff0dd;color:#c67c1e">장외매수</span>';
+      let mkb = "";
+      if(x.market==="KOSPI") mkb='<span style="display:inline-block;font-size:10.5px;font-weight:700;padding:2px 7px;border-radius:6px;margin-right:4px;background:#e3ecff;color:#2f6fe0">KOSPI</span>';
+      else if(x.market==="KOSDAQ") mkb='<span style="display:inline-block;font-size:10.5px;font-weight:700;padding:2px 7px;border-radius:6px;margin-right:4px;background:#fdf0d9;color:#c0912b">KOSDAQ</span>';
+      const pos = [x.ofcps&&x.ofcps!=="-"?x.ofcps:"", x.main_shrholdr&&x.main_shrholdr!=="-"?x.main_shrholdr:""].filter(Boolean).join(" · ");
+      const sub = mkb + '<span style="color:var(--ink);font-weight:600">' + (x.repror||"") + '</span> · ' + (pos||"") + ' ' + mb;
       return dashRow({
-        init: initial(x.corp_name), name: x.corp_name, code: x.stock_code, mk: x.market,
-        sub: pos,
+        init: initial(x.corp_name), name: x.corp_name, code: x.stock_code,
+        sub: sub,
         big: "+"+fmtNum((x.irds_cnt||"").toString().replace(/,/g,"")),
-        bigColor: "#12a55a",
-        mid: `매수 · ${fmtDate2(x.rcept_dt)}`,
-        delta: `보유 ${x.hold_rate||"0"}%`,
-        deltaColor: "var(--muted)"
+        bigColor: "var(--cobalt)",
+        mid: "매수 주식수 · " + fmtDate2(x.rcept_dt),
+        delta: "보유 " + (x.hold_rate||"0") + "%",
+        deltaColor: "#12a55a"
       });
     }).join("");
   }
