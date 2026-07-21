@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=1200"/>
-<title>버핏아카이브 — 영상 큐레이션</title>
+<title>버핏아카이브  영상 큐레이션</title>
 <meta name="description" content="VIP자산운용 월간한가투, 국내 가치투자 구루들의 투자 인사이트 영상 큐레이션"/>
 <link rel="icon" href="favicon.ico"/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/spoqa-han-sans@3.3.0/css/SpoqaHanSansNeo.css"/>
@@ -53,39 +53,64 @@ a{color:inherit;text-decoration:none}
   <div class="page-title">투자 인사이트 영상</div>
   <div class="page-sub">국내 가치투자 운용사와 구루들의 큐레이션 영상</div>
 
-  <div class="section-title">월간 한가투 <span class="channel">VIP자산운용</span></div>
-  <div class="video-grid" id="videoGrid"></div>
+
 </div>
 
 <script>
 // ★ 영상 추가는 여기에 한 줄만 추가하면 됩니다 ★
-const VIDEOS = [
-  { id: "A3TIseOJwdI", title: "월간 한가투 — 2026년 6월호", date: "2026.06", series: "월간 한가투" },
-  { id: "kbzcXKwjZf4", title: "월간 한가투 — 2026년 5월호", date: "2026.05", series: "월간 한가투" },
-  { id: "6jn1NrFHpSI", title: "월간 한가투 — 2026년 4월호", date: "2026.04", series: "월간 한가투" },
-  { id: "G8rHNfr33HM", title: "월간 한가투 — 2026년 3월호", date: "2026.03", series: "월간 한가투" },
-  { id: "anlqewPptyg", title: "월간 한가투 — 2026년 2월호", date: "2026.02", series: "월간 한가투" },
-  { id: "LYzZL_dQPNM", title: "월간 한가투 — 2026년 1월호", date: "2026.01", series: "월간 한가투" },
-  { id: "keztf-ftwpA", title: "월간 한가투 — 2025년 12월호", date: "2025.12", series: "월간 한가투" },
-  { id: "CIBZ664BWVk", title: "월간 한가투 — 2025년 11월호", date: "2025.11", series: "월간 한가투" },
-  { id: "plJLjUXLChw", title: "월간 한가투 — 2025년 10월호", date: "2025.10", series: "월간 한가투" },
-  { id: "isBxO67eoTo", title: "월간 한가투 — 2025년 9월호", date: "2025.09", series: "월간 한가투" },
-  { id: "rtJOlUEKeU8", title: "월간 한가투 — 2025년 8월호", date: "2025.08", series: "월간 한가투" },
-  { id: "eLEKUedm8zM", title: "월간 한가투 — 2025년 7월호", date: "2025.07", series: "월간 한가투" },
-  { id: "SDXQ3GmZFbc", title: "월간 한가투 — 2025년 5월호", date: "2025.05", series: "월간 한가투" },
+const SERIES = [
+  {
+    name: "월간 한가투",
+    channel: "VIP자산운용",
+    videos: [
+      { id: "A3TIseOJwdI", title: "월간 한가투 2026년 6월호", date: "2026.06" },
+      { id: "kbzcXKwjZf4", title: "월간 한가투 2026년 5월호", date: "2026.05" },
+      { id: "6jn1NrFHpSI", title: "월간 한가투 2026년 4월호", date: "2026.04" },
+      { id: "G8rHNfr33HM", title: "월간 한가투 2026년 3월호", date: "2026.03" },
+      { id: "anlqewPptyg", title: "월간 한가투 2026년 2월호", date: "2026.02" },
+      { id: "LYzZL_dQPNM", title: "월간 한가투 2026년 1월호", date: "2026.01" },
+      { id: "keztf-ftwpA", title: "월간 한가투 2025년 12월호", date: "2025.12" },
+      { id: "CIBZ664BWVk", title: "월간 한가투 2025년 11월호", date: "2025.11" },
+      { id: "plJLjUXLChw", title: "월간 한가투 2025년 10월호", date: "2025.10" },
+      { id: "isBxO67eoTo", title: "월간 한가투 2025년 9월호", date: "2025.09" },
+      { id: "rtJOlUEKeU8", title: "월간 한가투 2025년 8월호", date: "2025.08" },
+      { id: "eLEKUedm8zM", title: "월간 한가투 2025년 7월호", date: "2025.07" },
+      { id: "SDXQ3GmZFbc", title: "월간 한가투 2025년 5월호", date: "2025.05" },
+      { id: "xsaOC0N6CKg", title: "월간 한가투 2025년 4월호", date: "2025.04" },
+      { id: "3wE-JzsVvSs", title: "월간 한가투 2025년 3월호", date: "2025.03" },
+      { id: "_ogTFvaWY-M", title: "월간 한가투 2025년 2월호", date: "2025.02" },
+    ]
+  },
+  {
+    name: "홍진채 대표",
+    channel: "라쿤자산운용",
+    videos: [
+      { id: "EBtOigDOmNo", title: "트럼프가 미친게 아니다, 이거 놓치면 또 속는 겁니다", date: "2026.06.26" },
+      { id: "b31ibu2rzQ8", title: "조지소로스 '금융의 연금술'", date: "2026.01.07" },
+      { id: "ttvAv_3B2CM", title: "워런버핏 바이블", date: "2025.08.28" },
+    ]
+  }
 ];
 
-document.getElementById("videoGrid").innerHTML = VIDEOS.map(v => `
-  <div class="video-card">
-    <div class="video-thumb">
-      <iframe src="https://www.youtube.com/embed/${v.id}" allowfullscreen loading="lazy"></iframe>
-    </div>
-    <div class="video-info">
-      <div class="video-title">${v.title}</div>
-      <div class="video-meta">${v.series} · ${v.date}</div>
-    </div>
-  </div>
-`).join("");
+const wrap = document.querySelector(".wrap");
+SERIES.forEach(s => {
+  const section = document.createElement("div");
+  section.innerHTML = `
+    <div class="section-title">${s.name} <span class="channel">${s.channel}</span></div>
+    <div class="video-grid">${s.videos.map(v => `
+      <div class="video-card">
+        <div class="video-thumb">
+          <iframe src="https://www.youtube.com/embed/${v.id}" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="video-info">
+          <div class="video-title">${v.title}</div>
+          <div class="video-meta">${v.date}</div>
+        </div>
+      </div>
+    `).join("")}</div>
+  `;
+  wrap.appendChild(section);
+});
 </script>
 </body>
 </html>
