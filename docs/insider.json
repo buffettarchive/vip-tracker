@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-21T11:16+09:00",
+  "updated_at": "2026-07-21T11:29+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260721000096",
+  "last_seen": "20260721000122",
   "disclosures": [
+    {
+      "rcept_no": "20260721000122",
+      "rcept_dt": "2026-07-21",
+      "corp_name": "이엠텍",
+      "stock_code": "091120",
+      "market": "KOSDAQ",
+      "corp_code": "00541163",
+      "repror": "이상용",
+      "ofcps": "사외이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "2,670",
+      "total_cnt": "2,670",
+      "irds_rate": "0.02",
+      "hold_rate": "0.02",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260721000075",
       "rcept_dt": "2026-07-21",
