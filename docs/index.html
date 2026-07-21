@@ -3,6 +3,51 @@
 <head>
 <meta name="naver-site-verification" content="6a07b5913b5ed5318875354c39e3d21ce086e524" />
 <meta charset="UTF-8" />
+<meta name="description" content="워런 버핏, 빌 애크먼 등 미국 투자거장 81명의 13F 포트폴리오와 국내 가치투자 운용사의 지분공시, 내부자매수, 자사주매입을 실시간 트래킹합니다." />
+<meta name="keywords" content="버핏아카이브, 워런 버핏 포트폴리오, 13F, 내부자매수, 운용사 지분공시, 자사주매입, 가치투자, VIP자산운용, 얼라인파트너스" />
+<meta property="og:title" content="버핏아카이브 — 투자거장 포트폴리오 트래킹" />
+<meta property="og:description" content="미국 투자거장 81명의 포트폴리오와 국내 운용사 지분공시를 실시간으로 추적합니다." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.buffettarchive.co.kr/" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "버핏아카이브",
+  "url": "https://www.buffettarchive.co.kr",
+  "description": "미국 투자거장 81명의 13F 포트폴리오와 국내 운용사 지분공시 실시간 트래킹",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://www.buffettarchive.co.kr/dashboard.html?view=insider&q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "버핏아카이브",
+  "url": "https://www.buffettarchive.co.kr",
+  "logo": "https://www.buffettarchive.co.kr/logo.png",
+  "sameAs": ["https://www.instagram.com/buffettarchive"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SiteNavigationElement",
+  "name": ["내부자 매수", "운용사 지분공시", "자사주 매입", "구루 포트폴리오"],
+  "url": [
+    "https://www.buffettarchive.co.kr/dashboard.html?view=insider",
+    "https://www.buffettarchive.co.kr/dashboard.html?view=firm",
+    "https://www.buffettarchive.co.kr/dashboard.html?view=buyback",
+    "https://www.buffettarchive.co.kr/guru.html"
+  ]
+}
+</script>
+
 <meta name="viewport" content="width=1260" />
 <title>버핏아카이브</title>
 <meta name="description" content="국내 가치투자 운용사 지분공시와 내부자 매수 트래킹 사이트" />
@@ -231,36 +276,34 @@ function marketBadge(mk){
   return `<span style="font-size:12px;font-weight:500;color:#a7a9b0;background:#f3f4f7;padding:2px 7px;border-radius:6px;margin-left:4px">${mk}</span>`;
 }
 
-function rowHtml({init, name, mk, sub, big, small, bigColor}){
-  return `<div style="display:flex;justify-content:space-between;align-items:center;padding:18px 0;border-top:1px solid #f3f3ef">
-    <div style="display:flex;align-items:center;gap:14px">
-      <div style="width:46px;height:46px;border-radius:14px;background:#f3f4f7;display:flex;align-items:center;justify-content:center;font-weight:700;color:#5a6270">${init}</div>
-      <div><div style="font-size:16px;font-weight:700">${name} ${mk?marketBadge(mk):""}</div>
-      <div style="font-size:13px;color:var(--muted);margin-top:3px">${sub}</div></div>
+function dashRow({init, name, code, mk, sub, big, bigColor, mid, delta, deltaColor}){
+  let mkb = "";
+  if(mk==="KOSPI") mkb=`<span style="display:inline-block;font-size:10.5px;font-weight:700;padding:2px 7px;border-radius:6px;margin-left:6px;background:#e3ecff;color:#2f6fe0">KOSPI</span>`;
+  else if(mk==="KOSDAQ") mkb=`<span style="display:inline-block;font-size:10.5px;font-weight:700;padding:2px 7px;border-radius:6px;margin-left:6px;background:#fdf0d9;color:#c0912b">KOSDAQ</span>`;
+  const codeHtml = code?`<span style="font-size:12px;color:var(--muted);font-weight:500;margin-left:5px">${code}</span>`:"";
+  return `<div style="display:grid;grid-template-columns:52px 1fr auto;gap:16px;align-items:center;padding:18px 0;border-top:1px solid #f3f3ef">
+    <div style="width:52px;height:52px;border-radius:16px;background:#f1f2f6;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:#5a6270">${init}</div>
+    <div style="min-width:0">
+      <div style="font-size:17px;font-weight:700;letter-spacing:-.3px;display:flex;align-items:center;flex-wrap:wrap;gap:2px">${name}${codeHtml}${mkb}</div>
+      <div style="font-size:13px;color:var(--muted);margin-top:5px">${sub}</div>
     </div>
-    <div style="text-align:right">
-      <div style="font-size:19px;font-weight:700;color:${bigColor||'var(--cobalt)'}">${big}</div>
-      <div style="font-size:12px;color:var(--muted)">${small}</div>
-    </div>
-  </div>`;
-}
-
-function heroRowHtml({init, name, sub, big, small, smallColor}){
-  return `<div style="display:flex;justify-content:space-between;align-items:center;padding:15px 4px;border-top:1px solid #f3f3ef">
-    <div style="display:flex;align-items:center;gap:12px">
-      <div style="width:42px;height:42px;border-radius:13px;background:#f3f4f7;display:flex;align-items:center;justify-content:center;font-weight:700;color:#5a6270">${init}</div>
-      <div><div style="font-size:15px;font-weight:700">${name}</div>
-      <div style="font-size:12px;color:var(--muted)">${sub}</div></div>
-    </div>
-    <div style="text-align:right">
-      <div style="font-size:16px;font-weight:700;color:var(--cobalt)">${big}</div>
-      <div style="font-size:11px;font-weight:600;color:${smallColor||'var(--muted)'}">${small}</div>
+    <div style="text-align:right;white-space:nowrap">
+      <div style="font-size:22px;font-weight:700;line-height:1;color:${bigColor||'var(--cobalt)'};letter-spacing:-.5px">${big}</div>
+      ${mid?`<div style="font-size:11px;color:var(--muted);margin-top:5px">${mid}</div>`:""}
+      ${delta?`<div style="font-size:12.5px;margin-top:4px;font-weight:700;color:${deltaColor||'var(--muted)'}">${delta}</div>`:""}
     </div>
   </div>`;
 }
 
 function sortByRcept(list){
   return [...list].sort((a,b)=>(b.rcept_no||"").localeCompare(a.rcept_no||""));
+}
+
+function fmtDate2(dt){
+  if(!dt) return "";
+  const d = dt.replace(/-/g,"");
+  const m = parseInt(d.substring(4,6)), day = parseInt(d.substring(6,8));
+  return `${m}월 ${day}일`;
 }
 
 function loadLandingData(){
@@ -284,75 +327,73 @@ return Promise.all([
     setText("feat-buyback", buyback.entries.length.toLocaleString());
   }
 
+  // ── 히어로 운용사 미리보기 ──
   if(data && data.disclosures){
     const top = sortByRcept(data.disclosures).slice(0,3);
     const el = document.getElementById("hero-preview");
-    const firmShort = (f)=>({
-      "브이아이피자산운용":"VIP자산운용","얼라인파트너스자산운용":"얼라인","라이프자산운용":"라이프",
-      "에셋플러스자산운용":"에셋플러스","트러스톤자산운용":"트러스톤"
-    }[f]||f);
+    const firmShort = (f)=>({"브이아이피자산운용":"VIP자산운용","얼라인파트너스자산운용":"얼라인","라이프자산운용":"라이프","에셋플러스자산운용":"에셋플러스","트러스톤자산운용":"트러스톤"}[f]||f);
     if(el) el.innerHTML = top.map(x=>{
       const cur=parseFloat(x.stkrt), prev=parseFloat(x.stkrt_prev);
       const diff=(!isNaN(cur)&&!isNaN(prev))?(cur-prev):null;
-      let small = "보유 지분";
-      let smallColor = "var(--muted)";
-      if((x.kind||"").includes("신규")){ small="신규 편입"; smallColor="#16a34a"; }
-      else if(x.kind==="매수" && diff!=null){ small=`매수 ▲${Math.abs(diff).toFixed(2)}%p`; smallColor="#16a34a"; }
+      let small="보유 지분", smallColor="var(--muted)";
+      if((x.kind||"").includes("신규")){ small="신규 편입"; smallColor="#12a55a"; }
+      else if(x.kind==="매수" && diff!=null){ small=`매수 ▲${Math.abs(diff).toFixed(2)}%p`; smallColor="#12a55a"; }
       else if(x.kind==="매도" && diff!=null){ small=`매도 ▼${Math.abs(diff).toFixed(2)}%p`; smallColor="#dc2626"; }
-      return heroRowHtml({
-        init: initial(x.corp_name),
-        name: x.corp_name,
-        sub: firmShort(x.firm),
-        big: (x.stkrt?x.stkrt+"%":"—"),
-        small: small,
-        smallColor: smallColor
-      });
+      return heroRowHtml({init:initial(x.corp_name), name:x.corp_name, sub:firmShort(x.firm),
+        big:(x.stkrt?x.stkrt+"%":"—"), small, smallColor});
     }).join("");
   }
 
+  // ── 내부자매수 미리보기 ──
   if(insider && insider.disclosures){
     const top = sortByRcept(insider.disclosures).slice(0,4);
     const panel = document.querySelector('[data-panel="insider"]');
     if(panel) panel.innerHTML = top.map(x=>{
       const m = x.method||"";
       const mtxt = m.includes("장내")?"장내매수":m.includes("장외")?"장외매수":m.includes("시간외")?"시간외":"";
-      return rowHtml({
-        init: initial(x.corp_name), name: x.corp_name, mk: x.market,
-        sub: `${x.repror||""}${x.ofcps&&x.ofcps!=="-"?" · "+x.ofcps:""}${mtxt?" · "+mtxt:""}`,
+      const pos = [x.repror||"", x.ofcps&&x.ofcps!=="-"?x.ofcps:"", mtxt].filter(Boolean).join(" · ");
+      return dashRow({
+        init: initial(x.corp_name), name: x.corp_name, code: x.stock_code, mk: x.market,
+        sub: pos,
         big: "+"+fmtNum((x.irds_cnt||"").toString().replace(/,/g,"")),
-        small: "보유 "+(x.hold_rate||"0")+"%"
+        bigColor: "#12a55a",
+        mid: `매수 · ${fmtDate2(x.rcept_dt)}`,
+        delta: `보유 ${x.hold_rate||"0"}%`,
+        deltaColor: "var(--muted)"
       });
     }).join("");
   }
 
+  // ── 운용사 지분공시 미리보기 ──
   if(data && data.disclosures){
     const top = sortByRcept(data.disclosures).slice(0,4);
     const panel = document.querySelector('[data-panel="fund"]');
-    if(panel){
-      panel.innerHTML = top.map(x=>{
-        const cur = parseFloat(x.stkrt), prev = parseFloat(x.stkrt_prev);
-        const diff = (!isNaN(cur)&&!isNaN(prev)) ? (cur-prev) : null;
-        let deltaTxt="", deltaColor="var(--muted)";
-        if(diff!=null){
-          const sign = diff>=0?"+":"-";
-          deltaColor = diff>=0?"var(--cobalt)":"#e0473b";
-          deltaTxt = `이전 ${prev.toFixed(2)}% · ${sign}${Math.abs(diff).toFixed(2)}%p`;
-        }
-        return `<div style="display:flex;justify-content:space-between;align-items:center;padding:18px 0;border-top:1px solid #f3f3ef">
-          <div style="display:flex;align-items:center;gap:14px">
-            <div style="width:46px;height:46px;border-radius:14px;background:#f3f4f7;display:flex;align-items:center;justify-content:center;font-weight:700;color:#5a6270">${initial(x.corp_name)}</div>
-            <div><div style="font-size:16px;font-weight:700">${x.corp_name}</div>
-            <div style="font-size:13px;color:var(--muted);margin-top:3px">${x.firm||""} · ${x.report_resn||"지분변동"}</div></div>
-          </div>
-          <div style="text-align:right">
-            <div style="font-size:19px;font-weight:700">${x.stkrt?x.stkrt+"%":"—"}</div>
-            <div style="font-size:12px;color:${deltaColor}">${deltaTxt}</div>
-          </div>
-        </div>`;
-      }).join("");
-    }
+    const firmShort = (f)=>({"브이아이피자산운용":"VIP자산운용","얼라인파트너스자산운용":"얼라인","라이프자산운용":"라이프","에셋플러스자산운용":"에셋플러스","트러스톤자산운용":"트러스톤"}[f]||f);
+    if(panel) panel.innerHTML = top.map(x=>{
+      const cur=parseFloat(x.stkrt), prev=parseFloat(x.stkrt_prev);
+      const diff=(!isNaN(cur)&&!isNaN(prev))?(cur-prev):null;
+      let delta="", deltaColor="var(--muted)";
+      if((x.kind||"").includes("신규")){ delta="신규 편입"; deltaColor="#12a55a"; }
+      else if(x.kind==="매수" && diff!=null){ delta=`매수 ▲${Math.abs(diff).toFixed(2)}%p`; deltaColor="#12a55a"; }
+      else if(x.kind==="매도" && diff!=null){ delta=`매도 ▼${Math.abs(diff).toFixed(2)}%p`; deltaColor="#dc2626"; }
+      else if(x.kind==="매수"){ delta="매수"; deltaColor="#12a55a"; }
+      else if(x.kind==="매도"){ delta="매도"; deltaColor="#dc2626"; }
+      else { delta="보유 지분"; }
+      const resn = x.report_resn||"";
+      const sub = `${firmShort(x.firm||"")}${resn?" · "+resn:""}`;
+      return dashRow({
+        init: initial(x.corp_name), name: x.corp_name, code: x.stock_code,
+        sub: sub,
+        big: x.stkrt?x.stkrt+"%":"—",
+        bigColor: "var(--cobalt)",
+        mid: fmtDate2(x.rcept_dt),
+        delta: delta,
+        deltaColor: deltaColor
+      });
+    }).join("");
   }
 
+  // ── 자사주 매입 미리보기 ──
   if(buyback && buyback.entries){
     const list = buyback.entries.filter(x=>!(x.report_nm||"").includes("신탁계약"));
     const top = sortByRcept(list).slice(0,4);
@@ -361,10 +402,15 @@ return Promise.all([
       const isAcq = x.type==="취득";
       const mk = x.corp_cls==="Y"?"KOSPI":x.corp_cls==="K"?"KOSDAQ":"";
       const shares = x.shares_common ? fmtNum(x.shares_common) : "—";
-      return rowHtml({
+      const sub = `자사주 ${isAcq?"매입":"소각"}${x.acq_purpose?" · "+x.acq_purpose:""}`;
+      return dashRow({
         init: initial(x.corp_name), name: x.corp_name, mk: mk,
-        sub: `자사주 ${isAcq?"매입":"소각"}${x.acq_purpose?" · "+x.acq_purpose:""}`,
-        big: shares, small: isAcq?"취득 주식수":"소각 주식수"
+        sub: sub,
+        big: shares,
+        bigColor: "var(--cobalt)",
+        mid: fmtDate2(x.rcept_dt),
+        delta: isAcq?"취득 주식수":"소각 주식수",
+        deltaColor: "var(--muted)"
       });
     }).join("");
   }
