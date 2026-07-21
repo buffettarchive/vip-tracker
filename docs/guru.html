@@ -276,15 +276,21 @@ function getTicker(cusip,name){
   return null;
 }
 function getPriceData(cusip,name){
-  if(cusip&&PRICES[cusip])return PRICES[cusip];
-  const p=findByName(name);
-  if(p) return p;
-  // 수동 매핑으로 티커 찾고 → 티커로 가격 조회
   if(name){
+    // 이름 키로 직접 조회 (v10: stock_prices.json이 이름 기반)
     const key=name.toUpperCase().trim();
-    const mt=MANUAL_TICKERS_MAP[key];
+    if(PRICES[key])return PRICES[key];
+    // HTML entity 디코딩 버전
+    const decoded=key.replace(/&AMP;/g,"&").replace(/&amp;/gi,"&");
+    if(decoded!==key&&PRICES[decoded])return PRICES[decoded];
+    // 정규화 매칭
+    const p=findByName(name);
+    if(p)return p;
+    // 수동 매핑 → 티커 → 가격
+    const mt=MANUAL_TICKERS_MAP[key]||MANUAL_TICKERS_MAP[decoded];
     if(mt&&PRICE_BY_TICKER[mt])return PRICE_BY_TICKER[mt];
   }
+  if(cusip&&PRICES[cusip])return PRICES[cusip];
   return null;
 }
 
