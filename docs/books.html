@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=1200"/>
+<title>버핏아카이브 - 필독도서</title>
+<meta name="description" content="투자거장들이 추천하는 필독도서 모음"/>
+<link rel="icon" href="favicon.ico"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/spoqa-han-sans@3.3.0/css/SpoqaHanSansNeo.css"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--cobalt:#0047FF;--bg:#F8F7F4;--card:#fff;--ink:#16181d;--muted:#74767c;--line:#ecebe5}
+body{background:var(--bg);color:var(--ink);font-family:'Spoqa Han Sans Neo',sans-serif;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px 60px}
+.topnav{position:sticky;top:0;z-index:50;background:rgba(248,247,244,.86);backdrop-filter:saturate(180%) blur(12px)}
+.topnav-inner{max-width:1200px;margin:0 auto;padding:16px 20px;display:flex;align-items:center}
+.topnav .logo{height:32px}
+.nav-links{margin-left:auto;display:flex;gap:28px;font-size:16px;font-weight:700}
+.nav-links a{color:var(--muted);transition:.2s}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a.active{color:var(--cobalt)}
+.page-title{font-size:36px;font-weight:700;letter-spacing:-1px;margin:40px 0 8px}
+.page-sub{font-size:15px;color:var(--muted);margin-bottom:36px}
+.book-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.book-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;transition:transform .15s,box-shadow .15s}
+.book-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(22,24,29,.12)}
+.book-emoji{font-size:48px;margin-bottom:16px}
+.book-title{font-size:16px;font-weight:700;line-height:1.4;margin-bottom:6px}
+.book-author{font-size:14px;color:var(--muted);margin-bottom:12px}
+.book-rec{display:inline-block;font-size:12px;font-weight:600;color:var(--cobalt);background:#e9eeff;padding:3px 10px;border-radius:6px;margin-bottom:10px}
+.book-desc{font-size:13px;color:#555;line-height:1.55}
+.book-original{font-size:11px;color:var(--muted);margin-top:8px}
+</style>
+</head>
+<body>
+<nav class="topnav"><div class="topnav-inner">
+  <a href="index.html"><img src="logo.png" alt="Buffett Archive" class="logo"></a>
+  <div class="nav-links">
+    <a href="dashboard.html?view=insider">내부자매수</a>
+    <a href="dashboard.html?view=firm">운용사 지분공시</a>
+    <a href="dashboard.html?view=buyback">자사주매입</a>
+    <a href="guru.html">구루 포트폴리오</a>
+    <a href="videos.html">추천영상</a>
+    <a href="books.html" class="active">필독도서</a>
+  </div>
+</div></nav>
+
+<div class="wrap">
+  <div class="page-title">필독도서</div>
+  <div class="page-sub">투자거장들이 추천하는 필독 도서 모음</div>
+  <div class="book-grid" id="bookGrid"></div>
+</div>
+
+<script>
+// ★ 도서 추가는 여기에 한 블록만 추가 ★
+const BOOKS = [
+  // { title: "한글 제목", original: "원서 제목", author: "저자", rec: "추천인", desc: "설명" },
+];
+
+const grid = document.getElementById("bookGrid");
+if(BOOKS.length) {
+  grid.innerHTML = BOOKS.map(b =>
+    '<div class="book-card">' +
+    '<div class="book-emoji">📖</div>' +
+    '<div class="book-title">' + b.title + '</div>' +
+    '<div class="book-author">' + b.author + '</div>' +
+    '<div class="book-rec">' + b.rec + ' 추천</div>' +
+    '<div class="book-desc">' + b.desc + '</div>' +
+    '<div class="book-original">' + b.original + '</div>' +
+    '</div>'
+  ).join("");
+} else {
+  grid.innerHTML = '<div style="grid-column:1/-1;padding:60px 0;text-align:center;color:var(--muted)">도서가 준비 중입니다.</div>';
+}
+</script>
+</body>
+</html>
