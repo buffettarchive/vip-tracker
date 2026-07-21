@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-21T13:54+09:00",
+  "updated_at": "2026-07-21T14:02+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260721000235",
+  "last_seen": "20260721000267",
   "disclosures": [
+    {
+      "rcept_no": "20260721000253",
+      "rcept_dt": "2026-07-21",
+      "corp_name": "코닉오토메이션",
+      "stock_code": "391710",
+      "market": "KOSDAQ",
+      "corp_code": "01573284",
+      "repror": "오정호",
+      "ofcps": "전무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "6,545",
+      "total_cnt": "30,045",
+      "irds_rate": "0.01",
+      "hold_rate": "0.07",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260721000208",
       "rcept_dt": "2026-07-21",
