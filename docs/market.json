@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-22T12:34:30Z",
+  "updated_at": "2026-07-22T12:39:22Z",
   "quotes": {
     "KOSPI": {
       "price": 6797.7,
@@ -20,10 +20,10 @@
       "change_pct": 0.69
     },
     "USD/KRW": {
-      "price": 1479.2,
+      "price": 1479.86,
       "prev_close": 1475.01,
-      "change": 4.19,
-      "change_pct": 0.28
+      "change": 4.85,
+      "change_pct": 0.33
     }
   },
   "history": {
@@ -16704,7 +16704,7 @@
           "open": 1479.69,
           "high": 1484.13,
           "low": 1476.3,
-          "close": 1479.2
+          "close": 1479.86
         }
       ],
       "weekly": [
@@ -17448,7 +17448,7 @@
           "open": 1474.64,
           "high": 1484.13,
           "low": 1470.6,
-          "close": 1479.2
+          "close": 1479.86
         }
       ],
       "monthly": [
@@ -17625,7 +17625,7 @@
           "open": 1551.4,
           "high": 1587.7,
           "low": 1470.0,
-          "close": 1479.2
+          "close": 1479.86
         }
       ]
     }
