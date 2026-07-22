@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-22T10:26+09:00",
+  "updated_at": "2026-07-22T10:37+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260721001283",
   "disclosures": [
+    {
+      "rcept_no": "20260722000082",
+      "rcept_dt": "2026-07-22",
+      "corp_name": "제놀루션",
+      "stock_code": "225220",
+      "market": "KOSDAQ",
+      "corp_code": "01062177",
+      "repror": "김민이",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "18,136",
+      "total_cnt": "571,714",
+      "irds_rate": "0.10",
+      "hold_rate": "2.98",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260722000067",
       "rcept_dt": "2026-07-22",
