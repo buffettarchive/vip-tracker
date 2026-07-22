@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-22T15:56+09:00",
+  "updated_at": "2026-07-22T16:05+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260721001283",
   "disclosures": [
+    {
+      "rcept_no": "20260722000385",
+      "rcept_dt": "2026-07-22",
+      "corp_name": "나래나노텍",
+      "stock_code": "137080",
+      "market": "KOSDAQ",
+      "corp_code": "00362122",
+      "repror": "김추호",
+      "ofcps": "사장",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "2,000",
+      "total_cnt": "33,000",
+      "irds_rate": "0.02",
+      "hold_rate": "0.31",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260722000350",
       "rcept_dt": "2026-07-22",
