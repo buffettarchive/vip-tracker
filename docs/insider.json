@@ -1,8 +1,42 @@
 {
-  "updated_at": "2026-07-21T18:35+09:00",
+  "updated_at": "2026-07-22T09:20+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260721001283",
   "disclosures": [
+    {
+      "rcept_no": "20260722000006",
+      "rcept_dt": "2026-07-22",
+      "corp_name": "엔피케이",
+      "stock_code": "048830",
+      "market": "KOSDAQ",
+      "corp_code": "00108490",
+      "repror": "엔피아이",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "5,000",
+      "total_cnt": "2,130,000",
+      "irds_rate": "0.03",
+      "hold_rate": "11.38",
+      "method": "장내매수"
+    },
+    {
+      "rcept_no": "20260722000005",
+      "rcept_dt": "2026-07-22",
+      "corp_name": "평화산업",
+      "stock_code": "090080",
+      "market": "KOSPI",
+      "corp_code": "00573579",
+      "repror": "김철영",
+      "ofcps": "상무",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "20,260",
+      "total_cnt": "20,260",
+      "irds_rate": "0.04",
+      "hold_rate": "0.04",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260721001328",
       "rcept_dt": "2026-07-21",
