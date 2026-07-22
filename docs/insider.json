@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-22T15:00+09:00",
+  "updated_at": "2026-07-22T15:22+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260721001283",
   "disclosures": [
+    {
+      "rcept_no": "20260722000301",
+      "rcept_dt": "2026-07-22",
+      "corp_name": "쿼드메디슨",
+      "stock_code": "464490",
+      "market": "KOSDAQ",
+      "corp_code": "01671285",
+      "repror": "백승기",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "15,370",
+      "total_cnt": "2,233,469",
+      "irds_rate": "0.13",
+      "hold_rate": "19.45",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260722000260",
       "rcept_dt": "2026-07-22",
