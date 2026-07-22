@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-22T14:17+09:00",
+  "updated_at": "2026-07-22T15:00+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260721001283",
   "disclosures": [
+    {
+      "rcept_no": "20260722000260",
+      "rcept_dt": "2026-07-22",
+      "corp_name": "이루온",
+      "stock_code": "065440",
+      "market": "KOSDAQ",
+      "corp_code": "00390514",
+      "repror": "이영성",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "30,135",
+      "total_cnt": "131,939",
+      "irds_rate": "0.11",
+      "hold_rate": "0.48",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260722000207",
       "rcept_dt": "2026-07-22",
