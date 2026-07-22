@@ -1,8 +1,42 @@
 {
-  "updated_at": "2026-07-22T16:05+09:00",
+  "updated_at": "2026-07-22T16:38+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260721001283",
   "disclosures": [
+    {
+      "rcept_no": "20260722000431",
+      "rcept_dt": "2026-07-22",
+      "corp_name": "알톤",
+      "stock_code": "123750",
+      "market": "KOSDAQ",
+      "corp_code": "00821607",
+      "repror": "이녹스",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "387,203",
+      "total_cnt": "6,597,997",
+      "irds_rate": "2.80",
+      "hold_rate": "47.74",
+      "method": "장내매수"
+    },
+    {
+      "rcept_no": "20260722000415",
+      "rcept_dt": "2026-07-22",
+      "corp_name": "대성창투",
+      "stock_code": "027830",
+      "market": "KOSDAQ",
+      "corp_code": "00109037",
+      "repror": "김영훈",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "114,500",
+      "total_cnt": "1,923,280",
+      "irds_rate": "0.21",
+      "hold_rate": "3.56",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260722000385",
       "rcept_dt": "2026-07-22",
