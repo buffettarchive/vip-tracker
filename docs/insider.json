@@ -1,8 +1,42 @@
 {
-  "updated_at": "2026-07-22T16:57+09:00",
+  "updated_at": "2026-07-22T17:20+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260721001283",
   "disclosures": [
+    {
+      "rcept_no": "20260722000503",
+      "rcept_dt": "2026-07-22",
+      "corp_name": "엘컴텍",
+      "stock_code": "037950",
+      "market": "KOSDAQ",
+      "corp_code": "00242712",
+      "repror": "김종구",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "11,572",
+      "total_cnt": "663,173",
+      "irds_rate": "0.07",
+      "hold_rate": "3.93",
+      "method": "장내매수"
+    },
+    {
+      "rcept_no": "20260722000496",
+      "rcept_dt": "2026-07-22",
+      "corp_name": "국영지앤엠",
+      "stock_code": "006050",
+      "market": "KOSDAQ",
+      "corp_code": "00104537",
+      "repror": "최저스틴제이",
+      "ofcps": "대표이사 사장",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "49,277",
+      "total_cnt": "657,171",
+      "irds_rate": "0.14",
+      "hold_rate": "1.88",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260722000473",
       "rcept_dt": "2026-07-22",
