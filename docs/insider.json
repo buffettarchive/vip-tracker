@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-22T10:37+09:00",
+  "updated_at": "2026-07-22T11:11+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260721001283",
   "disclosures": [
+    {
+      "rcept_no": "20260722000106",
+      "rcept_dt": "2026-07-22",
+      "corp_name": "HLB이노베이션",
+      "stock_code": "024850",
+      "market": "KOSDAQ",
+      "corp_code": "00155586",
+      "repror": "BRYANBYONGJINKIM",
+      "ofcps": "사내이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "15,000",
+      "total_cnt": "1,633,323",
+      "irds_rate": "0.04",
+      "hold_rate": "5.14",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260722000082",
       "rcept_dt": "2026-07-22",
