@@ -1,8 +1,42 @@
 {
-  "updated_at": "2026-07-23T12:06+09:00",
+  "updated_at": "2026-07-23T13:07+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260721001283",
   "disclosures": [
+    {
+      "rcept_no": "20260723000135",
+      "rcept_dt": "2026-07-23",
+      "corp_name": "삼성에스디에스",
+      "stock_code": "018260",
+      "market": "KOSPI",
+      "corp_code": "00126186",
+      "repror": "민대홍",
+      "ofcps": "상무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "60",
+      "total_cnt": "361",
+      "irds_rate": "0.00",
+      "hold_rate": "0.00",
+      "method": "장내매수"
+    },
+    {
+      "rcept_no": "20260723000134",
+      "rcept_dt": "2026-07-23",
+      "corp_name": "삼성에스디에스",
+      "stock_code": "018260",
+      "market": "KOSPI",
+      "corp_code": "00126186",
+      "repror": "정영훈",
+      "ofcps": "상무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "150",
+      "total_cnt": "250",
+      "irds_rate": "0.00",
+      "hold_rate": "0.00",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260723000128",
       "rcept_dt": "2026-07-23",
