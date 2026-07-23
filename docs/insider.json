@@ -1,8 +1,42 @@
 {
-  "updated_at": "2026-07-23T15:37+09:00",
+  "updated_at": "2026-07-23T15:50+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260721001283",
   "disclosures": [
+    {
+      "rcept_no": "20260723000357",
+      "rcept_dt": "2026-07-23",
+      "corp_name": "아이티아이즈",
+      "stock_code": "372800",
+      "market": "KOSDAQ",
+      "corp_code": "01429840",
+      "repror": "이성국",
+      "ofcps": "부사장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "17,193",
+      "total_cnt": "97,850",
+      "irds_rate": "0.24",
+      "hold_rate": "1.39",
+      "method": "장내매수"
+    },
+    {
+      "rcept_no": "20260723000347",
+      "rcept_dt": "2026-07-23",
+      "corp_name": "더네이쳐홀딩스",
+      "stock_code": "298540",
+      "market": "KOSDAQ",
+      "corp_code": "01214743",
+      "repror": "박범준",
+      "ofcps": "부사장",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "2,051",
+      "total_cnt": "5,429",
+      "irds_rate": "0.02",
+      "hold_rate": "0.04",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260723000336",
       "rcept_dt": "2026-07-23",
