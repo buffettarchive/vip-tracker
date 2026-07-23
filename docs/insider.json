@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-23T11:55+09:00",
+  "updated_at": "2026-07-23T12:06+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260721001283",
   "disclosures": [
+    {
+      "rcept_no": "20260723000128",
+      "rcept_dt": "2026-07-23",
+      "corp_name": "케이웨더",
+      "stock_code": "068100",
+      "market": "KOSDAQ",
+      "corp_code": "00426828",
+      "repror": "웰비안파트너스",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "76,873",
+      "total_cnt": "751,360",
+      "irds_rate": "0.64",
+      "hold_rate": "6.30",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260723000125",
       "rcept_dt": "2026-07-23",
