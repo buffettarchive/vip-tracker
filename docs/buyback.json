@@ -1,6 +1,42 @@
 {
   "entries": [
     {
+      "rcept_no": "20260723000657",
+      "rcept_dt": "20260723",
+      "corp_code": "00147772",
+      "corp_name": "정원엔시스",
+      "corp_cls": "K",
+      "report_nm": "[기재정정]주요사항보고서(자기주식취득결정)",
+      "type": "취득",
+      "shares_common": null,
+      "amount_common": null,
+      "acq_purpose": null,
+      "acq_method": null,
+      "acq_period_start": null,
+      "acq_period_end": null,
+      "total_shares": null,
+      "ratio_pct": null,
+      "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260723000657"
+    },
+    {
+      "rcept_no": "20260723000655",
+      "rcept_dt": "20260723",
+      "corp_code": "00155531",
+      "corp_name": "풍산홀딩스",
+      "corp_cls": "Y",
+      "report_nm": "주요사항보고서(자기주식취득결정)",
+      "type": "취득",
+      "shares_common": null,
+      "amount_common": null,
+      "acq_purpose": null,
+      "acq_method": null,
+      "acq_period_start": null,
+      "acq_period_end": null,
+      "total_shares": null,
+      "ratio_pct": null,
+      "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260723000655"
+    },
+    {
       "rcept_no": "20260723000604",
       "rcept_dt": "20260723",
       "corp_code": "01310269",
@@ -6367,5 +6403,5 @@
       "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250610000225"
     }
   ],
-  "last_seen": "20260723000604"
+  "last_seen": "20260723000657"
 }
