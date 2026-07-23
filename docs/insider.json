@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-23T11:20+09:00",
+  "updated_at": "2026-07-23T11:55+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260721001283",
   "disclosures": [
+    {
+      "rcept_no": "20260723000125",
+      "rcept_dt": "2026-07-23",
+      "corp_name": "진매트릭스",
+      "stock_code": "109820",
+      "market": "KOSDAQ",
+      "corp_code": "00552992",
+      "repror": "김수옥",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "274",
+      "total_cnt": "1,777,335",
+      "irds_rate": "0.00",
+      "hold_rate": "8.71",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260723000107",
       "rcept_dt": "2026-07-23",
