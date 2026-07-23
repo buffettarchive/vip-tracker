@@ -1,8 +1,42 @@
 {
-  "updated_at": "2026-07-23T16:05+09:00",
+  "updated_at": "2026-07-23T16:25+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260721001283",
   "disclosures": [
+    {
+      "rcept_no": "20260723000416",
+      "rcept_dt": "2026-07-23",
+      "corp_name": "삼성중공업",
+      "stock_code": "010140",
+      "market": "KOSPI",
+      "corp_code": "00126478",
+      "repror": "김동주",
+      "ofcps": "상무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "2,000",
+      "total_cnt": "2,000",
+      "irds_rate": "0.00",
+      "hold_rate": "0.00",
+      "method": "장내매수"
+    },
+    {
+      "rcept_no": "20260723000409",
+      "rcept_dt": "2026-07-23",
+      "corp_name": "세아제강",
+      "stock_code": "306200",
+      "market": "KOSPI",
+      "corp_code": "01325979",
+      "repror": "이주성",
+      "ofcps": "사장",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "3,000",
+      "total_cnt": "13,000",
+      "irds_rate": "0.10",
+      "hold_rate": "0.45",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260723000373",
       "rcept_dt": "2026-07-23",
