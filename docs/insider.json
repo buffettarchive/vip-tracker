@@ -1,8 +1,42 @@
 {
-  "updated_at": "2026-07-23T15:21+09:00",
+  "updated_at": "2026-07-23T15:37+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260721001283",
   "disclosures": [
+    {
+      "rcept_no": "20260723000336",
+      "rcept_dt": "2026-07-23",
+      "corp_name": "투비소프트",
+      "stock_code": "079970",
+      "market": "KOSDAQ",
+      "corp_code": "00596260",
+      "repror": "문승일",
+      "ofcps": "전무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "2,289",
+      "total_cnt": "2,289",
+      "irds_rate": "0.02",
+      "hold_rate": "0.02",
+      "method": "장외매수"
+    },
+    {
+      "rcept_no": "20260723000329",
+      "rcept_dt": "2026-07-23",
+      "corp_name": "리더스코스메틱",
+      "stock_code": "016100",
+      "market": "KOSDAQ",
+      "corp_code": "00180263",
+      "repror": "성백진",
+      "ofcps": "부회장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "10,000",
+      "total_cnt": "14,000",
+      "irds_rate": "0.05",
+      "hold_rate": "0.07",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260723000323",
       "rcept_dt": "2026-07-23",
