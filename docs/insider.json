@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-23T16:53+09:00",
+  "updated_at": "2026-07-23T17:16+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260721001283",
   "disclosures": [
+    {
+      "rcept_no": "20260723000505",
+      "rcept_dt": "2026-07-23",
+      "corp_name": "이스트에이드",
+      "stock_code": "239340",
+      "market": "KOSDAQ",
+      "corp_code": "01128622",
+      "repror": "김장중",
+      "ofcps": "기타비상무이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "50,000",
+      "total_cnt": "130,000",
+      "irds_rate": "0.18",
+      "hold_rate": "0.48",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260723000496",
       "rcept_dt": "2026-07-23",
