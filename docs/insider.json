@@ -1,8 +1,42 @@
 {
-  "updated_at": "2026-07-23T15:10+09:00",
+  "updated_at": "2026-07-23T15:21+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260721001283",
   "disclosures": [
+    {
+      "rcept_no": "20260723000323",
+      "rcept_dt": "2026-07-23",
+      "corp_name": "LB세미콘",
+      "stock_code": "061970",
+      "market": "KOSDAQ",
+      "corp_code": "00412348",
+      "repror": "엘비",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "2,271,295",
+      "total_cnt": "8,094,495",
+      "irds_rate": "3.33",
+      "hold_rate": "13.19",
+      "method": "장내매수"
+    },
+    {
+      "rcept_no": "20260723000307",
+      "rcept_dt": "2026-07-23",
+      "corp_name": "지에프씨생명과학",
+      "stock_code": "388610",
+      "market": "KOSDAQ",
+      "corp_code": "01221752",
+      "repror": "강희철",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "3,439",
+      "total_cnt": "1,748,883",
+      "irds_rate": "0.07",
+      "hold_rate": "32.84",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260723000293",
       "rcept_dt": "2026-07-23",
