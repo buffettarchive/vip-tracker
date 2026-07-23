@@ -1,8 +1,42 @@
 {
-  "updated_at": "2026-07-23T09:56+09:00",
+  "updated_at": "2026-07-23T10:48+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260721001283",
   "disclosures": [
+    {
+      "rcept_no": "20260723000081",
+      "rcept_dt": "2026-07-23",
+      "corp_name": "딥커머스",
+      "stock_code": "900110",
+      "market": "KOSDAQ",
+      "corp_code": "00799070",
+      "repror": "DING SHAOYING",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "40,756",
+      "total_cnt": "2,478,454",
+      "irds_rate": "0.22",
+      "hold_rate": "13.44",
+      "method": "장내매수"
+    },
+    {
+      "rcept_no": "20260723000076",
+      "rcept_dt": "2026-07-23",
+      "corp_name": "팅크웨어",
+      "stock_code": "084730",
+      "market": "KOSDAQ",
+      "corp_code": "00438036",
+      "repror": "유비벨록스",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "37,319",
+      "total_cnt": "4,603,004",
+      "irds_rate": "0.33",
+      "hold_rate": "41.43",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260723000036",
       "rcept_dt": "2026-07-23",
