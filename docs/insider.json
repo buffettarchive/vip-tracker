@@ -1,8 +1,42 @@
 {
-  "updated_at": "2026-07-23T16:25+09:00",
+  "updated_at": "2026-07-23T16:46+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260721001283",
   "disclosures": [
+    {
+      "rcept_no": "20260723000454",
+      "rcept_dt": "2026-07-23",
+      "corp_name": "크레버스",
+      "stock_code": "096240",
+      "market": "KOSDAQ",
+      "corp_code": "00525882",
+      "repror": "김영화",
+      "ofcps": "회장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "10,530",
+      "total_cnt": "1,747,393",
+      "irds_rate": "0.9",
+      "hold_rate": "17.07",
+      "method": "장내매수"
+    },
+    {
+      "rcept_no": "20260723000442",
+      "rcept_dt": "2026-07-23",
+      "corp_name": "지아이이노베이션",
+      "stock_code": "358570",
+      "market": "KOSDAQ",
+      "corp_code": "01351080",
+      "repror": "김국환",
+      "ofcps": "전무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,000",
+      "total_cnt": "34,577",
+      "irds_rate": "0.00",
+      "hold_rate": "0.05",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260723000416",
       "rcept_dt": "2026-07-23",
