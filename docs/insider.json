@@ -1,8 +1,42 @@
 {
-  "updated_at": "2026-07-23T17:46+09:00",
+  "updated_at": "2026-07-23T17:49+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260721001283",
   "disclosures": [
+    {
+      "rcept_no": "20260723000615",
+      "rcept_dt": "2026-07-23",
+      "corp_name": "CG인바이츠",
+      "stock_code": "083790",
+      "market": "KOSDAQ",
+      "corp_code": "00407814",
+      "repror": "인바이츠투자",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "679,820",
+      "total_cnt": "1,577,820",
+      "irds_rate": "0.74",
+      "hold_rate": "1.71",
+      "method": "장내매수"
+    },
+    {
+      "rcept_no": "20260723000610",
+      "rcept_dt": "2026-07-23",
+      "corp_name": "아이씨디",
+      "stock_code": "040910",
+      "market": "KOSDAQ",
+      "corp_code": "00298377",
+      "repror": "양장규",
+      "ofcps": "사내이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "40,000",
+      "total_cnt": "320,000",
+      "irds_rate": "0.22",
+      "hold_rate": "1.74",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260723000594",
       "rcept_dt": "2026-07-23",
