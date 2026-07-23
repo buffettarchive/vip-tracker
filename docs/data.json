@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-23T12:24+09:00",
+  "updated_at": "2026-07-23T12:34+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -19,13 +19,13 @@
       "corp_name": "유니셈",
       "stock_code": "036200",
       "corp_code": "00260569",
-      "stkrt": "",
+      "stkrt": "5.03",
       "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkqy": "1541848",
+      "report_resn": "장내매수",
+      "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "기타"
+      "kind": "매수(신규)"
     },
     {
       "rcept_no": "20260722000038",
