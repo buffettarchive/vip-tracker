@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-23T15:50+09:00",
+  "updated_at": "2026-07-23T16:05+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260721001283",
   "disclosures": [
+    {
+      "rcept_no": "20260723000373",
+      "rcept_dt": "2026-07-23",
+      "corp_name": "희림",
+      "stock_code": "037440",
+      "market": "KOSDAQ",
+      "corp_code": "00236863",
+      "repror": "정영균",
+      "ofcps": "대표이사회장",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "27,900",
+      "total_cnt": "2,599,843",
+      "irds_rate": "0.20",
+      "hold_rate": "18.67",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260723000357",
       "rcept_dt": "2026-07-23",
