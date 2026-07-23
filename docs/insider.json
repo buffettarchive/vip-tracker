@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-23T13:47+09:00",
+  "updated_at": "2026-07-23T14:07+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260721001283",
   "disclosures": [
+    {
+      "rcept_no": "20260723000187",
+      "rcept_dt": "2026-07-23",
+      "corp_name": "포스코DX",
+      "stock_code": "022100",
+      "market": "KOSPI",
+      "corp_code": "00155212",
+      "repror": "김미영",
+      "ofcps": "전무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "500",
+      "total_cnt": "2,402",
+      "irds_rate": "0.00",
+      "hold_rate": "0.00",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260723000167",
       "rcept_dt": "2026-07-23",
