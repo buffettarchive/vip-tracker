@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-23T13:15+09:00",
+  "updated_at": "2026-07-23T13:32+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260721001283",
   "disclosures": [
+    {
+      "rcept_no": "20260723000152",
+      "rcept_dt": "2026-07-23",
+      "corp_name": "뉴파워프라즈마",
+      "stock_code": "144960",
+      "market": "KOSDAQ",
+      "corp_code": "00521390",
+      "repror": "최대규",
+      "ofcps": "회장",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "107,968",
+      "total_cnt": "9,353,075",
+      "irds_rate": "0.25",
+      "hold_rate": "21.41",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260723000137",
       "rcept_dt": "2026-07-23",
