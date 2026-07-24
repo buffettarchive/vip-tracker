@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-24T16:34+09:00",
+  "updated_at": "2026-07-24T16:39+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -10,7 +10,7 @@
     "피델리티",
     "Miri"
   ],
-  "last_seen": "20260724000507",
+  "last_seen": "20260724000515",
   "disclosures": [
     {
       "rcept_no": "20260724000413",
@@ -19,13 +19,13 @@
       "corp_name": "현대백화점",
       "stock_code": "069960",
       "corp_code": "00428251",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkrt": "4.20",
+      "stkrt_prev": "5.23",
+      "stkqy": "905021",
+      "report_resn": "장내매도",
+      "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "기타"
+      "kind": "매도"
     },
     {
       "rcept_no": "20260724000320",
