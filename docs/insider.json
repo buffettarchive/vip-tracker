@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-24T14:11+09:00",
+  "updated_at": "2026-07-24T14:26+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260721001283",
   "disclosures": [
+    {
+      "rcept_no": "20260724000267",
+      "rcept_dt": "2026-07-24",
+      "corp_name": "멕아이씨에스",
+      "stock_code": "058110",
+      "market": "KOSDAQ",
+      "corp_code": "00270113",
+      "repror": "허병회",
+      "ofcps": "사외이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1",
+      "total_cnt": "1",
+      "irds_rate": "0.00",
+      "hold_rate": "0.00",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260724000256",
       "rcept_dt": "2026-07-24",
