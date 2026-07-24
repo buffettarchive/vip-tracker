@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-24T13:58+09:00",
+  "updated_at": "2026-07-24T14:11+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260721001283",
   "disclosures": [
+    {
+      "rcept_no": "20260724000256",
+      "rcept_dt": "2026-07-24",
+      "corp_name": "동방",
+      "stock_code": "004140",
+      "market": "KOSPI",
+      "corp_code": "00115287",
+      "repror": "김형곤",
+      "ofcps": "회장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "27,544",
+      "total_cnt": "9,335,724",
+      "irds_rate": "0.057",
+      "hold_rate": "19.460",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260724000245",
       "rcept_dt": "2026-07-24",
