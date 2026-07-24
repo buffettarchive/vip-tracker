@@ -1,8 +1,42 @@
 {
-  "updated_at": "2026-07-24T15:44+09:00",
+  "updated_at": "2026-07-24T16:01+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260721001283",
   "disclosures": [
+    {
+      "rcept_no": "20260724000377",
+      "rcept_dt": "2026-07-24",
+      "corp_name": "원익큐브",
+      "stock_code": "014190",
+      "market": "KOSDAQ",
+      "corp_code": "00128175",
+      "repror": "김영대",
+      "ofcps": "감사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "8,396",
+      "total_cnt": "8,396",
+      "irds_rate": "0.02",
+      "hold_rate": "0.02",
+      "method": "장내매수"
+    },
+    {
+      "rcept_no": "20260724000375",
+      "rcept_dt": "2026-07-24",
+      "corp_name": "한솔홀딩스",
+      "stock_code": "004150",
+      "market": "KOSPI",
+      "corp_code": "00171636",
+      "repror": "조성민",
+      "ofcps": "부사장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,335",
+      "total_cnt": "1,687,215",
+      "irds_rate": "0.00",
+      "hold_rate": "4.11",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260724000362",
       "rcept_dt": "2026-07-24",
