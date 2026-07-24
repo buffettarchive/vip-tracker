@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-24T13:30+09:00",
+  "updated_at": "2026-07-24T13:38+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260721001283",
   "disclosures": [
+    {
+      "rcept_no": "20260724000221",
+      "rcept_dt": "2026-07-24",
+      "corp_name": "세중",
+      "stock_code": "039310",
+      "market": "KOSDAQ",
+      "corp_code": "00264671",
+      "repror": "박요섭",
+      "ofcps": "전무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "20,000",
+      "total_cnt": "20,000",
+      "irds_rate": "0.11",
+      "hold_rate": "0.11",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260724000211",
       "rcept_dt": "2026-07-24",
