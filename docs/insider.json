@@ -1,8 +1,42 @@
 {
-  "updated_at": "2026-07-24T12:13+09:00",
+  "updated_at": "2026-07-24T12:18+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260721001283",
   "disclosures": [
+    {
+      "rcept_no": "20260724000177",
+      "rcept_dt": "2026-07-24",
+      "corp_name": "영우디에스피",
+      "stock_code": "143540",
+      "market": "KOSDAQ",
+      "corp_code": "00569646",
+      "repror": "이동윤",
+      "ofcps": "이사",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "39,051",
+      "total_cnt": "39,051",
+      "irds_rate": "0.09",
+      "hold_rate": "0.09",
+      "method": "장내매수"
+    },
+    {
+      "rcept_no": "20260724000176",
+      "rcept_dt": "2026-07-24",
+      "corp_name": "영우디에스피",
+      "stock_code": "143540",
+      "market": "KOSDAQ",
+      "corp_code": "00569646",
+      "repror": "채영식",
+      "ofcps": "이사",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "19,300",
+      "total_cnt": "72,400",
+      "irds_rate": "0.04",
+      "hold_rate": "0.16",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260724000175",
       "rcept_dt": "2026-07-24",
