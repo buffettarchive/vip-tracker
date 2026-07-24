@@ -1,8 +1,42 @@
 {
-  "updated_at": "2026-07-24T10:18+09:00",
+  "updated_at": "2026-07-24T10:35+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260721001283",
   "disclosures": [
+    {
+      "rcept_no": "20260724000095",
+      "rcept_dt": "2026-07-24",
+      "corp_name": "탑코미디어",
+      "stock_code": "134580",
+      "market": "KOSDAQ",
+      "corp_code": "00608699",
+      "repror": "유정석",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "24,000",
+      "total_cnt": "1,024,000",
+      "irds_rate": "-2.91",
+      "hold_rate": "2.08",
+      "method": "장내매수"
+    },
+    {
+      "rcept_no": "20260724000092",
+      "rcept_dt": "2026-07-24",
+      "corp_name": "탑코미디어",
+      "stock_code": "134580",
+      "market": "KOSDAQ",
+      "corp_code": "00608699",
+      "repror": "김기해",
+      "ofcps": "사내이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "10,083",
+      "total_cnt": "250,000",
+      "irds_rate": "0.02",
+      "hold_rate": "0.51",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260724000067",
       "rcept_dt": "2026-07-24",
