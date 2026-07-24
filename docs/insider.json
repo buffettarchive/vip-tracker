@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-24T13:38+09:00",
+  "updated_at": "2026-07-24T13:58+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260721001283",
   "disclosures": [
+    {
+      "rcept_no": "20260724000245",
+      "rcept_dt": "2026-07-24",
+      "corp_name": "에쓰씨엔지니어링",
+      "stock_code": "023960",
+      "market": "KOSPI",
+      "corp_code": "00121969",
+      "repror": "송한규",
+      "ofcps": "사내이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "20,106",
+      "total_cnt": "20,106",
+      "irds_rate": "0.05",
+      "hold_rate": "0.05",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260724000221",
       "rcept_dt": "2026-07-24",
