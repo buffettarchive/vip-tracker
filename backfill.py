@@ -154,7 +154,17 @@ def _parse_plain(plain):
     trade_methods = re.findall(r"(장내매수|장외매수|장내매매|시간외매매|시간외매수|장내매도|장외매도)", plain)
     if trade_methods:
         from collections import Counter
-        method = Counter(trade_methods).most_common(1)[0][0]
+        # 지분 증감 방향과 일치하는 거래방법 우선 선택
+        cur_v = to_float(out.get("stkrt"))
+        prev_v = to_float(out.get("stkrt_prev"))
+        buy_m = [m for m in trade_methods if "매수" in m]
+        sell_m = [m for m in trade_methods if "매도" in m]
+        if cur_v is not None and prev_v is not None and cur_v > prev_v and buy_m:
+            method = Counter(buy_m).most_common(1)[0][0]
+        elif cur_v is not None and prev_v is not None and cur_v < prev_v and sell_m:
+            method = Counter(sell_m).most_common(1)[0][0]
+        else:
+            method = Counter(trade_methods).most_common(1)[0][0]
         out["report_resn"] = method
 
     if "report_resn" not in out:
