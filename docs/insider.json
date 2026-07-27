@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-27T15:59+09:00",
+  "updated_at": "2026-07-27T16:14+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260727000238",
+  "last_seen": "20260727000245",
   "disclosures": [
+    {
+      "rcept_no": "20260727000245",
+      "rcept_dt": "2026-07-27",
+      "corp_name": "아톤",
+      "stock_code": "158430",
+      "market": "KOSDAQ",
+      "corp_code": "00595182",
+      "repror": "김종서",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "240,000",
+      "total_cnt": "6,008,160",
+      "irds_rate": "-1.90",
+      "hold_rate": "24.54",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260727000237",
       "rcept_dt": "2026-07-27",
