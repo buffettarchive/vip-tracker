@@ -3,10 +3,6 @@
 <head>
 <meta name="naver-site-verification" content="6a07b5913b5ed5318875354c39e3d21ce086e524" />
 <meta charset="UTF-8" />
-<meta name="description" content="국내 가치투자 운용사 지분공시, 내부자매수, 자사주매입 실시간 트래킹. VIP자산운용, 얼라인파트너스, 피델리티 등." />
-<meta name="keywords" content="내부자매수, 운용사 지분공시, 자사주매입, VIP자산운용, 얼라인파트너스, 트러스톤" />
-<meta property="og:title" content="버핏아카이브 — 내부자매수·운용사 지분공시" />
-<meta property="og:description" content="국내 가치투자 운용사 지분공시와 내부자매수를 실시간으로 추적합니다." />
 <meta name="viewport" content="width=1260" />
 <title>버핏아카이브 — 대시보드</title>
 <meta name="description" content="국내 가치투자 운용사 지분공시와 내부자 매수 트래킹 사이트" />
@@ -48,7 +44,7 @@ body{
 }
 a{color:inherit;text-decoration:none}
 ::selection{background:rgba(0,71,255,.16)}
-.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
 
 /* ── 상단 네비게이션 ── */
 
@@ -56,11 +52,11 @@ a{color:inherit;text-decoration:none}
 
 
 
-
-
-
-
-
+/* 메뉴 이동 링크 (우측 끝 배치, 연회색 -> 파란색 통일) */
+.nav-links{margin-left:auto;display:flex;gap:28px;font-size:16px;font-weight:700;align-items:center}
+.nav-links a{color:var(--muted); transition:0.2s;}
+.nav-links a:hover{color:var(--ink);}
+.nav-links a.active{color:var(--cobalt); text-decoration:none;}
 
 
 .langtoggle button{font-family:inherit;background:transparent;border:0;color:#b7b6ae;padding:5px 7px;cursor:pointer;transition:color .15s;border-radius:8px}
@@ -78,17 +74,10 @@ a{color:inherit;text-decoration:none}
 .ticker::-webkit-scrollbar{display:none}
 
 /* ── TradingView 차트 ── */
-/* 검색 */
 .search-wrap{margin:12px 0 0}
-.search-input{display:block;
-  width:100%;max-width:720px;padding:12px 16px 12px 40px;
-  font-family:inherit;font-size:14px;font-weight:500;color:var(--ink);
-  background:var(--card) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='%2374767c' viewBox='0 0 256 256'%3E%3Cpath d='M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z'/%3E%3C/svg%3E") no-repeat 12px center;
-  border:1px solid var(--line);border-radius:12px;outline:none;transition:all .2s;
-}
+.search-input{width:100%;max-width:400px;padding:10px 16px 10px 40px;font-family:inherit;font-size:14px;font-weight:500;color:var(--ink);background:var(--card) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='%2374767c' viewBox='0 0 256 256'%3E%3Cpath d='M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z'/%3E%3C/svg%3E") no-repeat 12px center;border:1px solid var(--line);border-radius:12px;outline:none;transition:all .2s}
 .search-input:focus{border-color:var(--cobalt);box-shadow:0 0 0 3px rgba(0,71,255,.1)}
 .search-input::placeholder{color:var(--muted);font-weight:400}
-
 .chart-wrap{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px 18px 8px;margin-top:14px;box-shadow:0 4px 20px rgba(22,24,29,.04)}
 .chart-head{display:flex;align-items:baseline;gap:12px;margin-bottom:12px;padding:0 4px;flex-wrap:wrap}
 .chart-tf{margin-left:auto;display:inline-flex;gap:2px;background:#f1f2f6;border-radius:10px;padding:3px}
@@ -205,15 +194,10 @@ footer#footer{margin:40px 0 0;padding-top:24px;border-top:1px solid var(--line)}
 .contact a{color:var(--ink);font-weight:700}
 .contact a:hover{color:var(--cobalt)}
 
-
-
-
-.nav-links{margin-left:auto;display:flex;gap:28px;font-size:16px;font-weight:700;align-items:center}
-.nav-links a{color:#74767c;transition:0.2s}
-.nav-links a:hover{color:#16181d}
 </style>
 </head>
 <body>
+
 <header style="position:sticky;top:0;z-index:100;background:rgba(248,247,244,.82);backdrop-filter:saturate(160%) blur(16px);-webkit-backdrop-filter:saturate(160%) blur(16px)">
   <nav style="max-width:1200px;margin:0 auto;height:74px;display:flex;align-items:center;padding:0 28px;">
     <a href="index.html" style="display:flex;align-items:center"><img src="logo.png" alt="Buffett Archive" style="height:32px;width:auto"></a>
@@ -228,11 +212,6 @@ footer#footer{margin:40px 0 0;padding-top:24px;border-top:1px solid var(--line)}
   </nav>
 </header>
 
-
-
-
-
-
 <div class="wrap">
 
   <div class="ticker" id="ticker"></div>
@@ -242,11 +221,6 @@ footer#footer{margin:40px 0 0;padding-top:24px;border-top:1px solid var(--line)}
     <div class="chart-head">
       <span class="chart-title" id="chartTitle">KOSPI</span>
       <span class="chart-hint" id="chartHint"></span>
-      <div class="chart-tf" id="chartTf">
-        <button data-tf="daily" aria-selected="true">일봉</button>
-        <button data-tf="weekly" aria-selected="false">주봉</button>
-        <button data-tf="monthly" aria-selected="false">월봉</button>
-      </div>
     </div>
     <div class="ohlc-bar" id="ohlcBar"></div>
     <div id="marketChart" class="tv-chart"></div>
@@ -260,6 +234,7 @@ footer#footer{margin:40px 0 0;padding-top:24px;border-top:1px solid var(--line)}
 
   <div class="controls">
     <div class="firm-tabs" id="firmTabs" role="tablist"></div>
+    <div class="market-filter" id="marketFilter"></div>
     <div class="search-wrap"><input type="text" class="search-input" id="searchInput" placeholder="기업명 검색"></div>
     <div class="count" id="count"></div>
   </div>
@@ -546,7 +521,7 @@ function drawChart(name){
     return c;
   }).filter(c => c.close > 0);
   const tfLabel = {daily:"일봉", weekly:"주봉", monthly:"월봉"}[currentTimeframe] || "일봉";
-  if(hintEl) hintEl.textContent = `${tfLabel} · 스크롤로 과거 탐색`;
+  if(hintEl) hintEl.textContent = `전체 기간 · ${tfLabel} · 스크롤로 과거 탐색`;
   lwSeries.setData(series);
   lastCandle = series[series.length-1];   
   updateOhlcBar(lastCandle);
@@ -604,9 +579,7 @@ function renderFirm(){
   if(activeFirm!=="전체"){
     list = list.filter(x => x.firm === activeFirm);
   }
-  if(searchQuery){
-    list = list.filter(x => (x.corp_name||"").toLowerCase().includes(searchQuery));
-  }
+  // 가장 최근 공시부터 내림차순 정렬
   list.sort((a,b)=>(b.rcept_no||"").localeCompare(a.rcept_no||""));
 
   $("#count").textContent = t("count_firm", list.length);
@@ -636,6 +609,7 @@ function renderFirm(){
 
 function renderInsider(){
   const list=INSIDER.disclosures
+    .filter(x => activeMarket==="ALL" || (x.market||"")===activeMarket)
     .filter(x => !searchQuery || (x.corp_name||"").toLowerCase().includes(searchQuery))
     .sort((a,b)=>(b.rcept_no||"").localeCompare(a.rcept_no||""));
   $("#count").textContent=t("count_insider", list.length);
@@ -675,8 +649,12 @@ function renderInsider(){
 
 function renderBuyback(){
   let list=(BUYBACK.entries||[]).filter(x => !(x.report_nm||"").includes("신탁계약"));
-  if(searchQuery){
-    list = list.filter(x => (x.corp_name||"").toLowerCase().includes(searchQuery));
+  if(activeMarket!=="ALL"){
+    const cls = activeMarket==="KOSPI"?"Y":"K";
+    list = list.filter(x => x.corp_cls===cls);
+  }
+  if(activeBBType!=="ALL"){
+    list = list.filter(x => x.type===activeBBType);
   }
   list.sort((a,b)=>(b.rcept_no||"").localeCompare(a.rcept_no||""));
   $("#count").textContent=t("count_buyback", list.length);
@@ -740,7 +718,26 @@ function buildFirmTabs(){
   });
 }
 
-function buildMarketFilter(){}
+function buildMarketFilter(){
+  if(view==="firm"){ $("#marketFilter").innerHTML=""; $("#marketFilter").style.display="none"; return; }
+  $("#marketFilter").style.display="flex";
+  const opts=[["ALL",t("market_all")],["KOSPI","KOSPI"],["KOSDAQ","KOSDAQ"]];
+  let html = opts.map(([k,label])=>
+    `<button aria-selected="${k===activeMarket}" data-mk="${k}">${label}</button>`).join("");
+  if(view==="buyback"){
+    const bbOpts=[["ALL",t("all")],["취득",t("bb_acq")],["소각",t("bb_cancel")]];
+    html += `<span style="display:inline-block;width:12px"></span>`;
+    html += bbOpts.map(([k,label])=>
+      `<button aria-selected="${k===activeBBType}" data-bbtype="${k}">${label}</button>`).join("");
+  }
+  $("#marketFilter").innerHTML = html;
+  $("#marketFilter").querySelectorAll("button[data-mk]").forEach(b=>{
+    b.onclick=()=>{activeMarket=b.dataset.mk;buildMarketFilter();render();};
+  });
+  $("#marketFilter").querySelectorAll("button[data-bbtype]").forEach(b=>{
+    b.onclick=()=>{activeBBType=b.dataset.bbtype;buildMarketFilter();render();};
+  });
+}
 
 function setFooter(){
   $("#footer").innerHTML = `
@@ -853,7 +850,6 @@ document.getElementById("searchInput").addEventListener("input", e=>{
   searchQuery = e.target.value.trim().toLowerCase();
   render();
 });
-
 drawChart("KOSPI");
 </script>
 </body>
