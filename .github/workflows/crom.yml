@@ -8,6 +8,15 @@ on:
         description: '기타 항목만 재처리 (체크 시)'
         type: boolean
         default: false
+      firm:
+        description: '특정 운용사만 백필 (예: Orbis,Pzena) 비우면 전체'
+        type: string
+        default: ''
+      backfill_days:
+        description: '백필 기간 (일수, 비우면 일반 실행)'
+        type: string
+        default: ''
+
 jobs:
   fetch-insider:
     runs-on: ubuntu-latest
@@ -30,11 +39,21 @@ jobs:
           python-version: '3.12'
       - run: pip install requests
       - run: |
+          CMD="python fetch_vip.py"
           if [ "${{ inputs.fix_etc }}" = "true" ]; then
-            python fetch_vip.py --fix-etc
-          else
-            python fetch_vip.py
+            CMD="$CMD --fix-etc"
           fi
+          if [ -n "${{ inputs.backfill_days }}" ]; then
+            CMD="$CMD --backfill-days ${{ inputs.backfill_days }}"
+          fi
+          if [ -n "${{ inputs.firm }}" ]; then
+            IFS=',' read -ra FIRMS <<< "${{ inputs.firm }}"
+            for f in "${FIRMS[@]}"; do
+              CMD="$CMD --firm $f"
+            done
+          fi
+          echo "실행: $CMD"
+          eval $CMD
         env:
           DART_API_KEY: ${{ secrets.DART_API_KEY }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
