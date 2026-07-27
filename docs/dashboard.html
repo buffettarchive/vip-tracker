@@ -728,7 +728,7 @@ function buildFirmTabs(){
   });
 }
 
-function buildMarketFilter(){
+function buildMarketFilter(){ $("#marketFilter").innerHTML=""; $("#marketFilter").style.display="none"; return; //
   if(view==="firm"){ $("#marketFilter").innerHTML=""; $("#marketFilter").style.display="none"; return; }
   $("#marketFilter").style.display="flex";
   const opts=[["ALL",t("market_all")],["KOSPI","KOSPI"],["KOSDAQ","KOSDAQ"]];
