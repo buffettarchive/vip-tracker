@@ -31,6 +31,8 @@ WATCH_FIRMS = [
     "트러스톤자산운용",
     "피델리티",
     "Miri",
+    "Orbis",
+    "Pzena",
 ]
 
 SCAN_DAYS = 3
@@ -56,7 +58,7 @@ def dart(endpoint, **params):
 
 
 # FIL Limited, FIL Investment Management 등은 피델리티 계열
-FIRM_ALIAS = {"FIL": "피델리티", "미리": "Miri"}
+FIRM_ALIAS = {"FIL": "피델리티", "미리": "Miri", "오비스": "Orbis", "Orbis": "Orbis", "Pzena": "Pzena"}
 
 def firm_in(name):
     if not name:
