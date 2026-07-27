@@ -275,6 +275,8 @@ def main():
                         help="과거 N일치 재스캔 (last_seen 무시)")
     parser.add_argument("--fix-etc", action="store_true",
                         help="기타로 분류된 항목만 재파싱+재분류")
+    parser.add_argument("--firm", action="append", default=None,
+                        help="특정 운용사만 수집 (예: --firm Orbis --firm Pzena)")
     args = parser.parse_args()
 
     data, sha = gh_get()
@@ -319,6 +321,9 @@ def main():
         scan_days = args.backfill_days
         last_seen = ""  # 백필 모드: last_seen 무시
         print(f"[info] ★ 백필 모드: {scan_days}일, last_seen 무시")
+    if args.firm:
+        target_firms = [f.lower() for f in args.firm]
+        print(f"[info] ★ 특정 운용사만 수집: {args.firm}")
 
     print(f"[info] 기존 {len(existing)}건, 마지막 본 번호={last_seen or '없음'}")
 
