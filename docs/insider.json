@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-27T14:29+09:00",
+  "updated_at": "2026-07-27T14:44+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260727000144",
+  "last_seen": "20260727000154",
   "disclosures": [
+    {
+      "rcept_no": "20260727000154",
+      "rcept_dt": "2026-07-27",
+      "corp_name": "감성코퍼레이션",
+      "stock_code": "036620",
+      "market": "KOSDAQ",
+      "corp_code": "00261009",
+      "repror": "김호선",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "158,000",
+      "total_cnt": "22,411,000",
+      "irds_rate": "0.18",
+      "hold_rate": "24.94",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260727000144",
       "rcept_dt": "2026-07-27",
