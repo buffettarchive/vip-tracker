@@ -28,6 +28,8 @@ WATCH_FIRMS = [
     "트러스톤자산운용",
     "피델리티",
     "Miri",
+    "Orbis",
+    "Pzena",
 ]
 
 BACKFILL_DAYS = 365
@@ -52,7 +54,7 @@ def dart(endpoint, **params):
     return {"status": "999", "list": []}
 
 
-FIRM_ALIAS = {"FIL": "피델리티", "미리": "Miri"}
+FIRM_ALIAS = {"FIL": "피델리티", "미리": "Miri", "오비스": "Orbis", "Orbis": "Orbis", "Pzena": "Pzena"}
 
 def firm_in(name):
     if not name:
