@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-27T14:44+09:00",
+  "updated_at": "2026-07-27T14:54+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260727000154",
+  "last_seen": "20260727000164",
   "disclosures": [
+    {
+      "rcept_no": "20260727000164",
+      "rcept_dt": "2026-07-27",
+      "corp_name": "TS트릴리온",
+      "stock_code": "317240",
+      "market": "KOSDAQ",
+      "corp_code": "01353024",
+      "repror": "김용주",
+      "ofcps": "사내이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "123,494",
+      "total_cnt": "723,494",
+      "irds_rate": "0.42",
+      "hold_rate": "2.48",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260727000154",
       "rcept_dt": "2026-07-27",
