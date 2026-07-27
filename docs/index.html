@@ -338,7 +338,8 @@ return Promise.all([
       const cur=parseFloat(x.stkrt), prev=parseFloat(x.stkrt_prev);
       const diff=(!isNaN(cur)&&!isNaN(prev))?(cur-prev):null;
       let delta="보유 지분", deltaColor="var(--muted)";
-      if((x.kind||"").includes("신규")){ delta="신규 편입"; deltaColor="#12a55a"; }
+      if((x.kind||"").includes("신규") && diff!=null){ delta=`신규 ▲${Math.abs(diff).toFixed(2)}%p`; deltaColor="#12a55a"; }
+      else if((x.kind||"").includes("신규")){ delta="신규 편입"; deltaColor="#12a55a"; }
       else if(x.kind==="매수" && diff!=null){ delta=`매수 ▲${Math.abs(diff).toFixed(2)}%p`; deltaColor="#12a55a"; }
       else if(x.kind==="매도" && diff!=null){ delta=`매도 ▼${Math.abs(diff).toFixed(2)}%p`; deltaColor="#dc2626"; }
       return `<div style="display:flex;justify-content:space-between;align-items:center;padding:15px 4px;border-top:1px solid #f3f3ef">
@@ -374,7 +375,7 @@ return Promise.all([
         sub: sub,
         big: "+"+fmtNum((x.irds_cnt||"").toString().replace(/,/g,"")),
         bigColor: "var(--cobalt)",
-        mid: "매수 주식수 · " + fmtDate2(x.rcept_dt),
+        mid: "매수 주식수  " + fmtDate2(x.rcept_dt),
         delta: "보유 " + (x.hold_rate||"0") + "%",
         deltaColor: "#12a55a"
       });
@@ -390,14 +391,15 @@ return Promise.all([
       const cur=parseFloat(x.stkrt), prev=parseFloat(x.stkrt_prev);
       const diff=(!isNaN(cur)&&!isNaN(prev))?(cur-prev):null;
       let delta="", deltaColor="var(--muted)";
-      if((x.kind||"").includes("신규")){ delta="신규 편입"; deltaColor="#12a55a"; }
+      if((x.kind||"").includes("신규") && diff!=null){ delta=`신규 ▲${Math.abs(diff).toFixed(2)}%p`; deltaColor="#12a55a"; }
+      else if((x.kind||"").includes("신규")){ delta="신규 편입"; deltaColor="#12a55a"; }
       else if(x.kind==="매수" && diff!=null){ delta=`매수 ▲${Math.abs(diff).toFixed(2)}%p`; deltaColor="#12a55a"; }
       else if(x.kind==="매도" && diff!=null){ delta=`매도 ▼${Math.abs(diff).toFixed(2)}%p`; deltaColor="#dc2626"; }
       else if(x.kind==="매수"){ delta="매수"; deltaColor="#12a55a"; }
       else if(x.kind==="매도"){ delta="매도"; deltaColor="#dc2626"; }
       else { delta="보유 지분"; }
       const resn = x.report_resn||"";
-      const sub = `${firmShort(x.firm||"")}${resn?" · "+resn:""}`;
+      const sub = `${firmShort(x.firm||"")}${resn?"  "+resn:""}`;
       return dashRow({
         init: initial(x.corp_name), name: x.corp_name, code: x.stock_code,
         sub: sub,
@@ -425,8 +427,8 @@ return Promise.all([
         sub: sub,
         big: shares,
         bigColor: "var(--cobalt)",
-        mid: fmtDate2(x.rcept_dt),
-        delta: isAcq?"취득 주식수":"소각 주식수",
+        mid: (isAcq?"취득 주식수":"소각 주식수") + "  " + fmtDate2(x.rcept_dt),
+        delta: x.acq_amount ? x.acq_amount : "",
         deltaColor: "var(--muted)"
       });
     }).join("");
