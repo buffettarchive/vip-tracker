@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-27T10:09+09:00",
+  "updated_at": "2026-07-27T10:14+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -10,8 +10,23 @@
     "피델리티",
     "Miri"
   ],
-  "last_seen": "20260727000046",
+  "last_seen": "20260727000049",
   "disclosures": [
+    {
+      "rcept_no": "20260727000049",
+      "rcept_dt": "2026-07-27",
+      "firm": "Miri",
+      "corp_name": "한국알콜",
+      "stock_code": "017890",
+      "corp_code": "00158565",
+      "stkrt": "12.85",
+      "stkrt_prev": "12.35",
+      "stkqy": "2656933",
+      "report_resn": "장내매수",
+      "purpose": "",
+      "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
+      "kind": "매수"
+    },
     {
       "rcept_no": "20260727000046",
       "rcept_dt": "2026-07-27",
@@ -19,13 +34,13 @@
       "corp_name": "미코",
       "stock_code": "059090",
       "corp_code": "00366942",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkrt": "11.05",
+      "stkrt_prev": "9.27",
+      "stkqy": "3693861",
+      "report_resn": "장내매수",
+      "purpose": "일반투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "기타"
+      "kind": "매수"
     },
     {
       "rcept_no": "20260724000413",
