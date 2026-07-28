@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-27T18:19+09:00",
+  "updated_at": "2026-07-28T09:04+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260727000400",
+  "last_seen": "20260727000407",
   "disclosures": [
+    {
+      "rcept_no": "20260727000407",
+      "rcept_dt": "2026-07-28",
+      "corp_name": "덴티스",
+      "stock_code": "261200",
+      "market": "KOSDAQ",
+      "corp_code": "01187494",
+      "repror": "심기봉",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "16,942",
+      "total_cnt": "4,324,794",
+      "irds_rate": "0.11",
+      "hold_rate": "27.36",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260727000400",
       "rcept_dt": "2026-07-27",
