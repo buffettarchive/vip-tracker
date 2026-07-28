@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-28T14:49+09:00",
+  "updated_at": "2026-07-28T15:04+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -21,13 +21,13 @@
       "corp_name": "달바글로벌",
       "stock_code": "483650",
       "corp_code": "01649204",
-      "stkrt": "",
+      "stkrt": "5.19",
       "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkqy": "647525",
+      "report_resn": "장내매수",
+      "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "기타"
+      "kind": "매수(신규)"
     },
     {
       "rcept_no": "20260728000193",
