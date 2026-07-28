@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-28T17:24+09:00",
+  "updated_at": "2026-07-28T17:34+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -1080,6 +1080,21 @@
       "kind": "매수"
     },
     {
+      "rcept_no": "20260605000651",
+      "rcept_dt": "2026-06-05",
+      "firm": "Orbis",
+      "corp_name": "한화비전",
+      "stock_code": "489790",
+      "corp_code": "01867758",
+      "stkrt": "7.64",
+      "stkrt_prev": "7.70",
+      "stkqy": "3856217",
+      "report_resn": "장내매수",
+      "purpose": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매도"
+    },
+    {
       "rcept_no": "20260604000598",
       "rcept_dt": "2026-06-04",
       "firm": "피델리티",
@@ -1423,6 +1438,36 @@
       "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
       "kind": "매도"
+    },
+    {
+      "rcept_no": "20260508000344",
+      "rcept_dt": "2026-05-08",
+      "firm": "Orbis",
+      "corp_name": "키움증권",
+      "stock_code": "039490",
+      "corp_code": "00296290",
+      "stkrt": "4.40",
+      "stkrt_prev": "5.49",
+      "stkqy": "1154047",
+      "report_resn": "장내매도",
+      "purpose": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매도"
+    },
+    {
+      "rcept_no": "20260508000068",
+      "rcept_dt": "2026-05-08",
+      "firm": "Pzena",
+      "corp_name": "두산밥캣",
+      "stock_code": "241560",
+      "corp_code": "01032486",
+      "stkrt": "5.04",
+      "stkrt_prev": "",
+      "stkqy": "4832004",
+      "report_resn": "장내매수",
+      "purpose": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매수(신규)"
     },
     {
       "rcept_no": "20260507000034",
@@ -2385,6 +2430,21 @@
       "kind": "매도"
     },
     {
+      "rcept_no": "20260310002255",
+      "rcept_dt": "2026-03-10",
+      "firm": "Orbis",
+      "corp_name": "다우데이타",
+      "stock_code": "032190",
+      "corp_code": "00238782",
+      "stkrt": "7.35",
+      "stkrt_prev": "6.32",
+      "stkqy": "2815276",
+      "report_resn": "장내매수",
+      "purpose": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매수"
+    },
+    {
       "rcept_no": "20260310002087",
       "rcept_dt": "2026-03-10",
       "firm": "브이아이피자산운용",
@@ -2890,6 +2950,36 @@
       "stkrt_prev": "6.02",
       "stkqy": "647731",
       "report_resn": "장내매도",
+      "purpose": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매수"
+    },
+    {
+      "rcept_no": "20260209000051",
+      "rcept_dt": "2026-02-09",
+      "firm": "Orbis",
+      "corp_name": "키움증권",
+      "stock_code": "039490",
+      "corp_code": "00296290",
+      "stkrt": "5.49",
+      "stkrt_prev": "7.27",
+      "stkqy": "1485147",
+      "report_resn": "장내매도",
+      "purpose": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매도"
+    },
+    {
+      "rcept_no": "20260206001131",
+      "rcept_dt": "2026-02-06",
+      "firm": "Orbis",
+      "corp_name": "한화비전",
+      "stock_code": "489790",
+      "corp_code": "01867758",
+      "stkrt": "7.70",
+      "stkrt_prev": "5.28",
+      "stkqy": "3885901",
+      "report_resn": "장내매수",
       "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
       "kind": "매수"
@@ -3585,6 +3675,21 @@
       "kind": "매수"
     },
     {
+      "rcept_no": "20251209000164",
+      "rcept_dt": "2025-12-09",
+      "firm": "Orbis",
+      "corp_name": "다우데이타",
+      "stock_code": "032190",
+      "corp_code": "00238782",
+      "stkrt": "6.32",
+      "stkrt_prev": "5.06",
+      "stkqy": "2419052",
+      "report_resn": "장내매수",
+      "purpose": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매수"
+    },
+    {
       "rcept_no": "20251208000105",
       "rcept_dt": "2025-12-08",
       "firm": "라이프자산운용",
@@ -4170,6 +4275,21 @@
       "kind": "매수"
     },
     {
+      "rcept_no": "20251103000024",
+      "rcept_dt": "2025-11-03",
+      "firm": "Pzena",
+      "corp_name": "한국타이어앤테크놀로지",
+      "stock_code": "161390",
+      "corp_code": "00937324",
+      "stkrt": "6.11",
+      "stkrt_prev": "5.08",
+      "stkqy": "7570741",
+      "report_resn": "장내매수",
+      "purpose": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매수"
+    },
+    {
       "rcept_no": "20251031000615",
       "rcept_dt": "2025-11-03",
       "firm": "얼라인파트너스자산운용",
@@ -4423,6 +4543,21 @@
       "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
       "kind": "매수"
+    },
+    {
+      "rcept_no": "20251010000176",
+      "rcept_dt": "2025-10-10",
+      "firm": "Orbis",
+      "corp_name": "키움증권",
+      "stock_code": "039490",
+      "corp_code": "00296290",
+      "stkrt": "7.27",
+      "stkrt_prev": "8.81",
+      "stkqy": "1917056",
+      "report_resn": "장내매도",
+      "purpose": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매도"
     },
     {
       "rcept_no": "20251010000154",
@@ -4890,6 +5025,21 @@
       "kind": "매수"
     },
     {
+      "rcept_no": "20250811000508",
+      "rcept_dt": "2025-08-11",
+      "firm": "Orbis",
+      "corp_name": "한화비전",
+      "stock_code": "489790",
+      "corp_code": "01867758",
+      "stkrt": "5.28",
+      "stkrt_prev": "6.41",
+      "stkqy": "2666639",
+      "report_resn": "장내매도",
+      "purpose": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매도"
+    },
+    {
       "rcept_no": "20250808000573",
       "rcept_dt": "2025-08-08",
       "firm": "브이아이피자산운용",
@@ -5053,6 +5203,21 @@
       "purpose": "",
       "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
       "kind": "매수"
+    },
+    {
+      "rcept_no": "20250804000292",
+      "rcept_dt": "2025-08-04",
+      "firm": "Orbis",
+      "corp_name": "다우데이타",
+      "stock_code": "032190",
+      "corp_code": "00238782",
+      "stkrt": "5.06",
+      "stkrt_prev": "",
+      "stkqy": "1937126",
+      "report_resn": "장내매수",
+      "purpose": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매수(신규)"
     },
     {
       "rcept_no": "20250801000718",
