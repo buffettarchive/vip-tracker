@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-28T13:44+09:00",
+  "updated_at": "2026-07-28T13:49+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -12,7 +12,7 @@
     "Orbis",
     "Pzena"
   ],
-  "last_seen": "20260728000193",
+  "last_seen": "20260728000200",
   "disclosures": [
     {
       "rcept_no": "20260728000193",
@@ -36,13 +36,13 @@
       "corp_name": "미코",
       "stock_code": "059090",
       "corp_code": "00366942",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
+      "stkrt": "11.11",
+      "stkrt_prev": "10.61",
+      "stkqy": "3713961",
+      "report_resn": "장내매수",
       "purpose": "",
       "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-      "kind": "기타"
+      "kind": "매수"
     },
     {
       "rcept_no": "20260727000304",
