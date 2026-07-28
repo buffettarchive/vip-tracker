@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-28T17:54+09:00",
+  "updated_at": "2026-07-28T18:24+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260728000481",
+  "last_seen": "20260728000492",
   "disclosures": [
+    {
+      "rcept_no": "20260728000488",
+      "rcept_dt": "2026-07-28",
+      "corp_name": "코나아이",
+      "stock_code": "052400",
+      "market": "KOSDAQ",
+      "corp_code": "00349732",
+      "repror": "조남희",
+      "ofcps": "상 무",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,243",
+      "total_cnt": "348,074",
+      "irds_rate": "0.01",
+      "hold_rate": "2.39",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260728000471",
       "rcept_dt": "2026-07-28",
