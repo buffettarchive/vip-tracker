@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-07-28T13:44:25Z",
+  "updated_at": "2026-07-28T13:49:25Z",
   "quotes": {
     "KOSPI": {
       "price": 6023.66,
-      "prev_close": 6690.62,
-      "change": -666.96,
-      "change_pct": -9.97
+      "prev_close": 6755.75,
+      "change": -732.09,
+      "change_pct": -10.84
     },
     "KOSDAQ": {
       "price": 705.85,
@@ -14,16 +14,16 @@
       "change_pct": -5.66
     },
     "S&P 500": {
-      "price": 7391.72,
-      "prev_close": 7411.98,
-      "change": -20.26,
-      "change_pct": -0.27
+      "price": 7396.75,
+      "prev_close": 7413.18,
+      "change": -16.43,
+      "change_pct": -0.22
     },
     "USD/KRW": {
-      "price": 1456.78,
+      "price": 1459.58,
       "prev_close": 1458.01,
-      "change": -1.23,
-      "change_pct": -0.08
+      "change": 1.57,
+      "change_pct": 0.11
     }
   },
   "history": {
@@ -12131,8 +12131,8 @@
           "time": "2026-07-28",
           "open": 7395.55,
           "high": 7413.25,
-          "low": 7388.69,
-          "close": 7391.72
+          "low": 7382.95,
+          "close": 7396.75
         }
       ],
       "weekly": [
@@ -12869,7 +12869,7 @@
           "open": 7464.2,
           "high": 7480.57,
           "low": 7382.74,
-          "close": 7391.72
+          "close": 7396.75
         }
       ],
       "monthly": [
@@ -13046,7 +13046,7 @@
           "open": 7478.84,
           "high": 7581.5,
           "low": 7376.0,
-          "close": 7391.72
+          "close": 7396.75
         }
       ]
     },
@@ -16669,7 +16669,7 @@
           "open": 1464.78,
           "high": 1471.88,
           "low": 1456.78,
-          "close": 1456.78
+          "close": 1459.58
         }
       ],
       "weekly": [
@@ -17413,7 +17413,7 @@
           "open": 1464.78,
           "high": 1471.88,
           "low": 1456.78,
-          "close": 1456.78
+          "close": 1459.58
         }
       ],
       "monthly": [
@@ -17590,7 +17590,7 @@
           "open": 1551.4,
           "high": 1587.7,
           "low": 1456.78,
-          "close": 1456.78
+          "close": 1459.58
         }
       ]
     }
