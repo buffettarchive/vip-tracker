@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-28T13:49+09:00",
+  "updated_at": "2026-07-28T14:04+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260728000190",
+  "last_seen": "20260728000200",
   "disclosures": [
+    {
+      "rcept_no": "20260728000200",
+      "rcept_dt": "2026-07-28",
+      "corp_name": "SH에너지화학",
+      "stock_code": "002360",
+      "market": "KOSPI",
+      "corp_code": "00136457",
+      "repror": "서미혜",
+      "ofcps": "고문",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "35,845",
+      "total_cnt": "35,845",
+      "irds_rate": "0.32",
+      "hold_rate": "0.32",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260728000190",
       "rcept_dt": "2026-07-28",
