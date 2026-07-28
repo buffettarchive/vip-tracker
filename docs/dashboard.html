@@ -188,6 +188,10 @@ footer#footer{margin:40px 0 0;padding-top:24px;border-top:1px solid var(--line)}
 .contact a{color:var(--ink);font-weight:700}
 .contact a:hover{color:var(--cobalt)}
 
+.search-wrap{margin:12px 0 0}
+.search-input{width:100%;max-width:400px;padding:10px 16px 10px 40px;font-family:inherit;font-size:14px;font-weight:500;color:var(--ink);background:var(--card) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='%2374767c' viewBox='0 0 256 256'%3E%3Cpath d='M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z'/%3E%3C/svg%3E") no-repeat 12px center;border:1px solid var(--line);border-radius:12px;outline:none;transition:all .2s}
+.search-input:focus{border-color:var(--cobalt);box-shadow:0 0 0 3px rgba(0,71,255,.1)}
+.search-input::placeholder{color:var(--muted);font-weight:400}
 </style>
 </head>
 <body>
@@ -223,12 +227,13 @@ footer#footer{margin:40px 0 0;padding-top:24px;border-top:1px solid var(--line)}
   <div class="maintabs" id="mainTabs" role="tablist">
     <button role="tab" data-view="insider" aria-selected="true" id="tabInsider">내부자 매수</button>
     <button role="tab" data-view="firm" aria-selected="false" id="tabFirm">운용사 지분공시</button>
-    <button role="tab" data-view="buyback" aria-selected="false" id="tabBuyback">자사주 매입/소각</button>
+    <button role="tab" data-view="buyback" aria-selected="false" id="tabBuyback">자사주매입</button>
   </div>
 
   <div class="controls">
     <div class="firm-tabs" id="firmTabs" role="tablist"></div>
     <div class="market-filter" id="marketFilter"></div>
+    <div class="search-wrap"><input type="text" class="search-input" id="searchInput" placeholder="기업명 검색"></div>
     <div class="count" id="count"></div>
   </div>
 
@@ -248,7 +253,7 @@ const I18N = {
     title_html: "버핏아카이브",
     tab_insider: "내부자 매수",
     tab_firm: "운용사 지분공시",
-    tab_buyback: "자사주 매입/소각",
+    tab_buyback: "자사주매입",
     all: "전체",
     market_all: "전체",
     count_insider: n => `${n}건의 내부자 매수`,
@@ -256,7 +261,7 @@ const I18N = {
     count_buyback: n => `${n}건의 자사주 공시`,
     empty_insider: "표시할 내부자 매수가 없습니다.",
     empty_firm: "표시할 공시가 없습니다.",
-    empty_buyback: "표시할 자사주 매입/소각 공시가 없습니다.",
+    empty_buyback: "표시할 자사주매입 공시가 없습니다.",
     held_stake: "보유 지분",
     "pf-disclaimer": "5% 이상 지분공시 기준",
     shares_held: "보유 주식",
@@ -419,6 +424,7 @@ if(!["insider", "firm", "buyback"].includes(view)) view = "insider";
 let activeFirm="전체", activeMarket="ALL", activeBBType="ALL";
 let currentChartName="KOSPI";
 let currentTimeframe="daily";
+let searchQuery="";
 let LAST_MARKET=null;
 let lwChart=null, lwSeries=null;
 let lastCandle=null;
@@ -709,7 +715,7 @@ function buildFirmTabs(){
   });
 }
 
-function buildMarketFilter(){
+function buildMarketFilter(){ $("#marketFilter").innerHTML=""; $("#marketFilter").style.display="none"; return; //
   if(view==="firm"){ $("#marketFilter").innerHTML=""; $("#marketFilter").style.display="none"; return; }
   $("#marketFilter").style.display="flex";
   const opts=[["ALL",t("market_all")],["KOSPI","KOSPI"],["KOSDAQ","KOSDAQ"]];
@@ -834,6 +840,7 @@ document.querySelectorAll("#chartTf button").forEach(b=>{
   };
 });
 
+if(document.getElementById("searchInput")){document.getElementById("searchInput").addEventListener("input",function(e){searchQuery=e.target.value.trim().toLowerCase();render();});}
 drawChart("KOSPI");
 </script>
 </body>
