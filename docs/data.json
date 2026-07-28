@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-28T14:34+09:00",
+  "updated_at": "2026-07-28T14:49+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -12,8 +12,23 @@
     "Orbis",
     "Pzena"
   ],
-  "last_seen": "20260728000262",
+  "last_seen": "20260728000281",
   "disclosures": [
+    {
+      "rcept_no": "20260728000277",
+      "rcept_dt": "2026-07-28",
+      "firm": "피델리티",
+      "corp_name": "달바글로벌",
+      "stock_code": "483650",
+      "corp_code": "01649204",
+      "stkrt": "",
+      "stkrt_prev": "",
+      "stkqy": "",
+      "report_resn": "",
+      "purpose": "",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "기타"
+    },
     {
       "rcept_no": "20260728000193",
       "rcept_dt": "2026-07-28",
