@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-28T13:09+09:00",
+  "updated_at": "2026-07-28T13:14+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260728000148",
+  "last_seen": "20260728000149",
   "disclosures": [
+    {
+      "rcept_no": "20260728000149",
+      "rcept_dt": "2026-07-28",
+      "corp_name": "디지아이",
+      "stock_code": "043360",
+      "market": "KOSDAQ",
+      "corp_code": "00295547",
+      "repror": "최해주",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "84,510",
+      "total_cnt": "1,243,750",
+      "irds_rate": "0.94",
+      "hold_rate": "13.82",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260728000148",
       "rcept_dt": "2026-07-28",
