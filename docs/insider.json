@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-28T11:19+09:00",
+  "updated_at": "2026-07-28T12:09+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260728000098",
+  "last_seen": "20260728000129",
   "disclosures": [
+    {
+      "rcept_no": "20260728000129",
+      "rcept_dt": "2026-07-28",
+      "corp_name": "세미파이브",
+      "stock_code": "490470",
+      "market": "KOSDAQ",
+      "corp_code": "01627363",
+      "repror": "김종선",
+      "ofcps": "부사장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "2,000",
+      "total_cnt": "3,000",
+      "irds_rate": "0.01",
+      "hold_rate": "0.01",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260728000098",
       "rcept_dt": "2026-07-28",
