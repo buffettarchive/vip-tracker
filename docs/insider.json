@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-28T18:24+09:00",
+  "updated_at": "2026-07-28T18:49+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260728000492",
+  "last_seen": "20260728000497",
   "disclosures": [
+    {
+      "rcept_no": "20260728000497",
+      "rcept_dt": "2026-07-28",
+      "corp_name": "투비소프트",
+      "stock_code": "079970",
+      "market": "KOSDAQ",
+      "corp_code": "00596260",
+      "repror": "이우철",
+      "ofcps": "사장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "3,433",
+      "total_cnt": "3,433",
+      "irds_rate": "0.03",
+      "hold_rate": "0.03",
+      "method": "장외매수"
+    },
     {
       "rcept_no": "20260728000488",
       "rcept_dt": "2026-07-28",
