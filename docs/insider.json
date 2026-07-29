@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-29T09:59+09:00",
+  "updated_at": "2026-07-29T10:09+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260729000068",
+  "last_seen": "20260729000073",
   "disclosures": [
+    {
+      "rcept_no": "20260729000073",
+      "rcept_dt": "2026-07-29",
+      "corp_name": "아나패스",
+      "stock_code": "123860",
+      "market": "KOSDAQ",
+      "corp_code": "00761952",
+      "repror": "김지혜",
+      "ofcps": "이사",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "2,000",
+      "total_cnt": "10,000",
+      "irds_rate": "0.01",
+      "hold_rate": "0.08",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260729000067",
       "rcept_dt": "2026-07-29",
