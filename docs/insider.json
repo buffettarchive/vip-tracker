@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-29T14:09+09:00",
+  "updated_at": "2026-07-29T14:44+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260729000228",
+  "last_seen": "20260729000237",
   "disclosures": [
+    {
+      "rcept_no": "20260729000237",
+      "rcept_dt": "2026-07-29",
+      "corp_name": "삼진엘앤디",
+      "stock_code": "054090",
+      "market": "KOSDAQ",
+      "corp_code": "00239514",
+      "repror": "이명종",
+      "ofcps": "대표이사 사장",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "10,501",
+      "total_cnt": "2,383,375",
+      "irds_rate": "0.04",
+      "hold_rate": "9.55",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260729000219",
       "rcept_dt": "2026-07-29",
