@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-29T14:54+09:00",
+  "updated_at": "2026-07-29T15:09+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260729000276",
+  "last_seen": "20260729000292",
   "disclosures": [
+    {
+      "rcept_no": "20260729000292",
+      "rcept_dt": "2026-07-29",
+      "corp_name": "이노시뮬레이션",
+      "stock_code": "274400",
+      "market": "KOSDAQ",
+      "corp_code": "00965318",
+      "repror": "조준희",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "13,687",
+      "total_cnt": "1,578,307",
+      "irds_rate": "0.15",
+      "hold_rate": "17.37",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260729000276",
       "rcept_dt": "2026-07-29",
