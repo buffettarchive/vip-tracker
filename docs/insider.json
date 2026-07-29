@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-29T13:49+09:00",
+  "updated_at": "2026-07-29T13:54+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260729000204",
+  "last_seen": "20260729000209",
   "disclosures": [
+    {
+      "rcept_no": "20260729000209",
+      "rcept_dt": "2026-07-29",
+      "corp_name": "빅텍",
+      "stock_code": "065450",
+      "market": "KOSDAQ",
+      "corp_code": "00385363",
+      "repror": "이남재",
+      "ofcps": "부사장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "5,000",
+      "total_cnt": "20,000",
+      "irds_rate": "0.02",
+      "hold_rate": "0.07",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260729000204",
       "rcept_dt": "2026-07-29",
