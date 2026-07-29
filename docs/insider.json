@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-29T16:50+09:00",
+  "updated_at": "2026-07-29T16:54+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260729000385",
+  "last_seen": "20260729000431",
   "disclosures": [
+    {
+      "rcept_no": "20260729000411",
+      "rcept_dt": "2026-07-29",
+      "corp_name": "평화산업",
+      "stock_code": "090080",
+      "market": "KOSPI",
+      "corp_code": "00573579",
+      "repror": "평화홀딩스",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "759,827",
+      "total_cnt": "26,177,887",
+      "irds_rate": "1.38",
+      "hold_rate": "47.68",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260729000385",
       "rcept_dt": "2026-07-29",
