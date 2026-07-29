@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-29T13:54+09:00",
+  "updated_at": "2026-07-29T14:04+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260729000209",
+  "last_seen": "20260729000219",
   "disclosures": [
+    {
+      "rcept_no": "20260729000219",
+      "rcept_dt": "2026-07-29",
+      "corp_name": "플래티어",
+      "stock_code": "367000",
+      "market": "KOSDAQ",
+      "corp_code": "01454341",
+      "repror": "김명구",
+      "ofcps": "경영임원",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "15,183",
+      "total_cnt": "53,002",
+      "irds_rate": "0.18",
+      "hold_rate": "0.63",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260729000209",
       "rcept_dt": "2026-07-29",
