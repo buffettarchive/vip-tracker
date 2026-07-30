@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-30T11:49+09:00",
+  "updated_at": "2026-07-30T12:09+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260729000521",
   "disclosures": [
+    {
+      "rcept_no": "20260730000196",
+      "rcept_dt": "2026-07-30",
+      "corp_name": "한중엔시에스",
+      "stock_code": "107640",
+      "market": "KOSDAQ",
+      "corp_code": "00474588",
+      "repror": "김상균",
+      "ofcps": "사장",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "20,000",
+      "total_cnt": "2,070,469",
+      "irds_rate": "0.21",
+      "hold_rate": "21.77",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260730000182",
       "rcept_dt": "2026-07-30",
