@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-30T09:55+09:00",
+  "updated_at": "2026-07-30T10:19+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260729000521",
   "disclosures": [
+    {
+      "rcept_no": "20260730000079",
+      "rcept_dt": "2026-07-30",
+      "corp_name": "스튜디오삼익",
+      "stock_code": "415380",
+      "market": "KOSDAQ",
+      "corp_code": "01540815",
+      "repror": "김강석",
+      "ofcps": "이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,135",
+      "total_cnt": "11,135",
+      "irds_rate": "0.01",
+      "hold_rate": "0.097",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260730000044",
       "rcept_dt": "2026-07-30",
