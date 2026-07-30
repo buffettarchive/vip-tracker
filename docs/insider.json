@@ -1,8 +1,42 @@
 {
-  "updated_at": "2026-07-30T10:19+09:00",
+  "updated_at": "2026-07-30T10:29+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260729000521",
   "disclosures": [
+    {
+      "rcept_no": "20260730000086",
+      "rcept_dt": "2026-07-30",
+      "corp_name": "닷밀",
+      "stock_code": "464580",
+      "market": "KOSDAQ",
+      "corp_code": "01605282",
+      "repror": "정해운",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "2,833,170",
+      "total_cnt": "5,656,443",
+      "irds_rate": "-0.13",
+      "hold_rate": "30.73",
+      "method": "장내매수"
+    },
+    {
+      "rcept_no": "20260730000085",
+      "rcept_dt": "2026-07-30",
+      "corp_name": "메디톡스",
+      "stock_code": "086900",
+      "market": "KOSDAQ",
+      "corp_code": "00580199",
+      "repror": "정현호",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "1,450",
+      "total_cnt": "1,334,711",
+      "irds_rate": "0.02",
+      "hold_rate": "18.29",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260730000079",
       "rcept_dt": "2026-07-30",
