@@ -1,8 +1,42 @@
 {
-  "updated_at": "2026-07-30T11:29+09:00",
+  "updated_at": "2026-07-30T11:49+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260729000521",
   "disclosures": [
+    {
+      "rcept_no": "20260730000182",
+      "rcept_dt": "2026-07-30",
+      "corp_name": "제이케이시냅스",
+      "stock_code": "060230",
+      "market": "KOSDAQ",
+      "corp_code": "00363510",
+      "repror": "임지현",
+      "ofcps": "부대표이사",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "62,500",
+      "total_cnt": "62,500",
+      "irds_rate": "0.44",
+      "hold_rate": "0.44",
+      "method": "장내매수"
+    },
+    {
+      "rcept_no": "20260730000180",
+      "rcept_dt": "2026-07-30",
+      "corp_name": "제이케이시냅스",
+      "stock_code": "060230",
+      "market": "KOSDAQ",
+      "corp_code": "00363510",
+      "repror": "황케빈인석",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "64,372",
+      "total_cnt": "64,372",
+      "irds_rate": "0.45",
+      "hold_rate": "0.45",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260730000172",
       "rcept_dt": "2026-07-30",
