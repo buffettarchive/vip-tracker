@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-30T11:44+09:00",
+  "updated_at": "2026-07-30T11:54+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -12,7 +12,7 @@
     "Orbis",
     "Pzena"
   ],
-  "last_seen": "20260730000185",
+  "last_seen": "20260730000196",
   "disclosures": [
     {
       "rcept_no": "20260730000185",
@@ -21,13 +21,13 @@
       "corp_name": "인피니트헬스케어",
       "stock_code": "071200",
       "corp_code": "00435969",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkrt": "7.10",
+      "stkrt_prev": "5.14",
+      "stkqy": "1732400",
+      "report_resn": "장내매수",
+      "purpose": "일반투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "기타"
+      "kind": "매수"
     },
     {
       "rcept_no": "20260728000277",
