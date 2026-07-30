@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-30T09:19+09:00",
+  "updated_at": "2026-07-30T09:49+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260729000521",
   "disclosures": [
+    {
+      "rcept_no": "20260730000042",
+      "rcept_dt": "2026-07-30",
+      "corp_name": "한미반도체",
+      "stock_code": "042700",
+      "market": "KOSPI",
+      "corp_code": "00161383",
+      "repror": "곽동신",
+      "ofcps": "대표이사 회장",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "29,336",
+      "total_cnt": "32,048,145",
+      "irds_rate": "0.03",
+      "hold_rate": "33.62",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260730000025",
       "rcept_dt": "2026-07-30",
