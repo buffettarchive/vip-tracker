@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-30T10:39+09:00",
+  "updated_at": "2026-07-30T11:09+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260729000521",
   "disclosures": [
+    {
+      "rcept_no": "20260730000152",
+      "rcept_dt": "2026-07-30",
+      "corp_name": "네오티스",
+      "stock_code": "085910",
+      "market": "KOSDAQ",
+      "corp_code": "00447928",
+      "repror": "KWON SANG HOON",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "13,500",
+      "total_cnt": "1,779,376",
+      "irds_rate": "0.1",
+      "hold_rate": "12.90",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260730000101",
       "rcept_dt": "2026-07-30",
