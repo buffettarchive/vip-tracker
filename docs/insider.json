@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-31T11:30+09:00",
+  "updated_at": "2026-07-31T11:35+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260729000521",
   "disclosures": [
+    {
+      "rcept_no": "20260731000205",
+      "rcept_dt": "2026-07-31",
+      "corp_name": "한선엔지니어링",
+      "stock_code": "452280",
+      "market": "KOSDAQ",
+      "corp_code": "00958451",
+      "repror": "이제훈",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "11,111",
+      "total_cnt": "1,011,111",
+      "irds_rate": "-0.63",
+      "hold_rate": "5.25",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260731000194",
       "rcept_dt": "2026-07-31",
