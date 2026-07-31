@@ -1,8 +1,42 @@
 {
-  "updated_at": "2026-07-31T09:50+09:00",
+  "updated_at": "2026-07-31T10:17+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260729000521",
   "disclosures": [
+    {
+      "rcept_no": "20260731000131",
+      "rcept_dt": "2026-07-31",
+      "corp_name": "잉크테크",
+      "stock_code": "049550",
+      "market": "KOSDAQ",
+      "corp_code": "00261656",
+      "repror": "대솔아이엔티",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "2,068,000",
+      "total_cnt": "2,068,000",
+      "irds_rate": "10.55",
+      "hold_rate": "10.55",
+      "method": "시간외매매"
+    },
+    {
+      "rcept_no": "20260731000123",
+      "rcept_dt": "2026-07-31",
+      "corp_name": "조이시티",
+      "stock_code": "067000",
+      "market": "KOSDAQ",
+      "corp_code": "00397252",
+      "repror": "엔드림",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "153,157",
+      "total_cnt": "23,912,255",
+      "irds_rate": "0.22",
+      "hold_rate": "34.21",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260731000082",
       "rcept_dt": "2026-07-31",
