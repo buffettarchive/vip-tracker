@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-31T09:27+09:00",
+  "updated_at": "2026-07-31T09:35+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260729000521",
   "disclosures": [
+    {
+      "rcept_no": "20260731000051",
+      "rcept_dt": "2026-07-31",
+      "corp_name": "대원전선",
+      "stock_code": "006340",
+      "market": "KOSPI",
+      "corp_code": "00260392",
+      "repror": "대원홀딩스",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "13,105",
+      "total_cnt": "13,105",
+      "irds_rate": "0.01",
+      "hold_rate": "0.01",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260731000040",
       "rcept_dt": "2026-07-31",
