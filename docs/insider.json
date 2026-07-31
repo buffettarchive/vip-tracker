@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-31T14:38+09:00",
+  "updated_at": "2026-07-31T15:58+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260729000521",
   "disclosures": [
+    {
+      "rcept_no": "20260731000474",
+      "rcept_dt": "2026-07-31",
+      "corp_name": "지에프씨생명과학",
+      "stock_code": "388610",
+      "market": "KOSDAQ",
+      "corp_code": "01221752",
+      "repror": "강희철",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "2,775",
+      "total_cnt": "1,751,658",
+      "irds_rate": "0.05",
+      "hold_rate": "32.89",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260731000356",
       "rcept_dt": "2026-07-31",
