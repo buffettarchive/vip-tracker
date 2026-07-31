@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-31T10:13+09:00",
+  "updated_at": "2026-07-31T10:19+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -12,7 +12,7 @@
     "Orbis",
     "Pzena"
   ],
-  "last_seen": "20260731000139",
+  "last_seen": "20260731000146",
   "disclosures": [
     {
       "rcept_no": "20260731000133",
@@ -21,13 +21,13 @@
       "corp_name": "네오뷰",
       "stock_code": "0218L0",
       "corp_code": "02038566",
-      "stkrt": "",
+      "stkrt": "6.95",
       "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkqy": "366532",
+      "report_resn": "장내매도",
+      "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "기타"
+      "kind": "매도"
     },
     {
       "rcept_no": "20260731000128",
@@ -36,13 +36,13 @@
       "corp_name": "토비스",
       "stock_code": "051360",
       "corp_code": "00390365",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkrt": "9.06",
+      "stkrt_prev": "6.25",
+      "stkqy": "873709",
+      "report_resn": "장내매수",
+      "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "기타"
+      "kind": "매수"
     },
     {
       "rcept_no": "20260731000126",
