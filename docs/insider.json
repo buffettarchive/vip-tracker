@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-31T12:05+09:00",
+  "updated_at": "2026-07-31T12:18+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260729000521",
   "disclosures": [
+    {
+      "rcept_no": "20260731000232",
+      "rcept_dt": "2026-07-31",
+      "corp_name": "우진플라임",
+      "stock_code": "049800",
+      "market": "KOSPI",
+      "corp_code": "00303217",
+      "repror": "임동규",
+      "ofcps": "부사장",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "14,927",
+      "total_cnt": "244,927",
+      "irds_rate": "0.07",
+      "hold_rate": "1.22",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260731000230",
       "rcept_dt": "2026-07-31",
