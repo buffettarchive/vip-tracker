@@ -1,8 +1,42 @@
 {
-  "updated_at": "2026-07-31T14:03+09:00",
+  "updated_at": "2026-07-31T14:15+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260729000521",
   "disclosures": [
+    {
+      "rcept_no": "20260731000316",
+      "rcept_dt": "2026-07-31",
+      "corp_name": "영우디에스피",
+      "stock_code": "143540",
+      "market": "KOSDAQ",
+      "corp_code": "00569646",
+      "repror": "채영식",
+      "ofcps": "이사",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "3,371",
+      "total_cnt": "75,771",
+      "irds_rate": "0.01",
+      "hold_rate": "0.17",
+      "method": "장내매수"
+    },
+    {
+      "rcept_no": "20260731000313",
+      "rcept_dt": "2026-07-31",
+      "corp_name": "세니젠",
+      "stock_code": "188260",
+      "market": "KOSDAQ",
+      "corp_code": "01305869",
+      "repror": "박정웅",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "8,700",
+      "total_cnt": "2,193,848",
+      "irds_rate": "-0.69",
+      "hold_rate": "15.78",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260731000308",
       "rcept_dt": "2026-07-31",
