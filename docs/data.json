@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-31T10:04+09:00",
+  "updated_at": "2026-07-31T10:09+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -12,15 +12,15 @@
     "Orbis",
     "Pzena"
   ],
-  "last_seen": "20260731000126",
+  "last_seen": "20260731000134",
   "disclosures": [
     {
-      "rcept_no": "20260731000126",
+      "rcept_no": "20260731000133",
       "rcept_dt": "2026-07-31",
       "firm": "브이아이피자산운용",
-      "corp_name": "삼지전자",
-      "stock_code": "037460",
-      "corp_code": "00128315",
+      "corp_name": "네오뷰",
+      "stock_code": "0218L0",
+      "corp_code": "02038566",
       "stkrt": "",
       "stkrt_prev": "",
       "stkqy": "",
@@ -28,6 +28,36 @@
       "purpose": "",
       "report_nm": "주식등의대량보유상황보고서(약식)",
       "kind": "기타"
+    },
+    {
+      "rcept_no": "20260731000128",
+      "rcept_dt": "2026-07-31",
+      "firm": "브이아이피자산운용",
+      "corp_name": "토비스",
+      "stock_code": "051360",
+      "corp_code": "00390365",
+      "stkrt": "",
+      "stkrt_prev": "",
+      "stkqy": "",
+      "report_resn": "",
+      "purpose": "",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "기타"
+    },
+    {
+      "rcept_no": "20260731000126",
+      "rcept_dt": "2026-07-31",
+      "firm": "브이아이피자산운용",
+      "corp_name": "삼지전자",
+      "stock_code": "037460",
+      "corp_code": "00128315",
+      "stkrt": "7.84",
+      "stkrt_prev": "6.66",
+      "stkqy": "1278849",
+      "report_resn": "장내매도",
+      "purpose": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매수"
     },
     {
       "rcept_no": "20260730000185",
