@@ -1,8 +1,42 @@
 {
-  "updated_at": "2026-07-31T10:17+09:00",
+  "updated_at": "2026-07-31T10:27+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260729000521",
   "disclosures": [
+    {
+      "rcept_no": "20260731000139",
+      "rcept_dt": "2026-07-31",
+      "corp_name": "이노뎁",
+      "stock_code": "303530",
+      "market": "KOSDAQ",
+      "corp_code": "01264872",
+      "repror": "안태호",
+      "ofcps": "사장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "9,701",
+      "total_cnt": "9,701",
+      "irds_rate": "0.13",
+      "hold_rate": "0.13",
+      "method": "장내매수"
+    },
+    {
+      "rcept_no": "20260731000138",
+      "rcept_dt": "2026-07-31",
+      "corp_name": "힘스",
+      "stock_code": "238490",
+      "market": "KOSDAQ",
+      "corp_code": "00556712",
+      "repror": "김주환",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "12,000",
+      "total_cnt": "1,202,000",
+      "irds_rate": "0.11",
+      "hold_rate": "10.63",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260731000131",
       "rcept_dt": "2026-07-31",
