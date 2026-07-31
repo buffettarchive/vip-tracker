@@ -1,8 +1,42 @@
 {
-  "updated_at": "2026-07-30T18:30+09:00",
+  "updated_at": "2026-07-31T09:07+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260729000521",
   "disclosures": [
+    {
+      "rcept_no": "20260731000022",
+      "rcept_dt": "2026-07-31",
+      "corp_name": "한국정밀기계",
+      "stock_code": "101680",
+      "market": "KOSDAQ",
+      "corp_code": "00257732",
+      "repror": "오현경",
+      "ofcps": "이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "4,000",
+      "total_cnt": "126,202",
+      "irds_rate": "0.05",
+      "hold_rate": "1.50",
+      "method": "장내매수"
+    },
+    {
+      "rcept_no": "20260731000019",
+      "rcept_dt": "2026-07-31",
+      "corp_name": "PI첨단소재",
+      "stock_code": "178920",
+      "market": "KOSPI",
+      "corp_code": "00767460",
+      "repror": "송금수",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "4,000",
+      "total_cnt": "36,254",
+      "irds_rate": "0.0137",
+      "hold_rate": "0.1235",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260730000545",
       "rcept_dt": "2026-07-30",
