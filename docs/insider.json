@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-07-31T10:58+09:00",
+  "updated_at": "2026-07-31T11:18+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260729000521",
   "disclosures": [
+    {
+      "rcept_no": "20260731000186",
+      "rcept_dt": "2026-07-31",
+      "corp_name": "삼보산업",
+      "stock_code": "009620",
+      "market": "KOSDAQ",
+      "corp_code": "00125822",
+      "repror": "최재훈",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "97,895",
+      "total_cnt": "97,895",
+      "irds_rate": "0.56",
+      "hold_rate": "0.56",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260731000170",
       "rcept_dt": "2026-07-31",
