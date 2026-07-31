@@ -1,8 +1,42 @@
 {
-  "updated_at": "2026-07-31T09:40+09:00",
+  "updated_at": "2026-07-31T09:50+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260729000521",
   "disclosures": [
+    {
+      "rcept_no": "20260731000082",
+      "rcept_dt": "2026-07-31",
+      "corp_name": "SK하이닉스",
+      "stock_code": "000660",
+      "market": "KOSPI",
+      "corp_code": "00164779",
+      "repror": "최태원",
+      "ofcps": "회장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "3,620",
+      "total_cnt": "3,620",
+      "irds_rate": "0.00",
+      "hold_rate": "0.00",
+      "method": "장내매수"
+    },
+    {
+      "rcept_no": "20260731000077",
+      "rcept_dt": "2026-07-31",
+      "corp_name": "넥써쓰",
+      "stock_code": "205500",
+      "market": "KOSDAQ",
+      "corp_code": "01042429",
+      "repror": "구강서",
+      "ofcps": "이사",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "105,000",
+      "total_cnt": "325,000",
+      "irds_rate": "0.13",
+      "hold_rate": "0.40",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260731000066",
       "rcept_dt": "2026-07-31",
