@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-08-02T02:59:09Z",
+  "updated_at": "2026-08-03T02:59:50Z",
   "portfolios": {
     "마이클 버리 (사이언 에셋)": {
       "report_date": "2025-09-30",
       "total_value_usd": 1381198076000,
       "holdings": [
         {
-          "name": "PALANTIR TECHNOLOGIES INC",
+          "name": "PALANTIR TECHNOLOGIES INC (PLTR)",
           "value": 912100000000,
           "shares": 5000000,
           "weight": 66.04
@@ -1590,7 +1590,7 @@
           "weight": 0.23
         },
         {
-          "name": "VROOM INC",
+          "name": "VROOM INC (VRMWW)",
           "value": 778475000,
           "shares": 58488,
           "weight": 0.2
@@ -1662,7 +1662,7 @@
           "weight": 7.43
         },
         {
-          "name": "CLEVELAND-CLIFFS INC",
+          "name": "CLEVELAND-CLIFFS INC (CLF)",
           "value": 125749864000,
           "shares": 14899273,
           "weight": 6.47
@@ -1704,7 +1704,7 @@
           "weight": 1.63
         },
         {
-          "name": "GENERAL MOTORS CO",
+          "name": "GENERAL MOTORS CO (GM)",
           "value": 28009392000,
           "shares": 375965,
           "weight": 1.44
@@ -1740,7 +1740,7 @@
           "weight": 0.92
         },
         {
-          "name": "GARRETT MOTION INC",
+          "name": "GARRETT MOTION INC (GTX)",
           "value": 3351638000,
           "shares": 184460,
           "weight": 0.17
@@ -1992,7 +1992,7 @@
           "weight": 0.97
         },
         {
-          "name": "APOLLO GLOBAL MGMT INC",
+          "name": "APOLLO GLOBAL MGMT INC (APOS)",
           "value": 119788875000,
           "shares": 1012500,
           "weight": 0.91
@@ -2268,7 +2268,7 @@
           "weight": 0.23
         },
         {
-          "name": "VERISK ANALYTICS INC",
+          "name": "VERISK ANALYTICS INC (VRSK)",
           "value": 27997704000,
           "shares": 155950,
           "weight": 0.21
@@ -2682,7 +2682,7 @@
           "weight": 0.68
         },
         {
-          "name": "VISA INC-CLASS A SHARES",
+          "name": "VISA INC-CLASS A SHARES (V)",
           "value": 3626825236000,
           "shares": 11999819,
           "weight": 0.67
@@ -2820,7 +2820,7 @@
           "weight": 0.39
         },
         {
-          "name": "GILEAD SCIENCES INC",
+          "name": "GILEAD SCIENCES INC (GILD)",
           "value": 2099880940000,
           "shares": 15066951,
           "weight": 0.39
@@ -2940,7 +2940,7 @@
           "weight": 0.29
         },
         {
-          "name": "SCHWAB (CHARLES) CORP",
+          "name": "SCHWAB (CHARLES) CORP (SCHW-PJ)",
           "value": 1518912534000,
           "shares": 16162082,
           "weight": 0.28
@@ -3066,7 +3066,7 @@
           "weight": 0.24
         },
         {
-          "name": "ABBOTT LABORATORIES",
+          "name": "ABBOTT LABORATORIES (ABT)",
           "value": 1277493781000,
           "shares": 12442717,
           "weight": 0.23
@@ -3234,7 +3234,7 @@
           "weight": 0.18
         },
         {
-          "name": "TRANE TECHNOLOGIES PLC",
+          "name": "TRANE TECHNOLOGIES PLC (TT)",
           "value": 985983452000,
           "shares": 2365944,
           "weight": 0.18
@@ -3480,7 +3480,7 @@
           "weight": 0.13
         },
         {
-          "name": "MCKESSON CORP",
+          "name": "MCKESSON CORP (MCK)",
           "value": 714459808000,
           "shares": 825622,
           "weight": 0.13
@@ -3612,7 +3612,7 @@
           "weight": 0.11
         },
         {
-          "name": "VERTIV HOLDINGS CO-A",
+          "name": "VERTIV HOLDINGS CO-A (VRT)",
           "value": 604058773000,
           "shares": 2410642,
           "weight": 0.11
@@ -3684,7 +3684,7 @@
           "weight": 0.1
         },
         {
-          "name": "GENERAL MOTORS CO",
+          "name": "GENERAL MOTORS CO (GM)",
           "value": 546017552000,
           "shares": 7329094,
           "weight": 0.1
@@ -4596,7 +4596,7 @@
           "weight": 0.04
         },
         {
-          "name": "CONSOLIDATED EDISON INC",
+          "name": "CONSOLIDATED EDISON INC (ED)",
           "value": 241882769000,
           "shares": 2137151,
           "weight": 0.04
@@ -4998,7 +4998,7 @@
           "weight": 0.03
         },
         {
-          "name": "TAPESTRY INC",
+          "name": "TAPESTRY INC (TPR)",
           "value": 188312445000,
           "shares": 1334508,
           "weight": 0.03
@@ -5034,7 +5034,7 @@
           "weight": 0.03
         },
         {
-          "name": "NASDAQ INC",
+          "name": "NASDAQ INC (NDAQ)",
           "value": 185788661000,
           "shares": 2188581,
           "weight": 0.03
@@ -5094,7 +5094,7 @@
           "weight": 0.03
         },
         {
-          "name": "DECKERS OUTDOOR CORP",
+          "name": "DECKERS OUTDOOR CORP (DECK)",
           "value": 180464312000,
           "shares": 1803021,
           "weight": 0.03
@@ -5202,7 +5202,7 @@
           "weight": 0.03
         },
         {
-          "name": "ENTEGRIS INC",
+          "name": "ENTEGRIS INC (ENTG)",
           "value": 167492227000,
           "shares": 1428627,
           "weight": 0.03
@@ -5364,7 +5364,7 @@
           "weight": 0.03
         },
         {
-          "name": "VERISK ANALYTICS INC",
+          "name": "VERISK ANALYTICS INC (VRSK)",
           "value": 155137955000,
           "shares": 817592,
           "weight": 0.03
@@ -5514,7 +5514,7 @@
           "weight": 0.03
         },
         {
-          "name": "WILLIS TOWERS WATSON PLC",
+          "name": "WILLIS TOWERS WATSON PLC (WTW)",
           "value": 146907330000,
           "shares": 505357,
           "weight": 0.03
@@ -5838,7 +5838,7 @@
           "weight": 0.02
         },
         {
-          "name": "CHURCH & DWIGHT CO INC",
+          "name": "CHURCH & DWIGHT CO INC (CHD)",
           "value": 125486493000,
           "shares": 1344691,
           "weight": 0.02
@@ -6228,7 +6228,7 @@
           "weight": 0.02
         },
         {
-          "name": "OGE ENERGY CORP",
+          "name": "OGE ENERGY CORP (OGE)",
           "value": 105149001000,
           "shares": 2192431,
           "weight": 0.02
@@ -6966,7 +6966,7 @@
           "weight": 0.02
         },
         {
-          "name": "LKQ CORP",
+          "name": "LKQ CORP (LKQ)",
           "value": 82170069000,
           "shares": 2797755,
           "weight": 0.02
@@ -7314,7 +7314,7 @@
           "weight": 0.01
         },
         {
-          "name": "JFROG LTD",
+          "name": "JFROG LTD (FROG)",
           "value": 72271233000,
           "shares": 1539979,
           "weight": 0.01
@@ -7368,7 +7368,7 @@
           "weight": 0.01
         },
         {
-          "name": "MADRIGAL PHARMACEUTICALS INC",
+          "name": "MADRIGAL PHARMACEUTICALS INC (MDGL)",
           "value": 71143787000,
           "shares": 135908,
           "weight": 0.01
@@ -8028,7 +8028,7 @@
           "weight": 0.01
         },
         {
-          "name": "INVESCO QQQ TRUST SERIES 1",
+          "name": "INVESCO QQQ TRUST SERIES 1 (QQQ)",
           "value": 58030335000,
           "shares": 100542,
           "weight": 0.01
@@ -8274,7 +8274,7 @@
           "weight": 0.01
         },
         {
-          "name": "FIRST AMERICAN FINANCIAL",
+          "name": "FIRST AMERICAN FINANCIAL (FAF)",
           "value": 54212571000,
           "shares": 899197,
           "weight": 0.01
@@ -8352,7 +8352,7 @@
           "weight": 0.01
         },
         {
-          "name": "GATES INDUSTRIAL CORP PLC",
+          "name": "GATES INDUSTRIAL CORP PLC (GTES)",
           "value": 53053059000,
           "shares": 2346443,
           "weight": 0.01
@@ -8466,7 +8466,7 @@
           "weight": 0.01
         },
         {
-          "name": "HERC HOLDINGS INC",
+          "name": "HERC HOLDINGS INC (HRI)",
           "value": 51215593000,
           "shares": 514471,
           "weight": 0.01
@@ -8574,7 +8574,7 @@
           "weight": 0.01
         },
         {
-          "name": "NORTHWESTERN ENERGY GROUP IN",
+          "name": "NORTHWESTERN ENERGY GROUP IN (NWE)",
           "value": 49755651000,
           "shares": 754559,
           "weight": 0.01
@@ -9042,7 +9042,7 @@
           "weight": 0.01
         },
         {
-          "name": "ELBIT SYSTEMS LTD",
+          "name": "ELBIT SYSTEMS LTD (ESLT)",
           "value": 43855208000,
           "shares": 51650,
           "weight": 0.01
@@ -9210,7 +9210,7 @@
           "weight": 0.01
         },
         {
-          "name": "LOUISIANA-PACIFIC CORP",
+          "name": "LOUISIANA-PACIFIC CORP (LPX)",
           "value": 41594085000,
           "shares": 571740,
           "weight": 0.01
@@ -9366,7 +9366,7 @@
           "weight": 0.01
         },
         {
-          "name": "HNI CORP",
+          "name": "HNI CORP (HNI)",
           "value": 40062540000,
           "shares": 1199836,
           "weight": 0.01
@@ -9834,7 +9834,7 @@
           "weight": 0.01
         },
         {
-          "name": "CHEMOURS CO/THE",
+          "name": "CHEMOURS CO/THE (CC)",
           "value": 35474867000,
           "shares": 1610298,
           "weight": 0.01
@@ -9888,7 +9888,7 @@
           "weight": 0.01
         },
         {
-          "name": "KENNAMETAL INC",
+          "name": "KENNAMETAL INC (KMT)",
           "value": 34818069000,
           "shares": 963689,
           "weight": 0.01
@@ -10458,7 +10458,7 @@
           "weight": 0.01
         },
         {
-          "name": "SL GREEN REALTY CORP",
+          "name": "SL GREEN REALTY CORP (SLG-PI)",
           "value": 29522802000,
           "shares": 799210,
           "weight": 0.01
@@ -10476,7 +10476,7 @@
           "weight": 0.01
         },
         {
-          "name": "FIRST MERCHANTS CORP",
+          "name": "FIRST MERCHANTS CORP (FRMEP)",
           "value": 29422011000,
           "shares": 759670,
           "weight": 0.01
@@ -10590,7 +10590,7 @@
           "weight": 0.01
         },
         {
-          "name": "UNIFIRST CORP/MA",
+          "name": "UNIFIRST CORP/MA (UNF)",
           "value": 28397521000,
           "shares": 112872,
           "weight": 0.01
@@ -10614,7 +10614,7 @@
           "weight": 0.01
         },
         {
-          "name": "CLEVELAND-CLIFFS INC",
+          "name": "CLEVELAND-CLIFFS INC (CLF)",
           "value": 28307913000,
           "shares": 3350049,
           "weight": 0.01
@@ -10848,7 +10848,7 @@
           "weight": 0.0
         },
         {
-          "name": "COHU INC",
+          "name": "COHU INC (COHU)",
           "value": 26505416000,
           "shares": 865624,
           "weight": 0.0
@@ -11052,7 +11052,7 @@
           "weight": 0.0
         },
         {
-          "name": "ACUSHNET HOLDINGS CORP",
+          "name": "ACUSHNET HOLDINGS CORP (GOLF)",
           "value": 24929449000,
           "shares": 266682,
           "weight": 0.0
@@ -11118,7 +11118,7 @@
           "weight": 0.0
         },
         {
-          "name": "ASSURED GUARANTY LTD",
+          "name": "ASSURED GUARANTY LTD (AGO)",
           "value": 24297549000,
           "shares": 298203,
           "weight": 0.0
@@ -11610,7 +11610,7 @@
           "weight": 0.0
         },
         {
-          "name": "BRIGHTHOUSE FINANCIAL INC",
+          "name": "BRIGHTHOUSE FINANCIAL INC (BHFAP)",
           "value": 21242241000,
           "shares": 354747,
           "weight": 0.0
@@ -11976,7 +11976,7 @@
           "weight": 0.0
         },
         {
-          "name": "MINERALS TECHNOLOGIES INC",
+          "name": "MINERALS TECHNOLOGIES INC (MTX)",
           "value": 19201464000,
           "shares": 270748,
           "weight": 0.0
@@ -12462,7 +12462,7 @@
           "weight": 0.0
         },
         {
-          "name": "ACADIA PHARMACEUTICALS INC",
+          "name": "ACADIA PHARMACEUTICALS INC (ACAD)",
           "value": 16395781000,
           "shares": 736558,
           "weight": 0.0
@@ -12594,7 +12594,7 @@
           "weight": 0.0
         },
         {
-          "name": "BEACON FINANCIAL CORP",
+          "name": "BEACON FINANCIAL CORP (BBT)",
           "value": 15833575000,
           "shares": 527786,
           "weight": 0.0
@@ -12702,7 +12702,7 @@
           "weight": 0.0
         },
         {
-          "name": "KEMPER CORP",
+          "name": "KEMPER CORP (KMPB)",
           "value": 15206784000,
           "shares": 497604,
           "weight": 0.0
@@ -13314,7 +13314,7 @@
           "weight": 0.0
         },
         {
-          "name": "ONESPAWORLD HOLDINGS LTD",
+          "name": "ONESPAWORLD HOLDINGS LTD (OSW)",
           "value": 12837428000,
           "shares": 559365,
           "weight": 0.0
@@ -13452,7 +13452,7 @@
           "weight": 0.0
         },
         {
-          "name": "GARRETT MOTION INC",
+          "name": "GARRETT MOTION INC (GTX)",
           "value": 12228253000,
           "shares": 672991,
           "weight": 0.0
@@ -13626,7 +13626,7 @@
           "weight": 0.0
         },
         {
-          "name": "COMSTOCK RESOURCES INC",
+          "name": "COMSTOCK RESOURCES INC (CRK)",
           "value": 11773608000,
           "shares": 558520,
           "weight": 0.0
@@ -13716,7 +13716,7 @@
           "weight": 0.0
         },
         {
-          "name": "HCI GROUP INC",
+          "name": "HCI GROUP INC (HCIIP)",
           "value": 11436749000,
           "shares": 73972,
           "weight": 0.0
@@ -14166,7 +14166,7 @@
           "weight": 0.0
         },
         {
-          "name": "SCORPIO TANKERS INC",
+          "name": "SCORPIO TANKERS INC (STNG)",
           "value": 9927944000,
           "shares": 132975,
           "weight": 0.0
@@ -14268,7 +14268,7 @@
           "weight": 0.0
         },
         {
-          "name": "SELECT WATER SOLUTIONS INC",
+          "name": "SELECT WATER SOLUTIONS INC (WTTR)",
           "value": 9660526000,
           "shares": 631407,
           "weight": 0.0
@@ -14436,7 +14436,7 @@
           "weight": 0.0
         },
         {
-          "name": "PLUG POWER INC",
+          "name": "PLUG POWER INC (PLUG)",
           "value": 9063446000,
           "shares": 4010375,
           "weight": 0.0
@@ -14544,7 +14544,7 @@
           "weight": 0.0
         },
         {
-          "name": "DYNEX CAPITAL INC",
+          "name": "DYNEX CAPITAL INC (DX-PC)",
           "value": 8792149000,
           "shares": 689040,
           "weight": 0.0
@@ -15114,7 +15114,7 @@
           "weight": 0.0
         },
         {
-          "name": "EMBECTA CORP",
+          "name": "EMBECTA CORP (EMBC)",
           "value": 7282273000,
           "shares": 823787,
           "weight": 0.0
@@ -15558,7 +15558,7 @@
           "weight": 0.0
         },
         {
-          "name": "COMMUNITY TRUST BANCORP INC",
+          "name": "COMMUNITY TRUST BANCORP INC (CTBI)",
           "value": 6508869000,
           "shares": 107195,
           "weight": 0.0
@@ -17454,7 +17454,7 @@
           "weight": 0.0
         },
         {
-          "name": "FINANCIAL INSTITUTIONS INC",
+          "name": "FINANCIAL INSTITUTIONS INC (FIISP)",
           "value": 3654379000,
           "shares": 115244,
           "weight": 0.0
@@ -17682,7 +17682,7 @@
           "weight": 0.0
         },
         {
-          "name": "INVESTAR HOLDING CORP",
+          "name": "INVESTAR HOLDING CORP (ISTR)",
           "value": 3360858000,
           "shares": 123244,
           "weight": 0.0
@@ -18000,7 +18000,7 @@
           "weight": 0.0
         },
         {
-          "name": "ALPHA & OMEGA SEMICONDUCTOR",
+          "name": "ALPHA & OMEGA SEMICONDUCTOR (AOSL)",
           "value": 3092065000,
           "shares": 139534,
           "weight": 0.0
@@ -18306,7 +18306,7 @@
           "weight": 0.0
         },
         {
-          "name": "SKYWATER TECHNOLOGY INC",
+          "name": "SKYWATER TECHNOLOGY INC (SKYT)",
           "value": 2839888000,
           "shares": 103608,
           "weight": 0.0
@@ -18570,7 +18570,7 @@
           "weight": 0.0
         },
         {
-          "name": "BIOHAVEN LTD",
+          "name": "BIOHAVEN LTD (BHVN)",
           "value": 2599282000,
           "shares": 307244,
           "weight": 0.0
@@ -19212,7 +19212,7 @@
           "weight": 0.0
         },
         {
-          "name": "POWER SOLUTIONS INTERNATIONA",
+          "name": "POWER SOLUTIONS INTERNATIONA (PSIX)",
           "value": 2110682000,
           "shares": 34670,
           "weight": 0.0
@@ -19230,7 +19230,7 @@
           "weight": 0.0
         },
         {
-          "name": "MANNKIND CORP",
+          "name": "MANNKIND CORP (MNKD)",
           "value": 2071539000,
           "shares": 845526,
           "weight": 0.0
@@ -19512,7 +19512,7 @@
           "weight": 0.0
         },
         {
-          "name": "N-ABLE INC",
+          "name": "N-ABLE INC (NABL)",
           "value": 1857296000,
           "shares": 397708,
           "weight": 0.0
@@ -19596,7 +19596,7 @@
           "weight": 0.0
         },
         {
-          "name": "PRIMEENERGY RESOURCES CORP",
+          "name": "PRIMEENERGY RESOURCES CORP (PNRG)",
           "value": 1809012000,
           "shares": 7769,
           "weight": 0.0
@@ -19644,7 +19644,7 @@
           "weight": 0.0
         },
         {
-          "name": "EMERGENT BIOSOLUTIONS INC",
+          "name": "EMERGENT BIOSOLUTIONS INC (EBS)",
           "value": 1784857000,
           "shares": 215043,
           "weight": 0.0
@@ -19710,7 +19710,7 @@
           "weight": 0.0
         },
         {
-          "name": "EASTMAN KODAK CO",
+          "name": "EASTMAN KODAK CO (KODK)",
           "value": 1756960000,
           "shares": 194139,
           "weight": 0.0
@@ -19728,7 +19728,7 @@
           "weight": 0.0
         },
         {
-          "name": "CHOICEONE FINANCIAL SVCS INC",
+          "name": "CHOICEONE FINANCIAL SVCS INC (COFS)",
           "value": 1754868000,
           "shares": 62406,
           "weight": 0.0
@@ -19800,7 +19800,7 @@
           "weight": 0.0
         },
         {
-          "name": "IRONWOOD PHARMACEUTICALS INC",
+          "name": "IRONWOOD PHARMACEUTICALS INC (IRWD)",
           "value": 1698966000,
           "shares": 484036,
           "weight": 0.0
@@ -20040,7 +20040,7 @@
           "weight": 0.0
         },
         {
-          "name": "EQUINOX GOLD CORP",
+          "name": "EQUINOX GOLD CORP (EQX)",
           "value": 1607579000,
           "shares": 111174,
           "weight": 0.0
@@ -20376,7 +20376,7 @@
           "weight": 0.0
         },
         {
-          "name": "OOMA INC",
+          "name": "OOMA INC (OOMA)",
           "value": 1446081000,
           "shares": 99387,
           "weight": 0.0
@@ -20478,7 +20478,7 @@
           "weight": 0.0
         },
         {
-          "name": "FLOTEK INDUSTRIES INC",
+          "name": "FLOTEK INDUSTRIES INC (FTK)",
           "value": 1396598000,
           "shares": 82298,
           "weight": 0.0
@@ -20532,7 +20532,7 @@
           "weight": 0.0
         },
         {
-          "name": "BEONE MEDICINES LTD-ADR",
+          "name": "BEONE MEDICINES LTD-ADR (BEIGF)",
           "value": 1375551000,
           "shares": 4632,
           "weight": 0.0
@@ -20796,7 +20796,7 @@
           "weight": 0.0
         },
         {
-          "name": "SANA BIOTECHNOLOGY INC",
+          "name": "SANA BIOTECHNOLOGY INC (SANA)",
           "value": 1274700000,
           "shares": 442604,
           "weight": 0.0
@@ -21036,7 +21036,7 @@
           "weight": 0.0
         },
         {
-          "name": "VANDA PHARMACEUTICALS INC",
+          "name": "VANDA PHARMACEUTICALS INC (VNDA)",
           "value": 1183015000,
           "shares": 171203,
           "weight": 0.0
@@ -21324,7 +21324,7 @@
           "weight": 0.0
         },
         {
-          "name": "LUXFER HOLDINGS PLC",
+          "name": "LUXFER HOLDINGS PLC (LXFR)",
           "value": 1086882000,
           "shares": 89235,
           "weight": 0.0
@@ -21414,7 +21414,7 @@
           "weight": 0.0
         },
         {
-          "name": "ANGI INC",
+          "name": "ANGI INC (ANGI)",
           "value": 1063058000,
           "shares": 155191,
           "weight": 0.0
@@ -21474,7 +21474,7 @@
           "weight": 0.0
         },
         {
-          "name": "CARDINAL INFRASTRUCTURE GR-A",
+          "name": "CARDINAL INFRASTRUCTURE GR-A (CDNL)",
           "value": 1040330000,
           "shares": 26235,
           "weight": 0.0
@@ -21678,7 +21678,7 @@
           "weight": 0.0
         },
         {
-          "name": "BETA BIONICS INC",
+          "name": "BETA BIONICS INC (BBNX)",
           "value": 990017000,
           "shares": 98804,
           "weight": 0.0
@@ -22716,7 +22716,7 @@
           "weight": 0.0
         },
         {
-          "name": "SIMULATIONS PLUS INC",
+          "name": "SIMULATIONS PLUS INC (SLP)",
           "value": 751658000,
           "shares": 63592,
           "weight": 0.0
@@ -22944,7 +22944,7 @@
           "weight": 0.0
         },
         {
-          "name": "FIRST TRUST GLOBAL TACTICAL",
+          "name": "FIRST TRUST GLOBAL TACTICAL (FPF)",
           "value": 698466000,
           "shares": 24328,
           "weight": 0.0
@@ -23040,7 +23040,7 @@
           "weight": 0.0
         },
         {
-          "name": "LIGHTBRIDGE CORP",
+          "name": "LIGHTBRIDGE CORP (LTBR)",
           "value": 680000000,
           "shares": 63790,
           "weight": 0.0
@@ -23124,7 +23124,7 @@
           "weight": 0.0
         },
         {
-          "name": "ESPEY MFG & ELECTRONICS CORP",
+          "name": "ESPEY MFG & ELECTRONICS CORP (ESP)",
           "value": 660900000,
           "shares": 11925,
           "weight": 0.0
@@ -23208,7 +23208,7 @@
           "weight": 0.0
         },
         {
-          "name": "EATON VANCE MUNICIPAL BOND",
+          "name": "EATON VANCE MUNICIPAL BOND (EIM)",
           "value": 641019000,
           "shares": 65611,
           "weight": 0.0
@@ -23544,7 +23544,7 @@
           "weight": 0.0
         },
         {
-          "name": "FERMI INC",
+          "name": "FERMI INC (FRMI)",
           "value": 577104000,
           "shares": 98819,
           "weight": 0.0
@@ -23922,7 +23922,7 @@
           "weight": 0.0
         },
         {
-          "name": "TPG MORTGAGE INVESTMENT TRUS",
+          "name": "TPG MORTGAGE INVESTMENT TRUS (MITT-PC)",
           "value": 508904000,
           "shares": 69618,
           "weight": 0.0
@@ -24414,7 +24414,7 @@
           "weight": 0.0
         },
         {
-          "name": "SKY HARBOUR GROUP CORP",
+          "name": "SKY HARBOUR GROUP CORP (SKYH-WT)",
           "value": 432252000,
           "shares": 44886,
           "weight": 0.0
@@ -24426,7 +24426,7 @@
           "weight": 0.0
         },
         {
-          "name": "OMNIAB INC",
+          "name": "OMNIAB INC (OABI)",
           "value": 430888000,
           "shares": 274451,
           "weight": 0.0
@@ -24480,7 +24480,7 @@
           "weight": 0.0
         },
         {
-          "name": "COMMERCIAL BANCGROUP INC",
+          "name": "COMMERCIAL BANCGROUP INC (CBK)",
           "value": 412651000,
           "shares": 15859,
           "weight": 0.0
@@ -24564,7 +24564,7 @@
           "weight": 0.0
         },
         {
-          "name": "SENSUS HEALTHCARE INC",
+          "name": "SENSUS HEALTHCARE INC (SRTS)",
           "value": 399632000,
           "shares": 100410,
           "weight": 0.0
@@ -25200,7 +25200,7 @@
           "weight": 0.0
         },
         {
-          "name": "MAMMOTH ENERGY SERVICES INC",
+          "name": "MAMMOTH ENERGY SERVICES INC (TUSK)",
           "value": 324720000,
           "shares": 132539,
           "weight": 0.0
@@ -25218,7 +25218,7 @@
           "weight": 0.0
         },
         {
-          "name": "JELD-WEN HOLDING INC",
+          "name": "JELD-WEN HOLDING INC (JELD)",
           "value": 322709000,
           "shares": 260249,
           "weight": 0.0
@@ -25272,7 +25272,7 @@
           "weight": 0.0
         },
         {
-          "name": "KLARNA GROUP PLC",
+          "name": "KLARNA GROUP PLC (KLAR)",
           "value": 315613000,
           "shares": 24111,
           "weight": 0.0
@@ -25326,7 +25326,7 @@
           "weight": 0.0
         },
         {
-          "name": "SEALSQ CORP",
+          "name": "SEALSQ CORP (LAES)",
           "value": 308725000,
           "shares": 117834,
           "weight": 0.0
@@ -25446,7 +25446,7 @@
           "weight": 0.0
         },
         {
-          "name": "HINGE HEALTH INC-A",
+          "name": "HINGE HEALTH INC-A (HNGE)",
           "value": 292009000,
           "shares": 7573,
           "weight": 0.0
@@ -25674,7 +25674,7 @@
           "weight": 0.0
         },
         {
-          "name": "WHITEFIBER INC",
+          "name": "WHITEFIBER INC (WYFI)",
           "value": 257291000,
           "shares": 21603,
           "weight": 0.0
@@ -25884,7 +25884,7 @@
           "weight": 0.0
         },
         {
-          "name": "ALDEYRA THERAPEUTICS INC",
+          "name": "ALDEYRA THERAPEUTICS INC (ALDX)",
           "value": 231101000,
           "shares": 136746,
           "weight": 0.0
@@ -26190,13 +26190,13 @@
           "weight": 0.0
         },
         {
-          "name": "CUMBERLAND PHARMACEUTICALS",
+          "name": "CUMBERLAND PHARMACEUTICALS (CPIX)",
           "value": 189988000,
           "shares": 58458,
           "weight": 0.0
         },
         {
-          "name": "PATRIOT NATIONAL BANCORP INC",
+          "name": "PATRIOT NATIONAL BANCORP INC (PNBK)",
           "value": 189231000,
           "shares": 146691,
           "weight": 0.0
@@ -27072,7 +27072,7 @@
           "weight": 0.0
         },
         {
-          "name": "SCYNEXIS INC",
+          "name": "SCYNEXIS INC (SCYX)",
           "value": 26449000,
           "shares": 28846,
           "weight": 0.0
@@ -27156,7 +27156,7 @@
           "weight": 0.0
         },
         {
-          "name": "TENAYA THERAPEUTICS INC",
+          "name": "TENAYA THERAPEUTICS INC (TNYA)",
           "value": 16622000,
           "shares": 24006,
           "weight": 0.0
@@ -28518,7 +28518,7 @@
           "weight": 1.73
         },
         {
-          "name": "APOLLO GLOBAL MGMT INC",
+          "name": "APOLLO GLOBAL MGMT INC (APOS)",
           "value": 366943274000,
           "shares": 3293334,
           "weight": 1.61
@@ -28668,7 +28668,7 @@
           "weight": 0.04
         },
         {
-          "name": "PAYPAY CORP",
+          "name": "PAYPAY CORP (PAYP)",
           "value": 8536000000,
           "shares": 400000,
           "weight": 0.04
@@ -28710,7 +28710,7 @@
           "weight": 0.01
         },
         {
-          "name": "KLARNA GROUP PLC",
+          "name": "KLARNA GROUP PLC (KLAR)",
           "value": 2290750000,
           "shares": 175000,
           "weight": 0.01
@@ -28848,7 +28848,7 @@
           "weight": 3.3
         },
         {
-          "name": "ENTEGRIS INC",
+          "name": "ENTEGRIS INC (ENTG)",
           "value": 365208931000,
           "shares": 3115054,
           "weight": 2.91
@@ -28866,7 +28866,7 @@
           "weight": 2.72
         },
         {
-          "name": "MCKESSON CORP",
+          "name": "MCKESSON CORP (MCK)",
           "value": 339414961000,
           "shares": 392224,
           "weight": 2.71
@@ -29154,7 +29154,7 @@
           "weight": 1.52
         },
         {
-          "name": "NEW ORIENTAL ED & TECHNOLOGY",
+          "name": "NEW ORIENTAL ED & TECHNOLOGY (NWOEF)",
           "value": 29576716000,
           "shares": 522280,
           "weight": 1.45
@@ -29586,7 +29586,7 @@
           "weight": 0.53
         },
         {
-          "name": "GILEAD SCIENCES INC",
+          "name": "GILEAD SCIENCES INC (GILD)",
           "value": 10021579771000,
           "shares": 71906290,
           "weight": 0.53
@@ -29832,7 +29832,7 @@
           "weight": 0.22
         },
         {
-          "name": "TRANE TECHNOLOGIES PLC",
+          "name": "TRANE TECHNOLOGIES PLC (TT)",
           "value": 4111654618000,
           "shares": 9866235,
           "weight": 0.22
@@ -30006,7 +30006,7 @@
           "weight": 0.17
         },
         {
-          "name": "MCKESSON CORP",
+          "name": "MCKESSON CORP (MCK)",
           "value": 3118257942000,
           "shares": 3603423,
           "weight": 0.16
@@ -30096,7 +30096,7 @@
           "weight": 0.15
         },
         {
-          "name": "PALANTIR TECHNOLOGIES INC",
+          "name": "PALANTIR TECHNOLOGIES INC (PLTR)",
           "value": 2779610406000,
           "shares": 19001985,
           "weight": 0.15
@@ -30168,7 +30168,7 @@
           "weight": 0.13
         },
         {
-          "name": "APOLLO GLOBAL MGMT INC",
+          "name": "APOLLO GLOBAL MGMT INC (APOS)",
           "value": 2478409713000,
           "shares": 22484012,
           "weight": 0.13
@@ -30786,7 +30786,7 @@
           "weight": 0.07
         },
         {
-          "name": "ISHARES GOLD TR",
+          "name": "ISHARES GOLD TR (IAU)",
           "value": 1296879338000,
           "shares": 14711957,
           "weight": 0.07
@@ -30912,7 +30912,7 @@
           "weight": 0.06
         },
         {
-          "name": "HALEON PLC",
+          "name": "HALEON PLC (HLNCF)",
           "value": 1140831279000,
           "shares": 113969159,
           "weight": 0.06
@@ -30960,7 +30960,7 @@
           "weight": 0.06
         },
         {
-          "name": "ABBOTT LABORATORIES",
+          "name": "ABBOTT LABORATORIES (ABT)",
           "value": 1113488490000,
           "shares": 10845315,
           "weight": 0.06
@@ -31668,7 +31668,7 @@
           "weight": 0.04
         },
         {
-          "name": "TAPESTRY INC",
+          "name": "TAPESTRY INC (TPR)",
           "value": 719458810000,
           "shares": 5098567,
           "weight": 0.04
@@ -31956,7 +31956,7 @@
           "weight": 0.03
         },
         {
-          "name": "DECKERS OUTDOOR CORP",
+          "name": "DECKERS OUTDOOR CORP (DECK)",
           "value": 613803585000,
           "shares": 6132516,
           "weight": 0.03
@@ -33048,7 +33048,7 @@
           "weight": 0.02
         },
         {
-          "name": "NASDAQ INC",
+          "name": "NASDAQ INC (NDAQ)",
           "value": 348852849000,
           "shares": 4109470,
           "weight": 0.02
@@ -33306,7 +33306,7 @@
           "weight": 0.02
         },
         {
-          "name": "MINERALS TECHNOLOGIES INC",
+          "name": "MINERALS TECHNOLOGIES INC (MTX)",
           "value": 302435367000,
           "shares": 4264458,
           "weight": 0.02
@@ -33570,7 +33570,7 @@
           "weight": 0.01
         },
         {
-          "name": "EOG RES INC",
+          "name": "EOG RES INC (EOG)",
           "value": 270353136000,
           "shares": 1870049,
           "weight": 0.01
@@ -33594,7 +33594,7 @@
           "weight": 0.01
         },
         {
-          "name": "MADRIGAL PHARMACEUTICALS INC",
+          "name": "MADRIGAL PHARMACEUTICALS INC (MDGL)",
           "value": 267873994000,
           "shares": 511728,
           "weight": 0.01
@@ -33648,13 +33648,13 @@
           "weight": 0.01
         },
         {
-          "name": "ENTEGRIS INC",
+          "name": "ENTEGRIS INC (ENTG)",
           "value": 261974288000,
           "shares": 2234512,
           "weight": 0.01
         },
         {
-          "name": "HNI CORP",
+          "name": "HNI CORP (HNI)",
           "value": 261653871000,
           "shares": 7836294,
           "weight": 0.01
@@ -33834,7 +33834,7 @@
           "weight": 0.01
         },
         {
-          "name": "LLOYDS BANKING GROUP PLC",
+          "name": "LLOYDS BANKING GROUP PLC (LLOBF)",
           "value": 244051879000,
           "shares": 48519260,
           "weight": 0.01
@@ -34332,7 +34332,7 @@
           "weight": 0.01
         },
         {
-          "name": "CONSOLIDATED EDISON INC",
+          "name": "CONSOLIDATED EDISON INC (ED)",
           "value": 194608310000,
           "shares": 1719459,
           "weight": 0.01
@@ -34638,7 +34638,7 @@
           "weight": 0.01
         },
         {
-          "name": "GXO LOGISTICS INCORPORATED",
+          "name": "GXO LOGISTICS INCORPORATED (GXO)",
           "value": 176624225000,
           "shares": 3406446,
           "weight": 0.01
@@ -34776,7 +34776,7 @@
           "weight": 0.01
         },
         {
-          "name": "STEWART INFORMATION SVCS COR",
+          "name": "STEWART INFORMATION SVCS COR (STC)",
           "value": 168398834000,
           "shares": 2734635,
           "weight": 0.01
@@ -34992,7 +34992,7 @@
           "weight": 0.01
         },
         {
-          "name": "CHURCH & DWIGHT CO INC",
+          "name": "CHURCH & DWIGHT CO INC (CHD)",
           "value": 152110726000,
           "shares": 1629990,
           "weight": 0.01
@@ -35010,7 +35010,7 @@
           "weight": 0.01
         },
         {
-          "name": "GARRETT MOTION INC",
+          "name": "GARRETT MOTION INC (GTX)",
           "value": 149981622000,
           "shares": 8254355,
           "weight": 0.01
@@ -35532,7 +35532,7 @@
           "weight": 0.01
         },
         {
-          "name": "LKQ CORP",
+          "name": "LKQ CORP (LKQ)",
           "value": 120668316000,
           "shares": 4108557,
           "weight": 0.01
@@ -35676,7 +35676,7 @@
           "weight": 0.01
         },
         {
-          "name": "CACTUS INC",
+          "name": "CACTUS INC (WHD)",
           "value": 113848421000,
           "shares": 2403386,
           "weight": 0.01
@@ -35718,7 +35718,7 @@
           "weight": 0.01
         },
         {
-          "name": "NEW ORIENTAL ED & TECHNOLOGY",
+          "name": "NEW ORIENTAL ED & TECHNOLOGY (NWOEF)",
           "value": 110467916000,
           "shares": 1950696,
           "weight": 0.01
@@ -35784,7 +35784,7 @@
           "weight": 0.01
         },
         {
-          "name": "SANA BIOTECHNOLOGY INC",
+          "name": "SANA BIOTECHNOLOGY INC (SANA)",
           "value": 107799219000,
           "shares": 37430284,
           "weight": 0.01
@@ -35862,7 +35862,7 @@
           "weight": 0.01
         },
         {
-          "name": "JFROG LTD",
+          "name": "JFROG LTD (FROG)",
           "value": 104933646000,
           "shares": 2235961,
           "weight": 0.01
@@ -36084,7 +36084,7 @@
           "weight": 0.01
         },
         {
-          "name": "EQUINOX GOLD CORP",
+          "name": "EQUINOX GOLD CORP (EQX)",
           "value": 96760132000,
           "shares": 6700001,
           "weight": 0.01
@@ -36666,7 +36666,7 @@
           "weight": 0.0
         },
         {
-          "name": "VERISK ANALYTICS INC",
+          "name": "VERISK ANALYTICS INC (VRSK)",
           "value": 71266298000,
           "shares": 375580,
           "weight": 0.0
@@ -36924,7 +36924,7 @@
           "weight": 0.0
         },
         {
-          "name": "REYNOLDS CONSUMER PRODS INC",
+          "name": "REYNOLDS CONSUMER PRODS INC (REYN)",
           "value": 63153634000,
           "shares": 2981758,
           "weight": 0.0
@@ -36966,7 +36966,7 @@
           "weight": 0.0
         },
         {
-          "name": "KENNAMETAL INC",
+          "name": "KENNAMETAL INC (KMT)",
           "value": 62239042000,
           "shares": 1722641,
           "weight": 0.0
@@ -37368,7 +37368,7 @@
           "weight": 0.0
         },
         {
-          "name": "NORTHWESTERN ENERGY GROUP IN",
+          "name": "NORTHWESTERN ENERGY GROUP IN (NWE)",
           "value": 50683310000,
           "shares": 768628,
           "weight": 0.0
@@ -37590,7 +37590,7 @@
           "weight": 0.0
         },
         {
-          "name": "OWENS CORNING NEW",
+          "name": "OWENS CORNING NEW (OC)",
           "value": 45197160000,
           "shares": 417642,
           "weight": 0.0
@@ -38850,7 +38850,7 @@
           "weight": 0.0
         },
         {
-          "name": "OGE ENERGY CORP",
+          "name": "OGE ENERGY CORP (OGE)",
           "value": 22410193000,
           "shares": 467268,
           "weight": 0.0
@@ -39048,7 +39048,7 @@
           "weight": 0.0
         },
         {
-          "name": "CLEARWAY ENERGY INC",
+          "name": "CLEARWAY ENERGY INC (CWEN)",
           "value": 20364220000,
           "shares": 518705,
           "weight": 0.0
@@ -39084,7 +39084,7 @@
           "weight": 0.0
         },
         {
-          "name": "BIOHAVEN LTD",
+          "name": "BIOHAVEN LTD (BHVN)",
           "value": 19957541000,
           "shares": 2359047,
           "weight": 0.0
@@ -39426,7 +39426,7 @@
           "weight": 0.0
         },
         {
-          "name": "SWEETGREEN INC",
+          "name": "SWEETGREEN INC (SG)",
           "value": 15749101000,
           "shares": 3034509,
           "weight": 0.0
@@ -39486,7 +39486,7 @@
           "weight": 0.0
         },
         {
-          "name": "WATTS WATER TECHNOLOGIES INC",
+          "name": "WATTS WATER TECHNOLOGIES INC (WTS)",
           "value": 15437457000,
           "shares": 53180,
           "weight": 0.0
@@ -39546,7 +39546,7 @@
           "weight": 0.0
         },
         {
-          "name": "HCI GROUP INC",
+          "name": "HCI GROUP INC (HCIIP)",
           "value": 15166967000,
           "shares": 98098,
           "weight": 0.0
@@ -39636,7 +39636,7 @@
           "weight": 0.0
         },
         {
-          "name": "FIRST MERCHANTS CORP",
+          "name": "FIRST MERCHANTS CORP (FRMEP)",
           "value": 14366304000,
           "shares": 370935,
           "weight": 0.0
@@ -39798,7 +39798,7 @@
           "weight": 0.0
         },
         {
-          "name": "SCORPIO TANKERS INC",
+          "name": "SCORPIO TANKERS INC (STNG)",
           "value": 12794105000,
           "shares": 171365,
           "weight": 0.0
@@ -39924,7 +39924,7 @@
           "weight": 0.0
         },
         {
-          "name": "ALPHA & OMEGA SEMICONDUCTOR",
+          "name": "ALPHA & OMEGA SEMICONDUCTOR (AOSL)",
           "value": 12070759000,
           "shares": 544709,
           "weight": 0.0
@@ -40092,7 +40092,7 @@
           "weight": 0.0
         },
         {
-          "name": "PAYPAY CORP",
+          "name": "PAYPAY CORP (PAYP)",
           "value": 10901091000,
           "shares": 510829,
           "weight": 0.0
@@ -40176,7 +40176,7 @@
           "weight": 0.0
         },
         {
-          "name": "KEMPER CORP",
+          "name": "KEMPER CORP (KMPB)",
           "value": 10106361000,
           "shares": 330706,
           "weight": 0.0
@@ -40446,7 +40446,7 @@
           "weight": 0.0
         },
         {
-          "name": "MANNKIND CORP",
+          "name": "MANNKIND CORP (MNKD)",
           "value": 8528361000,
           "shares": 3480964,
           "weight": 0.0
@@ -40554,7 +40554,7 @@
           "weight": 0.0
         },
         {
-          "name": "ACADIA PHARMACEUTICALS INC",
+          "name": "ACADIA PHARMACEUTICALS INC (ACAD)",
           "value": 7798562000,
           "shares": 350340,
           "weight": 0.0
@@ -40734,7 +40734,7 @@
           "weight": 0.0
         },
         {
-          "name": "COOPER-STANDARD HOLDINGS INC",
+          "name": "COOPER-STANDARD HOLDINGS INC (CPS)",
           "value": 6988514000,
           "shares": 250754,
           "weight": 0.0
@@ -40938,7 +40938,7 @@
           "weight": 0.0
         },
         {
-          "name": "ASSURED GUARANTY LTD",
+          "name": "ASSURED GUARANTY LTD (AGO)",
           "value": 6047937000,
           "shares": 74226,
           "weight": 0.0
@@ -41160,7 +41160,7 @@
           "weight": 0.0
         },
         {
-          "name": "AVANOS MED INC",
+          "name": "AVANOS MED INC (AVNS)",
           "value": 5331666000,
           "shares": 380561,
           "weight": 0.0
@@ -41268,7 +41268,7 @@
           "weight": 0.0
         },
         {
-          "name": "KINSALE CAP GROUP INC",
+          "name": "KINSALE CAP GROUP INC (KNSL)",
           "value": 5067653000,
           "shares": 14832,
           "weight": 0.0
@@ -41502,7 +41502,7 @@
           "weight": 0.0
         },
         {
-          "name": "PILGRIMS PRIDE CORP",
+          "name": "PILGRIMS PRIDE CORP (PPC)",
           "value": 4136545000,
           "shares": 109548,
           "weight": 0.0
@@ -42072,7 +42072,7 @@
           "weight": 0.0
         },
         {
-          "name": "IRONWOOD PHARMACEUTICALS INC",
+          "name": "IRONWOOD PHARMACEUTICALS INC (IRWD)",
           "value": 2774254000,
           "shares": 790386,
           "weight": 0.0
@@ -42324,7 +42324,7 @@
           "weight": 0.0
         },
         {
-          "name": "FERMI INC",
+          "name": "FERMI INC (FRMI)",
           "value": 2361059000,
           "shares": 404291,
           "weight": 0.0
@@ -42336,7 +42336,7 @@
           "weight": 0.0
         },
         {
-          "name": "AVEANNA HEALTHCARE HLDGS INC",
+          "name": "AVEANNA HEALTHCARE HLDGS INC (AVAH)",
           "value": 2355393000,
           "shares": 365744,
           "weight": 0.0
@@ -42360,7 +42360,7 @@
           "weight": 0.0
         },
         {
-          "name": "FINANCIAL INSTITUTIONS INC",
+          "name": "FINANCIAL INSTITUTIONS INC (FIISP)",
           "value": 2300813000,
           "shares": 72558,
           "weight": 0.0
@@ -42948,7 +42948,7 @@
           "weight": 0.0
         },
         {
-          "name": "COHU INC",
+          "name": "COHU INC (COHU)",
           "value": 1456241000,
           "shares": 47559,
           "weight": 0.0
@@ -43128,7 +43128,7 @@
           "weight": 0.0
         },
         {
-          "name": "EMERGENT BIOSOLUTIONS INC",
+          "name": "EMERGENT BIOSOLUTIONS INC (EBS)",
           "value": 1277267000,
           "shares": 153888,
           "weight": 0.0
@@ -43152,7 +43152,7 @@
           "weight": 0.0
         },
         {
-          "name": "BEACON FINANCIAL CORP",
+          "name": "BEACON FINANCIAL CORP (BBT)",
           "value": 1234538000,
           "shares": 41152,
           "weight": 0.0
@@ -43212,7 +43212,7 @@
           "weight": 0.0
         },
         {
-          "name": "KLARNA GROUP PLC",
+          "name": "KLARNA GROUP PLC (KLAR)",
           "value": 1152838000,
           "shares": 88070,
           "weight": 0.0
@@ -43230,7 +43230,7 @@
           "weight": 0.0
         },
         {
-          "name": "SELECT WATER SOLUTIONS INC",
+          "name": "SELECT WATER SOLUTIONS INC (WTTR)",
           "value": 1123128000,
           "shares": 73407,
           "weight": 0.0
@@ -43626,7 +43626,7 @@
           "weight": 0.0
         },
         {
-          "name": "ANGI INC",
+          "name": "ANGI INC (ANGI)",
           "value": 879614000,
           "shares": 128411,
           "weight": 0.0
@@ -43824,7 +43824,7 @@
           "weight": 0.0
         },
         {
-          "name": "REX AMERICAN RES CORP",
+          "name": "REX AMERICAN RES CORP (REX)",
           "value": 746844000,
           "shares": 16389,
           "weight": 0.0
@@ -44220,7 +44220,7 @@
           "weight": 0.0
         },
         {
-          "name": "VANDA PHARMACEUTICALS INC",
+          "name": "VANDA PHARMACEUTICALS INC (VNDA)",
           "value": 560305000,
           "shares": 81086,
           "weight": 0.0
@@ -44316,7 +44316,7 @@
           "weight": 0.0
         },
         {
-          "name": "KINDERCARE LEARNING COMPANIE",
+          "name": "KINDERCARE LEARNING COMPANIE (KLC)",
           "value": 517667000,
           "shares": 235303,
           "weight": 0.0
@@ -44862,7 +44862,7 @@
           "weight": 0.0
         },
         {
-          "name": "SIMULATIONS PLUS INC",
+          "name": "SIMULATIONS PLUS INC (SLP)",
           "value": 339864000,
           "shares": 28753,
           "weight": 0.0
@@ -45072,7 +45072,7 @@
           "weight": 0.0
         },
         {
-          "name": "OMNIAB INC",
+          "name": "OMNIAB INC (OABI)",
           "value": 297572000,
           "shares": 189536,
           "weight": 0.0
@@ -45522,7 +45522,7 @@
           "weight": 0.0
         },
         {
-          "name": "N-ABLE INC",
+          "name": "N-ABLE INC (NABL)",
           "value": 222643000,
           "shares": 47675,
           "weight": 0.0
@@ -45792,7 +45792,7 @@
           "weight": 0.0
         },
         {
-          "name": "SKYWATER TECHNOLOGY INC",
+          "name": "SKYWATER TECHNOLOGY INC (SKYT)",
           "value": 179899000,
           "shares": 6563,
           "weight": 0.0
@@ -46806,7 +46806,7 @@
           "weight": 0.0
         },
         {
-          "name": "OOMA INC",
+          "name": "OOMA INC (OOMA)",
           "value": 93298000,
           "shares": 6412,
           "weight": 0.0
@@ -47232,7 +47232,7 @@
           "weight": 0.0
         },
         {
-          "name": "PUBMATIC INC",
+          "name": "PUBMATIC INC (PUBM)",
           "value": 74080000,
           "shares": 9056,
           "weight": 0.0
@@ -47520,7 +47520,7 @@
           "weight": 0.0
         },
         {
-          "name": "EASTMAN KODAK CO",
+          "name": "EASTMAN KODAK CO (KODK)",
           "value": 62186000,
           "shares": 6871,
           "weight": 0.0
@@ -47640,7 +47640,7 @@
           "weight": 0.0
         },
         {
-          "name": "AIRO GROUP HLDGS INC",
+          "name": "AIRO GROUP HLDGS INC (AIRO)",
           "value": 59387000,
           "shares": 7809,
           "weight": 0.0
@@ -48036,7 +48036,7 @@
           "weight": 0.0
         },
         {
-          "name": "PRIMEENERGY RESOURCES CORP",
+          "name": "PRIMEENERGY RESOURCES CORP (PNRG)",
           "value": 48200000,
           "shares": 207,
           "weight": 0.0
@@ -48408,7 +48408,7 @@
           "weight": 0.0
         },
         {
-          "name": "FULL TRUCK ALLIANCE CO LTD",
+          "name": "FULL TRUCK ALLIANCE CO LTD (YMM)",
           "value": 39541000,
           "shares": 4764,
           "weight": 0.0
@@ -48618,7 +48618,7 @@
           "weight": 0.0
         },
         {
-          "name": "VROOM INC",
+          "name": "VROOM INC (VRMWW)",
           "value": 34193000,
           "shares": 2569,
           "weight": 0.0
@@ -48720,7 +48720,7 @@
           "weight": 0.0
         },
         {
-          "name": "BETA BIONICS INC",
+          "name": "BETA BIONICS INC (BBNX)",
           "value": 32054000,
           "shares": 3199,
           "weight": 0.0
@@ -48750,7 +48750,7 @@
           "weight": 0.0
         },
         {
-          "name": "FLOTEK INDUSTRIES INC",
+          "name": "FLOTEK INDUSTRIES INC (FTK)",
           "value": 31649000,
           "shares": 1865,
           "weight": 0.0
@@ -48960,7 +48960,7 @@
           "weight": 0.0
         },
         {
-          "name": "ALDEYRA THERAPEUTICS INC",
+          "name": "ALDEYRA THERAPEUTICS INC (ALDX)",
           "value": 27890000,
           "shares": 16503,
           "weight": 0.0
@@ -48996,7 +48996,7 @@
           "weight": 0.0
         },
         {
-          "name": "EMBECTA CORP",
+          "name": "EMBECTA CORP (EMBC)",
           "value": 27422000,
           "shares": 3102,
           "weight": 0.0
@@ -49602,7 +49602,7 @@
           "weight": 0.0
         },
         {
-          "name": "INVESTAR HOLDING CORP",
+          "name": "INVESTAR HOLDING CORP (ISTR)",
           "value": 18271000,
           "shares": 670,
           "weight": 0.0
@@ -49920,7 +49920,7 @@
           "weight": 0.0
         },
         {
-          "name": "WESTERN NEW ENG BANCORP INC",
+          "name": "WESTERN NEW ENG BANCORP INC (WNEB)",
           "value": 15077000,
           "shares": 1166,
           "weight": 0.0
@@ -49962,7 +49962,7 @@
           "weight": 0.0
         },
         {
-          "name": "CLARUS CORP NEW",
+          "name": "CLARUS CORP NEW (CLAR)",
           "value": 14655000,
           "shares": 5388,
           "weight": 0.0
@@ -50034,7 +50034,7 @@
           "weight": 0.0
         },
         {
-          "name": "SBC MED GROUP HLDGS INC",
+          "name": "SBC MED GROUP HLDGS INC (SBCWW)",
           "value": 14162000,
           "shares": 3388,
           "weight": 0.0
@@ -50274,7 +50274,7 @@
           "weight": 0.0
         },
         {
-          "name": "FIRST CAP INC",
+          "name": "FIRST CAP INC (FCAP)",
           "value": 11416000,
           "shares": 230,
           "weight": 0.0
@@ -50292,7 +50292,7 @@
           "weight": 0.0
         },
         {
-          "name": "WHITEFIBER INC",
+          "name": "WHITEFIBER INC (WYFI)",
           "value": 11207000,
           "shares": 941,
           "weight": 0.0
@@ -50844,7 +50844,7 @@
           "weight": 0.0
         },
         {
-          "name": "LIGHTBRIDGE CORP",
+          "name": "LIGHTBRIDGE CORP (LTBR)",
           "value": 5227000,
           "shares": 490,
           "weight": 0.0
@@ -50868,7 +50868,7 @@
           "weight": 0.0
         },
         {
-          "name": "LIPOCINE INC NEW",
+          "name": "LIPOCINE INC NEW (LPCN)",
           "value": 5005000,
           "shares": 626,
           "weight": 0.0
@@ -51390,7 +51390,7 @@
           "weight": 0.0
         },
         {
-          "name": "TENAYA THERAPEUTICS INC",
+          "name": "TENAYA THERAPEUTICS INC (TNYA)",
           "value": 1598000,
           "shares": 2308,
           "weight": 0.0
@@ -51570,7 +51570,7 @@
           "weight": 0.0
         },
         {
-          "name": "SENSUS HEALTHCARE INC",
+          "name": "SENSUS HEALTHCARE INC (SRTS)",
           "value": 833000,
           "shares": 209,
           "weight": 0.0
@@ -51588,7 +51588,7 @@
           "weight": 0.0
         },
         {
-          "name": "SAGIMET BIOSCIENCES INC",
+          "name": "SAGIMET BIOSCIENCES INC (SGMT)",
           "value": 774000,
           "shares": 148,
           "weight": 0.0
@@ -51666,7 +51666,7 @@
           "weight": 0.0
         },
         {
-          "name": "GSI TECHNOLOGY INC",
+          "name": "GSI TECHNOLOGY INC (GSIT)",
           "value": 634000,
           "shares": 123,
           "weight": 0.0
@@ -51738,7 +51738,7 @@
           "weight": 0.0
         },
         {
-          "name": "CREATIVE MED TECHNOLOGY HLDG",
+          "name": "CREATIVE MED TECHNOLOGY HLDG (CMCT)",
           "value": 515000,
           "shares": 250,
           "weight": 0.0
@@ -51768,7 +51768,7 @@
           "weight": 0.0
         },
         {
-          "name": "COMMERCIAL BANCGROUP INC",
+          "name": "COMMERCIAL BANCGROUP INC (CBK)",
           "value": 468000,
           "shares": 18,
           "weight": 0.0
@@ -51822,7 +51822,7 @@
           "weight": 0.0
         },
         {
-          "name": "REGIS CORPORATION",
+          "name": "REGIS CORPORATION (RGS)",
           "value": 420000,
           "shares": 17,
           "weight": 0.0
@@ -51936,7 +51936,7 @@
           "weight": 0.0
         },
         {
-          "name": "XOS INC",
+          "name": "XOS INC (XOSWW)",
           "value": 233000,
           "shares": 143,
           "weight": 0.0
@@ -52446,7 +52446,7 @@
           "weight": 0.0
         },
         {
-          "name": "HEALTHY CHOICE WELLNESS CORP",
+          "name": "HEALTHY CHOICE WELLNESS CORP (HCWC)",
           "value": 7000,
           "shares": 28,
           "weight": 0.0
@@ -53058,7 +53058,7 @@
           "weight": 0.34
         },
         {
-          "name": "TAPESTRY INC COMMON",
+          "name": "TAPESTRY INC COMMON (TPR)",
           "value": 1447259000,
           "shares": 9887,
           "weight": 0.33
@@ -53748,7 +53748,7 @@
           "weight": 0.17
         },
         {
-          "name": "HCI GROUP INC",
+          "name": "HCI GROUP INC (HCIIP)",
           "value": 2090571000,
           "shares": 10906,
           "weight": 0.17
@@ -53838,7 +53838,7 @@
           "weight": 0.12
         },
         {
-          "name": "WESTERN UNION",
+          "name": "WESTERN UNION (WU)",
           "value": 1514297000,
           "shares": 173459,
           "weight": 0.12
@@ -53910,7 +53910,7 @@
           "weight": 0.1
         },
         {
-          "name": "LKQ CORP",
+          "name": "LKQ CORP (LKQ)",
           "value": 1252513000,
           "shares": 42646,
           "weight": 0.1
@@ -53988,7 +53988,7 @@
           "weight": 0.06
         },
         {
-          "name": "EMBECTA CORP",
+          "name": "EMBECTA CORP (EMBC)",
           "value": 666147000,
           "shares": 75356,
           "weight": 0.05
@@ -54174,7 +54174,7 @@
           "weight": 2.1
         },
         {
-          "name": "ABBOTT LABORATORIES",
+          "name": "ABBOTT LABORATORIES (ABT)",
           "value": 180510287000,
           "shares": 1758160,
           "weight": 2.08
@@ -54618,7 +54618,7 @@
           "weight": 0.02
         },
         {
-          "name": "ENTEGRIS INC",
+          "name": "ENTEGRIS INC (ENTG)",
           "value": 1507589000,
           "shares": 12859,
           "weight": 0.02
@@ -54840,7 +54840,7 @@
           "weight": 0.01
         },
         {
-          "name": "REYNOLDS CONSUMER PRODS INC",
+          "name": "REYNOLDS CONSUMER PRODS INC (REYN)",
           "value": 1116122000,
           "shares": 52697,
           "weight": 0.01
@@ -54900,7 +54900,7 @@
           "weight": 0.01
         },
         {
-          "name": "EQUINOX GOLD CORP",
+          "name": "EQUINOX GOLD CORP (EQX)",
           "value": 1004041000,
           "shares": 69510,
           "weight": 0.01
@@ -56544,7 +56544,7 @@
           "weight": 0.01
         },
         {
-          "name": "APOLLO GLOBAL MGMT INC",
+          "name": "APOLLO GLOBAL MGMT INC (APOS)",
           "value": 501390000,
           "shares": 4500,
           "weight": 0.01
@@ -56964,7 +56964,7 @@
           "weight": 0.35
         },
         {
-          "name": "KENNAMETAL INC",
+          "name": "KENNAMETAL INC (KMT)",
           "value": 31396970000,
           "shares": 869000,
           "weight": 0.35
@@ -56982,7 +56982,7 @@
           "weight": 0.32
         },
         {
-          "name": "GILEAD SCIENCES INC",
+          "name": "GILEAD SCIENCES INC (GILD)",
           "value": 28190509000,
           "shares": 202271,
           "weight": 0.32
@@ -57444,7 +57444,7 @@
           "weight": 0.75
         },
         {
-          "name": "SEA LTD CLASS A ADR",
+          "name": "SEA LTD CLASS A ADR (SE)",
           "value": 153184692000,
           "shares": 1849831,
           "weight": 0.7
@@ -57888,7 +57888,7 @@
           "weight": 0.01
         },
         {
-          "name": "FERMI INC",
+          "name": "FERMI INC (FRMI)",
           "value": 1785463000,
           "shares": 305730,
           "weight": 0.01
@@ -58326,7 +58326,7 @@
           "weight": 0.01
         },
         {
-          "name": "HERC HOLDINGS INC",
+          "name": "HERC HOLDINGS INC (HRI)",
           "value": 642098000,
           "shares": 6450,
           "weight": 0.01
@@ -58662,7 +58662,7 @@
           "weight": 2.72
         },
         {
-          "name": "ENTEGRIS INC",
+          "name": "ENTEGRIS INC (ENTG)",
           "value": 17942114000,
           "shares": 99756,
           "weight": 2.7
@@ -59616,7 +59616,7 @@
           "weight": 1.19
         },
         {
-          "name": "ENTEGRIS INC",
+          "name": "ENTEGRIS INC (ENTG)",
           "value": 113922225000,
           "shares": 971701,
           "weight": 1.17
@@ -60030,7 +60030,7 @@
           "weight": 0.47
         },
         {
-          "name": "ABBOTT LABORATORIES",
+          "name": "ABBOTT LABORATORIES (ABT)",
           "value": 4288554000,
           "shares": 47262,
           "weight": 0.35
@@ -60228,7 +60228,7 @@
           "weight": 0.02
         },
         {
-          "name": "PALANTIR TECHNOLOGIES INC",
+          "name": "PALANTIR TECHNOLOGIES INC (PLTR)",
           "value": 240690000,
           "shares": 2063,
           "weight": 0.02
@@ -60312,7 +60312,7 @@
           "weight": 9.19
         },
         {
-          "name": "DECKERS OUTDOOR CORP",
+          "name": "DECKERS OUTDOOR CORP (DECK)",
           "value": 66162393000,
           "shares": 661029,
           "weight": 7.9
@@ -61572,7 +61572,7 @@
           "weight": 0.01
         },
         {
-          "name": "ABBOTT LABORATORIES",
+          "name": "ABBOTT LABORATORIES (ABT)",
           "value": 1548326000,
           "shares": 15081,
           "weight": 0.01
@@ -61776,13 +61776,13 @@
           "weight": 0.01
         },
         {
-          "name": "JFROG LTD",
+          "name": "JFROG LTD (FROG)",
           "value": 949863000,
           "shares": 20240,
           "weight": 0.01
         },
         {
-          "name": "HCI GROUP INC",
+          "name": "HCI GROUP INC (HCIIP)",
           "value": 944049000,
           "shares": 6106,
           "weight": 0.01
@@ -61944,7 +61944,7 @@
           "weight": 0.0
         },
         {
-          "name": "FLOTEK INDUSTRIES INC",
+          "name": "FLOTEK INDUSTRIES INC (FTK)",
           "value": 469085000,
           "shares": 27642,
           "weight": 0.0
@@ -62040,7 +62040,7 @@
           "weight": 0.0
         },
         {
-          "name": "SKYWATER TECHNOLOGY INC",
+          "name": "SKYWATER TECHNOLOGY INC (SKYT)",
           "value": 348518000,
           "shares": 12715,
           "weight": 0.0
@@ -62256,7 +62256,7 @@
           "weight": 2.63
         },
         {
-          "name": "U-HAUL HOLDING COMPANY",
+          "name": "U-HAUL HOLDING COMPANY (UHAL-B)",
           "value": 12703031000,
           "shares": 284375,
           "weight": 2.06
@@ -62556,7 +62556,7 @@
           "weight": 1.98
         },
         {
-          "name": "LKQ CORP",
+          "name": "LKQ CORP (LKQ)",
           "value": 56305416000,
           "shares": 1917106,
           "weight": 1.64
@@ -63036,7 +63036,7 @@
           "weight": 0.76
         },
         {
-          "name": "MONOLITHIC POWER SYSTEMS",
+          "name": "MONOLITHIC POWER SYSTEMS (MPWR)",
           "value": 5135467000,
           "shares": 3715,
           "weight": 0.69
@@ -63216,7 +63216,7 @@
           "weight": 0.12
         },
         {
-          "name": "UNITED RENTALS",
+          "name": "UNITED RENTALS (URI)",
           "value": 747707000,
           "shares": 660,
           "weight": 0.1
@@ -63408,7 +63408,7 @@
           "weight": 4.07
         },
         {
-          "name": "U-HAUL HOLDING COMPANY",
+          "name": "U-HAUL HOLDING COMPANY (UHAL-B)",
           "value": 285725077000,
           "shares": 6373700,
           "weight": 3.81
@@ -63726,7 +63726,7 @@
           "weight": 0.04
         },
         {
-          "name": "VERISK ANALYTICS INC",
+          "name": "VERISK ANALYTICS INC (VRSK)",
           "value": 2803556000,
           "shares": 14775,
           "weight": 0.04
@@ -63744,7 +63744,7 @@
           "weight": 0.03
         },
         {
-          "name": "TELEDYNE TECHNOLOGIES INCORPORATED",
+          "name": "TELEDYNE TECHNOLOGIES INCORPORATED (TDY)",
           "value": 1512525000,
           "shares": 2500,
           "weight": 0.02
@@ -63840,7 +63840,7 @@
           "weight": 10.71
         },
         {
-          "name": "BECTON DICKINSON & CO (BDX)",
+          "name": "BECTON DICKINSON & CO (BDX) (BDX)",
           "value": 859812872000,
           "shares": 5681708,
           "weight": 9.93
@@ -64014,7 +64014,7 @@
           "weight": 6.59
         },
         {
-          "name": "MCKESSON CORP",
+          "name": "MCKESSON CORP (MCK)",
           "value": 23510966000,
           "shares": 27169,
           "weight": 6.19
@@ -64128,7 +64128,7 @@
           "weight": 2.09
         },
         {
-          "name": "EQUINOX GOLD CORP",
+          "name": "EQUINOX GOLD CORP (EQX)",
           "value": 7507907000,
           "shares": 519219,
           "weight": 1.98
@@ -64206,7 +64206,7 @@
           "weight": 5.96
         },
         {
-          "name": "NATURAL RESOURCE PARTNERS LP",
+          "name": "NATURAL RESOURCE PARTNERS LP (NRP)",
           "value": 12348897000,
           "shares": 102057,
           "weight": 5.45
@@ -64914,7 +64914,7 @@
           "weight": 16.68
         },
         {
-          "name": "GXO LOGISTICS INCORPORATED",
+          "name": "GXO LOGISTICS INCORPORATED (GXO)",
           "value": 42608723000,
           "shares": 821769,
           "weight": 14.04
@@ -65106,7 +65106,7 @@
           "weight": 0.07
         },
         {
-          "name": "VERISK ANALYTICS INC",
+          "name": "VERISK ANALYTICS INC (VRSK)",
           "value": 1705535000,
           "shares": 9500,
           "weight": 0.06
@@ -65286,7 +65286,7 @@
           "weight": 0.74
         },
         {
-          "name": "ASSURED GUARANTY LTD",
+          "name": "ASSURED GUARANTY LTD (AGO)",
           "value": 1384345000,
           "shares": 16990,
           "weight": 0.66
@@ -65574,7 +65574,7 @@
           "weight": 0.61
         },
         {
-          "name": "LKQ CORP",
+          "name": "LKQ CORP (LKQ)",
           "value": 183060273000,
           "shares": 6232900,
           "weight": 0.59
@@ -66456,7 +66456,7 @@
           "weight": 0.1
         },
         {
-          "name": "PALANTIR TECHNOLOGIES INC",
+          "name": "PALANTIR TECHNOLOGIES INC (PLTR)",
           "value": 8776800000,
           "shares": 60000,
           "weight": 0.04
@@ -67182,7 +67182,7 @@
           "weight": 5.59
         },
         {
-          "name": "CHURCH & DWIGHT CO INC",
+          "name": "CHURCH & DWIGHT CO INC (CHD)",
           "value": 619785527000,
           "shares": 6641508,
           "weight": 4.83
@@ -68232,7 +68232,7 @@
           "weight": 0.87
         },
         {
-          "name": "LKQ CORP",
+          "name": "LKQ CORP (LKQ)",
           "value": 11982960000,
           "shares": 408000,
           "weight": 0.84
@@ -68472,7 +68472,7 @@
           "weight": 1.68
         },
         {
-          "name": "ENTEGRIS INC",
+          "name": "ENTEGRIS INC (ENTG)",
           "value": 157465513000,
           "shares": 1343104,
           "weight": 1.61
@@ -68550,7 +68550,7 @@
           "weight": 0.79
         },
         {
-          "name": "ABBOTT LABORATORIES",
+          "name": "ABBOTT LABORATORIES (ABT)",
           "value": 74105025000,
           "shares": 721778,
           "weight": 0.76
@@ -68928,7 +68928,7 @@
           "weight": 0.06
         },
         {
-          "name": "NORTHWESTERN ENERGY GROUP IN",
+          "name": "NORTHWESTERN ENERGY GROUP IN (NWE)",
           "value": 5670972000,
           "shares": 86002,
           "weight": 0.06
@@ -69426,7 +69426,7 @@
           "weight": 0.0
         },
         {
-          "name": "TRANE TECHNOLOGIES PLC",
+          "name": "TRANE TECHNOLOGIES PLC (TT)",
           "value": 457164000,
           "shares": 1097,
           "weight": 0.0
@@ -69486,7 +69486,7 @@
           "weight": 0.0
         },
         {
-          "name": "SKYWATER TECHNOLOGY INC",
+          "name": "SKYWATER TECHNOLOGY INC (SKYT)",
           "value": 356330000,
           "shares": 13000,
           "weight": 0.0
@@ -69540,7 +69540,7 @@
           "weight": 0.0
         },
         {
-          "name": "GILEAD SCIENCES INC",
+          "name": "GILEAD SCIENCES INC (GILD)",
           "value": 317067000,
           "shares": 2275,
           "weight": 0.0
@@ -69552,7 +69552,7 @@
           "weight": 0.0
         },
         {
-          "name": "ISHARES GOLD TR",
+          "name": "ISHARES GOLD TR (IAU)",
           "value": 310764000,
           "shares": 3525,
           "weight": 0.0
@@ -69966,7 +69966,7 @@
           "weight": 4.85
         },
         {
-          "name": "ZILLOW GROUP",
+          "name": "ZILLOW GROUP (Z)",
           "value": 22560872000,
           "shares": 545212,
           "weight": 4.0
@@ -70080,7 +70080,7 @@
           "weight": 0.11
         },
         {
-          "name": "HALEON PLC",
+          "name": "HALEON PLC (HLNCF)",
           "value": 564874000,
           "shares": 56431,
           "weight": 0.1
@@ -70572,7 +70572,7 @@
           "weight": 1.96
         },
         {
-          "name": "VERISK ANALYTICS INC",
+          "name": "VERISK ANALYTICS INC (VRSK)",
           "value": 91363487000,
           "shares": 481494,
           "weight": 1.8
@@ -70788,7 +70788,7 @@
           "weight": 0.07
         },
         {
-          "name": "CHURCH & DWIGHT CO INC",
+          "name": "CHURCH & DWIGHT CO INC (CHD)",
           "value": 3224206000,
           "shares": 34550,
           "weight": 0.06
