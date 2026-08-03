@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-03T12:39+09:00",
+  "updated_at": "2026-08-03T12:59+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260803000129",
+  "last_seen": "20260803000130",
   "disclosures": [
+    {
+      "rcept_no": "20260803000130",
+      "rcept_dt": "2026-08-03",
+      "corp_name": "아이비젼웍스",
+      "stock_code": "469750",
+      "market": "KOSDAQ",
+      "corp_code": "01516766",
+      "repror": "길기재",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "50,770",
+      "total_cnt": "10,675,700",
+      "irds_rate": "-0.40",
+      "hold_rate": "30.98",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260803000129",
       "rcept_dt": "2026-08-03",
