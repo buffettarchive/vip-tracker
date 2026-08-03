@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-03T13:29+09:00",
+  "updated_at": "2026-08-03T13:39+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260803000138",
+  "last_seen": "20260803000146",
   "disclosures": [
+    {
+      "rcept_no": "20260803000140",
+      "rcept_dt": "2026-08-03",
+      "corp_name": "툴젠",
+      "stock_code": "199800",
+      "market": "KOSDAQ",
+      "corp_code": "00547510",
+      "repror": "유종상",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "200",
+      "total_cnt": "450",
+      "irds_rate": "0.01",
+      "hold_rate": "0.01",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260803000130",
       "rcept_dt": "2026-08-03",
