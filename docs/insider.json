@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-03T12:09+09:00",
+  "updated_at": "2026-08-03T12:39+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260803000124",
+  "last_seen": "20260803000129",
   "disclosures": [
+    {
+      "rcept_no": "20260803000129",
+      "rcept_dt": "2026-08-03",
+      "corp_name": "메디톡스",
+      "stock_code": "086900",
+      "market": "KOSDAQ",
+      "corp_code": "00580199",
+      "repror": "정현호",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "3,465",
+      "total_cnt": "1,338,176",
+      "irds_rate": "0.04",
+      "hold_rate": "18.33",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260803000124",
       "rcept_dt": "2026-08-03",
