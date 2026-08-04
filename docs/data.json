@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-04T11:04+09:00",
+  "updated_at": "2026-08-04T11:09+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -12,7 +12,7 @@
     "Orbis",
     "Pzena"
   ],
-  "last_seen": "20260804000106",
+  "last_seen": "20260804000109",
   "disclosures": [
     {
       "rcept_no": "20260804000104",
@@ -21,13 +21,13 @@
       "corp_name": "뷰티스킨",
       "stock_code": "406820",
       "corp_code": "01147487",
-      "stkrt": "",
+      "stkrt": "5.36",
       "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkqy": "800502",
+      "report_resn": "기존 보유 중인 제6회 및 제7회 무기명식 이권부 사모 전환사채의 전환가액 조정에 따른 전환가능 주식수 변동",
+      "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "기타"
+      "kind": "매수(신규)"
     },
     {
       "rcept_no": "20260804000059",
