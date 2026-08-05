@@ -118,7 +118,14 @@ def gh_get():
     r = s.get(url, headers=GH_HEADERS, timeout=20)
     if r.status_code == 200:
         j = r.json()
-        return json.loads(base64.b64decode(j["content"]).decode("utf-8")), j["sha"]
+        # 1MB 이상 파일은 content가 비어옴 → Git Blob API 사용
+        if j.get("content"):
+            return json.loads(base64.b64decode(j["content"]).decode("utf-8")), j["sha"]
+        elif j.get("git_url"):
+            br = s.get(j["git_url"], headers=GH_HEADERS, timeout=30)
+            if br.status_code == 200:
+                bj = br.json()
+                return json.loads(base64.b64decode(bj["content"]).decode("utf-8")), j["sha"]
     return {"disclosures": [], "last_seen": ""}, None
 
 
