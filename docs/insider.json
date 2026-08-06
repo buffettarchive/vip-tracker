@@ -1,8 +1,42 @@
 {
-  "updated_at": "2026-08-06T11:09+09:00",
+  "updated_at": "2026-08-06T11:36+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260803000226",
   "disclosures": [
+    {
+      "rcept_no": "20260806000155",
+      "rcept_dt": "2026-08-06",
+      "corp_name": "중앙백신",
+      "stock_code": "072020",
+      "market": "KOSDAQ",
+      "corp_code": "00415327",
+      "repror": "신영학",
+      "ofcps": "이사",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "2,195",
+      "total_cnt": "2,195",
+      "irds_rate": "0.02",
+      "hold_rate": "0.02",
+      "method": "장내매수"
+    },
+    {
+      "rcept_no": "20260806000154",
+      "rcept_dt": "2026-08-06",
+      "corp_name": "메지온",
+      "stock_code": "140410",
+      "market": "KOSDAQ",
+      "corp_code": "00808022",
+      "repror": "박동현",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "1,952",
+      "total_cnt": "1,854,723",
+      "irds_rate": "0.01",
+      "hold_rate": "6.06",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260806000140",
       "rcept_dt": "2026-08-06",
