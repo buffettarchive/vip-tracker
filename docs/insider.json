@@ -1,8 +1,42 @@
 {
-  "updated_at": "2026-08-06T11:36+09:00",
+  "updated_at": "2026-08-06T12:06+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260803000226",
   "disclosures": [
+    {
+      "rcept_no": "20260806000164",
+      "rcept_dt": "2026-08-06",
+      "corp_name": "이루온",
+      "stock_code": "065440",
+      "market": "KOSDAQ",
+      "corp_code": "00390514",
+      "repror": "이정훈",
+      "ofcps": "상무",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "47,953",
+      "total_cnt": "697,582",
+      "irds_rate": "0.18",
+      "hold_rate": "2.56",
+      "method": "장내매수"
+    },
+    {
+      "rcept_no": "20260806000163",
+      "rcept_dt": "2026-08-06",
+      "corp_name": "삼진엘앤디",
+      "stock_code": "054090",
+      "market": "KOSDAQ",
+      "corp_code": "00239514",
+      "repror": "이명종",
+      "ofcps": "대표이사 사장",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "7,522",
+      "total_cnt": "2,390,897",
+      "irds_rate": "0.03",
+      "hold_rate": "9.58",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260806000155",
       "rcept_dt": "2026-08-06",
