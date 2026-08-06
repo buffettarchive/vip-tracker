@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-06T14:19+09:00",
+  "updated_at": "2026-08-07T00:04+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -12,8 +12,38 @@
     "Orbis",
     "Pzena"
   ],
-  "last_seen": "20260806000240",
+  "last_seen": "20260806000536",
   "disclosures": [
+    {
+      "rcept_no": "20260806000343",
+      "rcept_dt": "2026-08-06",
+      "firm": "피델리티",
+      "corp_name": "대한약품",
+      "stock_code": "023910",
+      "corp_code": "00113128",
+      "stkrt": "8.14",
+      "stkrt_prev": "8.17",
+      "stkqy": "488407",
+      "report_resn": "장내매수",
+      "purpose": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매도"
+    },
+    {
+      "rcept_no": "20260806000334",
+      "rcept_dt": "2026-08-06",
+      "firm": "피델리티",
+      "corp_name": "에이피알",
+      "stock_code": "278470",
+      "corp_code": "01190568",
+      "stkrt": "4.85",
+      "stkrt_prev": "5.01",
+      "stkqy": "1814816",
+      "report_resn": "장내매도",
+      "purpose": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매도"
+    },
     {
       "rcept_no": "20260805000175",
       "rcept_dt": "2026-08-05",
