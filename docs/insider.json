@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-06T12:34+09:00",
+  "updated_at": "2026-08-06T13:48+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260803000226",
   "disclosures": [
+    {
+      "rcept_no": "20260806000199",
+      "rcept_dt": "2026-08-06",
+      "corp_name": "스모트로닉",
+      "stock_code": "066590",
+      "market": "KOSDAQ",
+      "corp_code": "00301422",
+      "repror": "오트로닉",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "355,400",
+      "total_cnt": "1,737,662",
+      "irds_rate": "0.92",
+      "hold_rate": "4.49",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260806000165",
       "rcept_dt": "2026-08-06",
