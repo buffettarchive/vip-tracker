@@ -1,8 +1,42 @@
 {
-  "updated_at": "2026-08-06T13:48+09:00",
+  "updated_at": "2026-08-06T14:25+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260803000226",
   "disclosures": [
+    {
+      "rcept_no": "20260806000226",
+      "rcept_dt": "2026-08-06",
+      "corp_name": "듀오백",
+      "stock_code": "073190",
+      "market": "KOSDAQ",
+      "corp_code": "00407771",
+      "repror": "정관영",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "33,726",
+      "total_cnt": "4,351,102",
+      "irds_rate": "0.29",
+      "hold_rate": "36.36",
+      "method": "장내매수"
+    },
+    {
+      "rcept_no": "20260806000225",
+      "rcept_dt": "2026-08-06",
+      "corp_name": "흥국에프엔비",
+      "stock_code": "189980",
+      "market": "KOSDAQ",
+      "corp_code": "00916516",
+      "repror": "박철범",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "18,952",
+      "total_cnt": "757,158",
+      "irds_rate": "0.05",
+      "hold_rate": "1.89",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260806000199",
       "rcept_dt": "2026-08-06",
