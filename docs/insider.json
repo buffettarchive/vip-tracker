@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-07T11:19+09:00",
+  "updated_at": "2026-08-07T11:34+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260807000217",
+  "last_seen": "20260807000229",
   "disclosures": [
+    {
+      "rcept_no": "20260807000229",
+      "rcept_dt": "2026-08-07",
+      "corp_name": "현대에이치티",
+      "stock_code": "039010",
+      "market": "KOSDAQ",
+      "corp_code": "00255044",
+      "repror": "김정호",
+      "ofcps": "부사장",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,000",
+      "total_cnt": "8,000",
+      "irds_rate": "0.01",
+      "hold_rate": "0.09",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260807000217",
       "rcept_dt": "2026-08-07",
