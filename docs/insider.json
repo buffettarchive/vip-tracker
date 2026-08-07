@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-07T17:40+09:00",
+  "updated_at": "2026-08-07T18:31+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260807000648",
+  "last_seen": "20260807000710",
   "disclosures": [
+    {
+      "rcept_no": "20260807000667",
+      "rcept_dt": "2026-08-07",
+      "corp_name": "케이바이오랩스",
+      "stock_code": "038530",
+      "market": "KOSDAQ",
+      "corp_code": "00255105",
+      "repror": "미래아이앤지",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "723,251",
+      "total_cnt": "9,852,418",
+      "irds_rate": "2.79",
+      "hold_rate": "38.05",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260807000639",
       "rcept_dt": "2026-08-07",
