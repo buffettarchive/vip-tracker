@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-07T14:14+09:00",
+  "updated_at": "2026-08-07T14:19+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -12,8 +12,23 @@
     "Orbis",
     "Pzena"
   ],
-  "last_seen": "20260807000340",
+  "last_seen": "20260807000350",
   "disclosures": [
+    {
+      "rcept_no": "20260807000349",
+      "rcept_dt": "2026-08-07",
+      "firm": "Miri",
+      "corp_name": "글로벌텍스프리",
+      "stock_code": "204620",
+      "corp_code": "01042711",
+      "stkrt": "",
+      "stkrt_prev": "",
+      "stkqy": "",
+      "report_resn": "",
+      "purpose": "",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "기타"
+    },
     {
       "rcept_no": "20260806000343",
       "rcept_dt": "2026-08-06",
