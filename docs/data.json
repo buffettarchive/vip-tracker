@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-07T14:44+09:00",
+  "updated_at": "2026-08-07T14:54+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -12,7 +12,7 @@
     "Orbis",
     "Pzena"
   ],
-  "last_seen": "20260807000378",
+  "last_seen": "20260807000389",
   "disclosures": [
     {
       "rcept_no": "20260807000352",
@@ -21,13 +21,13 @@
       "corp_name": "이엔에프테크놀로지",
       "stock_code": "102710",
       "corp_code": "00530185",
-      "stkrt": "",
+      "stkrt": "5.39",
       "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkqy": "769987",
+      "report_resn": "장내매수",
+      "purpose": "일반투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "기타"
+      "kind": "매수(신규)"
     },
     {
       "rcept_no": "20260807000349",
@@ -36,13 +36,13 @@
       "corp_name": "글로벌텍스프리",
       "stock_code": "204620",
       "corp_code": "01042711",
-      "stkrt": "",
+      "stkrt": "5.83",
       "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkqy": "4098169",
+      "report_resn": "장내매수",
+      "purpose": "일반투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "기타"
+      "kind": "매수(신규)"
     },
     {
       "rcept_no": "20260806000343",
