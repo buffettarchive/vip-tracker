@@ -1,6 +1,24 @@
 {
   "entries": [
     {
+      "rcept_no": "20260807000524",
+      "rcept_dt": "20260807",
+      "corp_code": "00564562",
+      "corp_name": "엠씨넥스",
+      "corp_cls": "Y",
+      "report_nm": "주요사항보고서(자기주식취득결정)",
+      "type": "취득",
+      "shares_common": null,
+      "amount_common": null,
+      "acq_purpose": null,
+      "acq_method": null,
+      "acq_period_start": null,
+      "acq_period_end": null,
+      "total_shares": null,
+      "ratio_pct": null,
+      "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260807000524"
+    },
+    {
       "rcept_no": "20260807000241",
       "rcept_dt": "20260807",
       "corp_code": "00105280",
@@ -6745,5 +6763,5 @@
       "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250610000225"
     }
   ],
-  "last_seen": "20260807000241"
+  "last_seen": "20260807000524"
 }
