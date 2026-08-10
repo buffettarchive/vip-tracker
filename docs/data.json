@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-10T10:14+09:00",
+  "updated_at": "2026-08-10T10:19+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -12,7 +12,7 @@
     "Orbis",
     "Pzena"
   ],
-  "last_seen": "20260810000087",
+  "last_seen": "20260810000089",
   "disclosures": [
     {
       "rcept_no": "20260810000087",
@@ -21,13 +21,13 @@
       "corp_name": "이지바이오",
       "stock_code": "353810",
       "corp_code": "01480568",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkrt": "6.75",
+      "stkrt_prev": "5.30",
+      "stkqy": "2232384",
+      "report_resn": "장내매수",
+      "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "기타"
+      "kind": "매수"
     },
     {
       "rcept_no": "20260807000352",
