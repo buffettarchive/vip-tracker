@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-10T13:09+09:00",
+  "updated_at": "2026-08-10T13:19+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260810000188",
+  "last_seen": "20260810000191",
   "disclosures": [
+    {
+      "rcept_no": "20260810000191",
+      "rcept_dt": "2026-08-10",
+      "corp_name": "INVENI",
+      "stock_code": "015360",
+      "market": "KOSPI",
+      "corp_code": "00105101",
+      "repror": "구자은",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "5,400",
+      "total_cnt": "2,441,867",
+      "irds_rate": "0.02",
+      "hold_rate": "8.96",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260810000188",
       "rcept_dt": "2026-08-10",
