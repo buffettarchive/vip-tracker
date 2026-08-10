@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-10T16:00+09:00",
+  "updated_at": "2026-08-10T16:04+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -12,8 +12,53 @@
     "Orbis",
     "Pzena"
   ],
-  "last_seen": "20260810000487",
+  "last_seen": "20260810000502",
   "disclosures": [
+    {
+      "rcept_no": "20260810000500",
+      "rcept_dt": "2026-08-10",
+      "firm": "브이아이피자산운용",
+      "corp_name": "롯데관광개발",
+      "stock_code": "032350",
+      "corp_code": "00231372",
+      "stkrt": "",
+      "stkrt_prev": "",
+      "stkqy": "",
+      "report_resn": "",
+      "purpose": "",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "기타"
+    },
+    {
+      "rcept_no": "20260810000495",
+      "rcept_dt": "2026-08-10",
+      "firm": "브이아이피자산운용",
+      "corp_name": "노바렉스",
+      "stock_code": "194700",
+      "corp_code": "00811372",
+      "stkrt": "",
+      "stkrt_prev": "",
+      "stkqy": "",
+      "report_resn": "",
+      "purpose": "",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "기타"
+    },
+    {
+      "rcept_no": "20260810000489",
+      "rcept_dt": "2026-08-10",
+      "firm": "브이아이피자산운용",
+      "corp_name": "글로벌텍스프리",
+      "stock_code": "204620",
+      "corp_code": "01042711",
+      "stkrt": "",
+      "stkrt_prev": "",
+      "stkqy": "",
+      "report_resn": "",
+      "purpose": "",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "기타"
+    },
     {
       "rcept_no": "20260810000087",
       "rcept_dt": "2026-08-10",
