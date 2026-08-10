@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-10T16:54+09:00",
+  "updated_at": "2026-08-10T16:59+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -12,7 +12,7 @@
     "Orbis",
     "Pzena"
   ],
-  "last_seen": "20260810000644",
+  "last_seen": "20260810000658",
   "disclosures": [
     {
       "rcept_no": "20260810000522",
@@ -21,13 +21,13 @@
       "corp_name": "한라IMS",
       "stock_code": "092460",
       "corp_code": "00528515",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkrt": "8.84",
+      "stkrt_prev": "6.74",
+      "stkqy": "1512554",
+      "report_resn": "장내매수",
+      "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "기타"
+      "kind": "매수"
     },
     {
       "rcept_no": "20260810000511",
@@ -36,13 +36,13 @@
       "corp_name": "프로텍",
       "stock_code": "053610",
       "corp_code": "00325112",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkrt": "7.82",
+      "stkrt_prev": "6.55",
+      "stkqy": "703526",
+      "report_resn": "장내매수",
+      "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "기타"
+      "kind": "매수"
     },
     {
       "rcept_no": "20260810000506",
@@ -51,13 +51,13 @@
       "corp_name": "티쓰리",
       "stock_code": "204610",
       "corp_code": "00609661",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkrt": "22.14",
+      "stkrt_prev": "18.47",
+      "stkqy": "12298663",
+      "report_resn": "장내매수",
+      "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "기타"
+      "kind": "매수"
     },
     {
       "rcept_no": "20260810000500",
