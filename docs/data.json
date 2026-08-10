@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-10T16:49+09:00",
+  "updated_at": "2026-08-10T16:54+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -66,13 +66,13 @@
       "corp_name": "롯데관광개발",
       "stock_code": "032350",
       "corp_code": "00231372",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkrt": "12.19",
+      "stkrt_prev": "7.99",
+      "stkqy": "9735432",
+      "report_resn": "장내매수",
+      "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "기타"
+      "kind": "매수"
     },
     {
       "rcept_no": "20260810000495",
@@ -81,13 +81,13 @@
       "corp_name": "노바렉스",
       "stock_code": "194700",
       "corp_code": "00811372",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkrt": "5.13",
+      "stkrt_prev": "6.97",
+      "stkqy": "936466",
+      "report_resn": "장내매도",
+      "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "기타"
+      "kind": "매도"
     },
     {
       "rcept_no": "20260810000489",
@@ -96,13 +96,13 @@
       "corp_name": "글로벌텍스프리",
       "stock_code": "204620",
       "corp_code": "01042711",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkrt": "7.74",
+      "stkrt_prev": "9.93",
+      "stkqy": "5443082",
+      "report_resn": "장내매도",
+      "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "기타"
+      "kind": "매도"
     },
     {
       "rcept_no": "20260810000087",
