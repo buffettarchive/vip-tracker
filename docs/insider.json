@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-10T13:19+09:00",
+  "updated_at": "2026-08-10T13:34+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260810000191",
+  "last_seen": "20260810000196",
   "disclosures": [
+    {
+      "rcept_no": "20260810000196",
+      "rcept_dt": "2026-08-10",
+      "corp_name": "메가스터디교육",
+      "stock_code": "215200",
+      "market": "KOSDAQ",
+      "corp_code": "01074862",
+      "repror": "김록훈",
+      "ofcps": "전무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,000",
+      "total_cnt": "5,646",
+      "irds_rate": "0.01",
+      "hold_rate": "0.05",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260810000191",
       "rcept_dt": "2026-08-10",
