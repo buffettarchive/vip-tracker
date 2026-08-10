@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-07T19:29+09:00",
+  "updated_at": "2026-08-10T09:04+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260807000788",
+  "last_seen": "20260810000011",
   "disclosures": [
+    {
+      "rcept_no": "20260810000011",
+      "rcept_dt": "2026-08-10",
+      "corp_name": "대신밸류리츠",
+      "stock_code": "0030R0",
+      "market": "KOSPI",
+      "corp_code": "01885222",
+      "repror": "대신증권",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "13,888",
+      "total_cnt": "11,221,867",
+      "irds_rate": "0.02",
+      "hold_rate": "18.77",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260807000773",
       "rcept_dt": "2026-08-07",
