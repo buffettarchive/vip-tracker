@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-10T19:09+09:00",
+  "updated_at": "2026-08-11T09:05+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260810000735",
+  "last_seen": "20260811000012",
   "disclosures": [
+    {
+      "rcept_no": "20260811000012",
+      "rcept_dt": "2026-08-11",
+      "corp_name": "제이엠아이",
+      "stock_code": "033050",
+      "market": "KOSDAQ",
+      "corp_code": "00222435",
+      "repror": "정광훈",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "9,751",
+      "total_cnt": "1,160,067",
+      "irds_rate": "0.03",
+      "hold_rate": "3.64",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260810000720",
       "rcept_dt": "2026-08-10",
