@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-11T10:49+09:00",
+  "updated_at": "2026-08-11T10:59+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260811000126",
+  "last_seen": "20260811000144",
   "disclosures": [
+    {
+      "rcept_no": "20260811000144",
+      "rcept_dt": "2026-08-11",
+      "corp_name": "크린앤사이언스",
+      "stock_code": "045520",
+      "market": "KOSDAQ",
+      "corp_code": "00185222",
+      "repror": "델타피디에스",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "50,660",
+      "total_cnt": "764,994",
+      "irds_rate": "0.78",
+      "hold_rate": "11.77",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260811000126",
       "rcept_dt": "2026-08-11",
