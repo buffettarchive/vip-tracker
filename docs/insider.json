@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-11T18:00+09:00",
+  "updated_at": "2026-08-11T18:44+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260811000647",
+  "last_seen": "20260811000659",
   "disclosures": [
+    {
+      "rcept_no": "20260811000659",
+      "rcept_dt": "2026-08-11",
+      "corp_name": "전방",
+      "stock_code": "000950",
+      "market": "KOSPI",
+      "corp_code": "00147222",
+      "repror": "전방텍스타일",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "18,268",
+      "total_cnt": "18,268",
+      "irds_rate": "1.09",
+      "hold_rate": "1.09",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260811000645",
       "rcept_dt": "2026-08-11",
