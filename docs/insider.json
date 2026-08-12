@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-12T11:36+09:00",
+  "updated_at": "2026-08-12T12:09+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260812000251",
+  "last_seen": "20260812000284",
   "disclosures": [
+    {
+      "rcept_no": "20260812000284",
+      "rcept_dt": "2026-08-12",
+      "corp_name": "지어소프트",
+      "stock_code": "051160",
+      "market": "KOSDAQ",
+      "corp_code": "00389110",
+      "repror": "TheMiriStrategicEmergingMarketsFundLP",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "94,500",
+      "total_cnt": "1,761,000",
+      "irds_rate": "0.61",
+      "hold_rate": "11.38",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260812000251",
       "rcept_dt": "2026-08-12",
