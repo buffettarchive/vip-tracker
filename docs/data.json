@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-12T17:59+09:00",
+  "updated_at": "2026-08-12T19:19+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -21,13 +21,13 @@
       "corp_name": "하이록코리아",
       "stock_code": "013030",
       "corp_code": "00165060",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkrt": "9.97",
+      "stkrt_prev": "9.99",
+      "stkqy": "1173635",
+      "report_resn": "장내매도",
+      "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "기타"
+      "kind": "매도"
     },
     {
       "rcept_no": "20260812000808",
@@ -36,13 +36,13 @@
       "corp_name": "인바디",
       "stock_code": "041830",
       "corp_code": "00269922",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkrt": "9.99",
+      "stkrt_prev": "9.99",
+      "stkqy": "1346740",
+      "report_resn": "장내매도",
+      "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "기타"
+      "kind": "매도"
     },
     {
       "rcept_no": "20260812000284",
