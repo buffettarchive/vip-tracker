@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-12T14:39+09:00",
+  "updated_at": "2026-08-12T15:14+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260812000393",
+  "last_seen": "20260812000477",
   "disclosures": [
+    {
+      "rcept_no": "20260812000430",
+      "rcept_dt": "2026-08-12",
+      "corp_name": "DB증권",
+      "stock_code": "016610",
+      "market": "KOSPI",
+      "corp_code": "00115694",
+      "repror": "백진욱",
+      "ofcps": "상무보",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "3,075",
+      "total_cnt": "3,075",
+      "irds_rate": "0.007",
+      "hold_rate": "0.007",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260812000393",
       "rcept_dt": "2026-08-12",
