@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-12T17:14+09:00",
+  "updated_at": "2026-08-12T17:19+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -12,8 +12,23 @@
     "Orbis",
     "Pzena"
   ],
-  "last_seen": "20260812000822",
+  "last_seen": "20260812000832",
   "disclosures": [
+    {
+      "rcept_no": "20260812000832",
+      "rcept_dt": "2026-08-12",
+      "firm": "피델리티",
+      "corp_name": "하이록코리아",
+      "stock_code": "013030",
+      "corp_code": "00165060",
+      "stkrt": "",
+      "stkrt_prev": "",
+      "stkqy": "",
+      "report_resn": "",
+      "purpose": "",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "기타"
+    },
     {
       "rcept_no": "20260812000808",
       "rcept_dt": "2026-08-12",
