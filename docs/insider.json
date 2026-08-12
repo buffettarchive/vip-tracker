@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-12T14:19+09:00",
+  "updated_at": "2026-08-12T14:39+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260812000382",
+  "last_seen": "20260812000393",
   "disclosures": [
+    {
+      "rcept_no": "20260812000393",
+      "rcept_dt": "2026-08-12",
+      "corp_name": "소프트캠프",
+      "stock_code": "258790",
+      "market": "KOSDAQ",
+      "corp_code": "01182408",
+      "repror": "배환국",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "10,141",
+      "total_cnt": "1,110,581",
+      "irds_rate": "0.2",
+      "hold_rate": "22.22",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260812000382",
       "rcept_dt": "2026-08-12",
