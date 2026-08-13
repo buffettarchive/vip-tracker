@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-13T20:14+09:00",
+  "updated_at": "2026-08-13T20:19+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260813001635",
+  "last_seen": "20260813001720",
   "disclosures": [
+    {
+      "rcept_no": "20260813001717",
+      "rcept_dt": "2026-08-13",
+      "corp_name": "아이씨디",
+      "stock_code": "040910",
+      "market": "KOSDAQ",
+      "corp_code": "00298377",
+      "repror": "이승호",
+      "ofcps": "사내이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "2,550",
+      "total_cnt": "2,791,748",
+      "irds_rate": "0.0",
+      "hold_rate": "15.3",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260813001601",
       "rcept_dt": "2026-08-13",
