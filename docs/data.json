@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-13T14:14+09:00",
+  "updated_at": "2026-08-13T14:19+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -12,8 +12,23 @@
     "Orbis",
     "Pzena"
   ],
-  "last_seen": "20260813000789",
+  "last_seen": "20260813000829",
   "disclosures": [
+    {
+      "rcept_no": "20260813000823",
+      "rcept_dt": "2026-08-13",
+      "firm": "Miri",
+      "corp_name": "현대이지웰",
+      "stock_code": "090850",
+      "corp_code": "00656951",
+      "stkrt": "",
+      "stkrt_prev": "",
+      "stkqy": "",
+      "report_resn": "",
+      "purpose": "",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "기타"
+    },
     {
       "rcept_no": "20260813000789",
       "rcept_dt": "2026-08-13",
