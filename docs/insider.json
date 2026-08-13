@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-13T17:55+09:00",
+  "updated_at": "2026-08-13T18:15+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260813001104",
+  "last_seen": "20260813001316",
   "disclosures": [
+    {
+      "rcept_no": "20260813001316",
+      "rcept_dt": "2026-08-13",
+      "corp_name": "다산디엠씨",
+      "stock_code": "208860",
+      "market": "KOSDAQ",
+      "corp_code": "01084364",
+      "repror": "다산네트웍스",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "205,917",
+      "total_cnt": "21,094,756",
+      "irds_rate": "0.60",
+      "hold_rate": "62.13",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260813001104",
       "rcept_dt": "2026-08-13",
