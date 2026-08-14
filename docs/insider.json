@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-15T02:21+09:00",
+  "updated_at": "2026-08-15T02:40+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260814002654",
+  "last_seen": "20260814002689",
   "disclosures": [
+    {
+      "rcept_no": "20260814002689",
+      "rcept_dt": "2026-08-14",
+      "corp_name": "KG케미칼",
+      "stock_code": "001390",
+      "market": "KOSPI",
+      "corp_code": "00101220",
+      "repror": "케이지제로인",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "421,022",
+      "total_cnt": "14,967,220",
+      "irds_rate": "0.63",
+      "hold_rate": "22.54",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260814002550",
       "rcept_dt": "2026-08-14",
