@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-15T01:27+09:00",
+  "updated_at": "2026-08-15T01:42+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260814002539",
+  "last_seen": "20260814002553",
   "disclosures": [
+    {
+      "rcept_no": "20260814002550",
+      "rcept_dt": "2026-08-14",
+      "corp_name": "SK이터닉스",
+      "stock_code": "475150",
+      "market": "KOSPI",
+      "corp_code": "01817081",
+      "repror": "이클립스",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "14,681,280",
+      "total_cnt": "14,681,280",
+      "irds_rate": "43.10",
+      "hold_rate": "43.10",
+      "method": "장외매수"
+    },
     {
       "rcept_no": "20260814002478",
       "rcept_dt": "2026-08-14",
