@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-14T23:37+09:00",
+  "updated_at": "2026-08-14T23:48+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260814002313",
+  "last_seen": "20260814002323",
   "disclosures": [
+    {
+      "rcept_no": "20260814002321",
+      "rcept_dt": "2026-08-14",
+      "corp_name": "인바이오",
+      "stock_code": "352940",
+      "market": "KOSDAQ",
+      "corp_code": "00367871",
+      "repror": "조인선",
+      "ofcps": "부사장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "3,900",
+      "total_cnt": "62,800",
+      "irds_rate": "0.04",
+      "hold_rate": "0.58",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260814002263",
       "rcept_dt": "2026-08-14",
