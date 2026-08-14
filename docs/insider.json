@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-14T15:45+09:00",
+  "updated_at": "2026-08-14T15:50+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260814001103",
+  "last_seen": "20260814001148",
   "disclosures": [
+    {
+      "rcept_no": "20260814001148",
+      "rcept_dt": "2026-08-14",
+      "corp_name": "와이즈버즈",
+      "stock_code": "273060",
+      "market": "KOSDAQ",
+      "corp_code": "01236532",
+      "repror": "신준열",
+      "ofcps": "상무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "70,000",
+      "total_cnt": "130,000",
+      "irds_rate": "0.14",
+      "hold_rate": "0.26",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260814001103",
       "rcept_dt": "2026-08-14",
