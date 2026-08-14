@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-14T11:44+09:00",
+  "updated_at": "2026-08-14T11:49+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -12,7 +12,7 @@
     "Orbis",
     "Pzena"
   ],
-  "last_seen": "20260814000935",
+  "last_seen": "20260814000965",
   "disclosures": [
     {
       "rcept_no": "20260814000619",
@@ -21,13 +21,13 @@
       "corp_name": "매커스",
       "stock_code": "093520",
       "corp_code": "00596677",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkrt": "11.63",
+      "stkrt_prev": "9.90",
+      "stkqy": "1383988",
+      "report_resn": "장내매도",
+      "purpose": "일반투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "기타"
+      "kind": "매수"
     },
     {
       "rcept_no": "20260813000823",
