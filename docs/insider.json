@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-14T09:34+09:00",
+  "updated_at": "2026-08-14T09:39+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260814000153",
+  "last_seen": "20260814000171",
   "disclosures": [
+    {
+      "rcept_no": "20260814000171",
+      "rcept_dt": "2026-08-14",
+      "corp_name": "카카오뱅크",
+      "stock_code": "323410",
+      "market": "KOSPI",
+      "corp_code": "01133217",
+      "repror": "김경화",
+      "ofcps": "컴플라이언스실장\n(준법감시인)",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,300",
+      "total_cnt": "11,123",
+      "irds_rate": "0.00",
+      "hold_rate": "0.00",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260814000153",
       "rcept_dt": "2026-08-14",
