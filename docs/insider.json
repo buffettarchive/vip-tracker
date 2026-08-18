@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-18T09:49+09:00",
+  "updated_at": "2026-08-18T10:09+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260818000025",
+  "last_seen": "20260818000033",
   "disclosures": [
+    {
+      "rcept_no": "20260818000033",
+      "rcept_dt": "2026-08-18",
+      "corp_name": "진양화학",
+      "stock_code": "051630",
+      "market": "KOSPI",
+      "corp_code": "00347734",
+      "repror": "임경섭",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "9,500",
+      "total_cnt": "9,500",
+      "irds_rate": "0.04",
+      "hold_rate": "0.04",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260818000025",
       "rcept_dt": "2026-08-18",
