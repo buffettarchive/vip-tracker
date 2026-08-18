@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-18T16:29+09:00",
+  "updated_at": "2026-08-18T16:49+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260818000222",
+  "last_seen": "20260818000234",
   "disclosures": [
+    {
+      "rcept_no": "20260818000234",
+      "rcept_dt": "2026-08-18",
+      "corp_name": "에이비온",
+      "stock_code": "203400",
+      "market": "KOSDAQ",
+      "corp_code": "00977377",
+      "repror": "우성윤",
+      "ofcps": "부사장",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "3,596",
+      "total_cnt": "206,851",
+      "irds_rate": "0",
+      "hold_rate": "0.23",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260818000213",
       "rcept_dt": "2026-08-18",
