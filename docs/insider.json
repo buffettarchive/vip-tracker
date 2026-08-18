@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-18T11:19+09:00",
+  "updated_at": "2026-08-18T11:39+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260818000067",
+  "last_seen": "20260818000084",
   "disclosures": [
+    {
+      "rcept_no": "20260818000084",
+      "rcept_dt": "2026-08-18",
+      "corp_name": "큐리오시스",
+      "stock_code": "494120",
+      "market": "KOSDAQ",
+      "corp_code": "01786958",
+      "repror": "백가람",
+      "ofcps": "상무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "2,000",
+      "total_cnt": "37,900",
+      "irds_rate": "0.01",
+      "hold_rate": "0.25",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260818000067",
       "rcept_dt": "2026-08-18",
