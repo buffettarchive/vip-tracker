@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-19T10:39+09:00",
+  "updated_at": "2026-08-19T10:44+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -21,13 +21,13 @@
       "corp_name": "지어소프트",
       "stock_code": "051160",
       "corp_code": "00389110",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkrt": "11.38",
+      "stkrt_prev": "10.24",
+      "stkqy": "1761000",
+      "report_resn": "장내매수",
+      "purpose": "일반투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "기타"
+      "kind": "매수"
     },
     {
       "rcept_no": "20260818000106",
