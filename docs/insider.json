@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-19T16:29+09:00",
+  "updated_at": "2026-08-19T16:49+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260819000305",
+  "last_seen": "20260819000315",
   "disclosures": [
+    {
+      "rcept_no": "20260819000315",
+      "rcept_dt": "2026-08-19",
+      "corp_name": "프롬바이오",
+      "stock_code": "377220",
+      "market": "KOSDAQ",
+      "corp_code": "01217865",
+      "repror": "이상준",
+      "ofcps": "이사",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,382",
+      "total_cnt": "1,382",
+      "irds_rate": "0.02",
+      "hold_rate": "0.02",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260819000305",
       "rcept_dt": "2026-08-19",
