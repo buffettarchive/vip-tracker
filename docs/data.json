@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-19T10:34+09:00",
+  "updated_at": "2026-08-19T10:39+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -12,8 +12,23 @@
     "Orbis",
     "Pzena"
   ],
-  "last_seen": "20260819000070",
+  "last_seen": "20260819000078",
   "disclosures": [
+    {
+      "rcept_no": "20260819000078",
+      "rcept_dt": "2026-08-19",
+      "firm": "Miri",
+      "corp_name": "지어소프트",
+      "stock_code": "051160",
+      "corp_code": "00389110",
+      "stkrt": "",
+      "stkrt_prev": "",
+      "stkqy": "",
+      "report_resn": "",
+      "purpose": "",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "기타"
+    },
     {
       "rcept_no": "20260818000106",
       "rcept_dt": "2026-08-18",
