@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-19T09:49+09:00",
+  "updated_at": "2026-08-19T10:09+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260819000026",
+  "last_seen": "20260819000040",
   "disclosures": [
+    {
+      "rcept_no": "20260819000040",
+      "rcept_dt": "2026-08-19",
+      "corp_name": "이상네트웍스",
+      "stock_code": "080010",
+      "market": "KOSDAQ",
+      "corp_code": "00454399",
+      "repror": "하성일",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "24,967",
+      "total_cnt": "1,197,354",
+      "irds_rate": "0.25",
+      "hold_rate": "12.17",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260819000026",
       "rcept_dt": "2026-08-19",
