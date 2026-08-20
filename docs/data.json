@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-20T09:29+09:00",
+  "updated_at": "2026-08-20T09:49+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -12,8 +12,23 @@
     "Orbis",
     "Pzena"
   ],
-  "last_seen": "20260820000013",
+  "last_seen": "20260820000021",
   "disclosures": [
+    {
+      "rcept_no": "20260820000021",
+      "rcept_dt": "2026-08-20",
+      "firm": "Miri",
+      "corp_name": "미코",
+      "stock_code": "059090",
+      "corp_code": "00366942",
+      "stkrt": "12.77",
+      "stkrt_prev": "11.05",
+      "stkqy": "4266861",
+      "report_resn": "장내매수",
+      "purpose": "일반투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매수"
+    },
     {
       "rcept_no": "20260819000078",
       "rcept_dt": "2026-08-19",
