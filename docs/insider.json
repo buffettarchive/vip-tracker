@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-20T14:29+09:00",
+  "updated_at": "2026-08-20T14:54+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260820000205",
+  "last_seen": "20260820000219",
   "disclosures": [
+    {
+      "rcept_no": "20260820000219",
+      "rcept_dt": "2026-08-20",
+      "corp_name": "한텍",
+      "stock_code": "098070",
+      "market": "KOSDAQ",
+      "corp_code": "00404941",
+      "repror": "김근수",
+      "ofcps": "회장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "11,700",
+      "total_cnt": "46,068",
+      "irds_rate": "0.10",
+      "hold_rate": "0.41",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260820000205",
       "rcept_dt": "2026-08-20",
