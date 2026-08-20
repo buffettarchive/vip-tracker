@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-20T10:39+09:00",
+  "updated_at": "2026-08-20T10:59+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260820000048",
+  "last_seen": "20260820000058",
   "disclosures": [
+    {
+      "rcept_no": "20260820000058",
+      "rcept_dt": "2026-08-20",
+      "corp_name": "한국주강",
+      "stock_code": "025890",
+      "market": "KOSPI",
+      "corp_code": "00159564",
+      "repror": "정상욱",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "19,601",
+      "total_cnt": "111,300",
+      "irds_rate": "0.18",
+      "hold_rate": "0.99",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260820000048",
       "rcept_dt": "2026-08-20",
