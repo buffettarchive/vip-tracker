@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-21T11:54+09:00",
+  "updated_at": "2026-08-21T12:59+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260821000207",
+  "last_seen": "20260821000219",
   "disclosures": [
+    {
+      "rcept_no": "20260821000219",
+      "rcept_dt": "2026-08-21",
+      "corp_name": "광진실업",
+      "stock_code": "026910",
+      "market": "KOSDAQ",
+      "corp_code": "00104120",
+      "repror": "디엔티인터네셔널",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "1,027,470",
+      "total_cnt": "1,027,470",
+      "irds_rate": "12.96",
+      "hold_rate": "12.96",
+      "method": "장외매수"
+    },
     {
       "rcept_no": "20260821000200",
       "rcept_dt": "2026-08-21",
