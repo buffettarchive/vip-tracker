@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-21T15:29+09:00",
+  "updated_at": "2026-08-21T15:34+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -12,8 +12,23 @@
     "Orbis",
     "Pzena"
   ],
-  "last_seen": "20260821000414",
+  "last_seen": "20260821000423",
   "disclosures": [
+    {
+      "rcept_no": "20260821000423",
+      "rcept_dt": "2026-08-21",
+      "firm": "라이프자산운용",
+      "corp_name": "케이앤에스아이앤씨",
+      "stock_code": "487400",
+      "corp_code": "00920731",
+      "stkrt": "",
+      "stkrt_prev": "",
+      "stkqy": "",
+      "report_resn": "",
+      "purpose": "",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "기타"
+    },
     {
       "rcept_no": "20260821000067",
       "rcept_dt": "2026-08-21",
