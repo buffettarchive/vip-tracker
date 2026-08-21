@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-21T10:04+09:00",
+  "updated_at": "2026-08-21T10:09+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -21,13 +21,13 @@
       "corp_name": "유성티엔에스",
       "stock_code": "024800",
       "corp_code": "00173999",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkrt": "8.04",
+      "stkrt_prev": "7.00",
+      "stkqy": "2831403",
+      "report_resn": "장내매수",
+      "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "기타"
+      "kind": "매수"
     },
     {
       "rcept_no": "20260820000041",
