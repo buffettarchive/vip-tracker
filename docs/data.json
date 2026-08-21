@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-21T17:44+09:00",
+  "updated_at": "2026-08-21T17:49+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -12,7 +12,7 @@
     "Orbis",
     "Pzena"
   ],
-  "last_seen": "20260821000669",
+  "last_seen": "20260821000671",
   "disclosures": [
     {
       "rcept_no": "20260821000613",
@@ -21,13 +21,13 @@
       "corp_name": "탑선",
       "stock_code": "180060",
       "corp_code": "00874937",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkrt": "0.00",
+      "stkrt_prev": "47.09",
+      "stkqy": "6681737",
+      "report_resn": "장외 매매 계약 해제 ※ 보고자 본인은 보고서작성기준일 현재 본인과 특별관계자의 주식등의 보유상황을 관련 법",
+      "purpose": "경영권",
       "report_nm": "주식등의대량보유상황보고서(일반)",
-      "kind": "기타"
+      "kind": "매도"
     },
     {
       "rcept_no": "20260821000481",
