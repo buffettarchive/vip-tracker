@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-21T09:54+09:00",
+  "updated_at": "2026-08-21T10:04+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -12,8 +12,23 @@
     "Orbis",
     "Pzena"
   ],
-  "last_seen": "20260821000057",
+  "last_seen": "20260821000067",
   "disclosures": [
+    {
+      "rcept_no": "20260821000067",
+      "rcept_dt": "2026-08-21",
+      "firm": "브이아이피자산운용",
+      "corp_name": "유성티엔에스",
+      "stock_code": "024800",
+      "corp_code": "00173999",
+      "stkrt": "",
+      "stkrt_prev": "",
+      "stkqy": "",
+      "report_resn": "",
+      "purpose": "",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "기타"
+    },
     {
       "rcept_no": "20260820000041",
       "rcept_dt": "2026-08-20",
