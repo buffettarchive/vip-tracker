@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-21T17:49+09:00",
+  "updated_at": "2026-08-21T18:29+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260821000615",
+  "last_seen": "20260821000669",
   "disclosures": [
+    {
+      "rcept_no": "20260821000650",
+      "rcept_dt": "2026-08-21",
+      "corp_name": "부국증권",
+      "stock_code": "001270",
+      "market": "KOSPI",
+      "corp_code": "00123772",
+      "repror": "김중건",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "300",
+      "total_cnt": "1,496,866",
+      "irds_rate": "0.01",
+      "hold_rate": "11.20",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260821000572",
       "rcept_dt": "2026-08-21",
