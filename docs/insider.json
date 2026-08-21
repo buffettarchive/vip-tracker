@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-21T11:44+09:00",
+  "updated_at": "2026-08-21T11:49+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260821000192",
+  "last_seen": "20260821000200",
   "disclosures": [
+    {
+      "rcept_no": "20260821000200",
+      "rcept_dt": "2026-08-21",
+      "corp_name": "케이앤에스아이앤씨",
+      "stock_code": "487400",
+      "market": "KOSDAQ",
+      "corp_code": "00920731",
+      "repror": "왕현호",
+      "ofcps": "상무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "14,850",
+      "total_cnt": "14,850",
+      "irds_rate": "0.13",
+      "hold_rate": "0.13",
+      "method": "장외매수"
+    },
     {
       "rcept_no": "20260821000098",
       "rcept_dt": "2026-08-21",
