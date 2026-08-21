@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-21T16:34+09:00",
+  "updated_at": "2026-08-21T16:39+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -12,7 +12,7 @@
     "Orbis",
     "Pzena"
   ],
-  "last_seen": "20260821000557",
+  "last_seen": "20260821000561",
   "disclosures": [
     {
       "rcept_no": "20260821000481",
@@ -21,13 +21,13 @@
       "corp_name": "엠케이전자",
       "stock_code": "033160",
       "corp_code": "00121686",
-      "stkrt": "",
+      "stkrt": "4.85",
       "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkqy": "1191711",
+      "report_resn": "장내매수",
+      "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "기타"
+      "kind": "매수(신규)"
     },
     {
       "rcept_no": "20260821000423",
