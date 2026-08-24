@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-24T09:29+09:00",
+  "updated_at": "2026-08-24T09:49+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260824000009",
+  "last_seen": "20260824000014",
   "disclosures": [
+    {
+      "rcept_no": "20260824000014",
+      "rcept_dt": "2026-08-24",
+      "corp_name": "미코",
+      "stock_code": "059090",
+      "market": "KOSDAQ",
+      "corp_code": "00366942",
+      "repror": "TheMiriStrategicEmergingMarketsFundLP",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "146,000",
+      "total_cnt": "4,266,861",
+      "irds_rate": "0.44",
+      "hold_rate": "12.77",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260824000009",
       "rcept_dt": "2026-08-24",
