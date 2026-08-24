@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-24T09:59+09:00",
+  "updated_at": "2026-08-24T10:24+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260824000016",
+  "last_seen": "20260824000020",
   "disclosures": [
+    {
+      "rcept_no": "20260824000020",
+      "rcept_dt": "2026-08-24",
+      "corp_name": "유니온머티리얼",
+      "stock_code": "047400",
+      "market": "KOSPI",
+      "corp_code": "00369833",
+      "repror": "유니온",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "114,659",
+      "total_cnt": "16,914,659",
+      "irds_rate": "0.27",
+      "hold_rate": "40.27",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260824000016",
       "rcept_dt": "2026-08-24",
