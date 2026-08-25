@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-25T14:34+09:00",
+  "updated_at": "2026-08-25T14:49+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260825000224",
+  "last_seen": "20260825000234",
   "disclosures": [
+    {
+      "rcept_no": "20260825000234",
+      "rcept_dt": "2026-08-25",
+      "corp_name": "대동",
+      "stock_code": "000490",
+      "market": "KOSPI",
+      "corp_code": "00109286",
+      "repror": "김준식",
+      "ofcps": "공동대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "120,000",
+      "total_cnt": "8,217,552",
+      "irds_rate": "0.42",
+      "hold_rate": "28.51",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260825000224",
       "rcept_dt": "2026-08-25",
