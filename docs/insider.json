@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-25T14:24+09:00",
+  "updated_at": "2026-08-25T14:34+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260825000215",
+  "last_seen": "20260825000224",
   "disclosures": [
+    {
+      "rcept_no": "20260825000224",
+      "rcept_dt": "2026-08-25",
+      "corp_name": "우진비앤지",
+      "stock_code": "018620",
+      "market": "KOSDAQ",
+      "corp_code": "00103547",
+      "repror": "강재구",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "34,660",
+      "total_cnt": "1,326,970",
+      "irds_rate": "0.5",
+      "hold_rate": "19.14",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260825000215",
       "rcept_dt": "2026-08-25",
