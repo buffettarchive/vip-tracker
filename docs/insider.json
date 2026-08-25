@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-25T10:57+09:00",
+  "updated_at": "2026-08-25T10:59+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260825000102",
+  "last_seen": "20260825000110",
   "disclosures": [
+    {
+      "rcept_no": "20260825000109",
+      "rcept_dt": "2026-08-25",
+      "corp_name": "스트라드비젼",
+      "stock_code": "475040",
+      "market": "KOSDAQ",
+      "corp_code": "01370517",
+      "repror": "김준환",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "23,184",
+      "total_cnt": "5,348,315",
+      "irds_rate": "0.05",
+      "hold_rate": "9.94",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260825000088",
       "rcept_dt": "2026-08-25",
