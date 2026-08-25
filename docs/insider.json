@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-25T09:04+09:00",
+  "updated_at": "2026-08-25T09:49+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260824000341",
+  "last_seen": "20260825000044",
   "disclosures": [
+    {
+      "rcept_no": "20260825000044",
+      "rcept_dt": "2026-08-25",
+      "corp_name": "에이텍모빌리티",
+      "stock_code": "224110",
+      "market": "KOSDAQ",
+      "corp_code": "01099861",
+      "repror": "신종찬",
+      "ofcps": "이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "40,047",
+      "total_cnt": "119,885",
+      "irds_rate": "0.79",
+      "hold_rate": "2.36",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260824000279",
       "rcept_dt": "2026-08-24",
