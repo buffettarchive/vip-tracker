@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-25T15:29+09:00",
+  "updated_at": "2026-08-25T15:44+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260825000260",
+  "last_seen": "20260825000280",
   "disclosures": [
+    {
+      "rcept_no": "20260825000280",
+      "rcept_dt": "2026-08-25",
+      "corp_name": "하나금융지주",
+      "stock_code": "086790",
+      "market": "KOSPI",
+      "corp_code": "00547583",
+      "repror": "최현자",
+      "ofcps": "사외이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "130",
+      "total_cnt": "130",
+      "irds_rate": "0.00",
+      "hold_rate": "0.00",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260825000249",
       "rcept_dt": "2026-08-25",
