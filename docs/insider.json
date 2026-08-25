@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-25T16:39+09:00",
+  "updated_at": "2026-08-25T16:44+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260825000358",
+  "last_seen": "20260825000364",
   "disclosures": [
+    {
+      "rcept_no": "20260825000363",
+      "rcept_dt": "2026-08-25",
+      "corp_name": "ES큐브",
+      "stock_code": "050120",
+      "market": "KOSDAQ",
+      "corp_code": "00175623",
+      "repror": "비케이자산관리대부",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "127,754",
+      "total_cnt": "726,816",
+      "irds_rate": "0.94",
+      "hold_rate": "5.36",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260825000355",
       "rcept_dt": "2026-08-25",
