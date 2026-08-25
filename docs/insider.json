@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-25T15:24+09:00",
+  "updated_at": "2026-08-25T15:29+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260825000248",
+  "last_seen": "20260825000260",
   "disclosures": [
+    {
+      "rcept_no": "20260825000249",
+      "rcept_dt": "2026-08-25",
+      "corp_name": "한국정밀기계",
+      "stock_code": "101680",
+      "market": "KOSDAQ",
+      "corp_code": "00257732",
+      "repror": "하만기",
+      "ofcps": "이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "6,681",
+      "total_cnt": "6,681",
+      "irds_rate": "0.08",
+      "hold_rate": "0.08",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260825000234",
       "rcept_dt": "2026-08-25",
