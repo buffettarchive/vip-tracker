@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-26T10:59+09:00",
+  "updated_at": "2026-08-26T11:24+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260826000186",
+  "last_seen": "20260826000215",
   "disclosures": [
+    {
+      "rcept_no": "20260826000209",
+      "rcept_dt": "2026-08-26",
+      "corp_name": "S-Oil",
+      "stock_code": "010950",
+      "market": "KOSPI",
+      "corp_code": "00138279",
+      "repror": "국민연금공단",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "11,315,615",
+      "total_cnt": "11,315,615",
+      "irds_rate": "9.70",
+      "hold_rate": "9.70",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260826000186",
       "rcept_dt": "2026-08-26",
