@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-26T09:09+09:00",
+  "updated_at": "2026-08-26T09:26+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260825000495",
+  "last_seen": "20260826000058",
   "disclosures": [
+    {
+      "rcept_no": "20260826000058",
+      "rcept_dt": "2026-08-26",
+      "corp_name": "파워로직스",
+      "stock_code": "047310",
+      "market": "KOSDAQ",
+      "corp_code": "00269612",
+      "repror": "장동훈",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "30,000",
+      "total_cnt": "105,000",
+      "irds_rate": "0.082",
+      "hold_rate": "0.287",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260825000495",
       "rcept_dt": "2026-08-26",
