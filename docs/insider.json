@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-26T16:54+09:00",
+  "updated_at": "2026-08-26T16:59+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260826000608",
+  "last_seen": "20260826000656",
   "disclosures": [
+    {
+      "rcept_no": "20260826000625",
+      "rcept_dt": "2026-08-26",
+      "corp_name": "서울식품공업",
+      "stock_code": "004410",
+      "market": "KOSPI",
+      "corp_code": "00130879",
+      "repror": "서성훈",
+      "ofcps": "회장",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "24,967",
+      "total_cnt": "4,771,008",
+      "irds_rate": "0.06",
+      "hold_rate": "12.02",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260826000581",
       "rcept_dt": "2026-08-26",
