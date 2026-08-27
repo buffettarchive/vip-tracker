@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-27T13:24+09:00",
+  "updated_at": "2026-08-27T13:39+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260827000426",
+  "last_seen": "20260827000450",
   "disclosures": [
+    {
+      "rcept_no": "20260827000442",
+      "rcept_dt": "2026-08-27",
+      "corp_name": "에스씨디",
+      "stock_code": "042110",
+      "market": "KOSDAQ",
+      "corp_code": "00171867",
+      "repror": "오길호",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "105,505",
+      "total_cnt": "105,505",
+      "irds_rate": "0.22",
+      "hold_rate": "0.22",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260827000426",
       "rcept_dt": "2026-08-27",
