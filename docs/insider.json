@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-27T10:39+09:00",
+  "updated_at": "2026-08-27T10:44+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260827000234",
+  "last_seen": "20260827000250",
   "disclosures": [
+    {
+      "rcept_no": "20260827000250",
+      "rcept_dt": "2026-08-27",
+      "corp_name": "진양폴리우레탄",
+      "stock_code": "010640",
+      "market": "KOSPI",
+      "corp_code": "00160375",
+      "repror": "진양홀딩스",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "17,059",
+      "total_cnt": "8,680,000",
+      "irds_rate": "0.10",
+      "hold_rate": "51.97",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260827000234",
       "rcept_dt": "2026-08-27",
