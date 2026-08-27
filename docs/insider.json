@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-26T17:59+09:00",
+  "updated_at": "2026-08-27T09:09+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260826000788",
+  "last_seen": "20260827000041",
   "disclosures": [
+    {
+      "rcept_no": "20260827000041",
+      "rcept_dt": "2026-08-27",
+      "corp_name": "티엘비",
+      "stock_code": "356860",
+      "market": "KOSDAQ",
+      "corp_code": "00920379",
+      "repror": "정재우",
+      "ofcps": "부사장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "2,420",
+      "total_cnt": "5,000",
+      "irds_rate": "0.01",
+      "hold_rate": "0.02",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260826000786",
       "rcept_dt": "2026-08-26",
