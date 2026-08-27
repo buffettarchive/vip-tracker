@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-27T14:19+09:00",
+  "updated_at": "2026-08-27T14:39+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260827000500",
+  "last_seen": "20260827000525",
   "disclosures": [
+    {
+      "rcept_no": "20260827000525",
+      "rcept_dt": "2026-08-27",
+      "corp_name": "플레이위드",
+      "stock_code": "023770",
+      "market": "KOSDAQ",
+      "corp_code": "00138367",
+      "repror": "플레이위드게임즈",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "28,044",
+      "total_cnt": "1,004,363",
+      "irds_rate": "0.32",
+      "hold_rate": "11.23",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260827000488",
       "rcept_dt": "2026-08-27",
