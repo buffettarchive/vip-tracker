@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-28T18:22+09:00",
+  "updated_at": "2026-08-28T18:24+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260828001605",
   "disclosures": [
+    {
+      "rcept_no": "20260828001812",
+      "rcept_dt": "2026-08-28",
+      "corp_name": "주연테크",
+      "stock_code": "044380",
+      "market": "KOSPI",
+      "corp_code": "00269241",
+      "repror": "화평홀딩스",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "141,670",
+      "total_cnt": "3,996,253",
+      "irds_rate": "1.02",
+      "hold_rate": "28.76",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260828001784",
       "rcept_dt": "2026-08-28",
