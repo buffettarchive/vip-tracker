@@ -1,6 +1,24 @@
 {
   "entries": [
     {
+      "rcept_no": "20260831000538",
+      "rcept_dt": "20260831",
+      "corp_code": "00413046",
+      "corp_name": "셀트리온",
+      "corp_cls": "Y",
+      "report_nm": "주요사항보고서(자기주식취득결정)",
+      "type": "취득",
+      "shares_common": null,
+      "amount_common": null,
+      "acq_purpose": null,
+      "acq_method": null,
+      "acq_period_start": null,
+      "acq_period_end": null,
+      "total_shares": null,
+      "ratio_pct": null,
+      "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260831000538"
+    },
+    {
       "rcept_no": "20260831000462",
       "rcept_dt": "20260831",
       "corp_code": "00406727",
@@ -7159,5 +7177,5 @@
       "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250610000225"
     }
   ],
-  "last_seen": "20260831000462"
+  "last_seen": "20260831000538"
 }
