@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-31T16:21+09:00",
+  "updated_at": "2026-08-31T16:26+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260828001605",
   "disclosures": [
+    {
+      "rcept_no": "20260831001126",
+      "rcept_dt": "2026-08-31",
+      "corp_name": "에넥스",
+      "stock_code": "011090",
+      "market": "KOSPI",
+      "corp_code": "00139764",
+      "repror": "박성은",
+      "ofcps": "이사",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "43,233",
+      "total_cnt": "191,272",
+      "irds_rate": "0.36",
+      "hold_rate": "1.61",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260831001091",
       "rcept_dt": "2026-08-31",
