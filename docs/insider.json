@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-31T09:36+09:00",
+  "updated_at": "2026-08-31T09:41+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260828001605",
   "disclosures": [
+    {
+      "rcept_no": "20260831000130",
+      "rcept_dt": "2026-08-31",
+      "corp_name": "바이오톡스텍",
+      "stock_code": "086040",
+      "market": "KOSDAQ",
+      "corp_code": "00447502",
+      "repror": "강종구",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "13,865",
+      "total_cnt": "2,063,056",
+      "irds_rate": "0.09",
+      "hold_rate": "12.93",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260831000114",
       "rcept_dt": "2026-08-31",
