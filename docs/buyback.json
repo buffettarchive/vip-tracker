@@ -1,6 +1,24 @@
 {
   "entries": [
     {
+      "rcept_no": "20260831001391",
+      "rcept_dt": "20260831",
+      "corp_code": "00406727",
+      "corp_name": "세진티에스",
+      "corp_cls": "K",
+      "report_nm": "[기재정정]주요사항보고서(자기주식취득결정)",
+      "type": "취득",
+      "shares_common": 371747,
+      "amount_common": 999999430,
+      "acq_purpose": "주가 안정을 통한 주주가치 제고",
+      "acq_method": "코스닥시장을 통한 장내 직접취득",
+      "acq_period_start": null,
+      "acq_period_end": null,
+      "total_shares": null,
+      "ratio_pct": null,
+      "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260831001391"
+    },
+    {
       "rcept_no": "20260831000538",
       "rcept_dt": "20260831",
       "corp_code": "00413046",
@@ -7177,5 +7195,5 @@
       "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250610000225"
     }
   ],
-  "last_seen": "20260831000538"
+  "last_seen": "20260831001391"
 }
