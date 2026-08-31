@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-31T15:21+09:00",
+  "updated_at": "2026-08-31T16:21+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260828001605",
   "disclosures": [
+    {
+      "rcept_no": "20260831001091",
+      "rcept_dt": "2026-08-31",
+      "corp_name": "아이디스",
+      "stock_code": "143160",
+      "market": "KOSDAQ",
+      "corp_code": "00883980",
+      "repror": "아이디스홀딩스",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "19,029",
+      "total_cnt": "5,145,613",
+      "irds_rate": "0.18",
+      "hold_rate": "48.02",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260831000924",
       "rcept_dt": "2026-08-31",
