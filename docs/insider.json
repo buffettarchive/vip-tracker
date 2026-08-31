@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-31T18:46+09:00",
+  "updated_at": "2026-08-31T20:01+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260828001605",
   "disclosures": [
+    {
+      "rcept_no": "20260831001521",
+      "rcept_dt": "2026-08-31",
+      "corp_name": "세종텔레콤",
+      "stock_code": "036630",
+      "market": "KOSDAQ",
+      "corp_code": "00268002",
+      "repror": "세종",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "78,000",
+      "total_cnt": "11,078,000",
+      "irds_rate": "0.56",
+      "hold_rate": "79.13",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260831001478",
       "rcept_dt": "2026-08-31",
