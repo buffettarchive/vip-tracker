@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-08-31T14:36+09:00",
+  "updated_at": "2026-08-31T15:21+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260828001605",
   "disclosures": [
+    {
+      "rcept_no": "20260831000924",
+      "rcept_dt": "2026-08-31",
+      "corp_name": "핌스",
+      "stock_code": "347770",
+      "market": "KOSDAQ",
+      "corp_code": "01405390",
+      "repror": "김민용",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "45,000",
+      "total_cnt": "135,000",
+      "irds_rate": "0.20",
+      "hold_rate": "0.60",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260831000818",
       "rcept_dt": "2026-08-31",
