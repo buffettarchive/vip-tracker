@@ -1,8 +1,42 @@
 {
-  "updated_at": "2026-08-31T10:15+09:00",
+  "updated_at": "2026-08-31T11:55+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260828001605",
   "disclosures": [
+    {
+      "rcept_no": "20260831000619",
+      "rcept_dt": "2026-08-31",
+      "corp_name": "바이오포트",
+      "stock_code": "188040",
+      "market": "KOSDAQ",
+      "corp_code": "01157846",
+      "repror": "김기영",
+      "ofcps": "부사장",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "5,500",
+      "total_cnt": "286,676",
+      "irds_rate": "0.12",
+      "hold_rate": "6.13",
+      "method": "장내매수"
+    },
+    {
+      "rcept_no": "20260831000609",
+      "rcept_dt": "2026-08-31",
+      "corp_name": "핌스",
+      "stock_code": "347770",
+      "market": "KOSDAQ",
+      "corp_code": "01405390",
+      "repror": "김민용",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "45,000",
+      "total_cnt": "95,000",
+      "irds_rate": "0.20",
+      "hold_rate": "0.42",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260831000235",
       "rcept_dt": "2026-08-31",
