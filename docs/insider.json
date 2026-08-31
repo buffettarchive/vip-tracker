@@ -1,8 +1,42 @@
 {
-  "updated_at": "2026-08-31T09:41+09:00",
+  "updated_at": "2026-08-31T09:49+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260828001605",
   "disclosures": [
+    {
+      "rcept_no": "20260831000159",
+      "rcept_dt": "2026-08-31",
+      "corp_name": "에스케이바이오팜",
+      "stock_code": "326030",
+      "market": "KOSPI",
+      "corp_code": "00878696",
+      "repror": "이동훈",
+      "ofcps": "사장",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "2,000",
+      "total_cnt": "5,000",
+      "irds_rate": "0.01",
+      "hold_rate": "0.01",
+      "method": "장내매수"
+    },
+    {
+      "rcept_no": "20260831000145",
+      "rcept_dt": "2026-08-31",
+      "corp_name": "에스케이바이오팜",
+      "stock_code": "326030",
+      "market": "KOSPI",
+      "corp_code": "00878696",
+      "repror": "유창호",
+      "ofcps": "전략부문장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "500",
+      "total_cnt": "42,116",
+      "irds_rate": "0.00",
+      "hold_rate": "0.05",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260831000130",
       "rcept_dt": "2026-08-31",
