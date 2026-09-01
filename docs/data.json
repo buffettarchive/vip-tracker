@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-01T13:54+09:00",
+  "updated_at": "2026-09-01T13:59+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -21,13 +21,13 @@
       "corp_name": "인피니트헬스케어",
       "stock_code": "071200",
       "corp_code": "00435969",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkrt": "8.78",
+      "stkrt_prev": "7.10",
+      "stkqy": "2143000",
+      "report_resn": "장내매수",
+      "purpose": "일반투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "기타"
+      "kind": "매수"
     },
     {
       "rcept_no": "20260828000539",
