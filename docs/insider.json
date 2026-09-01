@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-09-01T12:59+09:00",
+  "updated_at": "2026-09-01T13:20+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260831001513",
   "disclosures": [
+    {
+      "rcept_no": "20260901000088",
+      "rcept_dt": "2026-09-01",
+      "corp_name": "KBG",
+      "stock_code": "318000",
+      "market": "KOSDAQ",
+      "corp_code": "00876166",
+      "repror": "부삼열",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "3,500",
+      "total_cnt": "346,732",
+      "irds_rate": "0.04",
+      "hold_rate": "3.97",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260901000082",
       "rcept_dt": "2026-09-01",
