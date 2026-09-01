@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-09-01T15:15+09:00",
+  "updated_at": "2026-09-01T15:59+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260831001513",
   "disclosures": [
+    {
+      "rcept_no": "20260901000216",
+      "rcept_dt": "2026-09-01",
+      "corp_name": "파트론",
+      "stock_code": "091700",
+      "market": "KOSDAQ",
+      "corp_code": "00490151",
+      "repror": "김종구",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "23,481",
+      "total_cnt": "9,314,001",
+      "irds_rate": "0.05",
+      "hold_rate": "18.63",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260901000159",
       "rcept_dt": "2026-09-01",
