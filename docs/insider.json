@@ -1,8 +1,42 @@
 {
-  "updated_at": "2026-09-01T16:15+09:00",
+  "updated_at": "2026-09-01T16:25+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260831001513",
   "disclosures": [
+    {
+      "rcept_no": "20260901000255",
+      "rcept_dt": "2026-09-01",
+      "corp_name": "팬스타엔터프라이즈",
+      "stock_code": "054300",
+      "market": "KOSDAQ",
+      "corp_code": "00339072",
+      "repror": "김현겸",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "241,500",
+      "total_cnt": "11,237,255",
+      "irds_rate": "0.32",
+      "hold_rate": "19.32",
+      "method": "장내매수"
+    },
+    {
+      "rcept_no": "20260901000239",
+      "rcept_dt": "2026-09-01",
+      "corp_name": "현대건설",
+      "stock_code": "000720",
+      "market": "KOSPI",
+      "corp_code": "00164478",
+      "repror": "국민연금공단",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "11,467,231",
+      "total_cnt": "11,467,231",
+      "irds_rate": "10.20",
+      "hold_rate": "10.20",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260901000237",
       "rcept_dt": "2026-09-01",
