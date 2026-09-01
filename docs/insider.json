@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-09-01T11:49+09:00",
+  "updated_at": "2026-09-01T12:09+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260831001513",
   "disclosures": [
+    {
+      "rcept_no": "20260901000075",
+      "rcept_dt": "2026-09-01",
+      "corp_name": "오텍",
+      "stock_code": "067170",
+      "market": "KOSDAQ",
+      "corp_code": "00397289",
+      "repror": "강신욱",
+      "ofcps": "부사장",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "338,358",
+      "total_cnt": "2,071,172",
+      "irds_rate": "1.23",
+      "hold_rate": "7.54",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260901000071",
       "rcept_dt": "2026-09-01",
