@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-09-01T13:20+09:00",
+  "updated_at": "2026-09-01T13:39+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260831001513",
   "disclosures": [
+    {
+      "rcept_no": "20260901000099",
+      "rcept_dt": "2026-09-01",
+      "corp_name": "CJ대한통운",
+      "stock_code": "000120",
+      "market": "KOSPI",
+      "corp_code": "00113410",
+      "repror": "윤동욱",
+      "ofcps": "경영리더",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,000",
+      "total_cnt": "1,000",
+      "irds_rate": "0.00",
+      "hold_rate": "0.00",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260901000088",
       "rcept_dt": "2026-09-01",
