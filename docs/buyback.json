@@ -1,6 +1,24 @@
 {
   "entries": [
     {
+      "rcept_no": "20260901000130",
+      "rcept_dt": "20260901",
+      "corp_code": "00154055",
+      "corp_name": "태원물산",
+      "corp_cls": "Y",
+      "report_nm": "주요사항보고서(자기주식취득결정)",
+      "type": "취득",
+      "shares_common": 521739,
+      "amount_common": 1199999700,
+      "acq_purpose": "주식가격의 안정 및 주주가치 제고",
+      "acq_method": "유가증권시장을 통한 장내 매수",
+      "acq_period_start": null,
+      "acq_period_end": null,
+      "total_shares": null,
+      "ratio_pct": null,
+      "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260901000130"
+    },
+    {
       "rcept_no": "20260901000117",
       "rcept_dt": "20260901",
       "corp_code": "00152260",
@@ -7213,5 +7231,5 @@
       "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250610000225"
     }
   ],
-  "last_seen": "20260901000117"
+  "last_seen": "20260901000130"
 }
