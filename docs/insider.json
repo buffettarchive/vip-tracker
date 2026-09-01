@@ -1,8 +1,42 @@
 {
-  "updated_at": "2026-09-01T16:25+09:00",
+  "updated_at": "2026-09-01T16:44+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260831001513",
   "disclosures": [
+    {
+      "rcept_no": "20260901000265",
+      "rcept_dt": "2026-09-01",
+      "corp_name": "다산디엠씨",
+      "stock_code": "208860",
+      "market": "KOSDAQ",
+      "corp_code": "01084364",
+      "repror": "다산네트웍스",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "317,560",
+      "total_cnt": "21,793,548",
+      "irds_rate": "0.93",
+      "hold_rate": "64.19",
+      "method": "장내매수"
+    },
+    {
+      "rcept_no": "20260901000260",
+      "rcept_dt": "2026-09-01",
+      "corp_name": "한미사이언스",
+      "stock_code": "008930",
+      "market": "KOSPI",
+      "corp_code": "00161426",
+      "repror": "김재교",
+      "ofcps": "부회장",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "750",
+      "total_cnt": "13,698",
+      "irds_rate": "0.00",
+      "hold_rate": "0.02",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260901000255",
       "rcept_dt": "2026-09-01",
