@@ -1,8 +1,42 @@
 {
-  "updated_at": "2026-09-02T16:40+09:00",
+  "updated_at": "2026-09-02T17:06+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260831001513",
   "disclosures": [
+    {
+      "rcept_no": "20260902000309",
+      "rcept_dt": "2026-09-02",
+      "corp_name": "FSN",
+      "stock_code": "214270",
+      "market": "KOSDAQ",
+      "corp_code": "01061497",
+      "repror": "김경호",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "7,100",
+      "total_cnt": "49,473",
+      "irds_rate": "0.02",
+      "hold_rate": "0.11",
+      "method": "장내매수"
+    },
+    {
+      "rcept_no": "20260902000308",
+      "rcept_dt": "2026-09-02",
+      "corp_name": "FSN",
+      "stock_code": "214270",
+      "market": "KOSDAQ",
+      "corp_code": "01061497",
+      "repror": "서정교",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "8,067",
+      "total_cnt": "2,071,737",
+      "irds_rate": "0.02",
+      "hold_rate": "4.58",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260902000275",
       "rcept_dt": "2026-09-02",
