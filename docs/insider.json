@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-09-02T14:45+09:00",
+  "updated_at": "2026-09-02T14:55+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260831001513",
   "disclosures": [
+    {
+      "rcept_no": "20260902000166",
+      "rcept_dt": "2026-09-02",
+      "corp_name": "인스피언",
+      "stock_code": "465480",
+      "market": "KOSDAQ",
+      "corp_code": "01284876",
+      "repror": "최치현",
+      "ofcps": "이 사",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "5,000",
+      "total_cnt": "5,000",
+      "irds_rate": "0.05",
+      "hold_rate": "0.05",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260902000164",
       "rcept_dt": "2026-09-02",
