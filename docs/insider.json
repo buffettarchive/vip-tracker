@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-09-02T18:10+09:00",
+  "updated_at": "2026-09-02T18:25+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260831001513",
   "disclosures": [
+    {
+      "rcept_no": "20260902000355",
+      "rcept_dt": "2026-09-02",
+      "corp_name": "루멘스",
+      "stock_code": "038060",
+      "market": "KOSDAQ",
+      "corp_code": "00406329",
+      "repror": "넥스턴앤롤코리아",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "10,566,637",
+      "total_cnt": "10,566,637",
+      "irds_rate": "21.97",
+      "hold_rate": "21.97",
+      "method": "장외매수"
+    },
     {
       "rcept_no": "20260902000350",
       "rcept_dt": "2026-09-02",
