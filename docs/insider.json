@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-09-02T15:25+09:00",
+  "updated_at": "2026-09-02T15:30+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260831001513",
   "disclosures": [
+    {
+      "rcept_no": "20260902000206",
+      "rcept_dt": "2026-09-02",
+      "corp_name": "동아쏘시오홀딩스",
+      "stock_code": "000640",
+      "market": "KOSPI",
+      "corp_code": "00116824",
+      "repror": "이혁수",
+      "ofcps": "상무보",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "500",
+      "total_cnt": "524",
+      "irds_rate": "0.01",
+      "hold_rate": "0.01",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260902000202",
       "rcept_dt": "2026-09-02",
