@@ -1,8 +1,42 @@
 {
-  "updated_at": "2026-09-02T16:26+09:00",
+  "updated_at": "2026-09-02T16:40+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260831001513",
   "disclosures": [
+    {
+      "rcept_no": "20260902000275",
+      "rcept_dt": "2026-09-02",
+      "corp_name": "이녹스첨단소재",
+      "stock_code": "272290",
+      "market": "KOSDAQ",
+      "corp_code": "01237540",
+      "repror": "이녹스",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "8,678",
+      "total_cnt": "5,369,341",
+      "irds_rate": "0.04",
+      "hold_rate": "26.93",
+      "method": "장내매수"
+    },
+    {
+      "rcept_no": "20260902000272",
+      "rcept_dt": "2026-09-02",
+      "corp_name": "에스넷",
+      "stock_code": "038680",
+      "market": "KOSDAQ",
+      "corp_code": "00264635",
+      "repror": "블루로터스",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "96,628",
+      "total_cnt": "2,978,049",
+      "irds_rate": "0.49",
+      "hold_rate": "14.96",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260902000249",
       "rcept_dt": "2026-09-02",
