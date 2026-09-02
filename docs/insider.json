@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-09-02T10:50+09:00",
+  "updated_at": "2026-09-02T11:15+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260831001513",
   "disclosures": [
+    {
+      "rcept_no": "20260902000066",
+      "rcept_dt": "2026-09-02",
+      "corp_name": "셀레믹스",
+      "stock_code": "331920",
+      "market": "KOSDAQ",
+      "corp_code": "01114586",
+      "repror": "김효기",
+      "ofcps": "공동대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,872",
+      "total_cnt": "241,680",
+      "irds_rate": "-0.78",
+      "hold_rate": "2.16",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260902000054",
       "rcept_dt": "2026-09-02",
