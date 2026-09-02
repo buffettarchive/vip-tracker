@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-09-02T11:15+09:00",
+  "updated_at": "2026-09-02T11:30+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260831001513",
   "disclosures": [
+    {
+      "rcept_no": "20260902000071",
+      "rcept_dt": "2026-09-02",
+      "corp_name": "니어스랩",
+      "stock_code": "417030",
+      "market": "KOSDAQ",
+      "corp_code": "01588897",
+      "repror": "김성현",
+      "ofcps": "부사장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "325",
+      "total_cnt": "325",
+      "irds_rate": "0.01",
+      "hold_rate": "0.01",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260902000066",
       "rcept_dt": "2026-09-02",
