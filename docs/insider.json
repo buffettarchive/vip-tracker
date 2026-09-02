@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-09-02T12:05+09:00",
+  "updated_at": "2026-09-02T13:35+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260831001513",
   "disclosures": [
+    {
+      "rcept_no": "20260902000113",
+      "rcept_dt": "2026-09-02",
+      "corp_name": "페니트리움바이오",
+      "stock_code": "187660",
+      "market": "KOSDAQ",
+      "corp_code": "01409022",
+      "repror": "박차석",
+      "ofcps": "감사위원",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "10,000",
+      "total_cnt": "50,000",
+      "irds_rate": "0.016",
+      "hold_rate": "0.09",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260902000090",
       "rcept_dt": "2026-09-02",
