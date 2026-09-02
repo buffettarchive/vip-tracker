@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-02T15:59+09:00",
+  "updated_at": "2026-09-02T16:04+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -12,8 +12,23 @@
     "Orbis",
     "Pzena"
   ],
-  "last_seen": "20260902000238",
+  "last_seen": "20260902000245",
   "disclosures": [
+    {
+      "rcept_no": "20260902000240",
+      "rcept_dt": "2026-09-02",
+      "firm": "브이아이피자산운용",
+      "corp_name": "KT나스미디어",
+      "stock_code": "089600",
+      "corp_code": "00486097",
+      "stkrt": "",
+      "stkrt_prev": "",
+      "stkqy": "",
+      "report_resn": "",
+      "purpose": "",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "기타"
+    },
     {
       "rcept_no": "20260901000108",
       "rcept_dt": "2026-09-01",
