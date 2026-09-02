@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-09-01T18:35+09:00",
+  "updated_at": "2026-09-02T09:05+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260831001513",
   "disclosures": [
+    {
+      "rcept_no": "20260901000363",
+      "rcept_dt": "2026-09-02",
+      "corp_name": "에이텍",
+      "stock_code": "045660",
+      "market": "KOSDAQ",
+      "corp_code": "00256502",
+      "repror": "신종수",
+      "ofcps": "이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "48,619",
+      "total_cnt": "170,216",
+      "irds_rate": "0.59",
+      "hold_rate": "2.06",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260901000360",
       "rcept_dt": "2026-09-01",
