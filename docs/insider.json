@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-09-03T14:26+09:00",
+  "updated_at": "2026-09-03T14:41+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260831001513",
   "disclosures": [
+    {
+      "rcept_no": "20260903000132",
+      "rcept_dt": "2026-09-03",
+      "corp_name": "서울옥션",
+      "stock_code": "063170",
+      "market": "KOSDAQ",
+      "corp_code": "00410915",
+      "repror": "이호재",
+      "ofcps": "이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "11,125",
+      "total_cnt": "2,465,000",
+      "irds_rate": "0.06",
+      "hold_rate": "13.87",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260903000121",
       "rcept_dt": "2026-09-03",
