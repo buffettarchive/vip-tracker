@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-03T17:29+09:00",
+  "updated_at": "2026-09-03T17:34+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -12,7 +12,7 @@
     "Orbis",
     "Pzena"
   ],
-  "last_seen": "20260903000363",
+  "last_seen": "20260903000369",
   "disclosures": [
     {
       "rcept_no": "20260903000346",
@@ -21,13 +21,13 @@
       "corp_name": "매커스",
       "stock_code": "093520",
       "corp_code": "00596677",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
+      "stkrt": "11.67",
+      "stkrt_prev": "11.54",
+      "stkqy": "1388488",
+      "report_resn": "장내매수",
       "purpose": "",
       "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-      "kind": "기타"
+      "kind": "매수"
     },
     {
       "rcept_no": "20260903000339",
@@ -36,13 +36,13 @@
       "corp_name": "미코",
       "stock_code": "059090",
       "corp_code": "00366942",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
+      "stkrt": "13.18",
+      "stkrt_prev": "12.77",
+      "stkqy": "4405861",
+      "report_resn": "장내매수",
       "purpose": "",
       "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-      "kind": "기타"
+      "kind": "매수"
     },
     {
       "rcept_no": "20260903000336",
@@ -51,13 +51,13 @@
       "corp_name": "지어소프트",
       "stock_code": "051160",
       "corp_code": "00389110",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
+      "stkrt": "11.57",
+      "stkrt_prev": "11.38",
+      "stkqy": "1789900",
+      "report_resn": "장내매수",
       "purpose": "",
       "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-      "kind": "기타"
+      "kind": "매수"
     },
     {
       "rcept_no": "20260903000325",
