@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-09-03T16:12+09:00",
+  "updated_at": "2026-09-03T16:25+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260831001513",
   "disclosures": [
+    {
+      "rcept_no": "20260903000268",
+      "rcept_dt": "2026-09-03",
+      "corp_name": "POSCO홀딩스",
+      "stock_code": "005490",
+      "market": "KOSPI",
+      "corp_code": "00155319",
+      "repror": "김준기",
+      "ofcps": "독립이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "36",
+      "total_cnt": "469",
+      "irds_rate": "0.00",
+      "hold_rate": "0.00",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260903000254",
       "rcept_dt": "2026-09-03",
