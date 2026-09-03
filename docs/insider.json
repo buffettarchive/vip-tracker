@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-09-03T14:15+09:00",
+  "updated_at": "2026-09-03T14:21+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260831001513",
   "disclosures": [
+    {
+      "rcept_no": "20260903000118",
+      "rcept_dt": "2026-09-03",
+      "corp_name": "동국알앤에스",
+      "stock_code": "075970",
+      "market": "KOSDAQ",
+      "corp_code": "00472890",
+      "repror": "권선환",
+      "ofcps": "이사",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "2,800",
+      "total_cnt": "4,000",
+      "irds_rate": "0.01",
+      "hold_rate": "0.02",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260903000114",
       "rcept_dt": "2026-09-03",
