@@ -1,8 +1,42 @@
 {
-  "updated_at": "2026-09-03T16:25+09:00",
+  "updated_at": "2026-09-03T16:55+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260831001513",
   "disclosures": [
+    {
+      "rcept_no": "20260903000293",
+      "rcept_dt": "2026-09-03",
+      "corp_name": "더코디",
+      "stock_code": "224060",
+      "market": "KOSDAQ",
+      "corp_code": "00530413",
+      "repror": "진종필",
+      "ofcps": "부사장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "6,010",
+      "total_cnt": "6,010",
+      "irds_rate": "0.12",
+      "hold_rate": "0.12",
+      "method": "장내매수"
+    },
+    {
+      "rcept_no": "20260903000283",
+      "rcept_dt": "2026-09-03",
+      "corp_name": "크레버스",
+      "stock_code": "096240",
+      "market": "KOSDAQ",
+      "corp_code": "00525882",
+      "repror": "김영화",
+      "ofcps": "회장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "13,127",
+      "total_cnt": "1,768,902",
+      "irds_rate": "0.13",
+      "hold_rate": "17.28",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260903000268",
       "rcept_dt": "2026-09-03",
