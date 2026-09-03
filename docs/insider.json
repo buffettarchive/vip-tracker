@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-09-03T14:41+09:00",
+  "updated_at": "2026-09-03T14:45+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20260831001513",
   "disclosures": [
+    {
+      "rcept_no": "20260903000140",
+      "rcept_dt": "2026-09-03",
+      "corp_name": "3S",
+      "stock_code": "060310",
+      "market": "KOSDAQ",
+      "corp_code": "00378363",
+      "repror": "정완영",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "150,000",
+      "total_cnt": "150,000",
+      "irds_rate": "0.28",
+      "hold_rate": "0.28",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260903000132",
       "rcept_dt": "2026-09-03",
