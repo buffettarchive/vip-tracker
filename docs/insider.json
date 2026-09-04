@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-09-04T14:09+09:00",
+  "updated_at": "2026-09-04T14:39+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260904000140",
+  "last_seen": "20260904000177",
   "disclosures": [
+    {
+      "rcept_no": "20260904000175",
+      "rcept_dt": "2026-09-04",
+      "corp_name": "더코디",
+      "stock_code": "224060",
+      "market": "KOSDAQ",
+      "corp_code": "00530413",
+      "repror": "송상호",
+      "ofcps": "이사",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "3,454",
+      "total_cnt": "3,454",
+      "irds_rate": "0.07",
+      "hold_rate": "0.07",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260904000129",
       "rcept_dt": "2026-09-04",
