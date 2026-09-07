@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-09-07T14:14+09:00",
+  "updated_at": "2026-09-07T14:49+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260907000118",
+  "last_seen": "20260907000141",
   "disclosures": [
+    {
+      "rcept_no": "20260907000141",
+      "rcept_dt": "2026-09-07",
+      "corp_name": "에스엠벡셀",
+      "stock_code": "010580",
+      "market": "KOSPI",
+      "corp_code": "00147860",
+      "repror": "에스엠하이플러스",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "45,500",
+      "total_cnt": "56,918,444",
+      "irds_rate": "0.04",
+      "hold_rate": "51.16",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260907000118",
       "rcept_dt": "2026-09-07",
