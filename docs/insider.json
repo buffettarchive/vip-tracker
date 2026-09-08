@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-09-08T14:29+09:00",
+  "updated_at": "2026-09-08T14:49+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260908000168",
+  "last_seen": "20260908000188",
   "disclosures": [
+    {
+      "rcept_no": "20260908000188",
+      "rcept_dt": "2026-09-08",
+      "corp_name": "에스제이그룹",
+      "stock_code": "306040",
+      "market": "KOSDAQ",
+      "corp_code": "01222432",
+      "repror": "이주영",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "57,100",
+      "total_cnt": "3,343,454",
+      "irds_rate": "0.61",
+      "hold_rate": "36.00",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260908000121",
       "rcept_dt": "2026-09-08",
