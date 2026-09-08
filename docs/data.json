@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-08T10:49+09:00",
+  "updated_at": "2026-09-08T11:09+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -12,8 +12,23 @@
     "Orbis",
     "Pzena"
   ],
-  "last_seen": "20260908000076",
+  "last_seen": "20260908000083",
   "disclosures": [
+    {
+      "rcept_no": "20260908000083",
+      "rcept_dt": "2026-09-08",
+      "firm": "피델리티",
+      "corp_name": "한양이엔지",
+      "stock_code": "045100",
+      "corp_code": "00216762",
+      "stkrt": "",
+      "stkrt_prev": "",
+      "stkqy": "",
+      "report_resn": "",
+      "purpose": "",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "기타"
+    },
     {
       "rcept_no": "20260903000346",
       "rcept_dt": "2026-09-03",
