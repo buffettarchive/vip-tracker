@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-09-08T11:29+09:00",
+  "updated_at": "2026-09-08T13:44+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260908000085",
+  "last_seen": "20260908000121",
   "disclosures": [
+    {
+      "rcept_no": "20260908000121",
+      "rcept_dt": "2026-09-08",
+      "corp_name": "에스트래픽",
+      "stock_code": "234300",
+      "market": "KOSDAQ",
+      "corp_code": "01014055",
+      "repror": "이장한",
+      "ofcps": "부사장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "3,000",
+      "total_cnt": "57,000",
+      "irds_rate": "0.01",
+      "hold_rate": "0.21",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260908000067",
       "rcept_dt": "2026-09-08",
