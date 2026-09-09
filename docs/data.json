@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-09T16:59+09:00",
+  "updated_at": "2026-09-09T17:04+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -12,8 +12,23 @@
     "Orbis",
     "Pzena"
   ],
-  "last_seen": "20260909000456",
+  "last_seen": "20260909000463",
   "disclosures": [
+    {
+      "rcept_no": "20260909000461",
+      "rcept_dt": "2026-09-09",
+      "firm": "피델리티",
+      "corp_name": "미창석유공업",
+      "stock_code": "003650",
+      "corp_code": "00122056",
+      "stkrt": "",
+      "stkrt_prev": "",
+      "stkqy": "",
+      "report_resn": "",
+      "purpose": "",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "기타"
+    },
     {
       "rcept_no": "20260909000065",
       "rcept_dt": "2026-09-09",
