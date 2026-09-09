@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-09-09T11:19+09:00",
+  "updated_at": "2026-09-09T11:26+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260909000100",
+  "last_seen": "20260909000115",
   "disclosures": [
+    {
+      "rcept_no": "20260909000115",
+      "rcept_dt": "2026-09-09",
+      "corp_name": "예선테크",
+      "stock_code": "250930",
+      "market": "KOSDAQ",
+      "corp_code": "01166109",
+      "repror": "김형태",
+      "ofcps": "팀장",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "8,806",
+      "total_cnt": "55,300",
+      "irds_rate": "0.14",
+      "hold_rate": "0.84",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260909000012",
       "rcept_dt": "2026-09-09",
