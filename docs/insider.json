@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-09-08T18:32+09:00",
+  "updated_at": "2026-09-09T09:34+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260908000428",
+  "last_seen": "20260909000012",
   "disclosures": [
+    {
+      "rcept_no": "20260909000012",
+      "rcept_dt": "2026-09-09",
+      "corp_name": "에이엘티",
+      "stock_code": "172670",
+      "market": "KOSDAQ",
+      "corp_code": "00493325",
+      "repror": "천병태",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "9,843",
+      "total_cnt": "1,690,258",
+      "irds_rate": "0.11",
+      "hold_rate": "18.86",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260908000416",
       "rcept_dt": "2026-09-08",
