@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-09-09T14:44+09:00",
+  "updated_at": "2026-09-09T14:59+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260909000210",
+  "last_seen": "20260909000254",
   "disclosures": [
+    {
+      "rcept_no": "20260909000252",
+      "rcept_dt": "2026-09-09",
+      "corp_name": "에코프로에이치엔",
+      "stock_code": "383310",
+      "market": "KOSDAQ",
+      "corp_code": "01566248",
+      "repror": "김순주",
+      "ofcps": "부사장",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "2,000",
+      "total_cnt": "2,000",
+      "irds_rate": "0.01",
+      "hold_rate": "0.01",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260909000182",
       "rcept_dt": "2026-09-09",
