@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-09-10T13:54+09:00",
+  "updated_at": "2026-09-10T14:09+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260910000166",
+  "last_seen": "20260910000181",
   "disclosures": [
+    {
+      "rcept_no": "20260910000181",
+      "rcept_dt": "2026-09-10",
+      "corp_name": "제노레이",
+      "stock_code": "122310",
+      "market": "KOSDAQ",
+      "corp_code": "00799539",
+      "repror": "박병욱",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "7,071",
+      "total_cnt": "3,535,723",
+      "irds_rate": "0.04",
+      "hold_rate": "24.29",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260910000166",
       "rcept_dt": "2026-09-10",
