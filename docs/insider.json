@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-09-10T09:34+09:00",
+  "updated_at": "2026-09-10T10:19+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260910000036",
+  "last_seen": "20260910000062",
   "disclosures": [
+    {
+      "rcept_no": "20260910000062",
+      "rcept_dt": "2026-09-10",
+      "corp_name": "피엔티엠에스",
+      "stock_code": "257370",
+      "market": "KOSDAQ",
+      "corp_code": "01144569",
+      "repror": "김준섭",
+      "ofcps": "사내이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "20,000",
+      "total_cnt": "20,000",
+      "irds_rate": "0.16",
+      "hold_rate": "0.16",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260909000515",
       "rcept_dt": "2026-09-09",
