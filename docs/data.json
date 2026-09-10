@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-10T15:24+09:00",
+  "updated_at": "2026-09-10T15:29+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -21,13 +21,13 @@
       "corp_name": "인바디",
       "stock_code": "041830",
       "corp_code": "00269922",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkrt": "9.79",
+      "stkrt_prev": "9.99",
+      "stkqy": "1319240",
+      "report_resn": "장내매도",
+      "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "기타"
+      "kind": "매도"
     },
     {
       "rcept_no": "20260910000267",
@@ -36,13 +36,13 @@
       "corp_name": "한국항공우주",
       "stock_code": "047810",
       "corp_code": "00309503",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkrt": "6.68",
+      "stkrt_prev": "6.66",
+      "stkqy": "6512927",
+      "report_resn": "장내매수",
+      "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "기타"
+      "kind": "매수"
     },
     {
       "rcept_no": "20260909000467",
