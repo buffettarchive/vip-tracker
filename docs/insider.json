@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-09-10T18:04+09:00",
+  "updated_at": "2026-09-10T18:09+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260910000522",
+  "last_seen": "20260910000562",
   "disclosures": [
+    {
+      "rcept_no": "20260910000531",
+      "rcept_dt": "2026-09-10",
+      "corp_name": "풍산",
+      "stock_code": "103140",
+      "market": "KOSPI",
+      "corp_code": "00684714",
+      "repror": "박우동",
+      "ofcps": "부회장",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "192",
+      "total_cnt": "2,407",
+      "irds_rate": "0.00",
+      "hold_rate": "0.01",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260910000522",
       "rcept_dt": "2026-09-10",
