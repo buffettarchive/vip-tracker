@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-09-10T16:49+09:00",
+  "updated_at": "2026-09-10T17:19+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260910000438",
+  "last_seen": "20260910000461",
   "disclosures": [
+    {
+      "rcept_no": "20260910000449",
+      "rcept_dt": "2026-09-10",
+      "corp_name": "아이큐어",
+      "stock_code": "175250",
+      "market": "KOSDAQ",
+      "corp_code": "00554352",
+      "repror": "차윤상",
+      "ofcps": "상무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "2,000",
+      "total_cnt": "2,000",
+      "irds_rate": "0.00",
+      "hold_rate": "0.00",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260910000385",
       "rcept_dt": "2026-09-10",
