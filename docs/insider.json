@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-09-11T16:44+09:00",
+  "updated_at": "2026-09-11T17:04+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260911000483",
+  "last_seen": "20260911000528",
   "disclosures": [
+    {
+      "rcept_no": "20260911000527",
+      "rcept_dt": "2026-09-11",
+      "corp_name": "웰킵스하이텍",
+      "stock_code": "043590",
+      "market": "KOSDAQ",
+      "corp_code": "00260611",
+      "repror": "웰킵스홀딩스",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "28,839",
+      "total_cnt": "6,666,472",
+      "irds_rate": "0.21",
+      "hold_rate": "49.13",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260911000440",
       "rcept_dt": "2026-09-11",
