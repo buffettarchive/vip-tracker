@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-09-14T14:29+09:00",
+  "updated_at": "2026-09-14T14:39+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260914000172",
+  "last_seen": "20260914000179",
   "disclosures": [
+    {
+      "rcept_no": "20260914000179",
+      "rcept_dt": "2026-09-14",
+      "corp_name": "조광피혁",
+      "stock_code": "004700",
+      "market": "KOSPI",
+      "corp_code": "00148939",
+      "repror": "박영옥",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "63",
+      "total_cnt": "842,549",
+      "irds_rate": "0",
+      "hold_rate": "12.67",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260914000172",
       "rcept_dt": "2026-09-14",
