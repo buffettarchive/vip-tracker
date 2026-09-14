@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-09-14T15:49+09:00",
+  "updated_at": "2026-09-14T15:59+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260914000249",
+  "last_seen": "20260914000257",
   "disclosures": [
+    {
+      "rcept_no": "20260914000257",
+      "rcept_dt": "2026-09-14",
+      "corp_name": "뉴로메카",
+      "stock_code": "348340",
+      "market": "KOSDAQ",
+      "corp_code": "01336461",
+      "repror": "김정아",
+      "ofcps": "디렉터",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,227",
+      "total_cnt": "1,227",
+      "irds_rate": "0.01",
+      "hold_rate": "0.01",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260914000245",
       "rcept_dt": "2026-09-14",
