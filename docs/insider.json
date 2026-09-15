@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-09-15T13:59+09:00",
+  "updated_at": "2026-09-15T14:19+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260915000167",
+  "last_seen": "20260915000186",
   "disclosures": [
+    {
+      "rcept_no": "20260915000186",
+      "rcept_dt": "2026-09-15",
+      "corp_name": "모나용평",
+      "stock_code": "070960",
+      "market": "KOSPI",
+      "corp_code": "00365989",
+      "repror": "박인준",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "5,700",
+      "total_cnt": "5,700",
+      "irds_rate": "0.01",
+      "hold_rate": "0.01",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260915000167",
       "rcept_dt": "2026-09-15",
