@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-09-16T13:09+09:00",
+  "updated_at": "2026-09-16T13:39+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260916000187",
+  "last_seen": "20260916000196",
   "disclosures": [
+    {
+      "rcept_no": "20260916000196",
+      "rcept_dt": "2026-09-16",
+      "corp_name": "아모레퍼시픽",
+      "stock_code": "090430",
+      "market": "KOSPI",
+      "corp_code": "00583424",
+      "repror": "강명구",
+      "ofcps": "경영자",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "456",
+      "total_cnt": "984",
+      "irds_rate": "0.00",
+      "hold_rate": "0.00",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260916000178",
       "rcept_dt": "2026-09-16",
