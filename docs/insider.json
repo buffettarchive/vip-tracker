@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-09-17T15:49+09:00",
+  "updated_at": "2026-09-17T16:00+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260917000234",
+  "last_seen": "20260917000244",
   "disclosures": [
+    {
+      "rcept_no": "20260917000244",
+      "rcept_dt": "2026-09-17",
+      "corp_name": "상보",
+      "stock_code": "027580",
+      "market": "KOSDAQ",
+      "corp_code": "00129615",
+      "repror": "레이노코리아",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "48,122",
+      "total_cnt": "1,800,484",
+      "irds_rate": "0.40",
+      "hold_rate": "15.21",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260917000234",
       "rcept_dt": "2026-09-17",
