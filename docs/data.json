@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-17T17:59+09:00",
+  "updated_at": "2026-09-17T18:14+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -21,13 +21,13 @@
       "corp_name": "가비아",
       "stock_code": "079940",
       "corp_code": "00506294",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkrt": "14.29",
+      "stkrt_prev": "14.29",
+      "stkqy": "1917916",
+      "report_resn": "시간외매매",
+      "purpose": "경영권",
       "report_nm": "주식등의대량보유상황보고서(일반)",
-      "kind": "기타"
+      "kind": "매수"
     },
     {
       "rcept_no": "20260917000116",
