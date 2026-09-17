@@ -1,6 +1,24 @@
 {
   "entries": [
     {
+      "rcept_no": "20260917000211",
+      "rcept_dt": "20260917",
+      "corp_code": "00136402",
+      "corp_name": "신송홀딩스",
+      "corp_cls": "Y",
+      "report_nm": "주요사항보고서(자기주식취득결정)",
+      "type": "취득",
+      "shares_common": null,
+      "amount_common": null,
+      "acq_purpose": null,
+      "acq_method": null,
+      "acq_period_start": null,
+      "acq_period_end": null,
+      "total_shares": null,
+      "ratio_pct": null,
+      "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260917000211"
+    },
+    {
       "rcept_no": "20260910000446",
       "rcept_dt": "20260910",
       "corp_code": "00104537",
@@ -7339,5 +7357,5 @@
       "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250610000225"
     }
   ],
-  "last_seen": "20260910000446"
+  "last_seen": "20260917000211"
 }
