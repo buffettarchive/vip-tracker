@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-09-17T10:19+09:00",
+  "updated_at": "2026-09-17T10:29+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260917000035",
+  "last_seen": "20260917000053",
   "disclosures": [
+    {
+      "rcept_no": "20260917000053",
+      "rcept_dt": "2026-09-17",
+      "corp_name": "본느",
+      "stock_code": "226340",
+      "market": "KOSDAQ",
+      "corp_code": "01098792",
+      "repror": "구미현",
+      "ofcps": "사내이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "10,326,263",
+      "total_cnt": "10,326,263",
+      "irds_rate": "66.39",
+      "hold_rate": "66.39",
+      "method": "장외매수"
+    },
     {
       "rcept_no": "20260917000021",
       "rcept_dt": "2026-09-17",
