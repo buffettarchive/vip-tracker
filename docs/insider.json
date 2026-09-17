@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-09-17T12:29+09:00",
+  "updated_at": "2026-09-17T13:09+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260917000117",
+  "last_seen": "20260917000123",
   "disclosures": [
+    {
+      "rcept_no": "20260917000123",
+      "rcept_dt": "2026-09-17",
+      "corp_name": "한국첨단소재",
+      "stock_code": "062970",
+      "market": "KOSDAQ",
+      "corp_code": "00403766",
+      "repror": "나카모토투자조합",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "2,958,579",
+      "total_cnt": "5,173,289",
+      "irds_rate": "8.29",
+      "hold_rate": "15.64",
+      "method": "장외매수"
+    },
     {
       "rcept_no": "20260917000117",
       "rcept_dt": "2026-09-17",
