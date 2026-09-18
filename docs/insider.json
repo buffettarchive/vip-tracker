@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-09-18T15:54+09:00",
+  "updated_at": "2026-09-18T16:09+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260918000277",
+  "last_seen": "20260918000299",
   "disclosures": [
+    {
+      "rcept_no": "20260918000289",
+      "rcept_dt": "2026-09-18",
+      "corp_name": "유니크",
+      "stock_code": "011320",
+      "market": "KOSDAQ",
+      "corp_code": "00147152",
+      "repror": "안영구",
+      "ofcps": "대표이사 회장",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "70,000",
+      "total_cnt": "3,988,863",
+      "irds_rate": "0.37",
+      "hold_rate": "20.65",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260918000277",
       "rcept_dt": "2026-09-18",
