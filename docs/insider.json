@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-09-18T15:44+09:00",
+  "updated_at": "2026-09-18T15:54+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260918000272",
+  "last_seen": "20260918000277",
   "disclosures": [
+    {
+      "rcept_no": "20260918000277",
+      "rcept_dt": "2026-09-18",
+      "corp_name": "옵티팜",
+      "stock_code": "153710",
+      "market": "KOSDAQ",
+      "corp_code": "00971726",
+      "repror": "김현일",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "3,000",
+      "total_cnt": "311,650",
+      "irds_rate": "0.02",
+      "hold_rate": "2.12",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260918000264",
       "rcept_dt": "2026-09-18",
