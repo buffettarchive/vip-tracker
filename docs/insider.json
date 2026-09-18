@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-09-18T13:59+09:00",
+  "updated_at": "2026-09-18T14:41+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260918000160",
+  "last_seen": "20260918000188",
   "disclosures": [
+    {
+      "rcept_no": "20260918000188",
+      "rcept_dt": "2026-09-18",
+      "corp_name": "국일신동",
+      "stock_code": "060480",
+      "market": "KOSDAQ",
+      "corp_code": "00203847",
+      "repror": "손인국",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "210,056",
+      "total_cnt": "5,099,560",
+      "irds_rate": "1.89",
+      "hold_rate": "45.98",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260918000160",
       "rcept_dt": "2026-09-18",
