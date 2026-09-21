@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-09-21T10:59+09:00",
+  "updated_at": "2026-09-21T11:29+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260921000069",
+  "last_seen": "20260921000089",
   "disclosures": [
+    {
+      "rcept_no": "20260921000088",
+      "rcept_dt": "2026-09-21",
+      "corp_name": "PN풍년",
+      "stock_code": "024940",
+      "market": "KOSDAQ",
+      "corp_code": "00133557",
+      "repror": "유선준",
+      "ofcps": "상무",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "3,906",
+      "total_cnt": "23,784",
+      "irds_rate": "0.04",
+      "hold_rate": "0.24",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260921000054",
       "rcept_dt": "2026-09-21",
