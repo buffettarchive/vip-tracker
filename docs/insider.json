@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-09-21T14:09+09:00",
+  "updated_at": "2026-09-21T14:39+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260921000120",
+  "last_seen": "20260921000150",
   "disclosures": [
+    {
+      "rcept_no": "20260921000150",
+      "rcept_dt": "2026-09-21",
+      "corp_name": "코아시아씨엠",
+      "stock_code": "196450",
+      "market": "KOSDAQ",
+      "corp_code": "01031502",
+      "repror": "문용권",
+      "ofcps": "상무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "2,000",
+      "total_cnt": "2,000",
+      "irds_rate": "0.02",
+      "hold_rate": "0.02",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260921000101",
       "rcept_dt": "2026-09-21",
