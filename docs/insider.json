@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-09-22T18:14+09:00",
+  "updated_at": "2026-09-22T18:39+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260922000524",
+  "last_seen": "20260922000537",
   "disclosures": [
+    {
+      "rcept_no": "20260922000537",
+      "rcept_dt": "2026-09-22",
+      "corp_name": "레뷰코퍼레이션",
+      "stock_code": "443250",
+      "market": "KOSDAQ",
+      "corp_code": "01468061",
+      "repror": "글로벌커넥트플랫폼홀딩스",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "7,249,400",
+      "total_cnt": "7,249,400",
+      "irds_rate": "67.06",
+      "hold_rate": "67.06",
+      "method": "장외매수"
+    },
     {
       "rcept_no": "20260922000524",
       "rcept_dt": "2026-09-22",
