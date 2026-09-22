@@ -200,7 +200,7 @@ a:hover{opacity:.82}
       <button data-tab="buyback" class="ba-tab" style="font-family:inherit;cursor:pointer;font-size:15px;font-weight:700;padding:11px 20px;border-radius:9999px;border:none;background:#fff;color:#4b4d55;box-shadow:0 3px 0 #e4e2db;transition:transform .12s,box-shadow .12s">자사주 매입</button>
     </div>
     <div style="background:#fff;border-radius:24px;padding:8px 30px 20px;box-shadow:0 2px 4px rgba(22,24,29,.04),0 16px 40px rgba(22,24,29,.08)">
-      <div style="display:flex;justify-content:space-between;align-items:center;padding:22px 0 6px"><span data-panel-title="" style="font-size:17px;font-weight:700">최근 내부자 매수</span><a href="dashboard.html" style="font-size:14px;font-weight:700;color:var(--cobalt)">전체 보기 ›</a></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:22px 0 6px"><span data-panel-title="" style="font-size:17px;font-weight:700">최근 내부자 매수</span><a href="dashboard.html?view=insider" data-panel-link="" style="font-size:14px;font-weight:700;color:var(--cobalt)">전체 보기 ›</a></div>
 
       <div data-panel="insider"><div style="padding:40px 0;text-align:center;color:var(--muted);font-size:14px">불러오는 중…</div></div>
 
@@ -219,7 +219,7 @@ a:hover{opacity:.82}
         <span style="opacity:.82;font-weight:500">주가가 오를 것이라 믿기 때문입니다.</span>
       </blockquote>
       <div style="font-size:15px;font-weight:700;letter-spacing:.03em;opacity:.85;margin-bottom:42px">피터 린치</div>
-      <a href="dashboard.html" class="ba-btn3d-w" style="display:inline-block;background:#fff;color:var(--cobalt);font-family:inherit;font-size:18px;font-weight:700;padding:18px 34px;border:none;border-radius:16px;cursor:pointer;box-shadow:0 6px 0 rgba(0,0,0,.18),0 14px 30px rgba(0,0,0,.22);transition:transform .12s,box-shadow .12s">대시보드 열기</a>
+      <a href="dashboard.html?view=insider" class="ba-btn3d-w" style="display:inline-block;background:#fff;color:var(--cobalt);font-family:inherit;font-size:18px;font-weight:700;padding:18px 34px;border:none;border-radius:16px;cursor:pointer;box-shadow:0 6px 0 rgba(0,0,0,.18),0 14px 30px rgba(0,0,0,.22);transition:transform .12s,box-shadow .12s">대시보드 열기</a>
     </div>
   </section>
 
@@ -252,6 +252,9 @@ a:hover{opacity:.82}
     });
     const tt = document.querySelector("[data-panel-title]");
     if(tt) tt.textContent = titles[t];
+    const views = { insider:"insider", fund:"firm", buyback:"buyback" };
+    const pl = document.querySelector("[data-panel-link]");
+    if(pl) pl.href = "dashboard.html?view=" + (views[t]||"insider");
   }
   document.querySelectorAll("[data-tab]").forEach(b=>{
     b.addEventListener("click", ()=>setTab(b.getAttribute("data-tab")));
