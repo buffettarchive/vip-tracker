@@ -130,6 +130,17 @@ a{color:inherit;text-decoration:none}
 .more-row td{text-align:center;padding:16px}
 .more-btn{font-family:inherit;font-size:13px;font-weight:700;color:#0047FF;background:#e9eeff;border:none;border-radius:999px;padding:9px 18px;cursor:pointer}
 </style>
+<style>
+/* ── 공통 푸터 ── */
+.ba-footer{background:#141518;color:#8b8d93;margin-top:80px;font-family:'Spoqa Han Sans Neo',-apple-system,BlinkMacSystemFont,sans-serif}
+.ba-footer a{color:inherit;text-decoration:none;opacity:1}
+.ba-footer a:hover{color:#fff;opacity:1}
+.ba-f-in{max-width:1200px;margin:0 auto;padding:44px 20px 48px;display:flex;justify-content:space-between;align-items:flex-start;gap:40px}
+.ba-f-info{font-size:13.5px;line-height:1.9;white-space:nowrap}
+.ba-f-info b{color:#e6e7ea;font-weight:700}
+.ba-f-legal{text-align:right;font-size:11.5px;line-height:1.9;color:#6f7176;white-space:nowrap}
+.ba-f-legal p{margin:0}
+</style>
 </head>
 <body>
 <header style="position:sticky;top:0;z-index:100;background:#F8F7F4;border-bottom:1px solid #ecebe5">
@@ -185,6 +196,21 @@ a{color:inherit;text-decoration:none}
     <div class="holdings-card"><table class="holdings-table" id="histTable"></table></div>
   </div>
 </div>
+
+<footer class="ba-footer">
+  <div class="ba-f-in">
+    <div class="ba-f-info">
+      <div><b>Business</b> : <a href="mailto:buffettarchive1@gmail.com">buffettarchive1@gmail.com</a></div>
+      <div><b>Instagram</b> : <a href="https://www.instagram.com/buffettarchive" target="_blank" rel="noopener">@buffettarchive</a></div>
+    </div>
+    <div class="ba-f-legal">
+      <p>※ 국내 공시는 보고의무발생일로부터 5영업일 이내 제출되므로 실제 매매 시점보다 늦을 수 있습니다.</p>
+      <p>※ 13F 보고서는 분기 종료 후 45일 이내 제출되며, 보고 대상 증권의 매수 포지션만 포함합니다.</p>
+      <p>※ 본 사이트는 공시 사실을 정리해 전달할 뿐이며, 특정 종목의 매수 및 매도를 권유하지 않습니다.</p>
+      <p>※ 투자판단과 그에 따른 책임은 이용자 본인에게 있습니다.</p>
+    </div>
+  </div>
+</footer>
 
 <script>
 const $ = s => document.querySelector(s);
