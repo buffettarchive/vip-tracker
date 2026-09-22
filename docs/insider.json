@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-09-22T14:39+09:00",
+  "updated_at": "2026-09-22T14:49+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260922000244",
+  "last_seen": "20260922000250",
   "disclosures": [
+    {
+      "rcept_no": "20260922000248",
+      "rcept_dt": "2026-09-22",
+      "corp_name": "레이",
+      "stock_code": "228670",
+      "market": "KOSDAQ",
+      "corp_code": "00828761",
+      "repror": "그래피",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "4,087,749",
+      "total_cnt": "4,087,749",
+      "irds_rate": "26.14",
+      "hold_rate": "26.14",
+      "method": "장외매수"
+    },
     {
       "rcept_no": "20260922000244",
       "rcept_dt": "2026-09-22",
