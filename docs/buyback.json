@@ -1,6 +1,24 @@
 {
   "entries": [
     {
+      "rcept_no": "20260922000002",
+      "rcept_dt": "20260922",
+      "corp_code": "00425351",
+      "corp_name": "멀티캠퍼스",
+      "corp_cls": "K",
+      "report_nm": "주요사항보고서(자기주식취득결정)",
+      "type": "취득",
+      "shares_common": 172786,
+      "amount_common": 3999995900,
+      "acq_purpose": "주가 안정 및 주주가치 제고",
+      "acq_method": "코스닥 시장을 통한 장내 직접 취득",
+      "acq_period_start": null,
+      "acq_period_end": null,
+      "total_shares": null,
+      "ratio_pct": null,
+      "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260922000002"
+    },
+    {
       "rcept_no": "20260918000321",
       "rcept_dt": "20260918",
       "corp_code": "01042085",
@@ -7429,5 +7447,5 @@
       "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250610000225"
     }
   ],
-  "last_seen": "20260918000321"
+  "last_seen": "20260922000002"
 }
