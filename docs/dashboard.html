@@ -215,6 +215,17 @@ footer#footer{margin:40px 0 0;padding-top:24px;border-top:1px solid var(--line)}
 .search-input:focus{border-color:var(--cobalt);box-shadow:0 0 0 3px rgba(0,71,255,.1)}
 .search-input::placeholder{color:var(--muted);font-weight:400}
 </style>
+<style>
+/* ── 공통 푸터 ── */
+.ba-footer{background:#141518;color:#8b8d93;margin-top:80px;font-family:'Spoqa Han Sans Neo',-apple-system,BlinkMacSystemFont,sans-serif}
+.ba-footer a{color:inherit;text-decoration:none;opacity:1}
+.ba-footer a:hover{color:#fff;opacity:1}
+.ba-f-in{max-width:1200px;margin:0 auto;padding:44px 20px 48px;display:flex;justify-content:space-between;align-items:flex-start;gap:40px}
+.ba-f-info{font-size:13.5px;line-height:1.9;white-space:nowrap}
+.ba-f-info b{color:#e6e7ea;font-weight:700}
+.ba-f-legal{text-align:right;font-size:11.5px;line-height:1.9;color:#6f7176;white-space:nowrap}
+.ba-f-legal p{margin:0}
+</style>
 </head>
 <body>
 
@@ -259,11 +270,22 @@ footer#footer{margin:40px 0 0;padding-top:24px;border-top:1px solid var(--line)}
 
   <ul class="feed" id="feed"></ul>
 
-  <footer id="footer"></footer>
-
-  <div class="contact"><a href="mailto:buffettarchive1@gmail.com"><span id="businessLabel">Business</span> : buffettarchive1@gmail.com</a></div>
-
 </div>
+
+<footer class="ba-footer">
+  <div class="ba-f-in">
+    <div class="ba-f-info">
+      <div><b>Business</b> : <a href="mailto:buffettarchive1@gmail.com">buffettarchive1@gmail.com</a></div>
+      <div><b>Instagram</b> : <a href="https://www.instagram.com/buffettarchive" target="_blank" rel="noopener">@buffettarchive</a></div>
+    </div>
+    <div class="ba-f-legal">
+      <p>※ 국내 공시는 보고의무발생일로부터 5영업일 이내 제출되므로 실제 매매 시점보다 늦을 수 있습니다.</p>
+      <p>※ 13F 보고서는 분기 종료 후 45일 이내 제출되며, 보고 대상 증권의 매수 포지션만 포함합니다.</p>
+      <p>※ 본 사이트는 공시 사실을 정리해 전달할 뿐이며, 특정 종목의 매수 및 매도를 권유하지 않습니다.</p>
+      <p>※ 투자판단과 그에 따른 책임은 이용자 본인에게 있습니다.</p>
+    </div>
+  </div>
+</footer>
 
 <script>
 const $ = s => document.querySelector(s);
@@ -292,7 +314,7 @@ const I18N = {
     badge_aft: "시간외",
     seed: "예시 데이터",
     disclaim_title: "면책조항",
-    disclaim_1: "5% 대량보유보고서 및 임원 및 주요주주 특정증권등 소유상황보고서는 보고의무발생일로부터 5영업일 이내 제출되므로, 표시내용은 실제 매매 시점보다 늦을 수 있습니다.",
+    disclaim_1: "5% 대량보유보고서와 임원 및 주요주주 특정증권등 소유상황보고서는 보고의무발생일로부터 5영업일 이내 제출되므로, 표시내용은 실제 매매 시점보다 늦을 수 있습니다.",
     disclaim_2: "본 사이트는 공시 사실을 정리해 전달할 뿐이며, 특정 종목의 매수 및 매도를 권유하지 않습니다. 투자판단과 책임은 이용자 본인에게 있습니다.",
     business: "Business",
     kind_new: "신규 매수",
@@ -797,12 +819,7 @@ function buildFirmTabs(){
 
 function buildMarketFilter(){ $("#marketFilter").innerHTML=""; $("#marketFilter").style.display="none"; }
 
-function setFooter(){
-  $("#footer").innerHTML = `
-    <div class="dtitle">${t("disclaim_title")}</div>
-    <p class="dline">${t("disclaim_1")}</p>
-    <p class="dline">${t("disclaim_2")}</p>`;
-}
+function setFooter(){ /* 공통 푸터로 대체 */ }
 
 function applyStaticTexts(){
   document.documentElement.lang = LANG;
@@ -810,7 +827,6 @@ function applyStaticTexts(){
   $("#tabInsider").textContent = t("tab_insider");
   $("#tabFirm").textContent = t("tab_firm");
   $("#tabBuyback").textContent = t("tab_buyback");
-  $("#businessLabel").textContent = t("business");
 
   const navGuru = document.getElementById("nav-guru");
   const navInsider = document.getElementById("nav-insider");
