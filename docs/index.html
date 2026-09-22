@@ -93,6 +93,17 @@ a:hover{opacity:.82}
   gtag('js', new Date());
   gtag('config', 'G-6B17RZ2E78');
 </script>
+<style>
+/* ── 공통 푸터 ── */
+.ba-footer{background:#141518;color:#8b8d93;margin-top:80px;font-family:'Spoqa Han Sans Neo',-apple-system,BlinkMacSystemFont,sans-serif}
+.ba-footer a{color:inherit;text-decoration:none;opacity:1}
+.ba-footer a:hover{color:#fff;opacity:1}
+.ba-f-in{max-width:1200px;margin:0 auto;padding:44px 20px 48px;display:flex;justify-content:space-between;align-items:flex-start;gap:40px}
+.ba-f-info{font-size:13.5px;line-height:1.9;white-space:nowrap}
+.ba-f-info b{color:#e6e7ea;font-weight:700}
+.ba-f-legal{text-align:right;font-size:11.5px;line-height:1.9;color:#6f7176;white-space:nowrap}
+.ba-f-legal p{margin:0}
+</style>
 </head>
 <body>
 <div id="ba-root" style="background:var(--bg);color:var(--ink);font-weight:400;min-height:100vh;overflow-x:hidden">
@@ -113,7 +124,7 @@ a:hover{opacity:.82}
 
   <section id="top" data-screen-label="Hero" style="max-width:1200px;margin:0 auto;padding:84px 20px 72px;display:grid;grid-template-columns:1.25fr .85fr;gap:48px;align-items:center">
     <div>
-      <div style="display:inline-flex;align-items:center;gap:8px;background:var(--chip);color:var(--cobalt);font-size:14px;font-weight:700;padding:9px 15px;border-radius:9999px;margin-bottom:26px"><i class="ph-fill ph-lightning" style="font-size:15px"></i> 지금까지 <span id="stat-hero-count">1,497</span>건의 내부자 매수 기록</div>
+      <div style="display:inline-flex;align-items:center;gap:8px;background:var(--chip);color:var(--cobalt);font-size:14px;font-weight:700;padding:9px 15px;border-radius:9999px;margin-bottom:26px"><i class="ph-fill ph-lightning" style="font-size:15px"></i><span>지금까지 <span id="stat-hero-count">1,497</span>건의 내부자 매수 기록</span></div>
       <h1 id="ba-h1" style="font-size:52px;line-height:1.18;letter-spacing:-1.8px;font-weight:700;margin:0 0 22px;white-space:nowrap">가치투자 운용사의 지분공시를<br>한눈에 간편하게</h1>
       <p style="font-size:19px;line-height:1.65;color:#4b4d55;font-weight:400;margin:0 0 36px;max-width:490px">VIP, 얼라인파트너스, 트러스톤 등 국내 유명 자산운용사들의 지분공시를 간편하게 확인합니다</p>
       <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">
@@ -210,29 +221,33 @@ a:hover{opacity:.82}
     </div>
   </section>
 
-  <section id="philosophy" data-screen-label="Philosophy" style="padding:56px 28px">
+  <section id="philosophy" data-screen-label="Philosophy" style="padding:56px 20px 0">
     <div id="ba-band" style="max-width:1200px;margin:0 auto;background:var(--cobalt);border-radius:32px;padding:76px 48px;text-align:center;color:#fff;box-shadow:0 30px 60px rgba(0,71,255,.28)">
       <div style="font-size:72px;line-height:.7;height:38px;opacity:.28;font-weight:700;margin-bottom:20px">&ldquo;</div>
-      <blockquote style="font-size:29px;line-height:1.62;font-weight:600;margin:0 auto 28px;max-width:760px;letter-spacing:-.6px">
+      <blockquote style="font-size:29px;line-height:1.62;font-weight:700;margin:0 auto 28px;max-width:760px;letter-spacing:-.6px">
         내부자가 주식을 파는 이유는 수없이 많지만,<br>
         그들이 주식을 사는 이유는 오직 하나입니다.<br>
-        <span style="opacity:.82;font-weight:500">주가가 오를 것이라 믿기 때문입니다.</span>
+        주가가 오를 것이라 믿기 때문입니다.
       </blockquote>
       <div style="font-size:15px;font-weight:700;letter-spacing:.03em;opacity:.85;margin-bottom:42px">피터 린치</div>
       <a href="dashboard.html?view=insider" class="ba-btn3d-w" style="display:inline-block;background:#fff;color:var(--cobalt);font-family:inherit;font-size:18px;font-weight:700;padding:18px 34px;border:none;border-radius:16px;cursor:pointer;box-shadow:0 6px 0 rgba(0,0,0,.18),0 14px 30px rgba(0,0,0,.22);transition:transform .12s,box-shadow .12s">대시보드 열기</a>
     </div>
   </section>
 
-  <footer data-screen-label="Footer" style="max-width:1200px;margin:0 auto;padding:48px 20px 60px">
-    <img src="logo.png" alt="Buffett Archive" style="height:24px;width:auto;margin-bottom:28px">
-    <div style="padding-top:24px;border-top:1px solid var(--line)">
-      <p style="font-size:13px;font-weight:700;color:var(--ink);margin:0 0 12px">면책조항</p>
-      <p style="font-size:13px;line-height:1.7;color:var(--muted);margin:0 0 8px">해당 공시는 보고의무발생일로부터 5영업일 이내 제출되므로, 표시내용은 실제 매매 시점보다 늦을 수 있습니다.</p>
-      <p style="font-size:13px;line-height:1.7;color:var(--muted);margin:0 0 20px">본 사이트는 공시 사실을 정리해 전달할 뿐이며, 특정 종목의 매수 및 매도를 권유하지 않습니다. 투자판단과 책임은 이용자 본인에게 있습니다.</p>
-      <p style="font-size:13px;margin:0 0 6px"><a href="mailto:buffettarchive1@gmail.com" style="color:var(--ink);font-weight:700">Business : buffettarchive1@gmail.com</a></p>
-      <p style="font-size:12px;color:#b8b9bf;margin:0">© 2026 Buffett Archive. All rights reserved.</p>
+  <footer class="ba-footer">
+  <div class="ba-f-in">
+    <div class="ba-f-info">
+      <div><b>Business</b> : <a href="mailto:buffettarchive1@gmail.com">buffettarchive1@gmail.com</a></div>
+      <div><b>Instagram</b> : <a href="https://www.instagram.com/buffettarchive" target="_blank" rel="noopener">@buffettarchive</a></div>
     </div>
-  </footer>
+    <div class="ba-f-legal">
+      <p>※ 국내 공시는 보고의무발생일로부터 5영업일 이내 제출되므로 실제 매매 시점보다 늦을 수 있습니다.</p>
+      <p>※ 13F 보고서는 분기 종료 후 45일 이내 제출되며, 보고 대상 증권의 매수 포지션만 포함합니다.</p>
+      <p>※ 본 사이트는 공시 사실을 정리해 전달할 뿐이며, 특정 종목의 매수 및 매도를 권유하지 않습니다.</p>
+      <p>※ 투자판단과 그에 따른 책임은 이용자 본인에게 있습니다.</p>
+    </div>
+  </div>
+</footer>
 
 </div>
 
