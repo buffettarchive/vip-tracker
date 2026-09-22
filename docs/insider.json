@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-09-22T17:29+09:00",
+  "updated_at": "2026-09-22T17:46+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260922000494",
+  "last_seen": "20260922000509",
   "disclosures": [
+    {
+      "rcept_no": "20260922000504",
+      "rcept_dt": "2026-09-22",
+      "corp_name": "한세엠케이",
+      "stock_code": "069640",
+      "market": "KOSPI",
+      "corp_code": "00357360",
+      "repror": "조영수",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "16,089",
+      "total_cnt": "73,764",
+      "irds_rate": "0.07",
+      "hold_rate": "0.34",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260922000494",
       "rcept_dt": "2026-09-22",
