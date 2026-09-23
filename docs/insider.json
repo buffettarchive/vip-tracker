@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-09-23T16:54+09:00",
+  "updated_at": "2026-09-23T16:59+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260923000563",
+  "last_seen": "20260923000586",
   "disclosures": [
+    {
+      "rcept_no": "20260923000586",
+      "rcept_dt": "2026-09-23",
+      "corp_name": "신진에스엠",
+      "stock_code": "138070",
+      "market": "KOSDAQ",
+      "corp_code": "00577380",
+      "repror": "김은주",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "500",
+      "total_cnt": "2,459,569",
+      "irds_rate": "0.00",
+      "hold_rate": "14.05",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260923000561",
       "rcept_dt": "2026-09-23",
