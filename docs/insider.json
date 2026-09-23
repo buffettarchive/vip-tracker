@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-09-23T15:09+09:00",
+  "updated_at": "2026-09-23T15:24+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260923000421",
+  "last_seen": "20260923000438",
   "disclosures": [
+    {
+      "rcept_no": "20260923000426",
+      "rcept_dt": "2026-09-23",
+      "corp_name": "인카금융서비스",
+      "stock_code": "211050",
+      "market": "KOSDAQ",
+      "corp_code": "01013694",
+      "repror": "김태열",
+      "ofcps": "부사장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,000",
+      "total_cnt": "22,600",
+      "irds_rate": "0.01",
+      "hold_rate": "0.05",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260923000396",
       "rcept_dt": "2026-09-23",
