@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-23T17:39+09:00",
+  "updated_at": "2026-09-23T18:14+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -21,13 +21,13 @@
       "corp_name": "키움증권",
       "stock_code": "039490",
       "corp_code": "00296290",
-      "stkrt": "",
+      "stkrt": "5.02",
       "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkqy": "1317597",
+      "report_resn": "장내매수",
+      "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "기타"
+      "kind": "매수(신규)"
     },
     {
       "rcept_no": "20260922000396",
