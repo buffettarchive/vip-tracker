@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-09-28T15:29+09:00",
+  "updated_at": "2026-09-28T15:39+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260928000209",
+  "last_seen": "20260928000213",
   "disclosures": [
+    {
+      "rcept_no": "20260928000213",
+      "rcept_dt": "2026-09-28",
+      "corp_name": "만호제강",
+      "stock_code": "001080",
+      "market": "KOSPI",
+      "corp_code": "00120872",
+      "repror": "임관헌",
+      "ofcps": "사장",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "29,590",
+      "total_cnt": "107,609",
+      "irds_rate": "0.09",
+      "hold_rate": "0.31",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260928000203",
       "rcept_dt": "2026-09-28",
