@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-09-28T17:54+09:00",
+  "updated_at": "2026-09-28T18:19+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260928000363",
+  "last_seen": "20260928000386",
   "disclosures": [
+    {
+      "rcept_no": "20260928000370",
+      "rcept_dt": "2026-09-28",
+      "corp_name": "케어랩스",
+      "stock_code": "263700",
+      "market": "KOSDAQ",
+      "corp_code": "01187148",
+      "repror": "원익홀딩스",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "41,474",
+      "total_cnt": "6,492,936",
+      "irds_rate": "0.21",
+      "hold_rate": "33.44",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260928000315",
       "rcept_dt": "2026-09-28",
