@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-09-28T16:49+09:00",
+  "updated_at": "2026-09-28T17:09+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260928000293",
+  "last_seen": "20260928000315",
   "disclosures": [
+    {
+      "rcept_no": "20260928000315",
+      "rcept_dt": "2026-09-28",
+      "corp_name": "웰크론",
+      "stock_code": "065950",
+      "market": "KOSDAQ",
+      "corp_code": "00362159",
+      "repror": "웰크론헬스케어",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "109,873",
+      "total_cnt": "910,369",
+      "irds_rate": "0.38",
+      "hold_rate": "3.22",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260928000293",
       "rcept_dt": "2026-09-28",
