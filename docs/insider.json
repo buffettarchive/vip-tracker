@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-09-29T13:39+09:00",
+  "updated_at": "2026-09-29T14:34+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260929000208",
+  "last_seen": "20260929000275",
   "disclosures": [
+    {
+      "rcept_no": "20260929000275",
+      "rcept_dt": "2026-09-29",
+      "corp_name": "나노신소재",
+      "stock_code": "121600",
+      "market": "KOSDAQ",
+      "corp_code": "00439965",
+      "repror": "안용식",
+      "ofcps": "상무이사",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "2,029",
+      "total_cnt": "2,029",
+      "irds_rate": "0.02",
+      "hold_rate": "0.02",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260929000157",
       "rcept_dt": "2026-09-29",
