@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-09-29T14:34+09:00",
+  "updated_at": "2026-09-29T15:19+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260929000275",
+  "last_seen": "20260929000342",
   "disclosures": [
+    {
+      "rcept_no": "20260929000342",
+      "rcept_dt": "2026-09-29",
+      "corp_name": "LG화학",
+      "stock_code": "051910",
+      "market": "KOSPI",
+      "corp_code": "00356361",
+      "repror": "김상민",
+      "ofcps": "전무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "120",
+      "total_cnt": "420",
+      "irds_rate": "0.00",
+      "hold_rate": "0.00",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260929000275",
       "rcept_dt": "2026-09-29",
