@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-09-29T15:50+09:00",
+  "updated_at": "2026-09-29T15:54+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260929000375",
+  "last_seen": "20260929000415",
   "disclosures": [
+    {
+      "rcept_no": "20260929000409",
+      "rcept_dt": "2026-09-29",
+      "corp_name": "대원강업",
+      "stock_code": "000430",
+      "market": "KOSPI",
+      "corp_code": "00111847",
+      "repror": "현대지에프홀딩스",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "175,110",
+      "total_cnt": "24,969,268",
+      "irds_rate": "0.28",
+      "hold_rate": "40.27",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260929000375",
       "rcept_dt": "2026-09-29",
