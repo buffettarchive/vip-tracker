@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-09-29T10:49+09:00",
+  "updated_at": "2026-09-29T11:29+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20260929000085",
+  "last_seen": "20260929000125",
   "disclosures": [
+    {
+      "rcept_no": "20260929000125",
+      "rcept_dt": "2026-09-29",
+      "corp_name": "에이치시티",
+      "stock_code": "072990",
+      "market": "KOSDAQ",
+      "corp_code": "00527464",
+      "repror": "권용택",
+      "ofcps": "사장",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "25,605",
+      "total_cnt": "1,336,440",
+      "irds_rate": "0.18",
+      "hold_rate": "9.22",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20260929000085",
       "rcept_dt": "2026-09-29",
