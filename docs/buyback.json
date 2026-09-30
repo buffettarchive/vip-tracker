@@ -1,6 +1,24 @@
 {
   "entries": [
     {
+      "rcept_no": "20260930000006",
+      "rcept_dt": "20260930",
+      "corp_code": "00148276",
+      "corp_name": "제일기획",
+      "corp_cls": "Y",
+      "report_nm": "주요사항보고서(자기주식취득결정)",
+      "type": "취득",
+      "shares_common": 2237136,
+      "amount_common": 40000000000,
+      "acq_purpose": "자기주식 취득 및 소각을 통한 주주가치 제고",
+      "acq_method": "유가증권시장을 통한 장내 매수",
+      "acq_period_start": null,
+      "acq_period_end": null,
+      "total_shares": null,
+      "ratio_pct": null,
+      "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260930000006"
+    },
+    {
       "rcept_no": "20260929000352",
       "rcept_dt": "20260929",
       "corp_code": "00877174",
@@ -7591,5 +7609,5 @@
       "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250610000225"
     }
   ],
-  "last_seen": "20260929000352"
+  "last_seen": "20260930000006"
 }
