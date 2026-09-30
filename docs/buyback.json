@@ -1,6 +1,24 @@
 {
   "entries": [
     {
+      "rcept_no": "20260930000163",
+      "rcept_dt": "20260930",
+      "corp_code": "00843900",
+      "corp_name": "육일씨엔에쓰",
+      "corp_cls": "K",
+      "report_nm": "주요사항보고서(자기주식취득결정)",
+      "type": "취득",
+      "shares_common": null,
+      "amount_common": null,
+      "acq_purpose": null,
+      "acq_method": null,
+      "acq_period_start": null,
+      "acq_period_end": null,
+      "total_shares": null,
+      "ratio_pct": null,
+      "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260930000163"
+    },
+    {
       "rcept_no": "20260930000006",
       "rcept_dt": "20260930",
       "corp_code": "00148276",
@@ -7609,5 +7627,5 @@
       "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250610000225"
     }
   ],
-  "last_seen": "20260930000006"
+  "last_seen": "20260930000163"
 }
