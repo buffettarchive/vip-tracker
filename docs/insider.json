@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-10-01T14:09+09:00",
+  "updated_at": "2026-10-01T15:24+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261001000251",
+  "last_seen": "20261001000341",
   "disclosures": [
+    {
+      "rcept_no": "20261001000341",
+      "rcept_dt": "2026-10-01",
+      "corp_name": "벡트",
+      "stock_code": "457600",
+      "market": "KOSDAQ",
+      "corp_code": "01453944",
+      "repror": "케이비엔홀딩스",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "3,001,533",
+      "total_cnt": "3,001,533",
+      "irds_rate": "21.90",
+      "hold_rate": "21.90",
+      "method": "장외매수"
+    },
     {
       "rcept_no": "20261001000238",
       "rcept_dt": "2026-10-01",
