@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-10-01T10:49+09:00",
+  "updated_at": "2026-10-01T11:09+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261001000082",
+  "last_seen": "20261001000097",
   "disclosures": [
+    {
+      "rcept_no": "20261001000097",
+      "rcept_dt": "2026-10-01",
+      "corp_name": "한국알콜",
+      "stock_code": "017890",
+      "market": "KOSDAQ",
+      "corp_code": "00158565",
+      "repror": "TheMiriStrategicEmergingMarketsFundLP",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "55,200",
+      "total_cnt": "3,126,633",
+      "irds_rate": "0.26",
+      "hold_rate": "15.12",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20261001000014",
       "rcept_dt": "2026-10-01",
