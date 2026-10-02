@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-10-02T12:09+09:00",
+  "updated_at": "2026-10-02T12:14+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261002000136",
+  "last_seen": "20261002000139",
   "disclosures": [
+    {
+      "rcept_no": "20261002000139",
+      "rcept_dt": "2026-10-02",
+      "corp_name": "더네이쳐홀딩스",
+      "stock_code": "298540",
+      "market": "KOSDAQ",
+      "corp_code": "01214743",
+      "repror": "현종혁",
+      "ofcps": "대표(CBO)",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "7,736",
+      "total_cnt": "7,736",
+      "irds_rate": "0.05",
+      "hold_rate": "0.05",
+      "method": "시간외매매"
+    },
     {
       "rcept_no": "20261002000136",
       "rcept_dt": "2026-10-02",
