@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-10-02T14:24+09:00",
+  "updated_at": "2026-10-02T14:29+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261002000260",
+  "last_seen": "20261002000281",
   "disclosures": [
+    {
+      "rcept_no": "20261002000281",
+      "rcept_dt": "2026-10-02",
+      "corp_name": "S-Oil",
+      "stock_code": "010950",
+      "market": "KOSPI",
+      "corp_code": "00138279",
+      "repror": "AramcoDownStreamAsiaPte.Ltd.",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "71,739,062",
+      "total_cnt": "71,739,062",
+      "irds_rate": "61.52",
+      "hold_rate": "61.52",
+      "method": "장외매수"
+    },
     {
       "rcept_no": "20261002000207",
       "rcept_dt": "2026-10-02",
