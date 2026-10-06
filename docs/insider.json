@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-10-02T18:39+09:00",
+  "updated_at": "2026-10-06T09:39+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261002000663",
+  "last_seen": "20261006000007",
   "disclosures": [
+    {
+      "rcept_no": "20261006000007",
+      "rcept_dt": "2026-10-06",
+      "corp_name": "엘디티",
+      "stock_code": "096870",
+      "market": "KOSDAQ",
+      "corp_code": "00540571",
+      "repror": "정남진",
+      "ofcps": "상무이사",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,400",
+      "total_cnt": "6,000",
+      "irds_rate": "0.02",
+      "hold_rate": "0.08",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20261002000661",
       "rcept_dt": "2026-10-02",
