@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-10-06T11:39+09:00",
+  "updated_at": "2026-10-06T13:29+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261006000070",
+  "last_seen": "20261006000108",
   "disclosures": [
+    {
+      "rcept_no": "20261006000108",
+      "rcept_dt": "2026-10-06",
+      "corp_name": "이엘피",
+      "stock_code": "063760",
+      "market": "KOSDAQ",
+      "corp_code": "00374020",
+      "repror": "이재혁",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "14,598",
+      "total_cnt": "2,173,870",
+      "irds_rate": "0.16",
+      "hold_rate": "23.31",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20261006000070",
       "rcept_dt": "2026-10-06",
