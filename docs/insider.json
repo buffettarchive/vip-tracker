@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-10-06T11:24+09:00",
+  "updated_at": "2026-10-06T11:39+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261006000062",
+  "last_seen": "20261006000070",
   "disclosures": [
+    {
+      "rcept_no": "20261006000070",
+      "rcept_dt": "2026-10-06",
+      "corp_name": "성창오토텍",
+      "stock_code": "080470",
+      "market": "KOSDAQ",
+      "corp_code": "00486370",
+      "repror": "우태재",
+      "ofcps": "상무이사",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "4,000",
+      "total_cnt": "8,088",
+      "irds_rate": "0.055",
+      "hold_rate": "0.111",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20261006000062",
       "rcept_dt": "2026-10-06",
