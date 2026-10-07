@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-10-07T14:09+09:00",
+  "updated_at": "2026-10-07T14:29+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261007000203",
+  "last_seen": "20261007000217",
   "disclosures": [
+    {
+      "rcept_no": "20261007000217",
+      "rcept_dt": "2026-10-07",
+      "corp_name": "GH신소재",
+      "stock_code": "130500",
+      "market": "KOSDAQ",
+      "corp_code": "00491938",
+      "repror": "KIM HEEBUM",
+      "ofcps": "전무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "534",
+      "total_cnt": "534",
+      "irds_rate": "0.00367",
+      "hold_rate": "0.00367",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20261007000166",
       "rcept_dt": "2026-10-07",
