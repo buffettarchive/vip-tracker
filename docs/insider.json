@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-10-06T18:44+09:00",
+  "updated_at": "2026-10-07T09:04+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261006000459",
+  "last_seen": "20261006000464",
   "disclosures": [
+    {
+      "rcept_no": "20261006000464",
+      "rcept_dt": "2026-10-07",
+      "corp_name": "윙입푸드",
+      "stock_code": "900340",
+      "market": "KOSDAQ",
+      "corp_code": "01328639",
+      "repror": "WANG XIAN TAO",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "131,743",
+      "total_cnt": "2,154,509",
+      "irds_rate": "-10.03",
+      "hold_rate": "6.05",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20261006000419",
       "rcept_dt": "2026-10-06",
