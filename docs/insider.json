@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-10-07T16:59+09:00",
+  "updated_at": "2026-10-07T17:29+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261007000392",
+  "last_seen": "20261007000406",
   "disclosures": [
+    {
+      "rcept_no": "20261007000406",
+      "rcept_dt": "2026-10-07",
+      "corp_name": "SG",
+      "stock_code": "255220",
+      "market": "KOSDAQ",
+      "corp_code": "00963976",
+      "repror": "김태우",
+      "ofcps": "이사",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "3,572",
+      "total_cnt": "6,342",
+      "irds_rate": "0.00",
+      "hold_rate": "0.00",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20261007000356",
       "rcept_dt": "2026-10-07",
