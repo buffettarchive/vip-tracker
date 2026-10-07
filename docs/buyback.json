@@ -1,6 +1,42 @@
 {
   "entries": [
     {
+      "rcept_no": "20261007000472",
+      "rcept_dt": "20261007",
+      "corp_code": "00362122",
+      "corp_name": "나래나노텍",
+      "corp_cls": "K",
+      "report_nm": "주요사항보고서(자기주식취득결정)",
+      "type": "취득",
+      "shares_common": null,
+      "amount_common": null,
+      "acq_purpose": null,
+      "acq_method": null,
+      "acq_period_start": null,
+      "acq_period_end": null,
+      "total_shares": null,
+      "ratio_pct": null,
+      "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261007000472"
+    },
+    {
+      "rcept_no": "20261007000430",
+      "rcept_dt": "20261007",
+      "corp_code": "00599595",
+      "corp_name": "BGF에코머티리얼즈",
+      "corp_cls": "K",
+      "report_nm": "주요사항보고서(자기주식취득결정)",
+      "type": "취득",
+      "shares_common": null,
+      "amount_common": null,
+      "acq_purpose": null,
+      "acq_method": null,
+      "acq_period_start": null,
+      "acq_period_end": null,
+      "total_shares": null,
+      "ratio_pct": null,
+      "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261007000430"
+    },
+    {
       "rcept_no": "20261002000515",
       "rcept_dt": "20261002",
       "corp_code": "00306162",
@@ -7699,5 +7735,5 @@
       "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250610000225"
     }
   ],
-  "last_seen": "20261002000515"
+  "last_seen": "20261007000472"
 }
