@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-10-06T23:59:21Z",
+  "updated_at": "2026-10-07T00:09:22Z",
   "quotes": {
     "KOSPI": {
       "price": 6941.39,
-      "prev_close": 6971.35,
-      "change": -29.96,
-      "change_pct": -0.43
+      "prev_close": 7003.74,
+      "change": -62.35,
+      "change_pct": -0.89
     },
     "KOSDAQ": {
       "price": 919.92,
-      "prev_close": 894.29,
-      "change": 25.63,
-      "change_pct": 2.87
+      "prev_close": 893.29,
+      "change": 26.63,
+      "change_pct": 2.98
     },
     "S&P 500": {
       "price": 7818.93,
@@ -20,10 +20,10 @@
       "change_pct": 1.25
     },
     "USD/KRW": {
-      "price": 1338.79,
+      "price": 1339.28,
       "prev_close": 1343.75,
-      "change": -4.96,
-      "change_pct": -0.37
+      "change": -4.47,
+      "change_pct": -0.33
     }
   },
   "history": {
@@ -16686,11 +16686,11 @@
           "close": 1343.75
         },
         {
-          "time": "2026-10-06",
+          "time": "2026-10-07",
           "open": 1336.89,
-          "high": 1340.08,
+          "high": 1340.98,
           "low": 1336.38,
-          "close": 1338.79
+          "close": 1339.28
         }
       ],
       "weekly": [
@@ -17434,7 +17434,7 @@
           "open": 1344.29,
           "high": 1346.12,
           "low": 1335.65,
-          "close": 1338.79
+          "close": 1339.28
         }
       ],
       "monthly": [
@@ -17611,7 +17611,7 @@
           "open": 1359.95,
           "high": 1365.9,
           "low": 1335.65,
-          "close": 1338.79
+          "close": 1339.28
         }
       ]
     }
