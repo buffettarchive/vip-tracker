@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-10-08T15:54+09:00",
+  "updated_at": "2026-10-08T16:29+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261008000424",
+  "last_seen": "20261008000460",
   "disclosures": [
+    {
+      "rcept_no": "20261008000440",
+      "rcept_dt": "2026-10-08",
+      "corp_name": "마이크로컨텍솔",
+      "stock_code": "098120",
+      "market": "KOSDAQ",
+      "corp_code": "00568188",
+      "repror": "에셋플러스자산운용",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "21,111",
+      "total_cnt": "947,935",
+      "irds_rate": "0.25",
+      "hold_rate": "11.40",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20261008000424",
       "rcept_dt": "2026-10-08",
