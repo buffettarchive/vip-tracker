@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-08T17:59+09:00",
+  "updated_at": "2026-10-08T18:34+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -21,13 +21,13 @@
       "corp_name": "풍산홀딩스",
       "stock_code": "005810",
       "corp_code": "00155531",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkrt": "6.05",
+      "stkrt_prev": "5.05",
+      "stkqy": "871791",
+      "report_resn": "장내매수",
+      "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "기타"
+      "kind": "매수"
     },
     {
       "rcept_no": "20261008000440",
