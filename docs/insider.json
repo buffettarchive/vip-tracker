@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-10-08T18:25+09:00",
+  "updated_at": "2026-10-08T18:30+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261008000604",
+  "last_seen": "20261008000640",
   "disclosures": [
+    {
+      "rcept_no": "20261008000607",
+      "rcept_dt": "2026-10-08",
+      "corp_name": "신한알파리츠",
+      "stock_code": "293940",
+      "market": "KOSPI",
+      "corp_code": "01276594",
+      "repror": "미래에셋자산운용",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "49,917",
+      "total_cnt": "26,006,454",
+      "irds_rate": "0.04",
+      "hold_rate": "21.50",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20261008000602",
       "rcept_dt": "2026-10-08",
