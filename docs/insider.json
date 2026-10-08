@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-10-08T18:39+09:00",
+  "updated_at": "2026-10-08T19:39+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261008000699",
+  "last_seen": "20261008000714",
   "disclosures": [
+    {
+      "rcept_no": "20261008000701",
+      "rcept_dt": "2026-10-08",
+      "corp_name": "코스모로보틱스",
+      "stock_code": "439960",
+      "market": "KOSDAQ",
+      "corp_code": "01802928",
+      "repror": "오주영",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "8,000",
+      "total_cnt": "3,296,023",
+      "irds_rate": "-0.08",
+      "hold_rate": "10.16",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20261008000689",
       "rcept_dt": "2026-10-08",
