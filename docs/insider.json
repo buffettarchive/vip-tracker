@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-10-08T15:29+09:00",
+  "updated_at": "2026-10-08T15:54+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261008000422",
+  "last_seen": "20261008000424",
   "disclosures": [
+    {
+      "rcept_no": "20261008000424",
+      "rcept_dt": "2026-10-08",
+      "corp_name": "동서",
+      "stock_code": "026960",
+      "market": "KOSPI",
+      "corp_code": "00144395",
+      "repror": "김상헌",
+      "ofcps": "고문",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "300,000",
+      "total_cnt": "16,800,000",
+      "irds_rate": "0.30",
+      "hold_rate": "16.85",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20261008000376",
       "rcept_dt": "2026-10-08",
