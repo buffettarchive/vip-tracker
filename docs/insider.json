@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-10-08T17:35+09:00",
+  "updated_at": "2026-10-08T18:25+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261008000601",
+  "last_seen": "20261008000604",
   "disclosures": [
+    {
+      "rcept_no": "20261008000602",
+      "rcept_dt": "2026-10-08",
+      "corp_name": "롯데리츠",
+      "stock_code": "330590",
+      "market": "KOSPI",
+      "corp_code": "01363818",
+      "repror": "미래에셋자산운용",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "87,905",
+      "total_cnt": "44,332,409",
+      "irds_rate": "0.03",
+      "hold_rate": "15.34",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20261008000598",
       "rcept_dt": "2026-10-08",
