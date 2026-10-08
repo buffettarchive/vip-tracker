@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-10-08T17:30+09:00",
+  "updated_at": "2026-10-08T17:35+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261008000594",
+  "last_seen": "20261008000601",
   "disclosures": [
+    {
+      "rcept_no": "20261008000598",
+      "rcept_dt": "2026-10-08",
+      "corp_name": "ESR켄달스퀘어리츠",
+      "stock_code": "365550",
+      "market": "KOSPI",
+      "corp_code": "01437186",
+      "repror": "미래에셋자산운용",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "40,690",
+      "total_cnt": "46,790,257",
+      "irds_rate": "0.01",
+      "hold_rate": "19.01",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20261008000527",
       "rcept_dt": "2026-10-08",
