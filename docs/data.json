@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-12T12:29+09:00",
+  "updated_at": "2026-10-12T12:34+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -12,15 +12,15 @@
     "Orbis",
     "Pzena"
   ],
-  "last_seen": "20261012000092",
+  "last_seen": "20261012000095",
   "disclosures": [
     {
-      "rcept_no": "20261012000092",
+      "rcept_no": "20261012000095",
       "rcept_dt": "2026-10-12",
       "firm": "피델리티",
-      "corp_name": "GST",
-      "stock_code": "083450",
-      "corp_code": "00540863",
+      "corp_name": "유니셈",
+      "stock_code": "036200",
+      "corp_code": "00260569",
       "stkrt": "",
       "stkrt_prev": "",
       "stkqy": "",
@@ -28,6 +28,21 @@
       "purpose": "",
       "report_nm": "주식등의대량보유상황보고서(약식)",
       "kind": "기타"
+    },
+    {
+      "rcept_no": "20261012000092",
+      "rcept_dt": "2026-10-12",
+      "firm": "피델리티",
+      "corp_name": "GST",
+      "stock_code": "083450",
+      "corp_code": "00540863",
+      "stkrt": "8.12",
+      "stkrt_prev": "9.10",
+      "stkqy": "1497208",
+      "report_resn": "장내매수",
+      "purpose": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매도"
     },
     {
       "rcept_no": "20261012000090",
