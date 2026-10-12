@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-12T12:24+09:00",
+  "updated_at": "2026-10-12T12:29+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -12,15 +12,15 @@
     "Orbis",
     "Pzena"
   ],
-  "last_seen": "20261012000090",
+  "last_seen": "20261012000092",
   "disclosures": [
     {
-      "rcept_no": "20261012000090",
+      "rcept_no": "20261012000092",
       "rcept_dt": "2026-10-12",
       "firm": "피델리티",
-      "corp_name": "달바글로벌",
-      "stock_code": "483650",
-      "corp_code": "01649204",
+      "corp_name": "GST",
+      "stock_code": "083450",
+      "corp_code": "00540863",
       "stkrt": "",
       "stkrt_prev": "",
       "stkqy": "",
@@ -28,6 +28,21 @@
       "purpose": "",
       "report_nm": "주식등의대량보유상황보고서(약식)",
       "kind": "기타"
+    },
+    {
+      "rcept_no": "20261012000090",
+      "rcept_dt": "2026-10-12",
+      "firm": "피델리티",
+      "corp_name": "달바글로벌",
+      "stock_code": "483650",
+      "corp_code": "01649204",
+      "stkrt": "4.98",
+      "stkrt_prev": "5.09",
+      "stkqy": "624318",
+      "report_resn": "장내매수",
+      "purpose": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매도"
     },
     {
       "rcept_no": "20261012000058",
