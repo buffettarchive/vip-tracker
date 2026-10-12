@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-12T16:19+09:00",
+  "updated_at": "2026-10-12T16:24+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -21,13 +21,13 @@
       "corp_name": "롯데관광개발",
       "stock_code": "032350",
       "corp_code": "00231372",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkrt": "15.02",
+      "stkrt_prev": "12.19",
+      "stkqy": "12000199",
+      "report_resn": "장내매수",
+      "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "기타"
+      "kind": "매수"
     },
     {
       "rcept_no": "20261012000096",
