@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-12T16:59+09:00",
+  "updated_at": "2026-10-12T17:04+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -12,8 +12,23 @@
     "Orbis",
     "Pzena"
   ],
-  "last_seen": "20261012000422",
+  "last_seen": "20261012000431",
   "disclosures": [
+    {
+      "rcept_no": "20261012000426",
+      "rcept_dt": "2026-10-12",
+      "firm": "브이아이피자산운용",
+      "corp_name": "아세아",
+      "stock_code": "002030",
+      "corp_code": "00138701",
+      "stkrt": "",
+      "stkrt_prev": "",
+      "stkqy": "",
+      "report_resn": "",
+      "purpose": "",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "기타"
+    },
     {
       "rcept_no": "20261012000326",
       "rcept_dt": "2026-10-12",
