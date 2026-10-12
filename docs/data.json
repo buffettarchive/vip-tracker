@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-12T09:19+09:00",
+  "updated_at": "2026-10-12T10:09+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -12,8 +12,23 @@
     "Orbis",
     "Pzena"
   ],
-  "last_seen": "20261012000021",
+  "last_seen": "20261012000041",
   "disclosures": [
+    {
+      "rcept_no": "20261012000041",
+      "rcept_dt": "2026-10-12",
+      "firm": "Orbis",
+      "corp_name": "한화비전",
+      "stock_code": "489790",
+      "corp_code": "01867758",
+      "stkrt": "8.80",
+      "stkrt_prev": "7.64",
+      "stkqy": "4442775",
+      "report_resn": "장내매수",
+      "purpose": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매수"
+    },
     {
       "rcept_no": "20261008000661",
       "rcept_dt": "2026-10-08",
