@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-12T17:39+09:00",
+  "updated_at": "2026-10-12T17:44+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -21,13 +21,13 @@
       "corp_name": "아세아",
       "stock_code": "002030",
       "corp_code": "00138701",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkrt": "8.50",
+      "stkrt_prev": "9.54",
+      "stkqy": "174915",
+      "report_resn": "장내매도",
+      "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "기타"
+      "kind": "매도"
     },
     {
       "rcept_no": "20261012000326",
