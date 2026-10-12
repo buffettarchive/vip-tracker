@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-10-12T09:29+09:00",
+  "updated_at": "2026-10-12T10:39+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261012000021",
+  "last_seen": "20261012000054",
   "disclosures": [
+    {
+      "rcept_no": "20261012000054",
+      "rcept_dt": "2026-10-12",
+      "corp_name": "LS마린솔루션",
+      "stock_code": "060370",
+      "market": "KOSDAQ",
+      "corp_code": "00225742",
+      "repror": "LS전선",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "221,748",
+      "total_cnt": "35,760,454",
+      "irds_rate": "0.43",
+      "hold_rate": "68.46",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20261012000018",
       "rcept_dt": "2026-10-12",
