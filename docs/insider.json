@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-10-13T09:04+09:00",
+  "updated_at": "2026-10-13T09:19+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261013000005",
+  "last_seen": "20261013000014",
   "disclosures": [
+    {
+      "rcept_no": "20261013000014",
+      "rcept_dt": "2026-10-13",
+      "corp_name": "TYM",
+      "stock_code": "002900",
+      "market": "KOSPI",
+      "corp_code": "00117230",
+      "repror": "최웅경",
+      "ofcps": "부사장(CSO)",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "7,500",
+      "total_cnt": "42,500",
+      "irds_rate": "0.02",
+      "hold_rate": "0.10",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20261013000005",
       "rcept_dt": "2026-10-13",
