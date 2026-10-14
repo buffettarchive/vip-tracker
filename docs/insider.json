@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-10-14T15:39+09:00",
+  "updated_at": "2026-10-14T16:14+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261014000250",
+  "last_seen": "20261014000292",
   "disclosures": [
+    {
+      "rcept_no": "20261014000288",
+      "rcept_dt": "2026-10-14",
+      "corp_name": "유디엠텍",
+      "stock_code": "389680",
+      "market": "KOSDAQ",
+      "corp_code": "01498576",
+      "repror": "이종현",
+      "ofcps": "상무이사",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "2,500",
+      "total_cnt": "2,500",
+      "irds_rate": "0.03",
+      "hold_rate": "0.03",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20261014000240",
       "rcept_dt": "2026-10-14",
