@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-10-14T16:14+09:00",
+  "updated_at": "2026-10-14T16:29+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261014000292",
+  "last_seen": "20261014000322",
   "disclosures": [
+    {
+      "rcept_no": "20261014000316",
+      "rcept_dt": "2026-10-14",
+      "corp_name": "동성케미컬",
+      "stock_code": "102260",
+      "market": "KOSPI",
+      "corp_code": "00679314",
+      "repror": "백진우",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "2,699",
+      "total_cnt": "905,524",
+      "irds_rate": "0.01",
+      "hold_rate": "1.76",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20261014000288",
       "rcept_dt": "2026-10-14",
