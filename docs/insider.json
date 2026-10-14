@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-10-14T11:49+09:00",
+  "updated_at": "2026-10-14T13:29+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261014000099",
+  "last_seen": "20261014000125",
   "disclosures": [
+    {
+      "rcept_no": "20261014000125",
+      "rcept_dt": "2026-10-14",
+      "corp_name": "KG스틸",
+      "stock_code": "016380",
+      "market": "KOSPI",
+      "corp_code": "00115676",
+      "repror": "곽재선",
+      "ofcps": "회장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "100,000",
+      "total_cnt": "200,450",
+      "irds_rate": "0.10",
+      "hold_rate": "0.20",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20261014000099",
       "rcept_dt": "2026-10-14",
