@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-10-13T17:59+09:00",
+  "updated_at": "2026-10-14T09:04+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261013000407",
+  "last_seen": "20261014000004",
   "disclosures": [
+    {
+      "rcept_no": "20261014000004",
+      "rcept_dt": "2026-10-14",
+      "corp_name": "SFA",
+      "stock_code": "056190",
+      "market": "KOSDAQ",
+      "corp_code": "00358271",
+      "repror": "강명길",
+      "ofcps": "상무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "350",
+      "total_cnt": "915",
+      "irds_rate": "0.00",
+      "hold_rate": "0.00",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20261013000401",
       "rcept_dt": "2026-10-13",
