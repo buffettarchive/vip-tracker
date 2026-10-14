@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-10-14T17:24+09:00",
+  "updated_at": "2026-10-14T17:39+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261014000386",
+  "last_seen": "20261014000406",
   "disclosures": [
+    {
+      "rcept_no": "20261014000402",
+      "rcept_dt": "2026-10-14",
+      "corp_name": "동일기연",
+      "stock_code": "032960",
+      "market": "KOSDAQ",
+      "corp_code": "00199076",
+      "repror": "아침해",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "4,002",
+      "total_cnt": "10,863,256",
+      "irds_rate": "0.03",
+      "hold_rate": "61.75",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20261014000386",
       "rcept_dt": "2026-10-14",
