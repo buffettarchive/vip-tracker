@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-10-15T11:20+09:00",
+  "updated_at": "2026-10-15T11:34+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261015000074",
+  "last_seen": "20261015000076",
   "disclosures": [
+    {
+      "rcept_no": "20261015000076",
+      "rcept_dt": "2026-10-15",
+      "corp_name": "RF시스템즈",
+      "stock_code": "474610",
+      "market": "KOSDAQ",
+      "corp_code": "01286476",
+      "repror": "RFHIC",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "40,000",
+      "total_cnt": "2,052,000",
+      "irds_rate": "0.27",
+      "hold_rate": "14.23",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20261015000074",
       "rcept_dt": "2026-10-15",
