@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-10-15T13:29+09:00",
+  "updated_at": "2026-10-15T14:18+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261015000120",
+  "last_seen": "20261015000158",
   "disclosures": [
+    {
+      "rcept_no": "20261015000158",
+      "rcept_dt": "2026-10-15",
+      "corp_name": "이엠앤아이",
+      "stock_code": "083470",
+      "market": "KOSDAQ",
+      "corp_code": "00475718",
+      "repror": "고창훈",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "130,000",
+      "total_cnt": "392,062",
+      "irds_rate": "0.61",
+      "hold_rate": "1.83",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20261015000120",
       "rcept_dt": "2026-10-15",
