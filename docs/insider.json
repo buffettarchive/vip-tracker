@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-10-15T14:49+09:00",
+  "updated_at": "2026-10-15T15:39+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261015000196",
+  "last_seen": "20261015000233",
   "disclosures": [
+    {
+      "rcept_no": "20261015000233",
+      "rcept_dt": "2026-10-15",
+      "corp_name": "한화생명",
+      "stock_code": "088350",
+      "market": "KOSPI",
+      "corp_code": "00113058",
+      "repror": "황진우",
+      "ofcps": "부사장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "2,836",
+      "total_cnt": "77,508",
+      "irds_rate": "0.0003",
+      "hold_rate": "0.0089",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20261015000191",
       "rcept_dt": "2026-10-15",
