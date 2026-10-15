@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-10-15T15:59+09:00",
+  "updated_at": "2026-10-15T16:09+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261015000258",
+  "last_seen": "20261015000263",
   "disclosures": [
+    {
+      "rcept_no": "20261015000263",
+      "rcept_dt": "2026-10-15",
+      "corp_name": "사조산업",
+      "stock_code": "007160",
+      "market": "KOSPI",
+      "corp_code": "00124799",
+      "repror": "사조시스템즈",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "2,400",
+      "total_cnt": "1,519,171",
+      "irds_rate": "0.04",
+      "hold_rate": "30.38",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20261015000258",
       "rcept_dt": "2026-10-15",
