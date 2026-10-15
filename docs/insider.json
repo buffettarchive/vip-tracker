@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-10-15T14:18+09:00",
+  "updated_at": "2026-10-15T14:49+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261015000158",
+  "last_seen": "20261015000196",
   "disclosures": [
+    {
+      "rcept_no": "20261015000191",
+      "rcept_dt": "2026-10-15",
+      "corp_name": "DKME",
+      "stock_code": "015590",
+      "market": "KOSPI",
+      "corp_code": "00108746",
+      "repror": "울프",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "174,704",
+      "total_cnt": "10,810,813",
+      "irds_rate": "0.33",
+      "hold_rate": "20.25",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20261015000158",
       "rcept_dt": "2026-10-15",
