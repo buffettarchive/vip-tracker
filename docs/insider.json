@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-10-15T16:44+09:00",
+  "updated_at": "2026-10-15T17:00+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261015000308",
+  "last_seen": "20261015000315",
   "disclosures": [
+    {
+      "rcept_no": "20261015000315",
+      "rcept_dt": "2026-10-15",
+      "corp_name": "한일홀딩스",
+      "stock_code": "003300",
+      "market": "KOSPI",
+      "corp_code": "00162993",
+      "repror": "박지훈",
+      "ofcps": "부사장",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,832",
+      "total_cnt": "11,400",
+      "irds_rate": "0.01",
+      "hold_rate": "0.04",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20261015000308",
       "rcept_dt": "2026-10-15",
