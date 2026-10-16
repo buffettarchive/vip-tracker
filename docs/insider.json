@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-10-16T14:54+09:00",
+  "updated_at": "2026-10-16T14:59+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261016000212",
+  "last_seen": "20261016000216",
   "disclosures": [
+    {
+      "rcept_no": "20261016000216",
+      "rcept_dt": "2026-10-16",
+      "corp_name": "영화금속",
+      "stock_code": "012280",
+      "market": "KOSPI",
+      "corp_code": "00141413",
+      "repror": "삼신정밀",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "100,000",
+      "total_cnt": "1,572,921",
+      "irds_rate": "1.32",
+      "hold_rate": "16.19",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20261016000171",
       "rcept_dt": "2026-10-16",
