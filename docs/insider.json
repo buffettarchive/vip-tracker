@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-10-16T10:39+09:00",
+  "updated_at": "2026-10-16T10:49+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261016000061",
+  "last_seen": "20261016000069",
   "disclosures": [
+    {
+      "rcept_no": "20261016000069",
+      "rcept_dt": "2026-10-16",
+      "corp_name": "넥스트아이",
+      "stock_code": "137940",
+      "market": "KOSDAQ",
+      "corp_code": "00614593",
+      "repror": "양기일",
+      "ofcps": "부사장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "15,692",
+      "total_cnt": "15,692",
+      "irds_rate": "0.16",
+      "hold_rate": "0.16",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20261016000061",
       "rcept_dt": "2026-10-16",
