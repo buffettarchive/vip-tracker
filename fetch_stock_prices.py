@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-fetch_stock_prices.py v12 - 구루 현재 포트폴리오 시세 업데이트 (완전자동 매핑)
+fetch_stock_prices.py v13 - 구루 현재 포트폴리오 시세 업데이트 (완전자동 매핑)
 
 [티커 결정 순서] 앞 단계에서 가격까지 확보되면 끝, 실패하면 다음 단계로 넘어감
   1. MANUAL           : 사람이 확인한 매핑 (신뢰)
@@ -16,11 +16,13 @@ fetch_stock_prices.py v12 - 구루 현재 포트폴리오 시세 업데이트 (�
   - 채권 자동 제외: CUSIP 7~8번째 자리에 영문자가 있으면 채권(사채, MTN 등)
   - 상장폐지 추정: 최근 14일간 거래가 없으면 가격 없음으로 처리
   - 못 찾은 종목은 7일간 재검색 생략 (실행시간 단축)
+  - 가격, 검색 모두 8개씩 동시조회 (기존 순차조회 대비 대폭 단축)
 
 [출력] docs/stock_prices.json 형식은 기존과 동일 (키 = 대문자 종목명)
 [환경변수] FINNHUB_API_KEY (선택), OPENFIGI_API_KEY (선택, 없어도 작동)
 """
 import json, time, logging, re, os
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timedelta
 from pathlib import Path
 from urllib.request import Request, urlopen
@@ -36,6 +38,8 @@ FH = "https://finnhub.io/api/v1"
 FIGI_KEY = os.environ.get("OPENFIGI_API_KEY", "")
 FIGI_URL = "https://api.openfigi.com/v3/mapping"
 MISS_RETRY_DAYS = 7
+WORKERS = 8          # Yahoo 가격 동시조회 수 (429 오류가 많으면 줄일 것)
+DEAD = "DEAD"        # Yahoo가 "없는 종목"이라고 확답한 경우
 STALE_DAYS = 14
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s", datefmt="%H:%M:%S")
@@ -216,11 +220,12 @@ def names_match(a, b):
 
 # ━━━━━━━━━━━━━━━━━━━━━━ HTTP ━━━━━━━━━━━━━━━━━━━━━━
 
-def get_json(url, timeout=15, tries=3):
+def fetch(url, timeout=15, tries=3):
+    """반환: (HTTP코드, json). 네트워크 실패면 (0, None)"""
     for i in range(tries):
         try:
             with urlopen(Request(url, headers={"User-Agent": YF_UA}), timeout=timeout) as r:
-                return json.loads(r.read())
+                return 200, json.loads(r.read())
         except HTTPError as e:
             if e.code == 429:
                 time.sleep(10 * (i + 1))
@@ -228,28 +233,34 @@ def get_json(url, timeout=15, tries=3):
             if e.code >= 500:
                 time.sleep(2)
                 continue
-            return None
+            return e.code, None
         except Exception:
             time.sleep(1)
-    return None
+    return 0, None
+
+
+def get_json(url, timeout=15, tries=3):
+    return fetch(url, timeout, tries)[1]
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━ 가격 조회 ━━━━━━━━━━━━━━━━━━━━━━
 
 def yf_price(t):
-    """반환: (가격dict, 회사명) 또는 None"""
-    d = get_json(f"https://query1.finance.yahoo.com/v8/finance/chart/{quote(t)}?range=1y&interval=1d&includePrePost=false")
+    """반환: (가격dict, 회사명) / DEAD(없는 종목 확정) / None(일시적 실패)"""
+    code, d = fetch(f"https://query1.finance.yahoo.com/v8/finance/chart/{quote(t)}?range=1y&interval=1d&includePrePost=false")
+    if code in (400, 404, 422):
+        return DEAD
     try:
         res = d["chart"]["result"][0]
     except Exception:
-        return None
+        return DEAD if code == 200 else None
     meta = res.get("meta", {}) or {}
     cur = meta.get("regularMarketPrice")
     if not cur:
-        return None
+        return DEAD
     mt = meta.get("regularMarketTime")
     if mt and time.time() - mt > STALE_DAYS * 86400:
-        return None  # 장기간 거래 없음 = 상장폐지/거래정지 추정
+        return DEAD  # 장기간 거래 없음 = 상장폐지/거래정지 추정
     try:
         cl = [x for x in res["indicators"]["quote"][0]["close"] if x]
     except Exception:
@@ -300,9 +311,28 @@ def fh_price(t):
 
 def get_price(t):
     r = yf_price(t)
+    if r == DEAD:
+        return None
     if not r and FH_KEY:
-        r = fh_price(t)
+        r = fh_price(t)  # Yahoo가 일시적으로 막혔을 때만 Finnhub 사용
     return r
+
+
+def prefetch(tickers, pmemo):
+    """Yahoo 가격을 여러 개 동시에 조회해 pmemo에 채움 (속도 핵심)"""
+    todo = sorted({t for t in tickers if t and valid(t) and t not in pmemo})
+    if not todo:
+        return
+    t0 = time.time()
+    with ThreadPoolExecutor(max_workers=WORKERS) as ex:
+        for t, r in zip(todo, ex.map(yf_price, todo)):
+            if r == DEAD:
+                pmemo[t] = None
+            elif r:
+                pmemo[t] = r
+            # None(일시적 실패)은 비워둠 -> 나중에 한 번 더 시도 + Finnhub
+    ok = sum(1 for t in todo if pmemo.get(t))
+    log.info(f"  가격 동시조회 {len(todo)}개: 성공 {ok}, {time.time()-t0:.0f}초")
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━ 티커 검색 ━━━━━━━━━━━━━━━━━━━━━━
@@ -464,7 +494,7 @@ def main():
             return False
         if t not in pmemo:
             pmemo[t] = get_price(t)
-            time.sleep(0.15)
+            time.sleep(0.1)
         r = pmemo[t]
         if not r:
             no_price[k] = t
@@ -478,6 +508,16 @@ def main():
         prices[k] = {"ticker": t, "name": stocks[k]["name"], **pd}
         no_price.pop(k, None)
         return True
+
+    # ━━ 0단계: 이미 아는 티커 전부 가격 동시조회 ━━
+    cand = set()
+    for k, v in stocks.items():
+        nc = re.sub(r"\s*\([^)]*\)", "", k).strip()
+        nc2 = re.sub(r"\s+FORMERLY$", "", nc).strip()
+        cand.update([MANUAL_UP.get(k), MANUAL_UP.get(nc), MANUAL_UP.get(nc2), cache.get(k)])
+        cand.update(cache.get(f"cusip:{c}") for c in v["cusips"])
+    log.info(f"0단계 가격 동시조회 (동시 {WORKERS}개)")
+    prefetch(cand, pmemo)
 
     # ━━ 1단계: MANUAL, CUSIP 캐시, 이름 캐시 ━━
     pending = []
@@ -534,6 +574,7 @@ def main():
         fmap = openfigi(q)
         for c, t in fmap.items():
             cache[f"cusip:{c}"] = t
+        prefetch(fmap.values(), pmemo)
         still = []
         for k in pending:
             ok = False
@@ -549,25 +590,26 @@ def main():
 
     # ━━ 3단계: Yahoo / Finnhub 이름검색 (회사명 대조 필수) ━━
     if pending:
-        log.info(f"3단계 이름검색: {len(pending)}개")
-        still = []
-        for k in pending:
-            if k in dead:
-                # CUSIP으로 티커는 확정됐는데 가격만 없음 = 상장폐지 추정, 이름검색 불필요
-                still.append(k)
-                continue
-            name = stocks[k]["name"]
-            t = yf_search(name)
+        # CUSIP으로 티커는 확정됐는데 가격만 없음 = 상장폐지 추정, 이름검색 불필요
+        targets = [k for k in pending if k not in dead]
+        log.info(f"3단계 이름검색: {len(targets)}개 (동시 {WORKERS}개)")
+        t0 = time.time()
+        with ThreadPoolExecutor(max_workers=WORKERS) as ex:
+            found = dict(zip(targets, ex.map(lambda k: yf_search(stocks[k]["name"]), targets)))
+        prefetch(found.values(), pmemo)
+        still = [k for k in pending if k in dead]
+        for k in targets:
+            t = found.get(k)
             if t and try_ticker(k, t, False, "Yahoo검색"):
                 cache[k] = t
                 continue
-            t = fh_search(name)
+            t = fh_search(stocks[k]["name"])
             if t and try_ticker(k, t, False, "Finnhub검색"):
                 cache[k] = t
                 continue
             still.append(k)
-            time.sleep(0.15)
         pending = still
+        log.info(f"3단계 완료: 누적 성공 {len(prices)}, {time.time()-t0:.0f}초")
 
     for k in pending:
         cache[f"miss:{k}"] = today.isoformat()
