@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-10-19T15:54+09:00",
+  "updated_at": "2026-10-19T16:09+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261019000222",
+  "last_seen": "20261019000234",
   "disclosures": [
+    {
+      "rcept_no": "20261019000234",
+      "rcept_dt": "2026-10-19",
+      "corp_name": "웹젠",
+      "stock_code": "069080",
+      "market": "KOSDAQ",
+      "corp_code": "00405320",
+      "repror": "김병관",
+      "ofcps": "사내이사 (이사회 의장)",
+      "rgist": "등기임원",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "268,000",
+      "total_cnt": "10,788,000",
+      "irds_rate": "0.87",
+      "hold_rate": "34.84",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20261019000211",
       "rcept_dt": "2026-10-19",
