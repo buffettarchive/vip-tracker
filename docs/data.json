@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T10:04+09:00",
+  "updated_at": "2026-10-19T10:09+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -21,13 +21,13 @@
       "corp_name": "SNT모티브",
       "stock_code": "064960",
       "corp_code": "00398792",
-      "stkrt": "",
+      "stkrt": "5.05",
       "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkqy": "1204510",
+      "report_resn": "장내매도",
+      "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "기타"
+      "kind": "매도"
     },
     {
       "rcept_no": "20261019000031",
@@ -36,13 +36,13 @@
       "corp_name": "이지바이오",
       "stock_code": "353810",
       "corp_code": "01480568",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkrt": "7.87",
+      "stkrt_prev": "6.75",
+      "stkqy": "2602367",
+      "report_resn": "장내매수",
+      "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "기타"
+      "kind": "매수"
     },
     {
       "rcept_no": "20261014000026",
