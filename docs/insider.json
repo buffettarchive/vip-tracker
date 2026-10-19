@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-10-19T09:59+09:00",
+  "updated_at": "2026-10-19T10:09+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261019000023",
+  "last_seen": "20261019000025",
   "disclosures": [
+    {
+      "rcept_no": "20261019000025",
+      "rcept_dt": "2026-10-19",
+      "corp_name": "SBI인베스트먼트",
+      "stock_code": "019550",
+      "market": "KOSDAQ",
+      "corp_code": "00156910",
+      "repror": "남윤선",
+      "ofcps": "사내이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "23,273",
+      "total_cnt": "23,273",
+      "irds_rate": "0.03",
+      "hold_rate": "0.03",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20261019000023",
       "rcept_dt": "2026-10-19",
