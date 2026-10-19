@@ -1,5 +1,5 @@
 """
-fetch_insider.py  (v2 · 코스닥 내부자 '장내/장외 매수'만 정확히 추적)
+fetch_insider.py  (v3, 코스피/코스닥 내부자 '장내/장외 매수'만 정확히 추적 + 공시 PDF 링크 수집)
 ─────────────────────────────────────────────────────────────
 1단계: list로 코스닥(corp_cls=K) 내부자보고(D002) 후보 회사 수집
 2단계: elestock로 회사별 변동을 받아 소유증가(매수 후보)만 1차 선별
@@ -9,6 +9,11 @@ fetch_insider.py  (v2 · 코스닥 내부자 '장내/장외 매수'만 정확히
        취득단가와 매수금액(증감수×단가)도 함께 기록.
 
 본문은 매수 후보에 한해서만 읽으므로 부담을 최소화한다.
+
+4단계(v3): 대시보드의 '선택 항목 PDF 일괄 다운로드'를 위해, 각 공시의
+       DART PDF 다운로드 주소(pdf_url)를 찾아 함께 저장한다.
+       브라우저는 DART 페이지를 직접 읽을 수 없으므로(CORS) 여기서 미리 찾아둔다.
+       PDF 주소가 없는 과거 공시는 최신 것부터 실행마다 PDF_BATCH건씩 자동으로 채운다.
 """
 
 import os
@@ -20,6 +25,8 @@ import time
 import zipfile
 import base64
 import datetime as dt
+import html as htmlmod
+from urllib.parse import urljoin
 
 import requests
 
@@ -32,7 +39,17 @@ GH_PATH = "docs/insider.json"     # 운용사(data.json)와 분리된 별도 파
 GH_BRANCH = "main"
 
 DART = "https://opendart.fss.or.kr/api"
+DART_WEB = "https://dart.fss.or.kr"
 GH_API = "https://api.github.com"
+
+PDF_BATCH = 80          # 한 번 실행에 PDF 주소를 새로 찾는 최대 건수 (최신 공시부터)
+PDF_TIME_BUDGET = 150   # PDF 주소 찾기에 쓰는 최대 시간(초)
+PDF_MAX_TRY = 5         # 이 횟수만큼 실패하면 더 이상 시도하지 않음
+WEB_HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                  "(KHTML, like Gecko) Chrome/124.0 Safari/537.36",
+    "Accept-Language": "ko-KR,ko;q=0.9",
+}
 
 SCAN_DAYS = 3
 INSIDER_REPORT = "임원ㆍ주요주주특정증권등소유상황보고서"
@@ -111,6 +128,81 @@ def parse_insider_doc(rcept_no):
         print(f"[warn] 내부자 본문 파싱 실패 {rcept_no}: {e}", file=sys.stderr)
         # 파싱 실패는 일시적일 수 있으니 nodoc 취급(다음 실행 재시도)
         return {"doc_status": "nodoc"}
+
+
+def find_pdf_url(rcept_no):
+    """
+    DART 공시 뷰어에서 문서번호(dcm_no)를 찾고, PDF 다운로드 팝업에서
+    실제 PDF 파일 주소를 읽어 반환.
+    반환: (pdf_url, dcm_no, 상태)  상태 = "ok" / "neterr"(접속 실패) / "notfound"(문서번호 없음)
+    """
+    viewer = f"{DART_WEB}/dsaf001/main.do?rcpNo={rcept_no}"
+    try:
+        r = s.get(viewer, headers=WEB_HEADERS, timeout=15)
+    except Exception as e:  # noqa
+        print(f"[warn] 뷰어 접속 실패 {rcept_no}: {e}", file=sys.stderr)
+        return None, None, "neterr"
+    if r.status_code != 200:
+        print(f"[warn] 뷰어 응답 {r.status_code} {rcept_no}", file=sys.stderr)
+        return None, None, "neterr"
+    page = r.text
+    dcm_no = None
+    m = re.search(r"openPdfDownload\(\s*['\"]?(\d+)['\"]?\s*,\s*['\"]?(\d+)", page)
+    if m:
+        dcm_no = m.group(2)
+    else:
+        m = re.search(r"\[['\"]dcmNo['\"]\]\s*=\s*['\"](\d+)['\"]", page)
+        if m:
+            dcm_no = m.group(1)
+    if not dcm_no:
+        return None, None, "notfound"
+
+    popup = f"{DART_WEB}/pdf/download/main.do?rcp_no={rcept_no}&dcm_no={dcm_no}"
+    try:
+        r2 = s.get(popup, headers={**WEB_HEADERS, "Referer": viewer}, timeout=15)
+        hrefs = re.findall(r"href\s*=\s*['\"]([^'\"]*pdf\.do[^'\"]*)['\"]", r2.text)
+        if hrefs:
+            return urljoin(DART_WEB, htmlmod.unescape(hrefs[0])), dcm_no, "ok"
+    except Exception as e:  # noqa
+        print(f"[warn] PDF 팝업 접속 실패 {rcept_no}: {e}", file=sys.stderr)
+    # 팝업에서 못 찾으면 DART 표준 주소 형식으로 저장 (추정 형식)
+    return f"{DART_WEB}/pdf/download/pdf.do?rcp_no={rcept_no}&dcm_no={dcm_no}", dcm_no, "ok"
+
+
+def fill_pdf_urls(existing):
+    """pdf_url이 없는 공시를 최신순으로 PDF_BATCH건까지 채움. 바뀐 건수 반환"""
+    todo = [d for d in existing.values()
+            if not d.get("pdf_url") and int(d.get("pdf_try", 0) or 0) < PDF_MAX_TRY]
+    todo.sort(key=lambda x: x.get("rcept_no", ""), reverse=True)
+    if not todo:
+        return 0
+    t0 = time.time()
+    changed = ok = tried = neterr_streak = 0
+    for d in todo[:PDF_BATCH]:
+        if time.time() - t0 > PDF_TIME_BUDGET:
+            break
+        url, dcm_no, st = find_pdf_url(d["rcept_no"])
+        tried += 1
+        if st == "ok":
+            d["pdf_url"] = url
+            d["dcm_no"] = dcm_no
+            d.pop("pdf_try", None)
+            ok += 1
+            changed += 1
+            neterr_streak = 0
+        elif st == "notfound":
+            d["pdf_try"] = int(d.get("pdf_try", 0) or 0) + 1
+            changed += 1
+            neterr_streak = 0
+        else:
+            # 접속 실패는 시도횟수에 넣지 않음. 연속 5회면 DART 쪽 문제로 보고 이번 실행은 중단
+            neterr_streak += 1
+            if neterr_streak >= 5:
+                print("[warn] DART 웹 접속이 연속 실패 → 이번 실행의 PDF 주소 수집 중단", file=sys.stderr)
+                break
+        time.sleep(0.3)
+    print(f"[info] PDF 주소 수집: 시도 {tried}건, 성공 {ok}건, 남은 대상 {len(todo) - ok}건")
+    return changed
 
 
 def gh_get():
@@ -299,8 +391,11 @@ def main():
         all_seen = list(resolved_rcepts) + ([last_seen] if last_seen else [])
         new_last_seen = max(all_seen) if all_seen else last_seen
 
-    if added == 0 and new_last_seen == last_seen:
-        print("[info] 새 내부자 매수 없음 — 변경 없이 종료")
+    # 4) 공시 PDF 다운로드 주소 수집 (신규 공시 + 과거 공시 백필)
+    pdf_changed = fill_pdf_urls(existing)
+
+    if added == 0 and new_last_seen == last_seen and pdf_changed == 0:
+        print("[info] 새 내부자 매수 없음, PDF 주소 변경 없음 → 변경 없이 종료")
         return
     max_seen = new_last_seen
 
@@ -312,7 +407,7 @@ def main():
         "disclosures": merged,
     }
     if gh_put(payload, sha):
-        print(f"[info] 신규 매수 {added}건 추가 → 총 {len(merged)}건, GitHub 반영 완료")
+        print(f"[info] 신규 매수 {added}건 추가, PDF 주소 갱신 {pdf_changed}건 → 총 {len(merged)}건, GitHub 반영 완료")
 
 
 if __name__ == "__main__":
