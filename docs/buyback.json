@@ -1,6 +1,24 @@
 {
   "entries": [
     {
+      "rcept_no": "20261019000160",
+      "rcept_dt": "20261019",
+      "corp_code": "00115931",
+      "corp_name": "디오",
+      "corp_cls": "K",
+      "report_nm": "주요사항보고서(자기주식취득결정)",
+      "type": "취득",
+      "shares_common": null,
+      "amount_common": null,
+      "acq_purpose": null,
+      "acq_method": null,
+      "acq_period_start": null,
+      "acq_period_end": null,
+      "total_shares": null,
+      "ratio_pct": null,
+      "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261019000160"
+    },
+    {
       "rcept_no": "20261019000035",
       "rcept_dt": "20261019",
       "corp_code": "01408999",
@@ -7861,5 +7879,5 @@
       "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250610000225"
     }
   ],
-  "last_seen": "20261019000035"
+  "last_seen": "20261019000160"
 }
