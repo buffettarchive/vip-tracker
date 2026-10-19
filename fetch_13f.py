@@ -1,6 +1,13 @@
 """
-fetch_13f.py — 미국 가치투자 거장 13F 공시 수집 + 한글 종목명 자동 번역
+fetch_13f.py - 미국 가치투자 거장 13F 공시 수집
 버핏아카이브 최종본
+
+v2 변경점
+  - 종목마다 CUSIP(증권 고유번호), 증권종류(titleOfClass), 콜/풋 구분을 함께 저장
+    → fetch_stock_prices.py가 CUSIP으로 정확한 티커를 찾음 (이름 추측 불필요)
+  - 같은 이름이라도 CUSIP이 다르면 별도 종목으로 저장
+    (예: "ISHARES TR" 아래의 여러 ETF가 하나로 뭉치던 문제 해결)
+  - 한글/티커 자동 번역 중단 (잘못된 티커가 종목명에 붙던 문제 해결)
 """
 
 import os, sys, json, time, re, base64
@@ -147,7 +154,27 @@ def safe_get(url, timeout=15):
 # ══════════════════════════════════════════════════════════════════
 # 13F XML 파싱 (정규식 방탄 파서)
 # ══════════════════════════════════════════════════════════════════
-def parse_13f_xml(xml_content):
+# 운용사/신탁 이름만 있는 경우(ISHARES TR 등) 증권종류를 이름에 붙여 구분
+TRUST_LIKE = re.compile(r"\b(TR|TRUST|FD|FDS|FUND|FUNDS|ETF TR|SER TR|SERIES|INDEX FDS|ETF)\b$|\b(ISHARES|SPDR|VANGUARD|INVESCO|PROSHARES|SCHWAB|FIDELITY|SELECT SECTOR)\b")
+GENERIC_CLASS = {"COM", "COMMON", "COM NEW", "SHS", "SHARES", "ORD", "ORD SHS", "CL A", "CL B", "CL C",
+                 "COM CL A", "COM CL B", "COM CL C", "CLASS A", "CLASS B", "CLASS C", "SPONSORED ADR",
+                 "SPONS ADR", "ADR", "ADS", "UNIT", "UNITS", "COM SHS", "COM PAR", "NEW", "SH BEN INT",
+                 "COM UNIT", "UT", "STOCK", "COMMON STOCK", "REG SHS", "NAMEN AKT", "CAP STK CL A",
+                 "CAP STK CL C", "COM SER A", "COM SER C", "ETF", "SHS ETF"}
+
+
+def _tag(block, tag):
+    m = re.search(rf'<[^>/]*\b{tag}\b[^>]*>(.*?)</[^>]*\b{tag}\b[^>]*>', block, re.IGNORECASE | re.DOTALL)
+    return m.group(1).strip() if m else ""
+
+
+def _clean(t):
+    t = t.replace("&amp;", "&").replace("&AMP;", "&")
+    t = re.sub(r"<!\[CDATA\[|\]\]>", "", t)
+    return re.sub(r"\s+", " ", t).strip()
+
+
+def parse_13f_xml(xml_content, mult=1000):
     text = xml_content.decode('utf-8', errors='ignore')
     text = re.sub(r'\sxmlns[^>]*', '', text)
     text = re.sub(r'<[a-zA-Z0-9\-]+:', '<', text)
@@ -156,20 +183,33 @@ def parse_13f_xml(xml_content):
     holdings = {}
     total_val = 0
     for block in blocks:
-        m = re.search(r'<[^>]*nameOfIssuer[^>]*>(.*?)</[^>]*nameOfIssuer>', block, re.IGNORECASE)
-        if not m: continue
-        issuer = m.group(1).strip().upper().replace(".", "").replace(",", "").replace("&AMP;", "&")
-        m2 = re.search(r'<[^>]*value[^>]*>(.*?)</[^>]*value>', block, re.IGNORECASE)
-        try: val = int(float(m2.group(1).strip().replace(',', ''))) * 1000 if m2 else 0
+        raw_name = _tag(block, "nameOfIssuer")
+        if not raw_name: continue
+        issuer = _clean(raw_name).upper().replace(".", "").replace(",", "")
+        cusip = re.sub(r"[^0-9A-Za-z]", "", _tag(block, "cusip")).upper()
+        title = _clean(_tag(block, "titleOfClass")).upper()
+        put_call = _clean(_tag(block, "putCall")).upper()
+        stype = _clean(_tag(block, "sshPrnamtType")).upper() or "SH"
+        m2 = _tag(block, "value")
+        try: val = int(float(m2.replace(',', ''))) * mult if m2 else 0
         except: val = 0
-        m3 = re.search(r'<[^>]*sshPrnamt[^>]*>(.*?)</[^>]*sshPrnamt>', block, re.IGNORECASE)
-        try: shares = int(float(m3.group(1).strip().replace(',', ''))) if m3 else 0
+        m3 = _tag(block, "sshPrnamt")
+        try: shares = int(float(m3.replace(',', ''))) if m3 else 0
         except: shares = 0
-        if issuer in holdings:
-            holdings[issuer]['value'] += val
-            holdings[issuer]['shares'] += shares
+
+        name = issuer
+        if title and title not in GENERIC_CLASS and TRUST_LIKE.search(issuer):
+            name = f"{issuer} {title}"            # ISHARES TR CORE S&P500 ETF
+        if put_call in ("PUT", "CALL"):
+            name = f"{name} ({put_call})"         # 옵션은 주식과 별도 행
+
+        key = (cusip or name) + "|" + put_call
+        if key in holdings:
+            holdings[key]['value'] += val
+            holdings[key]['shares'] += shares
         else:
-            holdings[issuer] = {'name': issuer, 'value': val, 'shares': shares}
+            holdings[key] = {'name': name, 'cusip': cusip, 'title': title, 'type': stype,
+                             'put_call': put_call, 'value': val, 'shares': shares}
         total_val += val
     result = []
     for h in holdings.values():
@@ -208,7 +248,9 @@ def get_valid_13f_holdings(cik):
             continue
         xml_r = safe_get(f"https://www.sec.gov/Archives/edgar/data/{int(cik)}/{acc}/{xml_file}")
         if xml_r and xml_r.status_code == 200:
-            holdings, total = parse_13f_xml(xml_r.content)
+            # 2022-12-31 기준일 이후 공시는 금액이 달러 단위 (이전은 천 달러 단위)
+            mult = 1 if (date or "") >= "2022-12-31" else 1000
+            holdings, total = parse_13f_xml(xml_r.content, mult)
             if holdings:
                 return holdings, total, date
     return [], 0, None
@@ -395,9 +437,7 @@ def main():
         if idx % 10 == 0 and idx < total:
             time.sleep(30)
 
-    # ── 한글 종목명 번역 ──
-    if portfolios:
-        translate_portfolios(portfolios)
+    # 한글/티커 자동 번역은 중단 (잘못된 티커가 종목명에 붙는 문제). 영문 원문 유지.
 
     # ── 업로드 ──
     payload = {
