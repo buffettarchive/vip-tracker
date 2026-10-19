@@ -317,6 +317,7 @@ function findByName(name){
 }
 function getTicker(cusip,name){
   if(cusip&&PRICES[cusip]&&PRICES[cusip].ticker)return PRICES[cusip].ticker;
+  if(cusip&&TICKER_CACHE["cusip:"+cusip])return TICKER_CACHE["cusip:"+cusip];
   if(cusip&&TICKER_CACHE[cusip])return TICKER_CACHE[cusip];
   if(name){
     const key=name.toUpperCase().trim();
@@ -331,6 +332,15 @@ function getTicker(cusip,name){
   return null;
 }
 function getPriceData(cusip,name){
+  // CUSIP이 있으면 CUSIP 또는 정확한 종목명으로만 찾음 (비슷한 이름의 다른 종목 가격이 붙는 것 방지)
+  if(cusip){
+    if(PRICES[cusip])return PRICES[cusip];
+    if(name){
+      const key=name.toUpperCase().trim();
+      if(PRICES[key])return PRICES[key];
+    }
+    return null;
+  }
   if(name){
     // 이름 키로 직접 조회 (v10: stock_prices.json이 이름 기반)
     const key=name.toUpperCase().trim();
@@ -440,8 +450,10 @@ async function renderHistory(){
   const gd=ar.portfolios[activeGuru];
   if(!gd){$("#histGuruName").textContent=activeGuru;$("#histGuruMeta").textContent=quarterLabel(activeHistQ);$("#histTotalVal").textContent="$0";$("#histHoldingCount").textContent="";
     tbl.innerHTML='<tr><td class="empty" colspan="9">이 분기에 해당 구루의 데이터가 없습니다.</td></tr>';if(histChartInstance){histChartInstance.destroy();histChartInstance=null}return}
-  const tv=(gd.total_value_x1000||0)*1000;
-  const hs=(gd.holdings||[]).map(h=>{const v=(h.value_x1000||0)*1000;return{name:h.name,cusip:h.cusip||"",shares:h.shares||0,value:v,weight:tv>0?(v/tv)*100:0}}).sort((a,b)=>b.value-a.value);
+  // 2023년 이후 제출분(2022-12-31 기준일부터)은 SEC 규정 변경으로 금액이 천 달러가 아닌 달러 단위
+  const mult=(gd.report_date||"")>="2022-12-31"?1:1000;
+  const tv=(gd.total_value_x1000||0)*mult;
+  const hs=(gd.holdings||[]).map(h=>{const v=(h.value_x1000||0)*mult;return{name:h.name,cusip:h.cusip||"",shares:h.shares||0,value:v,weight:tv>0?(v/tv)*100:0}}).sort((a,b)=>b.value-a.value);
   $("#histGuruName").textContent=activeGuru;
   $("#histGuruMeta").textContent="보고일: "+(gd.report_date||quarterLabel(activeHistQ));
   $("#histTotalVal").textContent=fmtUSD(tv);
@@ -516,6 +528,7 @@ function renderTable(holdings,tableId,showPrices){
     let rp=h.shares>0?val/h.shares:0;
     const pd=getPriceData(h.cusip,h.name);
     const cp=pd?pd.current_price:null;
+    const staleTip=pd&&pd.stale?` title="마지막 거래일 ${pd.last_trade||"-"} (상장폐지 또는 인수합병 추정, 마지막 거래가 표시)" style="color:var(--muted)"`:"";
     const w52l=pd?pd.week52_low:null;
     const w52h=pd?pd.week52_high:null;
 
@@ -525,7 +538,7 @@ function renderTable(holdings,tableId,showPrices){
       <td>${fmtShares(h.shares)}</td>
       <td>${fmtPrice(rp)}</td>
       <td>${fmtUSD(val)}</td>
-      <td>${cp?fmtPrice(cp):'<span class="dim">-</span>'}</td>
+      <td${staleTip}>${cp?fmtPrice(cp):'<span class="dim">-</span>'}</td>
       <td>${fmtPctChange(rp,cp)}</td>
       <td>${w52l?fmtPrice(w52l):'<span class="dim">-</span>'}</td>
       <td>${w52h?fmtPrice(w52h):'<span class="dim">-</span>'}</td>
