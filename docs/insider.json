@@ -1,8 +1,25 @@
 {
-  "updated_at": "2026-10-19T14:29+09:00",
+  "updated_at": "2026-10-19T14:49+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261019000152",
+  "last_seen": "20261019000163",
   "disclosures": [
+    {
+      "rcept_no": "20261019000163",
+      "rcept_dt": "2026-10-19",
+      "corp_name": "삼립",
+      "stock_code": "005610",
+      "market": "KOSPI",
+      "corp_code": "00125530",
+      "repror": "유민영",
+      "ofcps": "상무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "230",
+      "total_cnt": "230",
+      "irds_rate": "0.00",
+      "hold_rate": "0.00",
+      "method": "장내매수"
+    },
     {
       "rcept_no": "20261019000152",
       "rcept_dt": "2026-10-19",
