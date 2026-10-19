@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         버핏아카이브 DART PDF 일괄 다운로드
 // @namespace    https://www.buffettarchive.co.kr
-// @version      1.0
+// @version      1.1
 // @description  버핏아카이브 내부자매수에서 고른 공시의 PDF를 DART에서 한 번에 받습니다
 // @match        https://dart.fss.or.kr/pdf/download/main.do*
 // @grant        none
@@ -86,9 +86,9 @@
     await sleep(600);
   }
 
+  // 창을 자동으로 닫지 않음: 크롬의 '여러 파일 다운로드 허용' 질문이 이 탭에 뜨기 때문
   if (!fail.length) {
-    show(`완료: ${ok}개 PDF 저장`);
-    setTimeout(() => window.close(), 2500);
+    show(`완료: ${ok}개 PDF 저장 요청\n1개만 받아졌다면 주소창 오른쪽의 다운로드 차단 표시를 눌러 '허용'한 뒤 다시 받아주세요`);
   } else {
     show(`완료: ${ok}개 저장, ${fail.length}개 실패\n${fail.slice(0, 5).join("\n")}`);
     box.style.background = "#e0473b";
