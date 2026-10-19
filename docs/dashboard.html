@@ -869,14 +869,19 @@ $("#feed").addEventListener("click", e=>{
   updateDlBar();
 });
 
-// 숨긴 iframe으로 DART PDF를 하나씩 받음 (브라우저 다운로드 폴더에 저장)
-function downloadViaFrame(url){
-  const f = document.createElement("iframe");
-  f.style.display = "none";
-  f.referrerPolicy = "no-referrer";
-  f.src = url;
-  document.body.appendChild(f);
-  setTimeout(()=>f.remove(), 120000);
+// DART 다운로드 창을 새 탭으로 열고, 받을 목록을 주소 끝(#ba=)에 실어 보냄
+// → DART 탭에 설치된 사용자 스크립트(ba-dart-pdf.user.js)가 목록의 PDF를 한 번에 저장
+const DART_BASE = "https://dart.fss.or.kr";
+
+function dcmOf(x){
+  if(x.dcm_no) return String(x.dcm_no);
+  const m = (x.pdf_url||"").match(/dcm_no=(\d+)/);
+  return m ? m[1] : "";
+}
+
+function fileName(x){
+  const raw = `[${x.corp_name||""}] ${x.repror||""} ${x.rcept_dt||""}`;
+  return raw.replace(/[~|\\/:*?"<>]/g," ").replace(/\s+/g," ").trim();
 }
 
 function flashBtn(text){
@@ -887,25 +892,18 @@ function flashBtn(text){
 
 $("#dlBtn").addEventListener("click", ()=>{
   if(dlRunning || !PICKED.size) return;
-  const ready = SORTED.insider.filter(x=>PICKED.has(x.rcept_no) && x.pdf_url);
+  const ready = SORTED.insider.filter(x=>PICKED.has(x.rcept_no) && dcmOf(x));
   const btn = $("#dlBtn");
   dlRunning = true;
   btn.disabled = true;
   if(!ready.length){ flashBtn(t("dl_wait")); return; }
-  let i = 0;
-  const step = ()=>{
-    if(i >= ready.length){
-      [...PICKED].forEach(r=>setRowPicked(r, false));
-      lastPickIdx = -1;
-      flashBtn(t("dl_done"));
-      return;
-    }
-    downloadViaFrame(ready[i].pdf_url);
-    i++;
-    btn.textContent = `${i} / ${ready.length}`;
-    setTimeout(step, 1200);
-  };
-  step();
+  const list = ready.map(x=>`${x.rcept_no}~${dcmOf(x)}~${fileName(x)}`).join("|");
+  const first = ready[0];
+  const url = `${DART_BASE}/pdf/download/main.do?rcp_no=${first.rcept_no}&dcm_no=${dcmOf(first)}#ba=${encodeURIComponent(list)}`;
+  window.open(url, "_blank");
+  [...PICKED].forEach(r=>setRowPicked(r, false));
+  lastPickIdx = -1;
+  flashBtn(t("dl_done"));
 });
 
 function buildFirmTabs(){
