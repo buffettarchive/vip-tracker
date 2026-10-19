@@ -339,7 +339,7 @@ const I18N = {
     bb_shares_cancel: "소각 주식수",
     bb_amount: "취득 금액",
     dl_wait: "PDF 준비 중",
-    dl_fallback: "DART에서 받기",
+    dl_fail: "다운로드 실패, 다시 시도",
     dl_done: "완료",
     pick_label: "선택"
   },
@@ -380,7 +380,7 @@ const I18N = {
     bb_shares_cancel: "Shares to cancel",
     bb_amount: "Amount",
     dl_wait: "PDF not ready",
-    dl_fallback: "Get from DART",
+    dl_fail: "Failed, try again",
     dl_done: "Done",
     pick_label: "Select"
   }
@@ -872,14 +872,10 @@ $("#feed").addEventListener("click", e=>{
 });
 
 // ── PDF 받기 ──
-// 1순위: Cloudflare 중계(PDF_PROXY)가 DART에서 PDF를 받아 넘겨줌 → 누구나 설치 없이 사용
-//        1개면 PDF 그대로, 여러 개면 ZIP 1개로 저장 (브라우저의 '여러 파일 다운로드' 질문 없음)
-// 2순위: 중계가 실패하면 버튼이 'DART에서 받기'로 바뀌고, 누르면 DART 탭을 열어
-//        Tampermonkey 스크립트(ba-dart-pdf.user.js)가 설치된 PC에서는 그곳에서 받음
+// Cloudflare 중계(PDF_PROXY)가 DART에서 PDF를 받아 넘겨줌 → 누구나 설치 없이 사용
+// 1개면 PDF 그대로, 여러 개면 ZIP 1개로 저장 (브라우저의 '여러 파일 다운로드' 질문 없음)
 const PDF_PROXY = "https://dart-pdf.harold08.workers.dev";
-const DART_BASE = "https://dart.fss.or.kr";
 const JSZIP_SRC = "https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js";
-let dlFallback = false;
 
 function dcmOf(x){
   if(x.dcm_no) return String(x.dcm_no);
@@ -925,12 +921,6 @@ function loadJSZip(){
   return jszipLoading;
 }
 
-function openDartTab(list){
-  const items = list.map(x=>`${x.rcept_no}~${dcmOf(x)}~${fileName(x)}`).join("|");
-  const first = list[0];
-  window.open(`${DART_BASE}/pdf/download/main.do?rcp_no=${first.rcept_no}&dcm_no=${dcmOf(first)}#ba=${encodeURIComponent(items)}`, "_blank");
-}
-
 function endDownload(text, keepSelection){
   const btn = $("#dlBtn");
   btn.textContent = text;
@@ -946,15 +936,6 @@ $("#dlBtn").addEventListener("click", async ()=>{
   const ready = SORTED.insider.filter(x=>PICKED.has(x.rcept_no) && dcmOf(x));
   const btn = $("#dlBtn");
   if(!ready.length){ dlRunning=true; btn.disabled=true; endDownload(t("dl_wait"), true); return; }
-
-  // 중계가 실패한 뒤 다시 누르면 DART 탭 방식으로
-  if(dlFallback){
-    dlFallback = false;
-    openDartTab(ready);
-    dlRunning = true; btn.disabled = true;
-    endDownload(t("dl_done"));
-    return;
-  }
 
   dlRunning = true;
   btn.disabled = true;
@@ -973,9 +954,7 @@ $("#dlBtn").addEventListener("click", async ()=>{
 
   const okList = ready.map((x,i)=>({x, blob: results[i]})).filter(o=>o.blob);
   if(!okList.length){
-    dlFallback = true;
-    dlRunning = false; btn.disabled = false;
-    btn.textContent = t("dl_fallback");
+    endDownload(t("dl_fail"), true);   // 선택은 유지해서 바로 다시 시도할 수 있게
     return;
   }
   try{
