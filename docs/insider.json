@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T20:00+09:00",
+  "updated_at": "2026-10-19T20:05+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20261019000357",
   "disclosures": [
@@ -9518,7 +9518,9 @@
       "total_cnt": "5,173,289",
       "irds_rate": "8.29",
       "hold_rate": "15.64",
-      "method": "장외매수"
+      "method": "장외매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20260917000123&dcm_no=11582905",
+      "dcm_no": "11582905"
     },
     {
       "rcept_no": "20260917000117",
@@ -9535,7 +9537,9 @@
       "total_cnt": "120,427",
       "irds_rate": "0.01",
       "hold_rate": "0.22",
-      "method": "장내매수"
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20260917000117&dcm_no=11582897",
+      "dcm_no": "11582897"
     },
     {
       "rcept_no": "20260917000105",
@@ -9552,7 +9556,9 @@
       "total_cnt": "181,000",
       "irds_rate": "0.21",
       "hold_rate": "0.95",
-      "method": "장내매수"
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20260917000105&dcm_no=11582784",
+      "dcm_no": "11582784"
     },
     {
       "rcept_no": "20260917000097",
@@ -9569,7 +9575,9 @@
       "total_cnt": "210",
       "irds_rate": "0.00",
       "hold_rate": "0.00",
-      "method": "장내매수"
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20260917000097&dcm_no=11582752",
+      "dcm_no": "11582752"
     },
     {
       "rcept_no": "20260917000053",
@@ -9586,7 +9594,9 @@
       "total_cnt": "10,326,263",
       "irds_rate": "66.39",
       "hold_rate": "66.39",
-      "method": "장외매수"
+      "method": "장외매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20260917000053&dcm_no=11582681",
+      "dcm_no": "11582681"
     },
     {
       "rcept_no": "20260917000021",
@@ -9603,7 +9613,9 @@
       "total_cnt": "24,243",
       "irds_rate": "0.01",
       "hold_rate": "0.06",
-      "method": "장내매수"
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20260917000021&dcm_no=11582548",
+      "dcm_no": "11582548"
     },
     {
       "rcept_no": "20260917000002",
@@ -9620,7 +9632,9 @@
       "total_cnt": "2,852,680",
       "irds_rate": "0.02",
       "hold_rate": "3.52",
-      "method": "장내매수"
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20260917000002&dcm_no=11582496",
+      "dcm_no": "11582496"
     },
     {
       "rcept_no": "20260916000508",
@@ -9637,7 +9651,9 @@
       "total_cnt": "2,300",
       "irds_rate": "0.01",
       "hold_rate": "0.02",
-      "method": "장내매수"
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20260916000508&dcm_no=11582282",
+      "dcm_no": "11582282"
     },
     {
       "rcept_no": "20260916000433",
@@ -9654,7 +9670,9 @@
       "total_cnt": "6,451,462",
       "irds_rate": "0.50",
       "hold_rate": "33.23",
-      "method": "장내매수"
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20260916000433&dcm_no=11582004",
+      "dcm_no": "11582004"
     },
     {
       "rcept_no": "20260916000426",
@@ -9671,7 +9689,9 @@
       "total_cnt": "1,763,728",
       "irds_rate": "0.01",
       "hold_rate": "33.12",
-      "method": "장내매수"
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20260916000426&dcm_no=11581983",
+      "dcm_no": "11581983"
     },
     {
       "rcept_no": "20260916000410",
@@ -9688,7 +9708,9 @@
       "total_cnt": "1,689,594",
       "irds_rate": "0.00",
       "hold_rate": "4.12",
-      "method": "장내매수"
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20260916000410&dcm_no=11581931",
+      "dcm_no": "11581931"
     },
     {
       "rcept_no": "20260916000397",
@@ -9705,7 +9727,9 @@
       "total_cnt": "24,794,158",
       "irds_rate": "0.57",
       "hold_rate": "39.99",
-      "method": "장내매수"
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20260916000397&dcm_no=11581877",
+      "dcm_no": "11581877"
     },
     {
       "rcept_no": "20260916000367",
@@ -9722,7 +9746,9 @@
       "total_cnt": "45,717,322",
       "irds_rate": "0.15",
       "hold_rate": "18.58",
-      "method": "장내매수"
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20260916000367&dcm_no=11581707",
+      "dcm_no": "11581707"
     },
     {
       "rcept_no": "20260916000361",
@@ -9739,7 +9765,9 @@
       "total_cnt": "63,577,622",
       "irds_rate": "0.09",
       "hold_rate": "21.12",
-      "method": "장내매수"
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20260916000361&dcm_no=11581689",
+      "dcm_no": "11581689"
     },
     {
       "rcept_no": "20260916000356",
@@ -9756,7 +9784,9 @@
       "total_cnt": "2,257,402",
       "irds_rate": "0.07",
       "hold_rate": "20.08",
-      "method": "장내매수"
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20260916000356&dcm_no=11581681",
+      "dcm_no": "11581681"
     },
     {
       "rcept_no": "20260916000324",
@@ -9773,7 +9803,9 @@
       "total_cnt": "5,089,667",
       "irds_rate": "0.07",
       "hold_rate": "22.87",
-      "method": "장내매수"
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20260916000324&dcm_no=11581569",
+      "dcm_no": "11581569"
     },
     {
       "rcept_no": "20260916000321",
@@ -9790,7 +9822,9 @@
       "total_cnt": "1,097",
       "irds_rate": "0.00",
       "hold_rate": "0.00",
-      "method": "장내매수"
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20260916000321&dcm_no=11581562",
+      "dcm_no": "11581562"
     },
     {
       "rcept_no": "20260916000314",
@@ -9807,7 +9841,9 @@
       "total_cnt": "586",
       "irds_rate": "0.00",
       "hold_rate": "0.00",
-      "method": "장내매수"
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20260916000314&dcm_no=11581508",
+      "dcm_no": "11581508"
     },
     {
       "rcept_no": "20260916000310",
@@ -9824,7 +9860,9 @@
       "total_cnt": "391",
       "irds_rate": "0.00",
       "hold_rate": "0.00",
-      "method": "장내매수"
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20260916000310&dcm_no=11581499",
+      "dcm_no": "11581499"
     },
     {
       "rcept_no": "20260916000308",
@@ -9841,7 +9879,9 @@
       "total_cnt": "882",
       "irds_rate": "0.00",
       "hold_rate": "0.00",
-      "method": "장내매수"
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20260916000308&dcm_no=11581540",
+      "dcm_no": "11581540"
     },
     {
       "rcept_no": "20260916000294",
@@ -9858,7 +9898,9 @@
       "total_cnt": "959",
       "irds_rate": "0.00",
       "hold_rate": "0.00",
-      "method": "장내매수"
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20260916000294&dcm_no=11581430",
+      "dcm_no": "11581430"
     },
     {
       "rcept_no": "20260916000286",
@@ -9875,7 +9917,9 @@
       "total_cnt": "785",
       "irds_rate": "0.00",
       "hold_rate": "0.00",
-      "method": "장내매수"
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20260916000286&dcm_no=11581485",
+      "dcm_no": "11581485"
     },
     {
       "rcept_no": "20260916000275",
@@ -9892,7 +9936,9 @@
       "total_cnt": "465",
       "irds_rate": "0.00",
       "hold_rate": "0.00",
-      "method": "장내매수"
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20260916000275&dcm_no=11581470",
+      "dcm_no": "11581470"
     },
     {
       "rcept_no": "20260916000267",
@@ -9909,7 +9955,9 @@
       "total_cnt": "394",
       "irds_rate": "0.00",
       "hold_rate": "0.00",
-      "method": "장내매수"
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20260916000267&dcm_no=11581458",
+      "dcm_no": "11581458"
     },
     {
       "rcept_no": "20260916000262",
@@ -9926,7 +9974,9 @@
       "total_cnt": "15,634",
       "irds_rate": "0.01",
       "hold_rate": "0.02",
-      "method": "장내매수"
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20260916000262&dcm_no=11581447",
+      "dcm_no": "11581447"
     },
     {
       "rcept_no": "20260916000254",
@@ -9943,7 +9993,9 @@
       "total_cnt": "1,320",
       "irds_rate": "0.00",
       "hold_rate": "0.00",
-      "method": "장내매수"
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20260916000254&dcm_no=11581387",
+      "dcm_no": "11581387"
     },
     {
       "rcept_no": "20260916000247",
@@ -9960,7 +10012,9 @@
       "total_cnt": "3,648",
       "irds_rate": "0.01",
       "hold_rate": "0.01",
-      "method": "장내매수"
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20260916000247&dcm_no=11581414",
+      "dcm_no": "11581414"
     },
     {
       "rcept_no": "20260916000243",
@@ -9977,7 +10031,9 @@
       "total_cnt": "129",
       "irds_rate": "0.00",
       "hold_rate": "0.00",
-      "method": "장내매수"
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20260916000243&dcm_no=11581406",
+      "dcm_no": "11581406"
     },
     {
       "rcept_no": "20260916000236",
@@ -9994,7 +10050,9 @@
       "total_cnt": "266",
       "irds_rate": "0.00",
       "hold_rate": "0.00",
-      "method": "장내매수"
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20260916000236&dcm_no=11581283",
+      "dcm_no": "11581283"
     },
     {
       "rcept_no": "20260916000233",
@@ -10011,7 +10069,9 @@
       "total_cnt": "389,000",
       "irds_rate": "0.79",
       "hold_rate": "5.06",
-      "method": "장내매수"
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20260916000233&dcm_no=11581373",
+      "dcm_no": "11581373"
     },
     {
       "rcept_no": "20260916000230",
@@ -10028,7 +10088,9 @@
       "total_cnt": "291",
       "irds_rate": "0.00",
       "hold_rate": "0.00",
-      "method": "장내매수"
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20260916000230&dcm_no=11581356",
+      "dcm_no": "11581356"
     },
     {
       "rcept_no": "20260916000223",
@@ -10045,7 +10107,9 @@
       "total_cnt": "348",
       "irds_rate": "0.00",
       "hold_rate": "0.00",
-      "method": "장내매수"
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20260916000223&dcm_no=11581315",
+      "dcm_no": "11581315"
     },
     {
       "rcept_no": "20260916000217",
@@ -10062,7 +10126,9 @@
       "total_cnt": "963",
       "irds_rate": "0.00",
       "hold_rate": "0.00",
-      "method": "장내매수"
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20260916000217&dcm_no=11581259",
+      "dcm_no": "11581259"
     },
     {
       "rcept_no": "20260916000214",
@@ -10079,7 +10145,9 @@
       "total_cnt": "1,990",
       "irds_rate": "0.00",
       "hold_rate": "0.00",
-      "method": "장내매수"
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20260916000214&dcm_no=11581233",
+      "dcm_no": "11581233"
     },
     {
       "rcept_no": "20260916000212",
@@ -10096,7 +10164,9 @@
       "total_cnt": "350",
       "irds_rate": "0.00",
       "hold_rate": "0.00",
-      "method": "장내매수"
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20260916000212&dcm_no=11581223",
+      "dcm_no": "11581223"
     },
     {
       "rcept_no": "20260916000211",
@@ -10113,7 +10183,9 @@
       "total_cnt": "571",
       "irds_rate": "0.00",
       "hold_rate": "0.00",
-      "method": "장내매수"
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20260916000211&dcm_no=11581248",
+      "dcm_no": "11581248"
     },
     {
       "rcept_no": "20260916000205",
@@ -10130,7 +10202,9 @@
       "total_cnt": "1,136",
       "irds_rate": "0.00",
       "hold_rate": "0.00",
-      "method": "장내매수"
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20260916000205&dcm_no=11581238",
+      "dcm_no": "11581238"
     },
     {
       "rcept_no": "20260916000203",
@@ -10147,7 +10221,9 @@
       "total_cnt": "3,147",
       "irds_rate": "0.00",
       "hold_rate": "0.00",
-      "method": "장내매수"
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20260916000203&dcm_no=11581219",
+      "dcm_no": "11581219"
     },
     {
       "rcept_no": "20260916000199",
@@ -10164,7 +10240,9 @@
       "total_cnt": "178",
       "irds_rate": "0.00",
       "hold_rate": "0.00",
-      "method": "장내매수"
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20260916000199&dcm_no=11581210",
+      "dcm_no": "11581210"
     },
     {
       "rcept_no": "20260916000196",
@@ -10181,7 +10259,9 @@
       "total_cnt": "984",
       "irds_rate": "0.00",
       "hold_rate": "0.00",
-      "method": "장내매수"
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20260916000196&dcm_no=11581204",
+      "dcm_no": "11581204"
     },
     {
       "rcept_no": "20260916000178",
@@ -10198,7 +10278,9 @@
       "total_cnt": "2,156,706",
       "irds_rate": "0.57",
       "hold_rate": "33.25",
-      "method": "장내매수"
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20260916000178&dcm_no=11581176",
+      "dcm_no": "11581176"
     },
     {
       "rcept_no": "20260916000177",
@@ -10215,7 +10297,9 @@
       "total_cnt": "61,752",
       "irds_rate": "0.94",
       "hold_rate": "0.95",
-      "method": "장내매수"
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20260916000177&dcm_no=11581153",
+      "dcm_no": "11581153"
     },
     {
       "rcept_no": "20260916000169",
@@ -10232,7 +10316,9 @@
       "total_cnt": "2,529,712",
       "irds_rate": "0.02",
       "hold_rate": "25.81",
-      "method": "장내매수"
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20260916000169&dcm_no=11581146",
+      "dcm_no": "11581146"
     },
     {
       "rcept_no": "20260916000159",
@@ -10249,7 +10335,9 @@
       "total_cnt": "10,423,666",
       "irds_rate": "0.25",
       "hold_rate": "19.52",
-      "method": "장내매수"
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20260916000159&dcm_no=11581120",
+      "dcm_no": "11581120"
     },
     {
       "rcept_no": "20260916000130",
@@ -10266,7 +10354,9 @@
       "total_cnt": "6,000",
       "irds_rate": "0.01",
       "hold_rate": "0.03",
-      "method": "장내매수"
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20260916000130&dcm_no=11581035",
+      "dcm_no": "11581035"
     },
     {
       "rcept_no": "20260916000115",
@@ -10283,7 +10373,9 @@
       "total_cnt": "11,618",
       "irds_rate": "0.03",
       "hold_rate": "0.06",
-      "method": "장내매수"
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20260916000115&dcm_no=11581000",
+      "dcm_no": "11581000"
     },
     {
       "rcept_no": "20260916000113",
@@ -10300,7 +10392,9 @@
       "total_cnt": "6,189",
       "irds_rate": "0.03",
       "hold_rate": "0.03",
-      "method": "장내매수"
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20260916000113&dcm_no=11580986",
+      "dcm_no": "11580986"
     },
     {
       "rcept_no": "20260916000104",
@@ -10317,7 +10411,9 @@
       "total_cnt": "17,219,000",
       "irds_rate": "0.36",
       "hold_rate": "41.00",
-      "method": "장내매수"
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20260916000104&dcm_no=11580964",
+      "dcm_no": "11580964"
     },
     {
       "rcept_no": "20260916000070",
@@ -10334,7 +10430,9 @@
       "total_cnt": "26,545,255",
       "irds_rate": "0.10",
       "hold_rate": "39.30",
-      "method": "장내매수"
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20260916000070&dcm_no=11580884",
+      "dcm_no": "11580884"
     },
     {
       "rcept_no": "20260916000068",
@@ -10351,7 +10449,9 @@
       "total_cnt": "160,000",
       "irds_rate": "0.05",
       "hold_rate": "0.17",
-      "method": "장내매수"
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20260916000068&dcm_no=11580880",
+      "dcm_no": "11580880"
     },
     {
       "rcept_no": "20260915000420",
