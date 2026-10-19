@@ -852,11 +852,22 @@ function updateDlBar(){
   if(!dlRunning) btn.textContent = n ? `Download ${n}` : "Download";
 }
 
-// 체크칸 클릭: 링크 이동 막고 선택 토글 (Shift+클릭은 범위 선택)
-$("#feed").addEventListener("click", e=>{
+// ── 체크칸 선택: 클릭, Shift+클릭(범위), 드래그(쭉 끌어서 여러 개) ──
+let drag = null;            // {on: 선택/해제, moved: 끌었는지}
+let suppressClick = false;  // 드래그 직후 생기는 클릭이 공시 링크를 열지 않도록
+let lastMouse = null;
+
+function rowKeyAt(x, y){
+  const el = document.elementFromPoint(x, y);
+  const row = el && el.closest && el.closest("#feed .row.ins");
+  return row ? row.dataset.r : null;
+}
+
+$("#feed").addEventListener("mousedown", e=>{
+  if(e.button !== 0) return;
   const cell = e.target.closest(".pick-cell");
   if(!cell) return;
-  e.preventDefault();
+  e.preventDefault();                       // 글자 선택 방지
   const r = cell.dataset.r;
   if(!r) return;
   const idx = currentList.findIndex(x=>x.rcept_no===r);
@@ -868,8 +879,54 @@ $("#feed").addEventListener("click", e=>{
     setRowPicked(r, on);
   }
   lastPickIdx = idx;
+  drag = { on, moved: false };
+  lastMouse = { x: e.clientX, y: e.clientY };
   updateDlBar();
+  requestAnimationFrame(dragTick);
 });
+
+document.addEventListener("mousemove", e=>{
+  if(!drag) return;
+  lastMouse = { x: e.clientX, y: e.clientY };
+  const r = rowKeyAt(e.clientX, e.clientY);
+  if(r && PICKED.has(r) !== drag.on){
+    setRowPicked(r, drag.on);
+    drag.moved = true;
+    const idx = currentList.findIndex(x=>x.rcept_no===r);
+    if(idx>=0) lastPickIdx = idx;
+    updateDlBar();
+  }
+});
+
+// 화면 위아래 끝으로 끌면 자동 스크롤, 스크롤 중 지나가는 줄도 선택
+function dragTick(){
+  if(!drag || !lastMouse) return;
+  const edge = 70, h = window.innerHeight;
+  let dy = 0;
+  if(lastMouse.y > h - edge) dy = Math.ceil((lastMouse.y - (h - edge)) / 3);
+  else if(lastMouse.y < edge + 74) dy = -Math.ceil(((edge + 74) - lastMouse.y) / 3);
+  if(dy){
+    window.scrollBy(0, dy);
+    const r = rowKeyAt(lastMouse.x, lastMouse.y);
+    if(r && PICKED.has(r) !== drag.on){ setRowPicked(r, drag.on); drag.moved = true; updateDlBar(); }
+  }
+  requestAnimationFrame(dragTick);
+}
+
+document.addEventListener("mouseup", ()=>{
+  if(!drag) return;
+  suppressClick = true;                     // 이어지는 click 한 번은 무시
+  setTimeout(()=>{ suppressClick = false; }, 0);
+  drag = null;
+});
+
+// 체크칸 클릭 또는 드래그 직후 클릭은 공시 링크로 이동하지 않음
+$("#feed").addEventListener("click", e=>{
+  if(e.target.closest(".pick-cell") || suppressClick){
+    e.preventDefault();
+    e.stopPropagation();
+  }
+}, true);
 
 // ── PDF 받기 ──
 // Cloudflare 중계(PDF_PROXY)가 DART에서 PDF를 받아 넘겨줌 → 누구나 설치 없이 사용
