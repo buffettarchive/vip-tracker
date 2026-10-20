@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-10-20T15:19+09:00",
+  "updated_at": "2026-10-20T15:44+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261020000228",
+  "last_seen": "20261020000243",
   "disclosures": [
+    {
+      "rcept_no": "20261020000243",
+      "rcept_dt": "2026-10-20",
+      "corp_name": "파루",
+      "stock_code": "043200",
+      "market": "KOSDAQ",
+      "corp_code": "00266934",
+      "repror": "지본",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "211,263",
+      "total_cnt": "5,025,520",
+      "irds_rate": "1.01",
+      "hold_rate": "24.04",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261020000243&dcm_no=11620054",
+      "dcm_no": "11620054"
+    },
     {
       "rcept_no": "20261020000228",
       "rcept_dt": "2026-10-20",
