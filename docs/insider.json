@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-10-20T09:59+09:00",
+  "updated_at": "2026-10-20T10:19+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261020000051",
+  "last_seen": "20261020000059",
   "disclosures": [
+    {
+      "rcept_no": "20261020000059",
+      "rcept_dt": "2026-10-20",
+      "corp_name": "우리산업",
+      "stock_code": "215360",
+      "market": "KOSDAQ",
+      "corp_code": "01077577",
+      "repror": "우리산업홀딩스",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "26,266",
+      "total_cnt": "3,645,140",
+      "irds_rate": "0.29",
+      "hold_rate": "39.92",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261020000059&dcm_no=11619392",
+      "dcm_no": "11619392"
+    },
     {
       "rcept_no": "20261020000046",
       "rcept_dt": "2026-10-20",
