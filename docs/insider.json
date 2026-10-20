@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-10-20T01:29+09:00",
+  "updated_at": "2026-10-20T09:19+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261019000357",
+  "last_seen": "20261020000016",
   "disclosures": [
+    {
+      "rcept_no": "20261020000016",
+      "rcept_dt": "2026-10-20",
+      "corp_name": "아이티센글로벌",
+      "stock_code": "124500",
+      "market": "KOSDAQ",
+      "corp_code": "00620868",
+      "repror": "강진모",
+      "ofcps": "회장",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "6,190",
+      "total_cnt": "2,863,777",
+      "irds_rate": "0.03",
+      "hold_rate": "12.34",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261020000016&dcm_no=11619308",
+      "dcm_no": "11619308"
+    },
     {
       "rcept_no": "20261019000357",
       "rcept_dt": "2026-10-19",
