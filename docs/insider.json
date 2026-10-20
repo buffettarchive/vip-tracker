@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-10-20T14:49+09:00",
+  "updated_at": "2026-10-20T15:19+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261020000187",
+  "last_seen": "20261020000228",
   "disclosures": [
+    {
+      "rcept_no": "20261020000228",
+      "rcept_dt": "2026-10-20",
+      "corp_name": "와이바이오로직스",
+      "stock_code": "338840",
+      "market": "KOSDAQ",
+      "corp_code": "01226234",
+      "repror": "박범찬",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "6,375",
+      "total_cnt": "297,532",
+      "irds_rate": "0.04",
+      "hold_rate": "1.93",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261020000228&dcm_no=11619970",
+      "dcm_no": "11619970"
+    },
     {
       "rcept_no": "20261020000187",
       "rcept_dt": "2026-10-20",
