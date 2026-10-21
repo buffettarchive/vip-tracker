@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-10-21T16:10+09:00",
+  "updated_at": "2026-10-21T16:24+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261021000267",
+  "last_seen": "20261021000286",
   "disclosures": [
+    {
+      "rcept_no": "20261021000273",
+      "rcept_dt": "2026-10-21",
+      "corp_name": "원익큐브",
+      "stock_code": "014190",
+      "market": "KOSDAQ",
+      "corp_code": "00128175",
+      "repror": "유기연",
+      "ofcps": "상무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "10,000",
+      "total_cnt": "10,000",
+      "irds_rate": "0.03",
+      "hold_rate": "0.03",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261021000273&dcm_no=11621937",
+      "dcm_no": "11621937"
+    },
     {
       "rcept_no": "20261021000265",
       "rcept_dt": "2026-10-21",
