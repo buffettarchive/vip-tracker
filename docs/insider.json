@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-10-21T13:49+09:00",
+  "updated_at": "2026-10-21T13:59+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261021000150",
+  "last_seen": "20261021000155",
   "disclosures": [
+    {
+      "rcept_no": "20261021000155",
+      "rcept_dt": "2026-10-21",
+      "corp_name": "미래에셋증권",
+      "stock_code": "006800",
+      "market": "KOSPI",
+      "corp_code": "00111722",
+      "repror": "김범석",
+      "ofcps": "전무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,000",
+      "total_cnt": "2,540",
+      "irds_rate": "0.00",
+      "hold_rate": "0.00",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261021000155&dcm_no=11621394",
+      "dcm_no": "11621394"
+    },
     {
       "rcept_no": "20261021000150",
       "rcept_dt": "2026-10-21",
