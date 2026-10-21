@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-10-21T11:29+09:00",
+  "updated_at": "2026-10-21T11:39+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261021000102",
+  "last_seen": "20261021000108",
   "disclosures": [
+    {
+      "rcept_no": "20261021000108",
+      "rcept_dt": "2026-10-21",
+      "corp_name": "아이디피",
+      "stock_code": "332370",
+      "market": "KOSDAQ",
+      "corp_code": "01213586",
+      "repror": "빅솔론",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "1,340,105",
+      "total_cnt": "1,340,105",
+      "irds_rate": "10.10",
+      "hold_rate": "10.10",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261021000108&dcm_no=11621116",
+      "dcm_no": "11621116"
+    },
     {
       "rcept_no": "20261021000102",
       "rcept_dt": "2026-10-21",
