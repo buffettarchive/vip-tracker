@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21T14:24+09:00",
+  "updated_at": "2026-10-21T14:29+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -12,7 +12,7 @@
     "Orbis",
     "Pzena"
   ],
-  "last_seen": "20261021000164",
+  "last_seen": "20261021000170",
   "disclosures": [
     {
       "rcept_no": "20261021000164",
@@ -21,13 +21,13 @@
       "corp_name": "오픈놀",
       "stock_code": "440320",
       "corp_code": "01585155",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkrt": "8.53",
+      "stkrt_prev": "11.51",
+      "stkqy": "931125",
+      "report_resn": "보유비율 1% 이상 변동",
+      "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "기타"
+      "kind": "매도"
     },
     {
       "rcept_no": "20261019000050",
