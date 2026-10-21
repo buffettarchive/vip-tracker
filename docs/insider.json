@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-10-21T16:39+09:00",
+  "updated_at": "2026-10-21T17:34+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261021000323",
+  "last_seen": "20261021000392",
   "disclosures": [
+    {
+      "rcept_no": "20261021000392",
+      "rcept_dt": "2026-10-21",
+      "corp_name": "포스코퓨처엠",
+      "stock_code": "003670",
+      "market": "KOSPI",
+      "corp_code": "00155276",
+      "repror": "노호섭",
+      "ofcps": "본부장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "57",
+      "total_cnt": "352",
+      "irds_rate": "0.00",
+      "hold_rate": "0.00",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261021000392&dcm_no=11622380",
+      "dcm_no": "11622380"
+    },
     {
       "rcept_no": "20261021000316",
       "rcept_dt": "2026-10-21",
