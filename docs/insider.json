@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-10-21T16:29+09:00",
+  "updated_at": "2026-10-21T16:39+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261021000304",
+  "last_seen": "20261021000323",
   "disclosures": [
+    {
+      "rcept_no": "20261021000316",
+      "rcept_dt": "2026-10-21",
+      "corp_name": "나노씨엠에스",
+      "stock_code": "247660",
+      "market": "KOSDAQ",
+      "corp_code": "00660459",
+      "repror": "에스에이치에너지알이백",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "30,617",
+      "total_cnt": "1,159,665",
+      "irds_rate": "0.49",
+      "hold_rate": "18.72",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261021000316&dcm_no=11622116",
+      "dcm_no": "11622116"
+    },
     {
       "rcept_no": "20261021000273",
       "rcept_dt": "2026-10-21",
