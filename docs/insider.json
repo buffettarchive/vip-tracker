@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-10-21T09:49+09:00",
+  "updated_at": "2026-10-21T09:59+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261021000028",
+  "last_seen": "20261021000038",
   "disclosures": [
+    {
+      "rcept_no": "20261021000038",
+      "rcept_dt": "2026-10-21",
+      "corp_name": "스마트레이더시스템",
+      "stock_code": "424960",
+      "market": "KOSDAQ",
+      "corp_code": "01555215",
+      "repror": "권정순",
+      "ofcps": "이사",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "2,313",
+      "total_cnt": "13,080",
+      "irds_rate": "0.01",
+      "hold_rate": "0.08",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261021000038&dcm_no=11620877",
+      "dcm_no": "11620877"
+    },
     {
       "rcept_no": "20261021000028",
       "rcept_dt": "2026-10-21",
