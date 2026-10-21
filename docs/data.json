@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21T14:19+09:00",
+  "updated_at": "2026-10-21T14:24+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -12,8 +12,23 @@
     "Orbis",
     "Pzena"
   ],
-  "last_seen": "20261021000162",
+  "last_seen": "20261021000164",
   "disclosures": [
+    {
+      "rcept_no": "20261021000164",
+      "rcept_dt": "2026-10-21",
+      "firm": "라이프자산운용",
+      "corp_name": "오픈놀",
+      "stock_code": "440320",
+      "corp_code": "01585155",
+      "stkrt": "",
+      "stkrt_prev": "",
+      "stkqy": "",
+      "report_resn": "",
+      "purpose": "",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "기타"
+    },
     {
       "rcept_no": "20261019000050",
       "rcept_dt": "2026-10-19",
