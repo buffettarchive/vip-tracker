@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-10-21T10:49+09:00",
+  "updated_at": "2026-10-21T11:29+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261021000087",
+  "last_seen": "20261021000102",
   "disclosures": [
+    {
+      "rcept_no": "20261021000102",
+      "rcept_dt": "2026-10-21",
+      "corp_name": "보락",
+      "stock_code": "002760",
+      "market": "KOSPI",
+      "corp_code": "00123107",
+      "repror": "이종무",
+      "ofcps": "이사",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "5,000",
+      "total_cnt": "15,000",
+      "irds_rate": "0.01",
+      "hold_rate": "0.03",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261021000102&dcm_no=11621072",
+      "dcm_no": "11621072"
+    },
     {
       "rcept_no": "20261021000087",
       "rcept_dt": "2026-10-21",
