@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-10-21T12:19+09:00",
+  "updated_at": "2026-10-21T13:49+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261021000129",
+  "last_seen": "20261021000150",
   "disclosures": [
+    {
+      "rcept_no": "20261021000150",
+      "rcept_dt": "2026-10-21",
+      "corp_name": "세우글로벌",
+      "stock_code": "013000",
+      "market": "KOSPI",
+      "corp_code": "00134176",
+      "repror": "에이스나노켐",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "108,200",
+      "total_cnt": "3,008,200",
+      "irds_rate": "0.38",
+      "hold_rate": "10.48",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261021000150&dcm_no=11621365",
+      "dcm_no": "11621365"
+    },
     {
       "rcept_no": "20261021000129",
       "rcept_dt": "2026-10-21",
