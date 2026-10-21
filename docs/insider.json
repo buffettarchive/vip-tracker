@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-10-21T11:39+09:00",
+  "updated_at": "2026-10-21T12:19+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261021000108",
+  "last_seen": "20261021000129",
   "disclosures": [
+    {
+      "rcept_no": "20261021000129",
+      "rcept_dt": "2026-10-21",
+      "corp_name": "진코스텍",
+      "stock_code": "250030",
+      "market": "KOSDAQ",
+      "corp_code": "01158632",
+      "repror": "황길수",
+      "ofcps": "사내이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,339",
+      "total_cnt": "4,347",
+      "irds_rate": "0.01",
+      "hold_rate": "0.11",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261021000129&dcm_no=11621143",
+      "dcm_no": "11621143"
+    },
     {
       "rcept_no": "20261021000108",
       "rcept_dt": "2026-10-21",
