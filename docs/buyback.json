@@ -1,6 +1,24 @@
 {
   "entries": [
     {
+      "rcept_no": "20261022000004",
+      "rcept_dt": "20261022",
+      "corp_code": "00126308",
+      "corp_name": "삼성E&A",
+      "corp_cls": "Y",
+      "report_nm": "주요사항보고서(자기주식취득결정)",
+      "type": "취득",
+      "shares_common": 16352201,
+      "amount_common": 779999987700,
+      "acq_purpose": "주주가치 제고 및 임직원 주식 보상",
+      "acq_method": "유가증권시장을 통한 장내매수",
+      "acq_period_start": null,
+      "acq_period_end": null,
+      "total_shares": null,
+      "ratio_pct": null,
+      "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261022000004"
+    },
+    {
       "rcept_no": "20261019000305",
       "rcept_dt": "20261019",
       "corp_code": "00302926",
@@ -7897,5 +7915,5 @@
       "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250610000225"
     }
   ],
-  "last_seen": "20261019000305"
+  "last_seen": "20261022000004"
 }
