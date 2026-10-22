@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-10-22T09:19+09:00",
+  "updated_at": "2026-10-22T09:29+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261022000015",
+  "last_seen": "20261022000020",
   "disclosures": [
+    {
+      "rcept_no": "20261022000020",
+      "rcept_dt": "2026-10-22",
+      "corp_name": "멕아이씨에스",
+      "stock_code": "058110",
+      "market": "KOSDAQ",
+      "corp_code": "00270113",
+      "repror": "김종철",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "13,260",
+      "total_cnt": "3,371,898",
+      "irds_rate": "-0.12",
+      "hold_rate": "20.30",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261022000020&dcm_no=11622757",
+      "dcm_no": "11622757"
+    },
     {
       "rcept_no": "20261021000414",
       "rcept_dt": "2026-10-21",
