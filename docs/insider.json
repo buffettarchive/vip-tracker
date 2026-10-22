@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-10-22T15:19+09:00",
+  "updated_at": "2026-10-22T15:44+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261022000225",
+  "last_seen": "20261022000277",
   "disclosures": [
+    {
+      "rcept_no": "20261022000272",
+      "rcept_dt": "2026-10-22",
+      "corp_name": "세화피앤씨",
+      "stock_code": "252500",
+      "market": "KOSDAQ",
+      "corp_code": "01169267",
+      "repror": "이재복",
+      "ofcps": "부사장",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "18,612",
+      "total_cnt": "104,519",
+      "irds_rate": "0.22",
+      "hold_rate": "1.26",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261022000272&dcm_no=11623686",
+      "dcm_no": "11623686"
+    },
     {
       "rcept_no": "20261022000225",
       "rcept_dt": "2026-10-22",
