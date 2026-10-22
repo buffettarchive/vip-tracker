@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-10-22T16:04+09:00",
+  "updated_at": "2026-10-22T16:29+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261022000313",
+  "last_seen": "20261022000358",
   "disclosures": [
+    {
+      "rcept_no": "20261022000351",
+      "rcept_dt": "2026-10-22",
+      "corp_name": "한솔홀딩스",
+      "stock_code": "004150",
+      "market": "KOSPI",
+      "corp_code": "00171636",
+      "repror": "조성민",
+      "ofcps": "부사장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,208",
+      "total_cnt": "1,690,802",
+      "irds_rate": "0.00",
+      "hold_rate": "4.12",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261022000351&dcm_no=11623991",
+      "dcm_no": "11623991"
+    },
     {
       "rcept_no": "20261022000313",
       "rcept_dt": "2026-10-22",
