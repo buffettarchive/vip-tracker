@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-10-23T11:09+09:00",
+  "updated_at": "2026-10-23T11:29+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261023000098",
+  "last_seen": "20261023000119",
   "disclosures": [
+    {
+      "rcept_no": "20261023000118",
+      "rcept_dt": "2026-10-23",
+      "corp_name": "엔비티",
+      "stock_code": "236810",
+      "market": "KOSDAQ",
+      "corp_code": "01051065",
+      "repror": "이지나",
+      "ofcps": "팀장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "15,375",
+      "total_cnt": "154,643",
+      "irds_rate": "0.09",
+      "hold_rate": "0.91",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261023000118&dcm_no=11625126",
+      "dcm_no": "11625126"
+    },
     {
       "rcept_no": "20261023000090",
       "rcept_dt": "2026-10-23",
