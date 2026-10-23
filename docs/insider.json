@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-10-23T16:49+09:00",
+  "updated_at": "2026-10-23T17:09+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261023000408",
+  "last_seen": "20261023000439",
   "disclosures": [
+    {
+      "rcept_no": "20261023000436",
+      "rcept_dt": "2026-10-23",
+      "corp_name": "케이티앤지",
+      "stock_code": "033780",
+      "market": "KOSPI",
+      "corp_code": "00244455",
+      "repror": "백승규",
+      "ofcps": "상무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "700",
+      "total_cnt": "1,143",
+      "irds_rate": "0.00",
+      "hold_rate": "0.00",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261023000436&dcm_no=11626163",
+      "dcm_no": "11626163"
+    },
     {
       "rcept_no": "20261023000395",
       "rcept_dt": "2026-10-23",
