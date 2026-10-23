@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-10-23T15:54+09:00",
+  "updated_at": "2026-10-23T15:59+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261023000339",
+  "last_seen": "20261023000349",
   "disclosures": [
+    {
+      "rcept_no": "20261023000349",
+      "rcept_dt": "2026-10-23",
+      "corp_name": "아가방컴퍼니",
+      "stock_code": "013990",
+      "market": "KOSDAQ",
+      "corp_code": "00138446",
+      "repror": "랑시코리아",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "783,234",
+      "total_cnt": "12,170,000",
+      "irds_rate": "2.38",
+      "hold_rate": "37.00",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261023000349&dcm_no=11625806",
+      "dcm_no": "11625806"
+    },
     {
       "rcept_no": "20261023000330",
       "rcept_dt": "2026-10-23",
