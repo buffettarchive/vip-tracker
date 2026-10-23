@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-10-23T12:34+09:00",
+  "updated_at": "2026-10-23T13:19+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261023000140",
+  "last_seen": "20261023000150",
   "disclosures": [
+    {
+      "rcept_no": "20261023000150",
+      "rcept_dt": "2026-10-23",
+      "corp_name": "아이언디바이스",
+      "stock_code": "464500",
+      "market": "KOSDAQ",
+      "corp_code": "01706794",
+      "repror": "박기태",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "125,000",
+      "total_cnt": "2,800,000",
+      "irds_rate": "0.42",
+      "hold_rate": "20.01",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261023000150&dcm_no=11625175",
+      "dcm_no": "11625175"
+    },
     {
       "rcept_no": "20261023000140",
       "rcept_dt": "2026-10-23",
