@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-10-23T14:24+09:00",
+  "updated_at": "2026-10-23T14:39+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261023000211",
+  "last_seen": "20261023000234",
   "disclosures": [
+    {
+      "rcept_no": "20261023000228",
+      "rcept_dt": "2026-10-23",
+      "corp_name": "티플랙스",
+      "stock_code": "081150",
+      "market": "KOSDAQ",
+      "corp_code": "00497631",
+      "repror": "김영국",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "155,510",
+      "total_cnt": "2,907,901",
+      "irds_rate": "0.64",
+      "hold_rate": "11.98",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261023000228&dcm_no=11625460",
+      "dcm_no": "11625460"
+    },
     {
       "rcept_no": "20261023000195",
       "rcept_dt": "2026-10-23",
