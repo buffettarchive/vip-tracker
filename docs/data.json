@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T10:19+09:00",
+  "updated_at": "2026-10-23T10:24+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -12,8 +12,23 @@
     "Orbis",
     "Pzena"
   ],
-  "last_seen": "20261023000066",
+  "last_seen": "20261023000069",
   "disclosures": [
+    {
+      "rcept_no": "20261023000069",
+      "rcept_dt": "2026-10-23",
+      "firm": "Miri",
+      "corp_name": "한국알콜",
+      "stock_code": "017890",
+      "corp_code": "00158565",
+      "stkrt": "15.74",
+      "stkrt_prev": "14.19",
+      "stkqy": "3254233",
+      "report_resn": "장내매수",
+      "purpose": "일반투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매수"
+    },
     {
       "rcept_no": "20261021000164",
       "rcept_dt": "2026-10-21",
