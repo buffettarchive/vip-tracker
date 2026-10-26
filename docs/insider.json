@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-10-26T17:19+09:00",
+  "updated_at": "2026-10-26T17:34+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261026000331",
+  "last_seen": "20261026000340",
   "disclosures": [
+    {
+      "rcept_no": "20261026000340",
+      "rcept_dt": "2026-10-26",
+      "corp_name": "금호에이치티",
+      "stock_code": "214330",
+      "market": "KOSPI",
+      "corp_code": "00105606",
+      "repror": "오성첨단소재",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "309,900",
+      "total_cnt": "1,890,331",
+      "irds_rate": "2.96",
+      "hold_rate": "18.08",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261026000340&dcm_no=11627676",
+      "dcm_no": "11627676"
+    },
     {
       "rcept_no": "20261026000323",
       "rcept_dt": "2026-10-26",
