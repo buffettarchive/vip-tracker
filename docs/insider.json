@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-10-26T10:49+09:00",
+  "updated_at": "2026-10-26T11:29+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261026000053",
+  "last_seen": "20261026000069",
   "disclosures": [
+    {
+      "rcept_no": "20261026000069",
+      "rcept_dt": "2026-10-26",
+      "corp_name": "바른손이앤에이",
+      "stock_code": "035620",
+      "market": "KOSDAQ",
+      "corp_code": "00259590",
+      "repror": "문양권",
+      "ofcps": "사내이사(대표)",
+      "rgist": "등기임원",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "1,401,693",
+      "total_cnt": "6,153,443",
+      "irds_rate": "7.54",
+      "hold_rate": "33.07",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261026000069&dcm_no=11626643",
+      "dcm_no": "11626643"
+    },
     {
       "rcept_no": "20261026000043",
       "rcept_dt": "2026-10-26",
