@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-10-26T15:39+09:00",
+  "updated_at": "2026-10-26T15:49+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261026000174",
+  "last_seen": "20261026000187",
   "disclosures": [
+    {
+      "rcept_no": "20261026000187",
+      "rcept_dt": "2026-10-26",
+      "corp_name": "NH투자증권",
+      "stock_code": "005940",
+      "market": "KOSPI",
+      "corp_code": "00120182",
+      "repror": "농협금융지주",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "245,000",
+      "total_cnt": "234,707,335",
+      "irds_rate": "0.07",
+      "hold_rate": "63.57",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261026000187&dcm_no=11627019",
+      "dcm_no": "11627019"
+    },
     {
       "rcept_no": "20261026000174",
       "rcept_dt": "2026-10-26",
