@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-10-26T17:04+09:00",
+  "updated_at": "2026-10-26T17:19+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261026000313",
+  "last_seen": "20261026000331",
   "disclosures": [
+    {
+      "rcept_no": "20261026000323",
+      "rcept_dt": "2026-10-26",
+      "corp_name": "성창기업지주",
+      "stock_code": "000180",
+      "market": "KOSPI",
+      "corp_code": "00133335",
+      "repror": "일광개발",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "36,000",
+      "total_cnt": "2,141,500",
+      "irds_rate": "0.26",
+      "hold_rate": "15.35",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261026000323&dcm_no=11627571",
+      "dcm_no": "11627571"
+    },
     {
       "rcept_no": "20261026000308",
       "rcept_dt": "2026-10-26",
