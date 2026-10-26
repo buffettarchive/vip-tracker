@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-10-26T14:19+09:00",
+  "updated_at": "2026-10-26T14:59+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261026000118",
+  "last_seen": "20261026000141",
   "disclosures": [
+    {
+      "rcept_no": "20261026000141",
+      "rcept_dt": "2026-10-26",
+      "corp_name": "삼양컴텍",
+      "stock_code": "484590",
+      "market": "KOSDAQ",
+      "corp_code": "00141583",
+      "repror": "삼양화학공업",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "304,270",
+      "total_cnt": "8,450,000",
+      "irds_rate": "0.73",
+      "hold_rate": "20.50",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261026000141&dcm_no=11626913",
+      "dcm_no": "11626913"
+    },
     {
       "rcept_no": "20261026000118",
       "rcept_dt": "2026-10-26",
