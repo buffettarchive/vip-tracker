@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T17:44+09:00",
+  "updated_at": "2026-10-27T17:49+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -12,8 +12,23 @@
     "Orbis",
     "Pzena"
   ],
-  "last_seen": "20261027000374",
+  "last_seen": "20261027000376",
   "disclosures": [
+    {
+      "rcept_no": "20261027000376",
+      "rcept_dt": "2026-10-27",
+      "firm": "얼라인파트너스자산운용",
+      "corp_name": "덴티움",
+      "stock_code": "145720",
+      "corp_code": "00526599",
+      "stkrt": "",
+      "stkrt_prev": "",
+      "stkqy": "",
+      "report_resn": "",
+      "purpose": "",
+      "report_nm": "주식등의대량보유상황보고서(일반)",
+      "kind": "기타"
+    },
     {
       "rcept_no": "20261027000040",
       "rcept_dt": "2026-10-27",
