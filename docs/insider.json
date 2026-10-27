@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-10-27T15:14+09:00",
+  "updated_at": "2026-10-27T15:39+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261027000211",
+  "last_seen": "20261027000234",
   "disclosures": [
+    {
+      "rcept_no": "20261027000234",
+      "rcept_dt": "2026-10-27",
+      "corp_name": "퀄리타스반도체",
+      "stock_code": "432720",
+      "market": "KOSDAQ",
+      "corp_code": "01584183",
+      "repror": "이종성",
+      "ofcps": "이사",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "4,318",
+      "total_cnt": "68,746",
+      "irds_rate": "0.02",
+      "hold_rate": "0.48",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261027000234&dcm_no=11628755",
+      "dcm_no": "11628755"
+    },
     {
       "rcept_no": "20261027000211",
       "rcept_dt": "2026-10-27",
