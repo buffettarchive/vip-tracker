@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-10-27T14:29+09:00",
+  "updated_at": "2026-10-27T14:49+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261027000160",
+  "last_seen": "20261027000185",
   "disclosures": [
+    {
+      "rcept_no": "20261027000185",
+      "rcept_dt": "2026-10-27",
+      "corp_name": "DSR",
+      "stock_code": "155660",
+      "market": "KOSPI",
+      "corp_code": "00110608",
+      "repror": "홍석빈",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "4,000",
+      "total_cnt": "3,808,478",
+      "irds_rate": "0.02",
+      "hold_rate": "23.80",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261027000185&dcm_no=11628588",
+      "dcm_no": "11628588"
+    },
     {
       "rcept_no": "20261027000144",
       "rcept_dt": "2026-10-27",
