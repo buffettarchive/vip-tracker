@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T17:59+09:00",
+  "updated_at": "2026-10-27T18:14+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -36,13 +36,13 @@
       "corp_name": "덴티움",
       "stock_code": "145720",
       "corp_code": "00526599",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkrt": "10.47",
+      "stkrt_prev": "10.47",
+      "stkqy": "903083",
+      "report_resn": "시간외매매",
+      "purpose": "경영권",
       "report_nm": "주식등의대량보유상황보고서(일반)",
-      "kind": "기타"
+      "kind": "매수"
     },
     {
       "rcept_no": "20261027000040",
