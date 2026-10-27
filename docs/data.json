@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T18:14+09:00",
+  "updated_at": "2026-10-27T18:39+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -21,13 +21,13 @@
       "corp_name": "스틱인베스트먼트",
       "stock_code": "026890",
       "corp_code": "00117498",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkrt": "8.36",
+      "stkrt_prev": "7.63",
+      "stkqy": "3242973",
+      "report_resn": "장내매수",
+      "purpose": "경영권",
       "report_nm": "주식등의대량보유상황보고서(일반)",
-      "kind": "기타"
+      "kind": "매수"
     },
     {
       "rcept_no": "20261027000376",
