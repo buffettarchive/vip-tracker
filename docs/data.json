@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T09:34+09:00",
+  "updated_at": "2026-10-27T09:39+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -21,13 +21,13 @@
       "corp_name": "한국알콜",
       "stock_code": "017890",
       "corp_code": "00158565",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
+      "stkrt": "15.74",
+      "stkrt_prev": "15.58",
+      "stkqy": "3254233",
+      "report_resn": "장내매수",
       "purpose": "",
       "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-      "kind": "기타"
+      "kind": "매수"
     },
     {
       "rcept_no": "20261026000374",
