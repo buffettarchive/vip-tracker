@@ -1,6 +1,24 @@
 {
   "entries": [
     {
+      "rcept_no": "20261028000248",
+      "rcept_dt": "20261028",
+      "corp_code": "00136864",
+      "corp_name": "신원",
+      "corp_cls": "Y",
+      "report_nm": "주요사항보고서(자기주식취득결정)",
+      "type": "취득",
+      "shares_common": null,
+      "amount_common": null,
+      "acq_purpose": null,
+      "acq_method": null,
+      "acq_period_start": null,
+      "acq_period_end": null,
+      "total_shares": null,
+      "ratio_pct": null,
+      "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261028000248"
+    },
+    {
       "rcept_no": "20261028000226",
       "rcept_dt": "20261028",
       "corp_code": "00158565",
@@ -8,10 +26,10 @@
       "corp_cls": "K",
       "report_nm": "주요사항보고서(자기주식취득결정)",
       "type": "취득",
-      "shares_common": null,
-      "amount_common": null,
-      "acq_purpose": null,
-      "acq_method": null,
+      "shares_common": 300000,
+      "amount_common": 4254000000,
+      "acq_purpose": "주주환원정책 이행 및 주주가치 제고",
+      "acq_method": "코스닥 시장을 통한 장내매수",
       "acq_period_start": null,
       "acq_period_end": null,
       "total_shares": null,
@@ -8131,5 +8149,5 @@
       "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250610000225"
     }
   ],
-  "last_seen": "20261028000226"
+  "last_seen": "20261028000248"
 }
