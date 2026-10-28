@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-10-28T16:59+09:00",
+  "updated_at": "2026-10-28T17:19+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261028000371",
+  "last_seen": "20261028000381",
   "disclosures": [
+    {
+      "rcept_no": "20261028000376",
+      "rcept_dt": "2026-10-28",
+      "corp_name": "대신증권",
+      "stock_code": "003540",
+      "market": "KOSPI",
+      "corp_code": "00110893",
+      "repror": "양홍석",
+      "ofcps": "부회장",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "2,740",
+      "total_cnt": "5,563,966",
+      "irds_rate": "0.00",
+      "hold_rate": "6.56",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261028000376&dcm_no=11631291",
+      "dcm_no": "11631291"
+    },
     {
       "rcept_no": "20261028000371",
       "rcept_dt": "2026-10-28",
