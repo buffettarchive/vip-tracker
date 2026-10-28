@@ -1,6 +1,24 @@
 {
   "entries": [
     {
+      "rcept_no": "20261028000014",
+      "rcept_dt": "20261028",
+      "corp_code": "00164779",
+      "corp_name": "SK하이닉스",
+      "corp_cls": "Y",
+      "report_nm": "주요사항보고서(자기주식취득결정)",
+      "type": "취득",
+      "shares_common": 14920000,
+      "amount_common": 20007720000000,
+      "acq_purpose": "주주가치 제고 및 임직원 주식 보상",
+      "acq_method": "장내매수",
+      "acq_period_start": null,
+      "acq_period_end": null,
+      "total_shares": null,
+      "ratio_pct": null,
+      "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261028000014"
+    },
+    {
       "rcept_no": "20261027000118",
       "rcept_dt": "20261027",
       "corp_code": "00127909",
@@ -8095,5 +8113,5 @@
       "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250610000225"
     }
   ],
-  "last_seen": "20261027000118"
+  "last_seen": "20261028000014"
 }
