@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-10-28T11:59+09:00",
+  "updated_at": "2026-10-28T12:09+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261028000152",
+  "last_seen": "20261028000154",
   "disclosures": [
+    {
+      "rcept_no": "20261028000154",
+      "rcept_dt": "2026-10-28",
+      "corp_name": "씨티알모빌리티",
+      "stock_code": "308170",
+      "market": "KOSPI",
+      "corp_code": "00450010",
+      "repror": "강태룡",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "7,000",
+      "total_cnt": "711,360",
+      "irds_rate": "0.08",
+      "hold_rate": "8.26",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261028000154&dcm_no=11630128",
+      "dcm_no": "11630128"
+    },
     {
       "rcept_no": "20261028000152",
       "rcept_dt": "2026-10-28",
