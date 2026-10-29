@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29T17:55+09:00",
+  "updated_at": "2026-10-29T18:17+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -10,7 +10,8 @@
     "피델리티",
     "Miri",
     "Orbis",
-    "Pzena"
+    "Pzena",
+    "Dalton"
   ],
   "last_seen": "20261029000661",
   "disclosures": [
@@ -24,6 +25,21 @@
       "stkrt": "7.02",
       "stkrt_prev": "",
       "stkqy": "3170245",
+      "report_resn": "장내매수",
+      "purpose": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매수(신규)"
+    },
+    {
+      "rcept_no": "20261028000296",
+      "rcept_dt": "2026-10-28",
+      "firm": "Dalton",
+      "corp_name": "SK디스커버리",
+      "stock_code": "006120",
+      "corp_code": "00131832",
+      "stkrt": "5.00",
+      "stkrt_prev": "",
+      "stkqy": "871437",
       "report_resn": "장내매수",
       "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
@@ -1245,6 +1261,21 @@
       "kind": "매수"
     },
     {
+      "rcept_no": "20260807000452",
+      "rcept_dt": "2026-08-07",
+      "firm": "Dalton",
+      "corp_name": "슈프리마",
+      "stock_code": "236200",
+      "corp_code": "01124653",
+      "stkrt": "8.00",
+      "stkrt_prev": "5.05",
+      "stkqy": "558006",
+      "report_resn": "장내매수",
+      "purpose": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매수"
+    },
+    {
       "rcept_no": "20260807000352",
       "rcept_dt": "2026-08-07",
       "firm": "Miri",
@@ -1438,6 +1469,21 @@
       "purpose": "일반투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
       "kind": "매수"
+    },
+    {
+      "rcept_no": "20260729000406",
+      "rcept_dt": "2026-07-29",
+      "firm": "Dalton",
+      "corp_name": "한국공항",
+      "stock_code": "005430",
+      "corp_code": "00156691",
+      "stkrt": "5.01",
+      "stkrt_prev": "",
+      "stkqy": "158494",
+      "report_resn": "장내매수",
+      "purpose": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매수(신규)"
     },
     {
       "rcept_no": "20260728000277",
@@ -2578,6 +2624,21 @@
       "purpose": "",
       "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
       "kind": "매수"
+    },
+    {
+      "rcept_no": "20260602000408",
+      "rcept_dt": "2026-06-02",
+      "firm": "Dalton",
+      "corp_name": "슈프리마",
+      "stock_code": "236200",
+      "corp_code": "01124653",
+      "stkrt": "5.05",
+      "stkrt_prev": "",
+      "stkqy": "351995",
+      "report_resn": "장내 주식 취득에 따른 신규보고",
+      "purpose": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매수(신규)"
     },
     {
       "rcept_no": "20260602000180",
