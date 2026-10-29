@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-10-29T16:25+09:00",
+  "updated_at": "2026-10-29T16:51+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20261028000458",
   "disclosures": [
+    {
+      "rcept_no": "20261029000505",
+      "rcept_dt": "2026-10-29",
+      "corp_name": "SK리츠",
+      "stock_code": "395400",
+      "market": "KOSPI",
+      "corp_code": "01535150",
+      "repror": "미래에셋자산운용",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "623,177",
+      "total_cnt": "65,161,737",
+      "irds_rate": "0.21",
+      "hold_rate": "21.65",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261029000505&dcm_no=11633774",
+      "dcm_no": "11633774"
+    },
     {
       "rcept_no": "20261029000440",
       "rcept_dt": "2026-10-29",
