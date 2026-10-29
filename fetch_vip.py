@@ -1,5 +1,11 @@
 """
-fetch_vip.py  (v8 · 본문 파싱 패턴 대폭 강화)
+fetch_vip.py  (v9, Dalton 추가 및 운용사별 백필 수정)
+─────────────────────────────────────────────────────────────
+v9 변경:
+- Dalton Investments(달튼 인베스트먼트) 추적 추가
+- --firm 옵션이 실제로 해당 운용사만 수집하도록 수정 (이전에는 무시됨)
+- GitHub 저장 충돌(다른 실행이 먼저 저장한 경우) 시 최신본과 합쳐서 다시 저장
+
 ─────────────────────────────────────────────────────────────
 v7 대비 변경:
 - parse_document를 블록 기반 파싱으로 교체 (다양한 본문 형식 대응)
@@ -33,6 +39,7 @@ WATCH_FIRMS = [
     "Miri",
     "Orbis",
     "Pzena",
+    "Dalton",
 ]
 
 SCAN_DAYS = 3
@@ -58,7 +65,8 @@ def dart(endpoint, **params):
 
 
 # FIL Limited, FIL Investment Management 등은 피델리티 계열
-FIRM_ALIAS = {"FIL": "피델리티", "미리": "Miri", "오비스": "Orbis", "Orbis": "Orbis", "Pzena": "Pzena"}
+FIRM_ALIAS = {"FIL": "피델리티", "미리": "Miri", "오비스": "Orbis", "Orbis": "Orbis", "Pzena": "Pzena",
+              "Dalton": "Dalton", "달튼": "Dalton"}
 
 def firm_in(name):
     if not name:
@@ -251,7 +259,7 @@ def gh_get():
     return {"disclosures": [], "last_seen": ""}, None
 
 
-def gh_put(payload, sha):
+def gh_put(payload, sha, _retry=True):
     url = f"{GH_API}/repos/{GH_OWNER}/{GH_REPO}/contents/{GH_PATH}"
     body = {
         "message": f"data: auto update {payload['updated_at']}",
@@ -262,7 +270,18 @@ def gh_put(payload, sha):
     }
     if sha:
         body["sha"] = sha
-    r = s.put(url, headers=GH_HEADERS, data=json.dumps(body), timeout=20)
+    r = s.put(url, headers=GH_HEADERS, data=json.dumps(body), timeout=30)
+    if r.status_code in (409, 422) and _retry:
+        # 실행 도중 다른 실행(5분 크론)이 먼저 저장함 → 최신본과 합쳐서 다시 저장
+        print("[info] 저장 충돌 → 최신 data.json과 합쳐서 재시도", file=sys.stderr)
+        latest, new_sha = gh_get()
+        merged = {d["rcept_no"]: d for d in latest.get("disclosures", [])}
+        for d in payload.get("disclosures", []):
+            merged[d["rcept_no"]] = d
+        payload = {**payload,
+                   "disclosures": sorted(merged.values(), key=lambda x: x.get("rcept_no", ""), reverse=True),
+                   "last_seen": max(payload.get("last_seen", "") or "", latest.get("last_seen", "") or "")}
+        return gh_put(payload, new_sha, _retry=False)
     if r.status_code not in (200, 201):
         print(f"[ERR] github push {r.status_code}: {r.text}", file=sys.stderr)
         return False
@@ -317,6 +336,7 @@ def main():
         return
 
     scan_days = SCAN_DAYS
+    target_firms = None
     if args.backfill_days > 0:
         scan_days = args.backfill_days
         last_seen = ""  # 백필 모드: last_seen 무시
@@ -371,6 +391,8 @@ def main():
                 firm = firm_in(row.get("flr_nm", ""))
                 if not firm or rcept_no in existing:
                     continue
+                if target_firms and firm.lower() not in target_firms:
+                    continue   # --firm 지정 시 그 운용사만
 
                 doc = parse_document(rcept_no)
                 time.sleep(0.3)
