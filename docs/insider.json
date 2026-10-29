@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-10-29T09:59+09:00",
+  "updated_at": "2026-10-29T10:19+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20261028000458",
   "disclosures": [
+    {
+      "rcept_no": "20261029000083",
+      "rcept_dt": "2026-10-29",
+      "corp_name": "메타케어",
+      "stock_code": "118000",
+      "market": "KOSPI",
+      "corp_code": "00791209",
+      "repror": "이수진",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "63,199",
+      "total_cnt": "63,199",
+      "irds_rate": "0.29",
+      "hold_rate": "0.29",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261029000083&dcm_no=11632208",
+      "dcm_no": "11632208"
+    },
     {
       "rcept_no": "20261029000061",
       "rcept_dt": "2026-10-29",
