@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-10-29T17:45+09:00",
+  "updated_at": "2026-10-29T18:25+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20261028000458",
   "disclosures": [
+    {
+      "rcept_no": "20261029000657",
+      "rcept_dt": "2026-10-29",
+      "corp_name": "인터지스",
+      "stock_code": "129260",
+      "market": "KOSPI",
+      "corp_code": "00151368",
+      "repror": "박성도",
+      "ofcps": "이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "5,511",
+      "total_cnt": "10,111",
+      "irds_rate": "0.02",
+      "hold_rate": "0.03",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261029000657&dcm_no=11634466",
+      "dcm_no": "11634466"
+    },
     {
       "rcept_no": "20261029000606",
       "rcept_dt": "2026-10-29",
