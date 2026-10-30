@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-10-30T10:31+09:00",
+  "updated_at": "2026-10-30T11:15+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20261028000458",
   "disclosures": [
+    {
+      "rcept_no": "20261030000115",
+      "rcept_dt": "2026-10-30",
+      "corp_name": "원익QnC",
+      "stock_code": "074600",
+      "market": "KOSDAQ",
+      "corp_code": "00468374",
+      "repror": "백홍주",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "5,000",
+      "total_cnt": "15,000",
+      "irds_rate": "0.02",
+      "hold_rate": "0.06",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261030000115&dcm_no=11634899",
+      "dcm_no": "11634899"
+    },
     {
       "rcept_no": "20261030000088",
       "rcept_dt": "2026-10-30",
