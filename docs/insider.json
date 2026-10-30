@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-10-30T16:05+09:00",
+  "updated_at": "2026-10-30T16:10+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20261028000458",
   "disclosures": [
+    {
+      "rcept_no": "20261030000430",
+      "rcept_dt": "2026-10-30",
+      "corp_name": "청담글로벌",
+      "stock_code": "362320",
+      "market": "KOSDAQ",
+      "corp_code": "01534577",
+      "repror": "최석주",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "168,226",
+      "total_cnt": "8,861,719",
+      "irds_rate": "0.81",
+      "hold_rate": "42.82",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261030000430&dcm_no=11635950",
+      "dcm_no": "11635950"
+    },
     {
       "rcept_no": "20261030000395",
       "rcept_dt": "2026-10-30",
