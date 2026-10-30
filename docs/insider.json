@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-10-30T14:21+09:00",
+  "updated_at": "2026-10-30T14:30+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20261028000458",
   "disclosures": [
+    {
+      "rcept_no": "20261030000249",
+      "rcept_dt": "2026-10-30",
+      "corp_name": "동양",
+      "stock_code": "001520",
+      "market": "KOSPI",
+      "corp_code": "00117337",
+      "repror": "이동호",
+      "ofcps": "상무보",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,000",
+      "total_cnt": "39,750",
+      "irds_rate": "0.00",
+      "hold_rate": "0.04",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261030000249&dcm_no=11635428",
+      "dcm_no": "11635428"
+    },
     {
       "rcept_no": "20261030000236",
       "rcept_dt": "2026-10-30",
