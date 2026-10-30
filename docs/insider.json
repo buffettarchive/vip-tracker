@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-10-30T09:20+09:00",
+  "updated_at": "2026-10-30T09:26+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20261028000458",
   "disclosures": [
+    {
+      "rcept_no": "20261030000033",
+      "rcept_dt": "2026-10-30",
+      "corp_name": "진도",
+      "stock_code": "088790",
+      "market": "KOSPI",
+      "corp_code": "00557933",
+      "repror": "임오식",
+      "ofcps": "회장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "74,888",
+      "total_cnt": "1,241,446",
+      "irds_rate": "0.60",
+      "hold_rate": "9.96",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261030000033&dcm_no=11634652",
+      "dcm_no": "11634652"
+    },
     {
       "rcept_no": "20261030000024",
       "rcept_dt": "2026-10-30",
