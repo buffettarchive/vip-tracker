@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-10-30T12:05+09:00",
+  "updated_at": "2026-10-30T13:20+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20261028000458",
   "disclosures": [
+    {
+      "rcept_no": "20261030000156",
+      "rcept_dt": "2026-10-30",
+      "corp_name": "지엠비코리아",
+      "stock_code": "013870",
+      "market": "KOSPI",
+      "corp_code": "00156354",
+      "repror": "최완욱",
+      "ofcps": "전무이사",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "5,000",
+      "total_cnt": "65,000",
+      "irds_rate": "0.03",
+      "hold_rate": "0.34",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261030000156&dcm_no=11635063",
+      "dcm_no": "11635063"
+    },
     {
       "rcept_no": "20261030000142",
       "rcept_dt": "2026-10-30",
