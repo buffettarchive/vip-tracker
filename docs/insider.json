@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-02T14:59+09:00",
+  "updated_at": "2026-11-02T15:09+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261102000140",
+  "last_seen": "20261102000145",
   "disclosures": [
+    {
+      "rcept_no": "20261102000145",
+      "rcept_dt": "2026-11-02",
+      "corp_name": "브이씨",
+      "stock_code": "365900",
+      "market": "KOSDAQ",
+      "corp_code": "01354740",
+      "repror": "이학용",
+      "ofcps": "상무",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "30,369",
+      "total_cnt": "58,400",
+      "irds_rate": "0.42",
+      "hold_rate": "0.80",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261102000145&dcm_no=11637707",
+      "dcm_no": "11637707"
+    },
     {
       "rcept_no": "20261102000140",
       "rcept_dt": "2026-11-02",
