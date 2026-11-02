@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-02T14:14+09:00",
+  "updated_at": "2026-11-02T14:19+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261102000108",
+  "last_seen": "20261102000111",
   "disclosures": [
+    {
+      "rcept_no": "20261102000111",
+      "rcept_dt": "2026-11-02",
+      "corp_name": "금호석유화학",
+      "stock_code": "011780",
+      "market": "KOSPI",
+      "corp_code": "00106368",
+      "repror": "박주형",
+      "ofcps": "부사장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "2,400",
+      "total_cnt": "334,380",
+      "irds_rate": "0.01",
+      "hold_rate": "1.20",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261102000111&dcm_no=11637589",
+      "dcm_no": "11637589"
+    },
     {
       "rcept_no": "20261102000108",
       "rcept_dt": "2026-11-02",
