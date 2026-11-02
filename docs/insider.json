@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-02T11:49+09:00",
+  "updated_at": "2026-11-02T13:19+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261102000067",
+  "last_seen": "20261102000083",
   "disclosures": [
+    {
+      "rcept_no": "20261102000083",
+      "rcept_dt": "2026-11-02",
+      "corp_name": "RF시스템즈",
+      "stock_code": "474610",
+      "market": "KOSDAQ",
+      "corp_code": "01286476",
+      "repror": "강대룡",
+      "ofcps": "전무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "10,000",
+      "total_cnt": "24,602",
+      "irds_rate": "0.07",
+      "hold_rate": "0.17",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261102000083&dcm_no=11637473",
+      "dcm_no": "11637473"
+    },
     {
       "rcept_no": "20261102000067",
       "rcept_dt": "2026-11-02",
