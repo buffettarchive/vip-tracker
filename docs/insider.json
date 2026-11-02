@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-02T17:19+09:00",
+  "updated_at": "2026-11-02T17:26+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20261102000273",
   "disclosures": [
@@ -18,7 +18,9 @@
       "total_cnt": "119,048",
       "irds_rate": "0",
       "hold_rate": "11.90",
-      "method": "장내매수"
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261102000273&dcm_no=11638259",
+      "dcm_no": "11638259"
     },
     {
       "rcept_no": "20261102000263",
@@ -35,7 +37,9 @@
       "total_cnt": "20,147",
       "irds_rate": "0.01",
       "hold_rate": "0.01",
-      "method": "장내매수"
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261102000263&dcm_no=11638220",
+      "dcm_no": "11638220"
     },
     {
       "rcept_no": "20261102000247",
