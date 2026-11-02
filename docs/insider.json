@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-02T10:29+09:00",
+  "updated_at": "2026-11-02T11:49+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261102000030",
+  "last_seen": "20261102000067",
   "disclosures": [
+    {
+      "rcept_no": "20261102000067",
+      "rcept_dt": "2026-11-02",
+      "corp_name": "위세아이텍",
+      "stock_code": "065370",
+      "market": "KOSDAQ",
+      "corp_code": "00374738",
+      "repror": "이제동",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,978",
+      "total_cnt": "100,000",
+      "irds_rate": "0.02",
+      "hold_rate": "1.35",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261102000067&dcm_no=11637448",
+      "dcm_no": "11637448"
+    },
     {
       "rcept_no": "20261102000030",
       "rcept_dt": "2026-11-02",
