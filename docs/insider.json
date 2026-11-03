@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-03T14:49+09:00",
+  "updated_at": "2026-11-03T15:19+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261103000173",
+  "last_seen": "20261103000194",
   "disclosures": [
+    {
+      "rcept_no": "20261103000194",
+      "rcept_dt": "2026-11-03",
+      "corp_name": "카스",
+      "stock_code": "016920",
+      "market": "KOSDAQ",
+      "corp_code": "00152260",
+      "repror": "김태준",
+      "ofcps": "이사",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "50,325",
+      "total_cnt": "868,899",
+      "irds_rate": "0.29",
+      "hold_rate": "3.38",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261103000194&dcm_no=11639248",
+      "dcm_no": "11639248"
+    },
     {
       "rcept_no": "20261103000173",
       "rcept_dt": "2026-11-03",
