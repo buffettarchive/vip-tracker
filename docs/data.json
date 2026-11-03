@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03T16:14+09:00",
+  "updated_at": "2026-11-03T16:19+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -13,8 +13,23 @@
     "Pzena",
     "Dalton"
   ],
-  "last_seen": "20261103000264",
+  "last_seen": "20261103000271",
   "disclosures": [
+    {
+      "rcept_no": "20261103000270",
+      "rcept_dt": "2026-11-03",
+      "firm": "얼라인파트너스자산운용",
+      "corp_name": "가비아",
+      "stock_code": "079940",
+      "corp_code": "00506294",
+      "stkrt": "",
+      "stkrt_prev": "",
+      "stkqy": "",
+      "report_resn": "",
+      "purpose": "",
+      "report_nm": "주식등의대량보유상황보고서(일반)",
+      "kind": "기타"
+    },
     {
       "rcept_no": "20261103000236",
       "rcept_dt": "2026-11-03",
