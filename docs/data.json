@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03T10:54+09:00",
+  "updated_at": "2026-11-03T11:04+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -13,8 +13,23 @@
     "Pzena",
     "Dalton"
   ],
-  "last_seen": "20261103000077",
+  "last_seen": "20261103000085",
   "disclosures": [
+    {
+      "rcept_no": "20261103000085",
+      "rcept_dt": "2026-11-03",
+      "firm": "Miri",
+      "corp_name": "가비아",
+      "stock_code": "079940",
+      "corp_code": "00506294",
+      "stkrt": "",
+      "stkrt_prev": "",
+      "stkqy": "",
+      "report_resn": "",
+      "purpose": "",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "기타"
+    },
     {
       "rcept_no": "20261103000062",
       "rcept_dt": "2026-11-03",
