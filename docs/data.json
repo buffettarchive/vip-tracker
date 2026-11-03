@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03T11:04+09:00",
+  "updated_at": "2026-11-03T11:09+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -13,7 +13,7 @@
     "Pzena",
     "Dalton"
   ],
-  "last_seen": "20261103000085",
+  "last_seen": "20261103000088",
   "disclosures": [
     {
       "rcept_no": "20261103000085",
@@ -22,13 +22,13 @@
       "corp_name": "가비아",
       "stock_code": "079940",
       "corp_code": "00506294",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkrt": "24.17",
+      "stkrt_prev": "23.96",
+      "stkqy": "3243617",
+      "report_resn": "주식매매계약 체결",
+      "purpose": "일반투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "기타"
+      "kind": "매수"
     },
     {
       "rcept_no": "20261103000062",
