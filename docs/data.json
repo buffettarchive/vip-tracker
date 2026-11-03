@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03T15:44+09:00",
+  "updated_at": "2026-11-03T15:49+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -13,8 +13,23 @@
     "Pzena",
     "Dalton"
   ],
-  "last_seen": "20261103000230",
+  "last_seen": "20261103000236",
   "disclosures": [
+    {
+      "rcept_no": "20261103000236",
+      "rcept_dt": "2026-11-03",
+      "firm": "얼라인파트너스자산운용",
+      "corp_name": "솔루엠",
+      "stock_code": "248070",
+      "corp_code": "01159233",
+      "stkrt": "",
+      "stkrt_prev": "",
+      "stkqy": "",
+      "report_resn": "",
+      "purpose": "",
+      "report_nm": "주식등의대량보유상황보고서(일반)",
+      "kind": "기타"
+    },
     {
       "rcept_no": "20261103000085",
       "rcept_dt": "2026-11-03",
