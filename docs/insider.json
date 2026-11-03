@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-03T15:54+09:00",
+  "updated_at": "2026-11-03T16:09+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261103000224",
+  "last_seen": "20261103000235",
   "disclosures": [
+    {
+      "rcept_no": "20261103000235",
+      "rcept_dt": "2026-11-03",
+      "corp_name": "한탑",
+      "stock_code": "002680",
+      "market": "KOSDAQ",
+      "corp_code": "00140566",
+      "repror": "석정산업",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "5,961",
+      "total_cnt": "1,309,211",
+      "irds_rate": "0.08",
+      "hold_rate": "16.88",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261103000235&dcm_no=11639409",
+      "dcm_no": "11639409"
+    },
     {
       "rcept_no": "20261103000194",
       "rcept_dt": "2026-11-03",
