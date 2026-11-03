@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-03T17:44+09:00",
+  "updated_at": "2026-11-03T18:09+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261103000349",
+  "last_seen": "20261103000374",
   "disclosures": [
+    {
+      "rcept_no": "20261103000374",
+      "rcept_dt": "2026-11-03",
+      "corp_name": "온타이드",
+      "stock_code": "005320",
+      "market": "KOSPI",
+      "corp_code": "00168331",
+      "repror": "약진통상",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "1,017,677",
+      "total_cnt": "22,678,967",
+      "irds_rate": "2.66",
+      "hold_rate": "59.12",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261103000374&dcm_no=11640064",
+      "dcm_no": "11640064"
+    },
     {
       "rcept_no": "20261103000343",
       "rcept_dt": "2026-11-03",
