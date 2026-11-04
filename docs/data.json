@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T09:29+09:00",
+  "updated_at": "2026-11-04T09:34+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -22,13 +22,13 @@
       "corp_name": "한국화장품제조",
       "stock_code": "003350",
       "corp_code": "00160621",
-      "stkrt": "",
+      "stkrt": "10.36",
       "stkrt_prev": "",
-      "stkqy": "",
+      "stkqy": "2348590",
       "report_resn": "",
       "purpose": "",
       "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-      "kind": "기타"
+      "kind": "매수(신규)"
     },
     {
       "rcept_no": "20261103000270",
