@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05T15:59+09:00",
+  "updated_at": "2026-11-05T16:04+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -13,8 +13,23 @@
     "Pzena",
     "Dalton"
   ],
-  "last_seen": "20261105000388",
+  "last_seen": "20261105000400",
   "disclosures": [
+    {
+      "rcept_no": "20261105000392",
+      "rcept_dt": "2026-11-05",
+      "firm": "트러스톤자산운용",
+      "corp_name": "코스메카코리아",
+      "stock_code": "241710",
+      "corp_code": "00763473",
+      "stkrt": "",
+      "stkrt_prev": "",
+      "stkqy": "",
+      "report_resn": "",
+      "purpose": "",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "기타"
+    },
     {
       "rcept_no": "20261105000199",
       "rcept_dt": "2026-11-05",
