@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05T14:24+09:00",
+  "updated_at": "2026-11-05T14:29+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -13,7 +13,7 @@
     "Pzena",
     "Dalton"
   ],
-  "last_seen": "20261105000204",
+  "last_seen": "20261105000209",
   "disclosures": [
     {
       "rcept_no": "20261105000199",
@@ -22,13 +22,13 @@
       "corp_name": "한국알콜",
       "stock_code": "017890",
       "corp_code": "00158565",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
+      "stkrt": "16.09",
+      "stkrt_prev": "15.74",
+      "stkqy": "3326633",
+      "report_resn": "장내매수",
       "purpose": "",
       "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-      "kind": "기타"
+      "kind": "매수"
     },
     {
       "rcept_no": "20261105000194",
@@ -37,13 +37,13 @@
       "corp_name": "지어소프트",
       "stock_code": "051160",
       "corp_code": "00389110",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
+      "stkrt": "15.81",
+      "stkrt_prev": "15.79",
+      "stkqy": "2132100",
+      "report_resn": "장내매수",
       "purpose": "",
       "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-      "kind": "기타"
+      "kind": "매수"
     },
     {
       "rcept_no": "20261105000050",
