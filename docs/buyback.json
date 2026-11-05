@@ -1,6 +1,24 @@
 {
   "entries": [
     {
+      "rcept_no": "20261105000062",
+      "rcept_dt": "20261105",
+      "corp_code": "00120872",
+      "corp_name": "MH머트리얼즈",
+      "corp_cls": "Y",
+      "report_nm": "주요사항보고서(자기주식취득결정)",
+      "type": "취득",
+      "shares_common": 776196,
+      "amount_common": 3000000000,
+      "acq_purpose": "주주가치 제고를 위한 자기주식 취득",
+      "acq_method": "유가증권시장을 통한 장내 매수",
+      "acq_period_start": null,
+      "acq_period_end": null,
+      "total_shares": null,
+      "ratio_pct": null,
+      "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261105000062"
+    },
+    {
       "rcept_no": "20261105000008",
       "rcept_dt": "20261105",
       "corp_code": "00258801",
@@ -8329,5 +8347,5 @@
       "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250610000225"
     }
   ],
-  "last_seen": "20261105000008"
+  "last_seen": "20261105000062"
 }
