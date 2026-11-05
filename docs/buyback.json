@@ -1,6 +1,24 @@
 {
   "entries": [
     {
+      "rcept_no": "20261105000008",
+      "rcept_dt": "20261105",
+      "corp_code": "00258801",
+      "corp_name": "카카오",
+      "corp_cls": "Y",
+      "report_nm": "주요사항보고서(자기주식취득결정)",
+      "type": "취득",
+      "shares_common": 5154639,
+      "amount_common": 150000000000,
+      "acq_purpose": "자기주식 취득 및 소각을 통한 주주환원과 기업가치 제고",
+      "acq_method": "유가증권시장을 통한 장내 매수",
+      "acq_period_start": null,
+      "acq_period_end": null,
+      "total_shares": null,
+      "ratio_pct": null,
+      "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261105000008"
+    },
+    {
       "rcept_no": "20261104000188",
       "rcept_dt": "20261104",
       "corp_code": "00136402",
@@ -8311,5 +8329,5 @@
       "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250610000225"
     }
   ],
-  "last_seen": "20261104000188"
+  "last_seen": "20261105000008"
 }
