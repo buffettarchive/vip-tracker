@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-05T14:29+09:00",
+  "updated_at": "2026-11-05T15:04+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261105000199",
+  "last_seen": "20261105000231",
   "disclosures": [
+    {
+      "rcept_no": "20261105000231",
+      "rcept_dt": "2026-11-05",
+      "corp_name": "미트박스",
+      "stock_code": "475460",
+      "market": "KOSDAQ",
+      "corp_code": "01374717",
+      "repror": "김기봉",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "74,623",
+      "total_cnt": "3,899,300",
+      "irds_rate": "0.44",
+      "hold_rate": "23.02",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261105000231&dcm_no=11642727",
+      "dcm_no": "11642727"
+    },
     {
       "rcept_no": "20261105000199",
       "rcept_dt": "2026-11-05",
