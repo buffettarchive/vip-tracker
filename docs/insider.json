@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-11-06T18:02+09:00",
+  "updated_at": "2026-11-06T18:05+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261106000436",
+  "last_seen": "20261106000464",
   "disclosures": [
     {
       "rcept_no": "20261106000461",
@@ -40,6 +40,25 @@
       "method": "시간외매매",
       "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261106000448&dcm_no=11645582",
       "dcm_no": "11645582"
+    },
+    {
+      "rcept_no": "20261106000440",
+      "rcept_dt": "2026-11-06",
+      "corp_name": "삼성전자",
+      "stock_code": "005930",
+      "market": "KOSPI",
+      "corp_code": "00126380",
+      "repror": "김준성",
+      "ofcps": "독립이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "506",
+      "total_cnt": "506",
+      "irds_rate": "0.00",
+      "hold_rate": "0.00",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261106000440&dcm_no=11645557",
+      "dcm_no": "11645557"
     },
     {
       "rcept_no": "20261106000436",
