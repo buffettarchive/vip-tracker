@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-06T13:39+09:00",
+  "updated_at": "2026-11-06T13:49+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261106000124",
+  "last_seen": "20261106000134",
   "disclosures": [
+    {
+      "rcept_no": "20261106000134",
+      "rcept_dt": "2026-11-06",
+      "corp_name": "HL만도",
+      "stock_code": "204320",
+      "market": "KOSPI",
+      "corp_code": "01042775",
+      "repror": "박영문",
+      "ofcps": "사장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,100",
+      "total_cnt": "2,975",
+      "irds_rate": "0.00",
+      "hold_rate": "0.00",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261106000134&dcm_no=11644524",
+      "dcm_no": "11644524"
+    },
     {
       "rcept_no": "20261106000124",
       "rcept_dt": "2026-11-06",
