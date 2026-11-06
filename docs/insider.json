@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-06T11:29+09:00",
+  "updated_at": "2026-11-06T11:39+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261106000066",
+  "last_seen": "20261106000076",
   "disclosures": [
+    {
+      "rcept_no": "20261106000076",
+      "rcept_dt": "2026-11-06",
+      "corp_name": "NEW",
+      "stock_code": "160550",
+      "market": "KOSDAQ",
+      "corp_code": "00974927",
+      "repror": "유제천",
+      "ofcps": "사장",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "24,068",
+      "total_cnt": "48,413",
+      "irds_rate": "0.08",
+      "hold_rate": "0.17",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261106000076&dcm_no=11644345",
+      "dcm_no": "11644345"
+    },
     {
       "rcept_no": "20261106000040",
       "rcept_dt": "2026-11-06",
