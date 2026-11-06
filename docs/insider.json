@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-06T11:39+09:00",
+  "updated_at": "2026-11-06T11:49+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261106000076",
+  "last_seen": "20261106000082",
   "disclosures": [
+    {
+      "rcept_no": "20261106000082",
+      "rcept_dt": "2026-11-06",
+      "corp_name": "아이진",
+      "stock_code": "185490",
+      "market": "KOSDAQ",
+      "corp_code": "00945457",
+      "repror": "우구",
+      "ofcps": "이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "73,946",
+      "total_cnt": "1,000,000",
+      "irds_rate": "0.17",
+      "hold_rate": "2.31",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261106000082&dcm_no=11644358",
+      "dcm_no": "11644358"
+    },
     {
       "rcept_no": "20261106000076",
       "rcept_dt": "2026-11-06",
