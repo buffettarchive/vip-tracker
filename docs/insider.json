@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-09T09:39+09:00",
+  "updated_at": "2026-11-09T10:09+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261109000016",
+  "last_seen": "20261109000026",
   "disclosures": [
+    {
+      "rcept_no": "20261109000024",
+      "rcept_dt": "2026-11-09",
+      "corp_name": "호전실업",
+      "stock_code": "111110",
+      "market": "KOSPI",
+      "corp_code": "00226316",
+      "repror": "박동욱",
+      "ofcps": "상무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "2,500",
+      "total_cnt": "2,500",
+      "irds_rate": "0.03",
+      "hold_rate": "0.03",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261109000024&dcm_no=11645816",
+      "dcm_no": "11645816"
+    },
     {
       "rcept_no": "20261109000016",
       "rcept_dt": "2026-11-09",
