@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-09T13:29+09:00",
+  "updated_at": "2026-11-09T13:39+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261109000079",
+  "last_seen": "20261109000081",
   "disclosures": [
+    {
+      "rcept_no": "20261109000081",
+      "rcept_dt": "2026-11-09",
+      "corp_name": "리센스메디컬",
+      "stock_code": "394420",
+      "market": "KOSDAQ",
+      "corp_code": "01685677",
+      "repror": "김건호",
+      "ofcps": "공동대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "20,000",
+      "total_cnt": "2,190,059",
+      "irds_rate": "-0.09",
+      "hold_rate": "19.91",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261109000081&dcm_no=11646006",
+      "dcm_no": "11646006"
+    },
     {
       "rcept_no": "20261109000079",
       "rcept_dt": "2026-11-09",
