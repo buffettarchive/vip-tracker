@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-09T16:14+09:00",
+  "updated_at": "2026-11-09T16:29+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261109000227",
+  "last_seen": "20261109000264",
   "disclosures": [
+    {
+      "rcept_no": "20261109000256",
+      "rcept_dt": "2026-11-09",
+      "corp_name": "CS홀딩스",
+      "stock_code": "000590",
+      "market": "KOSPI",
+      "corp_code": "00149026",
+      "repror": "장원영",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "1,144",
+      "total_cnt": "621,560",
+      "irds_rate": "0.10",
+      "hold_rate": "53.84",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261109000256&dcm_no=11646633",
+      "dcm_no": "11646633"
+    },
     {
       "rcept_no": "20261109000220",
       "rcept_dt": "2026-11-09",
