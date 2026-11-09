@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-09T11:49+09:00",
+  "updated_at": "2026-11-09T13:29+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261109000058",
+  "last_seen": "20261109000079",
   "disclosures": [
+    {
+      "rcept_no": "20261109000079",
+      "rcept_dt": "2026-11-09",
+      "corp_name": "에프앤가이드",
+      "stock_code": "064850",
+      "market": "KOSDAQ",
+      "corp_code": "00331016",
+      "repror": "전민석",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,600",
+      "total_cnt": "28,000",
+      "irds_rate": "0.02",
+      "hold_rate": "0.25",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261109000079&dcm_no=11646001",
+      "dcm_no": "11646001"
+    },
     {
       "rcept_no": "20261109000029",
       "rcept_dt": "2026-11-09",
