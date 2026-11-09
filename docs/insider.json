@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-09T14:19+09:00",
+  "updated_at": "2026-11-09T14:29+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261109000132",
+  "last_seen": "20261109000144",
   "disclosures": [
+    {
+      "rcept_no": "20261109000144",
+      "rcept_dt": "2026-11-09",
+      "corp_name": "녹십자홀딩스",
+      "stock_code": "005250",
+      "market": "KOSPI",
+      "corp_code": "00108135",
+      "repror": "허용준",
+      "ofcps": "사장",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "50,000",
+      "total_cnt": "1,441,927",
+      "irds_rate": "0.10",
+      "hold_rate": "2.91",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261109000144&dcm_no=11646163",
+      "dcm_no": "11646163"
+    },
     {
       "rcept_no": "20261109000132",
       "rcept_dt": "2026-11-09",
