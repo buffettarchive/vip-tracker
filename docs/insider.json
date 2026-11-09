@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-09T18:04+09:00",
+  "updated_at": "2026-11-09T18:29+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261109000388",
+  "last_seen": "20261109000396",
   "disclosures": [
+    {
+      "rcept_no": "20261109000394",
+      "rcept_dt": "2026-11-09",
+      "corp_name": "코어라인소프트",
+      "stock_code": "384470",
+      "market": "KOSDAQ",
+      "corp_code": "01512575",
+      "repror": "정우석",
+      "ofcps": "전무이사(CFO)",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,309",
+      "total_cnt": "58,800",
+      "irds_rate": "0.01",
+      "hold_rate": "0.32",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261109000394&dcm_no=11647156",
+      "dcm_no": "11647156"
+    },
     {
       "rcept_no": "20261109000375",
       "rcept_dt": "2026-11-09",
