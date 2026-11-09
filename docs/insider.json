@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-09T17:39+09:00",
+  "updated_at": "2026-11-09T18:04+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261109000357",
+  "last_seen": "20261109000388",
   "disclosures": [
+    {
+      "rcept_no": "20261109000375",
+      "rcept_dt": "2026-11-09",
+      "corp_name": "메타랩스",
+      "stock_code": "090370",
+      "market": "KOSPI",
+      "corp_code": "00442835",
+      "repror": "하지성",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "16,912",
+      "total_cnt": "16,912",
+      "irds_rate": "0.06",
+      "hold_rate": "0.06",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261109000375&dcm_no=11647039",
+      "dcm_no": "11647039"
+    },
     {
       "rcept_no": "20261109000320",
       "rcept_dt": "2026-11-09",
