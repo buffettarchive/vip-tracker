@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-09T10:09+09:00",
+  "updated_at": "2026-11-09T10:19+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261109000026",
+  "last_seen": "20261109000032",
   "disclosures": [
+    {
+      "rcept_no": "20261109000029",
+      "rcept_dt": "2026-11-09",
+      "corp_name": "프레스티지바이오로직스",
+      "stock_code": "334970",
+      "market": "KOSDAQ",
+      "corp_code": "01258428",
+      "repror": "임영수",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "137,500",
+      "total_cnt": "155,949",
+      "irds_rate": "0.17",
+      "hold_rate": "0.20",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261109000029&dcm_no=11645828",
+      "dcm_no": "11645828"
+    },
     {
       "rcept_no": "20261109000024",
       "rcept_dt": "2026-11-09",
