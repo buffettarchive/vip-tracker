@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-09T15:59+09:00",
+  "updated_at": "2026-11-09T16:14+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261109000216",
+  "last_seen": "20261109000227",
   "disclosures": [
+    {
+      "rcept_no": "20261109000220",
+      "rcept_dt": "2026-11-09",
+      "corp_name": "동구바이오제약",
+      "stock_code": "006620",
+      "market": "KOSDAQ",
+      "corp_code": "00114686",
+      "repror": "조용준",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "6,746",
+      "total_cnt": "8,075,209",
+      "irds_rate": "0.02",
+      "hold_rate": "28.37",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261109000220&dcm_no=11646350",
+      "dcm_no": "11646350"
+    },
     {
       "rcept_no": "20261109000215",
       "rcept_dt": "2026-11-09",
