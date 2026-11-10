@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-10T11:29+09:00",
+  "updated_at": "2026-11-10T11:39+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261110000125",
+  "last_seen": "20261110000130",
   "disclosures": [
+    {
+      "rcept_no": "20261110000130",
+      "rcept_dt": "2026-11-10",
+      "corp_name": "엑셈",
+      "stock_code": "205100",
+      "market": "KOSDAQ",
+      "corp_code": "01042085",
+      "repror": "조종암",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "14,000",
+      "total_cnt": "5,323,051",
+      "irds_rate": "0.11",
+      "hold_rate": "39.41",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261110000130&dcm_no=11647515",
+      "dcm_no": "11647515"
+    },
     {
       "rcept_no": "20261110000125",
       "rcept_dt": "2026-11-10",
