@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-10T09:19+09:00",
+  "updated_at": "2026-11-10T09:29+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -13,8 +13,23 @@
     "Pzena",
     "Dalton"
   ],
-  "last_seen": "20261110000038",
+  "last_seen": "20261110000051",
   "disclosures": [
+    {
+      "rcept_no": "20261110000047",
+      "rcept_dt": "2026-11-10",
+      "firm": "에셋플러스자산운용",
+      "corp_name": "한국화장품제조",
+      "stock_code": "003350",
+      "corp_code": "00160621",
+      "stkrt": "9.45",
+      "stkrt_prev": "8.16",
+      "stkqy": "2142030",
+      "report_resn": "장내매수",
+      "purpose": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매수"
+    },
     {
       "rcept_no": "20261106000431",
       "rcept_dt": "2026-11-06",
