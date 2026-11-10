@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-10T09:29+09:00",
+  "updated_at": "2026-11-10T09:34+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -13,8 +13,23 @@
     "Pzena",
     "Dalton"
   ],
-  "last_seen": "20261110000051",
+  "last_seen": "20261110000053",
   "disclosures": [
+    {
+      "rcept_no": "20261110000053",
+      "rcept_dt": "2026-11-10",
+      "firm": "에셋플러스자산운용",
+      "corp_name": "마이크로컨텍솔",
+      "stock_code": "098120",
+      "corp_code": "00568188",
+      "stkrt": "16.25",
+      "stkrt_prev": "11.54",
+      "stkqy": "1350928",
+      "report_resn": "장내매수",
+      "purpose": "일반투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매수"
+    },
     {
       "rcept_no": "20261110000047",
       "rcept_dt": "2026-11-10",
