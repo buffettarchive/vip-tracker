@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-10T11:19+09:00",
+  "updated_at": "2026-11-10T11:29+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261110000122",
+  "last_seen": "20261110000125",
   "disclosures": [
+    {
+      "rcept_no": "20261110000125",
+      "rcept_dt": "2026-11-10",
+      "corp_name": "HD현대마린솔루션",
+      "stock_code": "443060",
+      "market": "KOSPI",
+      "corp_code": "01194689",
+      "repror": "김정혁",
+      "ofcps": "전무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "200",
+      "total_cnt": "3,700",
+      "irds_rate": "0.00",
+      "hold_rate": "0.01",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261110000125&dcm_no=11647504",
+      "dcm_no": "11647504"
+    },
     {
       "rcept_no": "20261110000122",
       "rcept_dt": "2026-11-10",
