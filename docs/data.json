@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-10T10:09+09:00",
+  "updated_at": "2026-11-10T10:14+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -22,13 +22,13 @@
       "corp_name": "마이크로컨텍솔",
       "stock_code": "098120",
       "corp_code": "00568188",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
+      "stkrt": "15.03",
+      "stkrt_prev": "11.40",
+      "stkqy": "1249226",
+      "report_resn": "장내매수",
       "purpose": "",
       "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-      "kind": "기타"
+      "kind": "매수"
     },
     {
       "rcept_no": "20261110000053",
