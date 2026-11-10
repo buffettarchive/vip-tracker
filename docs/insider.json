@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-09T18:29+09:00",
+  "updated_at": "2026-11-10T09:30+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261109000396",
+  "last_seen": "20261110000038",
   "disclosures": [
+    {
+      "rcept_no": "20261110000034",
+      "rcept_dt": "2026-11-10",
+      "corp_name": "대원전선",
+      "stock_code": "006340",
+      "market": "KOSPI",
+      "corp_code": "00260392",
+      "repror": "서명환",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "100,000",
+      "total_cnt": "3,015,680",
+      "irds_rate": "0.12",
+      "hold_rate": "3.72",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261110000034&dcm_no=11647301",
+      "dcm_no": "11647301"
+    },
     {
       "rcept_no": "20261109000394",
       "rcept_dt": "2026-11-09",
