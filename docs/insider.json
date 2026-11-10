@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-10T14:54+09:00",
+  "updated_at": "2026-11-10T15:09+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261110000229",
+  "last_seen": "20261110000239",
   "disclosures": [
+    {
+      "rcept_no": "20261110000239",
+      "rcept_dt": "2026-11-10",
+      "corp_name": "엘에스일렉트릭",
+      "stock_code": "010120",
+      "market": "KOSPI",
+      "corp_code": "00105855",
+      "repror": "박우범",
+      "ofcps": "전무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "360",
+      "total_cnt": "7,095",
+      "irds_rate": "0.00",
+      "hold_rate": "0.00",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261110000239&dcm_no=11647825",
+      "dcm_no": "11647825"
+    },
     {
       "rcept_no": "20261110000229",
       "rcept_dt": "2026-11-10",
