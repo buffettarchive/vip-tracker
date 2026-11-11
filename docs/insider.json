@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-11T13:56+09:00",
+  "updated_at": "2026-11-11T14:09+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20261110000377",
   "disclosures": [
+    {
+      "rcept_no": "20261111000168",
+      "rcept_dt": "2026-11-11",
+      "corp_name": "링크제니시스",
+      "stock_code": "219420",
+      "market": "KOSDAQ",
+      "corp_code": "01109955",
+      "repror": "아이디스파워텔",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "45,901",
+      "total_cnt": "2,938,426",
+      "irds_rate": "0.40",
+      "hold_rate": "25.62",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261111000168&dcm_no=11649098",
+      "dcm_no": "11649098"
+    },
     {
       "rcept_no": "20261111000157",
       "rcept_dt": "2026-11-11",
