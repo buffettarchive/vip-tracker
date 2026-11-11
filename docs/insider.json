@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-11T13:31+09:00",
+  "updated_at": "2026-11-11T13:46+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20261110000377",
   "disclosures": [
+    {
+      "rcept_no": "20261111000153",
+      "rcept_dt": "2026-11-11",
+      "corp_name": "에스팀",
+      "stock_code": "458350",
+      "market": "KOSDAQ",
+      "corp_code": "01379563",
+      "repror": "김소연",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "42,389",
+      "total_cnt": "3,617,539",
+      "irds_rate": "0.49",
+      "hold_rate": "41.66",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261111000153&dcm_no=11649029",
+      "dcm_no": "11649029"
+    },
     {
       "rcept_no": "20261111000148",
       "rcept_dt": "2026-11-11",
