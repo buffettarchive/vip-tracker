@@ -1,6 +1,24 @@
 {
   "entries": [
     {
+      "rcept_no": "20261111000127",
+      "rcept_dt": "20261111",
+      "corp_code": "00641171",
+      "corp_name": "인지소프트",
+      "corp_cls": "K",
+      "report_nm": "주요사항보고서(자기주식취득결정)",
+      "type": "취득",
+      "shares_common": 102933,
+      "amount_common": 2000000000,
+      "acq_purpose": "주가안정을 통한 주주가치 제고",
+      "acq_method": "코스닥시장을 통한 장내 직접 취득",
+      "acq_period_start": null,
+      "acq_period_end": null,
+      "total_shares": null,
+      "ratio_pct": null,
+      "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261111000127"
+    },
+    {
       "rcept_no": "20261110000158",
       "rcept_dt": "20261110",
       "corp_code": "00854997",
@@ -8491,5 +8509,5 @@
       "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250610000225"
     }
   ],
-  "last_seen": "20261110000158"
+  "last_seen": "20261111000127"
 }
