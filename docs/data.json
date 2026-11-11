@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-11T17:09+09:00",
+  "updated_at": "2026-11-11T17:14+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -13,8 +13,23 @@
     "Pzena",
     "Dalton"
   ],
-  "last_seen": "20261111000391",
+  "last_seen": "20261111000403",
   "disclosures": [
+    {
+      "rcept_no": "20261111000401",
+      "rcept_dt": "2026-11-11",
+      "firm": "Miri",
+      "corp_name": "JYP Ent.",
+      "stock_code": "035900",
+      "corp_code": "00258689",
+      "stkrt": "",
+      "stkrt_prev": "",
+      "stkqy": "",
+      "report_resn": "",
+      "purpose": "",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "기타"
+    },
     {
       "rcept_no": "20261110000154",
       "rcept_dt": "2026-11-10",
