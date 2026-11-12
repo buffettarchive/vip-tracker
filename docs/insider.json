@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-12T10:31+09:00",
+  "updated_at": "2026-11-12T10:39+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20261110000377",
   "disclosures": [
+    {
+      "rcept_no": "20261112000120",
+      "rcept_dt": "2026-11-12",
+      "corp_name": "명문제약",
+      "stock_code": "017180",
+      "market": "KOSPI",
+      "corp_code": "00121039",
+      "repror": "임기섭",
+      "ofcps": "이사 ",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "3,101",
+      "total_cnt": "111,159",
+      "irds_rate": "0.01",
+      "hold_rate": "0.33",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261112000120&dcm_no=11650605",
+      "dcm_no": "11650605"
+    },
     {
       "rcept_no": "20261112000114",
       "rcept_dt": "2026-11-12",
