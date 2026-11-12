@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-12T11:01+09:00",
+  "updated_at": "2026-11-12T11:06+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20261110000377",
   "disclosures": [
+    {
+      "rcept_no": "20261112000160",
+      "rcept_dt": "2026-11-12",
+      "corp_name": "보해양조",
+      "stock_code": "000890",
+      "market": "KOSPI",
+      "corp_code": "00123541",
+      "repror": "임재웅",
+      "ofcps": "이사",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "18,000",
+      "total_cnt": "75,000",
+      "irds_rate": "0.06",
+      "hold_rate": "0.27",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261112000160&dcm_no=11650705",
+      "dcm_no": "11650705"
+    },
     {
       "rcept_no": "20261112000153",
       "rcept_dt": "2026-11-12",
