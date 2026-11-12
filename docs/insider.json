@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-12T09:21+09:00",
+  "updated_at": "2026-11-12T09:46+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20261110000377",
   "disclosures": [
+    {
+      "rcept_no": "20261112000059",
+      "rcept_dt": "2026-11-12",
+      "corp_name": "브리지텍",
+      "stock_code": "064480",
+      "market": "KOSDAQ",
+      "corp_code": "00359076",
+      "repror": "신경식",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "5,000",
+      "total_cnt": "70,000",
+      "irds_rate": "0.04",
+      "hold_rate": "0.58",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261112000059&dcm_no=11650483",
+      "dcm_no": "11650483"
+    },
     {
       "rcept_no": "20261112000017",
       "rcept_dt": "2026-11-12",
