@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-11T17:59+09:00",
+  "updated_at": "2026-11-12T09:04+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -13,8 +13,23 @@
     "Pzena",
     "Dalton"
   ],
-  "last_seen": "20261111000435",
+  "last_seen": "20261112000017",
   "disclosures": [
+    {
+      "rcept_no": "20261112000013",
+      "rcept_dt": "2026-11-12",
+      "firm": "브이아이피자산운용",
+      "corp_name": "롯데렌탈",
+      "stock_code": "089860",
+      "corp_code": "00545716",
+      "stkrt": "4.78",
+      "stkrt_prev": "7.33",
+      "stkqy": "1735104",
+      "report_resn": "장내매도",
+      "purpose": "일반투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매도"
+    },
     {
       "rcept_no": "20261111000401",
       "rcept_dt": "2026-11-11",
