@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-13T13:10+09:00",
+  "updated_at": "2026-11-13T14:03+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20261110000377",
   "disclosures": [
+    {
+      "rcept_no": "20261113000444",
+      "rcept_dt": "2026-11-13",
+      "corp_name": "손오공",
+      "stock_code": "066910",
+      "market": "KOSDAQ",
+      "corp_code": "00306870",
+      "repror": "김득명",
+      "ofcps": "사내이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "7",
+      "total_cnt": "7",
+      "irds_rate": "0.00",
+      "hold_rate": "0.00",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261113000444&dcm_no=11653494",
+      "dcm_no": "11653494"
+    },
     {
       "rcept_no": "20261113000366",
       "rcept_dt": "2026-11-13",
