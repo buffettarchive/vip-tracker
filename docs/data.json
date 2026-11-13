@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-13T12:54+09:00",
+  "updated_at": "2026-11-13T12:59+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -13,8 +13,23 @@
     "Pzena",
     "Dalton"
   ],
-  "last_seen": "20261113000372",
+  "last_seen": "20261113000375",
   "disclosures": [
+    {
+      "rcept_no": "20261113000375",
+      "rcept_dt": "2026-11-13",
+      "firm": "피델리티",
+      "corp_name": "인바디",
+      "stock_code": "041830",
+      "corp_code": "00269922",
+      "stkrt": "",
+      "stkrt_prev": "",
+      "stkqy": "",
+      "report_resn": "",
+      "purpose": "",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "기타"
+    },
     {
       "rcept_no": "20261113000320",
       "rcept_dt": "2026-11-13",
