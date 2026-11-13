@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-13T18:30+09:00",
+  "updated_at": "2026-11-13T20:49+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20261110000377",
   "disclosures": [
+    {
+      "rcept_no": "20261113001395",
+      "rcept_dt": "2026-11-13",
+      "corp_name": "신한지주",
+      "stock_code": "055550",
+      "market": "KOSPI",
+      "corp_code": "00382199",
+      "repror": "최영권",
+      "ofcps": "사외이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,000",
+      "total_cnt": "3,000",
+      "irds_rate": "0.00",
+      "hold_rate": "0.00",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261113001395&dcm_no=11655806",
+      "dcm_no": "11655806"
+    },
     {
       "rcept_no": "20261113001102",
       "rcept_dt": "2026-11-13",
