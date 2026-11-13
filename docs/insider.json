@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-13T14:03+09:00",
+  "updated_at": "2026-11-13T14:30+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20261110000377",
   "disclosures": [
+    {
+      "rcept_no": "20261113000491",
+      "rcept_dt": "2026-11-13",
+      "corp_name": "잉크테크",
+      "stock_code": "049550",
+      "market": "KOSDAQ",
+      "corp_code": "00261656",
+      "repror": "김정돈",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "11,966",
+      "total_cnt": "995,869",
+      "irds_rate": "0.06",
+      "hold_rate": "5.08",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261113000491&dcm_no=11653598",
+      "dcm_no": "11653598"
+    },
     {
       "rcept_no": "20261113000444",
       "rcept_dt": "2026-11-13",
