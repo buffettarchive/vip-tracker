@@ -1,6 +1,24 @@
 {
   "entries": [
     {
+      "rcept_no": "20261113000139",
+      "rcept_dt": "20261113",
+      "corp_code": "00675594",
+      "corp_name": "디티앤씨",
+      "corp_cls": "K",
+      "report_nm": "주요사항보고서(자기주식취득결정)",
+      "type": "취득",
+      "shares_common": null,
+      "amount_common": null,
+      "acq_purpose": null,
+      "acq_method": null,
+      "acq_period_start": null,
+      "acq_period_end": null,
+      "total_shares": null,
+      "ratio_pct": null,
+      "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261113000139"
+    },
+    {
       "rcept_no": "20261112000498",
       "rcept_dt": "20261112",
       "corp_code": "00160588",
@@ -8599,5 +8617,5 @@
       "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250610000225"
     }
   ],
-  "last_seen": "20261112000498"
+  "last_seen": "20261113000139"
 }
