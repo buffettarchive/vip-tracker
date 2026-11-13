@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-13T12:07+09:00",
+  "updated_at": "2026-11-13T13:10+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20261110000377",
   "disclosures": [
+    {
+      "rcept_no": "20261113000366",
+      "rcept_dt": "2026-11-13",
+      "corp_name": "아이에이",
+      "stock_code": "038880",
+      "market": "KOSDAQ",
+      "corp_code": "00252269",
+      "repror": "최동철",
+      "ofcps": "사내이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "1,330",
+      "total_cnt": "284,668",
+      "irds_rate": "0.02",
+      "hold_rate": "3.66",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261113000366&dcm_no=11653334",
+      "dcm_no": "11653334"
+    },
     {
       "rcept_no": "20261113000336",
       "rcept_dt": "2026-11-13",
