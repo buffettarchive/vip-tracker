@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-13T11:44+09:00",
+  "updated_at": "2026-11-13T12:04+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -22,13 +22,13 @@
       "corp_name": "지니언스",
       "stock_code": "263860",
       "corp_code": "00962223",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
+      "stkrt": "3.78",
+      "stkrt_prev": "14.53",
+      "stkqy": "342772",
+      "report_resn": "장내매도",
       "purpose": "",
       "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-      "kind": "기타"
+      "kind": "매도"
     },
     {
       "rcept_no": "20261112000013",
