@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-12T06:00:32Z",
+  "updated_at": "2026-11-13T05:22:22Z",
   "portfolios": {
     "마이클 버리 (사이언 에셋)": {
       "report_date": "2025-09-30",
@@ -118702,28 +118702,28 @@
       ]
     },
     "토마스 루소 (가드너 루소)": {
-      "report_date": "2026-06-30",
-      "total_value_usd": 8925889600,
+      "report_date": "2026-09-30",
+      "total_value_usd": 8417209775,
       "holdings": [
-        {
-          "name": "ALPHABET INC CL C",
-          "cusip": "02079K107",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 1076977046,
-          "shares": 3048077,
-          "weight": 12.07
-        },
         {
           "name": "BERKSHIRE HATHAWAY INC CL A",
           "cusip": "084670108",
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 1072353200,
-          "shares": 1432,
-          "weight": 12.01
+          "value": 1039830960,
+          "shares": 1392,
+          "weight": 12.35
+        },
+        {
+          "name": "ALPHABET INC CL C",
+          "cusip": "02079K107",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 993238700,
+          "shares": 2914946,
+          "weight": 11.8
         },
         {
           "name": "PHILIP MORRIS INTERNATIONAL IN",
@@ -118731,9 +118731,9 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 819675318,
-          "shares": 4530846,
-          "weight": 9.18
+          "value": 836903112,
+          "shares": 4385825,
+          "weight": 9.94
         },
         {
           "name": "MASTERCARD INC CL A",
@@ -118741,9 +118741,9 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 781901965,
-          "shares": 1522395,
-          "weight": 8.76
+          "value": 806292068,
+          "shares": 1462078,
+          "weight": 9.58
         },
         {
           "name": "COMPAGNIE FINANCIERE RICHEMONT",
@@ -118751,9 +118751,9 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 773661807,
-          "shares": 3345346,
-          "weight": 8.67
+          "value": 688899961,
+          "shares": 3211597,
+          "weight": 8.18
         },
         {
           "name": "HEINEKEN HOLDING NV",
@@ -118761,19 +118761,9 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 679639647,
-          "shares": 8905683,
-          "weight": 7.61
-        },
-        {
-          "name": "NESTLE SA SPONSORED ADR",
-          "cusip": "641069406",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 545786866,
-          "shares": 5314898,
-          "weight": 6.11
+          "value": 635034395,
+          "shares": 8555210,
+          "weight": 7.54
         },
         {
           "name": "BERKSHIRE HATHAWAY INC CL B",
@@ -118781,9 +118771,19 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 540102952,
-          "shares": 1079364,
-          "weight": 6.05
+          "value": 515518174,
+          "shares": 1035281,
+          "weight": 6.12
+        },
+        {
+          "name": "NESTLE SA SPONSORED ADR",
+          "cusip": "641069406",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 463575596,
+          "shares": 5106583,
+          "weight": 5.51
         },
         {
           "name": "SUNBELT RENTALS HOLDINGS INC",
@@ -118791,9 +118791,9 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 441216288,
-          "shares": 5897825,
-          "weight": 4.94
+          "value": 411965262,
+          "shares": 5627172,
+          "weight": 4.89
         },
         {
           "name": "NETFLIX INC",
@@ -118801,19 +118801,9 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 407700283,
-          "shares": 5710088,
-          "weight": 4.57
-        },
-        {
-          "name": "MARTIN MARIETTA MATERIALS",
-          "cusip": "573284106",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 406784959,
-          "shares": 705367,
-          "weight": 4.56
+          "value": 387704352,
+          "shares": 5572066,
+          "weight": 4.61
         },
         {
           "name": "UBER TECHNOLOGIES INC",
@@ -118821,9 +118811,9 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 366862522,
-          "shares": 5084015,
-          "weight": 4.11
+          "value": 337078449,
+          "shares": 4920135,
+          "weight": 4.0
         },
         {
           "name": "EUROFINS SCIENTIFIC",
@@ -118831,9 +118821,19 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 320909414,
-          "shares": 4094034,
-          "weight": 3.6
+          "value": 336357727,
+          "shares": 3948382,
+          "weight": 4.0
+        },
+        {
+          "name": "MARTIN MARIETTA MATERIALS",
+          "cusip": "573284106",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 328070593,
+          "shares": 683751,
+          "weight": 3.9
         },
         {
           "name": "DOORDASH INC CL A",
@@ -118841,9 +118841,9 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 218871771,
-          "shares": 1186104,
-          "weight": 2.45
+          "value": 209674855,
+          "shares": 1142331,
+          "weight": 2.49
         },
         {
           "name": "PERNOD RICARD",
@@ -118851,9 +118851,9 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 171675469,
-          "shares": 2351360,
-          "weight": 1.92
+          "value": 153500889,
+          "shares": 2227858,
+          "weight": 1.82
         },
         {
           "name": "COMCAST CORP NEW CL A",
@@ -118861,9 +118861,9 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 53854350,
-          "shares": 2193660,
-          "weight": 0.6
+          "value": 45159926,
+          "shares": 2075364,
+          "weight": 0.54
         },
         {
           "name": "BROWN-FORMAN CORP CL A",
@@ -118871,8 +118871,8 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 43716215,
-          "shares": 1597815,
+          "value": 40989726,
+          "shares": 1527757,
           "weight": 0.49
         },
         {
@@ -118881,9 +118881,9 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 29936661,
-          "shares": 87256,
-          "weight": 0.34
+          "value": 29271381,
+          "shares": 81461,
+          "weight": 0.35
         },
         {
           "name": "EXXON MOBIL CORP",
@@ -118891,9 +118891,9 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 24773668,
-          "shares": 181200,
-          "weight": 0.28
+          "value": 24524618,
+          "shares": 150689,
+          "weight": 0.29
         },
         {
           "name": "BROWN-FORMAN CORP CL B",
@@ -118901,9 +118901,9 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 17036864,
-          "shares": 639282,
-          "weight": 0.19
+          "value": 15500591,
+          "shares": 591626,
+          "weight": 0.18
         },
         {
           "name": "ANHEUSER-BUSCH INBEV SA",
@@ -118911,9 +118911,9 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 14229766,
-          "shares": 171294,
-          "weight": 0.16
+          "value": 12205016,
+          "shares": 164502,
+          "weight": 0.15
         },
         {
           "name": "ALTRIA GROUP INC",
@@ -118921,8 +118921,8 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 10692017,
-          "shares": 148603,
+          "value": 10033947,
+          "shares": 149004,
           "weight": 0.12
         },
         {
@@ -118931,9 +118931,9 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 9801027,
-          "shares": 43937,
-          "weight": 0.11
+          "value": 8552926,
+          "shares": 41922,
+          "weight": 0.1
         },
         {
           "name": "MARKEL CORP",
@@ -118941,18 +118941,8 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 8329588,
-          "shares": 4265,
-          "weight": 0.09
-        },
-        {
-          "name": "JP MORGAN CHASE",
-          "cusip": "46625H100",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 8091270,
-          "shares": 24719,
+          "value": 7183728,
+          "shares": 4195,
           "weight": 0.09
         },
         {
@@ -118961,19 +118951,9 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 7028631,
-          "shares": 25841,
+          "value": 6892003,
+          "shares": 25326,
           "weight": 0.08
-        },
-        {
-          "name": "DOVER CORP",
-          "cusip": "260003108",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 4227902,
-          "shares": 18851,
-          "weight": 0.05
         },
         {
           "name": "ALPHABET INC CL A",
@@ -118981,18 +118961,18 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 3971810,
-          "shares": 11114,
-          "weight": 0.04
+          "value": 3789697,
+          "shares": 11014,
+          "weight": 0.05
         },
         {
-          "name": "COSTCO WHSL CORP",
-          "cusip": "22160K105",
+          "name": "DOVER CORP",
+          "cusip": "260003108",
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 3179709,
-          "shares": 3399,
+          "value": 3526080,
+          "shares": 18851,
           "weight": 0.04
         },
         {
@@ -119001,8 +118981,28 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 3122852,
+          "value": 3246332,
           "shares": 12410,
+          "weight": 0.04
+        },
+        {
+          "name": "COSTCO WHSL CORP",
+          "cusip": "22160K105",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 3113531,
+          "shares": 3420,
+          "weight": 0.04
+        },
+        {
+          "name": "JP MORGAN CHASE",
+          "cusip": "46625H100",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 2848446,
+          "shares": 8610,
           "weight": 0.03
         },
         {
@@ -119011,18 +119011,28 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 2427200,
+          "value": 2222400,
           "shares": 80000,
           "weight": 0.03
         },
         {
-          "name": "VULCAN MATERIALS",
-          "cusip": "929160109",
+          "name": "DE&APOS;LONGHI",
+          "cusip": "T3508H102",
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 2142658,
-          "shares": 7263,
+          "value": 2129582,
+          "shares": 46500,
+          "weight": 0.03
+        },
+        {
+          "name": "DEMANT A/S",
+          "cusip": "K3008M105",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 1931185,
+          "shares": 41000,
           "weight": 0.02
         },
         {
@@ -119031,98 +119041,8 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 2078892,
-          "shares": 83725,
-          "weight": 0.02
-        },
-        {
-          "name": "ALK ABELLO A/S",
-          "cusip": "K03294137",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 1979596,
-          "shares": 53000,
-          "weight": 0.02
-        },
-        {
-          "name": "MCCORMICK INC",
-          "cusip": "579780206",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 1915002,
-          "shares": 37981,
-          "weight": 0.02
-        },
-        {
-          "name": "DE&APOS;LONGHI",
-          "cusip": "T3508H102",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 1813134,
-          "shares": 42700,
-          "weight": 0.02
-        },
-        {
-          "name": "LINDT & SPRUENGLI AG - REG",
-          "cusip": "H49983176",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 1785161,
-          "shares": 15,
-          "weight": 0.02
-        },
-        {
-          "name": "SSP GROUP",
-          "cusip": "G8402N125",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 1743874,
-          "shares": 700000,
-          "weight": 0.02
-        },
-        {
-          "name": "AMERICAN EXPRESS",
-          "cusip": "025816109",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 1733531,
-          "shares": 5125,
-          "weight": 0.02
-        },
-        {
-          "name": "DEMANT A/S",
-          "cusip": "K3008M105",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 1681890,
-          "shares": 41000,
-          "weight": 0.02
-        },
-        {
-          "name": "LOREAL SA",
-          "cusip": "F58149133",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 1625113,
-          "shares": 3705,
-          "weight": 0.02
-        },
-        {
-          "name": "FIELMANN",
-          "cusip": "D2617N114",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 1614797,
-          "shares": 33000,
+          "value": 1891200,
+          "shares": 96000,
           "weight": 0.02
         },
         {
@@ -119131,8 +119051,108 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 1613425,
+          "value": 1839055,
           "shares": 52500,
+          "weight": 0.02
+        },
+        {
+          "name": "ALK ABELLO A/S",
+          "cusip": "K03294137",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 1808720,
+          "shares": 60000,
+          "weight": 0.02
+        },
+        {
+          "name": "SSP GROUP",
+          "cusip": "G8402N125",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 1777068,
+          "shares": 700000,
+          "weight": 0.02
+        },
+        {
+          "name": "MCCORMICK INC",
+          "cusip": "579780206",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 1714387,
+          "shares": 36948,
+          "weight": 0.02
+        },
+        {
+          "name": "MICROSOFT CORP",
+          "cusip": "594918104",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 1676670,
+          "shares": 3269,
+          "weight": 0.02
+        },
+        {
+          "name": "LOTUS BAKERIES",
+          "cusip": "B5783H102",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 1598822,
+          "shares": 115,
+          "weight": 0.02
+        },
+        {
+          "name": "APPLE INC",
+          "cusip": "037833100",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 1573853,
+          "shares": 4726,
+          "weight": 0.02
+        },
+        {
+          "name": "LOREAL SA",
+          "cusip": "F58149133",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 1548577,
+          "shares": 3593,
+          "weight": 0.02
+        },
+        {
+          "name": "AMERICAN EXPRESS",
+          "cusip": "025816109",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 1478230,
+          "shares": 4861,
+          "weight": 0.02
+        },
+        {
+          "name": "LINDT & SPRUENGLI AG - REG",
+          "cusip": "H49983176",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 1471346,
+          "shares": 15,
+          "weight": 0.02
+        },
+        {
+          "name": "FIELMANN",
+          "cusip": "D2617N114",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 1444972,
+          "shares": 33000,
           "weight": 0.02
         },
         {
@@ -119141,7 +119161,7 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 1611024,
+          "value": 1421857,
           "shares": 2200,
           "weight": 0.02
         },
@@ -119151,49 +119171,29 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 1584614,
+          "value": 1405728,
           "shares": 70000,
           "weight": 0.02
         },
         {
-          "name": "LOTUS BAKERIES",
-          "cusip": "B5783H102",
+          "name": "PUIG BRANDS",
+          "cusip": "E8S64T107",
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 1527792,
-          "shares": 115,
+          "value": 1397232,
+          "shares": 68000,
           "weight": 0.02
         },
         {
-          "name": "MICROSOFT CORP",
-          "cusip": "594918104",
+          "name": "DAVIDE CAMPARI-MILANO NV",
+          "cusip": "N24565108",
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 1336904,
-          "shares": 3584,
-          "weight": 0.01
-        },
-        {
-          "name": "APPLE INC",
-          "cusip": "037833100",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 1331345,
-          "shares": 4601,
-          "weight": 0.01
-        },
-        {
-          "name": "CARLSBERG B A/S",
-          "cusip": "K36628137",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 1328184,
-          "shares": 10135,
-          "weight": 0.01
+          "value": 1357629,
+          "shares": 195048,
+          "weight": 0.02
         },
         {
           "name": "SUNBELT RENTALS HOLDINGS ORD",
@@ -119201,8 +119201,28 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 1326006,
+          "value": 1347973,
           "shares": 18178,
+          "weight": 0.02
+        },
+        {
+          "name": "VULCAN MATERIALS",
+          "cusip": "929160109",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 1320513,
+          "shares": 5398,
+          "weight": 0.02
+        },
+        {
+          "name": "CARLSBERG B A/S",
+          "cusip": "K36628137",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 1253087,
+          "shares": 9682,
           "weight": 0.01
         },
         {
@@ -119211,38 +119231,8 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 1273226,
+          "value": 1199965,
           "shares": 15131,
-          "weight": 0.01
-        },
-        {
-          "name": "PUIG BRANDS",
-          "cusip": "E8S64T107",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 1254017,
-          "shares": 68000,
-          "weight": 0.01
-        },
-        {
-          "name": "PEPSICO INC",
-          "cusip": "713448108",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 1234218,
-          "shares": 9115,
-          "weight": 0.01
-        },
-        {
-          "name": "DAVIDE CAMPARI-MILANO NV",
-          "cusip": "N24565108",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 1214895,
-          "shares": 195048,
           "weight": 0.01
         },
         {
@@ -119251,58 +119241,18 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 1207954,
+          "value": 1171345,
           "shares": 27500,
           "weight": 0.01
         },
         {
-          "name": "YETI HOLDINGS INC",
-          "cusip": "98585X104",
+          "name": "PEPSICO INC",
+          "cusip": "713448108",
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 1189440,
-          "shares": 24000,
-          "weight": 0.01
-        },
-        {
-          "name": "NESTLE SA-REG",
-          "cusip": "H57312649",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 1146322,
-          "shares": 11130,
-          "weight": 0.01
-        },
-        {
-          "name": "H&M",
-          "cusip": "W41422101",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 1102359,
-          "shares": 64000,
-          "weight": 0.01
-        },
-        {
-          "name": "FULTON FINL CORP",
-          "cusip": "360271100",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 1070408,
-          "shares": 44250,
-          "weight": 0.01
-        },
-        {
-          "name": "JBT MAREL CORP",
-          "cusip": "477839104",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 1051250,
-          "shares": 7250,
+          "value": 1154743,
+          "shares": 9113,
           "weight": 0.01
         },
         {
@@ -119311,18 +119261,8 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 1044417,
+          "value": 1137533,
           "shares": 11510,
-          "weight": 0.01
-        },
-        {
-          "name": "ELECTROLUX PROFESSIONAL",
-          "cusip": "W2457W116",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 1006442,
-          "shares": 230000,
           "weight": 0.01
         },
         {
@@ -119331,8 +119271,48 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 1003685,
+          "value": 1063088,
           "shares": 12350,
+          "weight": 0.01
+        },
+        {
+          "name": "ELECTROLUX PROFESSIONAL",
+          "cusip": "W2457W116",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 1046439,
+          "shares": 230000,
+          "weight": 0.01
+        },
+        {
+          "name": "H&M",
+          "cusip": "W41422101",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 1024913,
+          "shares": 64000,
+          "weight": 0.01
+        },
+        {
+          "name": "NESTLE SA-REG",
+          "cusip": "H57312649",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 1013357,
+          "shares": 11130,
+          "weight": 0.01
+        },
+        {
+          "name": "YETI HOLDINGS INC",
+          "cusip": "98585X104",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 984480,
+          "shares": 24000,
           "weight": 0.01
         },
         {
@@ -119341,8 +119321,18 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 961079,
-          "shares": 6554,
+          "value": 928484,
+          "shares": 6391,
+          "weight": 0.01
+        },
+        {
+          "name": "FULTON FINL CORP",
+          "cusip": "360271100",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 921576,
+          "shares": 40850,
           "weight": 0.01
         },
         {
@@ -119351,8 +119341,18 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 958746,
-          "shares": 8465,
+          "value": 856301,
+          "shares": 8240,
+          "weight": 0.01
+        },
+        {
+          "name": "FB BANCORP INC",
+          "cusip": "31425A109",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 824000,
+          "shares": 50000,
           "weight": 0.01
         },
         {
@@ -119361,7 +119361,7 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 924543,
+          "value": 804960,
           "shares": 6450,
           "weight": 0.01
         },
@@ -119371,7 +119371,7 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 837301,
+          "value": 773582,
           "shares": 5368,
           "weight": 0.01
         },
@@ -119381,18 +119381,8 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 812155,
+          "value": 721946,
           "shares": 28000,
-          "weight": 0.01
-        },
-        {
-          "name": "FB BANCORP INC",
-          "cusip": "31425A109",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 753000,
-          "shares": 50000,
           "weight": 0.01
         },
         {
@@ -119401,8 +119391,8 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 615762,
-          "shares": 7451,
+          "value": 596534,
+          "shares": 7452,
           "weight": 0.01
         },
         {
@@ -119411,39 +119401,9 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 580140,
+          "value": 556700,
           "shares": 97667,
           "weight": 0.01
-        },
-        {
-          "name": "HORMEL FOODS CORP",
-          "cusip": "440452100",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 459170,
-          "shares": 18500,
-          "weight": 0.01
-        },
-        {
-          "name": "OUTFRONT MEDIA INC",
-          "cusip": "69007J304",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 445143,
-          "shares": 13588,
-          "weight": 0.0
-        },
-        {
-          "name": "LT GROUP INC",
-          "cusip": "Y5342M100",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 431530,
-          "shares": 1775000,
-          "weight": 0.0
         },
         {
           "name": "CHEVRON CORP",
@@ -119451,9 +119411,19 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 409427,
+          "value": 504399,
           "shares": 2470,
-          "weight": 0.0
+          "weight": 0.01
+        },
+        {
+          "name": "LT GROUP INC",
+          "cusip": "Y5342M100",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 432381,
+          "shares": 1775000,
+          "weight": 0.01
         },
         {
           "name": "ORACLE CORP",
@@ -119461,8 +119431,28 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 397883,
+          "value": 372770,
           "shares": 2715,
+          "weight": 0.0
+        },
+        {
+          "name": "HORMEL FOODS CORP",
+          "cusip": "440452100",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 348950,
+          "shares": 17500,
+          "weight": 0.0
+        },
+        {
+          "name": "DIAGEO PLC",
+          "cusip": "G42089113",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 307257,
+          "shares": 14242,
           "weight": 0.0
         },
         {
@@ -119471,7 +119461,7 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 311559,
+          "value": 305739,
           "shares": 3485,
           "weight": 0.0
         },
@@ -119481,28 +119471,8 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 282415,
+          "value": 294391,
           "shares": 1112,
-          "weight": 0.0
-        },
-        {
-          "name": "CATERPILLAR INC",
-          "cusip": "149123101",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 282199,
-          "shares": 265,
-          "weight": 0.0
-        },
-        {
-          "name": "MCDONALDS CORP",
-          "cusip": "580135101",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 255984,
-          "shares": 947,
           "weight": 0.0
         },
         {
@@ -119511,18 +119481,8 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 239858,
-          "shares": 2492,
-          "weight": 0.0
-        },
-        {
-          "name": "AMAZONCOM INC",
-          "cusip": "023135106",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 223086,
-          "shares": 936,
+          "value": 262325,
+          "shares": 2501,
           "weight": 0.0
         },
         {
@@ -119531,8 +119491,18 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 211006,
-          "shares": 1642,
+          "value": 238762,
+          "shares": 1643,
+          "weight": 0.0
+        },
+        {
+          "name": "AMAZONCOM INC",
+          "cusip": "023135106",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 233204,
+          "shares": 936,
           "weight": 0.0
         },
         {
@@ -119541,8 +119511,38 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 199642,
+          "value": 222598,
           "shares": 251250,
+          "weight": 0.0
+        },
+        {
+          "name": "MCDONALDS CORP",
+          "cusip": "580135101",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 218700,
+          "shares": 947,
+          "weight": 0.0
+        },
+        {
+          "name": "CATERPILLAR INC",
+          "cusip": "149123101",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 214859,
+          "shares": 265,
+          "weight": 0.0
+        },
+        {
+          "name": "NVIDIA CORP",
+          "cusip": "67066G104",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 205542,
+          "shares": 900,
           "weight": 0.0
         },
         {
@@ -119551,7 +119551,7 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 187360,
+          "value": 174825,
           "shares": 5000000,
           "weight": 0.0
         }
@@ -120020,8 +120020,8 @@
       ]
     },
     "퍼스트 퍼시픽 어드바이저스": {
-      "report_date": "2026-06-30",
-      "total_value_usd": 8089173876,
+      "report_date": "2026-09-30",
+      "total_value_usd": 8394932641,
       "holdings": [
         {
           "name": "ANALOG DEVICES INC",
@@ -120029,49 +120029,9 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 634878628,
-          "shares": 1598506,
-          "weight": 7.85
-        },
-        {
-          "name": "ALPHABET INC",
-          "cusip": "02079K305",
-          "title": "CAP STK CL A",
-          "type": "SH",
-          "put_call": "",
-          "value": 503362078,
-          "shares": 1408518,
-          "weight": 6.22
-        },
-        {
-          "name": "ALPHABET INC",
-          "cusip": "02079K107",
-          "title": "CAP STK CL C",
-          "type": "SH",
-          "put_call": "",
-          "value": 471061323,
-          "shares": 1333205,
-          "weight": 5.82
-        },
-        {
-          "name": "INTERNATIONAL FLAVORS&FRAGRA",
-          "cusip": "459506101",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 432151517,
-          "shares": 5455081,
-          "weight": 5.34
-        },
-        {
-          "name": "CITIGROUP INC",
-          "cusip": "172967424",
-          "title": "COM NEW",
-          "type": "SH",
-          "put_call": "",
-          "value": 422235247,
-          "shares": 3016828,
-          "weight": 5.22
+          "value": 604472978,
+          "shares": 1523715,
+          "weight": 7.2
         },
         {
           "name": "META PLATFORMS INC",
@@ -120079,19 +120039,49 @@
           "title": "CL A",
           "type": "SH",
           "put_call": "",
-          "value": 382971858,
-          "shares": 679884,
-          "weight": 4.73
+          "value": 509027773,
+          "shares": 701933,
+          "weight": 6.06
         },
         {
-          "name": "AMAZON COM INC",
-          "cusip": "023135106",
+          "name": "INTERNATIONAL FLAVORS&FRAGRA",
+          "cusip": "459506101",
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 324281829,
-          "shares": 1360585,
-          "weight": 4.01
+          "value": 461222576,
+          "shares": 5524947,
+          "weight": 5.49
+        },
+        {
+          "name": "ALPHABET INC",
+          "cusip": "02079K107",
+          "title": "CAP STK CL C",
+          "type": "SH",
+          "put_call": "",
+          "value": 456368075,
+          "shares": 1339344,
+          "weight": 5.44
+        },
+        {
+          "name": "CITIGROUP INC",
+          "cusip": "172967424",
+          "title": "COM NEW",
+          "type": "SH",
+          "put_call": "",
+          "value": 395037006,
+          "shares": 3050950,
+          "weight": 4.71
+        },
+        {
+          "name": "ALPHABET INC",
+          "cusip": "02079K305",
+          "title": "CAP STK CL A",
+          "type": "SH",
+          "put_call": "",
+          "value": 395000743,
+          "shares": 1147991,
+          "weight": 4.71
         },
         {
           "name": "BECTON DICKINSON & CO",
@@ -120099,9 +120089,19 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 319426456,
-          "shares": 2110794,
-          "weight": 3.95
+          "value": 382788099,
+          "shares": 2138481,
+          "weight": 4.56
+        },
+        {
+          "name": "AMAZON COM INC",
+          "cusip": "023135106",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 338971565,
+          "shares": 1360512,
+          "weight": 4.04
         },
         {
           "name": "TE CONNECTIVITY PLC",
@@ -120109,9 +120109,9 @@
           "title": "ORD SHS",
           "type": "SH",
           "put_call": "",
-          "value": 312718279,
-          "shares": 1551105,
-          "weight": 3.87
+          "value": 327094423,
+          "shares": 1549623,
+          "weight": 3.9
         },
         {
           "name": "GALLAGHER ARTHUR J & CO",
@@ -120119,19 +120119,9 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 306772095,
-          "shares": 1336290,
-          "weight": 3.79
-        },
-        {
-          "name": "AON PLC",
-          "cusip": "G0403H108",
-          "title": "SHS CL A",
-          "type": "SH",
-          "put_call": "",
-          "value": 226002620,
-          "shares": 681367,
-          "weight": 2.79
+          "value": 308857290,
+          "shares": 1353984,
+          "weight": 3.68
         },
         {
           "name": "COMCAST CORP NEW",
@@ -120139,59 +120129,19 @@
           "title": "CL A",
           "type": "SH",
           "put_call": "",
-          "value": 213012101,
-          "shares": 8676664,
-          "weight": 2.63
+          "value": 192358835,
+          "shares": 8840020,
+          "weight": 2.29
         },
         {
-          "name": "FORTUNE BRANDS INNOVATIONS I",
-          "cusip": "34964C106",
-          "title": "COM",
+          "name": "AON PLC",
+          "cusip": "G0403H108",
+          "title": "SHS CL A",
           "type": "SH",
           "put_call": "",
-          "value": 210007268,
-          "shares": 3825269,
-          "weight": 2.6
-        },
-        {
-          "name": "NXP SEMICONDUCTORS N V",
-          "cusip": "N6596X109",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 193378710,
-          "shares": 688107,
-          "weight": 2.39
-        },
-        {
-          "name": "FERGUSON ENTERPRISES INC",
-          "cusip": "31488V107",
-          "title": "COMMON STOCK NEW",
-          "type": "SH",
-          "put_call": "",
-          "value": 186736465,
-          "shares": 786822,
-          "weight": 2.31
-        },
-        {
-          "name": "VAIL RESORTS INC",
-          "cusip": "91879Q109",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 177670168,
-          "shares": 1304959,
-          "weight": 2.2
-        },
-        {
-          "name": "AMRIZE LTD",
-          "cusip": "H2927K103",
-          "title": "SHS",
-          "type": "SH",
-          "put_call": "",
-          "value": 169351423,
-          "shares": 3177325,
-          "weight": 2.09
+          "value": 187180658,
+          "shares": 676304,
+          "weight": 2.23
         },
         {
           "name": "BAXTER INTL INC",
@@ -120199,9 +120149,29 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 162418851,
-          "shares": 7618145,
-          "weight": 2.01
+          "value": 185409672,
+          "shares": 7725403,
+          "weight": 2.21
+        },
+        {
+          "name": "VAIL RESORTS INC",
+          "cusip": "91879Q109",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 181313138,
+          "shares": 1321717,
+          "weight": 2.16
+        },
+        {
+          "name": "FERGUSON ENTERPRISES INC",
+          "cusip": "31488V107",
+          "title": "COMMON STOCK NEW",
+          "type": "SH",
+          "put_call": "",
+          "value": 177458416,
+          "shares": 797136,
+          "weight": 2.11
         },
         {
           "name": "CARMAX INC",
@@ -120209,29 +120179,9 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 159122950,
-          "shares": 3008564,
-          "weight": 1.97
-        },
-        {
-          "name": "LIBERTY BROADBAND CORP",
-          "cusip": "530307305",
-          "title": "COM SER C",
-          "type": "SH",
-          "put_call": "",
-          "value": 154384705,
-          "shares": 4641753,
-          "weight": 1.91
-        },
-        {
-          "name": "JEFFERIES FINANCIAL GROUP IN",
-          "cusip": "47233W109",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 135159165,
-          "shares": 2704265,
-          "weight": 1.67
+          "value": 168067424,
+          "shares": 3049672,
+          "weight": 2.0
         },
         {
           "name": "THERMO FISHER SCIENTIFIC INC",
@@ -120239,109 +120189,29 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 124459612,
-          "shares": 248244,
-          "weight": 1.54
+          "value": 165730175,
+          "shares": 245508,
+          "weight": 1.97
         },
         {
-          "name": "NOV INC",
-          "cusip": "62955J103",
+          "name": "NXP SEMICONDUCTORS N V",
+          "cusip": "N6596X109",
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 118578797,
-          "shares": 6392388,
-          "weight": 1.47
+          "value": 162800924,
+          "shares": 685391,
+          "weight": 1.94
         },
         {
-          "name": "BIO RAD LABS INC",
-          "cusip": "090572207",
-          "title": "CL A",
-          "type": "SH",
-          "put_call": "",
-          "value": 117990408,
-          "shares": 401861,
-          "weight": 1.46
-        },
-        {
-          "name": "ECHOSTAR CORP",
-          "cusip": "278768AB2",
-          "title": "NOTE 3.875%11/3",
-          "type": "PRN",
-          "put_call": "",
-          "value": 114192866,
-          "shares": 36570974,
-          "weight": 1.41
-        },
-        {
-          "name": "DANAHER CORP DEL",
-          "cusip": "235851102",
+          "name": "FORTUNE BRANDS INNOVATIONS I",
+          "cusip": "34964C106",
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 107579485,
-          "shares": 564781,
-          "weight": 1.33
-        },
-        {
-          "name": "ICON PUB LTD CO",
-          "cusip": "G4705A100",
-          "title": "SHS",
-          "type": "SH",
-          "put_call": "",
-          "value": 105359110,
-          "shares": 606523,
-          "weight": 1.3
-        },
-        {
-          "name": "DOUGLAS EMMETT INC",
-          "cusip": "25960P109",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 103179188,
-          "shares": 8743999,
-          "weight": 1.28
-        },
-        {
-          "name": "WATERS CORP",
-          "cusip": "941848103",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 100572227,
-          "shares": 268164,
-          "weight": 1.24
-        },
-        {
-          "name": "PAYPAL HLDGS INC",
-          "cusip": "70450Y103",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 92312406,
-          "shares": 2137851,
-          "weight": 1.14
-        },
-        {
-          "name": "LPL FINL HLDGS INC",
-          "cusip": "50212V100",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 90488010,
-          "shares": 321244,
-          "weight": 1.12
-        },
-        {
-          "name": "INTUIT",
-          "cusip": "461202103",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 86642604,
-          "shares": 331964,
-          "weight": 1.07
+          "value": 147535983,
+          "shares": 3877424,
+          "weight": 1.76
         },
         {
           "name": "SAP SE",
@@ -120349,9 +120219,149 @@
           "title": "SPON ADR",
           "type": "SH",
           "put_call": "",
-          "value": 85596701,
-          "shares": 555426,
-          "weight": 1.06
+          "value": 147114954,
+          "shares": 705655,
+          "weight": 1.75
+        },
+        {
+          "name": "AMRIZE LTD",
+          "cusip": "H2927K103",
+          "title": "SHS",
+          "type": "SH",
+          "put_call": "",
+          "value": 129305800,
+          "shares": 3458299,
+          "weight": 1.54
+        },
+        {
+          "name": "INTUIT",
+          "cusip": "461202103",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 127367819,
+          "shares": 461963,
+          "weight": 1.52
+        },
+        {
+          "name": "DANAHER CORP DEL",
+          "cusip": "235851102",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 124006631,
+          "shares": 559723,
+          "weight": 1.48
+        },
+        {
+          "name": "JEFFERIES FINANCIAL GROUP IN",
+          "cusip": "47233W109",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 123899307,
+          "shares": 2709366,
+          "weight": 1.48
+        },
+        {
+          "name": "CHARTER COMMUNICATIONS INC",
+          "cusip": "16119P108",
+          "title": "CL A",
+          "type": "SH",
+          "put_call": "",
+          "value": 122741458,
+          "shares": 1106776,
+          "weight": 1.46
+        },
+        {
+          "name": "NOV INC",
+          "cusip": "62955J103",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 121432134,
+          "shares": 6483296,
+          "weight": 1.45
+        },
+        {
+          "name": "WATERS CORP",
+          "cusip": "941848103",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 115380738,
+          "shares": 262593,
+          "weight": 1.37
+        },
+        {
+          "name": "PAYPAL HLDGS INC",
+          "cusip": "70450Y103",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 113755448,
+          "shares": 2165533,
+          "weight": 1.36
+        },
+        {
+          "name": "ALPHABET INC",
+          "cusip": "02079K404",
+          "title": "DEP SHS RP1/20 A",
+          "type": "PRN",
+          "put_call": "",
+          "value": 109083736,
+          "shares": 2222570,
+          "weight": 1.3
+        },
+        {
+          "name": "BOSTON SCIENTIFIC CORP",
+          "cusip": "101137107",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 102326294,
+          "shares": 2344245,
+          "weight": 1.22
+        },
+        {
+          "name": "ICON PUB LTD CO",
+          "cusip": "G4705A100",
+          "title": "SHS",
+          "type": "SH",
+          "put_call": "",
+          "value": 101981591,
+          "shares": 599927,
+          "weight": 1.21
+        },
+        {
+          "name": "BIO RAD LABS INC",
+          "cusip": "090572207",
+          "title": "CL A",
+          "type": "SH",
+          "put_call": "",
+          "value": 101634962,
+          "shares": 269082,
+          "weight": 1.21
+        },
+        {
+          "name": "ECHOSTAR CORP",
+          "cusip": "278768AB2",
+          "title": "NOTE 3.875%11/3",
+          "type": "PRN",
+          "put_call": "",
+          "value": 101369627,
+          "shares": 36570974,
+          "weight": 1.21
+        },
+        {
+          "name": "LPL FINL HLDGS INC",
+          "cusip": "50212V100",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 98236415,
+          "shares": 321244,
+          "weight": 1.17
         },
         {
           "name": "AVANTOR INC",
@@ -120359,9 +120369,9 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 81088326,
-          "shares": 8190740,
-          "weight": 1.0
+          "value": 94120096,
+          "shares": 6253827,
+          "weight": 1.12
         },
         {
           "name": "CNH INDL N V",
@@ -120369,9 +120379,19 @@
           "title": "SHS",
           "type": "SH",
           "put_call": "",
-          "value": 80278621,
-          "shares": 7148586,
-          "weight": 0.99
+          "value": 93099920,
+          "shares": 7245130,
+          "weight": 1.11
+        },
+        {
+          "name": "DOUGLAS EMMETT INC",
+          "cusip": "25960P109",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 83767510,
+          "shares": 8743999,
+          "weight": 1.0
         },
         {
           "name": "UBER TECHNOLOGIES INC",
@@ -120379,19 +120399,19 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 70467415,
-          "shares": 976544,
-          "weight": 0.87
+          "value": 67827572,
+          "shares": 990039,
+          "weight": 0.81
         },
         {
-          "name": "VORNADO RLTY TR",
-          "cusip": "929042109",
-          "title": "SH BEN INT",
+          "name": "CORE & MAIN INC",
+          "cusip": "21874C102",
+          "title": "CL A",
           "type": "SH",
           "put_call": "",
-          "value": 66171807,
-          "shares": 1683761,
-          "weight": 0.82
+          "value": 67094605,
+          "shares": 1617517,
+          "weight": 0.8
         },
         {
           "name": "WELLS FARGO & CO",
@@ -120399,9 +120419,29 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 64866037,
-          "shares": 784923,
-          "weight": 0.8
+          "value": 63701789,
+          "shares": 795775,
+          "weight": 0.76
+        },
+        {
+          "name": "VORNADO RLTY TR",
+          "cusip": "929042109",
+          "title": "SH BEN INT",
+          "type": "SH",
+          "put_call": "",
+          "value": 57045823,
+          "shares": 1683761,
+          "weight": 0.68
+        },
+        {
+          "name": "HCA HEALTHCARE INC",
+          "cusip": "40412C101",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 55823993,
+          "shares": 130815,
+          "weight": 0.66
         },
         {
           "name": "GE HEALTHCARE TECHNOLOGIES I",
@@ -120409,8 +120449,8 @@
           "title": "COMMON STOCK",
           "type": "SH",
           "put_call": "",
-          "value": 52960530,
-          "shares": 827379,
+          "value": 54849679,
+          "shares": 839065,
           "weight": 0.65
         },
         {
@@ -120419,19 +120459,19 @@
           "title": "ORD SHS",
           "type": "SH",
           "put_call": "",
-          "value": 51737576,
-          "shares": 2971716,
-          "weight": 0.64
+          "value": 52363842,
+          "shares": 2945098,
+          "weight": 0.62
         },
         {
-          "name": "WABTEC",
-          "cusip": "929740108",
+          "name": "JBT MAREL CORPORATION",
+          "cusip": "477839104",
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 50966532,
-          "shares": 189045,
-          "weight": 0.63
+          "value": 51011374,
+          "shares": 483108,
+          "weight": 0.61
         },
         {
           "name": "NCR VOYIX CORPORATION",
@@ -120439,19 +120479,9 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 44224308,
+          "value": 37025002,
           "shares": 5413012,
-          "weight": 0.55
-        },
-        {
-          "name": "BROADCOM INC",
-          "cusip": "11135F101",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 23861334,
-          "shares": 63167,
-          "weight": 0.29
+          "weight": 0.44
         },
         {
           "name": "MARSH & MCLENNAN COS INC",
@@ -120459,59 +120489,9 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 20202571,
-          "shares": 121213,
-          "weight": 0.25
-        },
-        {
-          "name": "PG&E CORP",
-          "cusip": "69331C108",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 19724730,
-          "shares": 1172695,
-          "weight": 0.24
-        },
-        {
-          "name": "VANGUARD INSTL INDEX FD 0 3 MO TR BI ETF",
-          "cusip": "922040845",
-          "title": "0 3 MO TR BI ETF",
-          "type": "SH",
-          "put_call": "",
-          "value": 19697990,
-          "shares": 260280,
-          "weight": 0.24
-        },
-        {
-          "name": "RUSH ENTERPRISES INC",
-          "cusip": "781846209",
-          "title": "CL A",
-          "type": "SH",
-          "put_call": "",
-          "value": 9421926,
-          "shares": 129094,
-          "weight": 0.12
-        },
-        {
-          "name": "STAGWELL INC",
-          "cusip": "85256A109",
-          "title": "COM CL A",
-          "type": "SH",
-          "put_call": "",
-          "value": 8855951,
-          "shares": 1191918,
-          "weight": 0.11
-        },
-        {
-          "name": "MARRIOTT INTL INC NEW",
-          "cusip": "571903202",
-          "title": "CL A",
-          "type": "SH",
-          "put_call": "",
-          "value": 6835533,
-          "shares": 18445,
-          "weight": 0.08
+          "value": 22242704,
+          "shares": 130280,
+          "weight": 0.26
         },
         {
           "name": "INVESTMENT MANAGERS SER TR I",
@@ -120519,8 +120499,78 @@
           "title": "FPA GBL EQTY ETF",
           "type": "SH",
           "put_call": "",
-          "value": 5839733,
-          "shares": 145470,
+          "value": 14454923,
+          "shares": 353594,
+          "weight": 0.17
+        },
+        {
+          "name": "STAGWELL INC",
+          "cusip": "85256A109",
+          "title": "COM CL A",
+          "type": "SH",
+          "put_call": "",
+          "value": 9702213,
+          "shares": 1191918,
+          "weight": 0.12
+        },
+        {
+          "name": "RUSH ENTERPRISES INC",
+          "cusip": "781846209",
+          "title": "CL A",
+          "type": "SH",
+          "put_call": "",
+          "value": 8870648,
+          "shares": 193640,
+          "weight": 0.11
+        },
+        {
+          "name": "VANGUARD INSTL INDEX FD 0 3 MO TR BI ETF",
+          "cusip": "922040845",
+          "title": "0 3 MO TR BI ETF",
+          "type": "SH",
+          "put_call": "",
+          "value": 8619889,
+          "shares": 113839,
+          "weight": 0.1
+        },
+        {
+          "name": "INVESTMENT MANAGERS SER TR I",
+          "cusip": "30254T478",
+          "title": "FPA SHT DURA GOV",
+          "type": "SH",
+          "put_call": "",
+          "value": 7550592,
+          "shares": 318456,
+          "weight": 0.09
+        },
+        {
+          "name": "MARAVAI LIFESCIENCES HLDGS I",
+          "cusip": "56600D107",
+          "title": "COM CL A",
+          "type": "SH",
+          "put_call": "",
+          "value": 6778204,
+          "shares": 884883,
+          "weight": 0.08
+        },
+        {
+          "name": "VANGUARD INTL EQUITY INDEX F TT WRLD ST ETF",
+          "cusip": "922042742",
+          "title": "TT WRLD ST ETF",
+          "type": "SH",
+          "put_call": "",
+          "value": 5944631,
+          "shares": 37660,
+          "weight": 0.07
+        },
+        {
+          "name": "TIDEWATER INC NEW",
+          "cusip": "88642R109",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 5653643,
+          "shares": 69712,
           "weight": 0.07
         },
         {
@@ -120529,89 +120579,19 @@
           "title": "COM CL A",
           "type": "SH",
           "put_call": "",
-          "value": 5617137,
+          "value": 4962852,
           "shares": 285714,
-          "weight": 0.07
-        },
-        {
-          "name": "MARAVAI LIFESCIENCES HLDGS I",
-          "cusip": "56600D107",
-          "title": "COM CL A",
-          "type": "SH",
-          "put_call": "",
-          "value": 5521670,
-          "shares": 884883,
-          "weight": 0.07
-        },
-        {
-          "name": "VANGUARD INTL EQUITY INDEX F TT WRLD ST ETF",
-          "cusip": "922042742",
-          "title": "TT WRLD ST ETF",
-          "type": "SH",
-          "put_call": "",
-          "value": 5203049,
-          "shares": 33151,
           "weight": 0.06
         },
         {
-          "name": "TIDEWATER INC NEW",
-          "cusip": "88642R109",
+          "name": "WILLIS LEASE FIN CORP",
+          "cusip": "970646105",
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 5092064,
-          "shares": 76423,
-          "weight": 0.06
-        },
-        {
-          "name": "WAYFAIR INC",
-          "cusip": "94419LAF8",
-          "title": "NOTE 1.000% 8/1",
-          "type": "PRN",
-          "put_call": "",
-          "value": 4859541,
-          "shares": 4934000,
-          "weight": 0.06
-        },
-        {
-          "name": "ECHOSTAR CORP",
-          "cusip": "278768106",
-          "title": "CL A",
-          "type": "SH",
-          "put_call": "",
-          "value": 4777199,
-          "shares": 47066,
-          "weight": 0.06
-        },
-        {
-          "name": "ECHOSTAR CORP (PUT)",
-          "cusip": "278768106",
-          "title": "CL A",
-          "type": "SH",
-          "put_call": "PUT",
-          "value": 4770500,
-          "shares": 47000,
-          "weight": 0.06
-        },
-        {
-          "name": "ALLEGIANT TRAVEL CO",
-          "cusip": "01748X102",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 4020274,
-          "shares": 34186,
+          "value": 4130152,
+          "shares": 82752,
           "weight": 0.05
-        },
-        {
-          "name": "INVESTMENT MANAGERS SER TR I",
-          "cusip": "30254T478",
-          "title": "FPA SHT DURA GOV",
-          "type": "SH",
-          "put_call": "",
-          "value": 3626018,
-          "shares": 146775,
-          "weight": 0.04
         },
         {
           "name": "PONCE FINANCIAL GROUP INC",
@@ -120619,18 +120599,8 @@
           "title": "COMMON STOCK",
           "type": "SH",
           "put_call": "",
-          "value": 3620346,
-          "shares": 181562,
-          "weight": 0.04
-        },
-        {
-          "name": "RESERVOIR MEDIA INC",
-          "cusip": "76119X105",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 3053508,
-          "shares": 308747,
+          "value": 3478952,
+          "shares": 174471,
           "weight": 0.04
         },
         {
@@ -120639,9 +120609,39 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 2850246,
-          "shares": 166974,
+          "value": 2938712,
+          "shares": 165468,
           "weight": 0.04
+        },
+        {
+          "name": "RESERVOIR MEDIA INC",
+          "cusip": "76119X105",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 2926922,
+          "shares": 308747,
+          "weight": 0.03
+        },
+        {
+          "name": "WABTEC",
+          "cusip": "929740108",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 2858877,
+          "shares": 9955,
+          "weight": 0.03
+        },
+        {
+          "name": "ALLEGIANT TRAVEL CO",
+          "cusip": "01748X102",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 2590957,
+          "shares": 34186,
+          "weight": 0.03
         },
         {
           "name": "ORION SA",
@@ -120649,18 +120649,8 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 2767282,
+          "value": 2345721,
           "shares": 417388,
-          "weight": 0.03
-        },
-        {
-          "name": "WILLIS LEASE FIN CORP",
-          "cusip": "970646105",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 2618158,
-          "shares": 11443,
           "weight": 0.03
         },
         {
@@ -120669,19 +120659,9 @@
           "title": "COM SHS",
           "type": "SH",
           "put_call": "",
-          "value": 2171933,
+          "value": 2260491,
           "shares": 50033,
           "weight": 0.03
-        },
-        {
-          "name": "PAR PAC HOLDINGS INC",
-          "cusip": "69888T207",
-          "title": "COM NEW",
-          "type": "SH",
-          "put_call": "",
-          "value": 1330218,
-          "shares": 23720,
-          "weight": 0.02
         },
         {
           "name": "AERSALE CORPORATION",
@@ -120689,8 +120669,18 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 1319148,
-          "shares": 208726,
+          "value": 1911830,
+          "shares": 364853,
+          "weight": 0.02
+        },
+        {
+          "name": "TIDEWATER INC NEW (PUT)",
+          "cusip": "88642R109",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "PUT",
+          "value": 1622000,
+          "shares": 20000,
           "weight": 0.02
         },
         {
@@ -120699,8 +120689,28 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 1241777,
-          "shares": 7126,
+          "value": 1461237,
+          "shares": 7211,
+          "weight": 0.02
+        },
+        {
+          "name": "PAR PAC HOLDINGS INC",
+          "cusip": "69888T207",
+          "title": "COM NEW",
+          "type": "SH",
+          "put_call": "",
+          "value": 1333671,
+          "shares": 16340,
+          "weight": 0.02
+        },
+        {
+          "name": "PAR PAC HOLDINGS INC (PUT)",
+          "cusip": "69888T207",
+          "title": "COM NEW",
+          "type": "SH",
+          "put_call": "PUT",
+          "value": 1330406,
+          "shares": 16300,
           "weight": 0.02
         },
         {
@@ -120709,8 +120719,18 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 1170960,
+          "value": 1141112,
           "shares": 16400,
+          "weight": 0.01
+        },
+        {
+          "name": "BROADCOM INC",
+          "cusip": "11135F101",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 1026880,
+          "shares": 2924,
           "weight": 0.01
         },
         {
@@ -120719,8 +120739,18 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 954758,
+          "value": 847951,
           "shares": 2632,
+          "weight": 0.01
+        },
+        {
+          "name": "ISHARES TR BB RAT CORP BD",
+          "cusip": "46435U473",
+          "title": "BB RAT CORP BD",
+          "type": "SH",
+          "put_call": "",
+          "value": 557708,
+          "shares": 12377,
           "weight": 0.01
         },
         {
@@ -120729,9 +120759,19 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 477197,
+          "value": 465781,
           "shares": 57081,
           "weight": 0.01
+        },
+        {
+          "name": "VANGUARD MALVERN FDS TOTAL INFLATION",
+          "cusip": "922020698",
+          "title": "TOTAL INFLATION",
+          "type": "SH",
+          "put_call": "",
+          "value": 350459,
+          "shares": 4789,
+          "weight": 0.0
         },
         {
           "name": "BAIDU INC",
@@ -120739,7 +120779,7 @@
           "title": "SPON ADR REP A",
           "type": "SH",
           "put_call": "",
-          "value": 390986,
+          "value": 297182,
           "shares": 3421,
           "weight": 0.0
         },
@@ -120749,28 +120789,8 @@
           "title": "COM SHS",
           "type": "SH",
           "put_call": "",
-          "value": 289445,
+          "value": 211469,
           "shares": 25235,
-          "weight": 0.0
-        },
-        {
-          "name": "ISHARES TR BB RAT CORP BD",
-          "cusip": "46435U473",
-          "title": "BB RAT CORP BD",
-          "type": "SH",
-          "put_call": "",
-          "value": 174312,
-          "shares": 3727,
-          "weight": 0.0
-        },
-        {
-          "name": "DIAGEO PLC",
-          "cusip": "25243Q205",
-          "title": "SPON ADR NEW",
-          "type": "SH",
-          "put_call": "",
-          "value": 80,
-          "shares": 1,
           "weight": 0.0
         }
       ]
@@ -129770,8 +129790,8 @@
       ]
     },
     "사만다 맥레모어 (페이션트)": {
-      "report_date": "2026-06-30",
-      "total_value_usd": 3050483973,
+      "report_date": "2026-09-30",
+      "total_value_usd": 3145732945,
       "holdings": [
         {
           "name": "ROYALTY PHARMA PLC",
@@ -129779,9 +129799,9 @@
           "title": "SHS CLASS A",
           "type": "SH",
           "put_call": "",
-          "value": 201785166,
-          "shares": 3598808,
-          "weight": 6.61
+          "value": 199711845,
+          "shares": 3422067,
+          "weight": 6.35
         },
         {
           "name": "CITIGROUP INC",
@@ -129789,9 +129809,9 @@
           "title": "COM NEW",
           "type": "SH",
           "put_call": "",
-          "value": 196430787,
-          "shares": 1403477,
-          "weight": 6.44
+          "value": 179919813,
+          "shares": 1389556,
+          "weight": 5.72
         },
         {
           "name": "ALPHABET INC",
@@ -129799,19 +129819,9 @@
           "title": "CAP STK CL A",
           "type": "SH",
           "put_call": "",
-          "value": 187887516,
-          "shares": 525750,
-          "weight": 6.16
-        },
-        {
-          "name": "UNITEDHEALTH GROUP INC",
-          "cusip": "91324P102",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 181951987,
-          "shares": 437773,
-          "weight": 5.96
+          "value": 178398954,
+          "shares": 518480,
+          "weight": 5.67
         },
         {
           "name": "AMAZON COM INC",
@@ -129819,9 +129829,9 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 162320874,
-          "shares": 681047,
-          "weight": 5.32
+          "value": 168703746,
+          "shares": 677117,
+          "weight": 5.36
         },
         {
           "name": "NVIDIA CORPORATION",
@@ -129829,28 +129839,38 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 141981419,
-          "shares": 709587,
-          "weight": 4.65
+          "value": 162133288,
+          "shares": 709927,
+          "weight": 5.15
         },
         {
-          "name": "CVS HEALTH CORP",
-          "cusip": "126650100",
+          "name": "UNITEDHEALTH GROUP INC",
+          "cusip": "91324P102",
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 127813106,
-          "shares": 1235505,
-          "weight": 4.19
+          "value": 156321752,
+          "shares": 425852,
+          "weight": 4.97
         },
         {
-          "name": "NORWEGIAN CRUISE LINE HLDGS",
-          "cusip": "G66721104",
-          "title": "SHS",
+          "name": "PRECIGEN INC",
+          "cusip": "74017N105",
+          "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 127285750,
-          "shares": 6029642,
+          "value": 153652894,
+          "shares": 17950104,
+          "weight": 4.88
+        },
+        {
+          "name": "META PLATFORMS INC",
+          "cusip": "30303M102",
+          "title": "CL A",
+          "type": "SH",
+          "put_call": "",
+          "value": 131245179,
+          "shares": 180982,
           "weight": 4.17
         },
         {
@@ -129859,69 +129879,9 @@
           "title": "COM NEW",
           "type": "SH",
           "put_call": "",
-          "value": 123321646,
-          "shares": 7136669,
-          "weight": 4.04
-        },
-        {
-          "name": "ENERGY TRANSFER L P",
-          "cusip": "29273V100",
-          "title": "COM UT LTD PTN",
-          "type": "SH",
-          "put_call": "",
-          "value": 116262573,
-          "shares": 6080678,
-          "weight": 3.81
-        },
-        {
-          "name": "PEOPLE INC",
-          "cusip": "44891N208",
-          "title": "COM NEW",
-          "type": "SH",
-          "put_call": "",
-          "value": 111963801,
-          "shares": 2425558,
-          "weight": 3.67
-        },
-        {
-          "name": "PRECIGEN INC",
-          "cusip": "74017N105",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 108510760,
-          "shares": 19036976,
-          "weight": 3.56
-        },
-        {
-          "name": "UNITED AIRLS HLDGS INC",
-          "cusip": "910047109",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 99479991,
-          "shares": 731523,
-          "weight": 3.26
-        },
-        {
-          "name": "CROCS INC",
-          "cusip": "227046109",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 96442926,
-          "shares": 799426,
-          "weight": 3.16
-        },
-        {
-          "name": "META PLATFORMS INC",
-          "cusip": "30303M102",
-          "title": "CL A",
-          "type": "SH",
-          "put_call": "",
-          "value": 96204723,
-          "shares": 170790,
-          "weight": 3.15
+          "value": 127800547,
+          "shares": 10932468,
+          "weight": 4.06
         },
         {
           "name": "CHIME FINL INC",
@@ -129929,9 +129889,29 @@
           "title": "COM SHS CL A",
           "type": "SH",
           "put_call": "",
-          "value": 83609379,
-          "shares": 4082489,
-          "weight": 2.74
+          "value": 126031173,
+          "shares": 4730900,
+          "weight": 4.01
+        },
+        {
+          "name": "META PLATFORMS INC (CALL)",
+          "cusip": "30303M902",
+          "title": "CALL",
+          "type": "SH",
+          "put_call": "CALL",
+          "value": 124368370,
+          "shares": 171500,
+          "weight": 3.95
+        },
+        {
+          "name": "ENERGY TRANSFER L P",
+          "cusip": "29273V100",
+          "title": "COM UT LTD PTN",
+          "type": "SH",
+          "put_call": "",
+          "value": 119265366,
+          "shares": 6032643,
+          "weight": 3.79
         },
         {
           "name": "ADOBE INC",
@@ -129939,39 +129919,9 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 74038129,
-          "shares": 361126,
-          "weight": 2.43
-        },
-        {
-          "name": "SEADRILL LTD",
-          "cusip": "G7997W102",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 73875926,
-          "shares": 1953355,
-          "weight": 2.42
-        },
-        {
-          "name": "GLOBAL PMTS INC",
-          "cusip": "37940X102",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 68374062,
-          "shares": 942310,
-          "weight": 2.24
-        },
-        {
-          "name": "COINBASE GLOBAL INC",
-          "cusip": "19260Q107",
-          "title": "COM CL A",
-          "type": "SH",
-          "put_call": "",
-          "value": 67542293,
-          "shares": 462016,
-          "weight": 2.21
+          "value": 96075062,
+          "shares": 400412,
+          "weight": 3.05
         },
         {
           "name": "FIDELITY WISE ORIGIN BITCOIN",
@@ -129979,9 +129929,99 @@
           "title": "SHS",
           "type": "SH",
           "put_call": "",
-          "value": 62158256,
-          "shares": 1217595,
-          "weight": 2.04
+          "value": 88833313,
+          "shares": 1222925,
+          "weight": 2.82
+        },
+        {
+          "name": "NORWEGIAN CRUISE LINE HLDGS",
+          "cusip": "G66721104",
+          "title": "SHS",
+          "type": "SH",
+          "put_call": "",
+          "value": 87555125,
+          "shares": 5972382,
+          "weight": 2.78
+        },
+        {
+          "name": "COINBASE GLOBAL INC",
+          "cusip": "19260Q107",
+          "title": "COM CL A",
+          "type": "SH",
+          "put_call": "",
+          "value": 86040841,
+          "shares": 461567,
+          "weight": 2.74
+        },
+        {
+          "name": "CROCS INC",
+          "cusip": "227046109",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 85747361,
+          "shares": 730946,
+          "weight": 2.73
+        },
+        {
+          "name": "SEADRILL LTD",
+          "cusip": "G7997W102",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 84961564,
+          "shares": 1901982,
+          "weight": 2.7
+        },
+        {
+          "name": "PEOPLE INC",
+          "cusip": "44891N208",
+          "title": "COM NEW",
+          "type": "SH",
+          "put_call": "",
+          "value": 84114932,
+          "shares": 2004645,
+          "weight": 2.67
+        },
+        {
+          "name": "BROADCOM INC",
+          "cusip": "11135F101",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 83742821,
+          "shares": 238453,
+          "weight": 2.66
+        },
+        {
+          "name": "CVS HEALTH CORP",
+          "cusip": "126650100",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 83116527,
+          "shares": 969967,
+          "weight": 2.64
+        },
+        {
+          "name": "UNITED AIRLS HLDGS INC",
+          "cusip": "910047109",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 79504995,
+          "shares": 716584,
+          "weight": 2.53
+        },
+        {
+          "name": "GLOBAL PMTS INC",
+          "cusip": "37940X102",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 76550579,
+          "shares": 937315,
+          "weight": 2.43
         },
         {
           "name": "BIOGEN INC",
@@ -129989,19 +130029,9 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 61295674,
-          "shares": 283697,
-          "weight": 2.01
-        },
-        {
-          "name": "ILLUMINA INC",
-          "cusip": "452327109",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 60716695,
-          "shares": 345314,
-          "weight": 1.99
+          "value": 55675149,
+          "shares": 246480,
+          "weight": 1.77
         },
         {
           "name": "GENERAL MTRS CO",
@@ -130009,29 +130039,9 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 48680506,
-          "shares": 631558,
-          "weight": 1.6
-        },
-        {
-          "name": "UBS GROUP AG",
-          "cusip": "H42097107",
-          "title": "SHS",
-          "type": "SH",
-          "put_call": "",
-          "value": 47267108,
-          "shares": 953734,
-          "weight": 1.55
-        },
-        {
-          "name": "FISERV INC",
-          "cusip": "337738108",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 46775926,
-          "shares": 953637,
-          "weight": 1.53
+          "value": 47179825,
+          "shares": 612724,
+          "weight": 1.5
         },
         {
           "name": "EXPEDIA GROUP INC",
@@ -130039,18 +130049,8 @@
           "title": "COM NEW",
           "type": "SH",
           "put_call": "",
-          "value": 42940539,
-          "shares": 167814,
-          "weight": 1.41
-        },
-        {
-          "name": "ONEMAIN HLDGS INC",
-          "cusip": "68268W103",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 42823508,
-          "shares": 702369,
+          "value": 44015767,
+          "shares": 167131,
           "weight": 1.4
         },
         {
@@ -130059,29 +130059,39 @@
           "title": "CALL",
           "type": "SH",
           "put_call": "CALL",
-          "value": 40921764,
+          "value": 42781672,
           "shares": 189400,
-          "weight": 1.34
+          "weight": 1.36
         },
         {
-          "name": "DELTA AIR LINES INC",
-          "cusip": "247361702",
-          "title": "COM NEW",
+          "name": "ONEMAIN HLDGS INC",
+          "cusip": "68268W103",
+          "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 40387702,
-          "shares": 431215,
-          "weight": 1.32
+          "value": 38307950,
+          "shares": 691603,
+          "weight": 1.22
         },
         {
-          "name": "JDCOM INC",
-          "cusip": "47215P106",
-          "title": "SPON ADS CL A",
+          "name": "UBS GROUP AG",
+          "cusip": "H42097107",
+          "title": "SHS",
           "type": "SH",
           "put_call": "",
-          "value": 35104299,
-          "shares": 1377719,
-          "weight": 1.15
+          "value": 33905660,
+          "shares": 704460,
+          "weight": 1.08
+        },
+        {
+          "name": "FISERV INC",
+          "cusip": "337738108",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 30460434,
+          "shares": 674201,
+          "weight": 0.97
         },
         {
           "name": "SOFI TECHNOLOGIES INC",
@@ -130089,9 +130099,19 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 26995943,
-          "shares": 1505629,
-          "weight": 0.88
+          "value": 23357769,
+          "shares": 1485862,
+          "weight": 0.74
+        },
+        {
+          "name": "DELTA AIR LINES INC",
+          "cusip": "247361702",
+          "title": "COM NEW",
+          "type": "SH",
+          "put_call": "",
+          "value": 23035103,
+          "shares": 276002,
+          "weight": 0.73
         },
         {
           "name": "TEMPUS AI INC",
@@ -130099,9 +130119,9 @@
           "title": "CL A",
           "type": "SH",
           "put_call": "",
-          "value": 23212476,
-          "shares": 400698,
-          "weight": 0.76
+          "value": 20802928,
+          "shares": 254004,
+          "weight": 0.66
         },
         {
           "name": "JPMORGAN CHASE & CO",
@@ -130109,19 +130129,9 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 9610253,
-          "shares": 29360,
-          "weight": 0.32
-        },
-        {
-          "name": "GENIUS SPORTS LIMITED",
-          "cusip": "G3934V109",
-          "title": "SHARES CL A",
-          "type": "SH",
-          "put_call": "",
-          "value": 4925683,
-          "shares": 812819,
-          "weight": 0.16
+          "value": 9712727,
+          "shares": 29359,
+          "weight": 0.31
         },
         {
           "name": "NOBLE CORP PLC",
@@ -130129,19 +130139,19 @@
           "title": "ORD SHS A",
           "type": "SH",
           "put_call": "",
-          "value": 3730000,
+          "value": 4174000,
           "shares": 100000,
-          "weight": 0.12
+          "weight": 0.13
         },
         {
-          "name": "DAVE & BUSTERS ENTMT INC",
-          "cusip": "238337109",
-          "title": "COM",
+          "name": "JDCOM INC",
+          "cusip": "47215P106",
+          "title": "SPON ADS CL A",
           "type": "SH",
           "put_call": "",
-          "value": 2325851,
-          "shares": 204022,
-          "weight": 0.08
+          "value": 3699674,
+          "shares": 139086,
+          "weight": 0.12
         },
         {
           "name": "APA CORPORATION",
@@ -130149,9 +130159,19 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 1628500,
+          "value": 2077000,
           "shares": 50000,
-          "weight": 0.05
+          "weight": 0.07
+        },
+        {
+          "name": "GENIUS SPORTS LIMITED",
+          "cusip": "G3934V109",
+          "title": "SHARES CL A",
+          "type": "SH",
+          "put_call": "",
+          "value": 1219453,
+          "shares": 212819,
+          "weight": 0.04
         },
         {
           "name": "LENNAR CORP",
@@ -130159,19 +130179,29 @@
           "title": "CL B",
           "type": "SH",
           "put_call": "",
-          "value": 1108875,
+          "value": 999875,
           "shares": 12500,
-          "weight": 0.04
+          "weight": 0.03
         },
         {
-          "name": "STATE STR SPDR S&P 500 ETF T TR UNIT",
-          "cusip": "78462F103",
-          "title": "TR UNIT",
+          "name": "ISHARES TR SELF DRIVNG EV",
+          "cusip": "46435U366",
+          "title": "SELF DRIVNG EV",
           "type": "SH",
           "put_call": "",
-          "value": 791601,
-          "shares": 1060,
-          "weight": 0.03
+          "value": 271788,
+          "shares": 8269,
+          "weight": 0.01
+        },
+        {
+          "name": "SPDR SERIES TRUST ST STR SP HOME",
+          "cusip": "78464A888",
+          "title": "ST STR SP HOME",
+          "type": "SH",
+          "put_call": "",
+          "value": 260124,
+          "shares": 2709,
+          "weight": 0.01
         }
       ]
     },
@@ -130710,8 +130740,8 @@
       ]
     },
     "프란시스 추 (추 어소시에이츠)": {
-      "report_date": "2026-06-30",
-      "total_value_usd": 216591903,
+      "report_date": "2026-09-30",
+      "total_value_usd": 211892247,
       "holdings": [
         {
           "name": "BERKSHIRE HATHAWAY INC DEL",
@@ -130719,9 +130749,9 @@
           "title": "CL A",
           "type": "SH",
           "put_call": "",
-          "value": 64401080,
+          "value": 64242455,
           "shares": 86,
-          "weight": 29.73
+          "weight": 30.32
         },
         {
           "name": "ALPHABET INC",
@@ -130729,19 +130759,9 @@
           "title": "CAP STK CL C",
           "type": "SH",
           "put_call": "",
-          "value": 25577559,
+          "value": 24666169,
           "shares": 72390,
-          "weight": 11.81
-        },
-        {
-          "name": "SYNCHRONY FINANCIAL",
-          "cusip": "87165B103",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 16974508,
-          "shares": 223202,
-          "weight": 7.84
+          "weight": 11.64
         },
         {
           "name": "OCCIDENTAL PETE CORP",
@@ -130749,19 +130769,19 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 15202408,
+          "value": 17315164,
           "shares": 313000,
-          "weight": 7.02
+          "weight": 8.17
         },
         {
-          "name": "SIRIUSXM HOLDINGS INC",
-          "cusip": "829933100",
-          "title": "COMMON STOCK",
+          "name": "SYNCHRONY FINANCIAL",
+          "cusip": "87165B103",
+          "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 12099255,
-          "shares": 409589,
-          "weight": 5.59
+          "value": 15840651,
+          "shares": 223202,
+          "weight": 7.48
         },
         {
           "name": "APPLE INC",
@@ -130769,39 +130789,19 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 11574400,
+          "value": 13320800,
           "shares": 40000,
-          "weight": 5.34
+          "weight": 6.29
         },
         {
-          "name": "ALLY FINL INC",
-          "cusip": "02005N100",
-          "title": "COM",
+          "name": "SIRIUSXM HOLDINGS INC",
+          "cusip": "829933100",
+          "title": "COMMON STOCK",
           "type": "SH",
           "put_call": "",
-          "value": 10362871,
-          "shares": 225525,
-          "weight": 4.78
-        },
-        {
-          "name": "STELLANTIS NV",
-          "cusip": "N82405106",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 8002672,
-          "shares": 1394194,
-          "weight": 3.69
-        },
-        {
-          "name": "JEFFERIES FINL GROUP INC",
-          "cusip": "47233W109",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 7458863,
-          "shares": 149237,
-          "weight": 3.44
+          "value": 10600168,
+          "shares": 409589,
+          "weight": 5.0
         },
         {
           "name": "PAYPAL HLDGS INC",
@@ -130809,29 +130809,49 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 7228330,
+          "value": 8793525,
           "shares": 167400,
-          "weight": 3.34
+          "weight": 4.15
         },
         {
-          "name": "WELLS FARGO CO NEW",
+          "name": "ALLY FINL INC",
+          "cusip": "02005N100",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 8484254,
+          "shares": 225525,
+          "weight": 4.0
+        },
+        {
+          "name": "JEFFERIES FINL GROUP INC",
+          "cusip": "47233W109",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 6824611,
+          "shares": 149237,
+          "weight": 3.22
+        },
+        {
+          "name": "STELLANTIS NV",
+          "cusip": "N82405106",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 6078687,
+          "shares": 1394194,
+          "weight": 2.87
+        },
+        {
+          "name": "WELLS FARGO & CO",
           "cusip": "949746101",
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 4920550,
+          "value": 4766338,
           "shares": 59542,
-          "weight": 2.27
-        },
-        {
-          "name": "CITIGROUP INC",
-          "cusip": "172967424",
-          "title": "COM NEW",
-          "type": "SH",
-          "put_call": "",
-          "value": 4575990,
-          "shares": 32695,
-          "weight": 2.11
+          "weight": 2.25
         },
         {
           "name": "ALIBABA GROUP HLDG LTD",
@@ -130839,9 +130859,19 @@
           "title": "SPONSORED ADS",
           "type": "SH",
           "put_call": "",
-          "value": 4021562,
+          "value": 4505926,
           "shares": 41900,
-          "weight": 1.86
+          "weight": 2.13
+        },
+        {
+          "name": "CITIGROUP INC",
+          "cusip": "172967424",
+          "title": "COM NEW",
+          "type": "SH",
+          "put_call": "",
+          "value": 4233351,
+          "shares": 32695,
+          "weight": 2.0
         },
         {
           "name": "GENERAL MTRS CO",
@@ -130849,9 +130879,9 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 4008159,
+          "value": 4004001,
           "shares": 52000,
-          "weight": 1.85
+          "weight": 1.89
         },
         {
           "name": "BANK OF AMER CORP",
@@ -130859,9 +130889,9 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 2849000,
+          "value": 2721500,
           "shares": 50000,
-          "weight": 1.32
+          "weight": 1.28
         },
         {
           "name": "PATHWARD FINANCIAL INC",
@@ -130869,9 +130899,9 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 2384485,
+          "value": 1948454,
           "shares": 27389,
-          "weight": 1.1
+          "weight": 0.92
         },
         {
           "name": "POOL CORP",
@@ -130879,19 +130909,9 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 2285676,
+          "value": 1721649,
           "shares": 10636,
-          "weight": 1.06
-        },
-        {
-          "name": "MBIA INC",
-          "cusip": "55262C100",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 2092920,
-          "shares": 321000,
-          "weight": 0.97
+          "weight": 0.81
         },
         {
           "name": "KRAFT HEINZ CO",
@@ -130899,9 +130919,9 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 1641590,
+          "value": 1579040,
           "shares": 69500,
-          "weight": 0.76
+          "weight": 0.75
         },
         {
           "name": "BERKSHIRE HATHAWAY INC DEL",
@@ -130909,29 +130929,19 @@
           "title": "CL B NEW",
           "type": "SH",
           "put_call": "",
-          "value": 1551209,
+          "value": 1543645,
           "shares": 3100,
-          "weight": 0.72
+          "weight": 0.73
         },
         {
-          "name": "ASSURED GUARANTY LTD",
-          "cusip": "G0585R106",
+          "name": "MBIA INC",
+          "cusip": "55262C100",
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 1361918,
-          "shares": 16990,
-          "weight": 0.63
-        },
-        {
-          "name": "CHINA YUCHAI INTL LTD",
-          "cusip": "G21082105",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 1107687,
-          "shares": 23364,
-          "weight": 0.51
+          "value": 1367460,
+          "shares": 321000,
+          "weight": 0.65
         },
         {
           "name": "METHANEX CORP",
@@ -130939,39 +130949,19 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 923814,
+          "value": 1173173,
           "shares": 20000,
-          "weight": 0.43
+          "weight": 0.55
         },
         {
-          "name": "MOODYS CORP",
-          "cusip": "615369105",
+          "name": "ASSURED GUARANTY LTD",
+          "cusip": "G0585R106",
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 679380,
-          "shares": 1500,
-          "weight": 0.31
-        },
-        {
-          "name": "MAGNA INTL INC",
-          "cusip": "559222401",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 656600,
-          "shares": 10000,
-          "weight": 0.3
-        },
-        {
-          "name": "ATKORE INC",
-          "cusip": "047649108",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 638736,
-          "shares": 8400,
-          "weight": 0.29
+          "value": 1150563,
+          "shares": 16990,
+          "weight": 0.54
         },
         {
           "name": "HP INC",
@@ -130979,9 +130969,49 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 581410,
+          "value": 828920,
           "shares": 26500,
-          "weight": 0.27
+          "weight": 0.39
+        },
+        {
+          "name": "ATKORE INC",
+          "cusip": "047649108",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 795900,
+          "shares": 8400,
+          "weight": 0.38
+        },
+        {
+          "name": "CHINA YUCHAI INTL LTD",
+          "cusip": "G21082105",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 724985,
+          "shares": 23364,
+          "weight": 0.34
+        },
+        {
+          "name": "MOODYS CORP",
+          "cusip": "615369105",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 681195,
+          "shares": 1500,
+          "weight": 0.32
+        },
+        {
+          "name": "MAGNA INTL INC",
+          "cusip": "559222401",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 636700,
+          "shares": 10000,
+          "weight": 0.3
         },
         {
           "name": "IMPERIAL OIL LTD",
@@ -130989,9 +131019,9 @@
           "title": "COM NEW",
           "type": "SH",
           "put_call": "",
-          "value": 561466,
+          "value": 614834,
           "shares": 5000,
-          "weight": 0.26
+          "weight": 0.29
         },
         {
           "name": "LOUISIANA PAC CORP",
@@ -130999,9 +131029,9 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 462993,
+          "value": 379941,
           "shares": 5886,
-          "weight": 0.21
+          "weight": 0.18
         },
         {
           "name": "RYANAIR HOLDINGS PLC",
@@ -131009,17 +131039,17 @@
           "title": "SPONSORED ADS",
           "type": "SH",
           "put_call": "",
-          "value": 384421,
+          "value": 326595,
           "shares": 5937,
-          "weight": 0.18
+          "weight": 0.15
         },
         {
-          "name": "VITESSE ENERGY ORD",
+          "name": "VITESSE ENERGY INC",
           "cusip": "92852X103",
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 20391,
+          "value": 21593,
           "shares": 1293,
           "weight": 0.01
         }
@@ -133212,38 +133242,28 @@
       ]
     },
     "프랑수아 로숑 (지베르니)": {
-      "report_date": "2026-06-30",
-      "total_value_usd": 2974321189,
+      "report_date": "2026-09-30",
+      "total_value_usd": 2917847112,
       "holdings": [
-        {
-          "name": "ALPHABET INC C",
-          "cusip": "02079K107",
-          "title": "CAP STK CL C",
-          "type": "SH",
-          "put_call": "",
-          "value": 213927182,
-          "shares": 605460,
-          "weight": 7.19
-        },
-        {
-          "name": "HEICO CORP NEW",
-          "cusip": "422806208",
-          "title": "CL A",
-          "type": "SH",
-          "put_call": "",
-          "value": 189627812,
-          "shares": 735248,
-          "weight": 6.38
-        },
         {
           "name": "META PLATFORMS INC",
           "cusip": "30303M102",
           "title": "CL A",
           "type": "SH",
           "put_call": "",
-          "value": 170613782,
-          "shares": 302888,
-          "weight": 5.74
+          "value": 210835932,
+          "shares": 290736,
+          "weight": 7.23
+        },
+        {
+          "name": "ALPHABET INC C",
+          "cusip": "02079K107",
+          "title": "CAP STK CL C",
+          "type": "SH",
+          "put_call": "",
+          "value": 199304278,
+          "shares": 584916,
+          "weight": 6.83
         },
         {
           "name": "SCHWAB CHARLES CORP",
@@ -133251,9 +133271,19 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 155158187,
-          "shares": 1681567,
-          "weight": 5.22
+          "value": 166179503,
+          "shares": 1700220,
+          "weight": 5.7
+        },
+        {
+          "name": "HEICO CORP NEW",
+          "cusip": "422806208",
+          "title": "CL A",
+          "type": "SH",
+          "put_call": "",
+          "value": 163913997,
+          "shares": 717882,
+          "weight": 5.62
         },
         {
           "name": "AUTOMATIC DATA PROC INC",
@@ -133261,19 +133291,9 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 146587816,
-          "shares": 654556,
-          "weight": 4.93
-        },
-        {
-          "name": "AMETEK INC",
-          "cusip": "031100100",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 144869075,
-          "shares": 598781,
-          "weight": 4.87
+          "value": 162740894,
+          "shares": 630632,
+          "weight": 5.58
         },
         {
           "name": "MEDPACE HOLDINGS INC",
@@ -133281,9 +133301,19 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 134479318,
-          "shares": 253931,
-          "weight": 4.52
+          "value": 152765558,
+          "shares": 244746,
+          "weight": 5.24
+        },
+        {
+          "name": "AMETEK INC",
+          "cusip": "031100100",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 142214609,
+          "shares": 574071,
+          "weight": 4.87
         },
         {
           "name": "VISA INC",
@@ -133291,39 +133321,9 @@
           "title": "COM CL A",
           "type": "SH",
           "put_call": "",
-          "value": 133770791,
-          "shares": 389900,
-          "weight": 4.5
-        },
-        {
-          "name": "BERKSHIRE HATHAWAY INC DEL",
-          "cusip": "084670702",
-          "title": "CL B NEW",
-          "type": "SH",
-          "put_call": "",
-          "value": 124320394,
-          "shares": 248447,
-          "weight": 4.18
-        },
-        {
-          "name": "PROGRESSIVE CORP",
-          "cusip": "743315103",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 118463687,
-          "shares": 542292,
-          "weight": 3.98
-        },
-        {
-          "name": "ALPHABET INC",
-          "cusip": "02079K305",
-          "title": "CAP STK CL A",
-          "type": "SH",
-          "put_call": "",
-          "value": 110826870,
-          "shares": 310118,
-          "weight": 3.73
+          "value": 133533496,
+          "shares": 371618,
+          "weight": 4.58
         },
         {
           "name": "FIVE BELOW INC",
@@ -133331,59 +133331,29 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 107536354,
-          "shares": 598122,
-          "weight": 3.62
+          "value": 127197560,
+          "shares": 579303,
+          "weight": 4.36
         },
         {
-          "name": "BOOKING HOLDINGS INC",
-          "cusip": "09857L108",
+          "name": "PROGRESSIVE CORP",
+          "cusip": "743315103",
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 93159631,
-          "shares": 522664,
-          "weight": 3.13
+          "value": 105973348,
+          "shares": 511183,
+          "weight": 3.63
         },
         {
-          "name": "INSTALLED BLDG PRODS INC",
-          "cusip": "45780R101",
-          "title": "COM",
+          "name": "ALPHABET INC",
+          "cusip": "02079K305",
+          "title": "CAP STK CL A",
           "type": "SH",
           "put_call": "",
-          "value": 91398634,
-          "shares": 397662,
-          "weight": 3.07
-        },
-        {
-          "name": "NVR INC",
-          "cusip": "62944T105",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 90195789,
-          "shares": 13238,
-          "weight": 3.03
-        },
-        {
-          "name": "KINSALE CAPITAL GROUP IN",
-          "cusip": "49714P108",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 79395491,
-          "shares": 240731,
-          "weight": 2.67
-        },
-        {
-          "name": "BRIGHT HORIZONSFAMILY SOLUTION",
-          "cusip": "109194100",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 76606608,
-          "shares": 1080793,
-          "weight": 2.58
+          "value": 105283663,
+          "shares": 305986,
+          "weight": 3.61
         },
         {
           "name": "RESMED INC",
@@ -133391,29 +133361,59 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 75548155,
-          "shares": 387665,
-          "weight": 2.54
+          "value": 81800367,
+          "shares": 369970,
+          "weight": 2.8
         },
         {
-          "name": "BANK OZK LITTLE ROCK ARK",
-          "cusip": "06417N103",
+          "name": "BOOKING HOLDINGS INC",
+          "cusip": "09857L108",
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 62409862,
-          "shares": 1198116,
-          "weight": 2.1
+          "value": 80279767,
+          "shares": 492786,
+          "weight": 2.75
         },
         {
-          "name": "MARKEL CORP",
-          "cusip": "570535104",
-          "title": "COMMON STOCK",
+          "name": "KINSALE CAPITAL GROUP IN",
+          "cusip": "49714P108",
+          "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 60303090,
-          "shares": 30877,
-          "weight": 2.03
+          "value": 76631824,
+          "shares": 237434,
+          "weight": 2.63
+        },
+        {
+          "name": "NVR INC",
+          "cusip": "62944T105",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 76517531,
+          "shares": 12433,
+          "weight": 2.62
+        },
+        {
+          "name": "BERKSHIRE HATHAWAY INC DEL (CLASS B)",
+          "cusip": "084670702",
+          "title": "CL B NEW",
+          "type": "SH",
+          "put_call": "",
+          "value": 75784006,
+          "shares": 152192,
+          "weight": 2.6
+        },
+        {
+          "name": "INSTALLED BLDG PRODS INC",
+          "cusip": "45780R101",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 73239637,
+          "shares": 381695,
+          "weight": 2.51
         },
         {
           "name": "ARISTA NETWORKS INC",
@@ -133421,49 +133421,19 @@
           "title": "COM SHS",
           "type": "SH",
           "put_call": "",
-          "value": 57740853,
-          "shares": 339892,
-          "weight": 1.94
+          "value": 69040219,
+          "shares": 339114,
+          "weight": 2.37
         },
         {
-          "name": "KEYSIGHT TECHNOLOGIES INC",
-          "cusip": "49338L103",
+          "name": "BRIGHT HORIZONSFAMILY SOLUTION",
+          "cusip": "109194100",
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 50085215,
-          "shares": 143072,
-          "weight": 1.68
-        },
-        {
-          "name": "DISNEY WALT CO",
-          "cusip": "254687106",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 49623324,
-          "shares": 515567,
-          "weight": 1.67
-        },
-        {
-          "name": "BROWN & BROWN",
-          "cusip": "115236101",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 48323425,
-          "shares": 753288,
-          "weight": 1.62
-        },
-        {
-          "name": "ANALOG DEVICES INC",
-          "cusip": "032654105",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 37059933,
-          "shares": 93310,
-          "weight": 1.25
+          "value": 67185094,
+          "shares": 1054380,
+          "weight": 2.3
         },
         {
           "name": "NEW YORK TIMES CO-A-",
@@ -133471,19 +133441,9 @@
           "title": "CL A",
           "type": "SH",
           "put_call": "",
-          "value": 33899992,
-          "shares": 484424,
-          "weight": 1.14
-        },
-        {
-          "name": "LITTELFUSE INC",
-          "cusip": "537008104",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 33751336,
-          "shares": 74125,
-          "weight": 1.13
+          "value": 62327584,
+          "shares": 978455,
+          "weight": 2.14
         },
         {
           "name": "MSA SAFETY INC",
@@ -133491,49 +133451,39 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 29033527,
-          "shares": 166305,
-          "weight": 0.98
+          "value": 57957573,
+          "shares": 325824,
+          "weight": 1.99
         },
         {
-          "name": "WATSCO INC",
-          "cusip": "942622200",
+          "name": "DISNEY WALT CO",
+          "cusip": "254687106",
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 27493762,
-          "shares": 65975,
-          "weight": 0.92
+          "value": 52559306,
+          "shares": 501042,
+          "weight": 1.8
         },
         {
-          "name": "AAON INC",
-          "cusip": "000360206",
+          "name": "BANK OZK LITTLE ROCK ARK",
+          "cusip": "06417N103",
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 25978264,
-          "shares": 204779,
-          "weight": 0.87
+          "value": 52199759,
+          "shares": 1135765,
+          "weight": 1.79
         },
         {
-          "name": "SPDR GOLD TR GOLD SHS",
-          "cusip": "78463V107",
-          "title": "GOLD SHS",
+          "name": "KEYSIGHT TECHNOLOGIES INC",
+          "cusip": "49338L103",
+          "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 25033146,
-          "shares": 3876,
-          "weight": 0.84
-        },
-        {
-          "name": "SUNBELT RENTALS HOLDINGS",
-          "cusip": "866966104",
-          "title": "SHS",
-          "type": "SH",
-          "put_call": "",
-          "value": 21593757,
-          "shares": 246369,
-          "weight": 0.73
+          "value": 48574221,
+          "shares": 133431,
+          "weight": 1.66
         },
         {
           "name": "VEEVA SYSTEMS INC CL-A",
@@ -133541,9 +133491,69 @@
           "title": "CLASS A COM",
           "type": "SH",
           "put_call": "",
-          "value": 16851841,
-          "shares": 94956,
-          "weight": 0.57
+          "value": 43968720,
+          "shares": 154033,
+          "weight": 1.51
+        },
+        {
+          "name": "BROWN & BROWN",
+          "cusip": "115236101",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 43697638,
+          "shares": 717531,
+          "weight": 1.5
+        },
+        {
+          "name": "ANALOG DEVICES INC",
+          "cusip": "032654105",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 34866048,
+          "shares": 87888,
+          "weight": 1.19
+        },
+        {
+          "name": "MARKEL CORP",
+          "cusip": "570535104",
+          "title": "COMMON STOCK",
+          "type": "SH",
+          "put_call": "",
+          "value": 34009257,
+          "shares": 19860,
+          "weight": 1.17
+        },
+        {
+          "name": "LITTELFUSE INC",
+          "cusip": "537008104",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 29457981,
+          "shares": 69519,
+          "weight": 1.01
+        },
+        {
+          "name": "SUNBELT RENTALS HOLDINGS",
+          "cusip": "866966104",
+          "title": "SHS",
+          "type": "SH",
+          "put_call": "",
+          "value": 20195784,
+          "shares": 275861,
+          "weight": 0.69
+        },
+        {
+          "name": "WATSCO INC",
+          "cusip": "942622200",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 19883101,
+          "shares": 65688,
+          "weight": 0.68
         },
         {
           "name": "AMERICAN EXPRESS CO",
@@ -133551,29 +133561,19 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 15753986,
-          "shares": 46702,
-          "weight": 0.53
+          "value": 17118701,
+          "shares": 56293,
+          "weight": 0.59
         },
         {
-          "name": "TWFG INC",
-          "cusip": "87318A101",
-          "title": "COM CL A",
-          "type": "SH",
-          "put_call": "",
-          "value": 15691471,
-          "shares": 652452,
-          "weight": 0.53
-        },
-        {
-          "name": "JPMORGAN CHASE & CO",
-          "cusip": "46625H100",
+          "name": "AAON INC",
+          "cusip": "000360206",
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 15671251,
-          "shares": 47876,
-          "weight": 0.53
+          "value": 16872447,
+          "shares": 203872,
+          "weight": 0.58
         },
         {
           "name": "MASTERCARD INCORPORATED",
@@ -133581,29 +133581,39 @@
           "title": "CL A",
           "type": "SH",
           "put_call": "",
-          "value": 14799898,
-          "shares": 28816,
-          "weight": 0.5
+          "value": 15748880,
+          "shares": 28558,
+          "weight": 0.54
         },
         {
-          "name": "LULULEMON ATHLETICA INC",
-          "cusip": "550021109",
+          "name": "TWFG INC",
+          "cusip": "87318A101",
+          "title": "COM CL A",
+          "type": "SH",
+          "put_call": "",
+          "value": 15662179,
+          "shares": 652319,
+          "weight": 0.54
+        },
+        {
+          "name": "JPMORGAN CHASE & CO",
+          "cusip": "46625H100",
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 14706727,
-          "shares": 128803,
-          "weight": 0.49
+          "value": 15616499,
+          "shares": 47204,
+          "weight": 0.54
         },
         {
-          "name": "FLOOR & DECOR HLDGS INC",
-          "cusip": "339750101",
-          "title": "CL A",
+          "name": "AMAZON COM INC",
+          "cusip": "023135106",
+          "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 13644905,
-          "shares": 229867,
-          "weight": 0.46
+          "value": 12433083,
+          "shares": 49902,
+          "weight": 0.43
         },
         {
           "name": "HAWKINS INC",
@@ -133611,9 +133621,19 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 13492963,
-          "shares": 94954,
-          "weight": 0.45
+          "value": 12002634,
+          "shares": 95259,
+          "weight": 0.41
+        },
+        {
+          "name": "FLOOR & DECOR HLDGS INC",
+          "cusip": "339750101",
+          "title": "CL A",
+          "type": "SH",
+          "put_call": "",
+          "value": 10326353,
+          "shares": 225417,
+          "weight": 0.35
         },
         {
           "name": "FERGUSON ENTERPRISES INC",
@@ -133621,29 +133641,29 @@
           "title": "COMMON STOCK NEW",
           "type": "SH",
           "put_call": "",
-          "value": 8871395,
-          "shares": 37380,
-          "weight": 0.3
-        },
-        {
-          "name": "BUILDERS FIRSTSOURCE INC",
-          "cusip": "12008R107",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 8184199,
-          "shares": 91464,
+          "value": 8263432,
+          "shares": 37119,
           "weight": 0.28
         },
         {
-          "name": "BERKSHIRE HATHAWAY INC DEL",
+          "name": "PIPER SANDLER COS",
+          "cusip": "724078209",
+          "title": "COM NEW",
+          "type": "SH",
+          "put_call": "",
+          "value": 4551930,
+          "shares": 69000,
+          "weight": 0.16
+        },
+        {
+          "name": "BERKSHIRE HATHAWAY INC DEL (CLASS A)",
           "cusip": "084670108",
           "title": "CL A",
           "type": "SH",
           "put_call": "",
-          "value": 6739650,
-          "shares": 9,
-          "weight": 0.23
+          "value": 4482030,
+          "shares": 6,
+          "weight": 0.15
         },
         {
           "name": "APPLE INC",
@@ -133651,19 +133671,9 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 3760233,
-          "shares": 12995,
-          "weight": 0.13
-        },
-        {
-          "name": "TAIWAN SEMICONDUCTOR MFG LTD",
-          "cusip": "874039100",
-          "title": "SPONSORED ADS",
-          "type": "SH",
-          "put_call": "",
-          "value": 1745518,
-          "shares": 3655,
-          "weight": 0.06
+          "value": 4141437,
+          "shares": 12436,
+          "weight": 0.14
         },
         {
           "name": "SPDR S&P 500 ETF",
@@ -133671,8 +133681,28 @@
           "title": "ETF",
           "type": "SH",
           "put_call": "",
-          "value": 1713090,
-          "shares": 2294,
+          "value": 2090369,
+          "shares": 2741,
+          "weight": 0.07
+        },
+        {
+          "name": "TAIWAN SEMICONDUCTOR MFG LTD",
+          "cusip": "874039100",
+          "title": "SPONSORED ADS",
+          "type": "SH",
+          "put_call": "",
+          "value": 1663725,
+          "shares": 3647,
+          "weight": 0.06
+        },
+        {
+          "name": "CAPITAL ONE FINANCIAL",
+          "cusip": "14040H105",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 1615224,
+          "shares": 8366,
           "weight": 0.06
         },
         {
@@ -133681,8 +133711,18 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 1472791,
+          "value": 1481080,
           "shares": 36036,
+          "weight": 0.05
+        },
+        {
+          "name": "SPDR GOLD TR GOLD SHS",
+          "cusip": "78463V107",
+          "title": "GOLD SHS",
+          "type": "SH",
+          "put_call": "",
+          "value": 1476136,
+          "shares": 3876,
           "weight": 0.05
         },
         {
@@ -133691,9 +133731,9 @@
           "title": "US HOME CONS ETF",
           "type": "SH",
           "put_call": "",
-          "value": 1218446,
-          "shares": 11662,
-          "weight": 0.04
+          "value": 997945,
+          "shares": 11468,
+          "weight": 0.03
         },
         {
           "name": "MICROSOFT CORP",
@@ -133701,9 +133741,9 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 666587,
-          "shares": 1787,
-          "weight": 0.02
+          "value": 895523,
+          "shares": 1746,
+          "weight": 0.03
         },
         {
           "name": "INVESCO QQQ TR UNIT SER 1",
@@ -133711,18 +133751,8 @@
           "title": "UNIT SER 1",
           "type": "SH",
           "put_call": "",
-          "value": 287932,
+          "value": 289250,
           "shares": 391,
-          "weight": 0.01
-        },
-        {
-          "name": "COPART INC",
-          "cusip": "217204106",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 233244,
-          "shares": 8274,
           "weight": 0.01
         }
       ]
@@ -135732,18 +135762,38 @@
       ]
     },
     "월러스 웨이츠 (웨이츠)": {
-      "report_date": "2026-06-30",
-      "total_value_usd": 1444222377,
+      "report_date": "2026-09-30",
+      "total_value_usd": 1460458640,
       "holdings": [
         {
           "name": "BERKSHIRE HATHAWAY CL B ORD",
           "cusip": "084670702",
-          "title": "SHS CL A",
+          "title": "CL B NEW",
           "type": "SH",
           "put_call": "",
-          "value": 135905924,
-          "shares": 271600,
-          "weight": 9.41
+          "value": 134421603,
+          "shares": 269950,
+          "weight": 9.2
+        },
+        {
+          "name": "DANAHER ORD",
+          "cusip": "235851102",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 102134550,
+          "shares": 461000,
+          "weight": 6.99
+        },
+        {
+          "name": "VISA CL A ORD",
+          "cusip": "92826C839",
+          "title": "COM CL A",
+          "type": "SH",
+          "put_call": "",
+          "value": 94469654,
+          "shares": 262905,
+          "weight": 6.47
         },
         {
           "name": "ALPHABET CL C ORD",
@@ -135751,59 +135801,19 @@
           "title": "CAP STK CL C",
           "type": "SH",
           "put_call": "",
-          "value": 94727773,
-          "shares": 268100,
-          "weight": 6.56
-        },
-        {
-          "name": "DANAHER ORD",
-          "cusip": "235851102",
-          "title": "CL A",
-          "type": "SH",
-          "put_call": "",
-          "value": 93239960,
-          "shares": 489500,
-          "weight": 6.46
-        },
-        {
-          "name": "VISA CL A ORD",
-          "cusip": "92826C839",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 91032070,
-          "shares": 265330,
-          "weight": 6.3
+          "value": 89716842,
+          "shares": 263300,
+          "weight": 6.14
         },
         {
           "name": "MASTERCARD CL A ORD",
           "cusip": "57636Q104",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 74651760,
-          "shares": 145350,
-          "weight": 5.17
-        },
-        {
-          "name": "AON CL A ORD",
-          "cusip": "G0403H108",
           "title": "CL A",
           "type": "SH",
           "put_call": "",
-          "value": 70935223,
-          "shares": 213860,
-          "weight": 4.91
-        },
-        {
-          "name": "VULCAN MATERIALS ORD",
-          "cusip": "929160109",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 60123038,
-          "shares": 203800,
-          "weight": 4.16
+          "value": 79453040,
+          "shares": 144075,
+          "weight": 5.44
         },
         {
           "name": "META PLATFORMS CL A ORD",
@@ -135811,9 +135821,19 @@
           "title": "CL A",
           "type": "SH",
           "put_call": "",
-          "value": 57996338,
-          "shares": 102960,
-          "weight": 4.02
+          "value": 71227180,
+          "shares": 98220,
+          "weight": 4.88
+        },
+        {
+          "name": "MICROSOFT ORD",
+          "cusip": "594918104",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 71190520,
+          "shares": 138800,
+          "weight": 4.87
         },
         {
           "name": "THERMO FISHER SCIENTIFIC ORD",
@@ -135821,9 +135841,19 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 57756672,
-          "shares": 115200,
-          "weight": 4.0
+          "value": 70888351,
+          "shares": 105012,
+          "weight": 4.85
+        },
+        {
+          "name": "AON CL A ORD",
+          "cusip": "G0403H108",
+          "title": "SHS CL A",
+          "type": "SH",
+          "put_call": "",
+          "value": 61694801,
+          "shares": 222910,
+          "weight": 4.22
         },
         {
           "name": "IDEX ORD",
@@ -135831,29 +135861,9 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 57282180,
-          "shares": 252400,
-          "weight": 3.97
-        },
-        {
-          "name": "MICROSOFT ORD",
-          "cusip": "594918104",
-          "title": "CL A",
-          "type": "SH",
-          "put_call": "",
-          "value": 57146664,
-          "shares": 153200,
-          "weight": 3.96
-        },
-        {
-          "name": "HEICO CL A ORD",
-          "cusip": "422806208",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 52737179,
-          "shares": 204479,
-          "weight": 3.65
+          "value": 55810872,
+          "shares": 244806,
+          "weight": 3.82
         },
         {
           "name": "AMAZON COM ORD",
@@ -135861,29 +135871,29 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 51838950,
-          "shares": 217500,
-          "weight": 3.59
+          "value": 54576308,
+          "shares": 219050,
+          "weight": 3.74
         },
         {
-          "name": "BIO TECHNE ORD",
-          "cusip": "09073M104",
-          "title": "N Y REGISTRY SHS",
-          "type": "SH",
-          "put_call": "",
-          "value": 38377080,
-          "shares": 543200,
-          "weight": 2.66
-        },
-        {
-          "name": "SIRIUSXM HOLDINGS ORD",
-          "cusip": "829933100",
+          "name": "VULCAN MATERIALS ORD",
+          "cusip": "929160109",
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 35093520,
-          "shares": 1188000,
-          "weight": 2.43
+          "value": 53525044,
+          "shares": 218800,
+          "weight": 3.66
+        },
+        {
+          "name": "HEICO CL A ORD",
+          "cusip": "422806208",
+          "title": "CL A",
+          "type": "SH",
+          "put_call": "",
+          "value": 47259515,
+          "shares": 206979,
+          "weight": 3.24
         },
         {
           "name": "ANALOG DEVICES ORD",
@@ -135891,9 +135901,49 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 33848813,
-          "shares": 85225,
-          "weight": 2.34
+          "value": 33472406,
+          "shares": 84375,
+          "weight": 2.29
+        },
+        {
+          "name": "SIRIUSXM HOLDINGS ORD",
+          "cusip": "829933100",
+          "title": "COMMON STOCK",
+          "type": "SH",
+          "put_call": "",
+          "value": 30745440,
+          "shares": 1188000,
+          "weight": 2.11
+        },
+        {
+          "name": "LABCORP HOLDINGS ORD",
+          "cusip": "504922105",
+          "title": "COM SHS",
+          "type": "SH",
+          "put_call": "",
+          "value": 29540046,
+          "shares": 95875,
+          "weight": 2.02
+        },
+        {
+          "name": "GLOBAL PAYMENTS ORD",
+          "cusip": "37940X102",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 27343116,
+          "shares": 334800,
+          "weight": 1.87
+        },
+        {
+          "name": "MARTIN MARIETTA MATERIALS ORD",
+          "cusip": "573284106",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 26567080,
+          "shares": 55370,
+          "weight": 1.82
         },
         {
           "name": "EQUIFAX ORD",
@@ -135901,89 +135951,29 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 30471066,
+          "value": 26347335,
           "shares": 191980,
-          "weight": 2.11
+          "weight": 1.8
         },
         {
-          "name": "LABCORP HOLDINGS ORD",
-          "cusip": "504922105",
-          "title": "COM",
+          "name": "TAIWAN SEMICONDUCTOR MNFTG ADR 5 ORD",
+          "cusip": "874039100",
+          "title": "SPONSORED ADS",
           "type": "SH",
           "put_call": "",
-          "value": 27734000,
-          "shares": 99050,
-          "weight": 1.92
-        },
-        {
-          "name": "MARTIN MARIETTA MATERIALS ORD",
-          "cusip": "573284106",
-          "title": "SHS",
-          "type": "SH",
-          "put_call": "",
-          "value": 27318279,
-          "shares": 47370,
-          "weight": 1.89
-        },
-        {
-          "name": "GLOBAL PAYMENTS ORD",
-          "cusip": "37940X102",
-          "title": "COMMON STOCK NEW",
-          "type": "SH",
-          "put_call": "",
-          "value": 25396000,
-          "shares": 350000,
-          "weight": 1.76
+          "value": 23106024,
+          "shares": 50650,
+          "weight": 1.58
         },
         {
           "name": "TEXAS INSTRUMENTS ORD",
           "cusip": "882508104",
-          "title": "SPONSORED ADS",
-          "type": "SH",
-          "put_call": "",
-          "value": 23219653,
-          "shares": 77900,
-          "weight": 1.61
-        },
-        {
-          "name": "LIBERTY BROADBAND SRS C ORD",
-          "cusip": "530307305",
-          "title": "COM SHS",
-          "type": "SH",
-          "put_call": "",
-          "value": 19157760,
-          "shares": 576000,
-          "weight": 1.33
-        },
-        {
-          "name": "IDEXX LABORATORIES ORD",
-          "cusip": "45168D104",
-          "title": "CL A",
-          "type": "SH",
-          "put_call": "",
-          "value": 18583332,
-          "shares": 35300,
-          "weight": 1.29
-        },
-        {
-          "name": "ACI WORLDWIDE ORD",
-          "cusip": "004498101",
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 18491633,
-          "shares": 367700,
-          "weight": 1.28
-        },
-        {
-          "name": "PERIMETER SOLUTIONS ORD",
-          "cusip": "71385M107",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 16071626,
-          "shares": 450817,
-          "weight": 1.11
+          "value": 21650957,
+          "shares": 77300,
+          "weight": 1.48
         },
         {
           "name": "MERCADOLIBRE ORD",
@@ -135991,9 +135981,39 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 15615988,
-          "shares": 9200,
-          "weight": 1.08
+          "value": 20223801,
+          "shares": 11700,
+          "weight": 1.38
+        },
+        {
+          "name": "IDEXX LABORATORIES ORD",
+          "cusip": "45168D104",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 18694402,
+          "shares": 35800,
+          "weight": 1.28
+        },
+        {
+          "name": "BIO TECHNE ORD",
+          "cusip": "09073M104",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 18284181,
+          "shares": 252300,
+          "weight": 1.25
+        },
+        {
+          "name": "ACI WORLDWIDE ORD",
+          "cusip": "004498101",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 17973176,
+          "shares": 367700,
+          "weight": 1.23
         },
         {
           "name": "ACCENTURE CL A ORD",
@@ -136001,59 +136021,29 @@
           "title": "SHS CLASS A",
           "type": "SH",
           "put_call": "",
-          "value": 14895468,
-          "shares": 119700,
-          "weight": 1.03
+          "value": 17866106,
+          "shares": 97432,
+          "weight": 1.22
         },
         {
-          "name": "INGERSOLL RAND ORD",
-          "cusip": "45687V106",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 13255323,
-          "shares": 161670,
-          "weight": 0.92
-        },
-        {
-          "name": "COSTAR GROUP ORD",
-          "cusip": "22160N109",
+          "name": "CHARTER COMMUNICATIONS CL A ORD",
+          "cusip": "16119P108",
           "title": "CL A",
           "type": "SH",
           "put_call": "",
-          "value": 11984486,
-          "shares": 423181,
-          "weight": 0.83
-        },
-        {
-          "name": "EURONET WORLDWIDE ORD",
-          "cusip": "298736109",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 11710400,
-          "shares": 160000,
-          "weight": 0.81
+          "value": 17241179,
+          "shares": 155466,
+          "weight": 1.18
         },
         {
           "name": "ASML HOLDING ADR REP ORD",
           "cusip": "N07059210",
-          "title": "COM",
+          "title": "N Y REGISTRY SHS",
           "type": "SH",
           "put_call": "",
-          "value": 10941920,
-          "shares": 5500,
-          "weight": 0.76
-        },
-        {
-          "name": "LKQ ORD",
-          "cusip": "501889208",
-          "title": "COM SER C",
-          "type": "SH",
-          "put_call": "",
-          "value": 10742640,
-          "shares": 408000,
-          "weight": 0.74
+          "value": 12228773,
+          "shares": 6750,
+          "weight": 0.84
         },
         {
           "name": "NETFLIX ORD",
@@ -136061,39 +136051,9 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 10510080,
-          "shares": 147200,
-          "weight": 0.73
-        },
-        {
-          "name": "TAIWAN SEMICONDUCTOR MNFTG ADR 5 ORD",
-          "cusip": "874039100",
-          "title": "COMMON STOCK",
-          "type": "SH",
-          "put_call": "",
-          "value": 9551400,
-          "shares": 20000,
-          "weight": 0.66
-        },
-        {
-          "name": "ORACLE ORD",
-          "cusip": "68389X105",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 8060250,
-          "shares": 55000,
-          "weight": 0.56
-        },
-        {
-          "name": "CAPITAL ONE FINANCIAL ORD",
-          "cusip": "14040H105",
-          "title": "CL B NEW",
-          "type": "SH",
-          "put_call": "",
-          "value": 8024800,
-          "shares": 40000,
-          "weight": 0.56
+          "value": 11981676,
+          "shares": 172200,
+          "weight": 0.82
         },
         {
           "name": "SALESFORCE ORD",
@@ -136101,29 +136061,59 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 7723338,
+          "value": 11317801,
           "shares": 49300,
-          "weight": 0.53
+          "weight": 0.77
         },
         {
-          "name": "NVIDIA ORD",
-          "cusip": "67066G104",
+          "name": "PERIMETER SOLUTIONS ORD",
+          "cusip": "71385M107",
+          "title": "COMMON STOCK",
+          "type": "SH",
+          "put_call": "",
+          "value": 10741192,
+          "shares": 408100,
+          "weight": 0.74
+        },
+        {
+          "name": "FERGUSON ENTERPRISES ORD",
+          "cusip": "31488V107",
+          "title": "COMMON STOCK NEW",
+          "type": "SH",
+          "put_call": "",
+          "value": 10026360,
+          "shares": 45038,
+          "weight": 0.69
+        },
+        {
+          "name": "EURONET WORLDWIDE ORD",
+          "cusip": "298736109",
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 7003150,
-          "shares": 35000,
-          "weight": 0.48
+          "value": 9738563,
+          "shares": 154900,
+          "weight": 0.67
         },
         {
-          "name": "VERALTO ORD",
-          "cusip": "92338C103",
-          "title": "COM CL A",
+          "name": "LKQ ORD",
+          "cusip": "501889208",
+          "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 6872700,
-          "shares": 77500,
-          "weight": 0.48
+          "value": 9314640,
+          "shares": 408000,
+          "weight": 0.64
+        },
+        {
+          "name": "HONEYWELL AEROSPACE INC",
+          "cusip": "43849R105",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 8414871,
+          "shares": 54300,
+          "weight": 0.58
         },
         {
           "name": "REPLIGEN ORD",
@@ -136131,29 +136121,69 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 5566752,
+          "value": 7842984,
           "shares": 40800,
-          "weight": 0.39
+          "weight": 0.54
         },
         {
-          "name": "LIBERTY BROADBAND SRS A ORD",
-          "cusip": "530307107",
+          "name": "CAPITAL ONE FINANCIAL ORD",
+          "cusip": "14040H105",
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 4118400,
-          "shares": 123750,
-          "weight": 0.29
+          "value": 7722800,
+          "shares": 40000,
+          "weight": 0.53
         },
         {
-          "name": "LINDE ORD",
-          "cusip": "G54950103",
-          "title": "COM SER A",
+          "name": "ORACLE ORD",
+          "cusip": "68389X105",
+          "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 3684474,
-          "shares": 7100,
-          "weight": 0.26
+          "value": 7551500,
+          "shares": 55000,
+          "weight": 0.52
+        },
+        {
+          "name": "VERALTO ORD",
+          "cusip": "92338C103",
+          "title": "COM SHS",
+          "type": "SH",
+          "put_call": "",
+          "value": 7309800,
+          "shares": 77500,
+          "weight": 0.5
+        },
+        {
+          "name": "TRANSDIGM GROUP INC",
+          "cusip": "893641100",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 6744598,
+          "shares": 6230,
+          "weight": 0.46
+        },
+        {
+          "name": "INGERSOLL RAND ORD",
+          "cusip": "45687V106",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 6128976,
+          "shares": 81600,
+          "weight": 0.42
+        },
+        {
+          "name": "COSTAR GROUP ORD",
+          "cusip": "22160N109",
+          "title": "COM",
+          "type": "SH",
+          "put_call": "",
+          "value": 4242890,
+          "shares": 154850,
+          "weight": 0.29
         },
         {
           "name": "METTLER TOLEDO ORD",
@@ -136161,19 +136191,19 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 3257651,
+          "value": 3852923,
           "shares": 2550,
-          "weight": 0.23
+          "weight": 0.26
         },
         {
-          "name": "POOL ORD",
-          "cusip": "73278L105",
-          "title": "COM",
+          "name": "LINDE ORD",
+          "cusip": "G54950103",
+          "title": "SHS",
           "type": "SH",
           "put_call": "",
-          "value": 3223500,
-          "shares": 15000,
-          "weight": 0.22
+          "value": 3512410,
+          "shares": 7400,
+          "weight": 0.24
         },
         {
           "name": "S&P GLOBAL ORD",
@@ -136181,18 +136211,18 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 2911909,
+          "value": 2820461,
           "shares": 7150,
-          "weight": 0.2
+          "weight": 0.19
         },
         {
           "name": "AMPHENOL CL A ORD",
           "cusip": "032095101",
-          "title": "CAP STK CL C",
+          "title": "CL A",
           "type": "SH",
           "put_call": "",
-          "value": 1622144,
-          "shares": 9200,
+          "value": 1551120,
+          "shares": 18400,
           "weight": 0.11
         },
         {
@@ -136201,39 +136231,19 @@
           "title": "COM",
           "type": "SH",
           "put_call": "",
-          "value": 1328708,
-          "shares": 21750,
-          "weight": 0.09
-        },
-        {
-          "name": "FERGUSON ENTERPRISES ORD",
-          "cusip": "31488V107",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 1234116,
-          "shares": 5200,
-          "weight": 0.09
+          "value": 1055093,
+          "shares": 19250,
+          "weight": 0.07
         },
         {
           "name": "COMCAST CL A ORD",
           "cusip": "20030N101",
-          "title": "COM",
+          "title": "CL A",
           "type": "SH",
           "put_call": "",
-          "value": 1153850,
-          "shares": 47000,
-          "weight": 0.08
-        },
-        {
-          "name": "CHARTER COMMUNICATIONS CL A ORD",
-          "cusip": "16119P108",
-          "title": "COM",
-          "type": "SH",
-          "put_call": "",
-          "value": 92437,
-          "shares": 650,
-          "weight": 0.01
+          "value": 935680,
+          "shares": 43000,
+          "weight": 0.06
         }
       ]
     },
