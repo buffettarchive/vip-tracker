@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-16T14:54+09:00",
+  "updated_at": "2026-11-16T14:59+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261116000538",
+  "last_seen": "20261116000577",
   "disclosures": [
+    {
+      "rcept_no": "20261116000555",
+      "rcept_dt": "2026-11-16",
+      "corp_name": "삼성공조",
+      "stock_code": "006660",
+      "market": "KOSPI",
+      "corp_code": "00126201",
+      "repror": "고태일",
+      "ofcps": "사장",
+      "rgist": "등기임원",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "9,057",
+      "total_cnt": "1,191,293",
+      "irds_rate": "0.11",
+      "hold_rate": "14.66",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261116000555&dcm_no=11658121",
+      "dcm_no": "11658121"
+    },
     {
       "rcept_no": "20261116000345",
       "rcept_dt": "2026-11-16",
