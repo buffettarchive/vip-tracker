@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-16T11:19+09:00",
+  "updated_at": "2026-11-16T13:44+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261116000198",
+  "last_seen": "20261116000345",
   "disclosures": [
+    {
+      "rcept_no": "20261116000345",
+      "rcept_dt": "2026-11-16",
+      "corp_name": "아진전자부품",
+      "stock_code": "009320",
+      "market": "KOSPI",
+      "corp_code": "00111689",
+      "repror": "우신산업",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "189,097",
+      "total_cnt": "7,173,899",
+      "irds_rate": "0.38",
+      "hold_rate": "14.55",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261116000345&dcm_no=11657607",
+      "dcm_no": "11657607"
+    },
     {
       "rcept_no": "20261116000198",
       "rcept_dt": "2026-11-16",
