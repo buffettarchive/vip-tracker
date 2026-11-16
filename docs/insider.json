@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-16T22:40+09:00",
+  "updated_at": "2026-11-16T22:50+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261116001368",
+  "last_seen": "20261116001393",
   "disclosures": [
+    {
+      "rcept_no": "20261116001393",
+      "rcept_dt": "2026-11-16",
+      "corp_name": "신세계",
+      "stock_code": "004170",
+      "market": "KOSPI",
+      "corp_code": "00136378",
+      "repror": "안상우",
+      "ofcps": "상무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "180",
+      "total_cnt": "180",
+      "irds_rate": "0.00",
+      "hold_rate": "0.00",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261116001393&dcm_no=11660376",
+      "dcm_no": "11660376"
+    },
     {
       "rcept_no": "20261116001368",
       "rcept_dt": "2026-11-16",
