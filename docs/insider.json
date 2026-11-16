@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-14T09:15+09:00",
+  "updated_at": "2026-11-16T09:59+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261113001678",
+  "last_seen": "20261116000075",
   "disclosures": [
+    {
+      "rcept_no": "20261116000075",
+      "rcept_dt": "2026-11-16",
+      "corp_name": "LG이노텍",
+      "stock_code": "011070",
+      "market": "KOSPI",
+      "corp_code": "00105961",
+      "repror": "이상석",
+      "ofcps": "상무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "400",
+      "total_cnt": "500",
+      "irds_rate": "0.00",
+      "hold_rate": "0.00",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261116000075&dcm_no=11656951",
+      "dcm_no": "11656951"
+    },
     {
       "rcept_no": "20261113001678",
       "rcept_dt": "2026-11-13",
