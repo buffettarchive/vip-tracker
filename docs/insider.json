@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-16T20:49+09:00",
+  "updated_at": "2026-11-16T21:30+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261116001159",
+  "last_seen": "20261116001253",
   "disclosures": [
+    {
+      "rcept_no": "20261116001253",
+      "rcept_dt": "2026-11-16",
+      "corp_name": "한익스프레스",
+      "stock_code": "014130",
+      "market": "KOSPI",
+      "corp_code": "00129509",
+      "repror": "전철호",
+      "ofcps": "상무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "2,050",
+      "total_cnt": "2,050",
+      "irds_rate": "0.02",
+      "hold_rate": "0.02",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261116001253&dcm_no=11659963",
+      "dcm_no": "11659963"
+    },
     {
       "rcept_no": "20261116001159",
       "rcept_dt": "2026-11-16",
