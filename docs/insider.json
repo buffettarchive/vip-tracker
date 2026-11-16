@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-16T16:45+09:00",
+  "updated_at": "2026-11-16T16:50+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261116000740",
+  "last_seen": "20261116000799",
   "disclosures": [
+    {
+      "rcept_no": "20261116000767",
+      "rcept_dt": "2026-11-16",
+      "corp_name": "현대자동차",
+      "stock_code": "005380",
+      "market": "KOSPI",
+      "corp_code": "00164742",
+      "repror": "박무곤",
+      "ofcps": "상무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "8",
+      "total_cnt": "397",
+      "irds_rate": "0.00",
+      "hold_rate": "0.00",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261116000767&dcm_no=11658659",
+      "dcm_no": "11658659"
+    },
     {
       "rcept_no": "20261116000740",
       "rcept_dt": "2026-11-16",
