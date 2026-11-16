@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-17T03:09+09:00",
+  "updated_at": "2026-11-17T03:19+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261116002017",
+  "last_seen": "20261116002049",
   "disclosures": [
+    {
+      "rcept_no": "20261116002049",
+      "rcept_dt": "2026-11-16",
+      "corp_name": "아이즈비전",
+      "stock_code": "031310",
+      "market": "KOSDAQ",
+      "corp_code": "00200910",
+      "repror": "파워넷",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "13,100",
+      "total_cnt": "10,304,513",
+      "irds_rate": "0.04",
+      "hold_rate": "34.64",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261116002049&dcm_no=11662213",
+      "dcm_no": "11662213"
+    },
     {
       "rcept_no": "20261116002017",
       "rcept_dt": "2026-11-16",
