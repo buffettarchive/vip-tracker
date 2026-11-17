@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-17T12:39+09:00",
+  "updated_at": "2026-11-17T13:29+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261117000066",
+  "last_seen": "20261117000071",
   "disclosures": [
+    {
+      "rcept_no": "20261117000071",
+      "rcept_dt": "2026-11-17",
+      "corp_name": "뉴보텍",
+      "stock_code": "060260",
+      "market": "KOSDAQ",
+      "corp_code": "00351375",
+      "repror": "우숙",
+      "ofcps": "부사장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "132,250",
+      "total_cnt": "252,632",
+      "irds_rate": "1.00",
+      "hold_rate": "1.89",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261117000071&dcm_no=11663117",
+      "dcm_no": "11663117"
+    },
     {
       "rcept_no": "20261117000066",
       "rcept_dt": "2026-11-17",
