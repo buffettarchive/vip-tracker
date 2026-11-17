@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-17T11:39+09:00",
+  "updated_at": "2026-11-17T12:39+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261117000057",
+  "last_seen": "20261117000066",
   "disclosures": [
+    {
+      "rcept_no": "20261117000066",
+      "rcept_dt": "2026-11-17",
+      "corp_name": "선진뷰티사이언스",
+      "stock_code": "086710",
+      "market": "KOSDAQ",
+      "corp_code": "00132202",
+      "repror": "유정준",
+      "ofcps": "연구이사",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "300",
+      "total_cnt": "300",
+      "irds_rate": "0.00",
+      "hold_rate": "0.00",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261117000066&dcm_no=11663067",
+      "dcm_no": "11663067"
+    },
     {
       "rcept_no": "20261117000053",
       "rcept_dt": "2026-11-17",
