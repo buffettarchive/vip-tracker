@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-17T17:34+09:00",
+  "updated_at": "2026-11-17T17:59+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261117000233",
+  "last_seen": "20261117000249",
   "disclosures": [
+    {
+      "rcept_no": "20261117000249",
+      "rcept_dt": "2026-11-17",
+      "corp_name": "한세엠케이",
+      "stock_code": "069640",
+      "market": "KOSPI",
+      "corp_code": "00357360",
+      "repror": "김지원",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "13,350",
+      "total_cnt": "212,924",
+      "irds_rate": "0.06",
+      "hold_rate": "0.98",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261117000249&dcm_no=11663812",
+      "dcm_no": "11663812"
+    },
     {
       "rcept_no": "20261117000233",
       "rcept_dt": "2026-11-17",
