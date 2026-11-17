@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-17T15:19+09:00",
+  "updated_at": "2026-11-17T15:29+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261117000113",
+  "last_seen": "20261117000117",
   "disclosures": [
+    {
+      "rcept_no": "20261117000117",
+      "rcept_dt": "2026-11-17",
+      "corp_name": "유비온",
+      "stock_code": "084440",
+      "market": "KOSDAQ",
+      "corp_code": "00531078",
+      "repror": "최영재",
+      "ofcps": "상무이사",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "749",
+      "total_cnt": "749",
+      "irds_rate": "0.02",
+      "hold_rate": "0.02",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261117000117&dcm_no=11663295",
+      "dcm_no": "11663295"
+    },
     {
       "rcept_no": "20261117000095",
       "rcept_dt": "2026-11-17",
