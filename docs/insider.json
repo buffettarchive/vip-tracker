@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-17T06:19+09:00",
+  "updated_at": "2026-11-17T09:04+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261116002228",
+  "last_seen": "20261117000003",
   "disclosures": [
+    {
+      "rcept_no": "20261117000003",
+      "rcept_dt": "2026-11-17",
+      "corp_name": "코스맥스엔비티",
+      "stock_code": "222040",
+      "market": "KOSDAQ",
+      "corp_code": "00656289",
+      "repror": "김상우",
+      "ofcps": "전무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,000",
+      "total_cnt": "4,000",
+      "irds_rate": "0.01",
+      "hold_rate": "0.02",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261117000003&dcm_no=11662872",
+      "dcm_no": "11662872"
+    },
     {
       "rcept_no": "20261116002049",
       "rcept_dt": "2026-11-16",
