@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-17T16:44+09:00",
+  "updated_at": "2026-11-17T16:59+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261117000182",
+  "last_seen": "20261117000210",
   "disclosures": [
+    {
+      "rcept_no": "20261117000187",
+      "rcept_dt": "2026-11-17",
+      "corp_name": "스맥",
+      "stock_code": "099440",
+      "market": "KOSDAQ",
+      "corp_code": "00580056",
+      "repror": "SNT모티브",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "5,938,500",
+      "total_cnt": "19,898,832",
+      "irds_rate": "8.70",
+      "hold_rate": "29.16",
+      "method": "시간외매매",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261117000187&dcm_no=11663529",
+      "dcm_no": "11663529"
+    },
     {
       "rcept_no": "20261117000173",
       "rcept_dt": "2026-11-17",
