@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-18T15:09+09:00",
+  "updated_at": "2026-11-18T15:59+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261118000165",
+  "last_seen": "20261118000193",
   "disclosures": [
+    {
+      "rcept_no": "20261118000192",
+      "rcept_dt": "2026-11-18",
+      "corp_name": "코웨이",
+      "stock_code": "021240",
+      "market": "KOSPI",
+      "corp_code": "00170558",
+      "repror": "넷마블",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "180,000",
+      "total_cnt": "19,638,706",
+      "irds_rate": "0.50",
+      "hold_rate": "28.00",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261118000192&dcm_no=11664481",
+      "dcm_no": "11664481"
+    },
     {
       "rcept_no": "20261118000155",
       "rcept_dt": "2026-11-18",
