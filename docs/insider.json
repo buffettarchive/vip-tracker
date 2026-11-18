@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-18T15:00+09:00",
+  "updated_at": "2026-11-18T15:09+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261118000151",
+  "last_seen": "20261118000165",
   "disclosures": [
+    {
+      "rcept_no": "20261118000155",
+      "rcept_dt": "2026-11-18",
+      "corp_name": "져스텍",
+      "stock_code": "153890",
+      "market": "KOSDAQ",
+      "corp_code": "00577593",
+      "repror": "정효근",
+      "ofcps": "전무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "2,745",
+      "total_cnt": "3,745",
+      "irds_rate": "0.02",
+      "hold_rate": "0.03",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261118000155&dcm_no=11664343",
+      "dcm_no": "11664343"
+    },
     {
       "rcept_no": "20261118000140",
       "rcept_dt": "2026-11-18",
