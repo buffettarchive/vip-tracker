@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-18T17:04+09:00",
+  "updated_at": "2026-11-18T17:24+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261118000275",
+  "last_seen": "20261118000293",
   "disclosures": [
+    {
+      "rcept_no": "20261118000293",
+      "rcept_dt": "2026-11-18",
+      "corp_name": "한화투자증권",
+      "stock_code": "003530",
+      "market": "KOSPI",
+      "corp_code": "00148610",
+      "repror": "추성식",
+      "ofcps": "상무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "10,000",
+      "total_cnt": "10,000",
+      "irds_rate": "0.00",
+      "hold_rate": "0.00",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261118000293&dcm_no=11664900",
+      "dcm_no": "11664900"
+    },
     {
       "rcept_no": "20261118000273",
       "rcept_dt": "2026-11-18",
