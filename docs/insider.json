@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-18T17:49+09:00",
+  "updated_at": "2026-11-18T18:00+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261118000332",
+  "last_seen": "20261118000334",
   "disclosures": [
+    {
+      "rcept_no": "20261118000334",
+      "rcept_dt": "2026-11-18",
+      "corp_name": "오에스피",
+      "stock_code": "368970",
+      "market": "KOSDAQ",
+      "corp_code": "01491607",
+      "repror": "와이투케이파트너스",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "63,004",
+      "total_cnt": "2,428,559",
+      "irds_rate": "0.56",
+      "hold_rate": "21.61",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261118000334&dcm_no=11665029",
+      "dcm_no": "11665029"
+    },
     {
       "rcept_no": "20261118000315",
       "rcept_dt": "2026-11-18",
