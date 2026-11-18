@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T09:44+09:00",
+  "updated_at": "2026-11-18T10:04+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -13,8 +13,23 @@
     "Pzena",
     "Dalton"
   ],
-  "last_seen": "20261118000034",
+  "last_seen": "20261118000043",
   "disclosures": [
+    {
+      "rcept_no": "20261118000043",
+      "rcept_dt": "2026-11-18",
+      "firm": "브이아이피자산운용",
+      "corp_name": "삼지전자",
+      "stock_code": "037460",
+      "corp_code": "00128315",
+      "stkrt": "9.17",
+      "stkrt_prev": "7.84",
+      "stkqy": "1496233",
+      "report_resn": "장내매수",
+      "purpose": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매수"
+    },
     {
       "rcept_no": "20261116000842",
       "rcept_dt": "2026-11-16",
