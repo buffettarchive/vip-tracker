@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-19T15:09+09:00",
+  "updated_at": "2026-11-19T15:44+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261119000191",
+  "last_seen": "20261119000212",
   "disclosures": [
+    {
+      "rcept_no": "20261119000212",
+      "rcept_dt": "2026-11-19",
+      "corp_name": "알체라",
+      "stock_code": "347860",
+      "market": "KOSDAQ",
+      "corp_code": "01405451",
+      "repror": "김용호",
+      "ofcps": "CFO",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "13,900",
+      "total_cnt": "204,466",
+      "irds_rate": "0.03",
+      "hold_rate": "0.48",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261119000212&dcm_no=11666008",
+      "dcm_no": "11666008"
+    },
     {
       "rcept_no": "20261119000191",
       "rcept_dt": "2026-11-19",
