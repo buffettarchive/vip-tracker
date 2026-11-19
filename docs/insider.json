@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-19T17:49+09:00",
+  "updated_at": "2026-11-19T18:05+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261119000392",
+  "last_seen": "20261119000397",
   "disclosures": [
+    {
+      "rcept_no": "20261119000394",
+      "rcept_dt": "2026-11-19",
+      "corp_name": "유안타증권",
+      "stock_code": "003470",
+      "market": "KOSPI",
+      "corp_code": "00117601",
+      "repror": "유안타씨큐리티즈아시아파이낸셜서비시스프라이빗리미티드",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "49,500",
+      "total_cnt": "118,383,411",
+      "irds_rate": "0.02",
+      "hold_rate": "57.61",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261119000394&dcm_no=11666768",
+      "dcm_no": "11666768"
+    },
     {
       "rcept_no": "20261119000312",
       "rcept_dt": "2026-11-19",
