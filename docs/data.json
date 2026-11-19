@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-19T17:04+09:00",
+  "updated_at": "2026-11-19T17:09+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -13,7 +13,7 @@
     "Pzena",
     "Dalton"
   ],
-  "last_seen": "20261119000351",
+  "last_seen": "20261119000355",
   "disclosures": [
     {
       "rcept_no": "20261119000319",
@@ -22,13 +22,13 @@
       "corp_name": "JB금융지주",
       "stock_code": "175330",
       "corp_code": "00980122",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkrt": "13.22",
+      "stkrt_prev": "14.56",
+      "stkqy": "24653206",
+      "report_resn": "시간외매매",
+      "purpose": "경영권",
       "report_nm": "주식등의대량보유상황보고서(일반)",
-      "kind": "기타"
+      "kind": "매도"
     },
     {
       "rcept_no": "20261118000043",
