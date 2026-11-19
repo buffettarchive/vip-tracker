@@ -1,6 +1,24 @@
 {
   "entries": [
     {
+      "rcept_no": "20261119000157",
+      "rcept_dt": "20261119",
+      "corp_code": "00916826",
+      "corp_name": "드림씨아이에스",
+      "corp_cls": "K",
+      "report_nm": "주요사항보고서(자기주식취득결정)",
+      "type": "취득",
+      "shares_common": 654665,
+      "amount_common": 2000001575,
+      "acq_purpose": "주주가치 제고 및 임직원 성과 보상",
+      "acq_method": "코스닥시장을 통한 장내 직접 취득",
+      "acq_period_start": null,
+      "acq_period_end": null,
+      "total_shares": null,
+      "ratio_pct": null,
+      "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261119000157"
+    },
+    {
       "rcept_no": "20261118000368",
       "rcept_dt": "20261119",
       "corp_code": "00362122",
@@ -8743,5 +8761,5 @@
       "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250610000225"
     }
   ],
-  "last_seen": "20261118000368"
+  "last_seen": "20261119000157"
 }
