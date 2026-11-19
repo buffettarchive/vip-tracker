@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-18T18:00+09:00",
+  "updated_at": "2026-11-19T09:09+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261118000334",
+  "last_seen": "20261118000364",
   "disclosures": [
+    {
+      "rcept_no": "20261118000362",
+      "rcept_dt": "2026-11-19",
+      "corp_name": "NE능률",
+      "stock_code": "053290",
+      "market": "KOSDAQ",
+      "corp_code": "00363927",
+      "repror": "이정진",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "12,020",
+      "total_cnt": "12,020",
+      "irds_rate": "0.07",
+      "hold_rate": "0.07",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261118000362&dcm_no=11665136",
+      "dcm_no": "11665136"
+    },
     {
       "rcept_no": "20261118000334",
       "rcept_dt": "2026-11-18",
