@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-19T12:59+09:00",
+  "updated_at": "2026-11-19T13:19+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261119000118",
+  "last_seen": "20261119000119",
   "disclosures": [
+    {
+      "rcept_no": "20261119000119",
+      "rcept_dt": "2026-11-19",
+      "corp_name": "에스씨디",
+      "stock_code": "042110",
+      "market": "KOSDAQ",
+      "corp_code": "00171867",
+      "repror": "권오택",
+      "ofcps": "이사",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,050",
+      "total_cnt": "1,050",
+      "irds_rate": "0.00",
+      "hold_rate": "0.00",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261119000119&dcm_no=11665582",
+      "dcm_no": "11665582"
+    },
     {
       "rcept_no": "20261119000118",
       "rcept_dt": "2026-11-19",
