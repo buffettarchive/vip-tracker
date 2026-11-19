@@ -1,6 +1,24 @@
 {
   "entries": [
     {
+      "rcept_no": "20261118000368",
+      "rcept_dt": "20261119",
+      "corp_code": "00362122",
+      "corp_name": "나래나노텍",
+      "corp_cls": "K",
+      "report_nm": "[기재정정]주요사항보고서(자기주식취득결정)",
+      "type": "취득",
+      "shares_common": 11,
+      "amount_common": 2500000000,
+      "acq_purpose": "- 6",
+      "acq_method": "- 7. 위탁투자중개업자 - 8. 취득 전 자기주식 보유현황 배당가능이익범위 내 취득(주) 보통주식 - 비율(%) -",
+      "acq_period_start": null,
+      "acq_period_end": null,
+      "total_shares": null,
+      "ratio_pct": null,
+      "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261118000368"
+    },
+    {
       "rcept_no": "20261118000345",
       "rcept_dt": "20261118",
       "corp_code": "00168331",
@@ -8725,5 +8743,5 @@
       "dart_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250610000225"
     }
   ],
-  "last_seen": "20261118000345"
+  "last_seen": "20261118000368"
 }
