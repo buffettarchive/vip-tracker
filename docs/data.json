@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-20T10:24+09:00",
+  "updated_at": "2026-11-20T10:29+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -13,8 +13,23 @@
     "Pzena",
     "Dalton"
   ],
-  "last_seen": "20261120000147",
+  "last_seen": "20261120000153",
   "disclosures": [
+    {
+      "rcept_no": "20261120000153",
+      "rcept_dt": "2026-11-20",
+      "firm": "Miri",
+      "corp_name": "지니언스",
+      "stock_code": "263860",
+      "corp_code": "00962223",
+      "stkrt": "",
+      "stkrt_prev": "",
+      "stkqy": "",
+      "report_resn": "",
+      "purpose": "",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "기타"
+    },
     {
       "rcept_no": "20261120000118",
       "rcept_dt": "2026-11-20",
