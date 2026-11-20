@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-20T14:04+09:00",
+  "updated_at": "2026-11-20T14:19+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261120000308",
+  "last_seen": "20261120000317",
   "disclosures": [
+    {
+      "rcept_no": "20261120000317",
+      "rcept_dt": "2026-11-20",
+      "corp_name": "효성오앤비",
+      "stock_code": "097870",
+      "market": "KOSDAQ",
+      "corp_code": "00367385",
+      "repror": "박문현",
+      "ofcps": "사장",
+      "rgist": "등기임원",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "35,000",
+      "total_cnt": "2,319,733",
+      "irds_rate": "0.41",
+      "hold_rate": "27.32",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261120000317&dcm_no=11668151",
+      "dcm_no": "11668151"
+    },
     {
       "rcept_no": "20261120000308",
       "rcept_dt": "2026-11-20",
