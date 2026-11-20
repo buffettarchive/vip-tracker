@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-20T10:04+09:00",
+  "updated_at": "2026-11-20T10:09+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -13,7 +13,7 @@
     "Pzena",
     "Dalton"
   ],
-  "last_seen": "20261120000118",
+  "last_seen": "20261120000128",
   "disclosures": [
     {
       "rcept_no": "20261120000118",
@@ -22,13 +22,13 @@
       "corp_name": "코리아에프티",
       "stock_code": "123410",
       "corp_code": "00803425",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkrt": "14.21",
+      "stkrt_prev": "13.17",
+      "stkqy": "3955474",
+      "report_resn": "장내매도",
+      "purpose": "단순투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "기타"
+      "kind": "매수"
     },
     {
       "rcept_no": "20261120000111",
