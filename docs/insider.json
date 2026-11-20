@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-20T11:39+09:00",
+  "updated_at": "2026-11-20T12:09+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261120000222",
+  "last_seen": "20261120000239",
   "disclosures": [
+    {
+      "rcept_no": "20261120000239",
+      "rcept_dt": "2026-11-20",
+      "corp_name": "노브랜드",
+      "stock_code": "145170",
+      "market": "KOSDAQ",
+      "corp_code": "00305941",
+      "repror": "김기홍",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "24,811",
+      "total_cnt": "5,090,978",
+      "irds_rate": "0.15",
+      "hold_rate": "30.11",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261120000239&dcm_no=11667877",
+      "dcm_no": "11667877"
+    },
     {
       "rcept_no": "20261120000222",
       "rcept_dt": "2026-11-20",
