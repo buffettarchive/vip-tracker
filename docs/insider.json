@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-20T17:39+09:00",
+  "updated_at": "2026-11-20T17:45+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261120000569",
+  "last_seen": "20261120000596",
   "disclosures": [
+    {
+      "rcept_no": "20261120000593",
+      "rcept_dt": "2026-11-20",
+      "corp_name": "티엔엔터테인먼트",
+      "stock_code": "131100",
+      "market": "KOSDAQ",
+      "corp_code": "00814786",
+      "repror": "초록뱀미디어",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "124,373",
+      "total_cnt": "4,565,977",
+      "irds_rate": "1.93",
+      "hold_rate": "70.80",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261120000593&dcm_no=11669441",
+      "dcm_no": "11669441"
+    },
     {
       "rcept_no": "20261120000554",
       "rcept_dt": "2026-11-20",
