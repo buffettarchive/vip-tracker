@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-20T10:09+09:00",
+  "updated_at": "2026-11-20T10:19+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261120000099",
+  "last_seen": "20261120000125",
   "disclosures": [
+    {
+      "rcept_no": "20261120000125",
+      "rcept_dt": "2026-11-20",
+      "corp_name": "WISCOM",
+      "stock_code": "024070",
+      "market": "KOSPI",
+      "corp_code": "00142865",
+      "repror": "구영일",
+      "ofcps": "대표이사 사장",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "39,000",
+      "total_cnt": "6,178,066",
+      "irds_rate": "0.25",
+      "hold_rate": "40.31",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261120000125&dcm_no=11667365",
+      "dcm_no": "11667365"
+    },
     {
       "rcept_no": "20261120000099",
       "rcept_dt": "2026-11-20",
