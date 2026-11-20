@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-20T09:54+09:00",
+  "updated_at": "2026-11-20T10:04+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -13,8 +13,38 @@
     "Pzena",
     "Dalton"
   ],
-  "last_seen": "20261120000099",
+  "last_seen": "20261120000118",
   "disclosures": [
+    {
+      "rcept_no": "20261120000118",
+      "rcept_dt": "2026-11-20",
+      "firm": "브이아이피자산운용",
+      "corp_name": "코리아에프티",
+      "stock_code": "123410",
+      "corp_code": "00803425",
+      "stkrt": "",
+      "stkrt_prev": "",
+      "stkqy": "",
+      "report_resn": "",
+      "purpose": "",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "기타"
+    },
+    {
+      "rcept_no": "20261120000111",
+      "rcept_dt": "2026-11-20",
+      "firm": "브이아이피자산운용",
+      "corp_name": "세보엠이씨",
+      "stock_code": "011560",
+      "corp_code": "00133876",
+      "stkrt": "6.46",
+      "stkrt_prev": "5.15",
+      "stkqy": "651189",
+      "report_resn": "장내매도",
+      "purpose": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매수"
+    },
     {
       "rcept_no": "20261119000319",
       "rcept_dt": "2026-11-19",
