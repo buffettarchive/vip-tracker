@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-20T09:59+09:00",
+  "updated_at": "2026-11-20T10:09+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261120000096",
+  "last_seen": "20261120000099",
   "disclosures": [
+    {
+      "rcept_no": "20261120000099",
+      "rcept_dt": "2026-11-20",
+      "corp_name": "비피도",
+      "stock_code": "238200",
+      "market": "KOSDAQ",
+      "corp_code": "01109070",
+      "repror": "박명수",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "10,545",
+      "total_cnt": "100,658",
+      "irds_rate": "0.13",
+      "hold_rate": "1.23",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261120000099&dcm_no=11667251",
+      "dcm_no": "11667251"
+    },
     {
       "rcept_no": "20261120000096",
       "rcept_dt": "2026-11-20",
