@@ -1,17 +1,21 @@
 <!DOCTYPE html>
-<html lang="ko" data-lang="ko">
+<!-- 자동 생성 파일입니다. 수정은 src/dashboard.html에서 하세요 (build_en_page.py) -->
+<html lang="en" data-lang="en">
 <head>
+<base href="/" />
 <meta name="naver-site-verification" content="6a07b5913b5ed5318875354c39e3d21ce086e524" />
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=1260" />
-<title>버핏아카이브</title>
+<title>Buffett Archive | Korean Insider Buying, 5% Stake Filings and Buybacks</title>
 <script>
 (function(){
   var v=new URLSearchParams(location.search).get("view");
   if(["insider","firm","buyback"].indexOf(v)<0) v="insider";
   var en=document.documentElement.getAttribute("data-lang")==="en";
+  // 영어판(기본 주소)인데 예전에 한국어를 고른 방문자면 한국어판으로 이동
+  try{ if(en && localStorage.getItem("ba_lang_pref")==="ko"){ location.replace("/ko/dashboard.html"+location.search); return; } }catch(e){}
   var base="https://www.buffettarchive.co.kr/";
-  var urls={ko:base+"dashboard.html?view="+v, en:base+"en/dashboard.html?view="+v};
+  var urls={ko:base+"ko/dashboard.html?view="+v, en:base+"dashboard.html?view="+v};
   var l=document.createElement("link");
   l.rel="canonical";
   l.href=en?urls.en:urls.ko;
@@ -21,20 +25,20 @@
   });
 })();
 </script>
-<meta name="description" content="내부자 매수, 운용사 지분공시, 자사주 매입 트래커" />
+<meta name="description" content="Track Korean stock market signals in English: insider open-market purchases, 5% stake filings by asset managers, and share buyback decisions from DART filings, updated every few minutes." />
 <link rel="icon" href="favicon.ico" />
 <meta property="og:type" content="website" />
-<meta property="og:site_name" content="버핏아카이브" />
-<meta property="og:title" content="버핏아카이브" />
-<meta property="og:description" content="내부자 매수, 운용사 지분공시, 자사주 매입 트래커" />
+<meta property="og:site_name" content="Buffett Archive" />
+<meta property="og:title" content="Buffett Archive | Korean Insider Buying, 5% Stake Filings and Buybacks" />
+<meta property="og:description" content="Track Korean stock market signals in English: insider open-market purchases, 5% stake filings by asset managers, and share buyback decisions from DART filings, updated every few minutes." />
 <meta property="og:image" content="https://www.buffettarchive.co.kr/og-image-v2.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:url" content="https://www.buffettarchive.co.kr/dashboard.html?view=insider" />
-<meta property="og:locale" content="ko_KR" />
+<meta property="og:locale" content="en_US" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="버핏아카이브" />
-<meta name="twitter:description" content="내부자 매수, 운용사 지분공시, 자사주 매입 트래커" />
+<meta name="twitter:title" content="Buffett Archive | Korean Insider Buying, 5% Stake Filings and Buybacks" />
+<meta name="twitter:description" content="Track Korean stock market signals in English: insider open-market purchases, 5% stake filings by asset managers, and share buyback decisions from DART filings, updated every few minutes." />
 <meta name="twitter:image" content="https://www.buffettarchive.co.kr/og-image-v2.png" />
 
 <!-- 폰트: Spoqa Han Sans Neo v3.3.0 고정 -->
@@ -253,13 +257,13 @@ footer#footer{margin:40px 0 0;padding-top:24px;border-top:1px solid var(--line)}
 
 <header style="position:sticky;top:0;z-index:100;background:#F8F7F4;border-bottom:1px solid #ecebe5">
     <nav style="max-width:1200px;margin:0 auto;height:74px;display:flex;align-items:center;padding:0 20px;">
-      <a href="index.html" style="display:flex;align-items:center"><img src="logo.png" alt="Buffett Archive" style="height:32px;width:auto"></a>
+      <a href="dashboard.html?view=insider" style="display:flex;align-items:center"><img src="logo.png" alt="Buffett Archive" style="height:32px;width:auto"></a>
       <div class="nav-links">
-        <a href="dashboard.html?view=insider" id="nav-insider">내부자매수</a>
-        <a href="dashboard.html?view=firm" id="nav-firm">운용사 지분공시</a>
-        <a href="dashboard.html?view=buyback" id="nav-buyback">자사주매입</a>
-        <a href="guru.html" id="nav-guru">구루 포트폴리오</a>
-        <a href="en/dashboard.html?view=insider" id="langToggle" class="lang-toggle" hreflang="en">English</a>
+        <a href="dashboard.html?view=insider" id="nav-insider">Insider Buying</a>
+        <a href="dashboard.html?view=firm" id="nav-firm">Firm Filings</a>
+        <a href="dashboard.html?view=buyback" id="nav-buyback">Buybacks</a>
+        <a href="guru.html" id="nav-guru" style="display:none">Guru Portfolio</a>
+        <a href="ko/dashboard.html?view=insider" id="langToggle" class="lang-toggle" hreflang="ko">한국어</a>
       </div>
     </nav>
   </header>
@@ -279,15 +283,15 @@ footer#footer{margin:40px 0 0;padding-top:24px;border-top:1px solid var(--line)}
   </div>
 
   <div class="maintabs" id="mainTabs" role="tablist">
-    <button role="tab" data-view="insider" aria-selected="true" id="tabInsider">내부자 매수</button>
-    <button role="tab" data-view="firm" aria-selected="false" id="tabFirm">운용사 지분공시</button>
-    <button role="tab" data-view="buyback" aria-selected="false" id="tabBuyback">자사주매입</button>
+    <button role="tab" data-view="insider" aria-selected="true" id="tabInsider">Insider Buying</button>
+    <button role="tab" data-view="firm" aria-selected="false" id="tabFirm">Asset Manager Filings</button>
+    <button role="tab" data-view="buyback" aria-selected="false" id="tabBuyback">Treasury Buybacks</button>
   </div>
 
   <div class="controls">
     <div class="firm-tabs" id="firmTabs" role="tablist"></div>
     <div class="market-filter" id="marketFilter"></div>
-    <div class="search-wrap"><input type="search" class="search-input" id="searchInput" placeholder="기업명, 종목코드, 보고자명 검색" autocomplete="off" spellcheck="false"></div>
+    <div class="search-wrap"><input type="search" class="search-input" id="searchInput" placeholder="Search company, ticker, or filer" autocomplete="off" spellcheck="false"></div>
     <div class="count" id="count"></div>
   </div>
 
@@ -299,10 +303,10 @@ footer#footer{margin:40px 0 0;padding-top:24px;border-top:1px solid var(--line)}
 <footer class="ba-footer">
   <div class="ba-f-in">
     <div class="ba-f-legal">
-      <p>※ 국내 공시는 보고의무발생일로부터 5영업일 이내 제출되므로 실제 매매 시점보다 늦을 수 있습니다.</p>
-      <p>※ 13F 보고서는 분기 종료 후 45일 이내 제출되며, 보고 대상 증권의 매수 포지션만 포함합니다.</p>
-      <p>※ 본 사이트는 공시 사실을 정리해 전달할 뿐이며, 특정 종목의 매수 및 매도를 권유하지 않습니다.</p>
-      <p>※ 투자판단과 그에 따른 책임은 이용자 본인에게 있습니다.</p>
+      <p>※ Korean ownership filings are due within 5 business days of the trigger date, so they can lag the actual trade.</p>
+      <p>※ 13F reports are filed within 45 days after quarter end and include long positions in reportable securities only.</p>
+      <p>※ Company and person names are shown in English using official DART English names where available; other names are romanized.</p>
+      <p>※ This site summarizes public filings only and does not recommend buying or selling any security. Investment decisions are your own responsibility.</p>
     </div>
   </div>
 </footer>
@@ -1121,7 +1125,9 @@ function applyStaticTexts(){
 function updateLangToggle(){
   const a = document.getElementById("langToggle");
   if(!a) return;
-  a.href = (LANG==="en" ? "dashboard.html?view=" : "en/dashboard.html?view=") + view;
+  a.href = (LANG==="en" ? "ko/dashboard.html?view=" : "dashboard.html?view=") + view;
+  // 고른 언어를 기억해서 다음 방문부터 그 언어로 시작
+  a.onclick = ()=>{ try{ localStorage.setItem("ba_lang_pref", LANG==="en" ? "ko" : "en"); }catch(e){} };
 }
 
 function switchLang(lang){
