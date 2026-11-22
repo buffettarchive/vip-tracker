@@ -793,6 +793,22 @@ def collect():
             key = c or ("N:" + n.upper())
             e = items.setdefault(key, {"name": n, "names": set(), "cusip": c, "src": src})
             e["names"].add(n.upper())
+    # 과거 분기 탭에서도 수익률을 보여주도록 최근 8개 분기 아카이브 보유 종목도 함께 시세 조회 (CUSIP 있는 주식만)
+    n_before = len(items)
+    if ARCHIVE_DIR.exists():
+        for f in sorted(ARCHIVE_DIR.glob("*.json"), reverse=True)[:8]:
+            a = load_json(f) or {}
+            for g in (a.get("portfolios") or {}).values():
+                for h in g.get("holdings", []) or []:
+                    c = norm_cusip(h.get("cusip"))
+                    if not c or is_debt_cusip(c) or (h.get("type") or "SH").upper() != "SH":
+                        continue
+                    n = clean_name(str(h.get("name", "")).strip())
+                    if not n:
+                        continue
+                    e = items.setdefault(c, {"name": n, "names": set(), "cusip": c, "src": "13F"})
+                    e["names"].add(n.upper())
+    log.info(f"아카이브(최근 8개 분기) 보유 종목 추가: {len(items) - n_before}개")
     return items
 
 
