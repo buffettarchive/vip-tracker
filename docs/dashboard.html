@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-lang="ko">
 <head>
 <meta name="naver-site-verification" content="6a07b5913b5ed5318875354c39e3d21ce086e524" />
 <meta charset="UTF-8" />
@@ -9,10 +9,16 @@
 (function(){
   var v=new URLSearchParams(location.search).get("view");
   if(["insider","firm","buyback"].indexOf(v)<0) v="insider";
+  var en=document.documentElement.getAttribute("data-lang")==="en";
+  var base="https://www.buffettarchive.co.kr/";
+  var urls={ko:base+"dashboard.html?view="+v, en:base+"en/dashboard.html?view="+v};
   var l=document.createElement("link");
   l.rel="canonical";
-  l.href="https://www.buffettarchive.co.kr/dashboard.html?view="+v;
+  l.href=en?urls.en:urls.ko;
   document.head.appendChild(l);
+  [["ko",urls.ko],["en",urls.en],["x-default",urls.en]].forEach(function(p){
+    var a=document.createElement("link");a.rel="alternate";a.hreflang=p[0];a.href=p[1];document.head.appendChild(a);
+  });
 })();
 </script>
 <meta name="description" content="내부자 매수, 운용사 지분공시, 자사주 매입 트래커" />
@@ -78,6 +84,8 @@ a{color:inherit;text-decoration:none}
 .nav-links a{color:var(--muted); transition:0.2s;}
 .nav-links a:hover{color:var(--ink);}
 .nav-links a.active{color:var(--cobalt); text-decoration:none;}
+.nav-links a.lang-toggle{border:1px solid #d9d7cf;border-radius:999px;padding:4px 12px;font-size:13px;color:var(--ink)}
+.nav-links a.lang-toggle:hover{border-color:var(--cobalt);color:var(--cobalt)}
 
 
 #seedFlag{display:inline-block}
@@ -251,6 +259,7 @@ footer#footer{margin:40px 0 0;padding-top:24px;border-top:1px solid var(--line)}
         <a href="dashboard.html?view=firm" id="nav-firm">운용사 지분공시</a>
         <a href="dashboard.html?view=buyback" id="nav-buyback">자사주매입</a>
         <a href="guru.html" id="nav-guru">구루 포트폴리오</a>
+        <a href="en/dashboard.html?view=insider" id="langToggle" class="lang-toggle" hreflang="en">English</a>
       </div>
     </nav>
   </header>
@@ -439,11 +448,37 @@ function t(key, ...args){
   return typeof v==="function" ? v(...args) : v;
 }
 
-let LANG = localStorage.getItem("ba_lang");
-if(!LANG){
-  const nav=(navigator.language||"").toLowerCase();
-  LANG = nav.startsWith("ko") ? "ko" : "en";
+// 언어는 페이지가 정함: dashboard.html = 한국어, en/dashboard.html = 영어
+let LANG = document.documentElement.getAttribute("data-lang")==="en" ? "en" : "ko";
+
+// ── 영어판 번역 사전 (build_i18n.py가 만드는 i18n_en.json) ──
+let EN = {corp:{}, names:{}, roles:{}, text:{}, mkt:{}};
+function enCorp(item){
+  if(LANG!=="en") return item.corp_name||"";
+  return EN.corp[item.corp_code] || item.corp_name || "";
 }
+function enName(s){ return (LANG==="en" && s && EN.names[s]) ? EN.names[s] : s; }
+function enRole(s){
+  if(LANG!=="en" || !s || s==="-") return localizeRole(s);
+  return EN.roles[s] || localizeRole(s);
+}
+function enText(s){ return (LANG==="en" && s && Object.prototype.hasOwnProperty.call(EN.text, s)) ? EN.text[s] : s; }
+function codeLabel(code, mk){
+  if(!code) return "";
+  if(LANG!=="en") return code;
+  const sfx = mk==="KOSPI"||mk==="Y" ? "KS" : mk==="KOSDAQ"||mk==="K" ? "KQ" : (EN.mkt[code]||"");
+  return sfx ? `${code}.${sfx}` : code;
+}
+function fmtKrwEn(amount){
+  const krw = amount>=1e9 ? `₩${(amount/1e9).toFixed(1)}bn` : `₩${Math.round(amount/1e6).toLocaleString()}M`;
+  const fx = LAST_MARKET && LAST_MARKET.quotes && LAST_MARKET.quotes["USD/KRW"] ? LAST_MARKET.quotes["USD/KRW"].price : 0;
+  if(!fx) return krw;
+  const usd = amount/fx;
+  const u = usd>=1e9 ? `$${(usd/1e9).toFixed(2)}B` : `$${(usd/1e6).toFixed(1)}M`;
+  return `${krw} (≈${u})`;
+}
+const CHART_LABEL_EN = {"야간선물":"KOSPI 200 Night Futures"};
+function chartLabel(n){ return LANG==="en" ? (CHART_LABEL_EN[n]||n) : n; }
 
 function fmtDate(iso){
   if(!iso) return {d:"-",m:"",y:""};
@@ -518,16 +553,16 @@ function buildSorted(){
 
   // 내부자: 검색 키 사전 계산 (회사명 + 종목코드 + 보고자)
   SORTED.insider = (INSIDER.disclosures||[]).slice().sort(byRcpt);
-  SORTED.insider.forEach(x=>{ x._k = norm(x.corp_name) + "|" + norm(x.stock_code) + "|" + norm(x.repror); });
+  SORTED.insider.forEach(x=>{ x._k = norm(x.corp_name) + "|" + norm(x.stock_code) + "|" + norm(x.repror) + (LANG==="en" ? "|" + norm(enCorp(x)) + "|" + norm(enName(x.repror)) : ""); });
 
   // 운용사: ARCHIVE + FIRM 병합, 접수번호 기준 중복 제거
   const merged = [...(ARCHIVE.disclosures||[]), ...(FIRM.disclosures||[])];
   SORTED.firm = Array.from(new Map(merged.map(it=>[it.rcept_no, it])).values()).sort(byRcpt);
-  SORTED.firm.forEach(x=>{ x._k = norm(x.corp_name) + "|" + norm(x.stock_code) + "|" + norm(x.firm) + "|" + norm(localizeFirm(x.firm)); });
+  SORTED.firm.forEach(x=>{ x._k = norm(x.corp_name) + "|" + norm(x.stock_code) + "|" + norm(x.firm) + "|" + norm(localizeFirm(x.firm)) + (LANG==="en" ? "|" + norm(enCorp(x)) : ""); });
 
   // 자사주: 신탁계약 제외
   SORTED.buyback = (BUYBACK.entries||[]).filter(x => !(x.report_nm||"").includes("신탁계약")).sort(byRcpt);
-  SORTED.buyback.forEach(x=>{ x._k = norm(x.corp_name) + "|" + norm(x.stock_code); });
+  SORTED.buyback.forEach(x=>{ x._k = norm(x.corp_name) + "|" + norm(x.stock_code) + (LANG==="en" ? "|" + norm(enCorp(x)) : ""); });
 }
 
 function matchSearch(x){
@@ -545,7 +580,7 @@ function updateNavLinks() {
 document.querySelectorAll(".nav-links a").forEach(link => {
   link.onclick = (e) => {
     const href = link.getAttribute("href");
-    if(href.startsWith("dashboard.html?view=")){
+    if(href.includes("dashboard.html?view=")){
       e.preventDefault();
       switchView(href.split("view=")[1]);
     }
@@ -600,7 +635,7 @@ function initChart(){
 function drawChart(name){
   currentChartName = name;
   const titleEl = document.getElementById("chartTitle");
-  if(titleEl) titleEl.textContent = name;
+  if(titleEl) titleEl.textContent = chartLabel(name);
   document.querySelectorAll(".ticker-item").forEach(it=>{
     it.classList.toggle("active", it.dataset.tvname===name);
   });
@@ -615,7 +650,7 @@ function drawChart(name){
     lwSeries.setData([]);
     lastCandle = null;
     updateOhlcBar(null);
-    if(hintEl) hintEl.textContent = "차트 데이터를 불러오는 중입니다";
+    if(hintEl) hintEl.textContent = LANG==="en" ? "Loading chart data" : "차트 데이터를 불러오는 중입니다";
     return;
   }
   series = series.map(c => {
@@ -625,7 +660,7 @@ function drawChart(name){
     return c;
   }).filter(c => c.close > 0);
   if(!series.length){ lwSeries.setData([]); lastCandle=null; updateOhlcBar(null); return; }
-  if(hintEl) hintEl.textContent = "전체 기간, 스크롤로 과거 탐색";
+  if(hintEl) hintEl.textContent = LANG==="en" ? "Full history, scroll to explore" : "전체 기간, 스크롤로 과거 탐색";
   lwSeries.setData(series);
   lastCandle = series[series.length-1];
   updateOhlcBar(lastCandle);
@@ -657,7 +692,7 @@ function renderTicker(mk){
     const price=name==="USD/KRW"?q.price.toFixed(2):q.price.toLocaleString();
     const active = (name===currentChartName) ? " active" : "";
     return `<div class="ticker-item${active}" data-tvname="${name}">
-      <span class="ticker-name">${name}</span>
+      <span class="ticker-name">${chartLabel(name)}</span>
       <span class="ticker-price">${price}</span>
       <span class="ticker-chg ${cls}">${sign}${pct.toFixed(2)}%</span>
     </div>`;
@@ -676,12 +711,14 @@ function renderTicker(mk){
 function rowFirm(item){
   const dt=fmtDate(item.rcept_dt), dl=dartLink(item.rcept_no);
   const tag=firmTag(item);
-  const code=item.stock_code?`<span class="code">${hl(item.stock_code)}</span>`:"";
+  const code=item.stock_code?`<span class="code">${hl(codeLabel(item.stock_code))}</span>`:"";
+  const cname=enCorp(item);
+  const resn=LANG==="en" ? (EN.text[item.report_resn]||localizeResn(item.report_resn)) : item.report_resn;
   const inner=`
-    <div class="avatar">${escHtml((item.corp_name||"-").trim().charAt(0))}</div>
+    <div class="avatar">${escHtml((cname||"-").trim().charAt(0))}</div>
     <div class="corp">
-      <div class="name">${hl(item.corp_name)}${code}</div>
-      <div class="sub">${hl(localizeFirm(item.firm))}<span class="sep"></span>${escHtml(localizeResn(item.report_resn))}</div>
+      <div class="name">${hl(cname)}${code}</div>
+      <div class="sub">${hl(localizeFirm(item.firm))}<span class="sep"></span>${escHtml(resn)}</div>
     </div>
     <div class="stake">
       <div class="pct">${item.stkrt ? item.stkrt+"%" : "-"}</div>
@@ -694,8 +731,9 @@ function rowFirm(item){
 
 function rowInsider(item){
   const dt=fmtDate(item.rcept_dt), dl=dartLink(item.rcept_no);
-  const code=item.stock_code?`<span class="code">${hl(item.stock_code)}</span>`:"";
+  const code=item.stock_code?`<span class="code">${hl(codeLabel(item.stock_code, item.market))}</span>`:"";
   const mk=item.market||"";
+  const cname=enCorp(item);
   let mkb="";
   if(mk==="KOSPI") mkb=`<span class="badge mkt-y">KOSPI</span> `;
   else if(mk==="KOSDAQ") mkb=`<span class="badge mkt-k">KOSDAQ</span> `;
@@ -704,17 +742,17 @@ function rowInsider(item){
   if(m.includes("장내")) mb=`<span class="badge in">${t("badge_in")}</span>`;
   else if(m.includes("장외")) mb=`<span class="badge out">${t("badge_out")}</span>`;
   else if(m.includes("시간외")) mb=`<span class="badge out">${t("badge_aft")}</span>`;
-  const ofcpsLoc = localizeRole(item.ofcps||"");
+  const ofcpsLoc = enRole(item.ofcps||"");
   const mainLoc = (item.main_shrholdr && item.main_shrholdr!=="-") ? localizeRole(item.main_shrholdr) : "";
-  const pos=[ofcpsLoc, mainLoc].filter(Boolean).map(escHtml).join('<span class="sep"></span>');
+  const pos=[ofcpsLoc, mainLoc].filter(x=>x && x!=="-").map(escHtml).join('<span class="sep"></span>');
   const rc=escHtml(item.rcept_no||"");
   const on=PICKED.has(item.rcept_no);
   const inner=`
     <div class="pick-cell" data-r="${rc}" role="checkbox" aria-checked="${on}" aria-label="${t("pick_label")}"><span class="pick${on?" on":""}"></span></div>
-    <div class="avatar">${escHtml((item.corp_name||"-").trim().charAt(0))}</div>
+    <div class="avatar">${escHtml((cname||"-").trim().charAt(0))}</div>
     <div class="corp">
-      <div class="name">${hl(item.corp_name)}${code}</div>
-      <div class="sub">${mkb}<span class="who">${hl(item.repror)}</span><span class="sep"></span>${pos||"-"} ${mb}</div>
+      <div class="name">${hl(cname)}${code}</div>
+      <div class="sub">${mkb}<span class="who">${hl(enName(item.repror))}</span><span class="sep"></span>${pos||"-"} ${mb}</div>
     </div>
     <div class="stake">
       <div class="pct">+${item.irds_cnt}</div>
@@ -735,22 +773,21 @@ function rowBuyback(item){
   let mkb="";
   if(item.corp_cls==="Y") mkb=`<span class="badge mkt-y">KOSPI</span> `;
   else if(item.corp_cls==="K") mkb=`<span class="badge mkt-k">KOSDAQ</span> `;
-  const subParts = [item.acq_purpose||"", item.acq_method||""].filter(Boolean);
+  const subParts = [enText(item.acq_purpose||""), enText(item.acq_method||"")].filter(Boolean);
   const sub = subParts.length ? subParts.map(escHtml).join('<span class="sep"></span>') : "-";
   const hasData = !!item.shares_common;
   const shares = hasData ? item.shares_common.toLocaleString() : "-";
   let amtLabel = "";
   if(item.amount_common){
     const billions = item.amount_common / 100000000;
-    amtLabel = billions >= 1
-      ? `${billions.toFixed(1)}${LANG==="en"?"B KRW":"억원"}`
-      : `${(item.amount_common/10000).toFixed(0)}${LANG==="en"?"M KRW":"만원"}`;
+    amtLabel = LANG==="en" ? fmtKrwEn(item.amount_common)
+      : billions >= 1 ? `${billions.toFixed(1)}억원` : `${(item.amount_common/10000).toFixed(0)}만원`;
   }
   const dimCls = hasData ? "" : " dim";
   const inner=`
-    <div class="avatar">${escHtml((item.corp_name||"-").trim().charAt(0))}</div>
+    <div class="avatar">${escHtml((enCorp(item)||"-").trim().charAt(0))}</div>
     <div class="corp">
-      <div class="name">${hl(item.corp_name||"-")} ${typeBadge}</div>
+      <div class="name">${hl(enCorp(item)||"-")} ${typeBadge}</div>
       <div class="sub">${mkb}${sub}</div>
     </div>
     <div class="stake">
@@ -941,7 +978,7 @@ function dcmOf(x){
 }
 
 function fileName(x){
-  const raw = `[${x.corp_name||""}] ${x.repror||""} ${x.rcept_dt||""}`;
+  const raw = `[${enCorp(x)}] ${enName(x.repror)||""} ${x.rcept_dt||""}`;
   return raw.replace(/[~|\\/:*?"<>]/g," ").replace(/\s+/g," ").trim();
 }
 
@@ -1028,10 +1065,10 @@ $("#dlBtn").addEventListener("click", async ()=>{
         zip.file(n + ".pdf", blob);
       });
       const fails = ready.length - okList.length;
-      if(fails) zip.file("받지 못한 공시.txt", ready.filter((x,i)=>!results[i]).map(fileName).join("\r\n"));
+      if(fails) zip.file(LANG==="en" ? "failed downloads.txt" : "받지 못한 공시.txt", ready.filter((x,i)=>!results[i]).map(fileName).join("\r\n"));
       const out = await zip.generateAsync({type:"blob"});
       const today = new Date().toISOString().slice(0,10);
-      saveBlob(out, `버핏아카이브 내부자매수 공시 ${today} (${okList.length}건).zip`);
+      saveBlob(out, LANG==="en" ? `BuffettArchive filings ${today} (${okList.length}).zip` : `버핏아카이브 내부자매수 공시 ${today} (${okList.length}건).zip`);
     }
     endDownload(okList.length === ready.length ? t("dl_done") : `${okList.length} / ${ready.length}`);
   } catch(e){
@@ -1073,6 +1110,17 @@ function applyStaticTexts(){
   if(navInsider) navInsider.textContent = LANG==="en" ? "Insider Buying" : "내부자매수";
   if(navFirm) navFirm.textContent = LANG==="en" ? "Firm Filings" : "운용사 지분공시";
   if(navBuyback) navBuyback.textContent = LANG==="en" ? "Buybacks" : "자사주매입";
+  if(LANG==="en"){
+    if(navGuru) navGuru.style.display = "none";   // 구루 포트폴리오는 아직 한국어판만 있음
+    const si = document.getElementById("searchInput");
+    if(si) si.placeholder = "Search company, ticker, or filer";
+  }
+  updateLangToggle();
+}
+function updateLangToggle(){
+  const a = document.getElementById("langToggle");
+  if(!a) return;
+  a.href = (LANG==="en" ? "dashboard.html?view=" : "en/dashboard.html?view=") + view;
 }
 
 function switchLang(lang){
@@ -1086,7 +1134,8 @@ function switchView(v, updateUrl=true){
   view=v;
   $("#mainTabs").querySelectorAll("button").forEach(b=>b.setAttribute("aria-selected", b.dataset.view===v));
   updateNavLinks();
-  if(updateUrl) window.history.replaceState(null, "", "?view="+v);
+  if(updateUrl) window.history.replaceState(null, "", location.pathname+"?view="+v);
+  updateLangToggle();
   buildFirmTabs(); buildMarketFilter(); setFooter(); render();
   window.scrollTo({ top: 0 });
 }
@@ -1107,7 +1156,9 @@ function loadData(isFirstLoad){
     fetch("buyback.json"+bust).then(r=>r.json()).catch(()=>null),
     fetch("market.json"+bust).then(r=>r.json()).catch(()=>null),
     fetch("archive.json"+bust).then(r=>r.json()).catch(()=>null),
-  ]).then(([f,i,b,mk,ar])=>{
+    LANG==="en" ? fetch("i18n_en.json"+bust).then(r=>r.json()).catch(()=>null) : Promise.resolve(null),
+  ]).then(([f,i,b,mk,ar,en])=>{
+    if(en) EN = Object.assign({corp:{}, names:{}, roles:{}, text:{}, mkt:{}}, en);
     if(f) FIRM=f;
     if(i) INSIDER=i;
     if(b) BUYBACK=b;
