@@ -476,7 +476,8 @@ def get_json(url, timeout=15, tries=3):
 
 def yf_price(t):
     """반환: (가격dict, 회사명) / DEAD(없는 종목 확정) / None(일시적 실패)"""
-    code, d = fetch(f"https://query1.finance.yahoo.com/v8/finance/chart/{quote(t)}?range=1y&interval=1d&includePrePost=false")
+    # 10년 월봉 + 액면분할 이력 (과거 분기 기준가를 분할 후 기준으로 환산하는 데 사용)
+    code, d = fetch(f"https://query1.finance.yahoo.com/v8/finance/chart/{quote(t)}?range=10y&interval=1mo&events=split&includePrePost=false")
     if code in (400, 404, 422):
         return DEAD
     try:
@@ -488,7 +489,7 @@ def yf_price(t):
     if not cur:
         return None
     try:
-        cl = [x for x in res["indicators"]["quote"][0]["close"] if x]
+        cl = [x for x in res["indicators"]["quote"][0]["close"] if x][-12:]
     except Exception:
         cl = []
     hi = meta.get("fiftyTwoWeekHigh") or (max(cl) if cl else cur)
@@ -496,6 +497,17 @@ def yf_price(t):
     hi, lo = max(hi, cur), min(lo, cur)
     name = meta.get("longName") or meta.get("shortName") or ""
     pd = {"current_price": round(cur, 2), "week52_low": round(lo, 2), "week52_high": round(hi, 2)}
+    sp = (res.get("events") or {}).get("splits") or {}
+    splits = []
+    for v in sp.values():
+        try:
+            num, den = float(v.get("numerator") or 0), float(v.get("denominator") or 0)
+            if num > 0 and den > 0 and num != den:
+                splits.append([datetime.utcfromtimestamp(int(v["date"])).strftime("%Y-%m-%d"), round(num / den, 6)])
+        except Exception:
+            pass
+    if splits:
+        pd["splits"] = sorted(splits)
     mt = meta.get("regularMarketTime")
     if mt and time.time() - mt > STALE_DAYS * 86400:
         # 장기간 거래 없음 = 상장폐지/인수합병/거래정지 추정 → 마지막 거래가를 표시용으로 남김
