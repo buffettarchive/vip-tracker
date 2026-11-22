@@ -2,6 +2,12 @@
 fetch_13f.py - 미국 가치투자 거장 13F 공시 수집
 버핏아카이브 최종본
 
+v3 변경점
+  - 구루 목록을 gurus.py로 분리, 제출 법인이 바뀐 구루는 CIK 여러 개를 함께 조회
+  - 정정공시(13F-HR/A)는 제외하고 원공시(13F-HR) 중 기준일이 가장 늦은 것을 사용
+  - 인포테이블 파일명이 제각각이어도 XML 전부를 순서대로 시도
+  - 조회 실패한 구루는 기존 데이터를 유지 (목록에서 사라지지 않음)
+
 v2 변경점
   - 종목마다 CUSIP(증권 고유번호), 증권종류(titleOfClass), 콜/풋 구분을 함께 저장
     → fetch_stock_prices.py가 CUSIP으로 정확한 티커를 찾음 (이름 추측 불필요)
@@ -35,93 +41,9 @@ GH_HEADERS = {
 }
 
 # ══════════════════════════════════════════════════════════════════
-# 검증된 64명 CIK (SEC EDGAR 13F-HR 제출 투자자문사 기준)
+# 구루 목록은 gurus.py 한 곳에서 관리 (히스토리 스크립트와 공용)
 # ══════════════════════════════════════════════════════════════════
-GURUS = {
-    "마이클 버리 (사이언 에셋)": "0001649339",
-    "워런 버핏 (버크셔 해서웨이)": "0001067983",
-    "빌 애크먼 (퍼싱 스퀘어)": "0001336528",
-    "세스 클라만 (바우포스트 그룹)": "0001061768",
-    "리 루 (히말라야 캐피탈)": "0001709323",
-    "넬슨 펠츠 (트리안 펀드)": "0001345471",
-    "바이킹 글로벌 (안드레아스 할보센)": "0001103804",
-    "칼 아이칸 (아이칸 캐피탈)": "0000921669",
-    "단 롭 (서드 포인트)": "0001040273",
-    "빌 밀러 (밀러 밸류 파트너스)": "0001135778",
-    "프렘 왓사 (페어팩스)": "0000915191",
-    "토마스 게이너 (마켈 그룹)": "0001096343",
-    "리차드 제나 (제나 인베스트먼트)": "0001390777",
-    "모니시 파브라이 (파브라이 인베스트먼트)": "0001549575",
-    "데이비드 테퍼 (아팔루사)": "0001656456",
-    "스탠리 드러켄밀러 (듀케인)": "0001536411",
-    "하워드 막스 (오크트리)": "0001535472",
-    "데이비드 아인혼 (그린라이트)": "0001079114",
-    "밸류액트 캐피탈": "0001397545",
-    "빌 & 멀린다 게이츠 재단 (캐스케이드)": "0001166559",
-    "체이스 콜먼 (타이거 글로벌)": "0001167483",
-    "스티븐 맨델 (론 파인)": "0001061165",
-    "브루스 버코위츠 (페어홈)": "0001056831",
-    "메이슨 호킨스 (사우스이스턴)": "0000807985",
-    "척 아크레 (아크레 캐피탈)": "0001112520",
-    "도지 앤 콕스": "0000315066",
-    "크리스 혼 (TCI 펀드)": "0001647251",
-    "퍼스트 이글 인베스트먼트": "0000810958",
-    "데이비드 에이브럼스 (아브람스 캐피탈)": "0001358706",
-    "트위디 브라운": "0000732905",
-    "리 애인슬리 (매버릭 캐피탈)": "0000934639",
-    "빌 니그렌 (해리스 어소시에이츠)": "0000813917",
-    "글렌 그린버그 (브레이브 워리어)": "0001553733",
-    "존 로저스 (아리엘 인베스트먼트)": "0000936753",
-    "크리스토퍼 데이비스 (데이비스 어드바이저스)": "0001036325",
-    "토마스 루소 (가드너 루소)": "0000860643",
-    "데이비드 롤프 (웨지우드)": "0000859804",
-    "윌리엄 폰 뮈플링 (칸티용)": "0001279936",
-    "퍼스트 퍼시픽 어드바이저스": "0001377581",
-    "레온 쿠퍼만 (오메가)": "0000898202",
-    "헨리 엘렌보겐 (듀러블 캐피탈)": "0001798849",
-    "데니스 홍 (쇼스프링)": "0001766908",
-    "데이비드 카츠 (매트릭스)": "0001016287",
-    "크리스토퍼 블룸스트란 (셈퍼 아우구스투스)": "0001115373",
-    "루안 커니프 (세쿼이아)": "0001720792",
-    "알타록 파트너스": "0001631014",
-    "폴렌 캐피탈": "0001034524",
-    "써드 애비뉴 매니지먼트": "0001099281",
-    "스티븐 체크 (체크 캐피탈)": "0001032814",
-    "토레이 펀드": "0000098758",
-    "얙트먼 에셋 매니지먼트": "0000905567",
-    "로버트 올스타인 (올스타인)": "0000947996",
-    "그린헤이븐 어소시에이츠": "0000846222",
-    "뮬렌캠프": "0001133219",
-    "브라이언 로렌스 (오크클리프)": "0001657335",
-    "팻 도시 (도시 애셋)": "0001671657",
-    "힐만 캐피탈": "0001314620",
-    "톰 밴크로프트 (마카이라)": "0001540866",
-    "사만다 맥레모어 (페이션트)": "0001854794",
-    "클리포드 소신 (CAS)": "0001697591",
-    "글렌 웰링 (인게이지드)": "0001559771",
-    "밸리 포지 캐피탈": "0001697868",
-    "린셀 트레인": "0001484150",
-    "프란시스 추 (추 어소시에이츠)": "0001389403",
-
-    # ── 4차 추가: 데이터로마 누락분 17명 (SEC 직접 확인) ──
-    "리차드 프제나 (프제나)": "0001027796",
-    "가이 스피어 (아쿠아마린)": "0001404599",
-    "단 용핑 (H&H)": "0001759760",
-    "아브람스 바이슨": "0001317588",
-    "노버트 루 (펀치 카드)": "0001419050",
-    "트리플 프론드 파트너스": "0001454502",
-    "프랑수아 로숑 (지베르니)": "0001641864",
-    "존 아미티지 (에저턴)": "0001581811",
-    "테리 스미스 (펀드스미스)": "0001569205",
-    "알렉스 뢰퍼스 (아틀란틱)": "0001063296",
-    "사라 케터러 (코즈웨이)": "0001165797",
-    "월러스 웨이츠 (웨이츠)": "0000883965",
-    "메이어스 & 파워": "0001070134",
-    "벌칸 밸류 파트너스": "0001556785",
-    "칸 브라더스": "0001039565",
-    "해리 번 (사운드 쇼어)": "0000820124",
-    "젠슨 인베스트먼트": "0001106129",
-}
+from gurus import GURUS, cik_list
 
 # ══════════════════════════════════════════════════════════════════
 # SEC 요청 유틸리티 (레이트리밋 + 지수 백오프)
@@ -218,41 +140,68 @@ def parse_13f_xml(xml_content, mult=1000):
     result.sort(key=lambda x: x['value'], reverse=True)
     return result, total_val
 
-def get_valid_13f_holdings(cik):
+def _hr_filings(cik):
+    """한 CIK의 원공시 13F-HR 목록 [(report_date, filing_date, accession)]"""
     r = safe_get(f"https://data.sec.gov/submissions/CIK{cik}.json")
     if not r or r.status_code != 200:
-        return [], 0, None
+        print(f"    [CIK {cik}] submissions 조회 실패")
+        return []
     recent = r.json().get("filings", {}).get("recent", {})
-    forms = recent.get("form", [])
-    hr_indices = [i for i, f in enumerate(forms) if f.startswith("13F-HR")]
-    if not hr_indices:
-        return [], 0, None
-    for i in hr_indices[:3]:
-        acc = recent["accessionNumber"][i].replace("-", "")
-        date = recent["reportDate"][i]
-        idx_r = safe_get(f"https://www.sec.gov/Archives/edgar/data/{int(cik)}/{acc}/index.json")
-        if not idx_r or idx_r.status_code != 200:
+    out = []
+    for i, f in enumerate(recent.get("form", [])):
+        if f != "13F-HR":
             continue
-        files = idx_r.json().get("directory", {}).get("item", [])
-        xml_file = None
-        for f in files:
-            fn = f["name"].lower()
-            if fn.endswith(".xml") and ("infotable" in fn or "info_table" in fn):
-                xml_file = f["name"]; break
-        if not xml_file:
-            for f in files:
-                fn = f["name"].lower()
-                if fn.endswith(".xml") and "primary_doc" not in fn:
-                    xml_file = f["name"]; break
-        if not xml_file:
-            continue
-        xml_r = safe_get(f"https://www.sec.gov/Archives/edgar/data/{int(cik)}/{acc}/{xml_file}")
+        rd = recent["reportDate"][i]
+        if rd:
+            out.append((rd, recent["filingDate"][i], recent["accessionNumber"][i]))
+    return out
+
+
+def _xml_candidates(files):
+    """인포테이블일 가능성이 높은 순서로 XML 파일명 정렬"""
+    xmls = [f["name"] for f in files
+            if f["name"].lower().endswith(".xml") and "primary_doc" not in f["name"].lower()]
+    def rank(n):
+        l = n.lower()
+        if "infotable" in l or "info_table" in l: return 0
+        if "13f" in l or "table" in l or "information" in l: return 1
+        return 2
+    return sorted(xmls, key=rank)
+
+
+def _holdings_from_filing(cik, acc, date):
+    acc = acc.replace("-", "")
+    base = f"https://www.sec.gov/Archives/edgar/data/{int(cik)}/{acc}"
+    idx_r = safe_get(f"{base}/index.json")
+    if not idx_r or idx_r.status_code != 200:
+        return [], 0
+    files = idx_r.json().get("directory", {}).get("item", [])
+    # 2022-12-31 기준일 이후 공시는 금액이 달러 단위 (이전은 천 달러 단위)
+    mult = 1 if (date or "") >= "2022-12-31" else 1000
+    for xml_file in _xml_candidates(files):
+        xml_r = safe_get(f"{base}/{xml_file}")
         if xml_r and xml_r.status_code == 200:
-            # 2022-12-31 기준일 이후 공시는 금액이 달러 단위 (이전은 천 달러 단위)
-            mult = 1 if (date or "") >= "2022-12-31" else 1000
             holdings, total = parse_13f_xml(xml_r.content, mult)
             if holdings:
-                return holdings, total, date
+                return holdings, total
+    return [], 0
+
+
+def get_valid_13f_holdings(cik_value):
+    """최신 13F-HR 보유내역. cik_value는 CIK 문자열 또는 리스트"""
+    cands = []
+    for order, cik in enumerate(cik_list(cik_value)):
+        for rd, fd, acc in _hr_filings(cik):
+            cands.append((rd, -order, fd, cik, acc))
+    if not cands:
+        return [], 0, None
+    # 기준일 최신순, 같은 기준일이면 리스트 앞쪽 법인 우선, 그다음 최근 제출분
+    cands.sort(key=lambda x: (x[0], x[1], x[2]), reverse=True)
+    for rd, _, fd, cik, acc in cands[:4]:
+        holdings, total = _holdings_from_filing(cik, acc, rd)
+        if holdings:
+            return holdings, total, rd
+        print(f"    [파싱 실패] CIK {cik} {acc} ({rd}), 이전 공시 시도")
     return [], 0, None
 
 # ══════════════════════════════════════════════════════════════════
@@ -394,10 +343,25 @@ def translate_portfolios(portfolios):
 # ══════════════════════════════════════════════════════════════════
 def gh_get_sha():
     url = f"{GH_API}/repos/{GH_OWNER}/{GH_REPO}/contents/{GH_PATH}?ref={GH_BRANCH}"
-    r = safe_get(url)
-    if r and r.status_code == 200:
-        return r.json()["sha"]
+    try:
+        r = requests.get(url, headers=GH_HEADERS, timeout=20)
+        if r.status_code == 200:
+            return r.json()["sha"]
+    except Exception:
+        pass
     return None
+
+
+def gh_get_existing():
+    """기존 us_vips.json (실패한 구루의 직전 데이터 유지용)"""
+    url = f"{GH_API}/repos/{GH_OWNER}/{GH_REPO}/contents/{GH_PATH}?ref={GH_BRANCH}"
+    try:
+        r = requests.get(url, headers={**GH_HEADERS, "Accept": "application/vnd.github.raw"}, timeout=60)
+        if r.status_code == 200:
+            return r.json().get("portfolios", {})
+    except Exception as e:
+        print(f"[기존 데이터] 로드 실패: {e}")
+    return {}
 
 def gh_put(data, sha):
     url = f"{GH_API}/repos/{GH_OWNER}/{GH_REPO}/contents/{GH_PATH}"
@@ -408,13 +372,18 @@ def gh_put(data, sha):
         "branch": GH_BRANCH,
     }
     if sha: body["sha"] = sha
-    requests.put(url, headers=GH_HEADERS, json=body, timeout=15)
+    r = requests.put(url, headers=GH_HEADERS, json=body, timeout=120)
+    print(f"[업로드] {GH_PATH}: HTTP {r.status_code}")
+    if r.status_code not in (200, 201):
+        print(r.text[:500])
+        sys.exit(1)
 
 # ══════════════════════════════════════════════════════════════════
 # 메인
 # ══════════════════════════════════════════════════════════════════
 def main():
     sha = gh_get_sha()
+    previous = gh_get_existing()
     portfolios = {}
     failed = []
     total = len(GURUS)
@@ -433,6 +402,9 @@ def main():
         except Exception as e:
             failed.append(name)
             print(f"  ✗ 에러: {e}")
+        if name not in portfolios and name in previous:
+            portfolios[name] = previous[name]
+            print(f"  → 기존 데이터 유지 ({previous[name].get('report_date')})")
         time.sleep(1.5)
         if idx % 10 == 0 and idx < total:
             time.sleep(30)
@@ -451,6 +423,12 @@ def main():
     print(f"성공: {len(portfolios)}명 / 실패: {len(failed)}명")
     if failed:
         for f in failed: print(f"  - {f}")
+    stale = sorted((v.get("report_date") or "", k) for k, v in portfolios.items())
+    latest = stale[-1][0] if stale else ""
+    old = [(d, k) for d, k in stale if d < latest]
+    if old:
+        print(f"최신 기준일({latest})보다 오래된 구루 {len(old)}명:")
+        for d, k in old: print(f"  - {k}: {d}")
     print(f"{'='*50}")
 
 if __name__ == "__main__":
