@@ -601,10 +601,10 @@ function updateOhlcBar(candle){
   const cls = up ? "up" : "down";
   bar.innerHTML = `
     <span class="ohlc-date">${candle.time}</span>
-    <span class="ohlc-item">시<b class="${cls}">${fmtOhlc(candle.open)}</b></span>
-    <span class="ohlc-item">고<b class="${cls}">${fmtOhlc(candle.high)}</b></span>
-    <span class="ohlc-item">저<b class="${cls}">${fmtOhlc(candle.low)}</b></span>
-    <span class="ohlc-item">종<b class="${cls}">${fmtOhlc(candle.close)}</b></span>`;
+    <span class="ohlc-item">${LANG==="en"?"O":"시"}<b class="${cls}">${fmtOhlc(candle.open)}</b></span>
+    <span class="ohlc-item">${LANG==="en"?"H":"고"}<b class="${cls}">${fmtOhlc(candle.high)}</b></span>
+    <span class="ohlc-item">${LANG==="en"?"L":"저"}<b class="${cls}">${fmtOhlc(candle.low)}</b></span>
+    <span class="ohlc-item">${LANG==="en"?"C":"종"}<b class="${cls}">${fmtOhlc(candle.close)}</b></span>`;
 }
 
 function initChart(){
@@ -616,6 +616,7 @@ function initChart(){
     rightPriceScale: { borderColor:'#ecebe5' },
     timeScale: { borderColor:'#ecebe5', timeVisible:false },
     crosshair: { mode: LightweightCharts.CrosshairMode.Normal },
+    localization: { locale: LANG==="en" ? "en-US" : "ko-KR" },
     autoSize: true,
   });
   lwSeries = lwChart.addCandlestickSeries({
