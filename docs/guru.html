@@ -553,6 +553,8 @@ function renderTable(holdings,tableId,showPrices){
     else{val=(h.value||0)/(h._divisor||1);}
     let rp=h.shares>0?val/h.shares:0;
     const pd0=getPriceData(h.cusip,h.name);
+    // 공시 기준일 이후 액면분할이 있었으면 기준가를 분할 후 기준으로 환산 (예: 50대 1 분할이면 기준가 / 50)
+    if(rp&&pd0&&pd0.splits&&h._rd){for(const [d,r] of pd0.splits){if(d>h._rd&&r>0)rp=rp/r}}
     const why=priceCheck(h,rp,pd0);
     const isPrn=(h.type||"").toUpperCase()==="PRN";
     if(isPrn)rp=0;
