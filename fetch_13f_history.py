@@ -9,6 +9,8 @@ fetch_13f_history.py — 전체 구루 과거 13F-HR 수집 + 분기별 변동 �
   - 보유내역이 새로 채워진 분기는 변동내역을 다시 계산
   - 인포테이블 후보 파일을 순서대로 모두 시도
   - us_vips_changes.json(최신 변동)은 항상 가장 최근 분기로 저장
+  - CIK가 바뀐(오입력 수정) 구루의 기존 아카이브는 지우고 다시 수집
+  - 분기별 금액 단위 배수(value_mult)를 저장해 천 달러 단위 오기재 공시도 바로잡음
 
 변경사항 (v3):
   - XML 네임스페이스 접두사 범용 매칭 (ns1, ns2, n1, 등 모두 지원)
@@ -159,6 +161,8 @@ def parse_13f_xml(xml_bytes):
         value_m = re.search(rf"<{NS}value>(.*?)</{NS}value>", block, re.I | re.S)
         shares_m = re.search(rf"<{NS}(?:sshPrnamt|Amt)>(.*?)</{NS}(?:sshPrnamt|Amt)>", block, re.I | re.S)
         type_m = re.search(rf"<{NS}(?:sshPrnamtType|Type)>(.*?)</{NS}(?:sshPrnamtType|Type)>", block, re.I | re.S)
+        title_m = re.search(rf"<{NS}titleOfClass>(.*?)</{NS}titleOfClass>", block, re.I | re.S)
+        pc_m = re.search(rf"<{NS}putCall>(.*?)</{NS}putCall>", block, re.I | re.S)
 
         if not name_m or not value_m:
             continue
@@ -173,7 +177,12 @@ def parse_13f_xml(xml_bytes):
         except ValueError:
             shares = 0
         stype = type_m.group(1).strip() if type_m else "SH"
-        entries.append({"name": name, "cusip": cusip, "value_x1000": value, "shares": shares, "type": stype})
+        entry = {"name": name, "cusip": cusip, "value_x1000": value, "shares": shares, "type": stype}
+        if title_m:
+            entry["title"] = re.sub(r"\s+", " ", title_m.group(1)).strip()
+        if pc_m and pc_m.group(1).strip():
+            entry["put_call"] = pc_m.group(1).strip().upper()
+        entries.append(entry)
     return entries
 
 
@@ -327,22 +336,62 @@ def save_manifest():
     log.info(f"  📋 매니페스트: 아카이브 {len(archive_quarters)}개, 변동 {len(changes_quarters)}개")
 
 
+def infer_value_mult(holdings, report_date):
+    """value_x1000 필드에 곱해야 달러가 되는 배수.
+    규정상 2022-12-31 기준일부터 달러 단위, 이전은 천 달러 단위.
+    다만 규정과 다르게 낸 공시가 있어 1주당 금액 중앙값으로 검증한다."""
+    import statistics
+    base = 1 if (report_date or "") >= "2022-12-31" else 1000
+    px = [h.get("value_x1000", 0) * base / h["shares"] for h in holdings
+          if h.get("shares") and h.get("value_x1000") and (h.get("type") or "SH").upper() == "SH"
+          and not h.get("put_call")]
+    if not px:
+        return base
+    m = statistics.median(px)
+    if m < 1:
+        return base * 1000
+    if m > 2000:
+        return base / 1000
+    return base
+
+
+def _cik_int(c):
+    try:
+        return int(str(c))
+    except ValueError:
+        return None
+
+
 def prune_removed_gurus():
     """GURUS에서 빠진 이름을 아카이브, 변동내역에서 제거. 수정된 분기 집합 반환"""
     keep = set(GURUS.keys())
+    allowed = {k: {_cik_int(c) for c in cik_list(v)} for k, v in GURUS.items()}
     touched = set()
     if ARCHIVE_DIR.exists():
         for path in sorted(ARCHIVE_DIR.glob("*.json")):
             data = load_archive(path.stem)
             if not data:
                 continue
-            gone = [k for k in data.get("portfolios", {}) if k not in keep]
-            if gone:
-                for k in gone:
-                    del data["portfolios"][k]
+            ports = data.get("portfolios", {})
+            gone = [k for k in ports if k not in keep]
+            # CIK가 잘못 입력돼 다른 회사 공시가 들어간 경우 제거 (올바른 CIK로 다시 수집됨)
+            wrong = [k for k in ports if k in keep and ports[k].get("cik")
+                     and _cik_int(ports[k]["cik"]) not in allowed[k]]
+            changed = False
+            for k in gone + wrong:
+                del ports[k]
+                changed = True
+            for k, v in ports.items():
+                if "value_mult" not in v:
+                    v["value_mult"] = infer_value_mult(v.get("holdings", []), v.get("report_date"))
+                    changed = True
+            if changed:
                 save_archive(path.stem, data)
-                touched.add(path.stem)
+            if gone:
                 log.info(f"  🧹 {path.stem}: 목록 외 구루 제거 {gone}")
+            if wrong:
+                touched.add(path.stem)
+                log.info(f"  🧹 {path.stem}: CIK 불일치 데이터 제거 {wrong}")
     if CHANGES_DIR.exists():
         for path in sorted(CHANGES_DIR.glob("*.json")):
             try:
@@ -390,8 +439,7 @@ def collect_history(max_quarters=None, guru_filter=None, start_year=2013, end_qu
     log.info(f"━━━ 1단계: {len(gurus)}명 파일링 목록 수집 ━━━")
     quarter_guru_filings = {}
 
-    prune_removed_gurus()
-    modified = set()
+    modified = set(prune_removed_gurus())
 
     for idx, (name, cik_value) in enumerate(gurus.items()):
         ciks = cik_list(cik_value)
@@ -452,6 +500,7 @@ def collect_history(max_quarters=None, guru_filter=None, start_year=2013, end_qu
                     "cik": finfo["cik"], "filing_date": finfo["filing_date"],
                     "report_date": finfo["report_date"], "holdings": holdings,
                     "total_value_x1000": total_val, "holding_count": len(holdings),
+                    "value_mult": infer_value_mult(holdings, finfo["report_date"]),
                 }
                 collected += 1
             else:
