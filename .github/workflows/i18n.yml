@@ -28,13 +28,13 @@ jobs:
           DART_API_KEY: ${{ secrets.DART_API_KEY }}
           DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
         run: python build_i18n.py
-      - name: 영어판 페이지 생성
+      - name: 대시보드 언어별 페이지 생성 (src/dashboard.html → 영어 기본, ko 한국어)
         run: python build_en_page.py
       - name: 커밋 & 푸시
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/i18n_en.json docs/en/dashboard.html
+          git add docs/i18n_en.json docs/dashboard.html docs/ko/dashboard.html docs/en/dashboard.html
           if git diff --cached --quiet; then
             echo "변경 없음"
           else
