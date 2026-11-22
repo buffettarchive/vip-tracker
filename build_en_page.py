@@ -1,17 +1,23 @@
 """
-build_en_page.py - docs/dashboard.html(한국어판)에서 docs/en/dashboard.html(영어판) 생성
+build_en_page.py - 대시보드 원본(src/dashboard.html)에서 언어별 페이지 생성
 
-화면 로직은 한국어판과 같은 파일을 그대로 쓰고, 영어판에 필요한 부분만 바꿉니다.
-  - <html data-lang="en">, <base href="/"> (데이터 파일과 이미지는 사이트 루트에서 읽음)
-  - 제목, 검색엔진 설명, 공유 미리보기(OG) 문구
-  - 메뉴 주소와 문구, 언어 전환 버튼, 하단 안내문
-dashboard.html을 고친 뒤 이 스크립트를 다시 실행하면 영어판도 같이 갱신됩니다.
+  docs/dashboard.html     영어판 (기본 주소)
+  docs/ko/dashboard.html  한국어판
+  docs/en/dashboard.html  예전 영어판 주소 → 기본 주소로 이동
+
+화면 로직은 원본 하나를 공유하고, 언어별로 다른 부분만 바꿉니다.
+대시보드를 고칠 때는 src/dashboard.html만 수정하세요. docs 쪽 파일은 덮어써집니다.
+방문자가 언어 버튼으로 한국어를 고르면 기억해 두었다가 다음 방문부터 한국어판으로 보냅니다.
 """
 
 import os, re
 
-SRC = "docs/dashboard.html"
-DST = "docs/en/dashboard.html"
+SRC = "src/dashboard.html"
+OUT_EN = "docs/dashboard.html"
+OUT_KO = "docs/ko/dashboard.html"
+OUT_OLD_EN = "docs/en/dashboard.html"
+
+GEN_NOTE = "<!-- 자동 생성 파일입니다. 수정은 src/dashboard.html에서 하세요 (build_en_page.py) -->"
 
 TITLE = "Buffett Archive | Korean Insider Buying, 5% Stake Filings and Buybacks"
 DESC = ("Track Korean stock market signals in English: insider open-market purchases, "
@@ -24,6 +30,20 @@ FOOTER_EN = """    <div class="ba-f-legal">
       <p>※ This site summarizes public filings only and does not recommend buying or selling any security. Investment decisions are your own responsibility.</p>
     </div>"""
 
+REDIRECT = """<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Buffett Archive</title>
+<link rel="canonical" href="https://www.buffettarchive.co.kr/dashboard.html" />
+<meta name="robots" content="noindex" />
+<script>location.replace("/dashboard.html" + location.search);</script>
+<meta http-equiv="refresh" content="0; url=/dashboard.html" />
+</head>
+<body><a href="/dashboard.html">Buffett Archive</a></body>
+</html>
+"""
+
 
 def sub(pattern, repl, s, count=1, flags=0):
     new, n = re.subn(pattern, repl, s, count=count, flags=flags)
@@ -32,44 +52,61 @@ def sub(pattern, repl, s, count=1, flags=0):
     return new
 
 
-def main():
-    s = open(SRC, encoding="utf-8").read()
-
-    s = sub(r'<html lang="ko" data-lang="ko">', '<html lang="en" data-lang="en">', s)
+def common(s):
     s = sub(r"<head>\n", '<head>\n<base href="/" />\n', s)
+    s = s.replace("<!-- 원본 파일: 이 파일을 고친 뒤 build_en_page.py가 docs/dashboard.html(영어, 기본)과 "
+                  "docs/ko/dashboard.html(한국어)을 만듭니다 -->", GEN_NOTE)
+    return s
+
+
+def build_ko(src):
+    return common(src)
+
+
+def build_en(src):
+    s = common(src)
+    s = sub(r'<html lang="ko" data-lang="ko">', '<html lang="en" data-lang="en">', s)
     s = sub(r"<title>.*?</title>", f"<title>{TITLE}</title>", s)
     s = sub(r'<meta name="description" content="[^"]*" />', f'<meta name="description" content="{DESC}" />', s)
     s = sub(r'<meta property="og:site_name" content="[^"]*" />', '<meta property="og:site_name" content="Buffett Archive" />', s)
     s = sub(r'<meta property="og:title" content="[^"]*" />', f'<meta property="og:title" content="{TITLE}" />', s)
     s = sub(r'<meta property="og:description" content="[^"]*" />', f'<meta property="og:description" content="{DESC}" />', s)
-    s = sub(r'<meta property="og:url" content="[^"]*" />',
-            '<meta property="og:url" content="https://www.buffettarchive.co.kr/en/dashboard.html?view=insider" />', s)
     s = sub(r'<meta property="og:locale" content="[^"]*" />', '<meta property="og:locale" content="en_US" />', s)
     s = sub(r'<meta name="twitter:title" content="[^"]*" />', f'<meta name="twitter:title" content="{TITLE}" />', s)
     s = sub(r'<meta name="twitter:description" content="[^"]*" />', f'<meta name="twitter:description" content="{DESC}" />', s)
 
-    # 메뉴: 영어판 주소, 영어 문구 (자바스크립트 없이 읽는 검색엔진도 영어로 보이게)
-    s = sub(r'<a href="index.html"', '<a href="en/dashboard.html?view=insider"', s)
-    s = sub(r'href="dashboard.html\?view=insider" id="nav-insider">[^<]*<', 'href="en/dashboard.html?view=insider" id="nav-insider">Insider Buying<', s)
-    s = sub(r'href="dashboard.html\?view=firm" id="nav-firm">[^<]*<', 'href="en/dashboard.html?view=firm" id="nav-firm">Firm Filings<', s)
-    s = sub(r'href="dashboard.html\?view=buyback" id="nav-buyback">[^<]*<', 'href="en/dashboard.html?view=buyback" id="nav-buyback">Buybacks<', s)
+    # 메뉴: 영어판 주소와 문구 (자바스크립트 없이 읽는 검색엔진도 영어로 보이게)
+    s = sub(r'<a href="index.html"', '<a href="dashboard.html?view=insider"', s)
+    s = sub(r'href="ko/dashboard.html\?view=insider" id="nav-insider">[^<]*<', 'href="dashboard.html?view=insider" id="nav-insider">Insider Buying<', s)
+    s = sub(r'href="ko/dashboard.html\?view=firm" id="nav-firm">[^<]*<', 'href="dashboard.html?view=firm" id="nav-firm">Firm Filings<', s)
+    s = sub(r'href="ko/dashboard.html\?view=buyback" id="nav-buyback">[^<]*<', 'href="dashboard.html?view=buyback" id="nav-buyback">Buybacks<', s)
     s = sub(r'<a href="guru.html" id="nav-guru">[^<]*</a>', '<a href="guru.html" id="nav-guru" style="display:none">Guru Portfolio</a>', s)
-    s = sub(r'<a href="en/dashboard.html\?view=insider" id="langToggle" class="lang-toggle" hreflang="en">English</a>',
-            '<a href="dashboard.html?view=insider" id="langToggle" class="lang-toggle" hreflang="ko">한국어</a>', s)
+    s = sub(r'<a href="dashboard.html\?view=insider" id="langToggle" class="lang-toggle" hreflang="en">English</a>',
+            '<a href="ko/dashboard.html?view=insider" id="langToggle" class="lang-toggle" hreflang="ko">한국어</a>', s)
     s = sub(r'(id="tabInsider">)[^<]*<', r'\1Insider Buying<', s)
     s = sub(r'(id="tabFirm">)[^<]*<', r'\1Asset Manager Filings<', s)
     s = sub(r'(id="tabBuyback">)[^<]*<', r'\1Treasury Buybacks<', s)
     s = sub(r'placeholder="[^"]*검색"', 'placeholder="Search company, ticker, or filer"', s)
     s = sub(r'    <div class="ba-f-legal">.*?    </div>', FOOTER_EN, s, flags=re.S)
+    return s
 
-    os.makedirs(os.path.dirname(DST), exist_ok=True)
-    old = open(DST, encoding="utf-8").read() if os.path.exists(DST) else ""
-    if old != s:
-        with open(DST, "w", encoding="utf-8") as f:
-            f.write(s)
-        print(f"[build_en_page] {DST} 갱신")
+
+def write(path, content):
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    old = open(path, encoding="utf-8").read() if os.path.exists(path) else ""
+    if old != content:
+        with open(path, "w", encoding="utf-8") as f:
+            f.write(content)
+        print(f"[build_en_page] {path} 갱신")
     else:
-        print("[build_en_page] 변경 없음")
+        print(f"[build_en_page] {path} 변경 없음")
+
+
+def main():
+    src = open(SRC, encoding="utf-8").read()
+    write(OUT_EN, build_en(src))
+    write(OUT_KO, build_ko(src))
+    write(OUT_OLD_EN, REDIRECT)
 
 
 if __name__ == "__main__":
