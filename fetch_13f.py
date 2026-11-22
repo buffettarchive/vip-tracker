@@ -7,6 +7,7 @@ v3 변경점
   - 정정공시(13F-HR/A)는 제외하고 원공시(13F-HR) 중 기준일이 가장 늦은 것을 사용
   - 인포테이블 파일명이 제각각이어도 XML 전부를 순서대로 시도
   - 조회 실패한 구루는 기존 데이터를 유지 (목록에서 사라지지 않음)
+  - 규정과 달리 천 달러 단위로 금액을 낸 공시를 자동 감지해 달러로 보정
 
 v2 변경점
   - 종목마다 CUSIP(증권 고유번호), 증권종류(titleOfClass), 콜/풋 구분을 함께 저장
@@ -169,6 +170,34 @@ def _xml_candidates(files):
     return sorted(xmls, key=rank)
 
 
+def infer_unit_fix(pairs):
+    """[(value, shares)] 목록으로 금액 단위 오류를 추정해 보정 배수 반환.
+    주식(SH) 종목의 1주당 금액 중앙값이 1달러 미만이면 천 달러 단위로 낸 것으로 보고 1000,
+    2,000달러를 넘으면 이미 달러 단위인데 1000을 곱한 것으로 보고 0.001을 반환."""
+    import statistics
+    px = [v / sh for v, sh in pairs if sh and v]
+    if len(px) < 1:
+        return 1
+    m = statistics.median(px)
+    if m < 1:
+        return 1000
+    if m > 2000:
+        return 0.001
+    return 1
+
+
+def _fix_units(holdings, total):
+    pairs = [(h["value"], h["shares"]) for h in holdings
+             if h.get("type", "SH") == "SH" and not h.get("put_call")]
+    f = infer_unit_fix(pairs)
+    if f != 1:
+        print(f"    [단위 보정] 금액 x{f} (1주당 금액 중앙값 기준)")
+        for h in holdings:
+            h["value"] = int(round(h["value"] * f))
+        total = int(round(total * f))
+    return holdings, total
+
+
 def _holdings_from_filing(cik, acc, date):
     acc = acc.replace("-", "")
     base = f"https://www.sec.gov/Archives/edgar/data/{int(cik)}/{acc}"
@@ -183,7 +212,7 @@ def _holdings_from_filing(cik, acc, date):
         if xml_r and xml_r.status_code == 200:
             holdings, total = parse_13f_xml(xml_r.content, mult)
             if holdings:
-                return holdings, total
+                return _fix_units(holdings, total)
     return [], 0
 
 
