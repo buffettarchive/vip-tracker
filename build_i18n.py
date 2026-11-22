@@ -124,7 +124,8 @@ def roman_entity(name):
 def tidy_latin(name):
     """KWON SANG HOON -> Kwon Sang Hoon, 단 3글자 이하 약어(SK, LG)는 유지"""
     if name.upper() == name and re.search(r"[A-Z]{4,}", name):
-        return " ".join(w if len(w) <= 3 and w.isalpha() else w.capitalize() for w in name.split())
+        return " ".join(w if w.isalpha() and (len(w) <= 3 or (len(w) <= 5 and not re.search(r"[AEIOUY]", w)))
+                        else w.capitalize() for w in name.split())
     return name
 
 
@@ -402,8 +403,13 @@ def main():
     codes = {x["corp_code"]: x.get("corp_name", "") for x in ins + bb + firm if x.get("corp_code")}
     missing = [c for c in codes if c not in cache["corp"]]
     reporters = sorted({x.get("repror", "").strip() for x in ins if x.get("repror")} - {""})
-    need_names = [r for r in reporters if r not in cache["names"] or (r in auto and DEEPL_KEY)]
-    entity_need = [r for r in need_names if HANGUL.search(r) and not is_person(r)]
+    NAMES_VER = 2      # 판별 규칙이 바뀌면 올려서 보고자 전체를 다시 처리
+    if cache.get("names_ver") != NAMES_VER:
+        need_names = reporters
+        cache["names_ver"] = NAMES_VER
+    else:
+        need_names = [r for r in reporters if r not in cache["names"] or (r in auto and DEEPL_KEY)]
+    entity_need = [r for r in need_names if HANGUL.search(r)]
     corp_list = {}
     if missing or entity_need:
         corp_list = dart_corp_list()
@@ -432,16 +438,15 @@ def main():
         elif not HANGUL.search(r):
             cache["names"][r] = tidy_person_latin(r)
             auto.pop(r, None)
+        elif by_ko.get(norm_ko_name(r)):
+            # DART에 등록된 회사명과 정확히 같으면 법인 (짧은 회사명이 사람 이름으로 오인되는 것 방지)
+            cache["names"][r] = tidy_company(by_ko[norm_ko_name(r)])
+            auto.pop(r, None)
         elif is_person(r):
             cache["names"][r] = roman_person(r.replace(" ", ""))
             auto.pop(r, None)
         else:
-            en = by_ko.get(norm_ko_name(r))
-            if en:
-                cache["names"][r] = tidy_company(en)
-                auto.pop(r, None)
-            else:
-                to_deepl.append(r)
+            to_deepl.append(r)
 
     # ── 3. 직위, 자사주, 보고사유 ──
     phrase_jobs = []   # (bucket, 원문, 규칙결과)
