@@ -1,0 +1,46 @@
+name: 영어판 번역 사전 갱신
+
+on:
+  schedule:
+    # 15분마다 (다른 수집 작업과 겹치지 않게 7분, 22분, 37분, 52분)
+    - cron: '7,22,37,52 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: i18n
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests
+      - name: 번역 사전 생성
+        env:
+          DART_API_KEY: ${{ secrets.DART_API_KEY }}
+          DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
+        run: python build_i18n.py
+      - name: 영어판 페이지 생성
+        run: python build_en_page.py
+      - name: 커밋 & 푸시
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/i18n_en.json docs/en/dashboard.html
+          if git diff --cached --quiet; then
+            echo "변경 없음"
+          else
+            git commit -m "i18n: 영어판 갱신"
+            for i in 1 2 3; do
+              git pull --rebase origin main && git push && break
+              sleep 5
+            done
+          fi
