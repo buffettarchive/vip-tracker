@@ -232,6 +232,30 @@ function fmtPctChange(reported,current){
 }
 function quarterLabel(q){return q.replace("_"," ")}
 
+// ── 수익률 검증: 비교할 수 없는 가격은 표시하지 않음 ──
+let TITLE_BY_CUSIP={};
+function buildTitleIndex(){
+  TITLE_BY_CUSIP={};
+  for(const g of Object.values(VIPS))for(const h of (g.holdings||[]))if(h.cusip&&h.title)TITLE_BY_CUSIP[h.cusip]=h.title;
+}
+const NON_COMMON_RE=/(\*W\b|WARRANT|\bWTS?\b|\bRIGHTS?\b|\bRTS?\b|PFD|PREF|\bNOTES?\b|DEP SHS|DEPOSITARY SH|DEBT|BOND|\bCONV|\bMAND)/;
+function priceCheck(h,rp,pd){
+  // 반환값: null이면 정상, 문자열이면 비교 불가 사유
+  const title=((h.title||TITLE_BY_CUSIP[h.cusip]||"")+"").toUpperCase();
+  if((h.type||"").toUpperCase()==="PRN")return "채권 또는 전환사채(원금 기준 보유)라 주가와 비교할 수 없습니다";
+  if(title&&NON_COMMON_RE.test(title))return "보통주가 아닌 증권("+title+")이라 보통주 가격과 비교할 수 없습니다";
+  if(!pd||!rp||!pd.current_price)return null;
+  const tk=(pd.ticker||"");
+  if(h.cusip&&/^[A-Z]/.test(h.cusip)&&/^[A-Z]{4}[YF]$/.test(tk))return "해외 원주와 미국 ADR("+tk+")의 교환비율이 달라 비교할 수 없습니다";
+  const ageDays=h._rd?(Date.now()-new Date(h._rd).getTime())/864e5:9999;
+  if(ageDays<330&&pd.week52_low&&pd.week52_high){
+    if(rp<pd.week52_low*0.67||rp>pd.week52_high*1.5)return "공시 기준가가 최근 52주 가격 범위를 벗어나 종목 매칭 또는 금액 단위 오류가 의심됩니다";
+  }
+  const r=pd.current_price/rp;
+  if(r>50||r<0.02)return "공시 기준가와 현재가 차이가 비정상적으로 커서 표시하지 않습니다";
+  return null;
+}
+
 let PRICE_BY_NAME={};
 let PRICE_BY_NORM={};
 let PRICE_BY_TICKER={};
@@ -374,6 +398,7 @@ async function init(){
     if(!activeChangeQ&&MANIFEST.changes_quarters.length>0)activeChangeQ=MANIFEST.changes_quarters[MANIFEST.changes_quarters.length-1];
     if(pR&&pR.prices){PRICES=pR.prices;pricesUpdatedAt=pR.updated_at||"";buildPriceIndex()}
     if(tcR)TICKER_CACHE=tcR;
+    buildTitleIndex();
     const PRIORITY=[
       "워런 버핏 (버크셔 해서웨이)",
       "모니시 파브라이 (파브라이 인베스트먼트)",
@@ -431,7 +456,7 @@ function renderGuru(){
   const correctedTotal = rawTotal / divisor;
 
   $("#guruTotalVal").textContent=fmtUSD(correctedTotal);
-  const h=(d.holdings||[]).map(x=>({...x, _divisor: divisor}));
+  const h=(d.holdings||[]).map(x=>({...x, _divisor: divisor, _rd: d.report_date}));
   $("#holdingCount").textContent=h.length+"개 종목 보유";
   renderChart(h,"portfolioChart",c=>{chartInstance=c},chartInstance);
   renderTable(h,"holdingsTable",true);
@@ -451,9 +476,10 @@ async function renderHistory(){
   if(!gd){$("#histGuruName").textContent=activeGuru;$("#histGuruMeta").textContent=quarterLabel(activeHistQ);$("#histTotalVal").textContent="$0";$("#histHoldingCount").textContent="";
     tbl.innerHTML='<tr><td class="empty" colspan="9">이 분기에 해당 구루의 데이터가 없습니다.</td></tr>';if(histChartInstance){histChartInstance.destroy();histChartInstance=null}return}
   // 2023년 이후 제출분(2022-12-31 기준일부터)은 SEC 규정 변경으로 금액이 천 달러가 아닌 달러 단위
-  const mult=(gd.report_date||"")>="2022-12-31"?1:1000;
+  // value_mult: 수집 단계에서 1주당 금액 중앙값으로 검증한 배수 (천 달러 단위 오기재 공시 보정)
+  const mult=(gd.value_mult!==undefined&&gd.value_mult!==null)?gd.value_mult:((gd.report_date||"")>="2022-12-31"?1:1000);
   const tv=(gd.total_value_x1000||0)*mult;
-  const hs=(gd.holdings||[]).map(h=>{const v=(h.value_x1000||0)*mult;return{name:h.name,cusip:h.cusip||"",shares:h.shares||0,value:v,weight:tv>0?(v/tv)*100:0}}).sort((a,b)=>b.value-a.value);
+  const hs=(gd.holdings||[]).map(h=>{const v=(h.value_x1000||0)*mult;return{name:h.name,cusip:h.cusip||"",shares:h.shares||0,value:v,weight:tv>0?(v/tv)*100:0,type:h.type||"",title:h.title||"",put_call:h.put_call||"",_rd:gd.report_date}}).sort((a,b)=>b.value-a.value);
   $("#histGuruName").textContent=activeGuru;
   $("#histGuruMeta").textContent="보고일: "+(gd.report_date||quarterLabel(activeHistQ));
   $("#histTotalVal").textContent=fmtUSD(tv);
@@ -526,20 +552,25 @@ function renderTable(holdings,tableId,showPrices){
     if(h.value_x1000!==undefined){val=h.value_x1000*1000;}
     else{val=(h.value||0)/(h._divisor||1);}
     let rp=h.shares>0?val/h.shares:0;
-    const pd=getPriceData(h.cusip,h.name);
+    const pd0=getPriceData(h.cusip,h.name);
+    const why=priceCheck(h,rp,pd0);
+    const isPrn=(h.type||"").toUpperCase()==="PRN";
+    if(isPrn)rp=0;
+    const pd=why?null:pd0;
     const cp=pd?pd.current_price:null;
     const staleTip=pd&&pd.stale?` title="마지막 거래일 ${pd.last_trade||"-"} (상장폐지 또는 인수합병 추정, 마지막 거래가 표시)" style="color:var(--muted)"`:"";
     const w52l=pd?pd.week52_low:null;
     const w52h=pd?pd.week52_high:null;
+    const pctCell=why?`<span class="dim" title="${why}" style="cursor:help">-</span>`:fmtPctChange(rp,cp);
 
     return`<tr>
       <td>${h.name}${(()=>{const tk=getTicker(h.cusip,h.name);return tk?'<span style="color:var(--muted);font-weight:500;margin-left:6px;font-size:12px">'+tk+'</span>':'';})()}</td>
       <td class="pct">${h.weight.toFixed(2)}%</td>
-      <td>${fmtShares(h.shares)}</td>
-      <td>${fmtPrice(rp)}</td>
+      <td>${fmtShares(h.shares)}${isPrn?'<span style="color:var(--muted);font-size:11px;margin-left:4px">원금</span>':''}</td>
+      <td>${rp?fmtPrice(rp):'<span class="dim">-</span>'}</td>
       <td>${fmtUSD(val)}</td>
       <td${staleTip}>${cp?fmtPrice(cp):'<span class="dim">-</span>'}</td>
-      <td>${fmtPctChange(rp,cp)}</td>
+      <td>${pctCell}</td>
       <td>${w52l?fmtPrice(w52l):'<span class="dim">-</span>'}</td>
       <td>${w52h?fmtPrice(w52h):'<span class="dim">-</span>'}</td>
     </tr>`;
