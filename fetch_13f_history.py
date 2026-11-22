@@ -1,6 +1,14 @@
 #!/usr/bin/env python3
 """
-fetch_13f_history.py — 81명 구루 과거 13F-HR 수집 + 분기별 변동 계산
+fetch_13f_history.py — 전체 구루 과거 13F-HR 수집 + 분기별 변동 계산
+
+변경사항 (v4):
+  - 구루 목록을 gurus.py로 분리, 제출 법인이 바뀐 구루는 CIK 여러 개의 공시를 이어 붙임
+    (같은 분기는 리스트 앞쪽 법인 우선)
+  - GURUS에서 빠진 이름은 아카이브, 변동내역에서 자동 정리
+  - 보유내역이 새로 채워진 분기는 변동내역을 다시 계산
+  - 인포테이블 후보 파일을 순서대로 모두 시도
+  - us_vips_changes.json(최신 변동)은 항상 가장 최근 분기로 저장
 
 변경사항 (v3):
   - XML 네임스페이스 접두사 범용 매칭 (ns1, ns2, n1, 등 모두 지원)
@@ -34,89 +42,8 @@ log = logging.getLogger("13f-history")
 
 _diag_count = 0
 
-GURUS = {
-    "마이클 버리 (사이언 에셋)": "0001649339",
-    "워런 버핏 (버크셔 해서웨이)": "0001067983",
-    "빌 애크먼 (퍼싱 스퀘어)": "0001336528",
-    "세스 클라만 (바우포스트 그룹)": "0001061768",
-    "리 루 (히말라야 캐피탈)": "0001709323",
-    "넬슨 펠츠 (트리안 펀드)": "0001345471",
-    "바이킹 글로벌 (안드레아스 할보센)": "0001103804",
-    "칼 아이칸 (아이칸 캐피탈)": "0000921669",
-    "단 롭 (서드 포인트)": "0001040273",
-    "빌 밀러 (밀러 밸류 파트너스)": "0001135778",
-    "프렘 왓사 (페어팩스)": "0000915191",
-    "토마스 게이너 (마켈 그룹)": "0001096343",
-    "리차드 제나 (제나 인베스트먼트)": "0001390777",
-    "모니시 파브라이 (파브라이 인베스트먼트)": "0001549575",
-    "데이비드 테퍼 (아팔루사)": "0001656456",
-    "스탠리 드러켄밀러 (듀케인)": "0001536411",
-    "하워드 막스 (오크트리)": "0001535472",
-    "데이비드 아인혼 (그린라이트)": "0001079114",
-    "밸류액트 캐피탈": "0001397545",
-    "빌 & 멀린다 게이츠 재단 (캐스케이드)": "0001166559",
-    "체이스 콜먼 (타이거 글로벌)": "0001167483",
-    "스티븐 맨델 (론 파인)": "0001061165",
-    "브루스 버코위츠 (페어홈)": "0001056831",
-    "메이슨 호킨스 (사우스이스턴)": "0000807985",
-    "척 아크레 (아크레 캐피탈)": "0001112520",
-    "도지 앤 콕스": "0000315066",
-    "크리스 혼 (TCI 펀드)": "0001647251",
-    "퍼스트 이글 인베스트먼트": "0000810958",
-    "데이비드 에이브럼스 (아브람스 캐피탈)": "0001358706",
-    "트위디 브라운": "0000732905",
-    "리 애인슬리 (매버릭 캐피탈)": "0000934639",
-    "빌 니그렌 (해리스 어소시에이츠)": "0000813917",
-    "글렌 그린버그 (브레이브 워리어)": "0001553733",
-    "존 로저스 (아리엘 인베스트먼트)": "0000936753",
-    "크리스토퍼 데이비스 (데이비스 어드바이저스)": "0001036325",
-    "토마스 루소 (가드너 루소)": "0000860643",
-    "데이비드 롤프 (웨지우드)": "0000859804",
-    "윌리엄 폰 뮈플링 (칸티용)": "0001279936",
-    "퍼스트 퍼시픽 어드바이저스": "0001377581",
-    "레온 쿠퍼만 (오메가)": "0000898202",
-    "헨리 엘렌보겐 (듀러블 캐피탈)": "0001798849",
-    "데니스 홍 (쇼스프링)": "0001766908",
-    "데이비드 카츠 (매트릭스)": "0001016287",
-    "크리스토퍼 블룸스트란 (셈퍼 아우구스투스)": "0001115373",
-    "루안 커니프 (세쿼이아)": "0001720792",
-    "알타록 파트너스": "0001631014",
-    "폴렌 캐피탈": "0001034524",
-    "써드 애비뉴 매니지먼트": "0001099281",
-    "스티븐 체크 (체크 캐피탈)": "0001032814",
-    "토레이 펀드": "0000098758",
-    "얙트먼 에셋 매니지먼트": "0000905567",
-    "로버트 올스타인 (올스타인)": "0000947996",
-    "그린헤이븐 어소시에이츠": "0000846222",
-    "뮬렌캠프": "0001133219",
-    "브라이언 로렌스 (오크클리프)": "0001657335",
-    "팻 도시 (도시 애셋)": "0001671657",
-    "힐만 캐피탈": "0001314620",
-    "톰 밴크로프트 (마카이라)": "0001540866",
-    "사만다 맥레모어 (페이션트)": "0001854794",
-    "클리포드 소신 (CAS)": "0001697591",
-    "글렌 웰링 (인게이지드)": "0001559771",
-    "밸리 포지 캐피탈": "0001697868",
-    "린셀 트레인": "0001484150",
-    "프란시스 추 (추 어소시에이츠)": "0001389403",
-    "리차드 프제나 (프제나)": "0001027796",
-    "가이 스피어 (아쿠아마린)": "0001404599",
-    "단 용핑 (H&H)": "0001759760",
-    "아브람스 바이슨": "0001317588",
-    "노버트 루 (펀치 카드)": "0001419050",
-    "트리플 프론드 파트너스": "0001454502",
-    "프랑수아 로숑 (지베르니)": "0001641864",
-    "존 아미티지 (에저턴)": "0001581811",
-    "테리 스미스 (펀드스미스)": "0001569205",
-    "알렉스 뢰퍼스 (아틀란틱)": "0001063296",
-    "사라 케터러 (코즈웨이)": "0001165797",
-    "월러스 웨이츠 (웨이츠)": "0000883965",
-    "메이어스 & 파워": "0001070134",
-    "벌칸 밸류 파트너스": "0001556785",
-    "칸 브라더스": "0001039565",
-    "해리 번 (사운드 쇼어)": "0000820124",
-    "젠슨 인베스트먼트": "0001106129",
-}
+# 구루 목록은 gurus.py 한 곳에서 관리 (fetch_13f.py와 공용)
+from gurus import GURUS, cik_list
 
 _last_request_time = 0.0
 
@@ -250,35 +177,31 @@ def parse_13f_xml(xml_bytes):
     return entries
 
 
-def find_infotable_file(items):
-    """index.json의 파일 목록에서 13F infotable 파일을 찾는다. 우선순위 순서."""
+def find_infotable_files(items):
+    """index.json의 파일 목록에서 13F infotable 후보 파일을 우선순위 순서로 반환"""
     candidates = []
     for item in items:
         fname = item.get("name", "")
         fl = fname.lower()
-        # 1순위: infotable이 이름에 있는 XML
-        if "infotable" in fl and fl.endswith(".xml"):
-            return fname
-        # 2순위: 13f + xml
-        if "13f" in fl and fl.endswith(".xml"):
-            candidates.append(("a", fname))
-        # 3순위: information + xml
-        if "information" in fl and fl.endswith(".xml"):
-            candidates.append(("b", fname))
-        # 4순위: 아무 XML (primary_doc 제외)
-        if fl.endswith(".xml") and fl != "primary_doc.xml" and "R" not in fname[:2]:
-            candidates.append(("c", fname))
-        # 5순위: infotable이 이름에 있는 txt (내용이 XML인 경우 많음)
-        if "infotable" in fl and fl.endswith(".txt"):
-            candidates.append(("b2", fname))
-        # 6순위: 13f가 이름에 있는 txt
-        if "13f" in fl and fl.endswith(".txt") and "index" not in fl:
-            candidates.append(("e", fname))
+        if fl.endswith(".xml") and fl != "primary_doc.xml":
+            if "infotable" in fl or "info_table" in fl:
+                candidates.append((0, fname))
+            elif "13f" in fl or "table" in fl or "information" in fl:
+                candidates.append((1, fname))
+            else:
+                candidates.append((2, fname))
+        elif fl.endswith(".txt") and "index" not in fl:
+            if "infotable" in fl:
+                candidates.append((3, fname))
+            elif "13f" in fl:
+                candidates.append((4, fname))
+    candidates.sort(key=lambda x: x[0])
+    return [c[1] for c in candidates]
 
-    if candidates:
-        candidates.sort(key=lambda x: x[0])
-        return candidates[0][1]
-    return None
+
+def find_infotable_file(items):
+    c = find_infotable_files(items)
+    return c[0] if c else None
 
 
 def get_holdings_for_filing(cik, accession, guru_name=""):
@@ -300,31 +223,29 @@ def get_holdings_for_filing(cik, accession, guru_name=""):
         return []
 
     items = idx.get("directory", {}).get("item", [])
-    xml_filename = find_infotable_file(items)
+    cands = find_infotable_files(items)
 
-    if not xml_filename:
+    if not cands:
         if _diag_count < DIAG_LIMIT:
             _diag_count += 1
             fnames = [it.get("name", "") for it in items]
             log.info(f"    [DIAG] XML 파일 못 찾음. 디렉토리 파일들: {fnames}")
         return []
 
-    xml_url = f"https://www.sec.gov/Archives/edgar/data/{cik_plain}/{acc_clean}/{xml_filename}"
-    accept_type = "application/xml" if xml_filename.lower().endswith(".xml") else "text/plain"
-    xml_raw = safe_get(xml_url, accept=accept_type)
-    if not xml_raw:
-        if _diag_count < DIAG_LIMIT:
-            _diag_count += 1
-            log.info(f"    [DIAG] XML 다운로드 실패: {xml_filename}")
-        return []
+    for xml_filename in cands:
+        xml_url = f"https://www.sec.gov/Archives/edgar/data/{cik_plain}/{acc_clean}/{xml_filename}"
+        accept_type = "application/xml" if xml_filename.lower().endswith(".xml") else "text/plain"
+        xml_raw = safe_get(xml_url, accept=accept_type)
+        if not xml_raw:
+            continue
+        entries = parse_13f_xml(xml_raw)
+        if entries:
+            return entries
 
-    entries = parse_13f_xml(xml_raw)
-    if not entries and _diag_count < DIAG_LIMIT:
+    if _diag_count < DIAG_LIMIT:
         _diag_count += 1
-        preview = xml_raw[:500].decode("utf-8", errors="replace")
-        log.info(f"    [DIAG] XML 파싱 0건. 파일: {xml_filename}, 처음 500자:\n{preview}")
-
-    return entries
+        log.info(f"    [DIAG] 파싱 0건. {guru_name} {accession} 후보 파일: {cands}")
+    return []
 
 
 def compute_changes(prev_holdings, curr_holdings):
@@ -394,8 +315,6 @@ def save_changes(quarter, prev_quarter, all_changes):
     path = CHANGES_DIR / f"{quarter}.json"
     with open(path, "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=1)
-    with open(LATEST_CHANGES, "w", encoding="utf-8") as f:
-        json.dump(payload, f, ensure_ascii=False, indent=1)
     total = sum(len(v) for v in all_changes.values())
     log.info(f"  📊 변동저장: {path} (총 {total}건)")
 
@@ -406,6 +325,53 @@ def save_manifest():
     with open(MANIFEST_PATH, "w", encoding="utf-8") as f:
         json.dump(manifest, f, ensure_ascii=False, indent=1)
     log.info(f"  📋 매니페스트: 아카이브 {len(archive_quarters)}개, 변동 {len(changes_quarters)}개")
+
+
+def prune_removed_gurus():
+    """GURUS에서 빠진 이름을 아카이브, 변동내역에서 제거. 수정된 분기 집합 반환"""
+    keep = set(GURUS.keys())
+    touched = set()
+    if ARCHIVE_DIR.exists():
+        for path in sorted(ARCHIVE_DIR.glob("*.json")):
+            data = load_archive(path.stem)
+            if not data:
+                continue
+            gone = [k for k in data.get("portfolios", {}) if k not in keep]
+            if gone:
+                for k in gone:
+                    del data["portfolios"][k]
+                save_archive(path.stem, data)
+                touched.add(path.stem)
+                log.info(f"  🧹 {path.stem}: 목록 외 구루 제거 {gone}")
+    if CHANGES_DIR.exists():
+        for path in sorted(CHANGES_DIR.glob("*.json")):
+            try:
+                with open(path, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+            except Exception:
+                continue
+            ch = data.get("changes", {})
+            gone = [k for k in ch if k not in keep]
+            if gone:
+                for k in gone:
+                    del ch[k]
+                with open(path, "w", encoding="utf-8") as f:
+                    json.dump(data, f, ensure_ascii=False, indent=1)
+    return touched
+
+
+def write_latest_changes():
+    """가장 최근 분기의 변동내역을 us_vips_changes.json으로 복사"""
+    if not CHANGES_DIR.exists():
+        return
+    files = sorted(CHANGES_DIR.glob("*.json"))
+    if not files:
+        return
+    with open(files[-1], "r", encoding="utf-8") as f:
+        payload = json.load(f)
+    with open(LATEST_CHANGES, "w", encoding="utf-8") as f:
+        json.dump(payload, f, ensure_ascii=False, indent=1)
+    log.info(f"  📌 최신 변동: {files[-1].stem}")
 
 
 def collect_history(max_quarters=None, guru_filter=None, start_year=2013, end_quarter=None):
@@ -424,9 +390,18 @@ def collect_history(max_quarters=None, guru_filter=None, start_year=2013, end_qu
     log.info(f"━━━ 1단계: {len(gurus)}명 파일링 목록 수집 ━━━")
     quarter_guru_filings = {}
 
-    for idx, (name, cik) in enumerate(gurus.items()):
-        log.info(f"[{idx+1}/{len(gurus)}] {name} (CIK {cik})")
-        filings = get_all_13f_filings(cik, start_year=start_year)
+    prune_removed_gurus()
+    modified = set()
+
+    for idx, (name, cik_value) in enumerate(gurus.items()):
+        ciks = cik_list(cik_value)
+        log.info(f"[{idx+1}/{len(gurus)}] {name} (CIK {', '.join(ciks)})")
+        by_quarter = {}
+        for cik in ciks:
+            for f in get_all_13f_filings(cik, start_year=start_year):
+                if f["quarter"] not in by_quarter:      # 앞쪽 법인, 최근 제출분 우선
+                    by_quarter[f["quarter"]] = {**f, "cik": cik}
+        filings = sorted(by_quarter.values(), key=lambda x: x["report_date"], reverse=True)
         if not filings:
             log.warning(f"  ⚠️ {start_year}년 이후 13F-HR 없음")
             continue
@@ -438,7 +413,7 @@ def collect_history(max_quarters=None, guru_filter=None, start_year=2013, end_qu
             if q not in quarter_guru_filings:
                 quarter_guru_filings[q] = {}
             quarter_guru_filings[q][name] = {
-                "cik": cik, "accession": f["accession"],
+                "cik": f["cik"], "accession": f["accession"],
                 "filing_date": f["filing_date"], "report_date": f["report_date"],
             }
         if (idx + 1) % COOLDOWN_EVERY == 0 and (idx + 1) < len(gurus):
@@ -488,6 +463,8 @@ def collect_history(max_quarters=None, guru_filter=None, start_year=2013, end_qu
 
         archive["collected_at"] = datetime.utcnow().isoformat() + "Z"
         save_archive(quarter, archive)
+        if collected:
+            modified.add(quarter)
         log.info(f"  → {quarter}: ✓{collected}명 성공 / ✗{failed}명 실패, 총 {len(archive['portfolios'])}명\n")
 
     log.info(f"\n━━━ 3단계: 분기별 변동내역 계산 ━━━")
@@ -495,7 +472,7 @@ def collect_history(max_quarters=None, guru_filter=None, start_year=2013, end_qu
         prev_q = all_quarters[i - 1]
         curr_q = all_quarters[i]
         changes_path = CHANGES_DIR / f"{curr_q}.json"
-        if changes_path.exists():
+        if changes_path.exists() and curr_q not in modified and prev_q not in modified:
             log.info(f"  {curr_q} vs {prev_q} — 이미 계산됨, 스킵")
             continue
         prev_archive = load_archive(prev_q)
@@ -513,6 +490,7 @@ def collect_history(max_quarters=None, guru_filter=None, start_year=2013, end_qu
         if all_changes:
             save_changes(curr_q, prev_q, all_changes)
 
+    write_latest_changes()
     save_manifest()
 
     log.info(f"\n━━━ 완료 ━━━")
@@ -523,7 +501,7 @@ def collect_history(max_quarters=None, guru_filter=None, start_year=2013, end_qu
 
 
 def main():
-    parser = argparse.ArgumentParser(description="81명 구루 13F 히스토리 백필")
+    parser = argparse.ArgumentParser(description="전체 구루 13F 히스토리 백필")
     parser.add_argument("--quarters", type=int, default=None, help="구루당 최대 분기 수")
     parser.add_argument("--guru", type=str, default=None, help="특정 구루만 (이름 일부)")
     parser.add_argument("--start-year", type=int, default=2014, help="수집 시작년도 (기본: 2014)")
