@@ -400,12 +400,19 @@ def gh_put(data, sha):
         "content": base64.b64encode(blob.encode("utf-8")).decode("ascii"),
         "branch": GH_BRANCH,
     }
-    if sha: body["sha"] = sha
-    r = requests.put(url, headers=GH_HEADERS, json=body, timeout=120)
-    print(f"[업로드] {GH_PATH}: HTTP {r.status_code}")
-    if r.status_code not in (200, 201):
-        print(r.text[:500])
-        sys.exit(1)
+    # 업로드 직전에 최신 sha를 다시 받고, 충돌(409)이면 최대 3번 재시도
+    for attempt in range(3):
+        sha = gh_get_sha() or sha
+        if sha: body["sha"] = sha
+        r = requests.put(url, headers=GH_HEADERS, json=body, timeout=120)
+        print(f"[업로드] {GH_PATH}: HTTP {r.status_code}")
+        if r.status_code in (200, 201):
+            return
+        print(r.text[:300])
+        if r.status_code != 409:
+            break
+        time.sleep(5)
+    sys.exit(1)
 
 # ══════════════════════════════════════════════════════════════════
 # 메인
