@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-23T13:49+09:00",
+  "updated_at": "2026-11-23T14:19+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261123000107",
+  "last_seen": "20261123000128",
   "disclosures": [
+    {
+      "rcept_no": "20261123000128",
+      "rcept_dt": "2026-11-23",
+      "corp_name": "인성정보",
+      "stock_code": "033230",
+      "market": "KOSDAQ",
+      "corp_code": "00229021",
+      "repror": "에스넷",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "95,965",
+      "total_cnt": "11,598,508",
+      "irds_rate": "0.19",
+      "hold_rate": "22.96",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261123000128&dcm_no=11670120",
+      "dcm_no": "11670120"
+    },
     {
       "rcept_no": "20261123000107",
       "rcept_dt": "2026-11-23",
