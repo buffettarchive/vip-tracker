@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-23T15:19+09:00",
+  "updated_at": "2026-11-23T15:29+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261123000195",
+  "last_seen": "20261123000205",
   "disclosures": [
+    {
+      "rcept_no": "20261123000205",
+      "rcept_dt": "2026-11-23",
+      "corp_name": "삼진엘앤디",
+      "stock_code": "054090",
+      "market": "KOSDAQ",
+      "corp_code": "00239514",
+      "repror": "이경재",
+      "ofcps": "이사",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "36,946",
+      "total_cnt": "507,405",
+      "irds_rate": "0.15",
+      "hold_rate": "2.03",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261123000205&dcm_no=11670447",
+      "dcm_no": "11670447"
+    },
     {
       "rcept_no": "20261123000195",
       "rcept_dt": "2026-11-23",
