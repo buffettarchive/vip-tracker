@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-23T14:19+09:00",
+  "updated_at": "2026-11-23T14:29+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261123000128",
+  "last_seen": "20261123000139",
   "disclosures": [
+    {
+      "rcept_no": "20261123000132",
+      "rcept_dt": "2026-11-23",
+      "corp_name": "HD현대중공업",
+      "stock_code": "329180",
+      "market": "KOSPI",
+      "corp_code": "01390344",
+      "repror": "금석호",
+      "ofcps": "사장",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "500",
+      "total_cnt": "500",
+      "irds_rate": "0.00",
+      "hold_rate": "0.00",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261123000132&dcm_no=11670157",
+      "dcm_no": "11670157"
+    },
     {
       "rcept_no": "20261123000128",
       "rcept_dt": "2026-11-23",
