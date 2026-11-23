@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-23T09:19+09:00",
+  "updated_at": "2026-11-23T10:39+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261123000001",
+  "last_seen": "20261123000050",
   "disclosures": [
+    {
+      "rcept_no": "20261123000050",
+      "rcept_dt": "2026-11-23",
+      "corp_name": "한국주철관공업",
+      "stock_code": "000970",
+      "market": "KOSPI",
+      "corp_code": "00159573",
+      "repror": "마천캐스트",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "40,000",
+      "total_cnt": "3,510,880",
+      "irds_rate": "0.18",
+      "hold_rate": "15.40",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261123000050&dcm_no=11669829",
+      "dcm_no": "11669829"
+    },
     {
       "rcept_no": "20261123000001",
       "rcept_dt": "2026-11-23",
