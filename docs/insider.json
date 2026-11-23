@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-23T14:39+09:00",
+  "updated_at": "2026-11-23T14:49+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261123000154",
+  "last_seen": "20261123000162",
   "disclosures": [
+    {
+      "rcept_no": "20261123000162",
+      "rcept_dt": "2026-11-23",
+      "corp_name": "HD한국조선해양",
+      "stock_code": "009540",
+      "market": "KOSPI",
+      "corp_code": "00164830",
+      "repror": "김형관",
+      "ofcps": "사장",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,000",
+      "total_cnt": "1,690",
+      "irds_rate": "0.00",
+      "hold_rate": "0.00",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261123000162&dcm_no=11670311",
+      "dcm_no": "11670311"
+    },
     {
       "rcept_no": "20261123000132",
       "rcept_dt": "2026-11-23",
