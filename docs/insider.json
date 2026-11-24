@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-24T09:39+09:00",
+  "updated_at": "2026-11-24T09:49+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261124000046",
+  "last_seen": "20261124000051",
   "disclosures": [
+    {
+      "rcept_no": "20261124000051",
+      "rcept_dt": "2026-11-24",
+      "corp_name": "HD건설기계",
+      "stock_code": "267270",
+      "market": "KOSPI",
+      "corp_code": "01205842",
+      "repror": "문재영",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "630",
+      "total_cnt": "4,504",
+      "irds_rate": "0.00",
+      "hold_rate": "0.01",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261124000051&dcm_no=11671395",
+      "dcm_no": "11671395"
+    },
     {
       "rcept_no": "20261124000046",
       "rcept_dt": "2026-11-24",
