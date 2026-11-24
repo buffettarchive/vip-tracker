@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-24T12:09+09:00",
+  "updated_at": "2026-11-24T12:59+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261124000160",
+  "last_seen": "20261124000168",
   "disclosures": [
+    {
+      "rcept_no": "20261124000168",
+      "rcept_dt": "2026-11-24",
+      "corp_name": "싸이토젠",
+      "stock_code": "217330",
+      "market": "KOSDAQ",
+      "corp_code": "01046391",
+      "repror": "손영웅",
+      "ofcps": "전무이사",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "1,000",
+      "total_cnt": "33,000",
+      "irds_rate": "-0.04",
+      "hold_rate": "0.14",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261124000168&dcm_no=11671709",
+      "dcm_no": "11671709"
+    },
     {
       "rcept_no": "20261124000160",
       "rcept_dt": "2026-11-24",
