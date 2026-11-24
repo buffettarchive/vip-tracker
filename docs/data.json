@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-24T11:59+09:00",
+  "updated_at": "2026-11-24T12:19+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -13,8 +13,23 @@
     "Pzena",
     "Dalton"
   ],
-  "last_seen": "20261124000160",
+  "last_seen": "20261124000163",
   "disclosures": [
+    {
+      "rcept_no": "20261124000163",
+      "rcept_dt": "2026-11-24",
+      "firm": "피델리티",
+      "corp_name": "네오팜",
+      "stock_code": "092730",
+      "corp_code": "00551920",
+      "stkrt": "",
+      "stkrt_prev": "",
+      "stkqy": "",
+      "report_resn": "",
+      "purpose": "",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "기타"
+    },
     {
       "rcept_no": "20261123000084",
       "rcept_dt": "2026-11-23",
