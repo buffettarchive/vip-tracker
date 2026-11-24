@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-24T10:39+09:00",
+  "updated_at": "2026-11-24T10:59+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261124000102",
+  "last_seen": "20261124000118",
   "disclosures": [
+    {
+      "rcept_no": "20261124000118",
+      "rcept_dt": "2026-11-24",
+      "corp_name": "드림인사이트",
+      "stock_code": "362990",
+      "market": "KOSDAQ",
+      "corp_code": "01492688",
+      "repror": "케이 바이오테크 1호 신기술사업투자조합",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "3,894,839",
+      "total_cnt": "3,894,839",
+      "irds_rate": "23.18",
+      "hold_rate": "23.18",
+      "method": "장외매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261124000118&dcm_no=11671544",
+      "dcm_no": "11671544"
+    },
     {
       "rcept_no": "20261124000102",
       "rcept_dt": "2026-11-24",
