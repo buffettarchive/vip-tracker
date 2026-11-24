@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-24T18:09+09:00",
+  "updated_at": "2026-11-24T18:54+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261124000537",
+  "last_seen": "20261124000542",
   "disclosures": [
+    {
+      "rcept_no": "20261124000542",
+      "rcept_dt": "2026-11-24",
+      "corp_name": "KX",
+      "stock_code": "122450",
+      "market": "KOSDAQ",
+      "corp_code": "00657987",
+      "repror": "제이더블유씨인터내셔널",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "787,954",
+      "total_cnt": "3,265,874",
+      "irds_rate": "1.82",
+      "hold_rate": "7.29",
+      "method": "장외매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261124000542&dcm_no=11673037",
+      "dcm_no": "11673037"
+    },
     {
       "rcept_no": "20261124000512",
       "rcept_dt": "2026-11-24",
