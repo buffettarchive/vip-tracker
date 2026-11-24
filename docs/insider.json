@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-24T13:39+09:00",
+  "updated_at": "2026-11-24T13:54+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261124000188",
+  "last_seen": "20261124000200",
   "disclosures": [
+    {
+      "rcept_no": "20261124000200",
+      "rcept_dt": "2026-11-24",
+      "corp_name": "모나미",
+      "stock_code": "005360",
+      "market": "KOSPI",
+      "corp_code": "00121288",
+      "repror": "송하윤",
+      "ofcps": "부회장",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "33,499",
+      "total_cnt": "1,056,571",
+      "irds_rate": "0.18",
+      "hold_rate": "5.59",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261124000200&dcm_no=11671761",
+      "dcm_no": "11671761"
+    },
     {
       "rcept_no": "20261124000188",
       "rcept_dt": "2026-11-24",
