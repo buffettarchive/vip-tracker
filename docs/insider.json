@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-24T10:59+09:00",
+  "updated_at": "2026-11-24T11:19+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261124000118",
+  "last_seen": "20261124000128",
   "disclosures": [
+    {
+      "rcept_no": "20261124000128",
+      "rcept_dt": "2026-11-24",
+      "corp_name": "유진테크놀로지",
+      "stock_code": "240600",
+      "market": "KOSDAQ",
+      "corp_code": "01085026",
+      "repror": "여현국",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "7,176",
+      "total_cnt": "1,582,725",
+      "irds_rate": "0.09",
+      "hold_rate": "19.07",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261124000128&dcm_no=11671566",
+      "dcm_no": "11671566"
+    },
     {
       "rcept_no": "20261124000118",
       "rcept_dt": "2026-11-24",
