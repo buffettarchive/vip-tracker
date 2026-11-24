@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-24T09:01+09:00",
+  "updated_at": "2026-11-24T09:39+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261124000003",
+  "last_seen": "20261124000046",
   "disclosures": [
+    {
+      "rcept_no": "20261124000046",
+      "rcept_dt": "2026-11-24",
+      "corp_name": "한국토지신탁",
+      "stock_code": "034830",
+      "market": "KOSPI",
+      "corp_code": "00233653",
+      "repror": "심창우",
+      "ofcps": "전무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "20,000",
+      "total_cnt": "120,000",
+      "irds_rate": "0.01",
+      "hold_rate": "0.05",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261124000046&dcm_no=11671353",
+      "dcm_no": "11671353"
+    },
     {
       "rcept_no": "20261124000003",
       "rcept_dt": "2026-11-24",
