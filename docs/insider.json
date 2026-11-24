@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-24T15:59+09:00",
+  "updated_at": "2026-11-24T16:44+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261124000342",
+  "last_seen": "20261124000418",
   "disclosures": [
+    {
+      "rcept_no": "20261124000407",
+      "rcept_dt": "2026-11-24",
+      "corp_name": "다산솔루에타",
+      "stock_code": "154040",
+      "market": "KOSDAQ",
+      "corp_code": "00624518",
+      "repror": "다산모바일",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "3,975",
+      "total_cnt": "425,877",
+      "irds_rate": "0.18",
+      "hold_rate": "19.70",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261124000407&dcm_no=11672423",
+      "dcm_no": "11672423"
+    },
     {
       "rcept_no": "20261124000341",
       "rcept_dt": "2026-11-24",
