@@ -1,8 +1,46 @@
 {
-  "updated_at": "2026-11-25T18:20+09:00",
+  "updated_at": "2026-11-25T18:25+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20261125000530",
   "disclosures": [
+    {
+      "rcept_no": "20261125000761",
+      "rcept_dt": "2026-11-25",
+      "corp_name": "유안타증권",
+      "stock_code": "003470",
+      "market": "KOSPI",
+      "corp_code": "00117601",
+      "repror": "유태인",
+      "ofcps": "상무보",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "400",
+      "total_cnt": "2,400",
+      "irds_rate": "0.00",
+      "hold_rate": "0.00",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261125000761&dcm_no=11675294",
+      "dcm_no": "11675294"
+    },
+    {
+      "rcept_no": "20261125000758",
+      "rcept_dt": "2026-11-25",
+      "corp_name": "유안타증권",
+      "stock_code": "003470",
+      "market": "KOSPI",
+      "corp_code": "00117601",
+      "repror": "최해호",
+      "ofcps": "상무",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "597",
+      "total_cnt": "16,928",
+      "irds_rate": "0.00",
+      "hold_rate": "0.01",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261125000758&dcm_no=11675284",
+      "dcm_no": "11675284"
+    },
     {
       "rcept_no": "20261125000746",
       "rcept_dt": "2026-11-25",
@@ -18,7 +56,9 @@
       "total_cnt": "6,000",
       "irds_rate": "0.02",
       "hold_rate": "0.02",
-      "method": "장내매수"
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261125000746&dcm_no=11675250",
+      "dcm_no": "11675250"
     },
     {
       "rcept_no": "20261125000741",
