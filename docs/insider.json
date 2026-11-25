@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-25T10:39+09:00",
+  "updated_at": "2026-11-25T10:59+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261125000126",
+  "last_seen": "20261125000145",
   "disclosures": [
+    {
+      "rcept_no": "20261125000145",
+      "rcept_dt": "2026-11-25",
+      "corp_name": "에이엘티",
+      "stock_code": "172670",
+      "market": "KOSDAQ",
+      "corp_code": "00493325",
+      "repror": "연룡모",
+      "ofcps": "전무이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "792",
+      "total_cnt": "8,371",
+      "irds_rate": "0.01",
+      "hold_rate": "0.09",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261125000145&dcm_no=11673497",
+      "dcm_no": "11673497"
+    },
     {
       "rcept_no": "20261125000126",
       "rcept_dt": "2026-11-25",
