@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-25T09:04+09:00",
+  "updated_at": "2026-11-25T09:49+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261125000007",
+  "last_seen": "20261125000050",
   "disclosures": [
+    {
+      "rcept_no": "20261125000050",
+      "rcept_dt": "2026-11-25",
+      "corp_name": "에너토크",
+      "stock_code": "019990",
+      "market": "KOSDAQ",
+      "corp_code": "00169215",
+      "repror": "이충열",
+      "ofcps": "대표이사 사장",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "7,000",
+      "total_cnt": "168,506",
+      "irds_rate": "0.08",
+      "hold_rate": "1.73",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261125000050&dcm_no=11673222",
+      "dcm_no": "11673222"
+    },
     {
       "rcept_no": "20261125000007",
       "rcept_dt": "2026-11-25",
