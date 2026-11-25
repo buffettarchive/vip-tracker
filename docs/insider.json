@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-25T11:09+09:00",
+  "updated_at": "2026-11-25T11:19+09:00",
   "market": "KOSPI+KOSDAQ",
-  "last_seen": "20261125000175",
+  "last_seen": "20261125000190",
   "disclosures": [
+    {
+      "rcept_no": "20261125000190",
+      "rcept_dt": "2026-11-25",
+      "corp_name": "현대건설",
+      "stock_code": "000720",
+      "market": "KOSPI",
+      "corp_code": "00164478",
+      "repror": "이한우",
+      "ofcps": "부사장",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "300",
+      "total_cnt": "4,301",
+      "irds_rate": "0.00",
+      "hold_rate": "0.00",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261125000190&dcm_no=11673569",
+      "dcm_no": "11673569"
+    },
     {
       "rcept_no": "20261125000175",
       "rcept_dt": "2026-11-25",
