@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-26T10:30+09:00",
+  "updated_at": "2026-11-26T10:40+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20261125000530",
   "disclosures": [
+    {
+      "rcept_no": "20261126000157",
+      "rcept_dt": "2026-11-26",
+      "corp_name": "밸로프",
+      "stock_code": "331520",
+      "market": "KOSDAQ",
+      "corp_code": "01398151",
+      "repror": "신재명",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "3,000",
+      "total_cnt": "2,551,412",
+      "irds_rate": "0.03",
+      "hold_rate": "26.03",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261126000157&dcm_no=11675680",
+      "dcm_no": "11675680"
+    },
     {
       "rcept_no": "20261126000148",
       "rcept_dt": "2026-11-26",
