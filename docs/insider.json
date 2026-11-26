@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-26T11:20+09:00",
+  "updated_at": "2026-11-26T11:50+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20261125000530",
   "disclosures": [
+    {
+      "rcept_no": "20261126000234",
+      "rcept_dt": "2026-11-26",
+      "corp_name": "SIMPAC",
+      "stock_code": "009160",
+      "market": "KOSPI",
+      "corp_code": "00138260",
+      "repror": "최민찬",
+      "ofcps": "부사장",
+      "rgist": "비등기임원",
+      "main_shrholdr": "10%이상주주",
+      "irds_cnt": "77,500",
+      "total_cnt": "14,521,633",
+      "irds_rate": "0.11",
+      "hold_rate": "22.21",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261126000234&dcm_no=11675944",
+      "dcm_no": "11675944"
+    },
     {
       "rcept_no": "20261126000200",
       "rcept_dt": "2026-11-26",
