@@ -793,6 +793,7 @@
 "00638487": "Fasoo AI",
 "00641171": "Inzisoft",
 "00641393": "N Citron",
+"00642541": "JS Link",
 "00648721": "SNTEnergy",
 "00651017": "NAU IB Capital",
 "00654175": "Protec Mems Technology",
@@ -1052,6 +1053,7 @@
 "01213586": "IDP",
 "01214743": "THE Nature Holdings",
 "01217795": "MFC",
+"01217829": "NFC",
 "01217865": "From Bio",
 "01218299": "Ecoeye",
 "01219155": "Neo Cremar",
@@ -1876,6 +1878,7 @@
 "124500": "KQ",
 "126730": "KQ",
 "126880": "KQ",
+"127120": "KQ",
 "128820": "KS",
 "128940": "KS",
 "129260": "KS",
@@ -2957,6 +2960,7 @@
 "박경순": "Park Gyeong-sun",
 "박군자": "Park Gun-ja",
 "박권일": "Park Gwon-il",
+"박규석": "Park Gyu-seok",
 "박규혁": "Park Gyu-hyeok",
 "박근서": "Park Geun-seo",
 "박기웅": "Park Gi-ung",
@@ -4222,6 +4226,7 @@
 "최해성": "Choi Hae-seong",
 "최해주": "Choi Hae-ju",
 "최해호": "Choi Hae-ho",
+"최헌": "Choi Heon",
 "최현석": "Choi Hyeon-seok",
 "최현자": "Choi Hyeon-ja",
 "최현준": "Choi Hyeon-jun",
@@ -4765,6 +4770,7 @@
 "장내매수 (직접취득)": "On-market purchase",
 "장내매수에 따른 보유주식수 변동 ※ 보고자 본인은 보고서작성기준일 현재 본인과 특별관계자의 주식등의 보유상황": "Purchase",
 "장내에서 발행회사 주식 매수": "Purchase",
+"장내직접취득": "On-market purchase",
 "장내취득": "On-market purchase",
 "장외 매매 계약 해제 ※ 보고자 본인은 보고서작성기준일 현재 본인과 특별관계자의 주식등의 보유상황을 관련 법": "Related party change",
 "장외 직접 매수": "Off-market purchase",
@@ -4897,5 +4903,5 @@
 "특수관계인 추가 ※ 보고자 본인은 보고서작성기준일 현재 본인과 특별관계자의 주식등의 보유상황을 관련 법규 및": "Related party change",
 "합병에 따른 보유비율 변동": "1%+ change"
 },
-"updated_at": "2026-11-25T09:48:14Z"
+"updated_at": "2026-11-26T02:30:03Z"
 }
