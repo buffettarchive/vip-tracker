@@ -1193,6 +1193,7 @@
 "01506848": "Bistos",
 "01510489": "Prestige BioPharma",
 "01512575": "Coreline Soft",
+"01513699": "4by4",
 "01515323": "LG Energy Solution",
 "01516368": "Sandoll",
 "01516456": "Inventage Lab",
@@ -2202,6 +2203,7 @@
 "384470": "KQ",
 "388610": "KQ",
 "388870": "KQ",
+"389140": "KQ",
 "389470": "KQ",
 "389650": "KQ",
 "389680": "KQ",
@@ -3263,6 +3265,7 @@
 "신동범": "Shin Dong-beom",
 "신동선": "Shin Dong-seon",
 "신동양홀딩스": "SDY Holdings",
+"신동우": "Shin Dong-u",
 "신미현": "Shin Mi-hyeon",
 "신민철": "Shin Min-cheol",
 "신봉수": "Shin Bong-su",
@@ -3327,6 +3330,7 @@
 "안병욱": "Ahn Byeong-uk",
 "안병철": "Ahn Byeong-cheol",
 "안병화": "Ahn Byeong-hwa",
+"안병훈": "Ahn Byeong-hun",
 "안상우": "Ahn Sang-u",
 "안성현": "Ahn Seong-hyeon",
 "안영구": "Ahn Yeong-gu",
@@ -3560,6 +3564,7 @@
 "윤정혁": "Yoon Jeong-hyeok",
 "윤종필": "Yoon Jong-pil",
 "윤종호": "Yoon Jong-ho",
+"윤준호": "Yoon Jun-ho",
 "윤지영": "Yoon Ji-yeong",
 "윤천주": "Yoon Cheon-ju",
 "윤철수": "Yoon Cheol-su",
@@ -4131,6 +4136,7 @@
 "초록뱀미디어": "Chorokbaem Media",
 "최갑주": "Choi Gap-ju",
 "최고은": "Choi Go-eun",
+"최광천": "Choi Gwang-cheon",
 "최교원": "Choi Gyo-won",
 "최규만": "Choi Gyu-man",
 "최규황": "Choi Gyu-hwang",
@@ -4903,5 +4909,5 @@
 "특수관계인 추가 ※ 보고자 본인은 보고서작성기준일 현재 본인과 특별관계자의 주식등의 보유상황을 관련 법규 및": "Related party change",
 "합병에 따른 보유비율 변동": "1%+ change"
 },
-"updated_at": "2026-11-26T02:30:03Z"
+"updated_at": "2026-11-26T11:26:27Z"
 }
