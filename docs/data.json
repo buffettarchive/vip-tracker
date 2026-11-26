@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-26T15:14+09:00",
+  "updated_at": "2026-11-26T15:19+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -22,13 +22,13 @@
       "corp_name": "JYP Ent.",
       "stock_code": "035900",
       "corp_code": "00258689",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
-      "purpose": "",
+      "stkrt": "7.87",
+      "stkrt_prev": "6.31",
+      "stkqy": "2797888",
+      "report_resn": "장내매수",
+      "purpose": "일반투자",
       "report_nm": "주식등의대량보유상황보고서(약식)",
-      "kind": "기타"
+      "kind": "매수"
     },
     {
       "rcept_no": "20261126000043",
