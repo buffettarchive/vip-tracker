@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-26T09:04+09:00",
+  "updated_at": "2026-11-26T09:14+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -13,8 +13,23 @@
     "Pzena",
     "Dalton"
   ],
-  "last_seen": "20261126000032",
+  "last_seen": "20261126000043",
   "disclosures": [
+    {
+      "rcept_no": "20261126000043",
+      "rcept_dt": "2026-11-26",
+      "firm": "에셋플러스자산운용",
+      "corp_name": "엔에프씨",
+      "stock_code": "265740",
+      "corp_code": "01217829",
+      "stkrt": "6.35",
+      "stkrt_prev": "",
+      "stkqy": "1133600",
+      "report_resn": "장내매수",
+      "purpose": "단순투자",
+      "report_nm": "주식등의대량보유상황보고서(약식)",
+      "kind": "매수(신규)"
+    },
     {
       "rcept_no": "20261125000247",
       "rcept_dt": "2026-11-25",
