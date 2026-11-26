@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-26T14:36+09:00",
+  "updated_at": "2026-11-26T14:41+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20261125000530",
   "disclosures": [
+    {
+      "rcept_no": "20261126000368",
+      "rcept_dt": "2026-11-26",
+      "corp_name": "나노",
+      "stock_code": "187790",
+      "market": "KOSDAQ",
+      "corp_code": "00994994",
+      "repror": "신동우",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "33,703",
+      "total_cnt": "3,063,565",
+      "irds_rate": "0.00",
+      "hold_rate": "9.93",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261126000368&dcm_no=11676272",
+      "dcm_no": "11676272"
+    },
     {
       "rcept_no": "20261126000355",
       "rcept_dt": "2026-11-26",
