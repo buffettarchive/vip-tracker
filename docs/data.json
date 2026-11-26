@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-26T17:39+09:00",
+  "updated_at": "2026-11-26T17:44+09:00",
   "is_seed": false,
   "firms": [
     "브이아이피자산운용",
@@ -22,13 +22,13 @@
       "corp_name": "JB금융지주",
       "stock_code": "175330",
       "corp_code": "00980122",
-      "stkrt": "",
-      "stkrt_prev": "",
-      "stkqy": "",
-      "report_resn": "",
+      "stkrt": "13.22",
+      "stkrt_prev": "14.04",
+      "stkqy": "24653206",
+      "report_resn": "시간외매매",
       "purpose": "",
       "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-      "kind": "기타"
+      "kind": "매도"
     },
     {
       "rcept_no": "20261126000418",
