@@ -2067,6 +2067,7 @@
 "267260": "KS",
 "267270": "KS",
 "268280": "KS",
+"271830": "KQ",
 "272290": "KQ",
 "273060": "KQ",
 "274400": "KQ",
@@ -2711,6 +2712,7 @@
 "김재왕": "Kim Jae-wang",
 "김재용": "Kim Jae-yong",
 "김재욱": "Kim Jae-uk",
+"김재웅": "Kim Jae-ung",
 "김재은": "Kim Jae-eun",
 "김재현": "Kim Jae-hyeon",
 "김재형": "Kim Jae-hyeong",
@@ -3066,6 +3068,7 @@
 "박정엽": "Park Jeong-yeop",
 "박정웅": "Park Jeong-ung",
 "박정윤": "Park Jeong-yun",
+"박정인": "Park Jeong-in",
 "박정혜": "Park Jeong-hye",
 "박정희": "Park Jeong-hui",
 "박제성": "Park Je-seong",
@@ -3092,6 +3095,7 @@
 "박철세": "Park Cheol-se",
 "박철수": "Park Cheol-su",
 "박철희": "Park Cheol-hui",
+"박태오": "Park Tae-o",
 "박태원": "Park Tae-won",
 "박태훈": "Park Tae-hun",
 "박하련": "Park Ha-ryeon",
@@ -3639,6 +3643,7 @@
 "이명재": "Lee Myeong-jae",
 "이명종": "Lee Myeong-jong",
 "이문기": "Lee Mun-gi",
+"이미연": "Lee Mi-yeon",
 "이민경": "Lee Min-gyeong",
 "이민규": "Lee Min-gyu",
 "이민원": "Lee Min-won",
@@ -4443,6 +4448,7 @@
 "CFO": "CFO",
 "CFO\n(재무IR 본부장)": "Head of Finance IR, CFO",
 "CISO": "CISO",
+"CMO": "CMO",
 "COO": "COO",
 "CSO": "CSO",
 "Offline Payment\nClan 클랜장": "Executive",
@@ -4930,5 +4936,5 @@
 "특수관계인 추가 ※ 보고자 본인은 보고서작성기준일 현재 본인과 특별관계자의 주식등의 보유상황을 관련 법규 및": "Related party change",
 "합병에 따른 보유비율 변동": "1%+ change"
 },
-"updated_at": "2026-11-27T12:44:46Z"
+"updated_at": "2026-11-27T21:41:05Z"
 }
