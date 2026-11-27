@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-27T16:39+09:00",
+  "updated_at": "2026-11-27T16:59+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20261125000530",
   "disclosures": [
+    {
+      "rcept_no": "20261127001112",
+      "rcept_dt": "2026-11-27",
+      "corp_name": "글로벌에스엠",
+      "stock_code": "900070",
+      "market": "KOSDAQ",
+      "corp_code": "00783246",
+      "repror": "나윤복",
+      "ofcps": "-",
+      "rgist": "-",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "6,000",
+      "total_cnt": "1,141,381",
+      "irds_rate": "0.02",
+      "hold_rate": "4.25",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261127001112&dcm_no=11679363",
+      "dcm_no": "11679363"
+    },
     {
       "rcept_no": "20261127000956",
       "rcept_dt": "2026-11-27",
