@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-27T19:56+09:00",
+  "updated_at": "2026-11-27T20:04+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20261125000530",
   "disclosures": [
+    {
+      "rcept_no": "20261127001661",
+      "rcept_dt": "2026-11-27",
+      "corp_name": "글로본",
+      "stock_code": "019660",
+      "market": "KOSDAQ",
+      "corp_code": "00159731",
+      "repror": "한상호",
+      "ofcps": "대표이사",
+      "rgist": "등기임원",
+      "main_shrholdr": "사실상지배주주",
+      "irds_cnt": "8,594",
+      "total_cnt": "3,995,290",
+      "irds_rate": "0.06",
+      "hold_rate": "28.65",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261127001661&dcm_no=11680377",
+      "dcm_no": "11680377"
+    },
     {
       "rcept_no": "20261127001534",
       "rcept_dt": "2026-11-27",
