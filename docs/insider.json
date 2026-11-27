@@ -1,8 +1,27 @@
 {
-  "updated_at": "2026-11-27T11:05+09:00",
+  "updated_at": "2026-11-27T11:37+09:00",
   "market": "KOSPI+KOSDAQ",
   "last_seen": "20261125000530",
   "disclosures": [
+    {
+      "rcept_no": "20261127000481",
+      "rcept_dt": "2026-11-27",
+      "corp_name": "다스코",
+      "stock_code": "058730",
+      "market": "KOSPI",
+      "corp_code": "00353878",
+      "repror": "김택관",
+      "ofcps": "전무이사",
+      "rgist": "비등기임원",
+      "main_shrholdr": "-",
+      "irds_cnt": "30,000",
+      "total_cnt": "71,000",
+      "irds_rate": "0.13",
+      "hold_rate": "0.35",
+      "method": "장내매수",
+      "pdf_url": "https://dart.fss.or.kr/pdf/download/pdf.do?rcp_no=20261127000481&dcm_no=11678380",
+      "dcm_no": "11678380"
+    },
     {
       "rcept_no": "20261127000411",
       "rcept_dt": "2026-11-27",
